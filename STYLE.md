@@ -1,60 +1,91 @@
 # Author writing-style guide
 
-**v1.1 · 23 July 2026** · Maintained alongside the book project; applies to all drafted prose unless a specific brief overrides it.
+**v2.0 · 23 July 2026** · Maintained alongside the book project; applies to all drafted prose unless a specific brief overrides it.
 
-**Change from v1.0:** §6 reconciled with the figure workflow — figures are now described as briefs in `FIGURES.md` and generated in the house infographic style, rather than authored as diagrams-as-code. All other guidance is unchanged.
+**Change from v1.1 (major):** the register moves from formal-academic to **personal and conversational while keeping full intellectual weight** (§1–§2). Two mechanisms are added: **info-boxes** that explain technical terms in plain language (§9), and a **draft line-numbering format** — one sentence per numbered line, restarting each paragraph — so the author can comment on precise lines (§10). Integrity, evidence, British English and vendor-neutrality are unchanged.
 
 ## 1. Voice and stance
 
-Write as an experienced academic author in hydrology and meteorology: authoritative, precise and measured. Confidence is expressed through evidence and construction, not emphasis. Claims are conservative and hedged in proportion to the evidence behind them, and speculation appears only when explicitly flagged as such. No hype, no filler, no clichés. Prefer specificity to generality and numbers to adjectives — "resolution rates rose from single figures in 2023 to above 70% by late 2025" rather than "performance improved dramatically".
+Write as the author speaking directly to an intelligent colleague from outside their specialism: warm, personal, first-person where it is natural, and unmistakably human — it should read as though the author wrote it at their desk, not as though a committee approved it. Confidence still comes from evidence and construction rather than emphasis, and the weight of the subject is never traded away for a lighter touch: the reader should feel that the stakes are real even as the prose stays approachable. Use "I" for the author's own judgement and experience, and "you" for the reader; let the occasional short sentence land for emphasis. What conversational does **not** mean here: no hype, no breeziness, no slang, no exclamation, no cliché, and no dumbing-down. A good test is that a hydrologist and a curious non-specialist should both finish a paragraph feeling they have understood something demanding, not that a demanding thing has been made trivial. Prefer specificity to generality and numbers to adjectives — "resolution rates rose from single figures in 2023 to above 70% by late 2025" rather than "performance improved dramatically".
 
-## 2. Paragraph architecture
+## 2. Paragraph and sentence architecture
 
-Every paragraph opens with a full topic sentence: a complete main clause that states the paragraph's claim. Short, punchy openers and rhetorical fragments are prohibited — they read as machine-generated filler. Paragraphs in long-form prose run to 250–400 words; fewer, longer, developed paragraphs are preferred over many short ones. Internal progression follows a scientific-paper logic, slightly relaxed: claim → context → evidence → implication → limitation. Not every paragraph needs all five stages, but the movement is always from assertion towards qualification, never a sequence of loosely joined sentences. Depth takes priority over coverage: develop fewer points properly rather than surveying many thinly.
+Open each paragraph with a sentence that makes its point clearly — a real claim the reader can hold onto — but that opening may now be conversational rather than a formal topic sentence, and it must never be an empty fragment or a rhetorical throat-clear. Paragraphs remain developed and substantial (a useful span is roughly 150–350 words), moving from claim towards context, evidence, implication and honest qualification, but the movement can breathe: vary sentence length, and let a short sentence do real work now and then. Depth still takes priority over coverage — develop fewer points properly rather than surveying many thinly. The change from earlier drafts is one of register and rhythm, not of rigour: the argument is still carried by developed prose, not by bullet lists.
 
-**Worked contrast (from Ch. 1 drafting):**
-- Avoid: "The lineage is short."
-- Prefer: "The developments that made agents possible form a short lineage in which the decisive changes concerned the interface to computation as much as raw capability."
+**Worked contrast:**
+- Too formal (old): "The developments that made agents possible form a short lineage in which the decisive changes concerned the interface to computation as much as raw capability."
+- Too banal (avoid): "Agents came from a few big breakthroughs. Here's how."
+- House voice (aim): "The path to agents is shorter than the hype suggests, and the turning points were mostly about how we talk to a computer rather than about raw horsepower."
 
 ## 3. Sentence and language conventions
 
-British English throughout: -ise endings, British vocabulary and date conventions. Use precise technical language; define a term once and then hold to it consistently. Signpost the argument explicitly — what this section establishes, what follows from it — without bureaucratic scaffolding.
+British English throughout: -ise endings, British vocabulary and date conventions. Use precise technical language, but the first time a demanding term does real work, explain it — in the sentence itself or in an info-box (§9). Define a term once and hold to it. Signpost the argument in a human way ("I'll come back to this in Chapter 11"), not with bureaucratic scaffolding.
 
 ## 4. Evidence and uncertainty
 
-Substantive claims carry certainty flags (high / moderate / low confidence), and uncertainty is quantified explicitly wherever the material allows. Where a claim is contestable, state what evidence would change the assessment. Estimates are conservative; nothing is promised that the evidence cannot carry. When summarising literature, synthesise — compare and contrast positions and their evidence — rather than listing sources serially.
+Substantive claims carry certainty flags (high / moderate / low confidence), folded in naturally rather than stapled on — "I'm fairly sure (moderate confidence) that…" reads better than a bare parenthetical, though a parenthetical is fine. Uncertainty is quantified wherever the material allows, and where a claim is contestable, say what evidence would change your mind. Estimates are conservative; nothing is promised that the evidence cannot carry. When drawing on the literature, synthesise — compare and contrast positions — rather than listing sources.
 
 ## 5. Integrity
 
-Never fabricate facts, quotes, sources or anecdotes. Where information is missing or unverified, say precisely what is needed to proceed and offer best-practice options. In drafts, gaps are marked rather than papered over:
+Never fabricate facts, quotes, sources or anecdotes. Where information is missing or unverified, say precisely what is needed and mark it:
 
-- **[AUTHOR: …]** — lived material or a decision only the author can supply.
+- **[AUTHOR: …]** — lived material or a decision only the author can supply (personal anecdotes especially — they are what make the voice real).
 - **[verify]** — a real but unconfirmed figure or bibliographic detail, to be checked before release.
 
 Cite only references known to be real; incomplete bibliographic details are flagged, not invented.
 
 ## 6. Book-project conventions
 
-Vendor-neutral in print: capability classes and approximate years in the text, with named products and volatile figures confined to the companion repository. Figures are described as briefs following `FIGURES.md` and rendered in the shared house infographic style, each carrying alt-text written at the moment the brief is created. The argument is carried by paragraphs, not bullets; lists appear in prose form ("x, y and z") unless the content is genuinely enumerable.
+Vendor-neutral in print: capability classes and approximate years in the text, with named products and volatile figures confined to the companion repository. Figures are described as briefs following `FIGURES.md` and rendered in the house infographic style, each carrying alt-text written when the brief is created. The argument is carried by paragraphs, not bullets; lists appear in prose ("x, y and z") unless the content is genuinely enumerable.
 
 ## 7. Pre-submission checklist
 
-Before a draft is returned: (1) every paragraph opens with a full topic sentence; (2) paragraphs run 250–400 words with a claim-to-limitation progression; (3) substantive claims carry certainty flags; (4) numbers replace adjectives wherever the evidence allows; (5) British spellings throughout; (6) no clichés, hype or filler sentences; (7) all unverified material is marked, and none is invented.
+Before a draft is returned: (1) every paragraph opens with a clear, real claim (conversational is fine, fragments are not); (2) the voice is personal and human but the weight of the topic is intact — no banalisation; (3) every demanding term is explained in plain language or an info-box at first substantive use; (4) substantive claims carry certainty flags; (5) numbers replace adjectives wherever the evidence allows; (6) British spellings throughout; (7) all unverified material is marked and none invented; (8) the draft is line-numbered per §10.
 
 ## 8. Condensed prompt block
 
-For agent-assisted drafting or review, this block reproduces the guide in instruction form:
+For agent-assisted drafting or review:
 
 ```
-Write as an experienced academic author (hydrology/meteorology): authoritative, precise,
-measured; confident but hedged; evidence-driven; conservative claims with explicit
-certainty flags (high/moderate/low confidence); quantify wherever possible; no hype,
-filler or clichés; specificity over generality, numbers over adjectives. British English
-throughout. Open every paragraph with a full topic sentence stating its claim — never
-short punchy openers or fragments. Paragraphs of 250–400 words following
-claim → context → evidence → implication → limitation, like a scientific paper but
-slightly less rigorous; prioritise depth over coverage. Synthesise literature
-(compare/contrast) rather than listing. Never fabricate facts, quotes, sources or
-anecdotes: mark gaps with [AUTHOR: …] and unverified figures with [verify].
-Signpost the argument clearly.
+Write as the author speaking directly to an intelligent non-specialist colleague:
+personal, conversational, first-person where natural ("I" / "you"), human — as if the
+author wrote it — but carrying full intellectual weight. NOT breezy, NOT dumbed-down: no
+hype, slang, exclamation or cliché; the reader should feel the stakes and finish having
+understood something demanding. British English. Open each paragraph with a clear real
+claim (conversational, never a fragment); developed paragraphs ~150–350 words, claim →
+context → evidence → implication → limitation, varied sentence length. Numbers over
+adjectives; certainty flags (high/moderate/low confidence) folded in naturally. Explain
+every demanding term in plain language or an INFO-BOX at first substantive use, and add
+the term to the glossary. Never fabricate: mark lived material [AUTHOR: …] and unverified
+figures [verify]. Vendor-neutral. Then line-number the prose: one sentence per line,
+numbered from 1, restarting at every paragraph (see STYLE.md §10).
 ```
+
+## 9. Info-boxes (plain-language term boxes)
+
+Explain every demanding term the first time it does real work in a chapter, using an info-box placed immediately after the paragraph that introduces it. The box is a short blockquote in plain, warm language — no jargon inside the box explaining jargon — and it uses this fixed form:
+
+```
+> **In plain terms — Gate.** A checkpoint in a workflow where the agent's work has to
+> pass a defined check before anything downstream is allowed to use it. Pass, and the
+> work moves on; fail, and it loops back. Nothing proceeds just because it looks right.
+```
+
+Conventions: (a) box a term **once per chapter**, at first substantive use, not on every appearance; (b) every boxed term is also collected in `manuscript/GLOSSARY.md`, which is the single place a reader can look the word up anywhere; (c) keep boxes to two or three sentences; (d) box genuine jargon (gate, tool call, context window, token, orchestration, provenance, prompt injection, least privilege, in-context learning, ensemble, and the like), not ordinary words; (e) British English inside boxes too. Boxes are not line-numbered (§10).
+
+## 10. Draft line-numbering format
+
+Line-number the body prose so the author can comment on exact lines, and restart the numbering at every paragraph so paragraphs stay independent and can be drafted or revised in parallel. The format is one sentence per line, each line prefixed with its number and a single space, starting at `1` in every paragraph, with a blank line between paragraphs:
+
+```
+### 1.1 Section heading
+
+1 First sentence of the paragraph sits on its own line.
+2 The second sentence follows, numbered 2.
+3 And so on to the end of the paragraph.
+
+1 The next paragraph restarts its count at 1.
+2 Its second sentence is line 2.
+```
+
+What is numbered: body prose paragraphs only. What is **not** numbered: headings, info-boxes, figure-brief blocks, block quotations, lists, captions, tables and the references section. Keep one sentence per line; a very long compound sentence may stay whole on its line rather than being split artificially. This is a drafting convention for the Markdown source during authoring and review; whether it survives into any later built output is a separate, deferred decision.
