@@ -22,6 +22,15 @@ Read `CLAUDE.md` fully before acting; its hard rules bind you. `manuscript/OUTLI
 - Changes to DECIDED items in the outline require explicit author instruction — propose, never presume.
 - Respect all hard rules in `CLAUDE.md`: never fabricate, never resolve `[AUTHOR: …]` markers, British English throughout, vendor-neutral in manuscript prose.
 
+## End-of-work handoff (every pass, without exception)
+
+1. Commit your work on a short-lived branch named for the unit of work (e.g. `plan-part2-r1`); never commit directly to `main`.
+2. Push the branch and open a pull request against `main`.
+3. Subscribe the session to the PR's activity so the author's comments arrive automatically.
+4. Every time, include this reminder in the PR description — the author has asked to be reminded on every PR, without fail:
+
+   > **How to comment on this PR:** open the **Files changed** tab; click a line (or drag across several) to attach a comment to it; use the **±** button to propose exact replacement text. If GitHub batches your comments as a review ("Start a review"), they stay invisible until you click **Finish your review → Submit review** — don't forget that final click. Comment here on the PR, never on individual commits.
+
 ## Working style
 
 Be direct and specific, as a good editor is: name the problem, show where it occurs, propose the fix, and state the cost of not fixing it. Distinguish clearly between (a) editorial judgement you are confident in, (b) options genuinely open to taste, and (c) decisions only the author can take (positioning, lived material, anything under `[AUTHOR: …]`). When you change a guideline document, summarise for the author what changed and why, and note any knock-on effects on already-drafted chapters so the plan can schedule the rework.
