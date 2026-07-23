@@ -67,7 +67,7 @@ FIGURE BRIEF
 
 ## 6.4 Worked example: river-gauge and rainfall quality control
 
-The worked example puts the pattern to work on a concrete reconciliation: a set of river-gauge stage records and a co-located rainfall network, quality-controlled together so that the rainfall can later be used to explain or verify the flow **[AUTHOR: specify the catchment, the gauge and rainfall networks, the period, and the volume of records — the concrete scale is what makes the example land, exactly as the operational-morning detail does in Chapter 1]**. The pipeline has four stages, and the discipline of the chapter lives in the boundaries between them. In the first stage the agent ingests the heterogeneous formats, calling a declared reader for each source and normalising every series into a common tidy representation with explicit units, an unambiguous UTC timestamp, and an unpopulated flag column; this is the stage where the agent's format-wrangling strength pays off, and where a unit resolver is invoked on every column so that no quantity enters the record without a declared and checked unit — the single most important defence against the silent-unit failures that Chapter 13 anatomises. In the second stage the agent proposes flags: for each gap it proposes a classification (telemetry outage, sensor maintenance, recorded zero) with the neighbouring evidence it weighed, and for each candidate spike it proposes accept or reject with an explicit justification referencing the rainfall context — a stage jump coincident with a heavy-rainfall proposal is treated very differently from an isolated stage jump under a dry sky. Crucially, these proposals are written as structured objects beside the data, not into it. In the third stage the deterministic rules dispose: physical bounds reject any stage outside the gauge's rated range, a rate-of-change limit catches non-physical jumps the agent may have accepted, an inter-station consistency check tests each rainfall proposal against its neighbours, and the network's documented conventions have the final word. A proposal the agent made confidently but the rules reject is not applied; it is logged with its rejection reason, and the observation stands as measured. In the fourth stage every proposal, every disposition and every rejection is written to a provenance record keyed to the input files and the rule-set version, so that the state of the record is fully reconstructable — the mechanism developed in Chapter 12. The result [AUTHOR: report what the run actually produced — counts of proposed, applied and rejected flags, any error the deterministic rules caught that a manual pass had previously missed, and the wall-clock time against the manual baseline in §6.2] is not a "cleaned" dataset but a *flagged and audited* one, in which every departure from the raw observation is visible, justified and reversible.
+The worked example puts the pattern to work on a concrete reconciliation: a set of river-gauge stage records and a co-located rainfall network, quality-controlled together so that the rainfall can later be used to explain or verify the flow **[AUTHOR: specify the catchment, the gauge and rainfall networks, the period, and the volume of records — the concrete scale is what makes the example land, exactly as the operational-morning detail does in Chapter 1]**. The pipeline has four stages, and the discipline of the chapter lives in the boundaries between them. In the first stage the agent ingests the heterogeneous formats, calling a declared reader for each source and normalising every series into a common tidy representation with explicit units, an unambiguous UTC timestamp, and an unpopulated flag column; this is the stage where the agent's format-wrangling strength pays off, and where a unit resolver is invoked on every column so that no quantity enters the record without a declared and checked unit — the single most important defence against the silent-unit failures that Chapter 13 anatomises. In the second stage the agent proposes flags: for each gap it proposes a classification (telemetry outage, sensor maintenance, recorded zero) with the neighbouring evidence it weighed, and for each candidate spike it proposes accept or reject with an explicit justification referencing the rainfall context — a stage jump coincident with a heavy-rainfall proposal is treated very differently from an isolated stage jump under a dry sky. Crucially, these proposals are written as structured objects beside the data, not into it. In the third stage the deterministic rules dispose: physical bounds reject any stage outside the gauge's rated range, a rate-of-change limit catches non-physical jumps the agent may have accepted, an inter-station consistency check tests each rainfall proposal against its neighbours, and the network's documented conventions have the final word. A proposal the agent made confidently but the rules reject is not applied; it is logged with its rejection reason, and the observation stands as measured. In the fourth stage every proposal, every disposition and every rejection is written to a provenance record keyed to the input files and the rule-set version, so that the state of the record is fully reconstructable — the mechanism developed in Chapter 12. The result [AUTHOR: report what the run actually produced — counts of proposed, applied and rejected flags, any error the deterministic rules caught that a manual pass had previously missed, and the wall-clock time against the manual baseline in §6.2] is not a "cleaned" dataset but a *flagged and audited* one, in which every departure from the raw observation is visible, justified and reversible. Figure 6.4 shows the three characteristic dispositions on a single joined trace: a spike accepted because rainfall supports it, a spike the agent found plausible but the rate-of-change rule rejects for want of any rainfall, and a gap flagged and left unfilled.
 
 **Figure 6.2 — The four-stage QC sequence.** *A figure brief follows `FIGURES.md`; render in the house style.*
 
@@ -145,6 +145,45 @@ FIGURE BRIEF
                  links "hand-tuned checks" in the top row to "deterministic rules" in the
                  bottom row, labelled "same checks, same authority — retained". Minimal text,
                  generous spacing, single-weight lines.
+```
+
+**Figure 6.4 — An annotated gauge-and-rainfall trace.** *A figure brief follows `FIGURES.md`; render in the house style.*
+
+```
+FIGURE BRIEF
+- id:            Figure 6.4
+- title:         One trace, three dispositions — spike accepted, spike rejected, gap flagged
+- type:          failure trace
+- claim:         On a real joined trace the pattern is legible: a rainfall-backed spike is accepted, an unsupported spike the agent liked is rejected by the rules, and a gap is flagged but never filled.
+- canvas:        16:9
+- elements:      an upper line plot of river stage (near-black line) over time with three
+                 marked events; a lower bar plot of co-located rainfall (sky blue) sharing the
+                 time axis; event A a stage spike aligned with a tall rainfall bar, marked with
+                 a green tick "flag: real event — accepted"; event B a stage spike under no
+                 rainfall, marked with a vermillion cross "agent proposed accept — rule
+                 rejected (no rainfall, exceeds rate limit)"; event C a gap in the stage line
+                 marked with a grey band "flag: telemetry gap — left as observed, not filled"
+- flow:          left-to-right along a shared time axis; annotations point from each marked
+                 event to its disposition label
+- labels:        "river stage", "rainfall", "A — accepted: rainfall-backed spike",
+                 "B — rejected by rule: no rainfall, exceeds rate limit",
+                 "C — gap flagged, not filled"
+- annotations:   event B is the callout in vermillion — the agent's plausible-but-wrong
+                 proposal caught by a deterministic rule; a small note reads
+                 "fluent proposal, wrong — caught by physical rule"
+- caption:       Figure 6.4 — A joined gauge-and-rainfall trace with three dispositions. Event A, a spike backed by heavy rainfall, is accepted; event B, a spike the agent found plausible but with no rainfall and an impossible rate, is rejected by a deterministic rule; event C, a telemetry gap, is flagged and left as observed. The vermillion callout marks where the rules catch a fluent but wrong proposal. [AUTHOR: replace the schematic events with three real ones from your record and give the actual disposition counts.]
+- alt-text:      A two-panel time-series figure sharing a time axis. The upper panel plots river stage with three marked events; the lower panel plots co-located rainfall as bars. Event A, a stage spike aligned with a tall rainfall bar, is accepted. Event B, a stage spike with no rainfall beneath it, is rejected by a rule for exceeding the rate limit, marked in vermillion. Event C, a gap in the stage line, is flagged as a telemetry gap and left unfilled.
+- generator prompt: A flat vector two-panel time-series figure on an off-white background
+                 sharing one horizontal time axis. Upper panel: a near-black line labelled
+                 "river stage" with three marked events. Lower panel: sky-blue vertical bars
+                 labelled "rainfall". Event A is a stage spike aligned above a tall rainfall
+                 bar, marked with a small green tick and labelled "A — accepted: rainfall-backed
+                 spike". Event B is a stage spike above a flat, rainless stretch, marked with a
+                 vermillion cross and labelled "B — rejected by rule: no rainfall, exceeds rate
+                 limit", with a small near-black note "fluent proposal, wrong — caught by
+                 physical rule". Event C is a break in the stage line spanned by a grey band
+                 labelled "C — gap flagged, not filled". Minimal text, generous spacing,
+                 single-weight lines and one arrowhead style.
 ```
 
 ## 6.5 Failure modes
