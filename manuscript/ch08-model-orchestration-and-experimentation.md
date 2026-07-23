@@ -63,7 +63,43 @@ FIGURE BRIEF
 
 ## 8.4 LLM-assisted hypothesis generation, kept exploratory
 
-A second and more contentious use of language models in experimentation is the generation of hypotheses, which this book admits only under strict conditions and never as evidence. A model prompted with a campaign's results, the relevant literature and a domain description will readily propose mechanisms — that a calibrated parameter compensates for a missing process, that a data-driven model's skill in one regime reflects a spurious correlation, that two error patterns share a common cause — and some of these proposals will be genuinely useful in directing where a scientist looks next. The legitimate value of this is real but narrow: it is the value of a well-read colleague suggesting avenues over coffee, and it is bounded by the same reservation, that a suggestion is a prompt to investigate and never a finding in itself. The danger is that a generated hypothesis, expressed in fluent and confident language and arriving alongside real results, acquires an unearned evidential status simply by proximity, so that what began as a conjecture is reported as a conclusion — a failure named and dissected in §8.6 as hypothesis laundering. The discipline this chapter imposes is therefore procedural rather than a matter of good intentions: any model-generated hypothesis is recorded as exploratory in the provenance store, tagged with its origin, and separated by construction from the evidential chain, so that it cannot enter a result or a manuscript without a human first testing it against data by a pre-specified procedure and taking personal responsibility for the claim. This mirrors the interpretive control retained in the literature-synthesis pattern of Chapter 5 and the author-as-sole-authority principle of Chapter 9, and it is enforced here by the same mechanism that carries the provenance: a generated hypothesis lives in a labelled compartment of the record, visibly not among the findings. The certainty attached to this recommendation is high as a matter of research integrity and independent of model quality, because the failure it guards against is not a limitation that better models remove — a more persuasive model makes an untested hypothesis more dangerous, not less, since its fluency more effectively disguises the absence of evidence beneath it.
+A second and more contentious use of language models in experimentation is the generation of hypotheses, which this book admits only under strict conditions and never as evidence. A model prompted with a campaign's results, the relevant literature and a domain description will readily propose mechanisms — that a calibrated parameter compensates for a missing process, that a data-driven model's skill in one regime reflects a spurious correlation, that two error patterns share a common cause — and some of these proposals will be genuinely useful in directing where a scientist looks next. The legitimate value of this is real but narrow: it is the value of a well-read colleague suggesting avenues over coffee, and it is bounded by the same reservation, that a suggestion is a prompt to investigate and never a finding in itself. The danger is that a generated hypothesis, expressed in fluent and confident language and arriving alongside real results, acquires an unearned evidential status simply by proximity, so that what began as a conjecture is reported as a conclusion — a failure named and dissected in §8.6 as hypothesis laundering. The discipline this chapter imposes is therefore procedural rather than a matter of good intentions: any model-generated hypothesis is recorded as exploratory in the provenance store, tagged with its origin, and separated by construction from the evidential chain, so that it cannot enter a result or a manuscript without a human first testing it against data by a pre-specified procedure and taking personal responsibility for the claim. This mirrors the interpretive control retained in the literature-synthesis pattern of Chapter 5 and the author-as-sole-authority principle of Chapter 9, and it is enforced here by the same mechanism that carries the provenance: a generated hypothesis lives in a labelled compartment of the record, visibly not among the findings. The certainty attached to this recommendation is high as a matter of research integrity and independent of model quality, because the failure it guards against is not a limitation that better models remove — a more persuasive model makes an untested hypothesis more dangerous, not less, since its fluency more effectively disguises the absence of evidence beneath it. The gate that keeps a generated hypothesis out of the evidential chain until a human has tested it is shown in Figure 8.4.
+
+**Figure 8.4 — The hypothesis provenance gate.** *A figure brief follows `FIGURES.md`; render in the house style.*
+
+```
+FIGURE BRIEF
+- id:            Figure 8.4
+- title:         Where a generated hypothesis may and may not go
+- type:          decision flowchart
+- claim:         A model-generated hypothesis is exploratory by default and may enter a result only after a human tests it by a pre-specified procedure and owns the claim; without that step it stays compartmented.
+- canvas:        16:9
+- elements:      a top orange rounded-square "model-generated hypothesis"; flowing down to a
+                 sky-blue cylinder compartment "exploratory record (tagged)"; a vermillion
+                 diamond gate "tested by pre-specified procedure?"; a blue human head-and-shoulders
+                 icon "scientist owns the claim"; a green "enters result / manuscript" terminus;
+                 a grey "remains exploratory — not a finding" terminus
+- flow:          top-to-bottom — hypothesis → exploratory record → gate "tested by pre-specified
+                 procedure?"; "no" exit returns to the grey "remains exploratory" terminus;
+                 "yes" exit passes through the blue "scientist owns the claim" icon to the green
+                 "enters result / manuscript" terminus
+- labels:        "model-generated hypothesis", "exploratory record (tagged)", "tested by
+                 pre-specified procedure?", "yes", "no", "scientist owns the claim",
+                 "enters result / manuscript", "remains exploratory — not a finding"
+- annotations:   a vermillion callout on the "no" path reading "hypothesis laundering blocked here"
+- caption:       Figure 8.4 — The provenance gate that separates conjecture from evidence. A generated hypothesis is tagged exploratory and can only become part of a result once a human has tested it by a procedure fixed in advance and taken responsibility for the claim; the alternative path keeps it visibly a conjecture.
+- alt-text:      A top-to-bottom decision flowchart. A model-generated hypothesis flows into a tagged exploratory record, then to a vermillion diamond asking whether it has been tested by a pre-specified procedure. The no exit returns it to a grey terminus reading remains exploratory, not a finding, marked as where hypothesis laundering is blocked. The yes exit passes through a scientist-owns-the-claim step to a green terminus reading enters result or manuscript.
+- generator prompt: A flat vector decision flowchart on an off-white background, flowing top to
+                 bottom. At the top, an orange rounded square labelled "model-generated hypothesis"
+                 connects down to a sky-blue cylinder labelled "exploratory record (tagged)", which
+                 connects to a vermillion diamond labelled "tested by pre-specified procedure?". The
+                 diamond has two exits: a "no" arrow to a grey terminus box labelled "remains
+                 exploratory — not a finding", with a small vermillion callout "hypothesis
+                 laundering blocked here"; and a "yes" arrow passing through a blue
+                 head-and-shoulders icon labelled "scientist owns the claim" to a green terminus box
+                 labelled "enters result / manuscript". Single-weight connectors, one arrowhead
+                 style, generous spacing, minimal text.
+```
 
 ## 8.5 Worked design: a three-track intercomparison
 
