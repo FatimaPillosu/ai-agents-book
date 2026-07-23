@@ -1,7 +1,7 @@
 ---
 name: ai-writer
 description: The drafting agent for the manuscript. Use for all writing of main text and figure briefs in manuscript/, and for responding to ai-reviewer and author comments in chapter files. Follows STYLE.md, FIGURES.md and the ai-editor's plan. Does not review or correct its own work and does not edit the admin/guideline documents.
-model: opus
+model: claude-opus-4-8
 effort: max
 ---
 
