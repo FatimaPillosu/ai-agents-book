@@ -1,6 +1,6 @@
 # Chapter 16 — Starting in your own group
 
-> **Status:** draft · figures specified as briefs per `FIGURES.md`.
+> **Status:** draft · figures specified as briefs per `FIGURES.md`. Chapter lengths are indicative guidance, not fixed allocations.
 > **Conventions:** vendor-neutral per outline §9. Volatile figures — energy-per-inference, per-token prices, hardware costs — are kept out of print and marked for the companion repository. Passages needing the author's lived material or number verification are tagged **[AUTHOR: …]** or **[verify]**. No anecdotes, statistics or results have been invented.
 
 ---

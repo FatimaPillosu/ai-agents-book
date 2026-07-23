@@ -1,5 +1,5 @@
 # Chapter 15 — Governing a modelling workflow end to end
-> **Status:** draft · figures specified as briefs per FIGURES.md.
+> **Status:** draft · figures specified as briefs per `FIGURES.md`. Chapter lengths are indicative guidance, not fixed allocations.
 > **Conventions:** vendor-neutral per outline §9. This is an executed end-to-end case study; lived specifics — the modelling problem, the roster used, the gates applied, the review findings and the publication outcome — are the author's to supply and are tagged **[AUTHOR: …]**. Real but unconfirmed details are tagged **[verify]**. No anecdotes, figures or results have been invented.
 
 ---
