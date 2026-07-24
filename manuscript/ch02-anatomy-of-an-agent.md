@@ -14,6 +14,8 @@ Taken apart, an agent turns out to have four parts and no more: a model that pro
 Every behaviour worth governing arises from how those four interact.
 The model was the subject of the last chapter, so I treat it here only as the component that supplies judgement at each step; the loop, the tools and the store are the additions that turn a function from text to text into something that can carry a bounded task from instruction through to a checked result.
 This four-part decomposition is not idiosyncratic to the book — the research literature that surveys these systems arrives at much the same joints, describing an agent in terms of a planning or decision loop, an action interface, and memory (Wang et al., 2023) — and I take some reassurance from the structure a practitioner needs in order to govern the thing matching the structure a survey needs in order to describe it.
+A more recent survey points the same way, organising agentic systems along six dimensions — perception, brain, planning, action, tool use and collaboration — that map without strain onto the anatomy here, its collaboration dimension corresponding to the multi-agent territory of Chapter 10 (Arunkumar et al., 2026; a preprint, cited for its vocabulary rather than any capability claim).
+Working practitioners have reached the same point from the other side and even named it: a strand of practitioner commentary calls the whole assembly around the model the harness, and holds that this harness, more than the model at its centre, decides what an agent can actually do (practitioner commentary; see the references).
 
 The organising metaphor of this book is the instrument, and it holds right down to this level of detail.
 An oscilloscope is a display, a timebase, an input stage and a trigger, and you learn to trust its trace by understanding what each stage contributes and how each one distorts.
@@ -263,6 +265,8 @@ What does generalise is the accounting discipline of naming all three costs and 
 ### References (verify details before release)
 
 - Anthropic (2024). Building effective agents. *Anthropic engineering blog.* https://www.anthropic.com/engineering/building-effective-agents
+- Arunkumar, V., Gangadharan, G. R. and Buyya, R. (2026). Agentic artificial intelligence (AI): architectures, taxonomies, and evaluation of large language model agents. *arXiv preprint.* https://arxiv.org/abs/2601.12560
+- Jones, N. B. (2026). "Don't build more AI agents until you watch this." Video, @natebjones, 17 June 2026. https://www.youtube.com/watch?v=BOXK2XFLA-E (practitioner commentary; concepts cited as corroboration, not evidence)
 - Schick, T., et al. (2023). Toolformer: language models can teach themselves to use tools. *NeurIPS 2023.* https://arxiv.org/abs/2302.04761
 - Sumers, T. R., Yao, S., Narasimhan, K. and Griffiths, T. L. (2023). Cognitive architectures for language agents. *Transactions on Machine Learning Research.* https://arxiv.org/abs/2309.02427
 - Wang, L., et al. (2023). A survey on large language model based autonomous agents. *arXiv preprint.* https://arxiv.org/abs/2308.11432

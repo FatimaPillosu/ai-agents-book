@@ -45,6 +45,7 @@ Where verification is expensive but consequences reversible, an agent is a sourc
 Where verification is expensive and consequences severe — irreversible, and hard to confirm before it is too late — the task does not belong to an agent at all, and no amount of capability changes that assignment, because the property that disqualifies it is a property of the task and not of the tool.
 
 This procedure is really a discipline of reaching for the simplest arrangement that meets the task and adding agentic machinery only where the task visibly demands it — the same governing principle the most useful practitioner guidance in the field recommends (Anthropic, 2024).
+The same test circulates in practitioner guidance under a blunter name, the workflow test: if a fixed sequence of steps with at most a judgement call or two would do the job, build a workflow, not an agent (practitioner commentary; see the references).
 The limitation of the procedure is that both axes are estimates made in advance, and estimating them wrongly — believing verification cheaper than it proves, or an output more reversible than it is — is itself one of the failure modes catalogued in Chapter 13, so the procedure is a discipline for thinking, not a lookup table that removes the need to think (moderate-to-high confidence).
 
 **Figure 4.1 — Should an agent do this?** *A figure brief follows `FIGURES.md`; render in the house style.*
@@ -96,6 +97,7 @@ The second is that the safe default, when a task's placement is genuinely unclea
 
 ### References (verify details before release)
 
+- AI Founders (2026). "Don't build an AI agent until you can answer these 8 questions." Video, @aifoundershq, 17 May 2026. https://www.youtube.com/watch?v=jMHawg6qpps (practitioner commentary; concepts cited as corroboration, not evidence)
 - Anthropic (2024). Building effective agents. *Anthropic engineering blog.* https://www.anthropic.com/engineering/building-effective-agents
 - Feng, K. J. K., McDonald, D. W. and Zhang, A. X. (2025). Levels of autonomy for AI agents. *arXiv preprint.* https://arxiv.org/abs/2506.12469
 - Kapoor, S., Stroebl, B., Siegel, Z. S., Nadgir, N. and Narayanan, A. (2024). AI agents that matter. *arXiv preprint.* https://arxiv.org/abs/2407.01502

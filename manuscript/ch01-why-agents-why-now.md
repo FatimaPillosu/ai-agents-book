@@ -38,7 +38,11 @@ From roughly 2023, models became reliable enough to produce a valid call to a de
 It matters for science because it lets a model hand its own weak points to tools that don't share them: arithmetic goes to the interpreter, retrieval goes to the database, and the model is left doing the planning and interpretation in between.
 The other pieces arrived alongside it: context long enough to hold a whole codebase or document set in view (2023–24), code generation checked against test suites (2024–25), the ability to operate ordinary software, and shared protocols for plugging models into tools and data (2024–25).
 None of these is an agent on its own; assembled, they give you a system with a model, some tools, a loop and a memory, able to carry a bounded task from instruction through to a checked result.
-You can even watch the trend in public numbers: on a widely used software-engineering benchmark, the share of real-world coding issues an agent could resolve unaided rose from around 2% at the benchmark's introduction in 2023 (Jimenez et al., 2023) to figures several times higher by late 2025 [verify] — though, as I'll keep insisting, benchmark skill and real-workflow skill are not the same animal (Chapter 11).
+You can even watch the trend in public numbers: on a widely used software-engineering benchmark, the share of real-world coding issues an agent could resolve unaided rose from around 2% at the benchmark's introduction in 2023 (Jimenez et al., 2023) to near-saturation about two years later — a climb from single-digit scores that one frontier-model developer also reports for its own systems (Anthropic Institute, 2026) — though, as I'll keep insisting, benchmark skill and real-workflow skill are not the same animal (Chapter 11).
+
+A second measure points the same way by a different route: an independent evaluation organisation tracks not benchmark scores but the duration of tasks an agent can complete autonomously at a 50% success rate, and finds it doubling roughly every four months since 2023 — about 129 days, on a 90% confidence interval of 105 to 157 — and roughly every three months since 2024, against a slower doubling of about seven months across 2019 to 2025 (METR, 2026).
+Both parties have an interest in demonstrating progress, so neither number is disinterested; but two methods landing on the same doubling trend is the corroboration between independent measurements this book keeps asking you to look for.
+By 2026 the frontier had reached what would have read as science fiction a few years earlier: a paper generated end to end by an agentic system passed peer review at a workshop venue — a result itself now in the peer-reviewed literature — though the authors say plainly their system cannot yet meet top-tier publication standards (Lu et al., 2026).
 
 > **In plain terms — Tool call (structured action).** The moment an agent stops writing prose and instead issues a precise, machine-readable instruction — run this code, fetch this record, query this database — and then reads the result back. It is what lets a text model actually *do* things rather than only describe them.
 
@@ -175,7 +179,10 @@ I'm candid throughout that my examples come from one corner of the environmental
 
 ### References (verify details before release)
 
+- Anthropic Institute (Favaro, M. and Clark, J.) (2026). When AI builds itself. *The Anthropic Institute.* https://www.anthropic.com/institute/recursive-self-improvement
 - Brown, T. B., et al. (2020). Language models are few-shot learners. *Advances in Neural Information Processing Systems 33*. [verify]
 - Dell'Acqua, F., et al. (2023). Navigating the jagged technological frontier: field experimental evidence of the effects of AI on knowledge worker productivity and quality. *Harvard Business School Working Paper 24-013*. [verify]
 - Jimenez, C. E., Yang, J., Wettig, A., Yao, S., Pei, K., Press, O. and Narasimhan, K. (2023). SWE-bench: can language models resolve real-world GitHub issues? *ICLR 2024*. https://arxiv.org/abs/2310.06770
+- Lu, C., Lu, C., Lange, R. T., Yamada, Y., Hu, S., Foerster, J., Ha, D. and Clune, J. (2026). Towards end-to-end automation of AI research. *Nature*, 651, 914–919. DOI: 10.1038/s41586-026-10265-5
+- METR (2026). Time Horizon 1.1. *METR research blog*, 29 January 2026. https://metr.org/blog/2026-1-29-time-horizon-1-1/
 - Vaswani, A., et al. (2017). Attention is all you need. *Advances in Neural Information Processing Systems 30*. [verify]

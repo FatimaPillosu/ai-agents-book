@@ -60,6 +60,7 @@ When I went looking, I could not find a settled academic literature on specifyin
 What exists in abundance is the neighbouring literature on prompting, and the most systematic survey of it catalogues a sprawling, unstandardised space of dozens of techniques with conflicting terminology, and shows that the choice of technique measurably changes output quality while remaining brittle even in expert hands (Schulhoff et al., 2024).
 I read that finding two ways, and both point here: control through input text is real, which is why specification is worth the effort, and it is unreliable, which is why the criteria that decide "done" must sit outside the model rather than inside the prompt.
 The schema below is therefore the book's own synthesis rather than a reproduction of an established standard, offered because the practice needs one and the literature does not yet supply it.
+That the literature does not supply one does not make this schema idiosyncratic: a widely followed practitioner formulation, the delegation loop, breaks a delegated task into a goal, the sources the agent should use, a standard the output must meet, an explicit permission boundary and a defined proof that the work is done — matching the schema here almost element for element, with its proof-of-done playing the part of the acceptance criteria (practitioner commentary; see the references).
 
 The schema names the four elements already introduced — objective, inputs, acceptance criteria, stop conditions — and adds three fields that experience shows are needed to make a specification auditable rather than merely executable.
 The first addition is an explicit statement of **assumptions and conventions**: the units, coordinate reference systems, calendar conventions, missing-value codes and domain defaults the unit takes for granted, written down because an unstated convention is an ungoverned one, and because the unit-conversion failures of §3.1 and Chapter 13 live precisely in the gap between a convention one party assumed and another did not.
@@ -198,5 +199,6 @@ The limitation worth conceding is that for genuinely exploratory work, where the
 
 ### References (verify details before release)
 
+- Jones, N. B. (2026). "Codex: your first personal AI agent delegation loop." Video, @natebjones, 12 June 2026. https://www.youtube.com/watch?v=xqGCbEDbny8 (practitioner commentary; concepts cited as corroboration, not evidence)
 - Schulhoff, S., Ilie, M., Balepur, N., et al. (2024). The prompt report: a systematic survey of prompt engineering techniques. *arXiv preprint.* https://arxiv.org/abs/2406.06608
 - Yao, S., Shinn, N., Razavi, P. and Narasimhan, K. (2024). τ-bench: a benchmark for tool-agent-user interaction in real-world domains. *arXiv preprint.* https://arxiv.org/abs/2406.12045
