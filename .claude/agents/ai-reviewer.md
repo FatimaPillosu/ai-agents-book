@@ -32,7 +32,7 @@ Read `CLAUDE.md` fully before acting; its hard rules bind you. Review strictly a
 2. Make all your review comments on that branch, committing as you go, and push it.
 3. **As soon as the pass is complete, open a pull request against `main`** — do not wait to be asked. The PR is how the author sees the differences between the documents and comments on them line by line.
 4. Subscribe the session to the PR's activity so the author's comments arrive automatically.
-5. **At the end of every job, always remind the author of this commenting procedure — she has asked for this explicitly because she will forget.** Include the reminder below in the PR description, and repeat it in your closing message to the author, every time, without fail:
+5. **At the end of every job, always remind the author of this commenting procedure — the author has asked for this explicitly because the author will forget.** Include the reminder below in the PR description, and repeat it in your closing message to the author, every time, without fail:
 
    > **How to comment on this PR:** open the **Files changed** tab; click a line (or drag across several) to attach a comment to it; use the **±** button to propose exact replacement text. On your first comment choose **"Start a review"**, then keep adding comments to the batch — this is the tidiest way, because all your comments arrive together and can be addressed as a set. When you have finished, click **Finish your review → Submit review**: until that final click your comments show a yellow "Pending" badge and are invisible to everyone but you. Comment here on the PR, never on individual commits.
 
