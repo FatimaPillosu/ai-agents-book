@@ -25,6 +25,7 @@ The book is **pattern-based, governance-first and diagram-led**: durable workflo
 ## Repository layout (target)
 
 `/manuscript` (Markdown source; `OUTLINE.md`; `REVISION-PLAN.md`; `GLOSSARY.md`; `ch01`–`ch17`) · `/research` (ai-researcher's verified research reports; the sole source of manuscript citations) · `/patterns` (runnable minimal examples) · `/prompts` · `/figures-source` (figure briefs + alt-text) · `/checklists` · `/case-studies` (sanitised configurations) · `/exercises`. Version by tags and history; do not carry filename suffixes like `-v0.2` — the chapter file is `chNN-slug.md` and its draft status lives in a header line.
+<!-- [ai-reviewer: the /manuscript inventory above is incomplete — the directory now also holds ch00-front-matter.md, FURTHER-READING.md and RESEARCH-INTEGRATION-PLAN.md, all governed files. An agent scoping work from this line would miss them; ai-editor to update.] -->
 
 ## Hard rules for agents
 

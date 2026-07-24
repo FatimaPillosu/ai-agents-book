@@ -70,6 +70,7 @@ Citations that fail any of the three are removed or returned for correction; the
 
 The gate's residual risk turns on its design, which 2026 work now measures.
 A preprint that year, testing machine-drafted citations across four scientific domains, found only 50.9% of entries fully correct even where 83.6% of individual fields were right, while a two-stage design — draft a citation, then resolve it deterministically against bibliographic services — lifted fully correct entries to 78.3% and cut tool-introduced errors to 0.8%, from 4.8% for a one-stage integration (Rao and Callison-Burch, 2026).
+[ai-reviewer: this two-sentence insertion stands as its own paragraph, well below STYLE.md §2's developed-paragraph span, and R2's G6 asked for new evidence to be attached to the existing argument rather than left free-standing. The fix is to integrate it into the adjoining gate paragraph (§5.3) so the claim–evidence flow is continuous. The same stub-paragraph pattern recurs in the R2 additions at ch08 §8.5 (the WP-MIP paragraph plus its two-sentence coda) and ch09 §9.4 (the two closing 2026-evidence paragraphs) — worth one harmonising pass by ai-writer.]
 
 The fourth stage is human interpretation, and it is deliberately the stage the pipeline does not automate.
 You read the verified, grounded draft and perform the interpretive act — weighing the strength of the evidence, resolving where sources genuinely conflict, telling robust findings from often-repeated ones, and deciding what the assembled record implies for the question that started the search.

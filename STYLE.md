@@ -72,6 +72,7 @@ Explain every demanding term the first time it does real work in a chapter, usin
 ```
 
 Conventions: (a) box a term **once per chapter**, at first substantive use, not on every appearance; (b) every boxed term is also collected in `manuscript/GLOSSARY.md`, which is the single place a reader can look the word up anywhere; (c) keep boxes to two or three sentences; (d) box genuine jargon (gate, tool call, context window, token, orchestration, provenance, prompt injection, least privilege, in-context learning, ensemble, and the like), not ordinary words; (e) British English inside boxes too. Boxes keep their natural layout rather than sentence-per-line (§10).
+<!-- [ai-reviewer: convention (a) is ambiguous and the manuscript has settled a different practice than its literal reading. "Once per chapter" can be read as requiring every chapter to box a term at its own first use; the practice adopted in R1 (per REVISION-PLAN §3/G3, endorsed on review) is to place the definitive box in the term's canonical-home chapter only, with later chapters relying on the glossary — e.g. ch15–ch17 use gate, roster and least privilege without re-boxing. ai-editor should reword (a) to state the canonical-home rule explicitly so a future writer does not "fix" the later chapters by adding duplicate boxes.] -->
 
 ## 10. Draft sentence-per-line format (unnumbered)
 
