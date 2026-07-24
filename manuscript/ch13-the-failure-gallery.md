@@ -30,6 +30,9 @@ The danger for science is specific and severe: a fabricated reference is plausib
 The most rigorous quantification I know had two models of the 2023 generation, one markedly stronger than the other, produce short literature reviews and then checked every reference by hand: more than half of the weaker model's citations were wholly fabricated and close to a fifth of the stronger model's were, while a large share of even the *real* citations carried wrong volumes, pages or dates (Walters and Wilder, 2023).
 This is not a solved, 2023-vintage problem either — two years on, across eight assistants and four hundred requests, roughly two-fifths of the references asked for were still erroneous or invented, with the rate varying sharply by system and by field (Cabezas-Clavijo and Sidorenko-Bautista, 2025).
 In the standard taxonomy of the failure this is *factual fabrication* — output that conflicts with verifiable world knowledge — as distinct from the faithfulness failures that matter more in retrieval-grounded work (Huang et al., 2023).
+The strongest 2026 evidence comes not from prompting a model and checking it but from papers that had already passed review: an audit of one elite machine-learning venue found 100 fabricated citations across 53 papers accepted there in 2025, each having passed three to five expert reviewers — roughly 1% of accepted papers, a single-venue, single-year figure (Ansari, 2026; itself, with some irony, an unreviewed preprint).
+They sorted into five modes led by total fabrication (66%) and partial corruption of a real work's details (27%), with identifier hijacking — a real identifier stitched onto a fake reference — a distinct mode.
+Most telling, the contamination was usually only one or two citations in a whole paper, small enough for expert plausibility reading to miss — exactly why the check must be mechanical rather than a careful read.
 Chapter 5 built its entire synthesis pattern around the refusal to let the model be the source of its own citations, and Chapter 9 named fabrication first among the failure modes of the manuscript stage; this chapter states the general check that both rely on.
 
 [AUTHOR: a real, anonymised example of a fabricated citation you caught — the plausible-but-nonexistent reference, the claim it was propping up, and the moment the resolver returned nothing.]
@@ -241,6 +244,7 @@ The mode follows directly from the anatomy of Chapter 2: an agent's working cont
 It is common in exactly the long, valuable workflows I have been encouraging — a multi-day reprocessing, a synthesis over many documents, a pipeline with many stages — and it is compounded in the multi-agent workflows of Chapter 10, where information has to survive being handed between agents whose contexts do not overlap.
 That handoff is one of the failure families the large multi-agent study isolates: information lost or withheld as it passes between steps, which it finds among the commonest breakdowns in multi-agent runs (Cemri et al., 2025).
 The characteristic signature is an output that contradicts a constraint the workflow certainly established earlier, delivered with no sign that the constraint was ever known.
+The same silent-truncation failure is independently named in practitioner commentary: a large input is often only partly read and then answered fluently with no warning, so an explicit "file too big" error is the better outcome, because it is at least visible (practitioner commentary).
 
 > **In plain terms — Context loss.** An agent's working memory is finite and imperfect, so a
 > constraint set early, a correction made ten steps ago, or an intermediate result can simply
@@ -369,8 +373,10 @@ The gallery's proper use is as a checklist of failures to design against from th
 
 ### References (verify details before release)
 
+- Ansari, M. S. (2026). Compound deception in elite peer review: a failure mode taxonomy of 100 fabricated citations at NeurIPS 2025. *arXiv preprint* **[verify]**. https://arxiv.org/abs/2602.05930
 - Cabezas-Clavijo, Á., & Sidorenko-Bautista, P. (2025). Assessing the performance of 8 AI chatbots in bibliographic reference retrieval. *arXiv preprint*; to appear in *Journal of Data and Information Science* (2026) **[verify]**. https://arxiv.org/abs/2505.18059
 - Cemri, M., Pan, M. Z., Yang, S., et al. (2025). Why do multi-agent LLM systems fail? *arXiv preprint* **[verify venue]**. https://arxiv.org/abs/2503.13657
+- Davis, D. (2026). "Claude Confidently Skipped Half Your Document and Didn't Tell You." Video, @dylandavisai, 16 May 2026. https://www.youtube.com/watch?v=ueNx7Wj9Rx4 (practitioner commentary; concepts cited as corroboration, not evidence)
 - Huang, L., Yu, W., et al. (2023). A survey on hallucination in large language models: principles, taxonomy, challenges, and open questions. *arXiv preprint*; journal version in *ACM Transactions on Information Systems* (2025) **[verify journal DOI]**. https://arxiv.org/abs/2311.05232
 - Sharma, M., Tong, M., Korbak, T., Duvenaud, D., Askell, A., Bowman, S. R., et al. (2023). Towards understanding sycophancy in language models. *ICLR 2024*. https://arxiv.org/abs/2310.13548
 - Walters, W. H., & Wilder, E. I. (2023). Fabrication and errors in the bibliographic citations generated by ChatGPT. *Scientific Reports*, 13, 14045. https://doi.org/10.1038/s41598-023-41032-5
