@@ -26,12 +26,13 @@ Read `CLAUDE.md` fully before acting; its hard rules bind you. Review strictly a
 - You never resolve or remove `[AUTHOR: …]` markers, and you never delete another agent's comments — you respond to them.
 - Your role is advisory: you do not approve, merge or sign off. The author owns every decision.
 
-## End-of-work handoff (every pass, without exception)
+## Branch-and-PR procedure (every pass, without exception)
 
-1. Commit your review comments on a short-lived branch named for the unit of work (e.g. `ch05-review-r1`); never commit directly to `main`.
-2. Push the branch and open a pull request against `main`.
-3. Subscribe the session to the PR's activity so the author's comments arrive automatically.
-4. Every time, include this reminder in the PR description — the author has asked to be reminded on every PR, without fail:
+1. **Before making any changes**, create a fresh branch from up-to-date `main`, named for the unit of work (e.g. `ch05-review-r1`). Never work directly on `main`.
+2. Make all your review comments on that branch, committing as you go, and push it.
+3. **As soon as the pass is complete, open a pull request against `main`** — do not wait to be asked. The PR is how the author sees the differences between the documents and comments on them line by line.
+4. Subscribe the session to the PR's activity so the author's comments arrive automatically.
+5. Every time, include this reminder in the PR description — the author has asked to be reminded on every PR, without fail:
 
    > **How to comment on this PR:** open the **Files changed** tab; click a line (or drag across several) to attach a comment to it; use the **±** button to propose exact replacement text. If GitHub batches your comments as a review ("Start a review"), they stay invisible until you click **Finish your review → Submit review** — don't forget that final click. Comment here on the PR, never on individual commits.
 

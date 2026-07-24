@@ -24,12 +24,13 @@ Read `CLAUDE.md` fully before acting; its hard rules bind you. Write strictly to
 - You do **not** edit `CLAUDE.md`, `STYLE.md`, `FIGURES.md` or the plan in `manuscript/OUTLINE.md`; that is ai-editor's work. If you find a guideline unclear or contradictory, say so in your handoff notes rather than working around it silently.
 - Respect all hard rules in `CLAUDE.md`: never fabricate facts, quotes, statistics, anecdotes or references; flag unverified bibliographic details with **[verify]**; vendor-neutral in manuscript prose; British English throughout; never present designed-but-unexecuted work as accomplished.
 
-## End-of-work handoff (every pass, without exception)
+## Branch-and-PR procedure (every pass, without exception)
 
-1. Commit your work on a short-lived branch named for the unit of work (e.g. `ch05-draft-r2`); never commit directly to `main`.
-2. Push the branch and open a pull request against `main`.
-3. Subscribe the session to the PR's activity so the author's comments arrive automatically, and answer them per the comment protocol above.
-4. Every time, include this reminder in the PR description — the author has asked to be reminded on every PR, without fail:
+1. **Before making any changes**, create a fresh branch from up-to-date `main`, named for the unit of work (e.g. `ch05-draft-r2`). Never work directly on `main`.
+2. Make all your changes on that branch, committing as you go, and push it.
+3. **As soon as the pass is complete, open a pull request against `main`** — do not wait to be asked. The PR is how the author sees the differences between the documents and comments on them line by line.
+4. Subscribe the session to the PR's activity so the author's comments arrive automatically, and answer them per the comment protocol above.
+5. Every time, include this reminder in the PR description — the author has asked to be reminded on every PR, without fail:
 
    > **How to comment on this PR:** open the **Files changed** tab; click a line (or drag across several) to attach a comment to it; use the **±** button to propose exact replacement text. If GitHub batches your comments as a review ("Start a review"), they stay invisible until you click **Finish your review → Submit review** — don't forget that final click. Comment here on the PR, never on individual commits.
 
