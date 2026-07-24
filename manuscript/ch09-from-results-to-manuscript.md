@@ -104,6 +104,13 @@ This matters because practice is genuinely unsettled: a 2025 survey of some five
 Because the specifics move, the print states the classes and the reasoning while the repository holds a current, dated summary of representative policies and a template disclosure statement mapped to each class **[AUTHOR: maintain the policy summary in the repository and date every entry; cite it here rather than naming any publisher's current policy in print]** **[verify: confirm the authorship-barred position against the current guidance of the major publishers and the main research-integrity bodies at time of release]**.
 The stance throughout is conservative — disclose more rather than less, treat the absence of a policy as a reason to apply best practice rather than a licence to skip disclosure, and never enter a confidential manuscript under review into a system whose data handling the reviewer's institution has not sanctioned — which is also, almost word for word, what European research-funder guidance now asks: the researcher stays responsible for all output, must verify AI-generated results, and should disclose substantial use (European Commission living guidelines, 2024, updated 2026) (moderate-to-high confidence).
 
+The 2026 evidence sharpens this split between the stable class and the volatile ones.
+A major publisher's June 2026 policy again confines authorship to humans and holds each author accountable for the whole work, while drawing a concrete disclosure threshold: routine grammar and spelling checking needs no declaration, but any substantive change to a text's structure or content must be declared, naming the tool and its purpose, and a reviewer may make narrow, private, non-retaining use on their own report — sharper than the blanket prohibition some funders keep (Elsevier, 2026; a policy page, specifics volatile per the repository rule).
+A peer-reviewed 2026 systematic review of sixty sources reads it the same way: prohibition of machine authorship is universal, disclosure practice varies enormously by discipline, and prevailing frameworks are fragmented and reactive rather than settled (Slimi, 2026).
+
+The strongest 2026 capability evidence leaves that rule intact: end-to-end research automation is now peer-reviewed — a fully machine-generated paper was accepted at a workshop-tier venue, its own authors stating the system cannot yet meet top-tier standards, naming hallucinated and inaccurately cited content among its failure modes, and warning that automated submission at scale could overwhelm peer review (Lu et al., 2026).
+That a machine can draft a whole paper changes nothing about who is accountable: agents draft under author control and are never authors.
+
 **Figure 9.3 — Disclosure decision (flowchart).** *A figure brief follows `FIGURES.md`; render in the house style.*
 
 ```
@@ -197,6 +204,9 @@ The division of labour is deliberate, as everywhere in the book: the print state
 ## References
 
 - Nature (editorial) (2023). "Tools such as ChatGPT threaten transparent science; here are our ground rules for their use." *Nature*, 613, 612. DOI: 10.1038/d41586-023-00191-1.
+- Elsevier (2026). "Generative AI policies for journals." Elsevier editorial policy page, updated June 2026. https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals **[verify: specifics volatile; confirm at citation time]**.
 - Naddaf, M. (2025). "Is it OK for AI to write science papers? Nature survey shows researchers are split." *Nature* news feature, reporting a survey of ~5,000 researchers. https://www.nature.com/articles/d41586-025-01463-8 **[verify: author byline and survey figures at citation time]**.
 - National Institutes of Health (2023). "The Use of Generative Artificial Intelligence Technologies is Prohibited for the NIH Peer Review Process." NIH Guide Notice NOT-OD-23-149. https://grants.nih.gov/grants/guide/notice-files/NOT-OD-23-149.html **[verify: current NIH AI-in-review policy at citation time]**.
 - European Commission, Directorate-General for Research and Innovation (2024, updated 8 May 2026). "Living guidelines on the responsible use of generative AI in research." European Research Area. https://research-and-innovation.ec.europa.eu/document/download/2b6cf7e5-36ac-41cb-aab5-0d32050143dc_en **[verify: provisions of the 2026 update against the updated text]**.
+- Lu, C., Lu, C., Lange, R. T., Yamada, Y., Hu, S., Foerster, J., Ha, D. and Clune, J. (2026). "Towards end-to-end automation of AI research." *Nature*, 651(8107), 914–919. DOI: 10.1038/s41586-026-10265-5.
+- Slimi, Z. (2026). "A systematic critical review of generative AI's impact on authorship, pedagogy, and integrity (2023–2025)." *Frontiers in Education*, 11. DOI: 10.3389/feduc.2026.1769680.

@@ -211,6 +211,7 @@ The defence is not more tests written by the same agent but tests written agains
 This is the same principle Chapter 11 builds its evaluation methods on, and the plausible failure Chapter 1 named: verification has to be external to the thing it verifies.
 It is worth being honest that even execution-based gates are not exempt from it.
 Audits of the very benchmarks that grade coding agents have found that insufficient test coverage lets some wrong solutions pass as correct — an execution-grounded gate still has a false-negative rate, and that rate is set by the quality of the tests behind it (Zhu et al., 2025).
+That audit has since been automated and scaled up: an agentic auditor applied to 168 benchmarks found defects — ambiguous tasks, environment conflicts, incorrect ground truth — in more than a quarter of the tasks it examined, and removing the flawed ones shifted two widely used coding-benchmark scores by roughly ten percentage points (Wang et al., 2026; a 2026 preprint, and a coding-domain figure rather than a universal rate).
 A green suite tells you the code does what the suite asserts; it tells you nothing about whether the suite asserts the right thing (high confidence; this is the dominant failure mode of agent-written code).
 
 The second failure mode is silent behavioural drift, in which a pipeline keeps running and producing plausible output while its behaviour changes underneath it.
@@ -295,4 +296,5 @@ The exercises for this chapter, in `/exercises`, ask you to take one of your own
 ### References (verify details before release)
 
 - Jimenez, C. E., Yang, J., Wettig, A., Yao, S., Pei, K., Press, O. and Narasimhan, K. (2023). SWE-bench: can language models resolve real-world GitHub issues? *ICLR 2024*. https://arxiv.org/abs/2310.06770
+- Wang, J., Bianchi, F., Zhu, S., Nie, F., Kwon, Y., Dhingra, B. and Zou, J. (2026). Automated benchmark auditing for AI agents and large language models. *arXiv preprint*. https://arxiv.org/abs/2605.26079
 - Zhu, Y., Jin, T., Pruksachatkun, Y., et al. (2025). Establishing best practices for building rigorous agentic benchmarks. *arXiv preprint*. https://arxiv.org/abs/2507.02825
