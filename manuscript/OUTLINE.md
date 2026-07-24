@@ -1,6 +1,8 @@
-# Agentic AI for Environmental Science — Working Outline (v0.4)
+# Agentic AI for Environmental Science — Working Outline (v0.5)
 
-**Format:** single e-book volume, target ≈150 pages · **Audience:** environmental and geoscientists · **Date:** 23 July 2026
+**Format:** single e-book volume, target ≈150 pages · **Audience:** environmental and geoscientists · **Date:** 24 July 2026
+
+**Changes from v0.4:** all 17 chapters now drafted first-pass; **revision pass R1 under way**, governed by `manuscript/REVISION-PLAN.md` (STYLE.md v2.0 revoicing of every chapter, de-duplication to canonical homes, Ch. 11 rebuild, front matter and glossary, mechanical fixes). Chapter anatomy rescoped: the full template binds **Part II only**, while Ch. 11 and Ch. 12 each still carry a verification checklist and a repository pointer (§6). Ch. 11 synopsis extended to cover building a task-grounded evaluation set and measuring the gates themselves (§7). Ch. 13 now specifies six annotated failure traces, one per failure mode (§7). References policy decided: citations only from the verified `/research` reports; annotated further reading in the back matter (§9). Overall length reduction deferred; companion-repository build-out parked until the book is finalised (§9).
 
 **Changes from v0.3:** budgets restated as indicative guidance rather than fixed targets; build toolchain deferred (manuscript is plain Markdown; no layout, licence or DOI fixed yet — these are decisions for later, not open gates); figures now governed by `FIGURES.md` (house infographic style, generated from figure briefs) in place of diagrams-as-code; the abstract "zero-budget path" removed as a standalone open question — low-resource and open-weight working is addressed concretely in Ch. 14 and Ch. 16; internal count of Part II corrected (five core patterns plus a composing capstone); vendor-neutral naming promoted to decided; pre-flight process items set aside as not-yet-needed; working title remains open.
 
@@ -49,7 +51,7 @@ Per-chapter page figures in §7 are indicative allocations, useful for balance, 
 
 ## 6. Chapter anatomy and visual grammar
 
-**Anatomy (repeated template, Parts II–III):** problem → conventional workflow → agentic redesign → worked example → failure modes → verification checklist → repository pointer (runnable example and optional exercises).
+**Anatomy (repeated template, Part II):** problem → conventional workflow → agentic redesign → worked example → failure modes → verification checklist → repository pointer (runnable example and optional exercises). The full anatomy binds Part II (Ch. 5–10) only. Part III chapters follow their own structure, but **Ch. 11 and Ch. 12 each still carry a verification checklist and a repository pointer**; Ch. 13 is organised as failure–check pairs and is exempt. All verification checklists follow the standard bulleted, printable format defined in `REVISION-PLAN.md` §2.
 
 **Visual grammar:** governed by `FIGURES.md`. Fixed iconography (human · agent · tool · data store · gate · reviewer) with one icon-key figure in the front matter; five canonical figure types — architecture, sequence, decision flowchart, before/after workflow, annotated failure trace; every figure described as a brief and rendered in the shared house style. Standard set per pattern chapter: one architecture, one sequence, one before/after, one or two example figures.
 
@@ -85,11 +87,11 @@ Five core patterns spanning the research lifecycle (Ch. 5–9), then a capstone 
 
 ### Part III — Trust (≈29 pp)
 
-**Ch. 11 — Verification and evaluation (≈9 pp).** Task-grounded evaluation over leaderboard benchmarks; a five-tier evidential hierarchy for workflow claims (after Klemeš; Refsgaard & Henriksen; Jakeman et al.; Oberkampf & Trucano) adapted to agentic outputs.
+**Ch. 11 — Verification and evaluation (≈9 pp).** Task-grounded evaluation over leaderboard benchmarks; a five-tier evidential hierarchy for workflow claims (after Klemeš; Refsgaard & Henriksen; Jakeman et al.; Oberkampf & Trucano) adapted to agentic outputs; building a task-grounded evaluation set from one's own workflow; measuring the gates themselves — false-negative rates by seeded-defect testing, and the yield diagnostic (delivers the measurement material promised by Ch. 5 §5.7 and Ch. 10). Worked example: an evaluation set and gate measurement from the author's own practice. Verification checklist and repository pointer per §6.
 
 **Ch. 12 — Provenance, governance and security (≈10 pp).** Assumption and uncertainty registries; audit trails; reviewer-coverage records; documentation that survives staff turnover. Security section: prompt injection; credential and data handling when agents touch institutional systems and HPC; least-privilege tool access; what institutional IT will ask.
 
-**Ch. 13 — The failure gallery (≈10 pp).** A taxonomy with real, anonymised examples: fabricated citations, silent unit errors, specification drift, over-agreeable review, context loss, confident extrapolation — each paired with the check that catches it. Figures: 4–5 annotated failure traces (the fifth canonical type).
+**Ch. 13 — The failure gallery (≈10 pp).** A taxonomy with real, anonymised examples: fabricated citations, silent unit errors, specification drift, over-agreeable review, context loss, confident extrapolation — each paired with the check that catches it. The gallery is the canonical home for the anatomy of each failure mode; pattern chapters cross-reference it rather than re-describing. Figures: six annotated failure traces, one per failure mode (the fifth canonical type).
 
 ### Part IV — Case studies (≈20 pp)
 
@@ -113,13 +115,15 @@ Five core patterns spanning the research lifecycle (Ch. 5–9), then a capstone 
 
 ## 9. Status and decisions
 
-**Decided:** single ≈150-page volume · audience environmental/geosciences · self-published, free, LinkedIn-first · unified GitHub repository with newsletter as update channel · no formal index (hyperlinked ToC deferred to any build stage) · specification (Ch. 3) and manuscripts (Ch. 9) chapters in · exercises to the repository, not the page budget · cross-domain examples deferred to a second edition · manuscript written in plain Markdown · budgets are indicative guidance · vendor-neutral naming in print · figures governed by `FIGURES.md` in the house infographic style.
+**Status:** all 17 chapters drafted first-pass. Revision pass R1 under way per `REVISION-PLAN.md`: STYLE.md v2.0 revoicing throughout, de-duplication to canonical homes, Ch. 11 rebuild, front matter (`ch00`) and glossary expansion, standard checklists and status headers, mechanical fixes (Ch. 8 figure renumbering; Ch. 13 sixth failure trace; checklists and repository pointers for Ch. 11 and Ch. 12).
 
-**Deferred (decide later; not gates):** output/layout format and any build toolchain · licence · DOI/Zenodo · continuous-integration mechanism for runnable examples · the reflexive-production audit-trail mechanism · positioning re-scan, beta readers and release-channel limit checks (revisit nearer release).
+**Decided:** single ≈150-page volume · audience environmental/geosciences · self-published, free, LinkedIn-first · unified GitHub repository with newsletter as update channel · no formal index (hyperlinked ToC deferred to any build stage) · specification (Ch. 3) and manuscripts (Ch. 9) chapters in · exercises to the repository, not the page budget · cross-domain examples deferred to a second edition · manuscript written in plain Markdown · budgets are indicative guidance · vendor-neutral naming in print · figures governed by `FIGURES.md` in the house infographic style · STYLE.md v2.0 voice retroactive across all chapters (24 Jul 2026) · de-duplication now — one canonical home per recurring idea, short cross-references elsewhere (24 Jul 2026) · references policy — key claims cited from verified sources in the `/research` reports (DOI/URL per source), annotated further reading in the back matter, no citation from agent memory (24 Jul 2026) · full chapter anatomy binds Part II only, Ch. 11 and Ch. 12 still owing verification checklists and repository pointers (24 Jul 2026).
+
+**Deferred (decide later; not gates):** output/layout format and any build toolchain · licence · DOI/Zenodo · continuous-integration mechanism for runnable examples · the reflexive-production audit-trail mechanism · positioning re-scan, beta readers and release-channel limit checks (revisit nearer release) · overall length reduction — current length stands; a future pass will consider cuts (24 Jul 2026).
 
 **Open:** working title.
 
-**Parked (author's direction; on record, not a gate):** permissions/IP for case studies and failure-gallery examples.
+**Parked (author's direction; on record, not a gate):** permissions/IP for case studies and failure-gallery examples · companion-repository build-out — out of scope for revision pass R1; to be sorted when the book is finalised (24 Jul 2026).
 
 ## 10. Deferred to a second edition
 
