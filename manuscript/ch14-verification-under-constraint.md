@@ -37,6 +37,8 @@ Anything that reasons over the observations must therefore execute locally, with
 > own network, with nothing sent to an outside service. That is the opposite of a hosted model,
 > which you can only reach by sending your input over the network to someone else's computer.
 
+The same two conclusions circulate independently in practitioner commentary: telling a cloud model not to read or transmit something is a behavioural safeguard that can be silently violated, so only an architectural boundary — no network path — is reliable, and an offline local model that triages material into risk tiers before anything external is contacted is exactly this toolkit's tiered pattern (practitioner commentary, 2026).
+
 The second constraint is minimal compute, because the partner environments in view here are not equipped with the accelerators or the memory that a large hosted model assumes, and a toolkit that demands them would simply not run where it is needed **[AUTHOR: specify the representative hardware the toolkit was required to run on — CPU-only versus a single consumer GPU, approximate memory, whether an internet connection was available at all]**.
 The third constraint is the absence of any recurring budget: the toolkit had to keep working after the project that funded its construction ended, without per-query charges, subscription renewals or licence fees that a partner with no dedicated software budget could not sustain (moderate-to-high confidence that this is decisive for adoption; the cost reasoning is developed in Chapter 16).
 These three constraints converge on a common conclusion.
@@ -230,4 +232,5 @@ The connection back to the rest of the book is direct: this chapter is Chapter 1
 - Lang, S., Alexe, M., Chantry, M., et al. (2024). AIFS — ECMWF's data-driven forecasting system. *arXiv preprint* **[verify journal version]**. https://arxiv.org/abs/2406.01465
 - Jolliffe, I. T., & Stephenson, D. B. (eds.). *Forecast Verification: A Practitioner's Guide in Atmospheric Science*. Wiley. **[verify: edition and year]**
 - Wilks, D. S. *Statistical Methods in the Atmospheric Sciences*. Academic Press / Elsevier. **[verify: edition and year]**
+- Nate B Jones (2026). "I Cut the Internet and Let AI Read the File I Could Never Upload." Video, @natebjones, 19 July 2026. https://www.youtube.com/watch?v=5slsNizN6MQ (practitioner commentary; concepts cited as corroboration, not evidence)
 - **[AUTHOR: add the specific verification-methodology references the toolkit's scores are drawn from — e.g. the primary sources for the fractions skill score and the continuous ranked probability score — and any WMO data-policy document cited for the sovereignty constraint.]**

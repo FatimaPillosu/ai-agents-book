@@ -19,6 +19,7 @@ The honest limitation to concede at the outset is that one executed workflow is 
 This is not an alien discipline imported into environmental science; it is close to how the field already absorbs powerful new methods.
 When an operational forecasting centre took a data-driven weather model into production in early 2025, it did so by running the new model in parallel with its physics-based system, verifying it in operational-like conditions, and operationalising it in stages rather than all at once (Lang et al., 2024).
 Governance came first and capability second, which is the same order I follow below — and a reassuring precedent, because the institutions that adopt AI this way are precisely the conservative, verification-obsessed ones this book is written for.
+The discipline now reaches agent-designed systems too: a 2026 preprint benchmarked an agent-designed seasonal streamflow forecaster against the responsible government agency's operational forecasts across several years before making any claim of skill (Lopez-Gomez et al., 2026) — the same prove-it-before-you-claim-it protocol this chapter's publication run demands.
 
 The governed lifecycle I follow has five stages, and Figure 15.1 sets them out as one architecture before the sections examine each in turn.
 The five are: a specification written to the seven-field schema of Chapter 3; a roster of agent roles derived from that specification by the procedure of Chapter 10; a set of gates and registries, drawn from Chapter 12, through which every unit of work must pass; an independent review conducted by an actor with no stake in the work reviewed; and a publication run, governed as Chapter 9 requires, in which the provenance accumulated upstream feeds the disclosure statement and no agent stands as an author.
@@ -200,6 +201,7 @@ Report-sourced references carry a DOI or URL and are drawn from the verified swe
 - Ben Bouallègue, Z., et al. (2024). The rise of data-driven weather forecasting: a first statistical assessment of machine learning-based weather forecasts in an operational-like context. *Bulletin of the American Meteorological Society*, 105(6). DOI: 10.1175/BAMS-D-23-0162.1
 - European Commission, Directorate-General for Research and Innovation (2024; updated 8 May 2026). Living guidelines on the responsible use of generative AI in research (European Research Area). https://research-and-innovation.ec.europa.eu/document/download/2b6cf7e5-36ac-41cb-aab5-0d32050143dc_en **[verify the 2026 update's provisions against the updated PDF before release]**
 - Lang, S., Alexe, M., Chantry, M., et al. (2024). AIFS — ECMWF's data-driven forecasting system. *arXiv preprint* **[verify journal version]**. https://arxiv.org/abs/2406.01465
+- Lopez-Gomez, I., Brenner, M. P., & Schneider, T. (2026). Probabilistic seasonal streamflow forecasting across California's Sierra Nevada watersheds with agentic AI. *arXiv preprint* **[verify venue]**. https://arxiv.org/abs/2605.16178
 - Nature (editorial) (2023). Tools such as ChatGPT threaten transparent science; here are our ground rules for their use. *Nature*, 613, 612. DOI: 10.1038/d41586-023-00191-1
 
 ---
