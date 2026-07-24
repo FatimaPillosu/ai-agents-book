@@ -1,7 +1,7 @@
 # Chapter 1 — Why agents, why now
 
-> **Status:** draft (voice v2.0 — personal/conversational; info-boxes per `STYLE.md` §9; sentence-per-line prose per §10) · figures specified as briefs per `FIGURES.md`.
-> **Conventions:** vendor-neutral per outline §9. Lived material and figures to check are tagged **[AUTHOR: …]** and **[verify]**. The three references are real; verify details before release. Nothing has been invented.
+> **Status:** draft r2 · voice v2.0 (`STYLE.md`) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 
 ---
 
@@ -38,7 +38,7 @@ From roughly 2023, models became reliable enough to produce a valid call to a de
 It matters for science because it lets a model hand its own weak points to tools that don't share them: arithmetic goes to the interpreter, retrieval goes to the database, and the model is left doing the planning and interpretation in between.
 The other pieces arrived alongside it: context long enough to hold a whole codebase or document set in view (2023–24), code generation checked against test suites (2024–25), the ability to operate ordinary software, and shared protocols for plugging models into tools and data (2024–25).
 None of these is an agent on its own; assembled, they give you a system with a model, some tools, a loop and a memory, able to carry a bounded task from instruction through to a checked result.
-You can even watch the trend in public numbers: on the most-cited software-engineering benchmark, the share of issues an agent could resolve on its own climbed from single figures in 2023 to above 70% by late 2025 [AUTHOR: verify the current figure; name the benchmark in the repository and keep the print claim coarse] — though, as I'll keep insisting, benchmark skill and real-workflow skill are not the same animal (Chapter 11).
+You can even watch the trend in public numbers: on a widely used software-engineering benchmark, the share of real-world coding issues an agent could resolve unaided rose from around 2% at the benchmark's introduction in 2023 (Jimenez et al., 2023) to figures several times higher by late 2025 [verify] — though, as I'll keep insisting, benchmark skill and real-workflow skill are not the same animal (Chapter 11).
 
 > **In plain terms — Tool call (structured action).** The moment an agent stops writing prose and instead issues a precise, machine-readable instruction — run this code, fetch this record, query this database — and then reads the result back. It is what lets a text model actually *do* things rather than only describe them.
 
@@ -153,7 +153,7 @@ A far better guide than "how hard does this look" is the gap between how much it
 Where checking is cheap and mechanical — code judged by a test suite, an extraction validated against a schema, a format conversion confirmed by a checksum and a round trip — an imperfect generator is operationally safe, because its mistakes are caught cheaply and its successes arrive in bulk; and those are exactly the tasks on the reliable side of today's frontier: code generation and repair, format translation, structured extraction, first-pass literature triage, draft documentation.
 Where checking is expensive, slow or subjective — a claim at the research frontier, an interpretive synthesis, an anomaly whose meaning depends on context the system doesn't hold — fluent output stays dangerous no matter how capable the model, and no amount of benchmark progress moves it across.
 Two more things belong in any honest boundary.
-Models remain poor judges of their own correctness, which is why every check in this book lives outside the thing being checked (high confidence in the principle; the size of the effect varies by model and task).
+Models remain poor judges of their own correctness, which is why every check in this book lives outside the thing being checked — a principle I keep returning to and develop properly in Chapter 11 (high confidence in the principle; the size of the effect varies by model and task).
 And multi-step arithmetic done in prose, rather than handed to a tool, fails often enough that delegating it should be a rule, not a preference.
 [AUTHOR: a short account of a plausible-but-wrong failure you personally caught — silent, fluent, and completely mistaken — would anchor this section better than any general claim.]
 
@@ -175,6 +175,7 @@ I'm candid throughout that my examples come from one corner of the environmental
 
 ### References (verify details before release)
 
-- Brown, T. B., et al. (2020). Language models are few-shot learners. *Advances in Neural Information Processing Systems 33*.
-- Dell'Acqua, F., et al. (2023). Navigating the jagged technological frontier: field experimental evidence of the effects of AI on knowledge worker productivity and quality. *Harvard Business School Working Paper 24-013*.
-- Vaswani, A., et al. (2017). Attention is all you need. *Advances in Neural Information Processing Systems 30*.
+- Brown, T. B., et al. (2020). Language models are few-shot learners. *Advances in Neural Information Processing Systems 33*. [verify]
+- Dell'Acqua, F., et al. (2023). Navigating the jagged technological frontier: field experimental evidence of the effects of AI on knowledge worker productivity and quality. *Harvard Business School Working Paper 24-013*. [verify]
+- Jimenez, C. E., Yang, J., Wettig, A., Yao, S., Pei, K., Press, O. and Narasimhan, K. (2023). SWE-bench: can language models resolve real-world GitHub issues? *ICLR 2024*. https://arxiv.org/abs/2310.06770
+- Vaswani, A., et al. (2017). Attention is all you need. *Advances in Neural Information Processing Systems 30*. [verify]
