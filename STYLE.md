@@ -2,7 +2,7 @@
 
 **v2.0 · 23 July 2026** · Maintained alongside the book project; applies to all drafted prose unless a specific brief overrides it.
 
-**Change from v1.1 (major):** the register moves from formal-academic to **personal and conversational while keeping full intellectual weight** (§1–§2). Two mechanisms are added: **info-boxes** that explain technical terms in plain language (§9), and a **draft line-numbering format** — one sentence per numbered line, restarting each paragraph — so the author can comment on precise lines (§10). Integrity, evidence, British English and vendor-neutrality are unchanged.
+**Change from v1.1 (major):** the register moves from formal-academic to **personal and conversational while keeping full intellectual weight** (§1–§2). Two mechanisms are added: **info-boxes** that explain technical terms in plain language (§9), and a **sentence-per-line draft format** — unnumbered; precise line references come from the pull-request review view instead (§10). Integrity, evidence, British English and vendor-neutrality are unchanged.
 
 ## 1. Voice and stance
 
@@ -40,7 +40,7 @@ Vendor-neutral in print: capability classes and approximate years in the text, w
 
 ## 7. Pre-submission checklist
 
-Before a draft is returned: (1) every paragraph opens with a clear, real claim (conversational is fine, fragments are not); (2) the voice is personal and human but the weight of the topic is intact — no banalisation; (3) every demanding term is explained in plain language or an info-box at first substantive use; (4) substantive claims carry certainty flags; (5) numbers replace adjectives wherever the evidence allows; (6) British spellings throughout; (7) all unverified material is marked and none invented; (8) the draft is line-numbered per §10.
+Before a draft is returned: (1) every paragraph opens with a clear, real claim (conversational is fine, fragments are not); (2) the voice is personal and human but the weight of the topic is intact — no banalisation; (3) every demanding term is explained in plain language or an info-box at first substantive use; (4) substantive claims carry certainty flags; (5) numbers replace adjectives wherever the evidence allows; (6) British spellings throughout; (7) all unverified material is marked and none invented; (8) the draft is sentence-per-line per §10, with no numeric prefixes.
 
 ## 8. Condensed prompt block
 
@@ -57,8 +57,8 @@ context → evidence → implication → limitation, varied sentence length. Num
 adjectives; certainty flags (high/moderate/low confidence) folded in naturally. Explain
 every demanding term in plain language or an INFO-BOX at first substantive use, and add
 the term to the glossary. Never fabricate: mark lived material [AUTHOR: …] and unverified
-figures [verify]. Vendor-neutral. Then line-number the prose: one sentence per line,
-numbered from 1, restarting at every paragraph (see STYLE.md §10).
+figures [verify]. Vendor-neutral. Write the prose one sentence per line, unnumbered, with a blank
+line between paragraphs (see STYLE.md §10).
 ```
 
 ## 9. Info-boxes (plain-language term boxes)
@@ -71,21 +71,21 @@ Explain every demanding term the first time it does real work in a chapter, usin
 > work moves on; fail, and it loops back. Nothing proceeds just because it looks right.
 ```
 
-Conventions: (a) box a term **once per chapter**, at first substantive use, not on every appearance; (b) every boxed term is also collected in `manuscript/GLOSSARY.md`, which is the single place a reader can look the word up anywhere; (c) keep boxes to two or three sentences; (d) box genuine jargon (gate, tool call, context window, token, orchestration, provenance, prompt injection, least privilege, in-context learning, ensemble, and the like), not ordinary words; (e) British English inside boxes too. Boxes are not line-numbered (§10).
+Conventions: (a) box a term **once per chapter**, at first substantive use, not on every appearance; (b) every boxed term is also collected in `manuscript/GLOSSARY.md`, which is the single place a reader can look the word up anywhere; (c) keep boxes to two or three sentences; (d) box genuine jargon (gate, tool call, context window, token, orchestration, provenance, prompt injection, least privilege, in-context learning, ensemble, and the like), not ordinary words; (e) British English inside boxes too. Boxes keep their natural layout rather than sentence-per-line (§10).
 
-## 10. Draft line-numbering format
+## 10. Draft sentence-per-line format (unnumbered)
 
-Line-number the body prose so the author can comment on exact lines, and restart the numbering at every paragraph so paragraphs stay independent and can be drafted or revised in parallel. The format is one sentence per line, each line prefixed with its number and a single space, starting at `1` in every paragraph, with a blank line between paragraphs:
+Write body prose one sentence per line, with a blank line between paragraphs and no numeric prefixes. Line references for review come from the repository platform, not the source: the manuscript is reviewed through pull requests, whose file view numbers every line, so a comment anchors to an exact sentence without any numbering carried in the text. Paragraphs stay independent simply by being separated by blank lines:
 
 ```
 ### 1.1 Section heading
 
-1 First sentence of the paragraph sits on its own line.
-2 The second sentence follows, numbered 2.
-3 And so on to the end of the paragraph.
+First sentence of the paragraph sits on its own line.
+The second sentence follows on the next line.
+And so on to the end of the paragraph.
 
-1 The next paragraph restarts its count at 1.
-2 Its second sentence is line 2.
+The next paragraph begins after a blank line.
+Its sentences continue one per line.
 ```
 
-What is numbered: body prose paragraphs only. What is **not** numbered: headings, info-boxes, figure-brief blocks, block quotations, lists, captions, tables and the references section. Keep one sentence per line; a very long compound sentence may stay whole on its line rather than being split artificially. This is a drafting convention for the Markdown source during authoring and review; whether it survives into any later built output is a separate, deferred decision.
+What is sentence-per-line: body prose paragraphs only. What keeps its natural layout: headings, info-boxes, figure-brief blocks, block quotations, lists, captions, tables and the references section. A very long compound sentence may stay whole on its line rather than being split artificially. Markdown joins consecutive lines into a single paragraph in rendered output, so the convention is invisible to readers; it exists for drafting and review in the source, and whether any later built output needs re-flowing is a separate, deferred decision. (Earlier drafts carried explicit per-paragraph line numbers; that scheme is retired — do not add numeric prefixes.)

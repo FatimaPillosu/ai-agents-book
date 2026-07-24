@@ -1,6 +1,6 @@
 # Glossary — plain-language terms
 
-**Working glossary.** Every info-box in the book (`STYLE.md` §9) is collected here so a reader can look a word up from anywhere, not only where it first appears. Definitions are deliberately plain and warm; the precise treatment lives in the chapter that introduces the term. British English throughout. This file grows as each chapter is line-numbered and its terms boxed; entries below cover Chapter 1.
+**Working glossary.** Every info-box in the book (`STYLE.md` §9) is collected here so a reader can look a word up from anywhere, not only where it first appears. Definitions are deliberately plain and warm; the precise treatment lives in the chapter that introduces the term. British English throughout. This file grows as each chapter is revoiced and its terms boxed; entries below cover Chapters 1 and 7.
 
 ---
 
@@ -19,3 +19,5 @@
 **Verification gate (gate).** A checkpoint in a workflow where the agent's work has to pass a defined check before anything downstream is allowed to use it. Pass, and the work moves on; fail, and it loops back. Nothing proceeds just because it looks right.
 
 **Plausible failure.** The particular way these systems go wrong: not with an obvious error, but with an answer that is fluent, confident and completely wrong. Fluency and correctness are not the same thing here, which is why so much of this book is about checking.
+
+**Pull request (merge request).** A proposal to fold a set of changes into the shared main line of work, which the version-control platform presents as a line-by-line difference for review. Comments attach to the exact lines they concern, the author answers or revises, and nothing lands until the accountable owner accepts the result. In this book's workflows it is the surface on which a scientist reads, questions and finally signs off an agent's work.
