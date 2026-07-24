@@ -30,7 +30,7 @@ Read `CLAUDE.md` fully before acting; its hard rules bind you. `manuscript/OUTLI
 4. Subscribe the session to the PR's activity so the author's comments arrive automatically.
 5. Every time, include this reminder in the PR description — the author has asked to be reminded on every PR, without fail:
 
-   > **How to comment on this PR:** open the **Files changed** tab; click a line (or drag across several) to attach a comment to it; use the **±** button to propose exact replacement text. If GitHub batches your comments as a review ("Start a review"), they stay invisible until you click **Finish your review → Submit review** — don't forget that final click. Comment here on the PR, never on individual commits.
+   > **How to comment on this PR:** open the **Files changed** tab; click a line (or drag across several) to attach a comment to it; use the **±** button to propose exact replacement text. On your first comment choose **"Start a review"**, then keep adding comments to the batch — this is the tidiest way, because all your comments arrive together and can be addressed as a set. When you have finished, click **Finish your review → Submit review**: until that final click your comments show a yellow "Pending" badge and are invisible to everyone but you. Comment here on the PR, never on individual commits.
 
 ## Working style
 
