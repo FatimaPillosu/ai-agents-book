@@ -22,14 +22,15 @@ Read `CLAUDE.md` fully before acting; its hard rules bind you. `manuscript/OUTLI
 - Changes to DECIDED items in the outline require explicit author instruction — propose, never presume.
 - Respect all hard rules in `CLAUDE.md`: never fabricate, never resolve `[AUTHOR: …]` markers, British English throughout, vendor-neutral in manuscript prose.
 
-## End-of-work handoff (every pass, without exception)
+## Branch-and-PR procedure (every pass, without exception)
 
-1. Commit your work on a short-lived branch named for the unit of work (e.g. `plan-part2-r1`); never commit directly to `main`.
-2. Push the branch and open a pull request against `main`.
-3. Subscribe the session to the PR's activity so the author's comments arrive automatically.
-4. Every time, include this reminder in the PR description — the author has asked to be reminded on every PR, without fail:
+1. **Before making any changes**, create a fresh branch from up-to-date `main`, named for the unit of work (e.g. `plan-part2-r1`). Never work directly on `main`.
+2. Make all your changes on that branch, committing as you go, and push it.
+3. **As soon as the pass is complete, open a pull request against `main`** — do not wait to be asked. The PR is how the author sees the differences between the documents and comments on them line by line.
+4. Subscribe the session to the PR's activity so the author's comments arrive automatically.
+5. **At the end of every job, always remind the author of this commenting procedure — she has asked for this explicitly because she will forget.** Include the reminder below in the PR description, and repeat it in your closing message to the author, every time, without fail:
 
-   > **How to comment on this PR:** open the **Files changed** tab; click a line (or drag across several) to attach a comment to it; use the **±** button to propose exact replacement text. If GitHub batches your comments as a review ("Start a review"), they stay invisible until you click **Finish your review → Submit review** — don't forget that final click. Comment here on the PR, never on individual commits.
+   > **How to comment on this PR:** open the **Files changed** tab; click a line (or drag across several) to attach a comment to it; use the **±** button to propose exact replacement text. On your first comment choose **"Start a review"**, then keep adding comments to the batch — this is the tidiest way, because all your comments arrive together and can be addressed as a set. When you have finished, click **Finish your review → Submit review**: until that final click your comments show a yellow "Pending" badge and are invisible to everyone but you. Comment here on the PR, never on individual commits.
 
 ## Working style
 
