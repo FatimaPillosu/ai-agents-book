@@ -1,8 +1,10 @@
 # Author writing-style guide
 
-**v3.2 · 25 July 2026** · Binding for all drafted prose unless a specific brief overrides it.
+**v3.3 · 25 July 2026** · Binding for all drafted prose unless a specific brief overrides it.
 
-**Change from v3.1 (minor):** the **no-contractions** rule from the v2.1 lineage is reinstated on the author's instruction (§11): manuscript text never contracts ("has not", never "hasn't"); verbatim quotations are exempt. The v2.1 em-dash prohibition is **not** reinstated — the thesis register uses paired dashes for appositives (§4, §11) — and the manuscript remains impersonal (no "you"), per §1.
+**Change from v3.2 (minor):** the **no-em-dash-connector** rule from the v2.1 lineage is reinstated on the author's instruction: em dashes never join clauses or carry appositives and asides in manuscript text (§11); substitute a comma, colon, parentheses, a new sentence, or an introducing phrase. The dash survives only in fixed formats (headings and labels such as "Figure 1.1 — …" and "Definition — Gate"); en-dash ranges are unaffected. This is a deliberate house deviation from the thesis, which uses paired dashes for appositives; quoted thesis examples in this guide retain their original punctuation. §4 and §11 are amended accordingly.
+
+**Change from v3.1 (minor):** the **no-contractions** rule from the v2.1 lineage is reinstated on the author's instruction (§11): manuscript text never contracts ("has not", never "hasn't"); verbatim quotations are exempt. The manuscript remains impersonal (no "you"), per §1.
 
 **Change from v3.0 (minor):** the margin-note drafting mechanism is removed — the book will not use margin notes. The one-claim-per-paragraph discipline it enforced is retained in §2.
 
@@ -80,7 +82,7 @@ Announced counts are commitments: if the sentence says three advancements, exact
 
 > "However, this approach offers only a partial solution. Ensemble forecast spread can still be large, even at short-range lead times, and important small-scale flash flood-triggering rainfall events may still be missed."
 
-**Elaborate with the colon and the dash.** A colon introduces the specific content of an abstraction just named ("faces a fundamental obstacle: severe class imbalance between flash flood and non-flood events"); a pair of dashes carries an appositive definition or aside without breaking the sentence ("— a standardised assessment tool applicable to any flash flood prediction, whether rainfall-based or hydro-meteorological, physical or data-driven —"). Parentheses hold compact specifics: resolutions, date ranges, "(e.g., …)", "(i.e., …)".
+**Elaborate with the colon and the parenthesis.** A colon introduces the specific content of an abstraction just named ("faces a fundamental obstacle: severe class imbalance between flash flood and non-flood events"). Appositive definitions and asides are carried by commas or parentheses, never by em dashes (§11). Parentheses hold compact specifics: resolutions, date ranges, "(e.g., …)", "(i.e., …)".
 
 **Close with consequence.** The final sentence of a paragraph states an implication, a limitation, or the necessity it has established:
 
@@ -157,7 +159,7 @@ Cite only references known to be real; incomplete bibliographic details are flag
 
 ## 7. Pre-submission checklist
 
-Before a draft is returned: (1) every paragraph opens with a complete topic sentence stating a real claim — no fragments, no throat-clearing; (2) every paragraph carries exactly one claim, summarisable as a single nominal phrase, and the section's paragraph summaries read as its argument (§2); (3) paragraphs are developed (≈200–450 words) and move claim → context → evidence → qualification → implication, closing on consequence or limitation; (4) every "However" is resolved; every announced enumeration is completed with parallel grammar; (5) numbers replace adjectives wherever the evidence allows, and comparisons carry baselines; (6) claims are hedged once, precisely, with certainty flags on substantive claims; anomalies are confronted, not buried; (7) literature and prior art are synthesised, not listed; (8) roadmap, pointer sentences and cross-references are in place and each names what the destination contains; (9) no second person, no exclamation, no hype, no bullet-point argumentation in main prose; (10) British English throughout and no contractions outside verbatim quotations; every demanding term defined once at first substantive use (info-box where warranted, §9); (11) all unverified material is marked [AUTHOR:]/[verify] and none invented; (12) the draft is sentence-per-line per §10.
+Before a draft is returned: (1) every paragraph opens with a complete topic sentence stating a real claim — no fragments, no throat-clearing; (2) every paragraph carries exactly one claim, summarisable as a single nominal phrase, and the section's paragraph summaries read as its argument (§2); (3) paragraphs are developed (≈200–450 words) and move claim → context → evidence → qualification → implication, closing on consequence or limitation; (4) every "However" is resolved; every announced enumeration is completed with parallel grammar; (5) numbers replace adjectives wherever the evidence allows, and comparisons carry baselines; (6) claims are hedged once, precisely, with certainty flags on substantive claims; anomalies are confronted, not buried; (7) literature and prior art are synthesised, not listed; (8) roadmap, pointer sentences and cross-references are in place and each names what the destination contains; (9) no second person, no exclamation, no hype, no bullet-point argumentation in main prose; (10) British English throughout; no contractions outside verbatim quotations; no em dash used as a connector (fixed formats and en-dash ranges only, §11); every demanding term defined once at first substantive use (info-box where warranted, §9); (11) all unverified material is marked [AUTHOR:]/[verify] and none invented; (12) the draft is sentence-per-line per §10.
 
 ## 8. Condensed prompt block
 
@@ -174,7 +176,10 @@ hooks. Paragraphs 200–450 words, claim → context → evidence → qualificat
 implication, closing on "Hence/Consequently/Therefore …"; one claim per paragraph,
 summarisable as a single nominal phrase. Enumerate in prose ("two
 challenges: First… Second…") with parallel grammar; concede and resolve ("However…" is
-always answered); elaborate with colons and paired dashes. Numbers over adjectives with
+always answered); elaborate with colons and parentheses. No em dash as a connector in
+manuscript text: use a comma, colon, parentheses, a new sentence, or "e.g." / "i.e." /
+"such as" / "that is"; dashes only in fixed labels ("Figure 1.1 — …", "Definition —");
+en-dash ranges (2023–24) are fine. Numbers over adjectives with
 baselines ("a twenty-fold increase"); synthesise literature (set sources against each
 other), never list. Hedge once, precisely (may/suggests/remains untested); certainty
 flags (high/moderate/low confidence) on substantive claims; give rival interpretations
@@ -228,7 +233,9 @@ Sentence-per-line applies to body prose paragraphs only. Headings, info-boxes, f
 
 Do not open more than two consecutive paragraphs with the same connective, and never stack two contrast connectives in one sentence.
 
-**Punctuation.** Colon to introduce the content of an abstraction just named; paired dashes for appositive definitions and asides; semicolons to hold parallel items of an in-sentence list; parentheses for compact specifics ("(e.g., …)", "(i.e., …)", resolutions, periods, versions). Lists inside prose keep parallel grammar throughout.
+**Punctuation.** Colon to introduce the content of an abstraction just named; semicolons to hold parallel items of an in-sentence list; parentheses for compact specifics ("(e.g., …)", "(i.e., …)", resolutions, periods, versions) and for appositive definitions and asides. Lists inside prose keep parallel grammar throughout.
+
+**No em dashes as connectors.** The em dash never joins clauses, appends an afterthought or carries an aside in manuscript text (body prose, info-boxes, captions and alt-text alike). Substitute whichever is plainest of: a comma, a colon, parentheses, a new sentence, or an introducing phrase such as "e.g.", "i.e.", "such as" or "that is". The dash survives only in fixed formats: headings and labels ("Figure 1.1 — …", "Definition — Gate"), status headers, figure-brief fields and reference lists. En dashes in numeric and date ranges (2023–24, pp. 10–12) are unaffected. This is a deliberate house deviation from the thesis, which uses paired dashes for appositives; quoted thesis examples in this guide retain them, and [AUTHOR: …] markers are working notes outside the rule's scope.
 
 **British English throughout**, including captions, alt-text and repository docs: -ise endings, *whilst*, *amongst*, *behaviour*, *modelling*, *parametrisation*, *centre*; dates as "23 August 2021". Units and quantities are precise and SI; percentages, return periods, resolutions and lead times always take figures ("~31 km", "0.27%", "up to day 5").
 
