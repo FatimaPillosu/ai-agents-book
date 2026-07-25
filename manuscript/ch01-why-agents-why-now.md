@@ -7,18 +7,25 @@
 
 ## 1.1 The problem this book addresses
 
-If you want to know what has really changed in environmental science this past decade, don't look first at the models — look at the mismatch between how much there is to attend to and how little attention any of us actually has.
-The supply side has grown relentlessly: satellite programmes now deliver observations at rates measured in terabytes a day, the big model-intercomparison archives run to tens of petabytes, and an operational forecasting centre produces more in a morning than any one person could read in a week [AUTHOR: verify one or two current figures — e.g. Copernicus daily volumes, CMIP6 archive size — and cite].
-Every one of those streams carries obligations with it: it has to be quality-controlled, reconciled with its neighbours, reprocessed when a version changes, and reported to funders and partners in formats that are themselves revised yearly.
-What hasn't grown is the number of hours in anyone's week.
-The result — and I suspect you recognise it, because I certainly do — is that highly trained scientists spend a large part of their time on transformation, checking and formatting: skilled, necessary work that is nonetheless not the science they trained to do.
+If you want to know what has really changed in environmental science this past decade, don't look first at the models — look at the mismatch between how much there is to attend to and how little attention any of us actually has. [human: this sentence is too vague and has no sense. I do not like it, it is too vague and sensasionalistic. It does not add anything meaningful to the chapter!].
+
+The supply side has grown relentlessly: satellite programmes now deliver observations at rates measured in terabytes a day, the big model-intercomparison archives run to tens of petabytes, and an operational forecasting centre produces more in a morning than any one person could read in a week [AUTHOR: verify one or two current figures — e.g. Copernicus daily volumes, CMIP6 archive size — and cite]. [human: the supply of what? this is also not very good. I don't like the style.]
+
+Every one of those streams carries obligations with it: it has to be quality-controlled, reconciled with its neighbours, reprocessed when a version changes, and reported to funders and partners in formats that are themselves revised yearly. [human: I would eliminatebthesebfirstnshort sentences that you like so much. they feel like you add them justbto say something because you like the sound of your voice, but they do not mean anything and they just occupy space for no reason.]
+
+What hasn't grown is the number of hours in anyone's week. [human: I like this sentenfe, but use "has not"
+instead of "hasn't". Add this in the style guide, that Inprefer to not use contractions].
+
+The result is that highly trained scientists spend a large part of their time on transformation, checking and formatting: skilled, necessary work that is nonetheless not the science they trained to do.
 [AUTHOR: drop in a concrete morning from operational flood forecasting here — the specific scramble to reconcile ensemble output, gauge records and a bulletin deadline will land far harder than any general description.]
 
-Against that background, software that can actually act — read a file, run some code, look at the result, and decide what to do next — deserves a serious look rather than a reflexive one in either direction.
-The claims made for these systems are enormous, the commentary around them is polarised, and neither of those things is unusual for a technology at this stage of its life.
-My own position, which runs through the whole book, is deliberately narrower than either the boosters or the sceptics would like: these systems are instruments — powerful, fallible, and fit for serious work only once they are calibrated, checked, and kept under governance that matches the decisions resting on them.
-That is not a grand claim, and it is meant not to be.
-The case for engaging now, rather than waiting for the dust to settle, rests on a small number of specific, datable changes in what these systems can do and in who can afford them — and that is where I want to start.
+Software that can actually act — read a file, run some code, look at the result, and decide what to do next — deserves a serious look. [human: consoder the fact that Indeleted a lot of sentences here. you are adding sentences just for the sake of it! plus, add in the syltyle guide that I do not want "-" and that it can be sostituted with " e.g, i.e, just a comma, or with "such as". 
+
+The claims made for these systems are enormous, the commentary around them is polarised, and neither of those things is unusual for a technology at this stage of its life. [human: this is ok, but it is written in a style that I will never use at all. change please to a language that is simpler but remains formal].
+
+My own position fall in betwee that one of the enthusiasts and the sceptics: these systems are instruments — powerful, fallible, and fit for serious work only once they are instructed properly, checked, and kept under governance that matches the decisions resting on them.
+
+The case for engaging now, rather than waiting for the dust to settle, rests on a small number of specific, datable changes in what these systems can do and in who can afford them, and that is where I want to start. [human: the sentence is ok but I would not write with this style].
 
 ## 1.2 What changed, and when
 
