@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 15.2 — One gated stage: from specification unit to author decision</title>
+  <desc>A top-to-bottom sequence diagram with five lanes: specification unit, agent, tools and data, gate with reviewer, and author. Numbered steps show the agent reading the unit, calling tools, writing output and provenance, and submitting to the gate. A failure arrow loops back to the agent within a bounded budget; a pass reaches the author, who accepts, overrides or returns the result.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+    <marker id="ahGn" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#009E73"/>
+    </marker>
+    <marker id="ahGr" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#999999"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- ===== lane headers ===== -->
+  <!-- specification unit (blue tag) -->
+  <rect x="112" y="60" width="116" height="54" rx="8" fill="#0072B2"/>
+  <text x="170" y="86" font-size="14" fill="#FFFFFF" text-anchor="middle">specification</text>
+  <text x="170" y="104" font-size="14" fill="#FFFFFF" text-anchor="middle">unit</text>
+
+  <!-- agent (orange) -->
+  <rect x="398" y="58" width="44" height="44" rx="10" fill="#F7F7F5" stroke="#E69F00" stroke-width="3"/>
+  <path d="M410,72 a11,11 0 1 1 -3,13" fill="none" stroke="#E69F00" stroke-width="3" marker-end="url(#ah)"/>
+  <text x="420" y="140" font-size="16" fill="#111111" text-anchor="middle">agent</text>
+
+  <!-- tools & data (green wrench + sky cylinder) -->
+  <g stroke="#009E73" stroke-width="8" fill="none" stroke-linecap="round" transform="translate(628,80)">
+    <path d="M12,-12 A17,17 0 1 0 12,12"/>
+    <path d="M-12,12 L-30,30"/>
+  </g>
+  <path d="M666,74 v26 a16,6 0 0 0 32,0 v-26" fill="#56B4E9" stroke="#111111" stroke-width="1.2"/>
+  <ellipse cx="682" cy="74" rx="16" ry="6" fill="#56B4E9" stroke="#111111" stroke-width="1.2"/>
+  <text x="650" y="140" font-size="16" fill="#111111" text-anchor="middle">tools &amp; data</text>
+
+  <!-- gate + reviewer (vermillion diamond + purple reviewer) -->
+  <polygon points="884,60 906,84 884,108 862,84" fill="#D55E00"/>
+  <circle cx="922" cy="76" r="10" fill="none" stroke="#CC79A7" stroke-width="2.5"/>
+  <path d="M905,106 a17,17 0 0 1 34,0" fill="none" stroke="#CC79A7" stroke-width="2.5"/>
+  <text x="900" y="140" font-size="16" fill="#111111" text-anchor="middle">gate + reviewer</text>
+
+  <!-- author (blue human) -->
+  <circle cx="1140" cy="74" r="13" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <path d="M1117,116 a23,23 0 0 1 46,0" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <text x="1140" y="140" font-size="16" fill="#111111" text-anchor="middle">author</text>
+
+  <!-- ===== lifelines ===== -->
+  <g stroke="#999999" stroke-width="1.5" stroke-dasharray="4 5">
+    <line x1="170" y1="165" x2="170" y2="628"/>
+    <line x1="420" y1="165" x2="420" y2="628"/>
+    <line x1="650" y1="165" x2="650" y2="628"/>
+    <line x1="900" y1="165" x2="900" y2="628"/>
+    <line x1="1140" y1="165" x2="1140" y2="628"/>
+  </g>
+
+  <!-- step 1 -->
+  <text x="295" y="200" font-size="13" fill="#111111" text-anchor="middle">1 objective, inputs, criteria, stop</text>
+  <line x1="172" y1="214" x2="418" y2="214" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- step 2 -->
+  <text x="535" y="256" font-size="13" fill="#111111" text-anchor="middle">2 call tools, transform</text>
+  <line x1="422" y1="270" x2="648" y2="270" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- step 3: write output + provenance to registry cylinder -->
+  <text x="535" y="314" font-size="13" fill="#111111" text-anchor="middle">3 write output + provenance</text>
+  <path d="M624,332 v22 a26,7 0 0 0 52,0 v-22" fill="#56B4E9" stroke="#111111" stroke-width="1.2"/>
+  <ellipse cx="650" cy="332" rx="26" ry="7" fill="#56B4E9" stroke="#111111" stroke-width="1.2"/>
+  <text x="650" y="378" font-size="11" fill="#111111" text-anchor="middle">registry</text>
+  <line x1="422" y1="328" x2="620" y2="328" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- step 4: submit for check -->
+  <rect x="588" y="401" width="146" height="18" fill="#F7F7F5"/>
+  <text x="661" y="414" font-size="13" fill="#111111" text-anchor="middle">4 submit for check</text>
+  <line x1="422" y1="428" x2="898" y2="428" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- step 5b: pass to author -->
+  <text x="1020" y="452" font-size="13" fill="#009E73" text-anchor="middle">5 pass</text>
+  <line x1="902" y1="466" x2="1138" y2="466" stroke="#009E73" stroke-width="2" marker-end="url(#ahGn)"/>
+
+  <!-- step 5a: fail return to agent -->
+  <path d="M892,472 C710,520 560,516 424,470" fill="none" stroke="#999999" stroke-width="2" marker-end="url(#ahGr)"/>
+  <text x="655" y="524" font-size="12" fill="#999999" text-anchor="middle">5 fail — return (within budget)</text>
+  <text x="655" y="542" font-size="12" fill="#999999" text-anchor="middle">loop bounded by stop conditions</text>
+
+  <!-- vermillion callout -->
+  <text x="1012" y="500" font-size="12" fill="#D55E00" text-anchor="middle">author decides at</text>
+  <text x="1012" y="516" font-size="12" fill="#D55E00" text-anchor="middle">the gate, not after</text>
+
+  <!-- step 6: author decision -->
+  <rect x="1050" y="556" width="180" height="58" rx="8" fill="none" stroke="#D55E00" stroke-width="3"/>
+  <text x="1140" y="582" font-size="14" fill="#111111" text-anchor="middle">6 accept /</text>
+  <text x="1140" y="602" font-size="14" fill="#111111" text-anchor="middle">override / return</text>
+</svg>

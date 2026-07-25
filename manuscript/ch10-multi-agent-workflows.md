@@ -52,7 +52,11 @@ The limitation is that independence is a matter of degree and cannot be measured
 
 > **Definition — Ensemble.** In forecasting, a set of model runs started from slightly different conditions, whose spread is read as the forecast's uncertainty. The spread means something only if the members can genuinely disagree; runs that share too much collapse together and become confidently wrong in unison, the same trap a set of near-identical agents falls into.
 
-**Figure 10.1 — Independence, not multiplicity, is the source of value.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 10.1 — Independence, not multiplicity, is the source of value.**
+
+![A top-to-bottom decision flowchart. A proposed second agent first meets the question of whether it names an error class the existing roster misses; if no, it is dropped in favour of a deterministic gate. If yes, a second question asks whether its judgement is independent of the checked agent, annotated with four levers: different model, narrowed context, adversarial brief, external source of truth. Only if that also holds is the agent kept as an independent reviewer.](../figures/figure-10-1.svg)
+
+*Figure 10.1 — The test applied to every proposed agent. Both gates must pass, a distinct error class and an independent mechanism for catching it, before a second agent earns its place; failing either, a deterministic gate is cheaper and more reliable than a correlated opinion. (Rendered as `figures/figure-10-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF

@@ -48,7 +48,11 @@ This procedure is really a discipline of reaching for the simplest arrangement t
 The same test circulates in practitioner guidance under a blunter name, the workflow test: if a fixed sequence of steps with at most a judgement call or two would do the job, build a workflow, not an agent (practitioner commentary; see the references).
 The limitation of the procedure is that both axes are estimates made in advance, and estimating them wrongly (believing verification cheaper than it proves, or an output more reversible than it is) is itself one of the failure modes catalogued in Chapter 13, so the procedure is a discipline for thinking, not a lookup table that removes the need to think (moderate-to-high confidence).
 
-**Figure 4.1 — Should an agent do this?** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 4.1 — Should an agent do this?**
+
+![A top-to-bottom decision flowchart. A task first meets the question of whether it is a matter of accountability, interpretation or authorship; if yes, it is routed to a human-only terminal marked do not delegate. If no, a second question asks whether verification is cheap, and a third whether a wrong output is reversible. The four combinations route to agent runs with light supervision, agent acts behind a mandatory gate, agent drafts only with human verification, or, for expensive-to-verify and irreversible tasks, back to the human-only terminal.](../figures/figure-4-1.svg)
+
+*Figure 4.1 — A placement procedure for delegation. The first gate removes what does not transfer to an instrument at all: accountability, interpretation, authorship; the remaining gates trade verification cost against reversibility to sort the rest into supervised, gated or draft-only agent roles. (Rendered as `figures/figure-4-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF

@@ -69,7 +69,11 @@ The third is an explicit naming of the **reviewer**: who or what applies the acc
 This seven-field schema is load-bearing for two later chapters, and it is introduced here so that both can build on it directly: Chapter 10 derives an agent roster from a specification by reading its units and reviewers and assigning each to an actor, and Chapter 15 carries a single specification through an entire governed modelling workflow from this schema to a publication run.
 A schema internalised here turns both of those chapters into elaborations of it rather than new material.
 
-**Figure 3.1 — Specification anatomy.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 3.1 — Specification anatomy.**
+
+![A diagram of a box labelled specification containing two columns. The left column stacks four fields (objective, inputs, acceptance criteria, stop conditions) bracketed as executable. The right column stacks three fields (assumptions and conventions, provenance requirement, reviewer) bracketed as auditable. An agent glyph feeds the box; the acceptance-criteria field connects to a check diamond applied by a human reviewer.](../figures/figure-3-1.svg)
+
+*Figure 3.1 — The anatomy of a specification. The four core fields on the left make a unit of work executable by an agent; the three fields on the right make it auditable by a human; the named reviewer applies the acceptance criteria. This seven-field schema recurs in Chapters 10 and 15. (Rendered as `figures/figure-3-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -139,7 +143,11 @@ The **stop conditions** bound the run at both ends: succeed and halt when the cr
 Set beside the weak version, the strong specification has not made the verification correct; it has made a wrong verification detectable, converted four invisible decisions into four reviewable ones, and produced, as a by-product, the provenance record a downstream reader or an institutional auditor will need.
 The measured claim to close on is that this conversion is the ordinary unit of agentic scientific work, not an exceptional ceremony reserved for high-stakes runs but the routine act by which any task worth delegating is prepared (high confidence, on the reasoning of §§3.1–3.4).
 
-**Figure 3.2 — Weak specification versus strong specification.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 3.2 — Weak specification versus strong specification.**
+
+![A two-panel before-and-after diagram. In the upper weak panel a person says "verify this rainfall forecast" to an agent, which emits four question tags (which metric, which reference, which period, when to stop) and a fluent output flagged plausible but unauditable. In the lower strong panel the same request passes through a specification block of four filled fields (objective, inputs, acceptance criteria, stop conditions) and a check to an auditable output.](../figures/figure-3-2.svg)
+
+*Figure 3.2 — The same request, left conversational and then specified. In the weak version the agent silently chooses metric, reference, period and stop; in the strong version the scientist fixes them as four fields, and a plausible-but-unauditable result becomes an auditable one. (Rendered as `figures/figure-3-2.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
