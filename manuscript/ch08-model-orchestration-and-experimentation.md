@@ -170,7 +170,11 @@ The comparison is also guarded against the specific failure to which data-driven
 Figures 8.3 and 8.4 set out the design: the first contrasts the conventional hand-run campaign with the agent-orchestrated one, and the second traces the orchestration of the three tracks as a sequence from design to recorded, independently evaluated result.
 Presented this way, the example is honest about its status, a worked design awaiting execution, of the kind Chapter 15 carries through end to end, and it is included because the design decisions are where the scientific integrity of an intercomparison is won or lost, well before any number is produced.
 
-**Figure 8.3 — Conventional campaign versus agent-orchestrated campaign.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 8.3 — Conventional campaign versus agent-orchestrated campaign.**
+
+![A two-panel before/after diagram. The top panel shows a scientist manually maintaining a spreadsheet log beside loose scripts and an outputs cylinder, with a broken link marked drift between the runs and the log. The bottom panel shows the same scientist authoring an experimental design into an orange orchestration agent that submits to a scheduler and writes to a provenance store by a solid link marked captured at run time, with an anomaly flag returning to the scientist.](../figures/figure-8-3.svg)
+
+*Figure 8.3 — The same campaign run two ways. Above, a hand-maintained log drifts from the runs it describes; below, the orchestration agent captures provenance as each run launches. The scientist's decisions are unchanged; only the bookkeeping moves. (Rendered as `figures/figure-8-3.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
