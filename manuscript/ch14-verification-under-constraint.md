@@ -110,7 +110,11 @@ This is the least-privilege principle of Chapter 12 applied to an internal compo
 The residual risk is that a fluent but mistaken explanation misleads a non-specialist into a poor interpretation, and this risk is real and cannot be designed away entirely; it is mitigated by keeping the tier's outputs explanatory rather than prescriptive, by having it cite the fixed score definitions it reasons from, and by the escalation route that exists precisely for the cases where explanation is not enough.
 The interaction between a user, the deterministic core and the tutoring tier, with decision authority remaining with the human throughout, is the subject of the sequence in Figure 14.2.
 
-**Figure 14.2 — A verification-plus-tutoring interaction.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 14.2 — A verification-plus-tutoring interaction.**
+
+![A top-to-bottom sequence with four lanes: user, deterministic core, an optional tutoring tier, and a human decision. The user requests verification; the core computes and returns exact scores; the user asks the tutoring tier what they mean and receives a plain-language explanation marked no decision; the user may request a further diagnostic, which the core recomputes exactly; finally the user decides and records the reported scores. A callout marks that decision authority stays human and that observations stay local.](../figures/figure-14-2.svg)
+
+*Figure 14.2 — One interaction across the three actors. Every number that is reported comes from the deterministic core; the tutoring tier only explains what the core produced; and the human makes and records the decision. The observations never leave the local environment at any step. (Rendered as `figures/figure-14-2.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -169,7 +173,11 @@ The pedagogical framing thus reinforces the governance framing: the same propert
 The limitation worth stating is that a toolkit which teaches also shapes what its users come to regard as normal practice, so an error or a narrowness baked into the tutoring tier's explanations propagates into the habits of everyone who learns from it; this places a real obligation on the maintaining team to review the tier's explanatory behaviour periodically, treating it as curriculum rather than as a finished feature (moderate-to-high confidence that this obligation is ongoing rather than one-off).
 The before-and-after change in the partner's working practice is summarised in Figure 14.3.
 
-**Figure 14.3 — The partner's workflow, before and after.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 14.3 — The partner's workflow, before and after.**
+
+![Two stacked panels. The before panel shows an observations cylinder inside a trust boundary with a blocked, crossed-out arrow trying to reach off-site verification, tagged months of negotiation and often no agreement. The after panel shows the same observations and boundary now containing a deterministic core, an optional tutoring tier and a human review step, with a single arrow carrying aggregate scores only out to the team, and a note that users learn on their own data.](../figures/figure-14-3.svg)
+
+*Figure 14.3 — Before and after. The conventional route tried to move protected observations out to be verified and frequently stalled; the toolkit moves verification and teaching in, so the observations never move, scores are produced locally and reproducibly, and only aggregate figures cross the boundary. (Rendered as `figures/figure-14-3.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
