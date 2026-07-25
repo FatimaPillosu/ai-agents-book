@@ -55,57 +55,6 @@ The cost of using a capable model has fallen by orders of magnitude over the sam
 This fall in cost changes who can take part: a research group with modest hardware and no recurring budget can, with care, build workflows of real operational value, a constraint treated as a design input throughout this book and revisited in the closing case studies.
 One caution is warranted so that the economics are not misread: cheaper models do not make agentic work cheap, because the cost moves rather than vanishes; it shifts into engineering time, into evaluation, and above all into verification, which is where a well-run scientific workflow should expect to spend most of what it saves.
 
-______
-
-<svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" viewBox="0 0 800 450" width="100%" height="100%">
-  <style>
-    .title { font-family: system-ui, sans-serif; font-size: 18px; font-weight: bold; fill: #1e293b; }
-    .label { font-family: system-ui, sans-serif; font-size: 13px; fill: #475569; }
-    .axis { stroke: #cbd5e1; stroke-width: 2; }
-    .data-line { fill: none; stroke: #2563eb; stroke-width: 3.5; }
-    .time-line { fill: none; stroke: #dc2626; stroke-dasharray: 6 6; stroke-width: 3; }
-    .shade { fill: #2563eb; fill-opacity: 0.08; }
-    .legend { font-family: system-ui, sans-serif; font-size: 13px; font-weight: 500; }
-    .annotation { font-family: system-ui, sans-serif; font-size: 12px; fill: #64748b; font-style: italic; }
-  </style>
-
-  <!-- Background -->
-  <rect width="800" height="450" fill="#ffffff" rx="8"/>
-  
-  <!-- Title -->
-  <text x="40" y="40" class="title">Figure 1.1 — Data Volume Growth vs. Available Scientist Time</text>
-
-  <!-- Shaded Overhead Gap -->
-  <path d="M 100 350 Q 300 340 500 230 T 700 80 L 700 350 Z" class="shade"/>
-
-  <!-- Axes -->
-  <line x1="100" y1="350" x2="720" y2="350" class="axis"/>
-  <line x1="100" y1="350" x2="100" y2="80" class="axis"/>
-
-  <!-- Labels -->
-  <text x="400" y="390" class="label" text-anchor="middle">Timeline (2015 – Present)</text>
-  <text x="-215" y="45" class="label" transform="rotate(-90)">Volume / Time Capacity</text>
-
-  <!-- Data Volume Curve (Exponential) -->
-  <path d="M 100 340 Q 350 330 500 230 T 700 80" class="data-line"/>
-  
-  <!-- Scientist Time Line (Flat) -->
-  <line x1="100" y1="350" x2="700" y2="350" class="time-line"/>
-
-  <!-- Annotations -->
-  <text x="520" y="270" class="annotation" fill="#1e40af">Transformation &amp; Checking Overhead</text>
-  <text x="520" y="288" class="annotation" fill="#1e40af">(QC, reprocessing, reformatting)</text>
-  
-  <!-- Callout points -->
-  <circle cx="700" cy="80" r="5" fill="#2563eb"/>
-  <text x="710" y="85" class="legend" fill="#2563eb">Data Volume (TB/day, Petabyte archives)</text>
-
-  <circle cx="700" cy="350" r="5" fill="#dc2626"/>
-  <text x="710" y="355" class="legend" fill="#dc2626">Scientist Working Hours (Fixed)</text>
-</svg>
-
-_______
-
 **Figure 1.1 — Capability milestones (timeline).**
 
 ![A horizontal timeline from 2017 to 2026 showing seven milestones progressing from the transformer architecture, through in-context learning and public conversational systems, to tool calling, long context, coding agents with standardised tool protocols, and finally governed agentic workflows in scientific practice.](../figures/figure-1-1.svg)
