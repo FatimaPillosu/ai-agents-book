@@ -59,20 +59,24 @@ ______
 
 ```mermaid
 graph TD
-    subgraph Mismatch ["Figure 1.1: Data Volume Growth vs. Scientist Time"]
-        A["<b>Environmental Data Streams</b><br/>• Satellites (TB/day)<br/>• CMIP Archives (Tens of PB)<br/>• Operational Forecasting"] 
-        -->|"Relentless Growth"| B["<b>Data Overhead Gap</b><br/>• Quality Control<br/>• Version Reprocessing<br/>• Schema Transformation<br/>• Funder Reporting"]
-        
-        C["<b>Scientist Working Hours</b><br/>Fixed & Finite"] 
-        -->|"Squeezed Capacity"| B
-        
-        B --> D["<b>Resulting Bottleneck</b><br/>Skilled time diverted away<br/>from core scientific analysis"]
+    subgraph Data ["Relentless Data Growth"]
+        D1["Satellite Observations<br/>(Terabytes/day)"]
+        D2["Model Intercomparisons<br/>(Tens of Petabytes)"]
+        D3["Operational Forecasting<br/>(Continuous streams)"]
     end
 
-    style A fill:#e1f5fe,stroke:#0288d1,stroke-width:2px
-    style C fill:#fff3e0,stroke:#f57c00,stroke-width:2px
-    style B fill:#ffebee,stroke:#d32f2f,stroke-width:2px
-    style D fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    subgraph Time ["Fixed Human Capacity"]
+        T1["Scientist Working Hours<br/>(Constant & Finite)"]
+    end
+
+    Data --> Gap["The Overhead Gap<br/>QC, Reprocessing, Schema Formatting, Reporting"]
+    Time --> Gap
+    Gap --> Impact["Diverted Capacity<br/>High-skilled time spent on data transformation<br/>rather than core scientific analysis"]
+
+    style Data fill:#e0f2fe,stroke:#0288d1,stroke-width:1.5px
+    style Time fill:#fef3c7,stroke:#d97706,stroke-width:1.5px
+    style Gap fill:#fee2e2,stroke:#dc2626,stroke-width:2px
+    style Impact fill:#f3e8ff,stroke:#7e22ce,stroke-width:1.5px
 
 _______
 
