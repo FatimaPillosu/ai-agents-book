@@ -57,6 +57,7 @@ One caution is warranted so that the economics are not misread: cheaper models d
 
 ______
 
+```mermaid
 graph TD
     subgraph Mismatch ["Figure 1.1: Data Volume Growth vs. Scientist Time"]
         A["<b>Environmental Data Streams</b><br/>• Satellites (TB/day)<br/>• CMIP Archives (Tens of PB)<br/>• Operational Forecasting"] 
