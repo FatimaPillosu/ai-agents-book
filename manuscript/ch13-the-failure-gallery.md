@@ -46,7 +46,11 @@ Two refinements matter.
 Resolution has to confirm not merely existence but *support*, that the real paper says what the citation claims, because a genuine reference misattached to a claim is a subtler instance of the same failure, caught only by reading the source.
 On Chapter 11's hierarchy the existence check sits at the base, a tier-one mechanical confirmation that should never be skipped; the support check sits one rung up, needing a human or a retrieval step to compare claim against source (high confidence).
 
-**Figure 13.1 — A fabricated citation, caught at the resolver.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 13.1 — A fabricated citation, caught at the resolver.**
+
+![A four-step horizontal trace. A human claim feeds an agent that drafts a citation, producing a well-formed reference string. The string reaches a resolver gate marked in vermillion, which returns not found; an arrow labelled delete, do not repair loops back to the agent. A callout marks the resolver as the failure point where a plausible citation is revealed to correspond to no real work.](../figures/figure-13-1.svg)
+
+*Figure 13.1 — [AUTHOR: anonymised] A fabricated citation is well-formed and plausible; the fluency that convinces a reader does not survive resolution against an external bibliographic authority. The catching check sits at the base of Chapter 11's hierarchy. (Rendered as `figures/figure-13-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -95,7 +99,11 @@ The second is a physical-range assertion at every boundary where a quantity ente
 Neither check reasons about the science; both are guardrails that convert a silent failure into a loud one, which is the only transformation that matters, because a loud failure is caught and a silent one is shipped.
 On Chapter 11's hierarchy these are base-tier checks (mechanical, automatable, applied before any interpretation), and their placement there is deliberate: the cheapest checks guard the failure that is otherwise least visible (high confidence).
 
-**Figure 13.2 — A silent unit error, made loud.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 13.2 — A silent unit error, made loud.**
+
+![A top-to-bottom trace. An agent computes a quantity, emitting a bare number with no units. The number reaches a vermillion gate that asserts units and a physical range; an out-of-range exit halts the flow and returns to the agent. A downstream-use box below is shown crossed out in vermillion, unreached. A callout marks the bare number as wrong by a physical factor yet reasonable-looking.](../figures/figure-13-2.svg)
+
+*Figure 13.2 — [AUTHOR: anonymised] A silent unit error carries no visible signal; attaching units as data and asserting a physical range at the boundary turns an invisible failure into a halt before the number reaches anything downstream. (Rendered as `figures/figure-13-2.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -149,7 +157,11 @@ Concretely, the objective, inputs, acceptance criteria and stop conditions of Ch
 The reason this works is that drift is *defined* by divergence from a fixed reference, so restoring the fixed reference restores the ability to measure the divergence: a check that costs almost nothing when the specification is a real artefact and is impossible when it is not.
 On Chapter 11's hierarchy this is a mid-tier check: not a single mechanical assertion but a structured comparison of an output against a written standard, sitting above the base precisely because it requires that the standard exist in auditable form before the work begins (high confidence).
 
-**Figure 13.3 — Specification drift, caught by re-reading the spec.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 13.3 — Specification drift, caught by re-reading the spec.**
+
+![A trace with a fixed specification tag at the top and three agent turns running left to right below it. Each turn's target arrow points progressively further from the specification, shown by a widening dashed gap. A vermillion compare-to-spec gate at the end detects drift and returns to a human decision. A callout marks the point where the target has rotated although every individual step looked responsive.](../figures/figure-13-3.svg)
+
+*Figure 13.3 — [AUTHOR: anonymised] Specification drift is invisible step by step and legible only against the original specification held fixed; re-asserting the written standard at the gate, rather than the conversation, restores the measure of divergence. (Rendered as `figures/figure-13-3.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -208,7 +220,11 @@ Genuine independence therefore needs model diversity, not merely a fresh context
 The deeper principle, consistent with the whole book, is that a check is only as good as its independence from what it checks, and sycophancy is what independence failure looks like when the checker is a language model; Chapter 10 turns this gallery-level check into a full reviewer roster.
 On Chapter 11's hierarchy an agreeable review provides no evidential lift at all and must not be counted as a tier, whereas a properly independent review sits in the upper tiers because it approximates the scrutiny of a disinterested party, but only to the extent its independence is real (moderate-to-high confidence).
 
-**Figure 13.4 — Sycophantic review, exposed by engineered independence.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 13.4 — Sycophantic review, exposed by engineered independence.**
+
+![Two stacked left-to-right traces over one artefact. In the top trace a reviewer that sees the author's conclusion returns an approval, marked in vermillion as false assurance with no evidential lift. In the bottom trace the same artefact with the conclusion withheld goes to an independent reviewer framed to find defects, which returns a genuine defect. A callout marks the top reviewer as agreeing with the position it inferred.](../figures/figure-13-4.svg)
+
+*Figure 13.4 — [AUTHOR: anonymised] A reviewer that sees the author's conclusion tends to endorse it; withholding the conclusion and framing the task as a search for enumerable defects converts an agreeable check into a real one. Independence, not instruction, is what makes review evidential. (Rendered as `figures/figure-13-4.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -262,7 +278,11 @@ Concretely, the load-bearing facts (the constraints, the acceptance criteria, th
 A complementary check is a consistency assertion at boundaries: an output tested against the constraints on record, so that a violation of a dropped constraint is caught as a contradiction even when the reason for the contradiction is invisible.
 On Chapter 11's hierarchy the consistency assertion is a base-tier mechanical check, whilst the re-grounding discipline is an architectural provision that belongs with the provenance and state machinery of Chapter 12; together they convert a silent omission into a detectable contradiction (high confidence).
 
-**Figure 13.5 — Context loss — the dropped constraint and the boundary check that catches it.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 13.5 — Context loss — the dropped constraint and the boundary check that catches it.**
+
+![A left-to-right failure trace. A constraint is set and written to an external state-on-record cylinder, then an agent works. At a dashed context boundary the constraint fades and is not carried across, marked in vermillion as the failure point where it drops out with no error raised. The agent continues and emits a confident output that violates the constraint. The output and the state-on-record cylinder both feed a vermillion consistency-assertion gate, which detects the contradiction and returns the work to be re-grounded and retried.](../figures/figure-13-5.svg)
+
+*Figure 13.5 — [AUTHOR: anonymised] Context loss in four moves: a constraint is set and written to external state, silently dropped when the workflow crosses a context boundary, contradicted by a confident later output, and caught only when that output is checked against the constraint still on record, not against the agent's memory, which no longer holds it. (Rendered as `figures/figure-13-5.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -328,7 +348,11 @@ A claim that fails this test is not deleted but relabelled: moved from result to
 This is the check that most depends on the human retaining interpretive authority, because the boundary between supported and unsupported is a scientific judgement the workflow can surface but not make.
 On Chapter 11's hierarchy an unsupported claim sits at the bottom regardless of how confident it reads, and moving it upward requires real evidence, corroboration against independent data or successful prediction out of sample, not more assured phrasing (high confidence).
 
-**Figure 13.6 — Confident extrapolation, bounded by its support.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 13.6 — Confident extrapolation, bounded by its support.**
+
+![A left-to-right trace. A sky-blue data artefact marks a support range. An agent generalises from it and emits a confident claim whose scope, shown by a vermillion bracket, overshoots the support range. A vermillion scope-versus-support gate detects the overshoot and routes the claim, via an out-of-support exit, to a box that flags it as a hypothesis for independent test. A callout marks the claim as reaching past the data while reading like a supported result.](../figures/figure-13-6.svg)
+
+*Figure 13.6 — [AUTHOR: anonymised] Confident extrapolation is indistinguishable from a supported result by register alone; binding the claim to its provenance and comparing scope against support turns an unwarranted claim into a flagged hypothesis for independent test. (Rendered as `figures/figure-13-6.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
