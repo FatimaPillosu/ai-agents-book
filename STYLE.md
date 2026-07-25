@@ -1,6 +1,8 @@
 # Author writing-style guide
 
-**v3.0 · 25 July 2026** · Binding for all drafted prose unless a specific brief overrides it.
+**v3.1 · 25 July 2026** · Binding for all drafted prose unless a specific brief overrides it.
+
+**Change from v3.0 (minor):** the margin-note drafting mechanism is removed — the book will not use margin notes. The one-claim-per-paragraph discipline it enforced is retained in §2.
 
 **Change from v2.0 (major):** the conversational-personal register introduced in v2.0 is withdrawn on the author's instruction. The register returns to the author's own academic voice, now specified in far greater detail by direct extraction from the author's PhD thesis (chapters 1–9, on medium-range prediction of areas at risk of flash floods). Every quoted example in this guide is taken verbatim from that thesis (lightly cleaned of LaTeX markup); where the abstraction and the example seem to disagree, imitate the example. The register-independent mechanisms of v2.0 are retained unchanged: integrity markers (§6.5), info-boxes and the glossary (§9), the sentence-per-line draft format (§10), British English and vendor-neutrality.
 
@@ -12,8 +14,6 @@ Stakes are established with numbers and named events, never with adjectives. The
 
 ## 2. The paragraph is the unit of argument
 
-### 2.1 Anatomy
-
 A paragraph is long, developed and single-claim: typically 200–450 words, opening with a complete topic sentence and then moving through **claim → context → evidence → qualification → implication**. Every element of that movement is visible in the prose. Evidence is cited and quantified; the qualification is explicit (nearly every paragraph contains at least one "However" or equivalent concession); and the paragraph earns a closing sentence that states what follows from it — usually introduced by "Hence", "Consequently", "Therefore" or "Thus":
 
 > "Therefore, developing robust medium-range flash flood forecasting capabilities on a global scale remains one of the pressing challenges in modern hydrology."
@@ -22,9 +22,7 @@ A paragraph is long, developed and single-claim: typically 200–450 words, open
 
 Depth takes priority over coverage: develop fewer points properly rather than surveying many thinly. A paragraph never trails off on a detail; if it has no implication to state, it at least states its limitation.
 
-### 2.2 The margin-note test
-
-Every thesis paragraph carries a margin note — a compressed nominal phrase stating what the paragraph claims: "Barrier n.1: limited direct assessment of global NWP rainfall forecasts against flash flood occurrence"; "Opportunity n.1: flash flood impact databases can enable direct verification…"; "CONUS as the primary study domain: justification". The book has no margin column, but the discipline transfers: **before or after drafting each paragraph, write its margin note as a one-line nominal phrase.** If no single phrase covers the paragraph, it contains two claims and must be split. If the phrase is vague ("some thoughts on verification"), the paragraph has no claim yet. Margin notes may be kept in the draft as HTML comments (`<!-- MN: … -->`) during writing and review; they are removed or retained at the author's discretion before release. Read in sequence, the margin notes of a section must reproduce its argument — that is the test of a well-built section.
+A paragraph carries exactly one claim, and that claim must be summarisable as a single compressed nominal phrase ("Barrier n.1: limited direct assessment of global NWP rainfall forecasts against flash flood occurrence"; "CONUS as the primary study domain: justification"). If no single phrase covers the paragraph, it contains two claims and must be split; if the phrase is vague ("some thoughts on verification"), the paragraph has no claim yet. Read in sequence, the one-phrase summaries of a section's paragraphs must reproduce its argument — that is the test of a well-built section. The summaries themselves are a drafting check only and are never carried in the manuscript.
 
 ## 3. Opening the paragraph
 
@@ -157,7 +155,7 @@ Cite only references known to be real; incomplete bibliographic details are flag
 
 ## 7. Pre-submission checklist
 
-Before a draft is returned: (1) every paragraph opens with a complete topic sentence stating a real claim — no fragments, no throat-clearing; (2) every paragraph passes the margin-note test (§2.2): one nominal phrase covers it, and the section's margin notes read as its argument; (3) paragraphs are developed (≈200–450 words) and move claim → context → evidence → qualification → implication, closing on consequence or limitation; (4) every "However" is resolved; every announced enumeration is completed with parallel grammar; (5) numbers replace adjectives wherever the evidence allows, and comparisons carry baselines; (6) claims are hedged once, precisely, with certainty flags on substantive claims; anomalies are confronted, not buried; (7) literature and prior art are synthesised, not listed; (8) roadmap, pointer sentences and cross-references are in place and each names what the destination contains; (9) no second person, no exclamation, no hype, no bullet-point argumentation in main prose; (10) British English throughout; every demanding term defined once at first substantive use (info-box where warranted, §9); (11) all unverified material is marked [AUTHOR:]/[verify] and none invented; (12) the draft is sentence-per-line per §10.
+Before a draft is returned: (1) every paragraph opens with a complete topic sentence stating a real claim — no fragments, no throat-clearing; (2) every paragraph carries exactly one claim, summarisable as a single nominal phrase, and the section's paragraph summaries read as its argument (§2); (3) paragraphs are developed (≈200–450 words) and move claim → context → evidence → qualification → implication, closing on consequence or limitation; (4) every "However" is resolved; every announced enumeration is completed with parallel grammar; (5) numbers replace adjectives wherever the evidence allows, and comparisons carry baselines; (6) claims are hedged once, precisely, with certainty flags on substantive claims; anomalies are confronted, not buried; (7) literature and prior art are synthesised, not listed; (8) roadmap, pointer sentences and cross-references are in place and each names what the destination contains; (9) no second person, no exclamation, no hype, no bullet-point argumentation in main prose; (10) British English throughout; every demanding term defined once at first substantive use (info-box where warranted, §9); (11) all unverified material is marked [AUTHOR:]/[verify] and none invented; (12) the draft is sentence-per-line per §10.
 
 ## 8. Condensed prompt block
 
@@ -170,8 +168,8 @@ British English. Open every paragraph with a complete topic sentence carrying a 
 claim — subject-first declarative, concessive ("Despite X, Y persists"), tension-framing
 ("…creates a fundamental tension between…"), or continuation pivot; never fragments or
 hooks. Paragraphs 200–450 words, claim → context → evidence → qualification →
-implication, closing on "Hence/Consequently/Therefore …"; one claim per paragraph
-(margin-note test: summarisable as one nominal phrase). Enumerate in prose ("two
+implication, closing on "Hence/Consequently/Therefore …"; one claim per paragraph,
+summarisable as a single nominal phrase. Enumerate in prose ("two
 challenges: First… Second…") with parallel grammar; concede and resolve ("However…" is
 always answered); elaborate with colons and paired dashes. Numbers over adjectives with
 baselines ("a twenty-fold increase"); synthesise literature (set sources against each
@@ -212,7 +210,7 @@ The second sentence follows on the next line.
 The next paragraph begins after a blank line.
 ```
 
-Sentence-per-line applies to body prose paragraphs only. Headings, info-boxes, figure-brief blocks, block quotations, lists, captions, tables and references keep their natural layout. A very long compound sentence may stay whole on its line. Markdown joins consecutive lines into a single paragraph in rendered output, so the convention is invisible to readers. Margin-note comments (§2.2) sit on their own line above the paragraph they describe.
+Sentence-per-line applies to body prose paragraphs only. Headings, info-boxes, figure-brief blocks, block quotations, lists, captions, tables and references keep their natural layout. A very long compound sentence may stay whole on its line. Markdown joins consecutive lines into a single paragraph in rendered output, so the convention is invisible to readers.
 
 ## 11. Sentence craft: rhythm, connectives, punctuation, British English
 
