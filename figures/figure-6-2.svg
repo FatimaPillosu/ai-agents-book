@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 6.2 — Ingest, propose, dispose, record: one gauge-and-rainfall pass</title>
+  <desc>A left-to-right sequence in four lanes: ingest and normalise, propose flags, dispose, and record provenance. Six numbered steps carry a datum from raw series, through unit and timestamp normalisation, to justified flag proposals, then physical-bounds and inter-station disposition, then apply-or-reject, and finally a provenance write. A vermillion divider between the propose and dispose lanes is labelled the authority boundary.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+    <marker id="ahO" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#E69F00"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- faint lane dividers -->
+  <g stroke="#999999" stroke-width="1.5" stroke-dasharray="5 6">
+    <line x1="370" y1="90" x2="370" y2="560"/>
+    <line x1="930" y1="90" x2="930" y2="560"/>
+  </g>
+
+  <!-- vermillion authority boundary divider -->
+  <line x1="650" y1="90" x2="650" y2="560" stroke="#D55E00" stroke-width="4"/>
+
+  <!-- lane 1 header: agent icon -->
+  <rect x="214" y="89" width="32" height="32" rx="6" fill="none" stroke="#E69F00" stroke-width="3"/>
+  <path d="M240,101 A9,9 0 1 1 231,96" fill="none" stroke="#E69F00" stroke-width="2.5" marker-end="url(#ahO)"/>
+  <text x="230" y="175" font-size="16" fill="#111111" text-anchor="middle">ingest and normalise</text>
+
+  <!-- lane 2 header: agent icon -->
+  <rect x="494" y="89" width="32" height="32" rx="6" fill="none" stroke="#E69F00" stroke-width="3"/>
+  <path d="M520,101 A9,9 0 1 1 511,96" fill="none" stroke="#E69F00" stroke-width="2.5" marker-end="url(#ahO)"/>
+  <text x="510" y="175" font-size="16" fill="#111111" text-anchor="middle">propose flags</text>
+
+  <!-- lane 3 header: dispose diamond -->
+  <polygon points="790,83 812,105 790,127 768,105" fill="#D55E00"/>
+  <text x="790" y="175" font-size="16" fill="#111111" text-anchor="middle">dispose</text>
+
+  <!-- lane 4 header: provenance cylinder -->
+  <path d="M1041,96 v26 a24,7 0 0 0 48,0 v-26" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="1065" cy="96" rx="24" ry="7" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="1065" y="175" font-size="16" fill="#111111" text-anchor="middle">record provenance</text>
+
+  <!-- flow spine -->
+  <line x1="120" y1="400" x2="1180" y2="400" stroke="#111111" stroke-width="2.5" marker-end="url(#ah)"/>
+
+  <!-- step nodes (coloured by lane) -->
+  <circle cx="150" cy="400" r="10" fill="#E69F00"/>
+  <circle cx="330" cy="400" r="10" fill="#E69F00"/>
+  <circle cx="520" cy="400" r="10" fill="#E69F00"/>
+  <circle cx="720" cy="400" r="10" fill="#D55E00"/>
+  <circle cx="920" cy="400" r="10" fill="#D55E00"/>
+  <circle cx="1120" cy="400" r="10" fill="#56B4E9"/>
+
+  <!-- step labels, alternating above and below -->
+  <g font-size="15" fill="#111111" text-anchor="middle">
+    <text x="150" y="365">1 raw series</text>
+    <text x="330" y="448">2 normalise units + UTC</text>
+    <text x="520" y="365">3 propose flags + justification</text>
+    <text x="720" y="448">4 physical bounds + inter-station</text>
+    <text x="920" y="365">5 apply flag / reject</text>
+    <text x="1120" y="448">6 provenance</text>
+  </g>
+
+  <!-- authority boundary label -->
+  <text x="650" y="600" font-size="15" fill="#D55E00" text-anchor="middle">authority boundary —</text>
+  <text x="650" y="620" font-size="15" fill="#D55E00" text-anchor="middle">agent proposes, rules dispose</text>
+</svg>

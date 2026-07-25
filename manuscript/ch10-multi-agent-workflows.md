@@ -102,7 +102,11 @@ Set beside the conventional arrangement of §10.2, the redesign keeps what made 
 
 > **Definition — Independent reviewer.** An agent whose only job is to find faults in another agent's work, set up so that its judgement does not simply echo the producer's: a different model where possible, a deliberately narrower view of the task, an instruction that rewards catching problems, and its own source of truth to check against. Independence is the whole point: a reviewer that shares the producer's model and context mostly agrees with it.
 
-**Figure 10.2 — A minimal scientific roster.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 10.2 — A minimal scientific roster.**
+
+![An architecture diagram read left to right. A thin orchestrator bar spans the top. Below, a specification feeds a producer agent with tools and a data store; its output passes a deterministic gate labelled tests, schema, citations, units; then an independent reviewer agent, annotated different model, narrowed context and adversarial brief; then a second gate; then a human decision point annotated that accountability, interpretation and authorship stay there. A single fail arrow returns from reviewer to producer, labelled bounded iterations then escalate.](../figures/figure-10-2.svg)
+
+*Figure 10.2 — The minimal roster. Deterministic gates carry the cheap, mechanical checks; the independent reviewer carries only what a rule cannot, and does so from an engineered position of independence; the human node holds what does not transfer to any instrument. The return loop is explicitly bounded to prevent runaway cost. (Rendered as `figures/figure-10-2.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -134,7 +138,11 @@ FIGURE BRIEF
                  node. Generous spacing, minimal text.
 ```
 
-**Figure 10.3 — Conventional review and agentic roster, side by side.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 10.3 — Conventional review and agentic roster, side by side.**
+
+![A before/after diagram with two stacked left-to-right lanes. The upper lane, conventional, runs author, internal read-through, two independent referees, editor decides, annotated serial over weeks. The lower lane, agentic roster, runs producer agent, gate, independent reviewer, gate, human decision, annotated gated over minutes with the human owning the decision. Dotted vertical lines align the matching roles (producer, independent checker, accountable decider) across the two lanes, with a note that what carries over is independence and accountability, not the number of parties.](../figures/figure-10-3.svg)
+
+*Figure 10.3 — The same structure at two timescales. Both lanes separate a producer from an independent checker and vest the decision in an accountable human; the roster changes the timescale and the medium of the checks, not the principle that makes distributed review worth its cost. (Rendered as `figures/figure-10-3.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -178,7 +186,11 @@ The **stop conditions** fix the orchestrator's loop bounds and the escalation pa
 Worked through on a concrete operational specification, this mapping yields a small, auditable roster in which every element has a provenance in the specification and nothing is present for appearance's sake **[AUTHOR: insert a specification you have actually written — the rainfall-forecast verification specification from Chapter 3 is the natural candidate — and show the exact roster it produced, including the criteria you triaged to gates versus to the reviewer, the iteration bound you set, and any role you initially added and then removed as correlated. The executed version of this derivation is the spine of Chapter 15; this section should foreshadow it, not pre-empt its results.]**
 The limitation worth stating is that the mapping is only as good as the specification: a vague acceptance criterion produces a vague reviewer brief and a roster no more rigorous than the words it came from, which is the mechanism by which specification quality (Chapter 3) governs roster quality, and why the two chapters are read together (high confidence in the mapping; the operational specifics await the author's executed material).
 
-**Figure 10.4 — From specification to roster.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 10.4 — From specification to roster.**
+
+![A top-to-bottom sequence with four numbered mappings. On the left, four specification fields as blue tags: objective, inputs, acceptance criteria, stop conditions. Each maps by a numbered arrow to a roster element on the right: objective to producer roles; inputs to tool and data access under least privilege; acceptance criteria to deterministic gates plus an independent reviewer brief, split by whether a rule can check the criterion; stop conditions to the orchestrator loop bound and escalation to a human.](../figures/figure-10-4.svg)
+
+*Figure 10.4 — The derivation that keeps a roster minimal and auditable. Objective fixes the producers, inputs fix least-privilege access, acceptance criteria split into deterministic gates and reviewer briefs by whether a rule can check them, and stop conditions bound the loop and set the escalation to the human node. A role no clause demands is a role that should not exist. (Rendered as `figures/figure-10-4.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF

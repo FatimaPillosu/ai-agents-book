@@ -50,7 +50,11 @@ Structured action makes the delegation possible, because the agent emits machine
 The payoff is that provenance becomes a by-product of running the campaign rather than a chore performed alongside it: the record is captured the moment each run is launched, from the configuration actually used, with the software version, forcing dataset identifier and random seed attached, so reproduction is a matter of replaying a record rather than reconstructing a memory (high confidence in the pattern; completeness of the record depends on the tools exposed).
 The architecture that supports this division is shown in Figure 8.1, and the boundary it draws, between the orchestration the agent performs and the decisions the human retains, is the single most important design commitment of the chapter.
 
-**Figure 8.1 — The orchestration agent and its boundary.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 8.1 — The orchestration agent and its boundary.**
+
+![An architecture diagram centred on an orange orchestration-agent box holding four tool glyphs for expanding a design, submitting runs, tracking state and recording provenance. A scientist icon on the left authors an experimental design that feeds the agent; the agent connects down to an HPC scheduler and a provenance store, and right to a vermillion anomaly-flag diamond that routes back to the scientist. A grey dashed boundary around the agent is labelled as containing no scientific decisions.](../figures/figure-8-1.svg)
+
+*Figure 8.1 — The orchestration agent expands a human-authored design, submits and tracks runs, and records provenance; anomalies are flagged to the scientist, not resolved. The dashed boundary marks what the agent may do; scientific decisions stay outside it. (Rendered as `figures/figure-8-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -106,7 +110,11 @@ This mirrors the interpretive control retained in the literature-synthesis patte
 The confidence in this recommendation is high as a matter of research integrity and independent of model quality, because the failure it guards against is not one that better models remove: a more persuasive model makes an untested hypothesis more dangerous, not less, since its fluency more effectively disguises the absence of evidence beneath it.
 The gate that keeps a generated hypothesis out of the evidential chain until a human has tested it is shown in Figure 8.2.
 
-**Figure 8.2 — The hypothesis provenance gate.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 8.2 — The hypothesis provenance gate.**
+
+![A top-to-bottom decision flowchart. A model-generated hypothesis flows into a tagged exploratory record, then to a vermillion diamond asking whether it has been tested by a pre-specified procedure. The no exit returns it to a grey terminus reading remains exploratory, not a finding, marked as where hypothesis laundering is blocked. The yes exit passes through a scientist-owns-the-claim step to a green terminus reading enters result or manuscript.](../figures/figure-8-2.svg)
+
+*Figure 8.2 — The provenance gate that separates conjecture from evidence. A generated hypothesis is tagged exploratory and can only become part of a result once a human has tested it by a procedure fixed in advance and taken responsibility for the claim; the alternative path keeps it visibly a conjecture. (Rendered as `figures/figure-8-2.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF

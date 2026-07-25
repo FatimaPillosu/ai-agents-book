@@ -64,7 +64,11 @@ The reviewer agent should run with read-only access to the change and no power t
 The author agent should operate in an environment scoped to the task (a working branch, a sandboxed interpreter, credentials limited to what the pipeline genuinely needs), so a mistaken or injected instruction has a bounded blast radius.
 The point to carry forward is simply that the gate stack of Figure 7.1 assumes an authority model underneath it: a governed pipeline is governed in both senses, correctness and permission, or it is neither (Chapter 12).
 
-**Figure 7.1 — The gate stack.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 7.1 — The gate stack.**
+
+![An architecture diagram reading left to right. An orange author agent emits a proposed-change document that passes through three vermillion diamond gates in turn (automated tests, pre-commit hooks, and an independent reviewer agent shown with a purple reviewer icon) before reaching a blue human owner who merges to the main-branch cylinder. Each gate has a fail arrow curving back to the author agent. A bracket under the gates reads cheap gates first; a note by the reviewer reads read-only, advisory.](../figures/figure-7-1.svg)
+
+*Figure 7.1 — The gate stack. Cheap mechanical gates run first and reject most defects at near-zero cost; the independent reviewer agent and the human owner, both expensive, are spent only on changes that have already cleared them. The human owns the merge; the reviewer agent is advisory and read-only. (Rendered as `figures/figure-7-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -104,7 +108,11 @@ FIGURE BRIEF
                  text, generous spacing, single-weight lines.
 ```
 
-**Figure 7.2 — Notebook versus governed pipeline.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 7.2 — Notebook versus governed pipeline.**
+
+![A before-and-after diagram. The top half shows a grey notebook box with an unordered cluster of cells (load, regrid, threshold, plot) and a single arrow labelled looked reasonable, annotated in vermillion as no independent reader. The bottom half shows the same four steps as an ordered green tool chain feeding an orange author agent, then three vermillion gate diamonds for tests, hooks and independent review, then a blue human owner, all sitting above a sky-blue version-control cylinder and annotated reader before merge.](../figures/figure-7-2.svg)
+
+*Figure 7.2 — The same analytical steps before and after governance. The redesign does not change the science; it adds the tests, hooks, independent review and human ownership that turn a run-once notebook into a pipeline whose outputs can be reproduced and audited. (Rendered as `figures/figure-7-2.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -162,7 +170,11 @@ That report is read last, against the change itself, and the human remains the s
 The division of labour is worth stating plainly, because it is the chapter's central practical claim: the author agent proposes, the tests and hooks dispose of the mechanical failures, the independent reviewer agent surfaces the substantive ones, and the human decides, spending scarce attention on judgement rather than on the routine checking the earlier gates have already done (moderate-to-high confidence; the pattern is sound, the effort saved varies with task and model).
 **[AUTHOR: report what actually happened when you ran this — which gate caught what, how much the reviewer sub-agent found that the tests missed, and the one issue, if any, that only the human caught. A single real trace here is worth more than the whole preceding paragraph.]**
 
-**Figure 7.3 — The reviewer sub-agent before human review.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 7.3 — The reviewer sub-agent before human review.**
+
+![A top-to-bottom sequence diagram with four lanes: orange author agent, vermillion tests and hooks, purple reviewer agent, and blue human owner. Numbered messages show the author submitting a change, tests and hooks either failing back to the author or passing it to the reviewer agent, the reviewer reading the change against the specification, sending a findings report to the human owner, and the human merging as the owner of the decision. Notes mark the reviewer as a different read-only instance that cannot approve.](../figures/figure-7-3.svg)
+
+*Figure 7.3 — The reviewer sub-agent sits between the automated gates and the human. It is a different agent instance with its own context and no ability to approve or merge; it reports findings, and the human owner alone decides. (Rendered as `figures/figure-7-3.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -230,7 +242,11 @@ Even a separate reviewer instance tilts towards agreement if it is prompted to e
 The reviewer is therefore instantiated separately with its own clean context, charged explicitly with finding problems against a checklist rather than with judging acceptability, given no stake in defending the work, and held read-only with no merge rights; where the stakes justify the cost, more than one reviewer with different instructions is deployed, as Chapter 10 develops.
 The limitation to state plainly is that none of this makes the reviewer agent reliable in the way a check on a conservation law is reliable: it lowers the rate of over-agreeable review, it does not abolish it, and it is for exactly this residual that the human reviewer remains the owner of the decision and not a rubber stamp on the agent's approval (high confidence in the direction, low-to-moderate confidence in any specific reduction figure, which is model- and task-dependent).
 
-**Figure 7.4 — How plausible-but-wrong code clears a weak suite.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 7.4 — How plausible-but-wrong code clears a weak suite.**
+
+![A top-to-bottom failure trace. An orange author agent writes a green regrid-step box carrying a vermillion defect marked lat/lon transposed, and also writes a grey self-derived test that shows a misleading green pass, annotated asserts what the code does not what it should. A parallel branch shows an independent conservation-check test as a vermillion diamond returning a red fail and an arrow back to the author agent, annotated asserts intended behaviour, catches it.](../figures/figure-7-4.svg)
+
+*Figure 7.4 — The dominant failure of agent-written code. A test the agent derives from its own output ratifies a transposed-coordinate error; a test written against an intended property (here conservation of the regridded total) is what actually catches it. The green suite is necessary and not sufficient. (Rendered as `figures/figure-7-4.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF

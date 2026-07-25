@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 16.1 — The thirty-day on-ramp as a sequence of habits, not tools</title>
+  <desc>A two-band diagram. The upper grey band shows a tool-first start: adopt a product, learn the interface, ending in a question mark labelled trust. The lower band shows four sequential weeks (specify, verify, govern, compose), each in its role colour and each producing a kept artefact named beneath it: a specification, a verification record, an audit trail and a working governed workflow.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+    <marker id="ahGr" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#999999"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- ===== upper band: tool-first start ===== -->
+  <text x="90" y="70" font-size="18" font-weight="bold" fill="#999999">tool-first start</text>
+
+  <rect x="130" y="98" width="210" height="66" rx="8" fill="none" stroke="#999999" stroke-width="2.5"/>
+  <text x="235" y="137" font-size="16" fill="#999999" text-anchor="middle">adopt a product</text>
+
+  <line x1="342" y1="131" x2="428" y2="131" stroke="#999999" stroke-width="2" marker-end="url(#ahGr)"/>
+
+  <rect x="430" y="98" width="210" height="66" rx="8" fill="none" stroke="#999999" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="535" y="137" font-size="16" fill="#999999" text-anchor="middle">learn the interface</text>
+
+  <line x1="642" y1="131" x2="800" y2="131" stroke="#999999" stroke-width="2" marker-end="url(#ahGr)"/>
+
+  <polygon points="850,100 892,132 850,164 808,132" fill="none" stroke="#999999" stroke-width="2.5"/>
+  <text x="850" y="140" font-size="24" fill="#999999" text-anchor="middle">?</text>
+  <text x="850" y="196" font-size="16" fill="#999999" text-anchor="middle">trust?</text>
+
+  <!-- ===== lower band: capability weeks ===== -->
+  <!-- week 1 specify (blue) -->
+  <rect x="105" y="318" width="190" height="112" rx="10" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <text x="200" y="352" font-size="15" fill="#0072B2" text-anchor="middle">week 1 — specify</text>
+  <rect x="182" y="374" width="30" height="26" rx="3" fill="none" stroke="#0072B2" stroke-width="2.5"/>
+  <line x1="200" y1="374" x2="212" y2="386" stroke="#0072B2" stroke-width="2.5"/>
+  <line x1="212" y1="386" x2="212" y2="374" stroke="#0072B2" stroke-width="2.5"/>
+
+  <!-- week 2 verify (vermillion) -->
+  <rect x="380" y="318" width="190" height="112" rx="10" fill="none" stroke="#D55E00" stroke-width="3"/>
+  <text x="475" y="352" font-size="15" fill="#D55E00" text-anchor="middle">week 2 — verify</text>
+  <polygon points="475,372 493,390 475,408 457,390" fill="#D55E00"/>
+
+  <!-- week 3 govern (near-black) -->
+  <rect x="655" y="318" width="190" height="112" rx="10" fill="none" stroke="#111111" stroke-width="3"/>
+  <text x="750" y="352" font-size="15" fill="#111111" text-anchor="middle">week 3 — govern</text>
+  <rect x="735" y="372" width="30" height="36" rx="2" fill="none" stroke="#111111" stroke-width="2.5"/>
+  <line x1="740" y1="382" x2="760" y2="382" stroke="#111111" stroke-width="2"/>
+  <line x1="740" y1="390" x2="760" y2="390" stroke="#111111" stroke-width="2"/>
+  <line x1="740" y1="398" x2="754" y2="398" stroke="#111111" stroke-width="2"/>
+
+  <!-- week 4 compose (orange) -->
+  <rect x="930" y="318" width="190" height="112" rx="10" fill="none" stroke="#E69F00" stroke-width="3"/>
+  <text x="1025" y="352" font-size="15" fill="#E69F00" text-anchor="middle">week 4 — compose</text>
+  <path d="M1015,376 a15,15 0 1 1 -5,18" fill="none" stroke="#E69F00" stroke-width="3" marker-end="url(#ah)"/>
+
+  <!-- arrows between weeks -->
+  <line x1="297" y1="374" x2="378" y2="374" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="572" y1="374" x2="653" y2="374" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="847" y1="374" x2="928" y2="374" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- kept artefact tags -->
+  <line x1="200" y1="430" x2="200" y2="452" stroke="#999999" stroke-width="1.5"/>
+  <rect x="110" y="452" width="180" height="40" rx="8" fill="#56B4E9"/>
+  <text x="200" y="477" font-size="13" fill="#111111" text-anchor="middle">kept: a specification</text>
+
+  <line x1="475" y1="430" x2="475" y2="452" stroke="#999999" stroke-width="1.5"/>
+  <rect x="375" y="452" width="200" height="40" rx="8" fill="#56B4E9"/>
+  <text x="475" y="477" font-size="13" fill="#111111" text-anchor="middle">kept: a verification record</text>
+
+  <line x1="750" y1="430" x2="750" y2="452" stroke="#999999" stroke-width="1.5"/>
+  <rect x="665" y="452" width="170" height="40" rx="8" fill="#56B4E9"/>
+  <text x="750" y="477" font-size="13" fill="#111111" text-anchor="middle">kept: an audit trail</text>
+
+  <line x1="1025" y1="430" x2="1025" y2="452" stroke="#999999" stroke-width="1.5"/>
+  <rect x="908" y="452" width="234" height="40" rx="8" fill="#56B4E9"/>
+  <text x="1025" y="477" font-size="13" fill="#111111" text-anchor="middle">kept: a working governed workflow</text>
+
+  <!-- bracket under the four weeks -->
+  <path d="M110,528 v10 h1032 v-10" fill="none" stroke="#999999" stroke-width="1.5"/>
+  <line x1="626" y1="538" x2="626" y2="550" stroke="#999999" stroke-width="1.5"/>
+  <text x="626" y="574" font-size="15" fill="#111111" text-anchor="middle">habits that survive a change of tool</text>
+</svg>
