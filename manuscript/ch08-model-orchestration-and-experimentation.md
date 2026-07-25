@@ -219,7 +219,11 @@ FIGURE BRIEF
                  connectors, one arrowhead style, aligned panels, generous spacing, minimal text.
 ```
 
-**Figure 8.4 — Orchestrating the three-track intercomparison.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 8.4 — Orchestrating the three-track intercomparison.**
+
+![A top-to-bottom sequence diagram with four actor lanes (scientist, orchestration agent, HPC scheduler and provenance store) and a separated vermillion evaluation lane on the right. Numbered steps show the scientist authoring a protocol and three track configurations, the agent expanding physics, data-driven and hybrid configs into runs, submitting them, receiving states, recording provenance and flagging anomalies, then completed outputs passing to independent held-out evaluation whose scores return to the scientist. A bracket marks the agent's steps as orchestration only, with no scoring.](../figures/figure-8-4.svg)
+
+*Figure 8.4 — The worked design as a sequence. A single agent expands, submits, tracks and records three tracks under one protocol; scoring is done separately against a held-out period, so the system that runs the experiments does not judge them. No results are shown: this is a design. (Rendered as `figures/figure-8-4.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
