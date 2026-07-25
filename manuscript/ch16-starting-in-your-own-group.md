@@ -37,7 +37,11 @@ The strongest current gauge of agent capability has the length of task an agent 
 The start-small stance is now multi-national security guidance too: begin with tightly bounded pilots on low-risk, clearly defined tasks before expanding scope (Five Eyes, 2026).
 **[AUTHOR: if you have run an onboarding like this with a real group, a sentence on what actually broke in week one — most likely the specification step — would anchor this far better than the idealised schedule.]**
 
-**Figure 16.1 — A capability-based thirty-day on-ramp.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 16.1 — A capability-based thirty-day on-ramp.**
+
+![A two-band diagram. The upper grey band shows a tool-first start: adopt a product, learn the interface, ending in a question mark labelled trust. The lower band shows four sequential weeks (specify, verify, govern, compose), each in its role colour and each producing a kept artefact named beneath it: a specification, a verification record, an audit trail and a working governed workflow.](../figures/figure-16-1.svg)
+
+*Figure 16.1 — A capability-based thirty-day on-ramp. The upper path, adopting a product first, leaves a group with interface familiarity and an unanswered question of trust; the lower path builds specifying, verifying and governing in sequence, each week retaining an artefact that outlasts any particular tool. (Rendered as `figures/figure-16-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -94,7 +98,11 @@ The fourth is the cost of failure and rework (silent errors caught late, tasks r
 The implication for a group's budget is that inference is the line item to worry about least and verification the line item to protect most, which inverts the intuition that cheaper models make agentic work cheap.
 The honest limitation is that the relative sizes of these four shares vary widely by task, group and domain, and no single split can be quoted as typical; the direction carries high confidence, and any specific proportions belong in the repository against a dated, worked example rather than in print **[verify: illustrative cost-share breakdown for one operational workflow (repository)]**.
 
-**Figure 16.2 — Where adoption spend concentrates.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 16.2 — Where adoption spend concentrates.**
+
+![A row of five cost blocks of differing sizes. Model inference is the smallest, marked as falling fast. Engineering is larger. Evaluation and verification are the largest, bracketed as where spend concentrates, with verification marked recurring. A fifth block, failure and rework, is dashed and marked as shrinking when the others are funded. A caption strip notes that magnitudes are illustrative and dated figures live in the repository.](../figures/figure-16-2.svg)
+
+*Figure 16.2 — Where adoption spend concentrates. Block sizes are illustrative, not measured: model inference, the most visible and fastest-falling cost, is the smallest recurring share, while engineering, evaluation and verification dominate. Failure and rework shrink to the degree the other three are funded properly. (Rendered as `figures/figure-16-2.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF

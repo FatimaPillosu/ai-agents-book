@@ -45,7 +45,11 @@ A proposal that survives the rules is applied as a *flag*, never as a substitute
 The agent's contribution is thus confined to the two things it does well (wrangling formats and articulating a justified hypothesis about each anomaly), whilst the two things that must not be delegated (the decision to alter the record, and the authority over what counts as physically admissible) stay with deterministic code and, above it, with the accountable scientist.
 The tools the agent calls to do this are the ordinary function-call machinery of Chapter 2: a format reader, a unit resolver, a neighbouring-station query, each with a narrow, declared interface, so the agent's actions are auditable calls rather than opaque cognition (high confidence in the pattern; the specific tool set depends on the data landscape).
 
-**Figure 6.1 — Propose–dispose architecture.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 6.1 — Propose–dispose architecture.**
+
+![An architecture diagram. Three raw-input data cylinders feed a QC agent containing a language model, a plan–act–observe loop and three tools. The agent emits justified flag proposals into a deterministic QC-rules diamond overseen by a scientist. The diamond has two exits, apply-flag to a flagged-record store and reject to a rejection log, and both write to a separate provenance store. A callout notes that the agent has no write access to the data.](../figures/figure-6-1.svg)
+
+*Figure 6.1 — The propose–dispose architecture. The agent normalises inputs and proposes justified flags, but only deterministic rules, under a scientist's authority, dispose of each proposal; observations are flagged, never silently overwritten, and every decision is recorded to the provenance store. (Rendered as `figures/figure-6-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -109,7 +113,11 @@ In the fourth stage every proposal, every disposition and every rejection is wri
 The result **[AUTHOR: report what the run actually produced — counts of proposed, applied and rejected flags, any error the deterministic rules caught that a manual pass had previously missed, and the wall-clock time against the manual baseline in §6.2]** is not a "cleaned" dataset but a *flagged and audited* one, in which every departure from the raw observation is visible, justified and reversible.
 Figure 6.4 shows the three characteristic dispositions on a single joined trace: a spike accepted because rainfall supports it, a spike the agent found plausible but the rate-of-change rule rejects for want of any rainfall, and a gap flagged and left unfilled.
 
-**Figure 6.2 — The four-stage QC sequence.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 6.2 — The four-stage QC sequence.**
+
+![A left-to-right sequence in four lanes: ingest and normalise, propose flags, dispose, and record provenance. Six numbered steps carry a datum from raw series, through unit and timestamp normalisation, to justified flag proposals, then physical-bounds and inter-station disposition, then apply-or-reject, and finally a provenance write. A vermillion divider between the propose and dispose lanes is labelled the authority boundary.](../figures/figure-6-2.svg)
+
+*Figure 6.2 — One quality-control pass over a joined gauge-and-rainfall record. The agent ingests, normalises and proposes; deterministic rules dispose; and every step writes to provenance. The vermillion divider marks the authority boundary the pattern never crosses. (Rendered as `figures/figure-6-2.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -147,7 +155,11 @@ FIGURE BRIEF
                  spacing, one arrowhead style.
 ```
 
-**Figure 6.3 — Conventional QC and the agentic redesign.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 6.3 — Conventional QC and the agentic redesign.**
+
+![A two-row before-and-after diagram. The top row shows a human cycling between per-format loaders, hand-tuned checks and a plot-and-eyeball step, with a faded note that reasoning is lost in comments. The bottom row shows raw inputs feeding a QC agent that proposes into a deterministic-rules diamond, then a flagged record and a provenance store. A bracket links the checks in both rows, labelled same checks, same authority, retained.](../figures/figure-6-3.svg)
+
+*Figure 6.3 — Before and after. The conventional workflow's deterministic checks are kept unchanged; what the redesign adds is a format-wrangling, proposal-writing agent in front of them and a provenance store behind them, replacing manual pattern-recognition and lost reasoning rather than the rules themselves. (Rendered as `figures/figure-6-3.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -187,7 +199,11 @@ FIGURE BRIEF
                  generous spacing, single-weight lines.
 ```
 
-**Figure 6.4 — An annotated gauge-and-rainfall trace.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 6.4 — An annotated gauge-and-rainfall trace.**
+
+![A two-panel time-series figure sharing a time axis. The upper panel plots river stage with three marked events; the lower panel plots co-located rainfall as bars. Event A, a stage spike aligned with a tall rainfall bar, is accepted. Event B, a stage spike with no rainfall beneath it, is rejected by a rule for exceeding the rate limit, marked in vermillion. Event C, a gap in the stage line, is flagged as a telemetry gap and left unfilled.](../figures/figure-6-4.svg)
+
+*Figure 6.4 — A joined gauge-and-rainfall trace with three dispositions. Event A, a spike backed by heavy rainfall, is accepted; event B, a spike the agent found plausible but with no rainfall and an impossible rate, is rejected by a deterministic rule; event C, a telemetry gap, is flagged and left as observed. The vermillion callout marks where the rules catch a fluent but wrong proposal. [AUTHOR: replace the schematic events with three real ones from your record and give the actual disposition counts.] (Rendered as `figures/figure-6-4.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF

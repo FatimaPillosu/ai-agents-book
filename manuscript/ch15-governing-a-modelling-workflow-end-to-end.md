@@ -26,7 +26,11 @@ The five are: a specification written to the seven-field schema of Chapter 3; a 
 The diagram draws them left to right for legibility, but the lifecycle is not a pipeline that runs once cleanly, because every gate has a failure exit that returns work to the role that produced it, and a registry entry made late can invalidate a stage already passed.
 What the diagram fixes is not a sequence guaranteed to run forward but the set of points at which a named human decision is required before the work may proceed, and it is those points, rather than the boxes between them, that are the governance.
 
-**Figure 15.1 — The governed modelling lifecycle, end to end.** *A figure brief follows FIGURES.md; render in the house style.*
+**Figure 15.1 — The governed modelling lifecycle, end to end.**
+
+![A left-to-right architecture diagram of five stage-blocks: specification, agent roster, gates and registries, independent review, and publication run. A single author-decision icon at the top connects down to every gate. Each gate has a pass arrow continuing right and a fail arrow returning to the previous stage. An audit-trail bar runs beneath all five stages.](../figures/figure-15-1.svg)
+
+*Figure 15.1 — The governed modelling lifecycle. A single specification (Chapter 3) yields a roster of agent roles (Chapter 10); every unit of work passes a gate and writes to the assumption and uncertainty registries (Chapter 12); an independent reviewer with no stake in the work checks each stage; and a governed publication run (Chapter 9) draws its disclosure statement from the audit trail. The author decides at every gate, and every gate can return work upstream. (Rendered as `figures/figure-15-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -116,7 +120,11 @@ A pass advances the output to the next unit; a failure returns it to the produci
 The human decision sits at the gate, not after it: the human is the party who accepts a passed stage into the workflow's record or overrides a gate outcome with a reasoned entry of their own **[AUTHOR: describe one real decision you took at this gate — an acceptance, an override, or a return — and what the output and provenance were that you decided on]**.
 The point the stage makes concrete is that the human is not reviewing a finished workflow at the end but authorising it one gate at a time, and that the cost of this, a decision per gate rather than a decision per project, is the price of an instrument whose every step is attributable (high confidence in the pattern; the per-stage effort on this workflow remains for the author to report).
 
-**Figure 15.2 — A single gated stage, in sequence.** *A figure brief follows FIGURES.md; render in the house style.*
+**Figure 15.2 — A single gated stage, in sequence.**
+
+![A top-to-bottom sequence diagram with five lanes: specification unit, agent, tools and data, gate with reviewer, and author. Numbered steps show the agent reading the unit, calling tools, writing output and provenance, and submitting to the gate. A failure arrow loops back to the agent within a bounded budget; a pass reaches the author, who accepts, overrides or returns the result.](../figures/figure-15-2.svg)
+
+*Figure 15.2 — One representative gated stage. The agent executes a specification unit through tools, writes its output and provenance and logs any new assumption, and submits to the gate; the independent reviewer and mechanical checks decide pass or fail; a failure returns the work within the stop-condition budget, and a pass reaches the author, who accepts, overrides or returns it. Human authority sits at the gate. (Rendered as `figures/figure-15-2.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF

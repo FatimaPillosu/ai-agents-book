@@ -30,7 +30,11 @@ Systematic-review methodologies exist precisely to discipline the front stages, 
 Those methods buy rigour at a large cost in time, and most working syntheses (the literature section of a paper, the state-of-the-art survey that opens a proposal) are done informally, inheriting the silent-gap weakness without the protection the formal methods give.
 The redesign in this chapter aims to keep the interpretive act firmly with the scientist whilst giving the front stages both the speed of automation and, through an explicit verification gate, a defence against the failure modes that make automating this task hazardous.
 
-**Figure 5.1 — Conventional versus agentic synthesis.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 5.1 — Conventional versus agentic synthesis.**
+
+![A two-row before/after diagram. The top row shows a person moving through search, triage, reading and drafting to an interpret step. The bottom row shows a specification feeding an agent that retrieves, triages and drafts against a corpus store, then passes through a citation-verification gate before reaching the same human interpret-and-decide step, which is aligned vertically with the top row to show it is unchanged.](../figures/figure-5-1.svg)
+
+*Figure 5.1 — The conventional synthesis (top) and its agentic redesign (bottom), drawn on a shared grid. The agent absorbs retrieval, triage and drafting; a verification gate defends the corpus against fabricated or mis-attributed citations; the interpretive decision, aligned across both rows, remains the scientist's. (Rendered as `figures/figure-5-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -77,7 +81,11 @@ The scientist reads the verified, grounded draft and performs the interpretive a
 The division of responsibility is the whole point of the design.
 The agent is allowed to gather and to draft, both cheap-to-produce and expensive-to-trust activities, precisely because a verification gate and a human interpreter stand between its output and any use the synthesis is put to (high confidence in the pattern).
 
-**Figure 5.2 — The retrieval-grounded synthesis pipeline.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 5.2 — The retrieval-grounded synthesis pipeline.**
+
+![An architecture diagram. A specification feeds a retrieval-and-drafting agent containing a language model and a plan–act–observe loop. The agent calls bibliographic-search and web-search tools and writes results into a retrieved-corpus store, then drafts using only that store. Its output passes to a citation-verification gate, annotated with the three checks exists, passage present and claim supported; failing citations return to the agent, passing ones proceed to a human interpret-and-decide step.](../figures/figure-5-2.svg)
+
+*Figure 5.2 — The pattern's architecture. Retrieval populates a persistent corpus; drafting is constrained to that corpus; an independent gate checks that every citation exists, that the cited passage is present, and that it supports the claim; only then does the verified draft reach the scientist for interpretation. (Rendered as `figures/figure-5-2.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -112,7 +120,11 @@ The second is that the interpretive conclusions (which application areas rest on
 Presented this way, the example demonstrates the pattern without asserting any result the draft cannot itself substantiate: the method is reproducible and set out in full, whilst the corpus, the gate's yield and the interpretation are held as author-supplied, so nothing here stands unless the author's own materials support it.
 No paper, author or finding is named in this draft, in keeping with the rule that literature is never invented to illustrate a method, a design choice stated plainly so that the absence of citations here is not mistaken for an absence of evidence in the actual synthesis.
 
-**Figure 5.3 — Corpus and gate yield.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 5.3 — Corpus and gate yield.**
+
+![A top-to-bottom funnel of five narrowing horizontal bars labelled retrieved, after triage, claims drafted with citations, claims surviving the gate, and interpreted by the scientist. Each transition carries a count placeholder marked as author-supplied. A callout at the gate step notes that removed claims failed the existence, passage-present or claim-supported test.](../figures/figure-5-3.svg)
+
+*Figure 5.3 — The synthesis as a funnel from retrieved documents to interpreted claims. The counts are placeholders to be replaced with the author's real figures; the figure's point is structural: the gate removes claims visibly, and its non-zero yield is what makes the surviving synthesis trustworthy. (Rendered as `figures/figure-5-3.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
