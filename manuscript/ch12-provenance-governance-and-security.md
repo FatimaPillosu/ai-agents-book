@@ -82,7 +82,7 @@ FIGURE BRIEF
 - id:            Figure 12.1
 - title:         A governance layer that records without steering
 - type:          architecture
-- claim:         Provenance is captured by a standing governance layer that sits beside the workflow and is fed by the same events the workflow already emits — assumptions, uncertainties, execution and review recorded as first-class, durable outputs.
+- claim:         Provenance is captured by a standing governance layer that sits beside the workflow and is fed by the same events the workflow already emits: assumptions, uncertainties, execution and review recorded as first-class, durable outputs.
 - canvas:        16:9
 - elements:      left, a vertical stack representing the workflow — a "specification" tag (blue),
                  an "AI agent" rounded rectangle (orange border), a "tool call" glyph (green),
