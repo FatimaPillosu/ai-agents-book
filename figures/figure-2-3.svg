@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 2.3 — The finite working store and the durable store</title>
+  <desc>On the left, a bounded rectangle labelled context window with a marked capacity limit contains stacked bands (specification, retrieved material, tool results and running transcript) with the top and bottom bands highlighted and the middle greyed and marked attended to less reliably. On the right, separated by a gap, a cylinder labelled durable memory holds files, records and version control, marked where provenance lives. A two-way arrow labelled externalise and retrieve connects the two; the left is within a run, the right across runs.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+    <marker id="ahs" markerWidth="12" markerHeight="10" refX="1" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M12,0 L0,5 L12,10 Z" fill="#111111"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- context window rectangle -->
+  <rect x="80" y="150" width="560" height="410" rx="10" fill="none" stroke="#56B4E9" stroke-width="3"/>
+  <text x="100" y="186" font-size="18" fill="#111111">context window</text>
+
+  <!-- stacked bands -->
+  <rect x="110" y="205" width="330" height="76" fill="#F0E442" stroke="#111111" stroke-width="1"/>
+  <text x="275" y="250" font-size="16" fill="#111111" text-anchor="middle">specification</text>
+
+  <rect x="110" y="289" width="330" height="76" fill="#999999" stroke="#111111" stroke-width="1"/>
+  <text x="275" y="334" font-size="16" fill="#111111" text-anchor="middle">retrieved material</text>
+
+  <rect x="110" y="373" width="330" height="76" fill="#999999" stroke="#111111" stroke-width="1"/>
+  <text x="275" y="418" font-size="16" fill="#111111" text-anchor="middle">tool results</text>
+
+  <rect x="110" y="457" width="330" height="76" fill="#F0E442" stroke="#111111" stroke-width="1"/>
+  <text x="275" y="502" font-size="16" fill="#111111" text-anchor="middle">running transcript</text>
+
+  <!-- capacity limit (thick grey edge) -->
+  <line x1="620" y1="155" x2="620" y2="555" stroke="#999999" stroke-width="8"/>
+  <text x="600" y="355" font-size="15" fill="#111111" text-anchor="middle" transform="rotate(-90 600 355)">capacity limit</text>
+
+  <!-- callout: attended to less reliably -->
+  <line x1="490" y1="384" x2="442" y2="384" stroke="#999999" stroke-width="1.5"/>
+  <text x="533" y="378" font-size="14" fill="#111111" text-anchor="middle">attended to</text>
+  <text x="533" y="398" font-size="14" fill="#111111" text-anchor="middle">less reliably</text>
+
+  <!-- within a run -->
+  <text x="275" y="588" font-size="16" fill="#111111" text-anchor="middle">within a run</text>
+
+  <!-- two-way arrow -->
+  <line x1="662" y1="365" x2="852" y2="365" stroke="#111111" stroke-width="2" marker-start="url(#ahs)" marker-end="url(#ah)"/>
+  <text x="757" y="342" font-size="15" fill="#111111" text-anchor="middle">externalise /</text>
+  <text x="757" y="360" font-size="15" fill="#111111" text-anchor="middle">retrieve</text>
+
+  <!-- durable memory cylinder (sky) -->
+  <path d="M860,235 v210 a80,16 0 0 0 160,0 v-210" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="940" cy="235" rx="80" ry="16" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="940" y="213" font-size="18" fill="#111111" text-anchor="middle">durable memory</text>
+  <text x="940" y="330" font-size="15" fill="#111111" text-anchor="middle">files · records ·</text>
+  <text x="940" y="352" font-size="15" fill="#111111" text-anchor="middle">version control</text>
+
+  <!-- callout: where provenance lives -->
+  <rect x="843" y="476" width="194" height="32" rx="6" fill="#F0E442"/>
+  <text x="940" y="498" font-size="15" fill="#111111" text-anchor="middle">where provenance lives</text>
+
+  <!-- across runs -->
+  <text x="940" y="588" font-size="16" fill="#111111" text-anchor="middle">across runs</text>
+</svg>

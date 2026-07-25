@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 9.2 — Manuscript assembly from pipeline artefacts under an author gate</title>
+  <desc>An architecture diagram. Two sky-blue cylinders on the left, pipeline artefacts and provenance records, feed an orange assembly agent with a loop arrow. Beneath the agent, four green tool glyphs handle figure generation, table generation, section drafting and disclosure drafting, bracketed as generated, not hand-copied. All outputs converge on a vermillion author-control gate, staffed by a blue author icon marked as sole interpretive authority, which either accepts a component into the manuscript or returns it to the agent to revise.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+    <marker id="ahO" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#E69F00"/>
+    </marker>
+    <marker id="ahGrey" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#999999"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- source cylinders (sky blue) -->
+  <path d="M88,150 v60 a52,12 0 0 0 104,0 v-60" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="140" cy="150" rx="52" ry="12" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="140" y="245" font-size="16" fill="#111111" text-anchor="middle">pipeline artefacts</text>
+
+  <path d="M88,395 v60 a52,12 0 0 0 104,0 v-60" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="140" cy="395" rx="52" ry="12" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="140" y="490" font-size="16" fill="#111111" text-anchor="middle">provenance records</text>
+
+  <!-- assembly agent (orange) -->
+  <rect x="345" y="230" width="122" height="120" rx="14" fill="none" stroke="#E69F00" stroke-width="3"/>
+  <path d="M430,262 A16,16 0 1 1 414,254" fill="none" stroke="#E69F00" stroke-width="3" marker-end="url(#ahO)"/>
+  <text x="406" y="308" font-size="16" fill="#111111" text-anchor="middle">assembly</text>
+  <text x="406" y="329" font-size="16" fill="#111111" text-anchor="middle">agent</text>
+
+  <!-- four green tool boxes -->
+  <g>
+    <rect x="135" y="464" width="150" height="72" rx="10" fill="#009E73"/>
+    <text x="210" y="497" font-size="15" fill="#FFFFFF" text-anchor="middle">figure</text>
+    <text x="210" y="518" font-size="15" fill="#FFFFFF" text-anchor="middle">generation</text>
+
+    <rect x="325" y="464" width="150" height="72" rx="10" fill="#009E73"/>
+    <text x="400" y="497" font-size="15" fill="#FFFFFF" text-anchor="middle">table</text>
+    <text x="400" y="518" font-size="15" fill="#FFFFFF" text-anchor="middle">generation</text>
+
+    <rect x="515" y="464" width="150" height="72" rx="10" fill="#009E73"/>
+    <text x="590" y="497" font-size="15" fill="#FFFFFF" text-anchor="middle">section</text>
+    <text x="590" y="518" font-size="15" fill="#FFFFFF" text-anchor="middle">drafting</text>
+
+    <rect x="705" y="464" width="150" height="72" rx="10" fill="#009E73"/>
+    <text x="780" y="497" font-size="15" fill="#FFFFFF" text-anchor="middle">disclosure</text>
+    <text x="780" y="518" font-size="15" fill="#FFFFFF" text-anchor="middle">drafting</text>
+  </g>
+
+  <!-- bracket under the four tools -->
+  <path d="M135,552 v10 h720 v-10" fill="none" stroke="#111111" stroke-width="1.5"/>
+  <line x1="495" y1="562" x2="495" y2="572" stroke="#111111" stroke-width="1.5"/>
+  <text x="495" y="592" font-size="16" fill="#111111" text-anchor="middle">generated, not hand-copied</text>
+
+  <!-- sources feed agent -->
+  <line x1="192" y1="178" x2="343" y2="262" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="192" y1="415" x2="343" y2="320" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- agent generates the tools -->
+  <line x1="406" y1="350" x2="470" y2="462" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- provenance links to disclosure drafting (grey de-emphasised) -->
+  <path d="M140,455 C140,650 780,660 780,538" fill="none" stroke="#999999" stroke-width="1.5" marker-end="url(#ahGrey)"/>
+
+  <!-- convergence on gate -->
+  <line x1="467" y1="285" x2="948" y2="285" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <path d="M855,500 C920,470 960,420 990,350" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- author-control gate (vermillion diamond) -->
+  <polygon points="1015,225 1078,290 1015,355 952,290" fill="#D55E00"/>
+  <text x="1015" y="285" font-size="14" fill="#FFFFFF" text-anchor="middle">author-control</text>
+  <text x="1015" y="304" font-size="14" fill="#FFFFFF" text-anchor="middle">gate</text>
+
+  <!-- author (blue human) at the gate -->
+  <circle cx="1015" cy="120" r="15" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <path d="M991,168 a24,24 0 0 1 48,0" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <text x="1015" y="192" font-size="16" fill="#0072B2" text-anchor="middle">author</text>
+  <text x="1015" y="212" font-size="13" fill="#0072B2" text-anchor="middle">sole interpretive authority</text>
+  <line x1="1015" y1="172" x2="1015" y2="222" stroke="#0072B2" stroke-width="1"/>
+
+  <!-- manuscript (grey doc) with disclosure tag -->
+  <rect x="1078" y="420" width="150" height="92" rx="6" fill="none" stroke="#999999" stroke-width="3"/>
+  <line x1="1098" y1="447" x2="1208" y2="447" stroke="#999999" stroke-width="2"/>
+  <line x1="1098" y1="468" x2="1208" y2="468" stroke="#999999" stroke-width="2"/>
+  <line x1="1098" y1="489" x2="1170" y2="489" stroke="#999999" stroke-width="2"/>
+  <text x="1153" y="405" font-size="16" fill="#111111" text-anchor="middle">manuscript</text>
+  <rect x="1100" y="522" width="128" height="30" rx="4" fill="none" stroke="#999999" stroke-width="2"/>
+  <text x="1164" y="542" font-size="13" fill="#999999" text-anchor="middle">disclosure statement</text>
+
+  <!-- gate exits -->
+  <path d="M1015,355 L1015,420 L1076,440" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="1000" y="400" font-size="15" fill="#111111" text-anchor="end">accept</text>
+
+  <path d="M952,290 C760,180 560,180 406,228" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="700" y="172" font-size="15" fill="#111111" text-anchor="middle">revise</text>
+</svg>

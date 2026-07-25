@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="900" viewBox="0 0 720 900" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 9.3 — Deciding what to disclose, and whether a use is permitted at all</title>
+  <desc>A top-to-bottom decision flowchart beginning from an agent being used to prepare an output. The first vermillion gate asks whether the venue bars the task; yes leads to a red stop box advising a permitted alternative. The second gate asks whether a confidential manuscript under review is involved; yes leads to a stop box advising it be kept off external systems. The third gate asks whether disclosure is required or best practice; yes leads to a blue box generating the disclosure from provenance records, no to recording it internally regardless. A blue author-confirms icon sits at the foot, with a note reading when in doubt, disclose.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+  </defs>
+
+  <rect width="720" height="900" fill="#F7F7F5"/>
+
+  <!-- start box (orange) -->
+  <rect x="120" y="40" width="280" height="60" rx="12" fill="none" stroke="#E69F00" stroke-width="3"/>
+  <text x="260" y="66" font-size="16" fill="#111111" text-anchor="middle">agent used in preparing</text>
+  <text x="260" y="88" font-size="16" fill="#111111" text-anchor="middle">this output</text>
+
+  <!-- gate 1 -->
+  <line x1="260" y1="100" x2="260" y2="138" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <polygon points="260,140 348,196 260,252 172,196" fill="#D55E00"/>
+  <text x="260" y="190" font-size="15" fill="#FFFFFF" text-anchor="middle">does the venue</text>
+  <text x="260" y="210" font-size="15" fill="#FFFFFF" text-anchor="middle">bar this task?</text>
+
+  <!-- gate1 yes -> stop 1 -->
+  <line x1="348" y1="196" x2="466" y2="196" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="406" y="184" font-size="15" fill="#111111" text-anchor="middle">yes</text>
+  <rect x="468" y="160" width="230" height="72" rx="10" fill="none" stroke="#D55E00" stroke-width="3"/>
+  <text x="583" y="192" font-size="15" fill="#D55E00" text-anchor="middle">do not use; find a</text>
+  <text x="583" y="213" font-size="15" fill="#D55E00" text-anchor="middle">permitted alternative</text>
+
+  <!-- gate1 no -> gate 2 -->
+  <line x1="260" y1="252" x2="260" y2="306" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="277" y="284" font-size="15" fill="#111111" text-anchor="start">no</text>
+  <polygon points="260,308 348,368 260,428 172,368" fill="#D55E00"/>
+  <text x="260" y="356" font-size="14" fill="#FFFFFF" text-anchor="middle">confidential</text>
+  <text x="260" y="374" font-size="14" fill="#FFFFFF" text-anchor="middle">manuscript</text>
+  <text x="260" y="392" font-size="14" fill="#FFFFFF" text-anchor="middle">under review?</text>
+
+  <!-- gate2 yes -> stop 2 -->
+  <line x1="348" y1="368" x2="466" y2="368" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="406" y="356" font-size="15" fill="#111111" text-anchor="middle">yes</text>
+  <rect x="468" y="334" width="230" height="70" rx="10" fill="none" stroke="#D55E00" stroke-width="3"/>
+  <text x="583" y="366" font-size="15" fill="#D55E00" text-anchor="middle">keep off external</text>
+  <text x="583" y="387" font-size="15" fill="#D55E00" text-anchor="middle">systems</text>
+
+  <!-- gate2 no -> gate 3 -->
+  <line x1="260" y1="428" x2="260" y2="482" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="277" y="460" font-size="15" fill="#111111" text-anchor="start">no</text>
+  <polygon points="260,484 356,544 260,604 164,544" fill="#D55E00"/>
+  <text x="260" y="538" font-size="14" fill="#FFFFFF" text-anchor="middle">disclosure required</text>
+  <text x="260" y="558" font-size="14" fill="#FFFFFF" text-anchor="middle">or best practice?</text>
+
+  <!-- note beside gate 3 -->
+  <text x="470" y="540" font-size="14" fill="#D55E00" text-anchor="start">when in doubt,</text>
+  <text x="470" y="560" font-size="14" fill="#D55E00" text-anchor="start">disclose</text>
+
+  <!-- gate3 yes -> blue box -->
+  <path d="M212,580 L160,626 L160,662" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="150" y="626" font-size="15" fill="#111111" text-anchor="end">yes</text>
+  <rect x="40" y="664" width="248" height="72" rx="10" fill="#0072B2"/>
+  <text x="164" y="696" font-size="15" fill="#FFFFFF" text-anchor="middle">generate disclosure from</text>
+  <text x="164" y="717" font-size="15" fill="#FFFFFF" text-anchor="middle">provenance records</text>
+
+  <!-- gate3 no -> grey box -->
+  <path d="M308,580 L470,626 L470,662" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="430" y="620" font-size="15" fill="#111111" text-anchor="start">no</text>
+  <rect x="380" y="664" width="220" height="64" rx="10" fill="none" stroke="#999999" stroke-width="3"/>
+  <text x="490" y="692" font-size="15" fill="#999999" text-anchor="middle">record internally</text>
+  <text x="490" y="713" font-size="15" fill="#999999" text-anchor="middle">regardless</text>
+
+  <!-- converge to author confirms -->
+  <path d="M164,736 L164,790 L326,790" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <path d="M490,728 L490,790 L364,790" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- author confirms (blue human) -->
+  <circle cx="345" cy="800" r="16" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <path d="M319,852 a26,26 0 0 1 52,0" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <text x="345" y="884" font-size="16" fill="#0072B2" text-anchor="middle">author confirms</text>
+</svg>

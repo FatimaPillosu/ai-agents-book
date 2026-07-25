@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 5.2 — Retrieval-grounded synthesis with a citation-verification gate</title>
+  <desc>An architecture diagram. A specification feeds a retrieval-and-drafting agent containing a language model and a plan–act–observe loop. The agent calls bibliographic-search and web-search tools and writes results into a retrieved-corpus store, then drafts using only that store. Its output passes to a citation-verification gate, annotated with the three checks exists, passage present and claim supported; failing citations return to the agent, passing ones proceed to a human interpret-and-decide step.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+    <marker id="ahO" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#E69F00"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- specification tag (blue) -->
+  <rect x="40" y="304" width="140" height="52" rx="8" fill="#0072B2"/>
+  <text x="110" y="337" font-size="16" fill="#FFFFFF" text-anchor="middle">specification</text>
+  <line x1="182" y1="330" x2="248" y2="330" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- retrieval tools (green wrenches) above the agent -->
+  <text x="350" y="72" font-size="15" fill="#111111" text-anchor="middle">bibliographic search</text>
+  <g stroke="#009E73" stroke-width="9" fill="none" stroke-linecap="round" transform="translate(350,105)">
+    <path d="M12,-12 A18,18 0 1 0 12,12"/>
+    <path d="M-13,13 L-32,32"/>
+  </g>
+  <line x1="350" y1="128" x2="350" y2="178" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <text x="565" y="72" font-size="15" fill="#111111" text-anchor="middle">web search</text>
+  <g stroke="#009E73" stroke-width="9" fill="none" stroke-linecap="round" transform="translate(565,105)">
+    <path d="M12,-12 A18,18 0 1 0 12,12"/>
+    <path d="M-13,13 L-32,32"/>
+  </g>
+  <line x1="565" y1="128" x2="565" y2="178" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- agent container -->
+  <rect x="250" y="180" width="420" height="300" rx="14" fill="none" stroke="#E69F00" stroke-width="3"/>
+  <text x="272" y="214" font-size="18" fill="#E69F00">retrieval and</text>
+  <text x="272" y="236" font-size="18" fill="#E69F00">drafting agent</text>
+
+  <!-- LLM box -->
+  <rect x="300" y="272" width="120" height="60" rx="8" fill="#E69F00"/>
+  <text x="360" y="309" font-size="20" fill="#111111" text-anchor="middle">LLM</text>
+
+  <!-- plan-act-observe loop -->
+  <line x1="422" y1="302" x2="505" y2="302" stroke="#111111" stroke-width="1.5"/>
+  <path d="M558,258 A45,45 0 1 1 512,302" fill="none" stroke="#E69F00" stroke-width="4" marker-end="url(#ahO)"/>
+  <text x="558" y="372" font-size="16" fill="#111111" text-anchor="middle">plan – act – observe</text>
+
+  <!-- retrieved corpus cylinder (sky) -->
+  <path d="M390,545 v48 a70,16 0 0 0 140,0 v-48" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="460" cy="545" rx="70" ry="16" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="460" y="582" font-size="16" fill="#111111" text-anchor="middle">retrieved corpus</text>
+  <text x="460" y="620" font-size="14" fill="#999999" text-anchor="middle">drafting draws only from here</text>
+  <line x1="440" y1="482" x2="440" y2="543" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="480" y1="543" x2="480" y2="482" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- agent to gate -->
+  <line x1="670" y1="330" x2="758" y2="330" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- reviewer icon (purple, independence) attached above gate -->
+  <circle cx="830" cy="158" r="13" fill="none" stroke="#CC79A7" stroke-width="3"/>
+  <path d="M807,190 a23,23 0 0 1 46,0" fill="none" stroke="#CC79A7" stroke-width="3"/>
+  <path d="M844,150 l7,7 l13,-15" fill="none" stroke="#CC79A7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="830" y1="196" x2="830" y2="258" stroke="#CC79A7" stroke-width="1.5" stroke-dasharray="5 5"/>
+
+  <!-- citation-verification gate diamond (vermillion) -->
+  <polygon points="830,260 900,330 830,400 760,330" fill="#D55E00"/>
+  <path d="M812,330 l12,12 l22,-26" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="830" y="425" font-size="15" fill="#111111" text-anchor="middle">citation-verification gate</text>
+
+  <!-- gate callout on yellow highlight -->
+  <rect x="675" y="446" width="310" height="26" rx="4" fill="#F0E442"/>
+  <text x="830" y="464" font-size="14" fill="#111111" text-anchor="middle">exists · passage present · claim supported</text>
+
+  <!-- pass to human -->
+  <line x1="900" y1="330" x2="1040" y2="330" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="970" y="314" font-size="15" fill="#111111" text-anchor="middle">pass</text>
+
+  <!-- human interpret and decide (blue) -->
+  <circle cx="1120" cy="300" r="16" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <path d="M1092,364 a28,28 0 0 1 56,0" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <text x="1120" y="400" font-size="16" fill="#111111" text-anchor="middle">interpret and</text>
+  <text x="1120" y="420" font-size="16" fill="#111111" text-anchor="middle">decide</text>
+
+  <!-- fail return to agent -->
+  <path d="M830,400 L830,660 L300,660 L300,482" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="845" y="600" font-size="15" fill="#111111">fail</text>
+</svg>

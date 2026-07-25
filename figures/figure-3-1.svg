@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 3.1 — The anatomy of an executable, auditable specification</title>
+  <desc>A diagram of a box labelled specification containing two columns. The left column stacks four fields (objective, inputs, acceptance criteria, stop conditions) bracketed as executable. The right column stacks three fields (assumptions and conventions, provenance requirement, reviewer) bracketed as auditable. An agent glyph feeds the box; the acceptance-criteria field connects to a check diamond applied by a human reviewer.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+    <marker id="ahO" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#E69F00"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- agent glyph (orange) feeding the specification -->
+  <rect x="95" y="325" width="70" height="70" rx="14" fill="none" stroke="#E69F00" stroke-width="3"/>
+  <path d="M132,368 A12,12 0 1 1 124,350" fill="none" stroke="#E69F00" stroke-width="2.5" marker-end="url(#ahO)"/>
+  <text x="130" y="418" font-size="15" fill="#111111" text-anchor="middle">agent</text>
+  <line x1="168" y1="360" x2="246" y2="360" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- specification outer box -->
+  <rect x="250" y="110" width="800" height="520" rx="16" fill="none" stroke="#999999" stroke-width="3"/>
+  <text x="275" y="152" font-size="20" fill="#111111">specification</text>
+
+  <!-- executable bracket -->
+  <path d="M296,190 L286,190 L286,532 L296,532" fill="none" stroke="#111111" stroke-width="1.5"/>
+  <text x="271" y="361" font-size="15" fill="#111111" text-anchor="middle" transform="rotate(-90 271 361)">executable</text>
+
+  <!-- left column: four core fields (blue) -->
+  <rect x="300" y="190" width="240" height="72" rx="8" fill="#0072B2"/>
+  <text x="420" y="234" font-size="17" fill="#FFFFFF" text-anchor="middle">objective</text>
+
+  <rect x="300" y="280" width="240" height="72" rx="8" fill="#0072B2"/>
+  <text x="420" y="324" font-size="17" fill="#FFFFFF" text-anchor="middle">inputs</text>
+
+  <rect x="300" y="370" width="240" height="72" rx="8" fill="#0072B2"/>
+  <text x="420" y="399" font-size="17" fill="#FFFFFF" text-anchor="middle">acceptance</text>
+  <text x="420" y="420" font-size="17" fill="#FFFFFF" text-anchor="middle">criteria</text>
+
+  <rect x="300" y="460" width="240" height="72" rx="8" fill="#0072B2"/>
+  <text x="420" y="504" font-size="17" fill="#FFFFFF" text-anchor="middle">stop conditions</text>
+
+  <!-- check diamond (vermillion) between columns -->
+  <polygon points="595,405 637,441 595,477 553,441" fill="#D55E00"/>
+  <text x="595" y="446" font-size="14" fill="#FFFFFF" text-anchor="middle">check</text>
+  <line x1="540" y1="410" x2="556" y2="429" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="637" y1="441" x2="656" y2="449" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- right column: three audit fields (sky) -->
+  <rect x="660" y="175" width="250" height="90" rx="8" fill="#56B4E9"/>
+  <text x="785" y="212" font-size="16" fill="#111111" text-anchor="middle">assumptions &amp;</text>
+  <text x="785" y="234" font-size="16" fill="#111111" text-anchor="middle">conventions</text>
+
+  <rect x="660" y="290" width="250" height="90" rx="8" fill="#56B4E9"/>
+  <text x="785" y="327" font-size="16" fill="#111111" text-anchor="middle">provenance</text>
+  <text x="785" y="349" font-size="16" fill="#111111" text-anchor="middle">requirement</text>
+
+  <rect x="660" y="405" width="250" height="90" rx="8" fill="#56B4E9"/>
+  <circle cx="706" cy="440" r="14" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <path d="M686,478 a20,20 0 0 1 40,0" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <text x="812" y="456" font-size="16" fill="#111111" text-anchor="middle">reviewer</text>
+
+  <!-- auditable bracket -->
+  <path d="M925,175 L935,175 L935,495 L925,495" fill="none" stroke="#111111" stroke-width="1.5"/>
+  <text x="952" y="335" font-size="15" fill="#111111" text-anchor="middle" transform="rotate(-90 952 335)">auditable</text>
+</svg>
