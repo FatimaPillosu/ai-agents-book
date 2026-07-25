@@ -55,6 +55,26 @@ The cost of using a capable model has fallen by orders of magnitude over the sam
 This fall in cost changes who can take part: a research group with modest hardware and no recurring budget can, with care, build workflows of real operational value, a constraint treated as a design input throughout this book and revisited in the closing case studies.
 One caution is warranted so that the economics are not misread: cheaper models do not make agentic work cheap, because the cost moves rather than vanishes; it shifts into engineering time, into evaluation, and above all into verification, which is where a well-run scientific workflow should expect to spend most of what it saves.
 
+______
+
+graph TD
+    subgraph Mismatch ["Figure 1.1: Data Volume Growth vs. Scientist Time"]
+        A["<b>Environmental Data Streams</b><br/>• Satellites (TB/day)<br/>• CMIP Archives (Tens of PB)<br/>• Operational Forecasting"] 
+        -->|"Relentless Growth"| B["<b>Data Overhead Gap</b><br/>• Quality Control<br/>• Version Reprocessing<br/>• Schema Transformation<br/>• Funder Reporting"]
+        
+        C["<b>Scientist Working Hours</b><br/>Fixed & Finite"] 
+        -->|"Squeezed Capacity"| B
+        
+        B --> D["<b>Resulting Bottleneck</b><br/>Skilled time diverted away<br/>from core scientific analysis"]
+    end
+
+    style A fill:#e1f5fe,stroke:#0288d1,stroke-width:2px
+    style C fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style B fill:#ffebee,stroke:#d32f2f,stroke-width:2px
+    style D fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+
+_______
+
 **Figure 1.1 — Capability milestones (timeline).** *A figure brief follows `FIGURES.md`; render in the house style.*
 
 ```
