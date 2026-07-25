@@ -65,7 +65,11 @@ A workflow that passes a tier once may not pass it every time, because agent beh
 The tool-agent-user benchmark literature makes this measurable with a statistic worth adopting: pass^k, the probability that *all* of k independent runs succeed, which for one reported customer-service setting fell below a quarter at k of eight even though single-trial success looked far healthier (Yao et al., 2024).
 For an operational workflow that runs monthly, single-trial success rates are close to meaningless, and pass^k-style thinking is what is required, because a duty cycle is a repeated trial and reliability is the thing that fails first.
 
-**Figure 11.1 — The five-tier evidential hierarchy.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 11.1 — The five-tier evidential hierarchy.**
+
+![A vertical ladder of five stacked bars rising from bottom to top. From the base upward the rungs read: execution (runs, output well-formed); internal consistency (invariants hold); reproduces held-out truth (split-sample test); out-of-sample generalisation (differential test); and, at the top in purple with a reviewer icon, independent adversarial scrutiny (a reviewer tries to break it). Each rung carries a small gate symbol marking its check. An upward arrow on the left is labelled increasing evidential strength. A bracket marks the lower two rungs as necessary but not sufficient and the upper three as where correctness is earned.](../figures/figure-11-1.svg)
+
+*Figure 11.1 — The five-tier evidential hierarchy for claims about an agentic workflow's output. Each tier is defined by the check that establishes it and subsumes the tiers below; the strength of a claim is the highest tier it has actually passed. Tiers 1–2 are necessary but can be satisfied by a well-formed wrong answer; correctness is earned only from Tier 3 upward. Adapted for agentic outputs from the model-evaluation literature (after Klemeš; Refsgaard & Henriksen; Jakeman et al.; Oberkampf & Trucano). (Rendered as `figures/figure-11-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -152,7 +156,11 @@ First, the set's **size** must be reported candidly: a few dozen carefully curat
 The design principles of verifiable-answer benchmarks are a useful guide to what makes a good case: an unambiguous, pre-registered, automatically checkable reference, and difficulty graded by the number of steps and tools a case demands (Mialon et al., 2023), so that "does the agent retrieve the correct discharge value from this archive?" has a checkable answer in exactly that sense, whereas "is this synthesis insightful?" does not, and belongs to Tier 5.
 Second, the set is **versioned and refreshed** and guarded against contamination per §11.3: what entered context on each run is recorded, references generated after the model's training cut-off are preferred, and the set is re-examined when the workflow's inputs change, because an evaluation set that never changes slowly stops resembling the work.
 
-**Figure 11.2 — Building a task-grounded evaluation set.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 11.2 — Building a task-grounded evaluation set.**
+
+![An architecture diagram reading left to right. Four sky-blue cylinders on the left (settled past runs, manual-workflow outputs, failure log, and known-correct hold-back) feed into a curate step labelled input, reference, metric, provenance, then a stratify step, producing a stratified evaluation set cylinder with a smaller held-out slice beside it. A curved arrow loops the set back to a version and refresh step. The versioned set passes through a vermillion gate into a de-emphasised live-workflow block on the right. A note reads guard against contamination; a callout on the gate reads measured here.](../figures/figure-11-2.svg)
+
+*Figure 11.2 — A task-grounded evaluation set is not bought or downloaded; it is harvested from the workflow's own history (settled runs, the manual method it replaces, the group's failure log and a held-back set of known-correct items), then curated, stratified, held out and versioned. The versioned set is what the gates of §11.5 are measured against. (Rendered as `figures/figure-11-2.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -251,7 +259,11 @@ Re-measurement is therefore not optional and needs a trigger list: after any mod
 How much of this effort a given output deserves is not a separate question; it is the tier-and-stakes matching of §11.7, and this chapter closes that loop there.
 For now the principle is that a tier claim is only ever as strong as the measured check that establishes it, so that a Tier 3 result gated by an unmeasured citation check is a Tier 3 result in name only, and that measuring the gate is what converts the ladder of §11.2 from a description of ambition into a record of evidence.
 
-**Figure 11.3 — Measuring a gate by seeded defects.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 11.3 — Measuring a gate by seeded defects.**
+
+![A top-to-bottom sequence diagram with three lanes: a human, the gate under test drawn as a vermillion diamond, and a tally record drawn as a cylinder. Numbered steps run: the human seeds known faults of named classes into sound inputs; the inputs run through the gate blind; the gate returns pass or fail for each; the tally records catches and misses by fault class; the record reports a rate with a confidence interval. A trigger event (a model, prompt or data-regime change) loops back to the seeding step. A callout reads a never-firing gate is a broken gate; a note reads small samples mean report an interval, not a clean zero.](../figures/figure-11-3.svg)
+
+*Figure 11.3 — Measuring a gate's false-negative rate by seeded defects: plant known faults, run the gate blind, tally catches and misses by fault class, and report a rate with its uncertainty rather than a bare percentage. A change of model, prompt or data regime reopens the loop; a gate that never fires on real work is investigated, not trusted. (Rendered as `figures/figure-11-3.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF

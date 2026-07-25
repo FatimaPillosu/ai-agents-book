@@ -36,7 +36,11 @@ The book is not aimed at machine-learning researchers looking for novel methods,
 
 ## Icon key — Figure 0.1
 
-**Figure 0.1 — The six recurring actors.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 0.1 — The six recurring actors.**
+
+![A legend of six labelled icons arranged in a grid. A blue head-and-shoulders outline is labelled human; an orange rounded square with a loop arrow is labelled agent; a green wrench is labelled tool; a sky-blue cylinder is labelled data store; a vermillion diamond is labelled gate; a purple head-and-shoulders outline with a small tick is labelled reviewer. Each icon carries a short plain-language description of its role.](../figures/figure-0-1.svg)
+
+*Figure 0.1 — The icon key. Six actors recur across every figure in the book, each with one fixed icon and one fixed colour: the human who decides and is accountable (blue), the agent working in its loop (orange), the tool it calls (green), the data store it reads and writes (sky blue), the gate its work must pass (vermillion), and the independent reviewer (purple). Learn them once here; they do not change. (Rendered as `figures/figure-0-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF

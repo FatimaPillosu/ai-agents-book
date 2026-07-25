@@ -17,7 +17,11 @@ That layer turns over on a timescale of months, faster than a publishing cycle, 
 The division of labour adopted throughout, in which the print states the position and the reasoning while the companion repository tracks the movement, is not an editorial convenience but the book's central bet about how to write usefully for practitioners in a field where the tooling churns faster than the understanding.
 The limitation of this arrangement is that the boundary between the two layers is not always obvious in advance, and a claim that reads as durable may prove to have rested on a passing feature of one model generation; where that risk is live, this book flags it in the text, and the repository is the place where such misjudgements are corrected between releases rather than left to mislead until the next edition.
 
-**Figure 17.1 — Durable principles versus volatile tooling.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 17.1 — Durable principles versus volatile tooling.**
+
+![A diagram split into two horizontal bands. The lower band, labelled durable principles, contains instrument stance, specification, verification and accountability, and is marked with a slow clock and a book icon for print. The upper band, labelled volatile tooling, contains model versions, prices, protocols and benchmarks, and is marked with a fast clock and a data-store icon for the repository.](../figures/figure-17-1.svg)
+
+*Figure 17.1 — Two layers moving at two speeds. The durable layer of principles is carried in print; the volatile layer of tooling is delegated to the companion repository, which absorbs change so the printed reasoning can hold. (Rendered as `figures/figure-17-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF

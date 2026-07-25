@@ -47,7 +47,11 @@ The original description of this pattern flagged exactly this hazard: reasoning 
 
 **[AUTHOR: a short trace from your own operational work where an agent iterated to a confidently wrong result — and the observation that would have caught it — would anchor this better than the general claim.]**
 
-**Figure 2.1 — The plan–act–observe loop.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 2.1 — The plan–act–observe loop.**
+
+![A circular diagram of three nodes (plan, act and observe) read clockwise. A goal enters at plan; observe writes to a state-and-memory cylinder beneath the ring and returns to plan. A branch from plan reaches a stop-condition diamond whose done exit produces a result artefact and whose continue exit re-enters the ring. A callout on the observe step notes that the returned result is external, not the model's self-assessment.](../figures/figure-2-1.svg)
+
+*Figure 2.1 — The plan–act–observe loop. The model proposes an action, external machinery executes it, and the observed result is written to state and fed back for the next decision; the loop corrects only the errors its observe step can actually see. (Rendered as `figures/figure-2-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -109,7 +113,11 @@ The limitation to hold beside the promise is that a tool delegates the model's w
 The interpreter computes correctly, but the model still chose which computation to run and with what arguments, and a correct tool invoked on the wrong quantity (the right formula on an unconverted unit, the right query against the wrong station) returns an exact answer to the wrong question.
 Tools narrow the class of errors an agent makes; they do not abolish it, and the errors that remain are exactly the ones verification has to target.
 
-**Figure 2.2 — Anatomy of a tool call.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 2.2 — Anatomy of a tool call.**
+
+![A two-lane sequence diagram with an agent lane and a tool lane, read top to bottom. Step one: the agent reads a tool declaration. Step two: the agent sends an invocation to the tool. Step three: the tool executes. Step four: the tool returns a result to the agent, which is also written to a state-and-memory cylinder. A callout by step four warns that a silent wrong answer defeats the loop's ability to correct.](../figures/figure-2-2.svg)
+
+*Figure 2.2 — The four parts of a tool call. The declaration bounds what the model may attempt; the invocation is the model's choice of operation and arguments; execution happens outside the model; the returned result becomes the loop's observation, which is why a silent wrong answer is more dangerous than an error. (Rendered as `figures/figure-2-2.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -165,7 +173,11 @@ The reliable pattern is to place the specification and the acceptance criteria w
 The limitation to record is that this curation is itself a design task with no sensible default.
 An agent handed a large context and no discipline about what enters it will degrade quietly, making worse decisions with no error to mark the moment its working store stopped serving it.
 
-**Figure 2.3 — Context and memory.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 2.3 — Context and memory.**
+
+![On the left, a bounded rectangle labelled context window with a marked capacity limit contains stacked bands (specification, retrieved material, tool results and running transcript) with the top and bottom bands highlighted and the middle greyed and marked "attended to less reliably". On the right, separated by a gap, a cylinder labelled durable memory holds files, records and version control, marked "where provenance lives". A two-way arrow labelled externalise and retrieve connects the two; the left is within a run, the right across runs.](../figures/figure-2-3.svg)
+
+*Figure 2.3 — The working store and the durable store. The context window is finite and volatile, its middle attended to less reliably than its edges; anything that must survive the run or serve as later evidence has to be externalised to a durable memory, which is where provenance lives. (Rendered as `figures/figure-2-3.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF

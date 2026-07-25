@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 7.3 — A separate reviewer agent reads the change before the human does</title>
+  <desc>A top-to-bottom sequence diagram with four lanes: orange author agent, vermillion tests and hooks, purple reviewer agent, and blue human owner. Numbered messages show the author submitting a change, tests and hooks either failing back to the author or passing it to the reviewer agent, the reviewer reading the change against the specification, sending a findings report to the human owner, and the human merging as the owner of the decision. Notes mark the reviewer as a different read-only instance that cannot approve.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+    <marker id="ahO" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#E69F00"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- lane headers -->
+  <rect x="175" y="58" width="70" height="46" rx="8" fill="none" stroke="#E69F00" stroke-width="3"/>
+  <path d="M210,68 A12,12 0 1 1 200,73" fill="none" stroke="#E69F00" stroke-width="3" marker-end="url(#ahO)"/>
+  <text x="210" y="128" font-size="15" fill="#111111" text-anchor="middle">author agent</text>
+
+  <polygon points="480,54 508,82 480,110 452,82" fill="#D55E00"/>
+  <text x="480" y="128" font-size="15" fill="#111111" text-anchor="middle">tests + hooks</text>
+
+  <circle cx="770" cy="76" r="12" fill="none" stroke="#CC79A7" stroke-width="3"/>
+  <path d="M750,104 a20,20 0 0 1 40,0" fill="none" stroke="#CC79A7" stroke-width="3"/>
+  <path d="M773,72 l4,5 l8,-11" fill="none" stroke="#CC79A7" stroke-width="3"/>
+  <text x="770" y="128" font-size="15" fill="#111111" text-anchor="middle">reviewer agent</text>
+
+  <circle cx="1060" cy="72" r="14" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <path d="M1034,102 a26,26 0 0 1 52,0" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <text x="1060" y="128" font-size="15" fill="#111111" text-anchor="middle">human owner</text>
+
+  <!-- lifelines -->
+  <line x1="210" y1="150" x2="210" y2="650" stroke="#999999" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <line x1="480" y1="150" x2="480" y2="650" stroke="#999999" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <line x1="770" y1="150" x2="770" y2="650" stroke="#999999" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <line x1="1060" y1="150" x2="1060" y2="650" stroke="#999999" stroke-width="1.5" stroke-dasharray="5 5"/>
+
+  <!-- 1 submit change -->
+  <text x="345" y="185" font-size="15" fill="#111111" text-anchor="middle">submit change</text>
+  <line x1="210" y1="200" x2="480" y2="200" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <circle cx="196" cy="200" r="11" fill="#F7F7F5" stroke="#111111" stroke-width="1.5"/>
+  <text x="196" y="205" font-size="13" fill="#111111" text-anchor="middle">1</text>
+
+  <!-- 2 fail - fix -->
+  <text x="345" y="242" font-size="15" fill="#111111" text-anchor="middle">fail — fix</text>
+  <line x1="480" y1="256" x2="210" y2="256" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <circle cx="494" cy="256" r="11" fill="#F7F7F5" stroke="#111111" stroke-width="1.5"/>
+  <text x="494" y="261" font-size="13" fill="#111111" text-anchor="middle">2</text>
+
+  <!-- 3 pass: review this -->
+  <text x="625" y="322" font-size="15" fill="#111111" text-anchor="middle">pass: review this</text>
+  <line x1="480" y1="336" x2="770" y2="336" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <circle cx="466" cy="336" r="11" fill="#F7F7F5" stroke="#111111" stroke-width="1.5"/>
+  <text x="466" y="341" font-size="13" fill="#111111" text-anchor="middle">3</text>
+
+  <!-- 4 self-loop read change vs specification -->
+  <path d="M770,400 h48 v30 h-48" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="828" y="420" font-size="14" fill="#111111" text-anchor="start">read change vs specification</text>
+  <circle cx="756" cy="408" r="11" fill="#F7F7F5" stroke="#111111" stroke-width="1.5"/>
+  <text x="756" y="413" font-size="13" fill="#111111" text-anchor="middle">4</text>
+
+  <!-- 5 findings report -->
+  <text x="915" y="482" font-size="15" fill="#111111" text-anchor="middle">findings report</text>
+  <line x1="770" y1="496" x2="1060" y2="496" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <circle cx="756" cy="496" r="11" fill="#F7F7F5" stroke="#111111" stroke-width="1.5"/>
+  <text x="756" y="501" font-size="13" fill="#111111" text-anchor="middle">5</text>
+
+  <!-- advisory note -->
+  <text x="915" y="522" font-size="13" fill="#D55E00" text-anchor="middle">advisory, not a gate the agent can open</text>
+
+  <!-- reviewer note -->
+  <text x="770" y="560" font-size="13" fill="#999999" text-anchor="middle">different instance · read-only · no approve</text>
+
+  <!-- 6 merge - owns decision -->
+  <text x="1060" y="585" font-size="15" fill="#111111" text-anchor="middle">merge — owns decision</text>
+  <line x1="1060" y1="598" x2="1060" y2="632" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <circle cx="1108" cy="600" r="11" fill="#F7F7F5" stroke="#111111" stroke-width="1.5"/>
+  <text x="1108" y="605" font-size="13" fill="#111111" text-anchor="middle">6</text>
+
+  <!-- main branch -->
+  <path d="M1005,650 v22 a55,13 0 0 0 110,0 v-22" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="1060" cy="650" rx="55" ry="13" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="1060" y="654" font-size="14" fill="#111111" text-anchor="middle">main branch</text>
+</svg>

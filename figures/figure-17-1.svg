@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 17.1 — Durable principles versus volatile tooling</title>
+  <desc>A diagram split into two horizontal bands. The lower band, labelled durable principles, contains instrument stance, specification, verification and accountability, and is marked with a slow clock and a book icon for print. The upper band, labelled volatile tooling, contains model versions, prices, protocols and benchmarks, and is marked with a fast clock and a data-store icon for the repository.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- upper band: volatile tooling -->
+  <text x="140" y="120" font-size="20" fill="#111111">volatile — tooling</text>
+
+  <rect x="165" y="208" width="170" height="54" rx="8" fill="none" stroke="#999999" stroke-width="2"/>
+  <text x="250" y="241" font-size="16" fill="#999999" text-anchor="middle">model versions</text>
+  <rect x="365" y="208" width="170" height="54" rx="8" fill="none" stroke="#999999" stroke-width="2"/>
+  <text x="450" y="241" font-size="16" fill="#999999" text-anchor="middle">prices</text>
+  <rect x="565" y="208" width="170" height="54" rx="8" fill="none" stroke="#999999" stroke-width="2"/>
+  <text x="650" y="241" font-size="16" fill="#999999" text-anchor="middle">protocols</text>
+  <rect x="765" y="208" width="170" height="54" rx="8" fill="none" stroke="#999999" stroke-width="2"/>
+  <text x="850" y="241" font-size="16" fill="#999999" text-anchor="middle">benchmarks</text>
+
+  <!-- fast clock -->
+  <circle cx="1075" cy="215" r="26" fill="none" stroke="#111111" stroke-width="2.5"/>
+  <line x1="1075" y1="215" x2="1075" y2="196" stroke="#111111" stroke-width="2.5"/>
+  <line x1="1075" y1="215" x2="1091" y2="215" stroke="#111111" stroke-width="2.5"/>
+  <path d="M1108,200 a9,9 0 0 1 0,14" fill="none" stroke="#999999" stroke-width="2"/>
+  <path d="M1118,194 a14,14 0 0 1 0,26" fill="none" stroke="#999999" stroke-width="2"/>
+
+  <!-- repository cylinder -->
+  <path d="M1150,205 v40 a35,10 0 0 0 70,0 v-40" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="1185" cy="205" rx="35" ry="10" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="1185" y="278" font-size="15" fill="#111111" text-anchor="middle">repository</text>
+
+  <!-- divider -->
+  <line x1="80" y1="360" x2="1010" y2="360" stroke="#111111" stroke-width="2.5"/>
+
+  <!-- lower band: durable principles -->
+  <rect x="120" y="385" width="900" height="250" rx="14" fill="none" stroke="#999999" stroke-width="3"/>
+  <text x="145" y="425" font-size="20" fill="#111111">durable — principles</text>
+
+  <rect x="162" y="500" width="176" height="54" rx="8" fill="none" stroke="#111111" stroke-width="2"/>
+  <text x="250" y="533" font-size="16" fill="#111111" text-anchor="middle">instrument stance</text>
+  <rect x="362" y="500" width="176" height="54" rx="8" fill="none" stroke="#111111" stroke-width="2"/>
+  <text x="450" y="533" font-size="16" fill="#111111" text-anchor="middle">specification</text>
+  <rect x="562" y="500" width="176" height="54" rx="8" fill="none" stroke="#111111" stroke-width="2"/>
+  <text x="650" y="533" font-size="16" fill="#111111" text-anchor="middle">verification</text>
+  <rect x="762" y="500" width="176" height="54" rx="8" fill="none" stroke="#111111" stroke-width="2"/>
+  <text x="850" y="533" font-size="16" fill="#111111" text-anchor="middle">accountability</text>
+
+  <!-- slow clock -->
+  <circle cx="1075" cy="505" r="26" fill="none" stroke="#111111" stroke-width="2.5"/>
+  <line x1="1075" y1="505" x2="1075" y2="486" stroke="#111111" stroke-width="2.5"/>
+  <line x1="1075" y1="505" x2="1060" y2="495" stroke="#111111" stroke-width="2.5"/>
+
+  <!-- book (print) -->
+  <path d="M1185,478 L1139,472 L1139,514 L1185,520 Z" fill="none" stroke="#111111" stroke-width="2"/>
+  <path d="M1185,478 L1231,472 L1231,514 L1185,520 Z" fill="none" stroke="#111111" stroke-width="2"/>
+  <text x="1185" y="548" font-size="15" fill="#111111" text-anchor="middle">print</text>
+</svg>

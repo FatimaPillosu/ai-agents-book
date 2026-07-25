@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 4.1 — Should an agent do this? A placement decision procedure</title>
+  <desc>A top-to-bottom decision flowchart. A task first meets the question of whether it is a matter of accountability, interpretation or authorship; if yes, it is routed to a human-only terminal marked do not delegate. If no, a second question asks whether verification is cheap, and a third whether a wrong output is reversible. The four combinations route to agent runs with light supervision, agent acts behind a mandatory gate, agent drafts only with human verification, or, for expensive-to-verify and irreversible tasks, back to the human-only terminal.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- task -->
+  <rect x="500" y="45" width="120" height="50" rx="10" fill="none" stroke="#999999" stroke-width="2.5"/>
+  <text x="560" y="76" font-size="17" fill="#111111" text-anchor="middle">task</text>
+  <line x1="560" y1="95" x2="560" y2="108" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- gate 1 -->
+  <polygon points="560,110 710,180 560,250 410,180" fill="#D55E00"/>
+  <g fill="#FFFFFF" text-anchor="middle" font-size="15">
+    <text x="560" y="167">accountability,</text>
+    <text x="560" y="187">interpretation</text>
+    <text x="560" y="207">or authorship?</text>
+  </g>
+
+  <!-- gate 1 yes -> human only -->
+  <line x1="710" y1="180" x2="976" y2="180" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="835" y="168" font-size="15" fill="#111111" text-anchor="middle">yes</text>
+
+  <!-- human-only terminal -->
+  <rect x="980" y="148" width="210" height="66" rx="10" fill="none" stroke="#0072B2" stroke-width="2.5"/>
+  <circle cx="1012" cy="172" r="10" fill="none" stroke="#0072B2" stroke-width="2.5"/>
+  <path d="M998,198 a14,14 0 0 1 28,0" fill="none" stroke="#0072B2" stroke-width="2.5"/>
+  <text x="1105" y="176" font-size="14" fill="#111111" text-anchor="middle">human only —</text>
+  <text x="1105" y="196" font-size="14" fill="#111111" text-anchor="middle">do not delegate</text>
+  <text x="1085" y="238" font-size="13" fill="#111111" text-anchor="middle">not an instrument's to do</text>
+
+  <!-- gate 1 no -> gate 2 -->
+  <line x1="560" y1="250" x2="560" y2="283" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="578" y="272" font-size="15" fill="#111111" text-anchor="middle">no</text>
+
+  <!-- gate 2 -->
+  <polygon points="560,285 680,340 560,395 440,340" fill="#D55E00"/>
+  <g fill="#FFFFFF" text-anchor="middle" font-size="15">
+    <text x="560" y="336">verification</text>
+    <text x="560" y="356">cheap?</text>
+  </g>
+
+  <!-- gate 2 yes -> gate 3a -->
+  <path d="M440,340 L330,340 L330,413" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="393" y="330" font-size="15" fill="#111111" text-anchor="middle">yes</text>
+
+  <!-- gate 2 no -> gate 3b -->
+  <path d="M680,340 L830,340 L830,413" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="720" y="330" font-size="15" fill="#111111" text-anchor="middle">no</text>
+
+  <!-- gate 3a -->
+  <polygon points="330,415 450,470 330,525 210,470" fill="#D55E00"/>
+  <g fill="#FFFFFF" text-anchor="middle" font-size="14">
+    <text x="330" y="466">reversible /</text>
+    <text x="330" y="484">low-consequence?</text>
+  </g>
+
+  <!-- gate 3a yes -> terminal 1 -->
+  <path d="M290,505 L160,598" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="196" y="558" font-size="15" fill="#111111" text-anchor="middle">yes</text>
+
+  <!-- gate 3a no -> terminal 2 -->
+  <path d="M360,510 L410,598" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="405" y="558" font-size="15" fill="#111111" text-anchor="middle">no</text>
+
+  <!-- gate 3b -->
+  <polygon points="830,415 950,470 830,525 710,470" fill="#D55E00"/>
+  <g fill="#FFFFFF" text-anchor="middle" font-size="14">
+    <text x="830" y="466">reversible /</text>
+    <text x="830" y="484">low-consequence?</text>
+  </g>
+
+  <!-- gate 3b yes -> terminal 3 -->
+  <path d="M800,510 L860,598" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="795" y="558" font-size="15" fill="#111111" text-anchor="middle">yes</text>
+
+  <!-- gate 3b no -> human only terminal -->
+  <path d="M950,470 L1085,470 L1085,216" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="1020" y="460" font-size="15" fill="#111111" text-anchor="middle">no</text>
+
+  <!-- terminal 1 -->
+  <rect x="60" y="600" width="200" height="56" rx="10" fill="none" stroke="#E69F00" stroke-width="2.5"/>
+  <text x="160" y="625" font-size="14" fill="#111111" text-anchor="middle">agent runs,</text>
+  <text x="160" y="645" font-size="14" fill="#111111" text-anchor="middle">light supervision</text>
+
+  <!-- terminal 2 -->
+  <rect x="300" y="600" width="230" height="56" rx="10" fill="none" stroke="#E69F00" stroke-width="2.5"/>
+  <text x="415" y="625" font-size="14" fill="#111111" text-anchor="middle">agent acts behind</text>
+  <text x="415" y="645" font-size="14" fill="#111111" text-anchor="middle">a mandatory gate</text>
+
+  <!-- terminal 3 -->
+  <rect x="740" y="600" width="240" height="56" rx="10" fill="none" stroke="#E69F00" stroke-width="2.5"/>
+  <text x="860" y="625" font-size="14" fill="#111111" text-anchor="middle">agent drafts only,</text>
+  <text x="860" y="645" font-size="14" fill="#111111" text-anchor="middle">human verifies</text>
+
+  <!-- augmentation bracket -->
+  <path d="M60,678 L60,688 L980,688 L980,678" fill="none" stroke="#999999" stroke-width="1.5"/>
+  <text x="520" y="708" font-size="15" fill="#111111" text-anchor="middle">augmentation</text>
+</svg>

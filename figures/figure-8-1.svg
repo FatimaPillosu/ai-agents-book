@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 8.1 — What the orchestration agent does, and what it never does</title>
+  <desc>An architecture diagram centred on an orange orchestration-agent box holding four tool glyphs for expanding a design, submitting runs, tracking state and recording provenance. A scientist icon on the left authors an experimental design that feeds the agent; the agent connects down to an HPC scheduler and a provenance store, and right to a vermillion anomaly-flag diamond that routes back to the scientist. A grey dashed boundary around the agent is labelled as containing no scientific decisions.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- scientist -->
+  <text x="120" y="250" font-size="15" fill="#111111" text-anchor="middle">scientist</text>
+  <circle cx="120" cy="285" r="15" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <path d="M92,349 a28,28 0 0 1 56,0" fill="none" stroke="#0072B2" stroke-width="3"/>
+
+  <!-- scientist -> experimental design -->
+  <line x1="150" y1="300" x2="198" y2="300" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- experimental design tag -->
+  <rect x="200" y="277" width="152" height="46" rx="8" fill="#0072B2"/>
+  <text x="276" y="305" font-size="14" fill="#FFFFFF" text-anchor="middle">experimental design</text>
+
+  <!-- design -> agent -->
+  <line x1="352" y1="300" x2="400" y2="300" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- dashed boundary -->
+  <rect x="405" y="195" width="470" height="285" rx="16" fill="none" stroke="#999999" stroke-width="2" stroke-dasharray="8 4"/>
+  <text x="640" y="502" font-size="14" fill="#999999" text-anchor="middle">no scientific decisions inside this boundary</text>
+
+  <!-- orchestration agent -->
+  <rect x="420" y="210" width="440" height="250" rx="14" fill="none" stroke="#E69F00" stroke-width="3"/>
+  <text x="640" y="245" font-size="18" fill="#E69F00" text-anchor="middle">orchestration agent</text>
+
+  <rect x="450" y="288" width="180" height="46" rx="6" fill="none" stroke="#009E73" stroke-width="2.5"/>
+  <text x="540" y="316" font-size="14" fill="#111111" text-anchor="middle">expand design</text>
+  <rect x="650" y="288" width="180" height="46" rx="6" fill="none" stroke="#009E73" stroke-width="2.5"/>
+  <text x="740" y="316" font-size="14" fill="#111111" text-anchor="middle">submit runs</text>
+  <rect x="450" y="363" width="180" height="46" rx="6" fill="none" stroke="#009E73" stroke-width="2.5"/>
+  <text x="540" y="391" font-size="14" fill="#111111" text-anchor="middle">track state</text>
+  <rect x="650" y="363" width="180" height="46" rx="6" fill="none" stroke="#009E73" stroke-width="2.5"/>
+  <text x="740" y="391" font-size="14" fill="#111111" text-anchor="middle">record provenance</text>
+
+  <!-- agent -> scheduler -->
+  <line x1="520" y1="462" x2="520" y2="556" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <!-- agent -> provenance store -->
+  <line x1="770" y1="462" x2="770" y2="562" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- HPC scheduler -->
+  <rect x="440" y="560" width="160" height="56" rx="6" fill="none" stroke="#009E73" stroke-width="2.5"/>
+  <line x1="475" y1="576" x2="565" y2="576" stroke="#009E73" stroke-width="2"/>
+  <text x="520" y="600" font-size="15" fill="#111111" text-anchor="middle">HPC scheduler</text>
+
+  <!-- provenance store -->
+  <path d="M690,576 v46 a80,15 0 0 0 160,0 v-46" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="770" cy="576" rx="80" ry="15" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="770" y="602" font-size="14" fill="#111111" text-anchor="middle">provenance store</text>
+
+  <!-- agent -> anomaly flag -->
+  <line x1="875" y1="300" x2="948" y2="300" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- anomaly flag -->
+  <polygon points="1010,240 1070,300 1010,360 950,300" fill="#D55E00"/>
+  <text x="1010" y="296" font-size="14" fill="#FFFFFF" text-anchor="middle">anomaly</text>
+  <text x="1010" y="314" font-size="14" fill="#FFFFFF" text-anchor="middle">flag</text>
+
+  <!-- flag -> scientist -->
+  <path d="M1010,360 L1010,660 L120,660 L120,354" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="565" y="650" font-size="15" fill="#111111" text-anchor="middle">flag</text>
+</svg>

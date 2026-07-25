@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 8.3 — From hand-run campaign to orchestrated campaign</title>
+  <desc>A two-panel before/after diagram. The top panel shows a scientist manually maintaining a spreadsheet log beside loose scripts and an outputs cylinder, with a broken link marked drift between the runs and the log. The bottom panel shows the same scientist authoring an experimental design into an orange orchestration agent that submits to a scheduler and writes to a provenance store by a solid link marked captured at run time, with an anomaly flag returning to the scientist.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+    <marker id="ahG" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#999999"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- CONVENTIONAL -->
+  <text x="70" y="88" font-size="18" fill="#111111">conventional</text>
+
+  <!-- scientist -->
+  <circle cx="130" cy="175" r="14" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <path d="M104,233 a26,26 0 0 1 52,0" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <text x="130" y="258" font-size="14" fill="#111111" text-anchor="middle">scientist</text>
+
+  <line x1="160" y1="185" x2="286" y2="175" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- manual log spreadsheet -->
+  <rect x="290" y="135" width="150" height="70" fill="none" stroke="#999999" stroke-width="2.5"/>
+  <line x1="290" y1="158" x2="440" y2="158" stroke="#999999" stroke-width="1.5"/>
+  <line x1="290" y1="181" x2="440" y2="181" stroke="#999999" stroke-width="1.5"/>
+  <line x1="340" y1="135" x2="340" y2="205" stroke="#999999" stroke-width="1.5"/>
+  <line x1="390" y1="135" x2="390" y2="205" stroke="#999999" stroke-width="1.5"/>
+  <text x="365" y="228" font-size="14" fill="#111111" text-anchor="middle">manual log</text>
+
+  <line x1="440" y1="170" x2="526" y2="170" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- loose scripts -->
+  <rect x="530" y="148" width="255" height="44" rx="6" fill="none" stroke="#009E73" stroke-width="2.5"/>
+  <text x="657" y="176" font-size="13" fill="#111111" text-anchor="middle">edit config · submit · check queue</text>
+
+  <line x1="785" y1="170" x2="886" y2="172" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- outputs cylinder -->
+  <path d="M890,160 v32 a70,15 0 0 0 140,0 v-32" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="960" cy="160" rx="70" ry="15" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="960" y="232" font-size="14" fill="#111111" text-anchor="middle">outputs</text>
+
+  <!-- broken drift link -->
+  <line x1="890" y1="205" x2="700" y2="215" stroke="#999999" stroke-width="2" stroke-dasharray="6 6"/>
+  <line x1="620" y1="219" x2="442" y2="210" stroke="#999999" stroke-width="2" stroke-dasharray="6 6"/>
+  <path d="M648,208 l14,18 M660,205 l14,18" stroke="#D55E00" stroke-width="2" fill="none"/>
+  <text x="590" y="240" font-size="14" fill="#999999" text-anchor="middle">drift</text>
+
+  <!-- callout -->
+  <line x1="590" y1="262" x2="590" y2="244" stroke="#D55E00" stroke-width="1.5"/>
+  <text x="590" y="282" font-size="13" fill="#D55E00" text-anchor="middle">record reconstructed after the fact</text>
+
+  <!-- divider -->
+  <line x1="60" y1="340" x2="1220" y2="340" stroke="#999999" stroke-width="1" stroke-dasharray="3 5"/>
+
+  <!-- ORCHESTRATED -->
+  <text x="70" y="398" font-size="18" fill="#111111">orchestrated</text>
+
+  <!-- scientist -->
+  <circle cx="130" cy="480" r="14" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <path d="M104,538 a26,26 0 0 1 52,0" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <text x="130" y="563" font-size="14" fill="#111111" text-anchor="middle">scientist</text>
+
+  <line x1="160" y1="490" x2="208" y2="497" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- experimental design tag -->
+  <rect x="210" y="478" width="150" height="44" rx="8" fill="#0072B2"/>
+  <text x="285" y="505" font-size="13" fill="#FFFFFF" text-anchor="middle">experimental design</text>
+
+  <line x1="360" y1="500" x2="388" y2="500" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- orchestration agent -->
+  <rect x="390" y="460" width="210" height="80" rx="12" fill="none" stroke="#E69F00" stroke-width="3"/>
+  <text x="495" y="505" font-size="15" fill="#E69F00" text-anchor="middle">orchestration agent</text>
+
+  <line x1="600" y1="500" x2="638" y2="500" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- scheduler -->
+  <rect x="640" y="474" width="150" height="52" rx="6" fill="none" stroke="#009E73" stroke-width="2.5"/>
+  <text x="715" y="505" font-size="14" fill="#111111" text-anchor="middle">scheduler</text>
+
+  <!-- scheduler -> provenance store (solid) -->
+  <line x1="790" y1="500" x2="873" y2="500" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- provenance store cylinder -->
+  <path d="M875,485 v30 a85,15 0 0 0 170,0 v-30" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="960" cy="485" rx="85" ry="15" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="960" y="507" font-size="13" fill="#111111" text-anchor="middle">provenance store</text>
+  <text x="960" y="548" font-size="13" fill="#111111" text-anchor="middle">captured at run time</text>
+
+  <!-- callout -->
+  <text x="960" y="578" font-size="13" fill="#D55E00" text-anchor="middle">record captured as it runs</text>
+
+  <!-- anomaly flag -->
+  <line x1="495" y1="540" x2="495" y2="566" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <polygon points="495,568 541,614 495,660 449,614" fill="#D55E00"/>
+  <text x="495" y="610" font-size="13" fill="#FFFFFF" text-anchor="middle">anomaly</text>
+  <text x="495" y="626" font-size="13" fill="#FFFFFF" text-anchor="middle">flag</text>
+
+  <!-- flag -> scientist -->
+  <path d="M449,614 L130,614 L130,556" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="300" y="606" font-size="14" fill="#111111" text-anchor="middle">flag</text>
+</svg>

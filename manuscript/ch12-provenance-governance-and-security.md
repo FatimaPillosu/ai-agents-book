@@ -75,7 +75,11 @@ Its purpose is to make coverage explicit and therefore contestable, because the 
 A coverage record also supports honest disclosure, since a manuscript produced under Chapter 9's discipline can state truthfully which components passed independent review and which rest on author inspection alone, and it supports the evaluation of Chapter 11 by making the denominator of review coverage a measured quantity rather than an impression.
 The limitation, stated plainly, is that a coverage record documents that review occurred, not that it was competent: a rubber-stamp review leaves the same record as a searching one, and no registry can substitute for a reviewing culture that takes the task seriously.
 
-**Figure 12.1 — The governance layer: registries and audit trail beside the workflow.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 12.1 — The governance layer: registries and audit trail beside the workflow.**
+
+![An architecture diagram. On the left, a workflow runs top to bottom: a specification feeds an AI agent, which makes a tool call and reaches a human decision. On the right, a grey box labelled governance layer contains four stacked cylinders: assumption registry, uncertainty registry, audit trail, and reviewer-coverage record. Thin arrows lead from each workflow element rightward into the governance layer, all pointing one way. An independent reviewer icon writes into the reviewer-coverage cylinder. A bracket down the right edge reads institutional memory, survives turnover.](../figures/figure-12-1.svg)
+
+*Figure 12.1 — The governance layer records the workflow without steering it: assumptions, uncertainties, execution events and review coverage are written as durable outputs by the same steps that do the work, so the record is a by-product rather than an added burden. Arrows run only from workflow to record. (Rendered as `figures/figure-12-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -187,7 +191,11 @@ Drawing the boundary explicitly clarifies where each defence belongs: input vali
 The boundary is also what institutional IT will ask to see, because it is the artefact that answers their questions directly, and the closing section turns to those questions.
 The limitation of the least-privilege discipline is operational rather than conceptual: permissions that are too narrow cause a workflow to fail in ways that tempt an operator to grant broad access just to make the failure go away, and resisting that temptation, that is, diagnosing the specific missing permission rather than opening the boundary, is a matter of discipline the tooling can support but cannot enforce.
 
-**Figure 12.2 — The trust boundary: what the agent may reach, and what waits on a human.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 12.2 — The trust boundary: what the agent may reach, and what waits on a human.**
+
+![An architecture diagram with a central grey box labelled trusted zone containing an AI agent, a specification and a small set of permitted tools annotated least privilege and deny by default. On the left, three untrusted sources (external documents, web content and third-party data) pass through a vermillion validation gate into the zone as data. On the right, three consequential actions (write to shared system, send communication and irreversible command) sit outside the zone and are reachable only through a second vermillion human gate with a blue human icon. The edges of the grey box are labelled trust boundary.](../figures/figure-12-2.svg)
+
+*Figure 12.2 — The trust boundary. Untrusted inputs enter only as validated data, the agent inside holds the narrowest tool permissions that let it work, and consequential actions leave only through a human gate. The defences are architectural: an injected instruction cannot command a capability the agent was never granted. (Rendered as `figures/figure-12-2.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF

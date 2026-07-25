@@ -33,7 +33,11 @@ Much of the surrounding labour is clerical (collating comments into a table, cro
 The conventional workflow hands the clerical and the interpretive work to the same tired person in the same undifferentiated sitting, and the interpretive work is what suffers.
 This is the seam the agentic redesign aims at: not to automate the judgement, which must stay human, but to strip the clerical load away from it so the judgement is made with more attention rather than less (moderate confidence).
 
-**Figure 9.1 — Where the conventional output workflow leaks (before/after).** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 9.1 — Where the conventional output workflow leaks (before/after).**
+
+![A two-row comparison. The top row, greyed, shows analysis outputs copied by hand into a figure and typed by hand into a manuscript, with two vermillion divergence-risk markers on the copy steps. The bottom row shows the same analysis outputs feeding a figure and table generation tool and an assembly agent that drafts a manuscript, with a single blue author-control gate and no manual copying.](../figures/figure-9-1.svg)
+
+*Figure 9.1 — The conventional output workflow (top) copies numbers and figures by hand between tools that do not update one another, so a late change upstream can leave the manuscript quoting stale values. The artefact-linked workflow (bottom) regenerates figures and tables from the same source files, and an assembly agent drafts only under an author-control gate. (Rendered as `figures/figure-9-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -68,7 +72,11 @@ The provenance records of Chapter 12 do double duty here: they are what the meth
 
 > **Definition — Disclosure statement.** A short note attached to a paper or proposal that records how AI tools were used in producing it: which tool performed which task, on what, and under whose oversight. It exists so that an editor or reader can see the human accountability behind the work. It is written from the author's own records rather than reconstructed from memory.
 
-**Figure 9.2 — The manuscript pipeline (architecture).** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 9.2 — The manuscript pipeline (architecture).**
+
+![An architecture diagram. Two sky-blue cylinders on the left, pipeline artefacts and provenance records, feed an orange assembly agent with a loop arrow. Beneath the agent, four green tool glyphs handle figure generation, table generation, section drafting and disclosure drafting, bracketed as generated, not hand-copied. All outputs converge on a vermillion author-control gate, staffed by a blue author icon marked as sole interpretive authority, which either accepts a component into the manuscript or returns it to the agent to revise.](../figures/figure-9-2.svg)
+
+*Figure 9.2 — The manuscript pipeline. Figures, tables, prose sections and the disclosure statement are generated from the same pipeline artefacts and provenance records the analysis produced, and every component passes an author-control gate before entering the manuscript. The author, not the agent, is the interpretive authority and the source of every claim. (Rendered as `figures/figure-9-2.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -111,7 +119,11 @@ The strongest 2026 capability evidence leaves that rule intact.
 End-to-end research automation is now peer-reviewed: a fully machine-generated paper was accepted at a workshop-tier venue, its own authors stating the system cannot yet meet top-tier standards, naming hallucinated and inaccurately cited content among its failure modes, and warning that automated submission at scale could overwhelm peer review (Lu et al., 2026).
 That a machine can draft a whole paper changes nothing about who is accountable: agents draft under author control and are never authors.
 
-**Figure 9.3 — Disclosure decision (flowchart).** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 9.3 — Disclosure decision (flowchart).**
+
+![A top-to-bottom decision flowchart beginning from an agent being used to prepare an output. The first vermillion gate asks whether the venue bars the task; yes leads to a red stop box advising a permitted alternative. The second gate asks whether a confidential manuscript under review is involved; yes leads to a stop box advising it be kept off external systems. The third gate asks whether disclosure is required or best practice; yes leads to a blue box generating the disclosure from provenance records, no to recording it internally regardless. A blue author-confirms icon sits at the foot, with a note reading when in doubt, disclose.](../figures/figure-9-3.svg)
+
+*Figure 9.3 — A disclosure decision path. Answered from provenance records, three questions decide whether an agentic use is permitted for a given venue and how it must be disclosed. The default under uncertainty is to disclose, and the author confirms the outcome. (Rendered as `figures/figure-9-3.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -145,7 +157,11 @@ Only once the author has settled every response does the agent return to a cleri
 The author reads the assembled reply in full before submission, because the agent's fluency at producing a well-formed response document is precisely the property that could make an inadequately justified reply read as though it were adequate.
 The division of labour is the whole point: the agent performs the structuring and assembly at both ends, the author does all of the judging in the middle, and the boundary between the two is explicit rather than blurred (moderate-to-high confidence; the exact split depends on the review, and Chapter 13 catalogues what goes wrong when the boundary is allowed to drift).
 
-**Figure 9.4 — The reviewer-response workflow (sequence).** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 9.4 — The reviewer-response workflow (sequence).**
+
+![A top-to-bottom sequence diagram with three columns: an orange agent, a sky-blue pipeline, and a blue author. Steps one and two, bracketed as agent clerical work, have the agent parse the review into a comment table and propose a classification. A central blue band labelled human interpretive authority covers step three, where the author corrects the classification and decides each response, and step four, where a requested re-run regenerates a figure and table from the pipeline. Step five is a vermillion verification gate where the author checks the regenerated output against result files. Step six, again agent clerical work, assembles the reply, which the author reads in full before submission.](../figures/figure-9-4.svg)
+
+*Figure 9.4 — The reviewer-response workflow. The agent structures the review into an auditable comment table (steps 1–2) and later assembles the reply document (step 6); between them the author decides every response and verifies every regenerated artefact. The interpretive centre is reserved for the human by design. (Rendered as `figures/figure-9-4.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
