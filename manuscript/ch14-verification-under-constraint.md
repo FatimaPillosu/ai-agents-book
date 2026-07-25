@@ -45,7 +45,11 @@ These three constraints converge on a common conclusion.
 A verification result that partners will trust and report must be exact, reproducible and free of any dependence on a fallible or metered external service; anything that merely explains, teaches or guides is valuable but must never be allowed to alter that result, and must degrade gracefully to nothing if the compute to run it is unavailable.
 That separation (an exact core that always runs, and an optional advisory layer that sometimes runs and never decides) is the seam along which the three tiers are cut, and the following three sections take each tier in turn.
 
-**Figure 14.1 — The three-tier toolkit under constraint.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 14.1 — The three-tier toolkit under constraint.**
+
+![An architecture diagram dominated by a large box labelled partner environment, the trust boundary. Inside it, an observations cylinder feeds a deterministic verification core that produces scores, which a human review diamond inspects. A dashed optional box labelled local tutoring tier connects to the core's outputs to explain and guide but is tagged no decision. Only one arrow leaves the boundary, from human review to an external team icon, labelled aggregate scores and questions only; the observations never cross.](../figures/figure-14-1.svg)
+
+*Figure 14.1 — The three-tier design. A deterministic core computes the scores and always runs; an optional local open-weight tutoring tier explains and guides but never touches a verdict; escalation to the team carries only aggregate scores and questions, never the observations, which stay inside the partner's trust boundary throughout. (Rendered as `figures/figure-14-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
