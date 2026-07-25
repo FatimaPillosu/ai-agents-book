@@ -106,7 +106,11 @@ ______
 
 _______
 
-**Figure 1.1 — Capability milestones (timeline).** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 1.1 — Capability milestones (timeline).**
+
+![A horizontal timeline from 2017 to 2026 showing seven milestones progressing from the transformer architecture, through in-context learning and public conversational systems, to tool calling, long context, coding agents with standardised tool protocols, and finally governed agentic workflows in scientific practice.](../figures/figure-1-1.svg)
+
+*Figure 1.1 — Capability milestones, deliberately coarse and vendor-neutral; product-level detail lives in the repository and dates quickly. (Rendered as `figures/figure-1-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -159,7 +163,11 @@ This property, termed here *plausible failure*, is why verification receives its
 
 > **Definition — Plausible failure.** The characteristic failure mode of these systems: not an obvious error, but an answer that is fluent, confident and mistaken. Fluency and correctness are independent properties here, which is why so much of this book concerns checking.
 
-**Figure 1.2 — The taxonomy as nesting.** *A figure brief follows `FIGURES.md`; render in the house style.*
+**Figure 1.2 — The taxonomy as nesting.**
+
+![A nested diagram. The outer box, labelled agentic workflow, contains a specification feeding an inner box labelled AI agent, which contains an LLM connected to a plan–act–observe loop alongside tools and state. The agent's output passes through a verification gate that either proceeds to a human decision point or returns to the agent.](../figures/figure-1-2.svg)
+
+*Figure 1.2 — The taxonomy as nesting: a model inside an agent inside a workflow. Each layer adds what the inner layer lacks: the agent adds action and state to the model, and the workflow adds specification, verification and accountability to the agent. (Rendered as `figures/figure-1-2.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 1.1 — From text generation to structured action</title>
+  <desc>A horizontal timeline from 2017 to 2026 showing seven milestones progressing from the transformer architecture, through in-context learning and public conversational systems, to tool calling, long context, coding agents with standardised tool protocols, and finally governed agentic workflows in scientific practice.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- timeline axis -->
+  <line x1="70" y1="320" x2="1222" y2="320" stroke="#111111" stroke-width="2.5" marker-end="url(#ah)"/>
+
+  <!-- milestone nodes (in-context learning and tool calling emphasised in agent orange) -->
+  <circle cx="100"  cy="320" r="12" fill="#F7F7F5" stroke="#111111" stroke-width="3"/>
+  <circle cx="280"  cy="320" r="13" fill="#E69F00"/>
+  <circle cx="460"  cy="320" r="12" fill="#F7F7F5" stroke="#111111" stroke-width="3"/>
+  <circle cx="640"  cy="320" r="13" fill="#E69F00"/>
+  <circle cx="820"  cy="320" r="12" fill="#F7F7F5" stroke="#111111" stroke-width="3"/>
+  <circle cx="1000" cy="320" r="12" fill="#F7F7F5" stroke="#111111" stroke-width="3"/>
+  <circle cx="1180" cy="320" r="12" fill="#F7F7F5" stroke="#111111" stroke-width="3"/>
+
+  <!-- node labels -->
+  <g fill="#111111" text-anchor="middle">
+    <text x="100" y="372" font-size="20" font-weight="bold">2017</text>
+    <text x="100" y="398" font-size="16">transformer</text>
+    <text x="100" y="418" font-size="16">architecture</text>
+
+    <text x="280" y="372" font-size="20" font-weight="bold">2020</text>
+    <text x="280" y="398" font-size="16">in-context</text>
+    <text x="280" y="418" font-size="16">learning</text>
+
+    <text x="460" y="372" font-size="20" font-weight="bold">2022</text>
+    <text x="460" y="398" font-size="16">public conversational</text>
+    <text x="460" y="418" font-size="16">systems</text>
+
+    <text x="640" y="372" font-size="20" font-weight="bold">2023</text>
+    <text x="640" y="398" font-size="16">tool calling</text>
+
+    <text x="820" y="372" font-size="20" font-weight="bold">2023–24</text>
+    <text x="820" y="398" font-size="16">long context</text>
+
+    <text x="1000" y="372" font-size="20" font-weight="bold">2024–25</text>
+    <text x="1000" y="398" font-size="16">coding agents ·</text>
+    <text x="1000" y="418" font-size="16">tool protocols</text>
+
+    <text x="1180" y="372" font-size="20" font-weight="bold">2026</text>
+    <text x="1180" y="398" font-size="16">governed agentic</text>
+    <text x="1180" y="418" font-size="16">workflows</text>
+  </g>
+
+  <!-- bracket: structured action closes the loop -->
+  <path d="M640,452 L640,466 L1180,466 L1180,452" fill="none" stroke="#111111" stroke-width="1.5"/>
+  <line x1="910" y1="466" x2="910" y2="480" stroke="#111111" stroke-width="1.5"/>
+  <text x="910" y="506" font-size="17" fill="#111111" text-anchor="middle">structured action closes the loop</text>
+</svg>
