@@ -52,43 +52,57 @@ The book is not for machine-learning researchers after novel methods, nor for ma
 
 **Figure 0.1 — The six recurring actors.**
 
-![A legend of six labelled icons arranged in a grid. A blue head-and-shoulders outline is labelled human; an orange rounded square with a loop arrow is labelled agent; a green wrench is labelled tool; a sky-blue cylinder is labelled data store; a vermillion diamond is labelled gate; a purple head-and-shoulders outline with a small tick is labelled reviewer. Each icon carries a short plain-language description of its role.](../figures/figure-0-1.svg)
+![An icon key laid out as two rows of three. Each entry pairs a coloured line icon with its name and a short description of its role. A blue head-and-shoulders outline is the human, the person who decides and is accountable. An orange rounded square with a loop arrow is the agent, a language model working in a plan-act-observe loop. A green wrench is the tool, a function or program the agent calls. A sky-blue cylinder is the data store, a dataset, file or record. A vermillion diamond is the gate, a check the work has to pass. A purple head-and-shoulders outline with a tick is the reviewer, an independent checker. A footer line notes that these six never change.](../figures/figure-0-1.svg)
 
-*Figure 0.1 — The icon key. Six actors recur across every figure in the book, each with one fixed icon and one fixed colour: the human who decides and is accountable (blue), the agent working in its loop (orange), the tool it calls (green), the data store it reads and writes (sky blue), the gate its work must pass (vermillion), and the independent reviewer (purple). Learn them once here; they do not change. (Rendered as `figures/figure-0-1.svg` from the brief below, per `FIGURES.md`.)*
+*Figure 0.1 — The six actors every figure in this book is built from. Each one keeps the same icon and the same colour from here to the last page, so once you have learned them you can read any later figure without a legend. Colour never carries meaning on its own: every icon is labelled, so the figures work in greyscale too. (Rendered as `figures/figure-0-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
 - id:            Figure 0.1
-- title:         The icon key — six recurring actors, one colour and glyph each
+- title:         The six actors, and what each one does
 - type:          architecture
 - claim:         The book's figures are built from six fixed actors, each with one icon and one colour, learned once here and reused unchanged throughout.
+- standfirst:    Learn these six once; they do not change anywhere in the book.
 - canvas:        16:9
-- elements:      six labelled legend entries laid out on an implied grid, each an icon in
-                 its fixed role-colour beside a short plain-language label — a blue
-                 head-and-shoulders outline "human — a person who decides and is
-                 accountable"; an orange rounded square enclosing a small loop arrow
-                 "agent — an LLM working in a plan–act–observe loop"; a green wrench glyph
-                 "tool — a function or program the agent calls"; a sky-blue cylinder
-                 "data store — a dataset, file or record"; a vermillion diamond
-                 "gate — a check the work must pass"; a reddish-purple head-and-shoulders
-                 outline with a small tick "reviewer — an independent checker"
-- flow:          none — this is a legend, not a process; entries are simply arranged in a
-                 clear grid (two rows of three)
-- labels:        "human", "agent", "tool", "data store", "gate", "reviewer", and the short
-                 role phrase beneath each
-- annotations:   none; the key carries itself
-- caption:       Figure 0.1 — The icon key. Six actors recur across every figure in the book, each with one fixed icon and one fixed colour: the human who decides and is accountable (blue), the agent working in its loop (orange), the tool it calls (green), the data store it reads and writes (sky blue), the gate its work must pass (vermillion), and the independent reviewer (purple). Learn them once here; they do not change.
-- alt-text:      A legend of six labelled icons arranged in a grid. A blue head-and-shoulders outline is labelled human; an orange rounded square with a loop arrow is labelled agent; a green wrench is labelled tool; a sky-blue cylinder is labelled data store; a vermillion diamond is labelled gate; a purple head-and-shoulders outline with a small tick is labelled reviewer. Each icon carries a short plain-language description of its role.
-- generator prompt: A flat vector legend on an off-white background, six entries arranged in
-                 two rows of three on an implied grid, generously spaced. Each entry is a
-                 simple monochrome line icon in its role-colour beside a short label. Top
-                 row: a blue head-and-shoulders outline labelled "human"; an orange rounded
-                 square enclosing a small circular loop arrow labelled "agent"; a green
-                 wrench glyph labelled "tool". Bottom row: a sky-blue cylinder labelled
-                 "data store"; a vermillion diamond labelled "gate"; a reddish-purple
-                 head-and-shoulders outline with a small tick labelled "reviewer". Single
-                 stroke weight, no shading, no three-dimensional effects, minimal text,
-                 high contrast, legible in greyscale.
+- elements:      six legend entries on a two-by-three grid, each an icon in its fixed
+                 role-colour, its name in element-label type, and a one-line description
+                 beneath in annotation type — a blue head-and-shoulders outline "human";
+                 an orange rounded square enclosing a loop arrow "agent"; a green wrench
+                 glyph "tool"; a sky-blue cylinder "data store"; a vermillion diamond
+                 "gate"; a reddish-purple head-and-shoulders outline with a small tick
+                 "reviewer"; a footer strip across the bottom
+- flow:          none — this is a legend, not a process. Entries are read left to right,
+                 top row then bottom row, in the order they first appear in the book
+- labels:        "human", "agent", "tool", "data store", "gate", "reviewer"
+- annotations:   under "human", "decides, and is accountable for the decision"; under
+                 "agent", "a language model working in a plan-act-observe loop"; under
+                 "tool", "a function or program the agent calls"; under "data store", "a
+                 dataset, a file, a record"; under "gate", "a check the work has to pass
+                 before it goes on"; under "reviewer", "checks someone else's work,
+                 independently"; footer strip, "these six keep the same icon and colour in
+                 every figure in this book"
+- caption:       Figure 0.1 — The six actors every figure in this book is built from. Each one keeps the same icon and the same colour from here to the last page, so once you have learned them you can read any later figure without a legend. Colour never carries meaning on its own: every icon is labelled, so the figures work in greyscale too.
+- alt-text:      An icon key laid out as two rows of three. Each entry pairs a coloured line icon with its name and a short description of its role. A blue head-and-shoulders outline is the human, the person who decides and is accountable. An orange rounded square with a loop arrow is the agent, a language model working in a plan-act-observe loop. A green wrench is the tool, a function or program the agent calls. A sky-blue cylinder is the data store, a dataset, file or record. A vermillion diamond is the gate, a check the work has to pass. A purple head-and-shoulders outline with a tick is the reviewer, an independent checker. A footer line notes that these six never change.
+- infographic description: A flat vector legend on an off-white background, 16:9. Title
+                 top-left in the largest size: "The six actors, and what each one does".
+                 Beneath it a one-line standfirst: "Learn these six once; they do not
+                 change anywhere in the book." Below that, six entries on a generously
+                 spaced two-by-three grid. Each entry is a simple monochrome line icon in
+                 its role-colour, its name beside or beneath it in element-label type, and
+                 a one-line description in smaller annotation type under that. Top row,
+                 left to right: a blue head-and-shoulders outline labelled "human",
+                 described "decides, and is accountable for the decision"; an orange
+                 rounded square enclosing a small circular loop arrow labelled "agent",
+                 described "a language model working in a plan-act-observe loop"; a green
+                 wrench glyph labelled "tool", described "a function or program the agent
+                 calls". Bottom row: a sky-blue cylinder labelled "data store", described
+                 "a dataset, a file, a record"; a vermillion diamond labelled "gate",
+                 described "a check the work has to pass before it goes on"; a
+                 reddish-purple head-and-shoulders outline with a small tick labelled
+                 "reviewer", described "checks someone else's work, independently". A thin
+                 rule across the foot carries the line "these six keep the same icon and
+                 colour in every figure in this book". Single stroke weight, no shading, no
+                 three-dimensional effects, high contrast, legible in greyscale.
 ```
 
 ## Contribution statement and domain framing
