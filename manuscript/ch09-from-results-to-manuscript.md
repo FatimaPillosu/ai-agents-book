@@ -22,7 +22,7 @@ A manuscript is where a project makes its claims to the wider community, and an 
 So the position taken here is narrower than the tooling would allow: agents are drafting and assembly instruments under continuous author control, never authors, and never the authority on what the results mean.
 This chapter sets out how figures and tables get generated from pipeline artefacts rather than by hand, how a reviewer-response workflow runs with the human holding sole interpretive authority, how the provenance records of Chapter 12 feed a disclosure statement, and how the whole process stays on the reliable side of the capability boundary drawn in Chapter 1.
 
-## 9.2 The conventional workflow and where it leaks
+## 9.2 The conventional workflow and where it goes wrong
 
 The conventional route from results to submitted manuscript is a chain of manual transcriptions between tools that do not talk to each other.
 Every transcription is a place the manuscript can quietly drift away from the analysis behind it.
@@ -44,7 +44,7 @@ The conventional workflow hands the clerical and the interpretive work to the sa
 That is what the agentic redesign aims at.
 Not automating the judgement, which stays human, but taking the clerical load off it so the judgement gets made with more attention rather than less (moderate confidence).
 
-**Figure 9.1 — Where the conventional output workflow leaks (before/after).**
+**Figure 9.1 — Where the conventional output workflow goes wrong (before/after).**
 
 ![A two-row comparison. The top row, greyed, shows analysis outputs copied by hand into a figure and typed by hand into a manuscript, with two vermillion divergence-risk markers on the copy steps. The bottom row shows the same analysis outputs feeding a figure and table generation tool and an assembly agent that drafts a manuscript, with a single blue author-control gate and no manual copying.](../figures/figure-9-1.svg)
 
