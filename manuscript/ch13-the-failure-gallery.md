@@ -264,7 +264,7 @@ The mode follows directly from the anatomy of Chapter 2: an agent's working cont
 It is common in exactly the long, valuable workflows this book has been encouraging (a multi-day reprocessing, a synthesis over many documents, a pipeline with many stages), and it is compounded in the multi-agent workflows of Chapter 10, where information has to survive being handed between agents whose contexts do not overlap.
 That handoff is one of the failure families the large multi-agent study isolates: information lost or withheld as it passes between steps, which it finds among the commonest breakdowns in multi-agent runs (Cemri et al., 2025).
 The characteristic signature is an output that contradicts a constraint the workflow certainly established earlier, delivered with no sign that the constraint was ever known.
-The same silent-truncation failure is independently named in practitioner commentary: a large input is often only partly read and then answered fluently with no warning, so an explicit "file too big" error is the better outcome, because it is at least visible (practitioner commentary).
+The same silent-truncation failure is independently named in practitioner commentary: a large input is often only partly read and then answered fluently with no warning, so an explicit "file too big" error is the better outcome, because it is at least visible (practitioner commentary; see the references).
 
 > **Definition — Context loss.** An agent's working memory is finite and imperfect, so a
 > constraint set early, a correction made ten steps ago, or an intermediate result can simply
