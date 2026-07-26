@@ -1,6 +1,6 @@
 # Chapter 14 — Verification under constraint
 
-> **Status:** draft r4 · voice v4.0-colloquial (`STYLE.md` §0) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r4 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > This chapter reports executed operational work; concrete partner details, datasets, metrics, hardware, results and outcomes are the author's lived material and are tagged **[AUTHOR: …]**.
 

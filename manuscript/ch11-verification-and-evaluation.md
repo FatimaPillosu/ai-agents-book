@@ -1,6 +1,6 @@
 # Chapter 11 — Verification and evaluation
 
-> **Status:** draft r4 · voice v4.0-colloquial (`STYLE.md` §0) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r4 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > **Integrity note:** the four model-evaluation references (Klemeš; Refsgaard & Henriksen; Jakeman et al.; Oberkampf & Trucano) are real and named by the author; the `/research` sweep did not cover them, so their bibliographic details keep `[verify]` until confirmed. Report-sourced citations carry a DOI or URL in the references list. No quotations, results or anecdotes have been invented.
 
