@@ -80,36 +80,55 @@ The evaluation methods of Chapter 11 are what turn the design-time argument into
 
 **Figure 10.1 — Independence, not multiplicity, is the source of value.**
 
-![A top-to-bottom decision flowchart. A proposed second agent first meets the question of whether it names an error class the existing roster misses; if no, it is dropped in favour of a deterministic gate. If yes, a second question asks whether its judgement is independent of the checked agent, annotated with four levers: different model, narrowed context, adversarial brief, external source of truth. Only if that also holds is the agent kept as an independent reviewer.](../figures/figure-10-1.svg)
+![A top-to-bottom decision flowchart. A proposed second agent meets a first gate asking whether it names an error class the existing roster and gates would miss; a no exits to a grey terminal reading drop, add a deterministic gate instead. A yes leads to a second gate asking whether its judgement is genuinely independent of the agent it checks, with a callout listing the four things that create independence: a different model, a narrowed context, an adversarial brief, and an external source of truth. A no again exits to drop, annotated that without one of those four the second agent supplies correlated opinion, which is cost without information. A yes reaches an orange terminal, keep, marked with a purple reviewer icon. A footnote reads that four agents on one model agreeing have checked the work once and echoed it three times.](../figures/figure-10-1.svg)
 
-*Figure 10.1 — The test applied to every proposed agent. Both gates must pass, a distinct error class and an independent mechanism for catching it, before a second agent earns its place; failing either, a deterministic gate is cheaper and more reliable than a correlated opinion. (Rendered as `figures/figure-10-1.svg` from the brief below, per `FIGURES.md`.)*
+*Figure 10.1 — Two questions before you add an agent. It has to catch a class of error nothing else in the roster would, and its judgement has to be independent of the thing it is checking, which takes one of four deliberate design moves. Fail either and you have bought latency and tokens for correlated opinion: four agents on one model agreeing have checked the work once and echoed it three times. (Rendered as `figures/figure-10-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
 - id:            Figure 10.1
-- title:         When a second agent adds information and when it adds only cost
+- title:         When a second agent adds information, and when it adds only cost
 - type:          decision flowchart
 - claim:         A second agent is worth its latency and token cost only when its errors are independent of the agent it checks; correlated agents add cost without information.
+- standfirst:    Agreement between near-identical agents is not corroboration.
 - canvas:        16:9
-- elements:      a start node "proposed second agent" (grey); first diamond gate "names an error class the existing roster misses?" (vermillion); second diamond gate "judgement independent of the checked agent? (different model / narrowed context / adversarial brief / external source of truth)" (vermillion); an orange terminal "keep — independent reviewer" (reviewer purple icon with tick); a grey terminal "drop — correlated opinion, add a deterministic gate instead" (gate icon)
-- flow:          top-to-bottom. proposed second agent → gate 1. Gate 1 "no" → "drop". Gate 1 "yes" → gate 2. Gate 2 "no" → "drop". Gate 2 "yes" → "keep — independent reviewer"
-- labels:        "proposed second agent", "names an error class the roster misses?", "judgement independent of the checked agent?", "keep — independent reviewer", "drop — add a deterministic gate instead", "yes", "no"
-- annotations:   a light callout beside gate 2 listing the four independence levers: "different model", "narrowed context", "adversarial brief", "external source of truth"
-- caption:       Figure 10.1 — The test applied to every proposed agent. Both gates must pass, a distinct error class and an independent mechanism for catching it, before a second agent earns its place; failing either, a deterministic gate is cheaper and more reliable than a correlated opinion.
-- alt-text:      A top-to-bottom decision flowchart. A proposed second agent first meets the question of whether it names an error class the existing roster misses; if no, it is dropped in favour of a deterministic gate. If yes, a second question asks whether its judgement is independent of the checked agent, annotated with four levers: different model, narrowed context, adversarial brief, external source of truth. Only if that also holds is the agent kept as an independent reviewer.
-- generator prompt: A flat vector decision flowchart on an off-white background, flowing top
-                 to bottom. A grey rounded rectangle labelled "proposed second agent"
-                 connects down to a vermillion diamond labelled "names an error class the
-                 roster misses?". Its "no" exit leads right to a grey terminal labelled
-                 "drop — add a deterministic gate instead" with a small diamond gate icon.
-                 Its "yes" exit leads down to a second vermillion diamond labelled
-                 "judgement independent of the checked agent?". A small callout box beside
-                 it lists "different model", "narrowed context", "adversarial brief",
-                 "external source of truth". The diamond's "no" exit leads to the same grey
-                 "drop" terminal; its "yes" exit leads to a reddish-purple rounded rectangle
-                 labelled "keep — independent reviewer" with a head-and-shoulders-with-tick
-                 icon. Single-weight connectors, one arrowhead style, generous spacing,
-                 minimal text.
+- elements:      a start node "proposed second agent" (grey); a first vermillion diamond
+                 "names an error class the roster misses?"; a second vermillion diamond
+                 "judgement independent of the checked agent?"; an orange terminal "keep —
+                 independent reviewer" carrying a purple reviewer icon; a grey terminal
+                 "drop — add a deterministic gate instead"
+- flow:          top-to-bottom. proposed second agent → gate 1. Gate 1 "no" → drop. Gate 1
+                 "yes" → gate 2. Gate 2 "no" → drop. Gate 2 "yes" → keep
+- labels:        "proposed second agent", "names an error class the roster misses?",
+                 "judgement independent of the checked agent?", "keep — independent
+                 reviewer", "drop — add a deterministic gate instead", "yes", "no"
+- annotations:   beside gate 2, a callout listing "different model · narrowed context ·
+                 adversarial brief · external source of truth"; on the "no" exits, "without
+                 one of those, a second agent supplies correlated opinion — cost without
+                 information"; on the "drop" terminal, "if a rule can check it, a gate is
+                 cheaper and more reliable than an agent"; a footnote, "four agents on one
+                 model agreeing have checked the work once and echoed it three times"
+- caption:       Figure 10.1 — Two questions before you add an agent. It has to catch a class of error nothing else in the roster would, and its judgement has to be independent of the thing it is checking, which takes one of four deliberate design moves. Fail either and you have bought latency and tokens for correlated opinion: four agents on one model agreeing have checked the work once and echoed it three times.
+- alt-text:      A top-to-bottom decision flowchart. A proposed second agent meets a first gate asking whether it names an error class the existing roster and gates would miss; a no exits to a grey terminal reading drop, add a deterministic gate instead. A yes leads to a second gate asking whether its judgement is genuinely independent of the agent it checks, with a callout listing the four things that create independence: a different model, a narrowed context, an adversarial brief, and an external source of truth. A no again exits to drop, annotated that without one of those four the second agent supplies correlated opinion, which is cost without information. A yes reaches an orange terminal, keep, marked with a purple reviewer icon. A footnote reads that four agents on one model agreeing have checked the work once and echoed it three times.
+- infographic description: A flat vector decision flowchart on an off-white background,
+                 16:9, top to bottom. Title top-left: "When a second agent adds information,
+                 and when it adds only cost". Standfirst beneath: "Agreement between
+                 near-identical agents is not corroboration." A grey rounded rectangle
+                 "proposed second agent" at the top connects down to a vermillion diamond
+                 "names an error class the roster misses?". Its "no" exit leads right to a
+                 grey terminal "drop — add a deterministic gate instead", annotated "if a
+                 rule can check it, a gate is cheaper and more reliable than an agent". Its
+                 "yes" exit leads down to a second vermillion diamond "judgement independent
+                 of the checked agent?", with a callout in a pale yellow fill beside it
+                 listing four items on separate lines: "different model", "narrowed
+                 context", "adversarial brief", "external source of truth". This diamond's
+                 "no" exit joins the same grey terminal, with the shared annotation "without
+                 one of those, a second agent supplies correlated opinion — cost without
+                 information". Its "yes" exit leads down to an orange terminal "keep —
+                 independent reviewer" carrying a small purple head-and-shoulders-with-tick
+                 icon. A footnote along the bottom reads "four agents on one model agreeing
+                 have checked the work once and echoed it three times". Generous spacing,
+                 sentence case.
 ```
 
 ## 10.4 The agentic redesign: roles, rosters and gates
@@ -139,38 +158,63 @@ Figure 10.3 puts the two side by side so the shared structure and the compressed
 
 **Figure 10.2 — A minimal scientific roster.**
 
-![An architecture diagram read left to right. A thin orchestrator bar spans the top. Below, a specification feeds a producer agent with tools and a data store; its output passes a deterministic gate labelled tests, schema, citations, units; then an independent reviewer agent, annotated different model, narrowed context and adversarial brief; then a second gate; then a human decision point annotated that accountability, interpretation and authorship stay there. A single fail arrow returns from reviewer to producer, labelled bounded iterations then escalate.](../figures/figure-10-2.svg)
+![An architecture diagram. A thin orchestrator bar spans the top, labelled sequences and enforces stop conditions, annotated deliberately thin, because an orchestrator that reasons about the science reintroduces the correlated judgement the roster exists to avoid. Below it, left to right: a specification tag; a producer agent with tools and a data store; a deterministic gate listing tests, schema, citations and units, annotated that anything a rule can check is a gate rather than an agent; an independent reviewer annotated with the three things that make it independent, a different model, a narrowed context and an adversarial brief; a second gate; and a human decision point annotated that accountability, interpretation and authorship stay here. A single fail arrow returns from the reviewer to the producer, labelled bounded iterations, then escalate.](../figures/figure-10-2.svg)
 
-*Figure 10.2 — The minimal roster. Deterministic gates carry the cheap, mechanical checks; the independent reviewer carries only what a rule cannot, and does so from an engineered position of independence; the human node holds what does not transfer to any instrument. The return loop is explicitly bounded to prevent runaway cost. (Rendered as `figures/figure-10-2.svg` from the brief below, per `FIGURES.md`.)*
+*Figure 10.2 — A roster is small, and every element earns its place. A producer does the work, deterministic gates catch anything a rule can settle, one independent reviewer handles what a rule cannot, and a human owns the decision. Two details carry the design: the orchestrator is deliberately thin, and the return loop is bounded so it escalates rather than churning. (Rendered as `figures/figure-10-2.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
 - id:            Figure 10.2
-- title:         A minimal roster — producer, independent reviewer, gates, human decision
+- title:         A minimal roster — producer, gates, independent reviewer, human decision
 - type:          architecture
-- claim:         A scientific roster is a small set of distinct roles separated by deterministic gates, with independence engineered at the producer–reviewer boundary and a human holding the accountable node.
+- claim:         A scientific roster is a small set of distinct roles separated by deterministic gates, with independence engineered at the producer–reviewer boundary and a human holding the accountable decision.
+- standfirst:    Small, and every element traces back to a clause somebody wrote.
 - canvas:        16:9
-- elements:      a thin grey "orchestrator" bar spanning the top (labelled "sequences and enforces stop conditions"); below it, left to right, a "specification" tag (blue); a "producer agent" rounded rectangle (orange) with a "tools" glyph (green) and a "data store" cylinder (sky blue); a deterministic "gate" diamond (vermillion, labelled "tests · schema · citations · units"); an "independent reviewer agent" rounded rectangle (reddish purple, head-and-shoulders-with-tick icon) annotated "different model · narrowed context · adversarial brief"; a second "gate" diamond (vermillion); a "human decision" head-and-shoulders icon (blue)
-- flow:          left-to-right — specification → producer → gate → independent reviewer → gate → human decision; a single "fail" return arrow runs from the reviewer back to the producer, labelled "bounded iterations, then escalate"
-- labels:        "orchestrator — sequences, enforces stop conditions", "specification", "producer agent", "tools", "data store", "gate", "independent reviewer", "different model · narrowed context · adversarial brief", "human decision", "fail — bounded iterations, then escalate"
-- annotations:   a callout on the reviewer box "independence engineered here"; a callout on the human node "accountability, interpretation, authorship stay here"
-- caption:       Figure 10.2 — The minimal roster. Deterministic gates carry the cheap, mechanical checks; the independent reviewer carries only what a rule cannot, and does so from an engineered position of independence; the human node holds what does not transfer to any instrument. The return loop is explicitly bounded to prevent runaway cost.
-- alt-text:      An architecture diagram read left to right. A thin orchestrator bar spans the top. Below, a specification feeds a producer agent with tools and a data store; its output passes a deterministic gate labelled tests, schema, citations, units; then an independent reviewer agent, annotated different model, narrowed context and adversarial brief; then a second gate; then a human decision point annotated that accountability, interpretation and authorship stay there. A single fail arrow returns from reviewer to producer, labelled bounded iterations then escalate.
-- generator prompt: A flat vector architecture diagram on an off-white background. A thin
-                 grey horizontal bar across the top is labelled "orchestrator — sequences,
-                 enforces stop conditions". Beneath it, arranged left to right with
-                 single-weight connectors: a small blue tag "specification"; an orange
-                 rounded rectangle "producer agent" containing a green wrench icon "tools"
-                 and a sky-blue cylinder "data store"; a vermillion diamond "gate" labelled
-                 "tests · schema · citations · units"; a reddish-purple rounded rectangle
-                 "independent reviewer" with a head-and-shoulders-with-tick icon and a small
-                 annotation "different model · narrowed context · adversarial brief"; a
-                 second vermillion diamond "gate"; and a blue head-and-shoulders icon "human
-                 decision". A single curved arrow labelled "fail — bounded iterations, then
-                 escalate" returns from the reviewer to the producer. Two small callouts
-                 read "independence engineered here" pointing at the reviewer and
-                 "accountability, interpretation, authorship stay here" pointing at the human
-                 node. Generous spacing, minimal text.
+- elements:      a thin grey "orchestrator" bar spanning the top; below it, left to right, a
+                 "specification" tag (blue); a "producer agent" rounded rectangle (orange)
+                 with a "tools" glyph (green) and a "data store" cylinder (sky blue); a
+                 deterministic "gate" diamond (vermillion); an "independent reviewer"
+                 rounded rectangle (reddish purple); a second gate; a blue "human decision"
+                 head-and-shoulders icon
+- flow:          left-to-right — specification → producer → gate → independent reviewer →
+                 gate → human decision; a single "fail" return arrow runs from the reviewer
+                 back to the producer
+- labels:        "orchestrator — sequences, enforces stop conditions", "specification",
+                 "producer agent", "tools", "data store", "gate",
+                 "tests · schema · citations · units", "independent reviewer",
+                 "different model · narrowed context · adversarial brief", "human decision",
+                 "fail — bounded iterations, then escalate"
+- annotations:   on the orchestrator bar, "deliberately thin — an orchestrator that reasons
+                 about the science reintroduces the judgement the roster exists to avoid";
+                 on the gate, "anything a rule can check is a gate, not an agent"; on the
+                 reviewer, "independence engineered here, not hoped for"; on the return
+                 arrow, "bounded, or it becomes a cost blow-out and nobody owns the miss";
+                 on the human node, "accountability, interpretation and authorship stay
+                 here"; a footer, "every role on this diagram traces back to a clause of
+                 the specification"
+- caption:       Figure 10.2 — A roster is small, and every element earns its place. A producer does the work, deterministic gates catch anything a rule can settle, one independent reviewer handles what a rule cannot, and a human owns the decision. Two details carry the design: the orchestrator is deliberately thin, and the return loop is bounded so it escalates rather than churning.
+- alt-text:      An architecture diagram. A thin orchestrator bar spans the top, labelled sequences and enforces stop conditions, annotated deliberately thin, because an orchestrator that reasons about the science reintroduces the correlated judgement the roster exists to avoid. Below it, left to right: a specification tag; a producer agent with tools and a data store; a deterministic gate listing tests, schema, citations and units, annotated that anything a rule can check is a gate rather than an agent; an independent reviewer annotated with the three things that make it independent, a different model, a narrowed context and an adversarial brief; a second gate; and a human decision point annotated that accountability, interpretation and authorship stay here. A single fail arrow returns from the reviewer to the producer, labelled bounded iterations, then escalate.
+- infographic description: A flat vector architecture diagram on an off-white background,
+                 16:9. Title top-left: "A minimal roster — producer, gates, independent
+                 reviewer, human decision". Standfirst beneath: "Small, and every element
+                 traces back to a clause somebody wrote." A thin grey bar spans the top
+                 labelled "orchestrator — sequences, enforces stop conditions", annotated
+                 "deliberately thin — an orchestrator that reasons about the science
+                 reintroduces the judgement the roster exists to avoid". Below it, a
+                 left-to-right chain: a blue tag "specification"; an orange rounded
+                 rectangle "producer agent" with a green "tools" glyph and a sky-blue "data
+                 store" cylinder attached; a vermillion diamond "gate" with sub-text "tests
+                 · schema · citations · units", annotated "anything a rule can check is a
+                 gate, not an agent"; a reddish-purple rounded rectangle "independent
+                 reviewer" with sub-text "different model · narrowed context · adversarial
+                 brief", annotated "independence engineered here, not hoped for"; a second
+                 vermillion diamond "gate"; and a blue head-and-shoulders icon "human
+                 decision", annotated "accountability, interpretation and authorship stay
+                 here". A single arrow labelled "fail — bounded iterations, then escalate"
+                 runs from the reviewer back to the producer, annotated "bounded, or it
+                 becomes a cost blow-out and nobody owns the miss". A footer line reads
+                 "every role on this diagram traces back to a clause of the specification".
+                 Generous spacing, sentence case.
 ```
 
 **Figure 10.3 — Conventional review and agentic roster, side by side.**
