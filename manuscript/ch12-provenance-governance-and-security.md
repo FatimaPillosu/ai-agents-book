@@ -1,36 +1,42 @@
 # Chapter 12 — Provenance, governance and security
 
-> **Status:** draft r3 · voice v3.3 (`STYLE.md`) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r4 · voice v4.0-colloquial (`STYLE.md` §0) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented. Institution-specific thresholds are left as **[AUTHOR]** because local policy sets them.
 
 ---
 
 ## 12.1 Two obligations that travel together
 
-Governance and security look like two different jobs, and in scientific practice they are the same job seen from two sides.
-Governance asks whether the work can be trusted after the fact: whether a result traces back to its inputs, whether its assumptions can be recovered, and whether its reviewers can be named.
-Security asks whether the work can be corrupted during the fact, by inputs that steer the agent, by credentials that leak, or by tools that reach further than the task needs.
-Both questions reduce to a single property already demanded of every instrument a scientist operates: that its behaviour be bounded, recorded and accountable.
+Governance and security look like two different jobs.
+In scientific practice they are the same job seen from two sides.
+
+Governance asks whether the work can be trusted afterwards: whether a result traces back to its inputs, whether its assumptions can be recovered, and whether its reviewers can be named.
+Security asks whether the work can be corrupted while it happens, by inputs that steer the agent, by credentials that leak, or by tools that reach further than the task needs.
+Both reduce to one property already demanded of every instrument you operate: that its behaviour be bounded, recorded and accountable.
 An uncalibrated sensor and an ungoverned agent fail in exactly the same way, producing readings that look like measurements and are not, and the discipline that answers the first answers the second.
-This chapter therefore treats provenance and governance first, because they define what must be recorded, and security second, because it defines what must be protected; the two halves share one spine, which is that trust in an agentic result is a property of the process that produced it and never of the output inspected alone.
+So this chapter takes provenance and governance first, because they define what has to be recorded, then security, because it defines what has to be protected.
+Both halves rest on one claim: trust in an agentic result is a property of the process that produced it, never of the output inspected on its own.
 
 > **Definition — Provenance.** The traceable record of where a result came from: which inputs fed it, which version of the workflow ran, what the agent did at each step, and who signed off. Provenance is what lets someone reconstruct and defend a result months later, rather than relying on an assurance that it was "done carefully".
 
-The tone here is kept deliberately unalarmed, because the risks in this chapter are ordinary operational-security risks that scientific institutions have managed for decades under other names.
-A data-handling agreement with a national meteorological service, a least-privilege account on a shared cluster, a laboratory notebook that survives a postdoc's departure: each is a governance or security control that predates agents entirely, and the argument here is only that agentic workflows need the same controls, applied with the same seriousness and no more drama.
-The one genuinely new element is that an agent reads and acts on untrusted text at machine speed, which changes the scale at which a small lapse propagates but not the nature of the lapse.
-What follows, then, is not a warning but a specification: what to record so the work survives scrutiny, and what to constrain so the work cannot be turned against the person running it.
+The tone here is deliberately unalarmed, because the risks in this chapter are ordinary operational-security risks scientific institutions have managed for decades under other names.
+A data-handling agreement with a national meteorological service, a least-privilege account on a shared cluster, a laboratory notebook that survives a postdoc's departure: every one of those is a governance or security control that predates agents entirely.
+The argument here is only that agentic workflows need the same controls, applied with the same seriousness and no more drama.
+The one genuinely new element is that an agent reads and acts on untrusted text at machine speed, which changes how fast a small lapse spreads but not what kind of lapse it is.
+So what follows is not a warning but a specification: what to record so the work survives scrutiny, and what to constrain so the work cannot be turned against the person running it.
 Institution-specific thresholds, that is, which systems count as sensitive and which approvals are mandatory, are left as **[AUTHOR]** throughout, because they are set by local policy, not by this book.
 
 ## 12.2 Institutional memory as a first-class output
 
-The most undervalued product of a governed agentic workflow is not its result but its record, and that record deserves to be designed, budgeted and maintained as a deliverable in its own right.
+The most undervalued product of a governed agentic workflow is not its result but its record.
+That record deserves to be designed, budgeted and maintained as a deliverable in its own right.
+
 Scientific groups lose knowledge continuously through ordinary staff turnover.
 A doctoral researcher spends three years calibrating a hydrological model, then leaves, and with them goes the tacit reasoning behind a hundred small decisions that never reached a paper: why one gauge was excluded, why a threshold sits where it does, which preprocessing step compensated for a known sensor fault.
-Agentic workflows both worsen this problem and can be made to solve it.
-They worsen it because an agent can generate in an afternoon a volume of configuration, transformation and intermediate result that would take a successor weeks to reverse-engineer.
-They can solve it because every decision an agent takes passes through a specification and a tool call, both machine-readable, both capturable without any extra human effort.
-The design principle that follows is to treat the audit trail not as compliance overhead but as the institutional memory the group would otherwise lose, written continuously and for free as a by-product of how the work is done (high confidence in the principle; the effort saved is unquantified and will vary by group).
+Agentic workflows make this worse and can also be made to fix it.
+Worse, because an agent can generate in an afternoon a volume of configuration, transformation and intermediate result that would take a successor weeks to reverse-engineer.
+Better, because every decision an agent takes passes through a specification and a tool call, both machine-readable, both capturable with no extra human effort.
+So treat the audit trail not as compliance overhead but as the institutional memory the group would otherwise lose, written continuously and for free as a by-product of how the work is done (high confidence in the principle; the effort saved is unquantified and will vary by group).
 
 Documentation that survives turnover has a few properties that distinguish it from documentation that does not, and they are worth naming because they are the acceptance criteria for the record as a deliverable.
 First, it is co-located with the artefact it describes, rather than held in a separate system the next person will never find.
@@ -42,7 +48,9 @@ The limitation worth stating is that a record made this way is only as honest as
 
 ## 12.3 Registries: assumptions and uncertainties as standing records
 
-An assumption registry is a standing, versioned record of every choice the workflow depends on but does not itself justify, and it is the single governance artefact with the highest return in scientific work.
+An assumption registry is a standing, versioned record of every choice the workflow depends on but does not itself justify.
+It is the governance artefact with the highest return in scientific work.
+
 Every environmental analysis rests on assumptions that are invisible in its output: that a rating curve holds outside its calibration range, that a gap-filling method does not bias an extreme, that two datasets share a datum, that a unit is what a column header claims.
 In conventional practice these assumptions live in a scientist's head and a scattering of code comments, and they are the first casualty of turnover and the commonest root cause in the failure gallery of Chapter 13.
 An agentic workflow makes it practical to externalise them, because an agent instructed to surface its assumptions will list them at the point of use, and that list, once reviewed and corrected by a human, becomes a registry entry carrying the assumption, its justification, its confidence level, and the identity of whoever approved it.
@@ -61,7 +69,9 @@ The limitation is that a registry is only useful if it is consulted, and a regis
 ## 12.4 Audit trails and reviewer coverage
 
 An audit trail is the ordered, tamper-evident record of what the workflow actually did, and it differs from the registries by recording events rather than decisions.
-Where a registry answers "what did the analysis assume", the audit trail answers "what happened, in what order, to what data, invoked by whom", and the two are complementary halves of a defensible record.
+
+Where a registry answers "what did the analysis assume", the audit trail answers "what happened, in what order, to what data, invoked by whom".
+The two are complementary halves of a defensible record.
 
 > **Definition — Audit trail.** A time-ordered, tamper-resistant log of everything the workflow did: which tool ran, on which inputs, producing which outputs, under which version, passed by which human. Registries record what was decided; the audit trail records what actually happened, so a result is not just re-runnable but explicable.
 
@@ -123,46 +133,60 @@ FIGURE BRIEF
 
 ## 12.5 Security as ordinary operational discipline
 
-The security of an agentic workflow rests on three controls that map onto long-standing practice, and treating them as routine rather than exceptional is the correct posture.
-The first governs the untrusted inputs an agent reads, because an agent that ingests external documents, web content or third-party data is acting on text an adversary may have written.
+The security of an agentic workflow rests on three controls, all of which map onto long-standing practice.
+Treat them as routine rather than exceptional.
+
+The first governs the untrusted inputs an agent reads, because an agent ingesting external documents, web content or third-party data is acting on text an adversary may have written.
 The second governs the credentials and data the agent touches, because an agent operating on institutional systems and high-performance computing holds, however briefly, the access rights of whoever launched it.
-The third governs the tools the agent may call, because an agent's capacity to cause harm is bounded by the narrowest set of permissions that still let it do the job.
+The third governs the tools the agent may call, because how much harm an agent can do is bounded by the narrowest set of permissions that still let it do the job.
 None of these is novel: input validation, credential hygiene and least privilege are the elementary controls of every secured system, and the argument here is only that an agent is a system they apply to, not an exception that transcends them.
 The community consensus list of the most critical risks in LLM applications, revised for 2025 specifically to reflect agentic systems, puts prompt injection at the top and names "excessive agency", that is, granting an application more tools, permissions or autonomy than its function requires, as a distinct top-ten risk in its own right (OWASP, 2025), which is the security profession's way of saying exactly what the three controls below say.
 The sections that follow take each in turn, and the chapter's second figure draws the trust boundary the three controls jointly define: the line between what the agent is permitted to reach and what it is not.
 
 ## 12.6 Prompt injection: untrusted input as a steering channel
 
-Prompt injection is the failure in which untrusted content an agent reads is interpreted as instruction rather than data, and it is the security concern most specific to agentic systems because it exploits the very property that makes them useful.
-At the level of the model, an agent does not distinguish between the instructions its operator gave it and the text it later reads from a document, a web page or a data file; all of it arrives as language, and language that says "ignore your previous instructions and instead do X" is processed as language.
-This is not a quirk that a better model patches away.
+Prompt injection is what happens when untrusted content an agent reads gets treated as instruction rather than data.
+It is the security concern most specific to agentic systems, because it exploits the very property that makes them useful.
+
+At the model level, an agent does not distinguish between the instructions its operator gave it and the text it later reads from a document, a web page or a data file.
+All of it arrives as language, and language saying "ignore your previous instructions and instead do X" gets processed as language.
+This is not a quirk a better model patches away.
 The paper that defined indirect prompt injection made the point architecturally: LLM-integrated applications blur the line between data and instructions, so anyone who can place text where an agent will later read it (a web page, a document, an email, a metadata field) can attempt to hijack the agent without ever touching the operator's prompt (Greshake et al., 2023).
 
 > **Definition — Prompt injection.** When text an agent reads as part of its work (a web page, a downloaded file, a colleague's document) contains instructions, and the agent obeys them as if they came from its operator. The agent cannot reliably tell "content to analyse" from "orders to follow", so, in effect, the data can direct the agent.
 
-For an environmental workflow this is not hypothetical, because the agents in this book's patterns routinely read material the group did not author: a paper retrieved for synthesis (Chapter 5), a data description fetched from a partner portal (Chapter 6), a web page consulted for a parameter value, a file handed over by a collaborator.
-Any of these can carry, by malice or by accident, text an agent will act on: an instruction to exfiltrate a credential, to alter a QC threshold, to insert a fabricated citation (Chapter 13), or to write to a path it should not touch.
-The severity of an injection is not a property of the text but of what the agent can do once steered, which is why the defence is never to detect all malicious text, an unwinnable game since the model reads natural language and natural language is unbounded, but to constrain what any instruction, however it arrives, is able to accomplish.
+For an environmental workflow this is not hypothetical, because the agents in this book's patterns routinely read material the group did not write: a paper retrieved for synthesis (Chapter 5), a data description fetched from a partner portal (Chapter 6), a web page consulted for a parameter value, a file handed over by a collaborator.
+Any of those can carry, by malice or by accident, text an agent will act on: an instruction to exfiltrate a credential, to alter a QC threshold, to insert a fabricated citation (Chapter 13), or to write to a path it should not touch.
+How bad an injection is depends not on the text but on what the agent can do once steered.
+That is why the defence is never to detect all malicious text, which is unwinnable because the model reads natural language and natural language is unbounded.
+The defence is to constrain what any instruction, however it arrives, is able to accomplish.
 That framing is not an improvisation of this book; it is where the security literature has landed.
 Given that prompt injection cannot currently be solved at the model level, recent work proposes architectural patterns that give resistance by construction, each trading some agent capability for safety: fixing the plan before untrusted data is read so the data cannot redirect it, having the model emit a checkable program rather than take direct action, or splitting a privileged tool-using model from a quarantined model that reads untrusted text but holds no tools (Beurer-Kellner et al., 2025).
 This book has high confidence in the vulnerability class being durable and the constraint-based response being the right one; specific historical exploits are patched routinely, but the underlying data–instruction conflation is unresolved by any current model.
 
-The defences that follow are architectural rather than detective, they compound, and several of them are patterns the book already prescribes under other names.
-The primary defence is least privilege, treated in §12.8, because an agent that cannot delete files or reach the open internet cannot be made to do so by an injected instruction, however cleverly phrased: the capability was simply never granted.
-The second is a firm separation between the channel carrying instructions and the channel carrying data, so content retrieved from an untrusted source is presented to the agent as quoted material to be analysed rather than as instruction to be followed; this reduces but does not eliminate the risk, because the boundary is enforced by convention rather than by a hard mechanism the model cannot cross, which is precisely why the stronger design-pattern variants above fix the plan or quarantine the reader instead of trusting the convention.
-The third is the human gate on any consequential action, so an agent may propose to send an email, write to a shared system or run an irreversible command, but the action itself waits on a human who sees the proposal in context.
-The fourth is provenance: an audit trail (§12.4) recording what the agent read and when makes an injection traceable after the fact, which both aids recovery and deters the careless introduction of untrusted content.
-The limitation worth stating is that no combination of these fully closes the channel while agents read natural language at all; the residual risk is managed, as other irreducible risks are, by keeping the blast radius small rather than pretending it is zero.
+The defences that follow are architectural rather than detective, they compound, and several are patterns the book already prescribes under other names.
+
+The primary defence is least privilege, treated in §12.8.
+An agent that cannot delete files or reach the open internet cannot be made to do either by an injected instruction, however cleverly phrased, because the capability was never granted.
+The second is a firm separation between the channel carrying instructions and the channel carrying data, so content retrieved from an untrusted source reaches the agent as quoted material to analyse rather than as instruction to follow.
+That reduces the risk without eliminating it, because the boundary is enforced by convention rather than by a hard mechanism the model cannot cross, which is exactly why the stronger design patterns above fix the plan or quarantine the reader instead of trusting the convention.
+The third is a human gate on any consequential action: an agent may propose to send an email, write to a shared system or run an irreversible command, but the action waits on a human who sees the proposal in context.
+The fourth is provenance.
+An audit trail (§12.4) recording what the agent read and when makes an injection traceable afterwards, which both helps recovery and discourages careless introduction of untrusted content.
+State the limitation: no combination of these fully closes the channel while agents read natural language at all.
+The residual risk is managed the way other irreducible risks are, by keeping the possible damage small rather than pretending it is zero.
 **[AUTHOR: an injection you encountered or deliberately tested — even a benign one, such as a comment in a shared config that an agent acted on — would ground this section in lived practice.]**
 
 ## 12.7 Credentials and data when agents touch institutional systems
 
-Credential and data handling is the security concern with the highest stakes in institutional science, because an agent operating on shared systems inherits real access to real infrastructure.
-When an agent runs a job on a high-performance cluster, queries an operational database, or writes to a group's shared storage, it does so with credentials that grant the launching scientist's rights, and any mishandling of those credentials (logging them in a trace, embedding them in generated code, transmitting them to a model provider as part of a prompt) turns a convenience into an exposure.
-The disciplines that contain this risk are, again, drawn from ordinary practice and merely applied with care to a new kind of operator.
-First, credentials are supplied to an agent through the environment or a secrets manager rather than written into specifications, prompts or code, so they never enter the material an agent might log or transmit.
-Second, they are scoped to the task, so a data-retrieval agent holds read access to one dataset rather than write access to a filesystem.
-Third, they are short-lived where the infrastructure supports it, so a leaked token expires before it can be widely abused.
+Credential and data handling has the highest stakes in institutional science, because an agent operating on shared systems inherits real access to real infrastructure.
+
+When an agent runs a job on a high-performance cluster, queries an operational database, or writes to a group's shared storage, it does so with credentials granting the launching scientist's rights.
+Mishandle those credentials, by logging them in a trace, embedding them in generated code, or transmitting them to a model provider as part of a prompt, and a convenience becomes an exposure.
+The disciplines that contain this are again drawn from ordinary practice and simply applied with care to a new kind of operator.
+Supply credentials through the environment or a secrets manager rather than writing them into specifications, prompts or code, so they never enter material an agent might log or transmit.
+Scope them to the task, so a data-retrieval agent holds read access to one dataset rather than write access to a filesystem.
+And make them short-lived where the infrastructure supports it, so a leaked token expires before it can be widely abused.
 The corresponding discipline for data is to keep sensitive inputs on systems the group controls and to be explicit about what leaves them, because the moment a dataset is placed in a prompt it may traverse a third-party model provider, with implications for data-sharing agreements that a national service or a commercial partner may enforce, a point that connects directly to the data-sovereignty design of Chapter 14, which treats the case where observations cannot be shared at all.
 
 The institutional dimension of this concern is that scientists rarely own the systems their agents touch, so the controls above have to be reconciled with policies set by others.
@@ -174,8 +198,11 @@ The limitation is that policies vary widely and change, so the durable guidance 
 
 ## 12.8 Least privilege and the trust boundary
 
-Least privilege is the principle that an agent receives the narrowest set of tool permissions that still lets it complete its task, and it is the single most effective security control available because it bounds the harm of every other failure at once.
-An agent restricted to reading a named directory and running a test suite cannot exfiltrate data, cannot write to production systems, and cannot be steered by an injected instruction into doing either, not because such instructions are detected, but because the capability to obey them was never granted.
+Least privilege means giving an agent the narrowest set of tool permissions that still lets it finish its task.
+It is the single most effective security control available, because it bounds the harm of every other failure at once.
+
+An agent restricted to reading a named directory and running a test suite cannot exfiltrate data, cannot write to production systems, and cannot be steered into doing either by an injected instruction.
+Not because such instructions get detected, but because the capability to obey them was never granted.
 
 > **Definition — Least privilege.** An agent is given the narrowest access that still lets it do the job and nothing more: read one named folder, run one named tool, reach no further. A mistake, a bug or a hostile instruction can then do damage only inside those narrow limits, because the power to do worse was never handed over in the first place.
 
@@ -189,7 +216,9 @@ The trust boundary is the line this enumeration draws, and making it explicit is
 On the trusted side sit the agent, the specification directing it and the tools it is permitted to call; on the untrusted side sit the external documents, web content and third-party data it reads, together with the consequential actions (writing to shared systems, sending communications, running irreversible commands) that it may propose but not perform without a human passing the gate.
 Drawing the boundary explicitly clarifies where each defence belongs: input validation and the instruction–data separation live where untrusted content crosses inward, least privilege lives at the tools the agent may call, and the human gate lives where a proposed action would cross outward into consequence.
 The boundary is also what institutional IT will ask to see, because it is the artefact that answers their questions directly, and the closing section turns to those questions.
-The limitation of the least-privilege discipline is operational rather than conceptual: permissions that are too narrow cause a workflow to fail in ways that tempt an operator to grant broad access just to make the failure go away, and resisting that temptation, that is, diagnosing the specific missing permission rather than opening the boundary, is a matter of discipline the tooling can support but cannot enforce.
+The limitation of least privilege is operational rather than conceptual.
+Permissions that are too narrow make a workflow fail in ways that tempt you to grant broad access just to make the failure go away.
+Resisting that, meaning diagnosing the specific missing permission rather than opening the boundary, is a discipline the tooling can support but cannot enforce.
 
 **Figure 12.2 — The trust boundary: what the agent may reach, and what waits on a human.**
 
@@ -241,8 +270,16 @@ FIGURE BRIEF
 
 ## 12.9 What institutional IT will ask before an agent runs
 
-Institutional IT and information-security teams will ask a predictable set of questions before an agentic workflow runs on their infrastructure, and a group that can answer them from its governance artefacts will be granted access far more readily than one that cannot.
-The questions are the same an IT team would ask of any new system, reframed for an operator that acts on its own: what data will the workflow touch and how is it classified; where does that data go, and in particular does any of it leave institutional systems for an external model provider; what credentials does the agent hold and how are they scoped, stored and rotated; what can the agent do, that is, its full set of tool permissions, and what stops it doing more; who is accountable for its actions, and how is a mistake detected, contained and reversed; and what record is kept of what it did.
+Institutional IT and information-security teams will ask a predictable set of questions before an agentic workflow runs on their infrastructure.
+If you can answer them from your governance artefacts, you will get access far more readily than a group that cannot.
+
+The questions are the same ones an IT team would ask of any new system, reframed for an operator that acts on its own.
+What data will the workflow touch, and how is it classified?
+Where does that data go, and does any of it leave institutional systems for an external model provider?
+What credentials does the agent hold, and how are they scoped, stored and rotated?
+What can the agent do, meaning its full set of tool permissions, and what stops it doing more?
+Who is accountable for its actions, and how is a mistake detected, contained and reversed?
+And what record is kept of what it did?
 Each of these maps directly onto an artefact this chapter has already specified: data classification and flow onto §12.7, credential scoping onto §12.7, tool permissions onto the least-privilege enumeration of §12.8, detection and recovery onto the audit trail of §12.4, and accountability onto the human decision points recorded throughout.
 It helps that these questions have a shared external vocabulary: the OWASP top-ten risks for LLM applications give security teams names they already use (prompt injection, excessive agency, sensitive-information disclosure, improper output handling; OWASP, 2025), and national risk-management guidance frames the whole exercise as governing, mapping, measuring and managing risk (NIST, 2024), so a workflow whose governance layer answers in that language is legible to the people who must authorise it.
 The practical consequence is that a governed workflow is also an approvable one, because the same records that make a result trustworthy make the workflow legible to the people who must sign it off (moderate confidence; the mapping is sound in principle, but institutional review processes vary and some will ask for more, such as a formal data-protection impact assessment, a security review, or a named information-asset owner, that only local policy defines).
@@ -256,11 +293,14 @@ The constructive posture towards institutional IT is to arrive with these answer
 A short, honest description of a workflow's data flows, credentials, permissions and audit record, prepared before approval is sought, does more to accelerate adoption than any assurance of the technology's capability, because it speaks to the team's actual responsibility, which is risk rather than novelty.
 Where an institution has no policy for agentic systems yet, a common situation at the time of writing, the group proposing the first such workflow has both an opportunity and an obligation to help shape a sensible one, by mapping the new operator onto the controls the institution already applies to human users and shared services rather than requesting a special regime for it.
 The specifics of any given institution's requirements, that is, its approval thresholds, its mandatory reviews, its data-classification scheme and its retention rules, are set locally and are marked **[AUTHOR]** here, because a book cannot supply them and should not pretend to.
-The durable point, and the one this chapter closes on, is that governance and security are not the price of using agents in science but the condition under which their use is scientific at all: an instrument whose behaviour is unbounded, unrecorded and unaccountable is not an instrument a scientist should trust, and the discipline that makes an agent trustworthy is the same discipline, applied to a new tool, that has always separated measurement from guesswork.
+The durable point, and the one this chapter closes on, is that governance and security are not the price of using agents in science.
+They are the condition under which using them is scientific at all.
+An instrument whose behaviour is unbounded, unrecorded and unaccountable is not one you should trust, and the discipline that makes an agent trustworthy is the same discipline, applied to a new tool, that has always separated measurement from guesswork.
 
 ## 12.10 Verification checklist
 
-This checklist certifies that an agentic workflow is governed and secured well enough to be trusted and approved; a colleague who did not build it, or an institutional reviewer, should be able to apply it from the record alone.
+This checklist certifies that an agentic workflow is governed and secured well enough to be trusted and approved.
+A colleague who did not build it, or an institutional reviewer, should be able to apply it from the record alone.
 
 - **Registries exist and are current.** The assumption and uncertainty registries are present, versioned, and reflect the workflow as it actually runs, each entry carrying its justification, confidence level and approver (§12.3); a reviewer can find an assumption and see who agreed to it.
 - **The audit trail reconstructs any artefact.** For any output, the trail recovers who and what produced it, in what order, under which specification and model version, with content hashes sufficient to detect later alteration (§12.4).
