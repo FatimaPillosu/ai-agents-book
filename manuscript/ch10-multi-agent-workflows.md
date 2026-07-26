@@ -327,7 +327,7 @@ Where they are not, one well-specified agent behind deterministic gates is cheap
 
 ---
 
-*Cross-references: the single-agent patterns this chapter composes (Chapters 5–9); when not to reach for an agent at all (Chapter 4); measuring whether a roster actually checks its own work (Chapter 11); the audit trail that logs every handoff (Chapter 12); the anatomy and worked trace of over-agreeable review (Chapter 13); the executed end-to-end roster (Chapter 15); roster cost and the adoption on-ramp (Chapter 16).*
+*Cross-references: the single-agent patterns this chapter composes (Chapters 5–9); when not to reach for an agent at all (Chapter 4); measuring whether a roster actually checks its own work (Chapter 11); the audit trail that logs every handoff (Chapter 12); the anatomy and worked trace of over-agreeable review (Chapter 13); the executed end-to-end roster (Chapter 15); roster cost and how a group starts (Chapter 16).*
 
 ## References
 

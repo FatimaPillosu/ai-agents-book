@@ -1,52 +1,65 @@
 # Chapter 16 — Starting in your own group
 
-> **Status:** draft r3 · voice v3.3 (`STYLE.md`) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r4 · voice v4.0-colloquial (`STYLE.md` §0) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > Volatile figures (energy-per-inference, per-token prices, hardware costs) are kept out of print and marked for the companion repository.
 
 ---
 
-## 16.1 Why the on-ramp is organised around capabilities, not tools
+## 16.1 Why the plan is organised around capabilities, not tools
 
-The most common way a research group begins with agentic methods is also the least durable: someone adopts a named product, learns its interface, and quietly equates that interface with the practice itself.
-The difficulty with this route is not that the chosen tool is poor but that the choice mislocates the effort, because the interface is the part of the field that changes fastest and matters least to whether the resulting work is trustworthy.
-A group that has learned a product has learned something with a half-life measured in months; a group that has learned to specify a task precisely, to verify an output independently, and to record what an agent did and on whose authority has learned something that survives every tool migration it will subsequently make.
+The most common way a research group starts with agentic methods is also the least durable.
+Someone adopts a named product, learns its interface, and quietly equates that interface with the practice itself.
+
+The problem is not that the chosen tool is poor.
+It is that the effort goes into the wrong place, because the interface is the part of the field that changes fastest and matters least to whether the resulting work is trustworthy.
+Learn a product and you have learned something with a life measured in months.
+Learn to specify a task precisely, to verify an output independently, and to record what an agent did and on whose authority, and you have learned something that survives every tool migration you will ever make.
 
 This distinction matters because adoption failures in scientific settings rarely trace to the model or the vendor.
 They trace to work handed to an agent without an auditable specification (Chapter 3), to outputs accepted without a verification step the author could defend (Chapter 11), and to workflows that leave no record a colleague or reviewer could later reconstruct (Chapter 12).
 These are habits, not features, and no procurement decision installs them.
 
-The on-ramp set out in this chapter is therefore built around three capabilities a group must develop (specifying, verifying and governing) and it treats the particular tools used to practise them as interchangeable and disposable.
-This is not an argument against choosing tools: a group must run something, and the repository accompanying this book records defensible current choices with the volatility they carry.
-It is an argument about where the learning should be invested, which is in the parts of the practice that a change of vendor, a change of model, or a change of institutional policy will not invalidate.
+So the plan in this chapter is built around three capabilities you have to develop, specifying, verifying and governing, and it treats the tools you practise them with as interchangeable and disposable.
+This is not an argument against choosing tools.
+You have to run something, and the repository accompanying this book records defensible current choices with the volatility they carry.
+It is an argument about where to invest the learning: in the parts of the practice a change of vendor, a change of model, or a change of institutional policy will not invalidate.
 This book holds that direction at high confidence and the specific sequencing proposed below at moderate confidence, because it reflects one plausible ordering of habit-formation rather than a validated curriculum, and any group should adapt it to the tasks it actually faces.
 
-## 16.2 A thirty-day on-ramp
+## 16.2 A thirty-day plan
 
-The thirty-day schedule below organises a group's first month around building the three capabilities in a deliberate order, each week producing an artefact the group keeps rather than a tutorial it completes.
-The first week is spent entirely on specification, before any agent is given consequential work: the group takes one real, bounded, low-stakes task (a format conversion, a routine quality-control pass, a figure regenerated from a pipeline artefact) and writes it up as an executable, auditable specification in the schema of Chapter 3, stating objective, inputs, acceptance criteria and stop conditions.
+The thirty-day schedule below organises your first month around building the three capabilities in a deliberate order, with each week producing an artefact you keep rather than a tutorial you complete.
+
+The first week goes entirely on specification, before any agent gets consequential work: the group takes one real, bounded, low-stakes task (a format conversion, a routine quality-control pass, a figure regenerated from a pipeline artefact) and writes it up as an executable, auditable specification in the schema of Chapter 3, stating objective, inputs, acceptance criteria and stop conditions.
 The deliverable is not a completed task but a specification a second person can read and agree constitutes the task, because the discipline being built is the translation of a scientific intention into terms an instrument can execute and a human can check.
+
 The second week introduces verification as a separate step with its own standing: the group runs the specified task, and for each output defines in advance how it will be checked (a test suite, a schema validation, a reconciliation against an independent source, a reviewer's sign-off), locating each check on the evidential hierarchy of Chapter 11 rather than accepting fluent output on trust.
 The habit under construction is that no agent output is used until a check external to the agent has passed, and the artefact retained is a short verification record.
-The third week adds governance: the group turns to the provenance and security material of Chapter 12, establishing where credentials live, what tools an agent may and may not touch, and what record each run leaves, so that by the end of the week a completed task carries an audit trail an institutional IT reviewer could inspect.
-The fourth week composes the three into a single small workflow the group will actually keep using, run end to end under the governance now in place, and reviewed honestly against a plain question: did this save net effort once specification, verification and record-keeping are counted, and if not, why not.
-The schedule's value is in the sequence (specify, then verify, then govern, then compose), not in the calendar; a group under heavier load may take a quarter rather than a month, and the ordering matters more than the pace (moderate confidence, from the internal logic of the dependencies rather than from a controlled trial).
 
-A measurement of agent capability underpins that preference and the capabilities-not-tools stance of §16.1.
-The strongest current gauge of agent capability has the length of task an agent can complete autonomously doubling roughly every three to four months as of 2026 (METR, 2026), so an on-ramp built around today's task-length ceiling is obsolete within a single budget cycle, while the governance capability the schedule builds (specification, gates, measurement) survives every capability jump.
+The third week adds governance.
+You turn to the provenance and security material of Chapter 12, establishing where credentials live, what tools an agent may and may not touch, and what record each run leaves, so by the end of the week a completed task carries an audit trail an institutional IT reviewer could inspect.
+
+The fourth week composes the three into one small workflow you will actually keep using, run end to end under the governance now in place, and reviewed honestly against a plain question: did this save net effort once specification, verification and record-keeping are counted, and if not, why not?
+
+The value is in the sequence, meaning specify, then verify, then govern, then compose, and not in the calendar.
+A group under heavier load may take a quarter rather than a month; the ordering matters more than the pace (moderate confidence, from the internal logic of the dependencies rather than from a controlled trial).
+
+A measurement of agent capability supports both that ordering and the capabilities-not-tools stance of §16.1.
+The strongest current gauge has the length of task an agent can complete autonomously doubling roughly every three to four months as of 2026 (METR, 2026).
+A plan built around today's task-length ceiling is obsolete within a single budget cycle, while the governance capability this schedule builds, meaning specification, gates and measurement, survives every capability jump.
 The start-small stance is now multi-national security guidance too: begin with tightly bounded pilots on low-risk, clearly defined tasks before expanding scope (Five Eyes, 2026).
 **[AUTHOR: if you have run an onboarding like this with a real group, a sentence on what actually broke in week one — most likely the specification step — would anchor this far better than the idealised schedule.]**
 
-**Figure 16.1 — A capability-based thirty-day on-ramp.**
+**Figure 16.1 — A capability-based thirty-day plan.**
 
 ![A two-band diagram. The upper grey band shows a tool-first start: adopt a product, learn the interface, ending in a question mark labelled trust. The lower band shows four sequential weeks (specify, verify, govern, compose), each in its role colour and each producing a kept artefact named beneath it: a specification, a verification record, an audit trail and a working governed workflow.](../figures/figure-16-1.svg)
 
-*Figure 16.1 — A capability-based thirty-day on-ramp. The upper path, adopting a product first, leaves a group with interface familiarity and an unanswered question of trust; the lower path builds specifying, verifying and governing in sequence, each week retaining an artefact that outlasts any particular tool. (Rendered as `figures/figure-16-1.svg` from the brief below, per `FIGURES.md`.)*
+*Figure 16.1 — A capability-based thirty-day plan. The upper path, adopting a product first, leaves a group with interface familiarity and an unanswered question of trust; the lower path builds specifying, verifying and governing in sequence, each week retaining an artefact that outlasts any particular tool. (Rendered as `figures/figure-16-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
 - id:            Figure 16.1
-- title:         The thirty-day on-ramp as a sequence of habits, not tools
+- title:         The thirty-day plan as a sequence of habits, not tools
 - type:          before/after
 - claim:         A durable start builds three capabilities in order (specify, verify, govern, then compose), each producing a kept artefact, in contrast to the tool-first start that produces only familiarity with an interface.
 - canvas:        16:9
@@ -64,7 +77,7 @@ FIGURE BRIEF
                  "week 4 — compose", "kept: a specification", "kept: a verification record",
                  "kept: an audit trail", "kept: a working governed workflow"
 - annotations:   a light bracket under the four bottom boxes labelled "habits that survive a change of tool"
-- caption:       Figure 16.1 — A capability-based thirty-day on-ramp. The upper path, adopting a product first, leaves a group with interface familiarity and an unanswered question of trust; the lower path builds specifying, verifying and governing in sequence, each week retaining an artefact that outlasts any particular tool.
+- caption:       Figure 16.1 — A capability-based thirty-day plan. The upper path, adopting a product first, leaves a group with interface familiarity and an unanswered question of trust; the lower path builds specifying, verifying and governing in sequence, each week retaining an artefact that outlasts any particular tool.
 - alt-text:      A two-band diagram. The upper grey band shows a tool-first start: adopt a product, learn the interface, ending in a question mark labelled trust. The lower band shows four sequential weeks (specify, verify, govern, compose), each in its role colour and each producing a kept artefact named beneath it: a specification, a verification record, an audit trail and a working governed workflow.
 - generator prompt: A flat vector before/after diagram on an off-white background, two
                  horizontal bands. The upper band is greyed and labelled "tool-first start":
@@ -84,9 +97,11 @@ FIGURE BRIEF
 
 ## 16.3 Where the money and the time actually go
 
-The financial case for agentic methods is routinely misstated, because attention fixes on the one cost that is falling fastest and is most visible (the price of model inference), while the costs that dominate a well-run scientific workflow sit elsewhere and do not fall at the same rate.
-Chapter 1 stated the principle: the expenditure migrates rather than disappears, moving out of model calls and into engineering time, evaluation and above all verification.
-A group budgeting for adoption on the basis of per-token prices will therefore underestimate the true cost by a wide margin, not because those prices are wrong but because they are a small and shrinking share of the total.
+The financial case for agentic methods gets misstated routinely, because attention fixes on the one cost that is falling fastest and is most visible, the price of model inference, while the costs that dominate a well-run scientific workflow sit elsewhere and do not fall at the same rate.
+
+Chapter 1 stated the principle: the spending moves rather than disappears, out of model calls and into engineering time, evaluation and above all verification.
+Budget for adoption on per-token prices and you will underestimate the true cost by a wide margin.
+Not because those prices are wrong, but because they are a small and shrinking share of the total.
 There is now rigorous support for treating cost as a first-class axis rather than an afterthought: an analysis of agent evaluation found that simple baselines can match elaborate multi-agent scaffolds at a fraction of the cost, that agent costs vary by orders of magnitude at similar accuracy, and that ranking systems on accuracy alone rewards wasteful designs (Kapoor et al., 2024).
 The judge-cost axis in particular is real and optimisable: a 2026 study found a mid-tier judge model with debiasing reaching 71% agreement with human judgements at roughly one-fifteenth the inference cost of top-tier alternatives (Soumik, 2026; a preprint, so the figure should be read as indicative).
 
@@ -144,9 +159,11 @@ FIGURE BRIEF
 
 ## 16.4 The skills and roles a group needs
 
-The capabilities a group must build map onto a small set of roles, and stating them plainly helps a group see that most are already present in a competent research team rather than requiring new hires.
-The central observation is that adoption does not demand a machine-learning specialist; it demands that existing scientific roles take on named responsibilities for specification, verification and governance, and that those responsibilities are held by people rather than left implicit.
-Four roles suffice for most groups, and one person may hold several.
+The capabilities you have to build map onto a small set of roles, and naming them plainly shows that most are already present in a competent research team rather than needing new hires.
+
+Adoption does not demand a machine-learning specialist.
+It demands that existing scientific roles take on named responsibilities for specification, verification and governance, and that people hold those responsibilities rather than leaving them implicit.
+Four roles are enough for most groups, and one person may hold several.
 
 A specification owner takes responsibility for translating scientific tasks into the auditable form of Chapter 3, and is typically the domain scientist who understands the task well enough to state its acceptance criteria, a role that cannot be delegated to whoever is most fluent with the tool, because it requires knowing what a correct answer is.
 A verification owner is responsible for the checks: designing them, keeping them external to the agent, and ensuring no consequential output is used until they pass, a role that draws on ordinary scientific scepticism more than on any new expertise.
@@ -163,7 +180,8 @@ The limitation worth stating is that this role map is a template, not a prescrip
 
 ## 16.5 Institutional, ethical and data-sovereignty considerations
 
-Adopting agentic methods inside an institution raises obligations that precede any technical decision, and a group that treats them as afterthoughts will meet them later as blocks rather than earlier as design inputs.
+Adopting agentic methods inside an institution raises obligations that come before any technical decision.
+Treat them as afterthoughts and you will meet them later as blocks rather than earlier as design inputs.
 The governing consideration is that agents touch data and systems on behalf of an institution that has committed to how those data may be handled, and those commitments (to data providers, to research participants, to funders, and to partners who shared observations under conditions) bind the group regardless of what a tool makes convenient.
 Data sovereignty is the sharpest of these in the environmental sciences, because operational observations frequently cannot leave the jurisdiction or the institution that holds them, and sending such data to an externally hosted model to be processed may breach an agreement even where it would be technically trivial and scientifically useful.
 This is not a hypothetical constraint but the central design driver of the constrained toolkit in Chapter 14, where partners who cannot share observations at all shape a three-tier architecture around that fact, and the same reasoning applies in miniature to any group weighing a hosted model against a locally run open-weight one.
@@ -172,7 +190,7 @@ This is the same logic that forces sensitive observations onto local, open-weigh
 
 The ethical considerations extend beyond data handling to the integrity of the scientific record: disclosure of how agents were used (Chapter 9), honesty about what was verified and what was taken on trust, and the firm line that an agent is never an author and never accountable for a scientific decision.
 Institutional considerations are more mundane but no less binding: procurement and security review, acceptable-use policies, and the questions institutional IT will ask about credential handling and least-privilege access (Chapter 12).
-A group that has built its governance habits in the third week of the on-ramp will find these conversations short, because it can already answer them.
+A group that has built its governance habits in the third week of the plan will find these conversations short, because it can already answer them.
 
 European funder guidance now packages much of this together, and usefully so: its living guidelines make researchers responsible for verifying AI-generated results, ask for transparent disclosure of substantial AI use, require privacy and confidentiality to be protected when material is fed to AI systems, and warn against AI in evaluative processes such as proposal review (European Commission, 2024).
 The implication is that sovereignty, ethics and institutional policy are best treated as inputs to the specification of a workflow rather than as compliance applied to a finished one, since a workflow designed around a data-handling constraint is sound where one retrofitted to it is fragile.
@@ -181,7 +199,8 @@ The limitation is that the specifics vary by jurisdiction, institution and funde
 
 ## 16.6 The energy and carbon cost of inference
 
-An environmental readership is owed an honest treatment of the energy and carbon cost of the methods this book advocates, addressed with the same discipline the book applies to every other claim: reasoning and direction in print, volatile figures in the repository.
+An environmental readership is owed an honest treatment of the energy and carbon cost of the methods this book advocates, handled with the same discipline as every other claim here: reasoning and direction in print, volatile figures in the repository.
+
 The core facts can be stated without quoting numbers that would be stale before the ink dried.
 Running a large model consumes energy, both in the one-off training of the model and in each inference a workflow performs, and that energy carries a carbon cost that depends on the electricity mix powering the data centre where the computation runs.
 That this belongs in a governance chapter at all is not an activist add-on: a national risk-management profile for generative AI lists the environmental impacts of training and inference among its named risk areas (NIST, 2024), which places the concern within mainstream governance rather than at its margin.
@@ -216,4 +235,4 @@ Report-sourced references carry a DOI or URL and are drawn from the verified swe
 
 ---
 
-*Chapter 17 turns from starting to lasting: the durable principles that survive the tooling churn, how to stay current without chasing releases, and the repository as the living layer beneath a printed book.*
+*Chapter 17 turns from starting to lasting: the durable principles that survive the churn in tooling, how to stay current without chasing releases, and the repository that keeps a printed book current.*
