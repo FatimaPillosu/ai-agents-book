@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 5.3 — From retrieved corpus to interpreted synthesis: where documents and claims are lost</title>
+  <desc>A top-to-bottom funnel of five narrowing horizontal bars labelled retrieved, after triage, claims drafted with citations, claims surviving the gate, and interpreted by the scientist. Each transition carries a count placeholder marked as author-supplied. A callout at the gate step notes that removed claims failed the existence, passage-present or claim-supported test.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- funnel bars -->
+  <rect x="180" y="100" width="720" height="60" rx="6" fill="#56B4E9"/>
+  <text x="540" y="137" font-size="16" fill="#111111" text-anchor="middle">retrieved</text>
+
+  <rect x="240" y="210" width="600" height="60" rx="6" fill="#56B4E9"/>
+  <text x="540" y="247" font-size="16" fill="#111111" text-anchor="middle">after triage</text>
+
+  <rect x="305" y="320" width="470" height="60" rx="6" fill="#E69F00"/>
+  <text x="540" y="357" font-size="16" fill="#111111" text-anchor="middle">claims drafted with citations</text>
+
+  <rect x="375" y="430" width="330" height="60" rx="6" fill="none" stroke="#D55E00" stroke-width="3"/>
+  <text x="540" y="467" font-size="16" fill="#111111" text-anchor="middle">claims surviving the gate</text>
+
+  <rect x="420" y="540" width="240" height="60" rx="6" fill="#0072B2"/>
+  <text x="540" y="577" font-size="13" fill="#FFFFFF" text-anchor="middle">interpreted by the scientist</text>
+
+  <!-- transition arrows -->
+  <g stroke="#111111" stroke-width="2">
+    <line x1="540" y1="162" x2="540" y2="206" marker-end="url(#ah)"/>
+    <line x1="540" y1="272" x2="540" y2="316" marker-end="url(#ah)"/>
+    <line x1="540" y1="382" x2="540" y2="426" marker-end="url(#ah)"/>
+    <line x1="540" y1="492" x2="540" y2="536" marker-end="url(#ah)"/>
+  </g>
+
+  <!-- per-transition author-supplied counts -->
+  <g font-size="16" fill="#111111">
+    <text x="940" y="190">n = [AUTHOR]</text>
+    <text x="940" y="300">n = [AUTHOR]</text>
+    <text x="940" y="410">n = [AUTHOR]</text>
+    <text x="940" y="520">n = [AUTHOR]</text>
+  </g>
+
+  <!-- vermillion callout at the gate transition -->
+  <line x1="345" y1="408" x2="373" y2="430" stroke="#D55E00" stroke-width="2"/>
+  <text x="90" y="400" font-size="15" fill="#D55E00">removed: fails exists /</text>
+  <text x="90" y="420" font-size="15" fill="#D55E00">passage / support</text>
+
+  <!-- placeholder note -->
+  <text x="540" y="680" font-size="15" fill="#999999" text-anchor="middle">counts are the author's to supply — placeholders shown</text>
+</svg>

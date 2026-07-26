@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 11.2 — Building a task-grounded evaluation set</title>
+  <desc>An architecture diagram reading left to right. Four sky-blue cylinders on the left (settled past runs, manual-workflow outputs, failure log, and known-correct hold-back) feed into a curate step labelled input, reference, metric, provenance, then a stratify step, producing a stratified evaluation set cylinder with a smaller held-out slice beside it. A curved arrow loops the set back to a version and refresh step. The versioned set passes through a vermillion gate into a de-emphasised live-workflow block on the right. A note reads guard against contamination; a callout on the gate reads measured here.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- four source cylinders -->
+  <!-- source 1 -->
+  <path d="M95,108 v44 a55,10 0 0 0 110,0 v-44" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="150" cy="108" rx="55" ry="10" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="150" y="185" font-size="15" fill="#111111" text-anchor="middle">settled past runs</text>
+  <!-- source 2 -->
+  <path d="M95,258 v44 a55,10 0 0 0 110,0 v-44" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="150" cy="258" rx="55" ry="10" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="150" y="335" font-size="15" fill="#111111" text-anchor="middle">manual-workflow outputs</text>
+  <!-- source 3 -->
+  <path d="M95,408 v44 a55,10 0 0 0 110,0 v-44" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="150" cy="408" rx="55" ry="10" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="150" y="485" font-size="15" fill="#111111" text-anchor="middle">failure log (Ch.13)</text>
+  <!-- source 4 -->
+  <path d="M95,558 v44 a55,10 0 0 0 110,0 v-44" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="150" cy="558" rx="55" ry="10" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="150" y="635" font-size="15" fill="#111111" text-anchor="middle">known-correct hold-back</text>
+
+  <!-- converging arrows into curate -->
+  <line x1="205" y1="130" x2="330" y2="320" stroke="#111111" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="205" y1="280" x2="330" y2="335" stroke="#111111" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="205" y1="430" x2="330" y2="360" stroke="#111111" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="205" y1="580" x2="330" y2="375" stroke="#111111" stroke-width="1.5" marker-end="url(#ah)"/>
+
+  <!-- curate step -->
+  <rect x="335" y="285" width="180" height="120" rx="12" fill="none" stroke="#999999" stroke-width="2.5"/>
+  <text x="425" y="322" font-size="17" fill="#111111" text-anchor="middle" font-weight="bold">curate</text>
+  <text x="425" y="350" font-size="14" fill="#111111" text-anchor="middle">input · reference</text>
+  <text x="425" y="372" font-size="14" fill="#111111" text-anchor="middle">· metric · provenance</text>
+
+  <!-- curate to stratify -->
+  <line x1="515" y1="345" x2="565" y2="345" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- stratify step -->
+  <rect x="570" y="305" width="170" height="80" rx="12" fill="none" stroke="#999999" stroke-width="2.5"/>
+  <text x="655" y="338" font-size="17" fill="#111111" text-anchor="middle" font-weight="bold">stratify</text>
+  <text x="655" y="362" font-size="14" fill="#111111" text-anchor="middle">by task and regime</text>
+
+  <!-- stratify to set -->
+  <line x1="740" y1="345" x2="792" y2="345" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- version + refresh loop tag -->
+  <rect x="800" y="128" width="150" height="44" rx="10" fill="none" stroke="#999999" stroke-width="2"/>
+  <text x="875" y="155" font-size="15" fill="#111111" text-anchor="middle">version + refresh</text>
+  <!-- loop arrows between set and tag -->
+  <path d="M835,290 C815,240 815,200 855,174" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#ah)"/>
+  <path d="M905,172 C935,205 930,250 908,290" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#ah)"/>
+
+  <!-- stratified evaluation set cylinder -->
+  <path d="M808,300 v64 a62,13 0 0 0 124,0 v-64" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="870" cy="300" rx="62" ry="13" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="870" y="410" font-size="15" fill="#111111" text-anchor="middle">stratified evaluation set</text>
+
+  <!-- set to held-out slice -->
+  <line x1="870" y1="378" x2="870" y2="430" stroke="#111111" stroke-width="1.5" marker-end="url(#ah)"/>
+
+  <!-- held-out slice cylinder -->
+  <path d="M832,448 v36 a38,9 0 0 0 76,0 v-36" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="870" cy="448" rx="38" ry="9" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="870" y="510" font-size="15" fill="#111111" text-anchor="middle">held-out slice</text>
+  <text x="870" y="535" font-size="13" fill="#999999" text-anchor="middle">guard against contamination (§11.3)</text>
+
+  <!-- set to gate -->
+  <line x1="932" y1="300" x2="978" y2="300" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- gate diamond -->
+  <polygon points="1010,270 1042,300 1010,330 978,300" fill="#D55E00"/>
+  <text x="1010" y="305" font-size="15" fill="#FFFFFF" text-anchor="middle">gate</text>
+  <text x="1010" y="248" font-size="13" fill="#D55E00" text-anchor="middle">measured here (§11.5)</text>
+
+  <!-- gate to live workflow -->
+  <line x1="1042" y1="300" x2="1088" y2="300" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- live workflow block (de-emphasised) -->
+  <rect x="1090" y="270" width="150" height="60" rx="10" fill="none" stroke="#999999" stroke-width="2.5"/>
+  <text x="1165" y="305" font-size="16" fill="#999999" text-anchor="middle">live workflow</text>
+</svg>

@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 15.1 — One workflow, five governed stages: specification to publication</title>
+  <desc>A left-to-right architecture diagram of five stage-blocks: specification, agent roster, gates and registries, independent review, and publication run. A single author-decision icon at the top connects down to every gate. Each gate has a pass arrow continuing right and a fail arrow returning to the previous stage. An audit-trail bar runs beneath all five stages.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+    <marker id="ahGn" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#009E73"/>
+    </marker>
+    <marker id="ahGr" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#999999"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- author decision icon (blue human) -->
+  <circle cx="640" cy="82" r="14" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <path d="M614,126 a26,26 0 0 1 52,0" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <text x="640" y="158" font-size="16" fill="#0072B2" text-anchor="middle">author decision</text>
+
+  <!-- bracket over spine -->
+  <path d="M90,262 v-12 h1100 v12" fill="none" stroke="#999999" stroke-width="1.5"/>
+  <text x="640" y="240" font-size="15" fill="#111111" text-anchor="middle">human authority at every gate, not only at the end</text>
+
+  <!-- blue lines: author to each gate -->
+  <g stroke="#0072B2" stroke-width="1.5">
+    <line x1="640" y1="168" x2="270" y2="380"/>
+    <line x1="640" y1="168" x2="500" y2="380"/>
+    <line x1="640" y1="168" x2="790" y2="380"/>
+    <line x1="640" y1="168" x2="1017" y2="380"/>
+  </g>
+
+  <!-- ===== forward connectors and pass arrows ===== -->
+  <line x1="225" y1="410" x2="241" y2="410" stroke="#111111" stroke-width="2"/>
+  <line x1="293" y1="410" x2="308" y2="410" stroke="#009E73" stroke-width="2" marker-end="url(#ahGn)"/>
+  <text x="300" y="398" font-size="13" fill="#009E73" text-anchor="middle">pass</text>
+
+  <line x1="460" y1="410" x2="474" y2="410" stroke="#111111" stroke-width="2"/>
+  <line x1="526" y1="410" x2="538" y2="410" stroke="#009E73" stroke-width="2" marker-end="url(#ahGn)"/>
+
+  <line x1="750" y1="410" x2="764" y2="410" stroke="#111111" stroke-width="2"/>
+  <line x1="816" y1="410" x2="828" y2="410" stroke="#009E73" stroke-width="2" marker-end="url(#ahGn)"/>
+
+  <line x1="980" y1="410" x2="991" y2="410" stroke="#111111" stroke-width="2"/>
+  <line x1="1043" y1="410" x2="1053" y2="410" stroke="#009E73" stroke-width="2" marker-end="url(#ahGn)"/>
+
+  <!-- ===== fail return arrows (grey, curving back to previous block) ===== -->
+  <path d="M267,440 C267,516 150,516 150,478" fill="none" stroke="#999999" stroke-width="2" marker-end="url(#ahGr)"/>
+  <text x="205" y="532" font-size="13" fill="#999999" text-anchor="middle">fail — return</text>
+  <path d="M500,440 C500,516 385,516 385,478" fill="none" stroke="#999999" stroke-width="2" marker-end="url(#ahGr)"/>
+  <path d="M790,440 C790,516 645,516 645,478" fill="none" stroke="#999999" stroke-width="2" marker-end="url(#ahGr)"/>
+  <path d="M1017,440 C1017,516 905,516 905,478" fill="none" stroke="#999999" stroke-width="2" marker-end="url(#ahGr)"/>
+
+  <!-- ===== Stage 1: specification (blue tag, seven ticks) ===== -->
+  <rect x="75" y="345" width="150" height="130" rx="8" fill="#0072B2"/>
+  <text x="150" y="380" font-size="16" fill="#FFFFFF" text-anchor="middle">specification</text>
+  <g stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M100,412 l4,6 l9,-12"/>
+    <path d="M128,412 l4,6 l9,-12"/>
+    <path d="M156,412 l4,6 l9,-12"/>
+    <path d="M184,412 l4,6 l9,-12"/>
+    <path d="M114,444 l4,6 l9,-12"/>
+    <path d="M142,444 l4,6 l9,-12"/>
+    <path d="M170,444 l4,6 l9,-12"/>
+  </g>
+
+  <!-- ===== Stage 2: agent roster (three orange agent glyphs) ===== -->
+  <g fill="#F7F7F5" stroke="#E69F00" stroke-width="2.5">
+    <rect x="392" y="392" width="38" height="38" rx="8"/>
+    <rect x="377" y="376" width="38" height="38" rx="8"/>
+    <rect x="362" y="360" width="38" height="38" rx="8"/>
+  </g>
+  <path d="M373,372 a10,10 0 1 1 -3,12" fill="none" stroke="#E69F00" stroke-width="2.5" marker-end="url(#ah)"/>
+  <text x="390" y="470" font-size="15" fill="#111111" text-anchor="middle">agent roster</text>
+
+  <!-- ===== Stage 3: gates & registries (two sky cylinders) ===== -->
+  <text x="645" y="360" font-size="16" fill="#111111" text-anchor="middle">gates &amp; registries</text>
+  <path d="M564,415 v42 a36,10 0 0 0 72,0 v-42" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="600" cy="415" rx="36" ry="10" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="600" y="480" font-size="12" fill="#111111" text-anchor="middle">assumption</text>
+  <text x="600" y="495" font-size="12" fill="#111111" text-anchor="middle">registry</text>
+  <path d="M659,415 v42 a36,10 0 0 0 72,0 v-42" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="695" cy="415" rx="36" ry="10" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="700" y="480" font-size="12" fill="#111111" text-anchor="middle">uncertainty</text>
+  <text x="700" y="495" font-size="12" fill="#111111" text-anchor="middle">registry</text>
+
+  <!-- gate diamonds -->
+  <g fill="#D55E00">
+    <polygon points="267,380 291,410 267,440 243,410"/>
+    <polygon points="500,380 524,410 500,440 476,410"/>
+    <polygon points="790,380 814,410 790,440 766,410"/>
+    <polygon points="1017,380 1041,410 1017,440 993,410"/>
+  </g>
+  <text x="267" y="458" font-size="12" fill="#D55E00" text-anchor="middle">gate</text>
+
+  <!-- ===== Stage 4: independent review (purple reviewer) ===== -->
+  <circle cx="905" cy="392" r="14" fill="none" stroke="#CC79A7" stroke-width="3"/>
+  <path d="M881,436 a24,24 0 0 1 48,0" fill="none" stroke="#CC79A7" stroke-width="3"/>
+  <path d="M921,392 l6,7 l13,-15" fill="none" stroke="#CC79A7" stroke-width="3" stroke-linecap="round"/>
+  <text x="905" y="470" font-size="14" fill="#111111" text-anchor="middle">independent review</text>
+
+  <!-- ===== Stage 5: publication run (sky artefact stack) ===== -->
+  <text x="1140" y="360" font-size="16" fill="#111111" text-anchor="middle">publication run</text>
+  <g fill="#FFFFFF" stroke="#56B4E9" stroke-width="2">
+    <rect x="1098" y="392" width="88" height="66"/>
+    <rect x="1106" y="384" width="88" height="66"/>
+    <rect x="1114" y="376" width="88" height="66"/>
+  </g>
+  <g stroke="#56B4E9" stroke-width="1.5">
+    <line x1="1126" y1="392" x2="1182" y2="392"/>
+    <line x1="1126" y1="404" x2="1182" y2="404"/>
+    <line x1="1126" y1="416" x2="1170" y2="416"/>
+  </g>
+  <text x="1140" y="480" font-size="12" fill="#111111" text-anchor="middle">manuscript · figures · disclosure</text>
+
+  <!-- ===== audit trail bar ===== -->
+  <rect x="75" y="575" width="1150" height="42" rx="8" fill="none" stroke="#999999" stroke-width="2"/>
+  <text x="98" y="602" font-size="15" fill="#999999" text-anchor="start">audit trail</text>
+</svg>

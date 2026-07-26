@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 2.2 — One tool call, four parts</title>
+  <desc>A two-lane sequence diagram with an agent lane and a tool lane, read top to bottom. Step one: the agent reads a tool declaration. Step two: the agent sends an invocation to the tool. Step three: the tool executes. Step four: the tool returns a result to the agent, which is also written to a state-and-memory cylinder. A callout by step four warns that a silent wrong answer defeats the loop's ability to correct.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+    <marker id="ahO" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#E69F00"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- agent lane header (orange) -->
+  <rect x="270" y="70" width="170" height="60" rx="14" fill="none" stroke="#E69F00" stroke-width="3"/>
+  <path d="M312,116 A11,11 0 1 1 304,100" fill="none" stroke="#E69F00" stroke-width="2.5" marker-end="url(#ahO)"/>
+  <text x="360" y="106" font-size="17" fill="#111111" text-anchor="middle">agent (model)</text>
+
+  <!-- tool lane header (green) -->
+  <rect x="860" y="70" width="200" height="60" rx="14" fill="none" stroke="#009E73" stroke-width="3"/>
+  <g stroke="#009E73" stroke-width="7" fill="none" stroke-linecap="round" transform="translate(898,100)">
+    <path d="M6,-6 A11,11 0 1 0 6,6"/>
+    <path d="M-6,6 L-18,18"/>
+  </g>
+  <text x="965" y="106" font-size="17" fill="#111111" text-anchor="middle">tool / interpreter</text>
+
+  <!-- lifelines -->
+  <line x1="355" y1="130" x2="355" y2="560" stroke="#999999" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <line x1="960" y1="130" x2="960" y2="560" stroke="#999999" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <!-- tool declaration tag -->
+  <rect x="70" y="176" width="150" height="50" rx="8" fill="none" stroke="#999999" stroke-width="2"/>
+  <text x="145" y="206" font-size="15" fill="#111111" text-anchor="middle">tool declaration</text>
+
+  <!-- step 1 declaration (dashed inbound) -->
+  <line x1="222" y1="201" x2="352" y2="201" stroke="#111111" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ah)"/>
+  <text x="287" y="188" font-size="16" fill="#111111" text-anchor="middle">1 declaration</text>
+
+  <!-- step 2 invocation (agent to tool) -->
+  <line x1="357" y1="290" x2="957" y2="290" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="655" y="277" font-size="16" fill="#111111" text-anchor="middle">2 invocation</text>
+
+  <!-- step 3 execution (self-loop in tool lane) -->
+  <path d="M960,340 C1015,346 1015,388 960,392" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="1030" y="372" font-size="16" fill="#111111" text-anchor="start">3 execution</text>
+
+  <!-- step 4 returned result (tool to agent) -->
+  <line x1="957" y1="446" x2="359" y2="446" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="655" y="433" font-size="16" fill="#111111" text-anchor="middle">4 returned result</text>
+
+  <!-- step 4 writes to state / memory -->
+  <path d="M355,458 C420,560 520,600 596,608" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- state / memory cylinder (sky) -->
+  <path d="M600,590 v44 a60,12 0 0 0 120,0 v-44" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="660" cy="590" rx="60" ry="12" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="660" y="662" font-size="17" fill="#111111" text-anchor="middle">state / memory</text>
+
+  <!-- vermillion callout beside step 4 -->
+  <line x1="1000" y1="440" x2="958" y2="446" stroke="#D55E00" stroke-width="1.5"/>
+  <text x="1005" y="435" font-size="15" fill="#D55E00" text-anchor="start">silent wrong answer</text>
+  <text x="1005" y="456" font-size="15" fill="#D55E00" text-anchor="start">defeats the loop</text>
+</svg>

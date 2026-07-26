@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 13.5 — Context loss: the dropped constraint and the boundary check that catches it</title>
+  <desc>A left-to-right failure trace. A constraint is set and written to an external state-on-record cylinder, then an agent works. At a dashed context boundary the constraint fades and is not carried across, marked in vermillion as the failure point where it drops out with no error raised. The agent continues and emits a confident output that violates the constraint. The output and the state-on-record cylinder both feed a vermillion consistency-assertion gate, which detects the contradiction and returns the work to be re-grounded and retried.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+    <marker id="ahR" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#D55E00"/>
+    </marker>
+    <marker id="ahG" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#999999"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- constraint set card -->
+  <rect x="60" y="190" width="180" height="76" rx="8" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="150" y="234" font-size="16" fill="#111111" text-anchor="middle">constraint set</text>
+
+  <!-- branch down to state on record -->
+  <line x1="150" y1="266" x2="150" y2="392" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- state on record cylinder -->
+  <path d="M92,400 v70 a58,14 0 0 0 116,0 v-70" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="150" cy="400" rx="58" ry="14" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="150" y="446" font-size="15" fill="#111111" text-anchor="middle">state on</text>
+  <text x="150" y="465" font-size="15" fill="#111111" text-anchor="middle">record</text>
+
+  <!-- constraint -> agent works -->
+  <line x1="240" y1="228" x2="322" y2="228" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- agent works -->
+  <rect x="326" y="185" width="170" height="86" rx="12" fill="none" stroke="#E69F00" stroke-width="3"/>
+  <text x="411" y="234" font-size="16" fill="#111111" text-anchor="middle">agent works</text>
+
+  <!-- context boundary divider -->
+  <line x1="590" y1="120" x2="590" y2="540" stroke="#999999" stroke-width="2.5" stroke-dasharray="8 7"/>
+  <text x="590" y="108" font-size="16" fill="#999999" text-anchor="middle">context boundary</text>
+
+  <!-- main flow continues across boundary -->
+  <line x1="496" y1="250" x2="646" y2="250" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- constraint dropped: faded arrow that does not cross -->
+  <line x1="496" y1="205" x2="572" y2="205" stroke="#999999" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#ahG)"/>
+  <text x="500" y="180" font-size="14" fill="#999999" text-anchor="start">constraint dropped</text>
+
+  <!-- agent continues -->
+  <rect x="650" y="185" width="170" height="86" rx="12" fill="none" stroke="#E69F00" stroke-width="3"/>
+  <text x="735" y="234" font-size="16" fill="#111111" text-anchor="middle">agent continues</text>
+  <line x1="820" y1="228" x2="898" y2="228" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- confident output card -->
+  <rect x="900" y="190" width="190" height="76" rx="8" fill="#E69F00"/>
+  <text x="995" y="234" font-size="16" fill="#111111" text-anchor="middle">confident output</text>
+  <line x1="995" y1="266" x2="995" y2="356" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- state on record -> gate (long read arrow) -->
+  <line x1="210" y1="440" x2="900" y2="440" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- consistency assertion gate -->
+  <polygon points="995,358 1085,440 995,522 905,440" fill="#D55E00"/>
+  <text x="995" y="428" font-size="13" fill="#FFFFFF" text-anchor="middle">consistency</text>
+  <text x="995" y="446" font-size="13" fill="#FFFFFF" text-anchor="middle">assertion</text>
+  <text x="995" y="464" font-size="13" fill="#FFFFFF" text-anchor="middle">vs state</text>
+
+  <!-- contradiction exit -> re-ground and retry -->
+  <path d="M1085,440 L1165,440 L1165,150 L737,150 L737,183" fill="none" stroke="#D55E00" stroke-width="2.5" marker-end="url(#ahR)"/>
+  <text x="1180" y="300" font-size="15" fill="#D55E00" text-anchor="start">contradiction</text>
+  <text x="950" y="140" font-size="15" fill="#D55E00" text-anchor="middle">re-ground and retry</text>
+
+  <!-- failure-point callout at boundary -->
+  <rect x="300" y="42" width="540" height="72" rx="8" fill="#D55E00"/>
+  <text x="570" y="73" font-size="16" fill="#FFFFFF" text-anchor="middle">failure point: constraint falls out of</text>
+  <text x="570" y="96" font-size="16" fill="#FFFFFF" text-anchor="middle">context, no error raised</text>
+  <line x1="580" y1="114" x2="590" y2="160" stroke="#D55E00" stroke-width="2.5" marker-end="url(#ahR)"/>
+
+  <!-- caught callout on gate -->
+  <rect x="560" y="560" width="620" height="72" rx="8" fill="#D55E00"/>
+  <text x="870" y="591" font-size="16" fill="#FFFFFF" text-anchor="middle">caught: output contradicts the constraint</text>
+  <text x="870" y="614" font-size="16" fill="#FFFFFF" text-anchor="middle">still on record</text>
+  <line x1="900" y1="560" x2="965" y2="512" stroke="#D55E00" stroke-width="2.5" marker-end="url(#ahR)"/>
+</svg>

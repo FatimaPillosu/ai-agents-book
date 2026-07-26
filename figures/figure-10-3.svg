@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 10.3 — Distributed human review and its agentic roster share one grammar</title>
+  <desc>A before/after diagram with two stacked left-to-right lanes. The upper lane, conventional, runs author, internal read-through, two independent referees, editor decides, annotated serial over weeks. The lower lane, agentic roster, runs producer agent, gate, independent reviewer, gate, human decision, annotated gated over minutes with the human owning the decision. Dotted vertical lines align the matching roles, producer, independent checker and accountable decider, across the two lanes, with a note that what carries over is independence and accountability, not the number of parties.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- alignment columns (faint dotted, drawn first) -->
+  <g stroke="#999999" stroke-width="1.5" stroke-dasharray="3 6">
+    <line x1="200" y1="150" x2="200" y2="540"/>
+    <line x1="700" y1="150" x2="700" y2="540"/>
+    <line x1="1080" y1="150" x2="1080" y2="540"/>
+  </g>
+  <g font-size="14" fill="#999999" text-anchor="middle">
+    <text x="200" y="138">producer</text>
+    <text x="700" y="138">independent checker</text>
+    <text x="1080" y="138">accountable decider</text>
+  </g>
+
+  <!-- lane labels -->
+  <text x="56" y="215" font-size="20" font-weight="bold" fill="#999999">conventional</text>
+  <text x="56" y="470" font-size="20" font-weight="bold" fill="#111111">agentic roster</text>
+
+  <!-- ============ UPPER LANE (conventional) ============ -->
+  <!-- author -->
+  <circle cx="200" cy="196" r="15" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <path d="M175,244 a25,25 0 0 1 50,0" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <text x="200" y="276" font-size="15" fill="#111111" text-anchor="middle">author</text>
+
+  <!-- internal read-through -->
+  <circle cx="440" cy="196" r="15" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <path d="M415,244 a25,25 0 0 1 50,0" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <text x="440" y="276" font-size="15" fill="#111111" text-anchor="middle">internal read-through</text>
+
+  <!-- independent referees x2 (two offset heads) -->
+  <circle cx="690" cy="198" r="14" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <path d="M667,244 a23,23 0 0 1 46,0" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <circle cx="716" cy="190" r="14" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <path d="M693,236 a23,23 0 0 1 46,0" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <text x="700" y="276" font-size="15" fill="#111111" text-anchor="middle">independent referees ×2</text>
+
+  <!-- editor decides -->
+  <circle cx="1080" cy="196" r="15" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <path d="M1055,244 a25,25 0 0 1 50,0" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <text x="1080" y="276" font-size="15" fill="#111111" text-anchor="middle">editor decides</text>
+
+  <!-- upper arrows -->
+  <line x1="222" y1="210" x2="410" y2="210" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="470" y1="210" x2="648" y2="210" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="748" y1="210" x2="1050" y2="210" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="1224" y="196" font-size="15" fill="#999999" text-anchor="end">serial — weeks</text>
+
+  <!-- ============ LOWER LANE (agentic roster) ============ -->
+  <!-- producer agent (orange) -->
+  <rect x="150" y="422" width="100" height="70" rx="12" fill="none" stroke="#E69F00" stroke-width="3"/>
+  <path d="M228,448 A13,13 0 1 1 215,441" fill="none" stroke="#E69F00" stroke-width="2.5"/>
+  <text x="200" y="516" font-size="15" fill="#111111" text-anchor="middle">producer agent</text>
+
+  <!-- gate 1 (vermillion) -->
+  <polygon points="400,422 448,457 400,492 352,457" fill="#D55E00"/>
+  <text x="400" y="462" font-size="14" fill="#FFFFFF" text-anchor="middle">gate</text>
+
+  <!-- independent reviewer (purple) -->
+  <rect x="640" y="422" width="120" height="70" rx="12" fill="none" stroke="#CC79A7" stroke-width="3"/>
+  <circle cx="672" cy="448" r="11" fill="none" stroke="#CC79A7" stroke-width="2.5"/>
+  <path d="M695,451 l6,6 l11,-13" fill="none" stroke="#CC79A7" stroke-width="2.5"/>
+  <text x="700" y="516" font-size="15" fill="#111111" text-anchor="middle">independent reviewer</text>
+
+  <!-- gate 2 (vermillion) -->
+  <polygon points="900,422 948,457 900,492 852,457" fill="#D55E00"/>
+  <text x="900" y="462" font-size="14" fill="#FFFFFF" text-anchor="middle">gate</text>
+
+  <!-- human decision (blue) -->
+  <circle cx="1080" cy="446" r="15" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <path d="M1055,492 a25,25 0 0 1 50,0" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <text x="1080" y="516" font-size="15" fill="#111111" text-anchor="middle">human decision</text>
+
+  <!-- lower arrows -->
+  <line x1="252" y1="457" x2="350" y2="457" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="448" y1="457" x2="638" y2="457" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="760" y1="457" x2="850" y2="457" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="948" y1="457" x2="1058" y2="457" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="1224" y="444" font-size="15" fill="#0072B2" text-anchor="end">gated — minutes;</text>
+  <text x="1224" y="464" font-size="15" fill="#0072B2" text-anchor="end">human owns the decision</text>
+
+  <!-- carry-over note -->
+  <text x="640" y="640" font-size="17" fill="#111111" text-anchor="middle">what carries over: independence and accountability, not the number of parties</text>
+</svg>

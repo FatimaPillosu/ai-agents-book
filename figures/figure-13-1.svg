@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 13.1 — A fabricated citation, caught at the resolver</title>
+  <desc>A four-step horizontal trace. A human claim feeds an agent that drafts a citation, producing a well-formed reference string. The string reaches a resolver gate marked in vermillion, which returns not found; an arrow labelled delete, do not repair loops back to the agent. A callout marks the resolver as the failure point where a plausible citation is revealed to correspond to no real work.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+    <marker id="ahR" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#D55E00"/>
+    </marker>
+    <marker id="ahO" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#E69F00"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- human: claim to support -->
+  <circle cx="110" cy="318" r="20" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <path d="M80,392 a30,30 0 0 1 60,0" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <text x="110" y="430" font-size="16" fill="#111111" text-anchor="middle">claim to support</text>
+  <line x1="150" y1="350" x2="205" y2="350" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- agent: drafts citation -->
+  <rect x="210" y="305" width="180" height="90" rx="12" fill="none" stroke="#E69F00" stroke-width="3"/>
+  <path d="M358,318 a11,11 0 1 1 -7,-4" fill="none" stroke="#E69F00" stroke-width="2.5" marker-end="url(#ahO)"/>
+  <text x="300" y="346" font-size="16" fill="#111111" text-anchor="middle">agent drafts</text>
+  <text x="300" y="368" font-size="16" fill="#111111" text-anchor="middle">citation</text>
+  <line x1="390" y1="350" x2="466" y2="350" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- citation string card -->
+  <rect x="470" y="310" width="235" height="80" rx="8" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="587" y="345" font-size="17" fill="#111111" text-anchor="middle">citation string</text>
+  <line x1="500" y1="363" x2="600" y2="363" stroke="#111111" stroke-width="1.5"/>
+  <line x1="610" y1="363" x2="675" y2="363" stroke="#111111" stroke-width="1.5"/>
+  <!-- plausible tag -->
+  <rect x="487" y="402" width="200" height="34" rx="6" fill="#D55E00"/>
+  <text x="587" y="424" font-size="14" fill="#FFFFFF" text-anchor="middle">plausible by construction</text>
+  <line x1="705" y1="350" x2="840" y2="350" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- resolver diamond -->
+  <polygon points="930,282 1012,350 930,418 848,350" fill="#D55E00"/>
+  <text x="930" y="346" font-size="17" fill="#FFFFFF" text-anchor="middle">resolver</text>
+  <text x="930" y="367" font-size="17" fill="#FFFFFF" text-anchor="middle">check</text>
+
+  <!-- not found exit looping back -->
+  <path d="M930,418 L930,520 L300,520 L300,397" fill="none" stroke="#D55E00" stroke-width="2.5" marker-end="url(#ahR)"/>
+  <text x="948" y="472" font-size="16" fill="#D55E00" text-anchor="start">not found</text>
+  <text x="615" y="508" font-size="16" fill="#D55E00" text-anchor="middle">delete, do not repair</text>
+
+  <!-- failure-point callout -->
+  <rect x="620" y="95" width="560" height="74" rx="8" fill="#D55E00"/>
+  <text x="900" y="127" font-size="17" fill="#FFFFFF" text-anchor="middle">failure point: citation is well-formed</text>
+  <text x="900" y="151" font-size="17" fill="#FFFFFF" text-anchor="middle">but resolves to nothing</text>
+  <line x1="900" y1="169" x2="930" y2="274" stroke="#D55E00" stroke-width="2.5" marker-end="url(#ahR)"/>
+</svg>

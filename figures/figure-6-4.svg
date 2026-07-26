@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 6.4 — One trace, three dispositions: spike accepted, spike rejected, gap flagged</title>
+  <desc>A two-panel time-series figure sharing a time axis. The upper panel plots river stage with three marked events; the lower panel plots co-located rainfall as bars. Event A, a stage spike aligned with a tall rainfall bar, is accepted. Event B, a stage spike with no rainfall beneath it, is rejected by a rule for exceeding the rate limit, marked in vermillion. Event C, a gap in the stage line, is flagged as a telemetry gap and left unfilled.</desc>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- event C grey band (telemetry gap) -->
+  <rect x="680" y="110" width="80" height="540" fill="#999999" fill-opacity="0.2"/>
+
+  <!-- vertical event guides -->
+  <g stroke="#999999" stroke-width="1.5" stroke-dasharray="5 6">
+    <line x1="340" y1="110" x2="340" y2="650"/>
+    <line x1="720" y1="110" x2="720" y2="650"/>
+    <line x1="980" y1="110" x2="980" y2="650"/>
+  </g>
+
+  <!-- ===== upper panel: river stage ===== -->
+  <text x="130" y="100" font-size="16" fill="#111111">river stage</text>
+  <line x1="120" y1="110" x2="120" y2="340" stroke="#111111" stroke-width="1.5"/>
+  <line x1="120" y1="340" x2="1180" y2="340" stroke="#111111" stroke-width="1.5"/>
+
+  <polyline points="120,300 200,292 260,296 300,285 330,168 362,270 420,296 500,300 580,292 640,297 680,295" fill="none" stroke="#111111" stroke-width="2.5"/>
+  <polyline points="760,296 820,294 900,290 950,284 980,166 1012,268 1060,296 1120,294 1180,297" fill="none" stroke="#111111" stroke-width="2.5"/>
+
+  <!-- event A: accepted (green tick) -->
+  <path d="M333,150 l6,9 l15,-21" fill="none" stroke="#009E73" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="340" y="128" font-size="15" fill="#111111" text-anchor="middle">A — accepted: rainfall-backed spike</text>
+
+  <!-- event B: rejected by rule (vermillion cross) -->
+  <g stroke="#D55E00" stroke-width="4" stroke-linecap="round">
+    <line x1="971" y1="141" x2="989" y2="159"/>
+    <line x1="989" y1="141" x2="971" y2="159"/>
+  </g>
+  <text x="980" y="120" font-size="15" fill="#111111" text-anchor="middle">B — rejected by rule: no rainfall, exceeds rate limit</text>
+  <text x="980" y="250" font-size="14" fill="#111111" text-anchor="middle">fluent proposal, wrong — caught by physical rule</text>
+
+  <!-- event C label -->
+  <text x="720" y="140" font-size="15" fill="#111111" text-anchor="middle">C — gap flagged, not filled</text>
+
+  <!-- ===== lower panel: rainfall ===== -->
+  <text x="130" y="420" font-size="16" fill="#111111">rainfall</text>
+  <line x1="120" y1="430" x2="120" y2="650" stroke="#111111" stroke-width="1.5"/>
+  <line x1="120" y1="650" x2="1180" y2="650" stroke="#111111" stroke-width="1.5"/>
+
+  <g fill="#56B4E9">
+    <rect x="192" y="620" width="16" height="30"/>
+    <rect x="292" y="550" width="16" height="100"/>
+    <rect x="312" y="510" width="16" height="140"/>
+    <rect x="332" y="485" width="16" height="165"/>
+    <rect x="352" y="530" width="16" height="120"/>
+    <rect x="372" y="570" width="16" height="80"/>
+    <rect x="552" y="605" width="16" height="45"/>
+    <rect x="612" y="622" width="16" height="28"/>
+    <rect x="832" y="612" width="16" height="38"/>
+    <rect x="1082" y="620" width="16" height="30"/>
+  </g>
+</svg>

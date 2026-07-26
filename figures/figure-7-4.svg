@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 7.4 — A self-tested error passes; an independent test catches it</title>
+  <desc>A top-to-bottom failure trace. An orange author agent writes a green regrid-step box carrying a vermillion defect marked lat/lon transposed, and also writes a grey self-derived test that shows a misleading green pass, annotated asserts what the code does not what it should. A parallel branch shows an independent conservation-check test as a vermillion diamond returning a red fail and an arrow back to the author agent, annotated asserts intended behaviour, catches it.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+    <marker id="ahO" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#E69F00"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- author agent -->
+  <text x="640" y="78" font-size="16" fill="#111111" text-anchor="middle">author agent</text>
+  <rect x="580" y="90" width="120" height="52" rx="10" fill="none" stroke="#E69F00" stroke-width="3"/>
+  <path d="M640,101 A13,13 0 1 1 629,107" fill="none" stroke="#E69F00" stroke-width="3" marker-end="url(#ahO)"/>
+
+  <!-- author -> regrid -->
+  <line x1="640" y1="142" x2="640" y2="186" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- regrid step -->
+  <rect x="560" y="190" width="160" height="52" rx="8" fill="none" stroke="#009E73" stroke-width="2.5"/>
+  <text x="640" y="222" font-size="16" fill="#111111" text-anchor="middle">regrid step</text>
+  <!-- defect mark -->
+  <circle cx="712" cy="198" r="6" fill="#D55E00"/>
+  <line x1="720" y1="214" x2="732" y2="214" stroke="#D55E00" stroke-width="1.5"/>
+  <text x="738" y="219" font-size="14" fill="#D55E00">lat/lon transposed</text>
+
+  <!-- fork -->
+  <line x1="640" y1="242" x2="640" y2="290" stroke="#111111" stroke-width="2"/>
+  <path d="M640,290 L360,290 L360,340" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <path d="M640,290 L900,290 L900,318" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- self-derived test -->
+  <rect x="270" y="345" width="180" height="52" rx="8" fill="none" stroke="#999999" stroke-width="2.5"/>
+  <text x="360" y="377" font-size="15" fill="#111111" text-anchor="middle">self-derived test</text>
+  <path d="M320,425 l10,12 l20,-24" fill="none" stroke="#009E73" stroke-width="4"/>
+  <text x="380" y="432" font-size="15" fill="#009E73" text-anchor="middle">pass</text>
+
+  <!-- self-derived callout -->
+  <line x1="250" y1="470" x2="330" y2="410" stroke="#D55E00" stroke-width="1.5"/>
+  <text x="200" y="500" font-size="13" fill="#D55E00" text-anchor="middle">asserts what the code does,</text>
+  <text x="200" y="518" font-size="13" fill="#D55E00" text-anchor="middle">not what it should</text>
+
+  <!-- independent test diamond -->
+  <polygon points="900,318 970,390 900,462 830,390" fill="#D55E00"/>
+  <text x="900" y="382" font-size="13" fill="#FFFFFF" text-anchor="middle">independent test</text>
+  <text x="900" y="402" font-size="13" fill="#FFFFFF" text-anchor="middle">— conservation check</text>
+  <!-- fail mark -->
+  <path d="M878,486 l24,24 M902,486 l-24,24" stroke="#D55E00" stroke-width="4" fill="none"/>
+  <text x="940" y="512" font-size="15" fill="#D55E00" text-anchor="middle">fail</text>
+
+  <!-- independent callout -->
+  <line x1="1020" y1="390" x2="972" y2="390" stroke="#D55E00" stroke-width="1.5"/>
+  <text x="1120" y="384" font-size="13" fill="#D55E00" text-anchor="middle">asserts intended behaviour</text>
+  <text x="1120" y="402" font-size="13" fill="#D55E00" text-anchor="middle">— catches it</text>
+
+  <!-- fix return -->
+  <path d="M900,318 L900,150 L706,116" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="898" y="150" font-size="14" fill="#111111" text-anchor="end">fix</text>
+</svg>

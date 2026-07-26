@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
+  <title>Figure 7.1 — Four gates between an agent's code and the main branch</title>
+  <desc>An architecture diagram reading left to right. An orange author agent emits a proposed-change document that passes through three vermillion diamond gates in turn (automated tests, pre-commit hooks, and an independent reviewer agent shown with a purple reviewer icon) before reaching a blue human owner who merges to the main-branch cylinder. Each gate has a fail arrow curving back to the author agent. A bracket under the gates reads cheap gates first; a note by the reviewer reads read-only, advisory.</desc>
+  <defs>
+    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
+    </marker>
+    <marker id="ahO" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#E69F00"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="#F7F7F5"/>
+
+  <!-- author agent -->
+  <text x="110" y="170" font-size="17" fill="#111111" text-anchor="middle">author agent</text>
+  <rect x="55" y="185" width="110" height="90" rx="12" fill="none" stroke="#E69F00" stroke-width="3"/>
+  <path d="M110,214 A18,18 0 1 1 94,222" fill="none" stroke="#E69F00" stroke-width="4" marker-end="url(#ahO)"/>
+
+  <!-- author -> proposed change -->
+  <line x1="167" y1="230" x2="220" y2="230" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- proposed change document glyph -->
+  <path d="M225,196 L275,196 L291,212 L291,266 L225,266 Z" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <path d="M275,196 L275,212 L291,212" fill="none" stroke="#111111" stroke-width="1.5"/>
+  <text x="258" y="300" font-size="16" fill="#111111" text-anchor="middle">proposed change</text>
+
+  <!-- proposed change -> tests -->
+  <line x1="291" y1="230" x2="340" y2="230" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- tests gate -->
+  <polygon points="410,168 478,230 410,292 342,230" fill="#D55E00"/>
+  <text x="410" y="226" font-size="15" fill="#FFFFFF" text-anchor="middle">automated</text>
+  <text x="410" y="246" font-size="15" fill="#FFFFFF" text-anchor="middle">tests</text>
+
+  <line x1="478" y1="230" x2="515" y2="230" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- hooks gate -->
+  <polygon points="585,168 653,230 585,292 517,230" fill="#D55E00"/>
+  <text x="585" y="226" font-size="15" fill="#FFFFFF" text-anchor="middle">pre-commit</text>
+  <text x="585" y="246" font-size="15" fill="#FFFFFF" text-anchor="middle">hooks</text>
+
+  <line x1="653" y1="230" x2="700" y2="230" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- reviewer gate -->
+  <polygon points="770,168 838,230 770,292 702,230" fill="#D55E00"/>
+  <text x="770" y="220" font-size="14" fill="#FFFFFF" text-anchor="middle">independent</text>
+  <text x="770" y="238" font-size="14" fill="#FFFFFF" text-anchor="middle">reviewer</text>
+  <text x="770" y="256" font-size="14" fill="#FFFFFF" text-anchor="middle">agent</text>
+
+  <!-- reviewer icon + note -->
+  <circle cx="770" cy="135" r="9" fill="none" stroke="#CC79A7" stroke-width="3"/>
+  <path d="M754,150 a16,16 0 0 1 32,0" fill="none" stroke="#CC79A7" stroke-width="3"/>
+  <path d="M776,133 l4,5 l8,-11" fill="none" stroke="#CC79A7" stroke-width="3"/>
+  <text x="770" y="108" font-size="14" fill="#999999" text-anchor="middle">read-only, advisory</text>
+
+  <!-- reviewer -> human -->
+  <line x1="838" y1="230" x2="905" y2="230" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- human owner -->
+  <circle cx="950" cy="205" r="15" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <path d="M922,269 a28,28 0 0 1 56,0" fill="none" stroke="#0072B2" stroke-width="3"/>
+  <text x="950" y="300" font-size="16" fill="#111111" text-anchor="middle">human owner</text>
+
+  <!-- human -> main branch -->
+  <line x1="982" y1="230" x2="1058" y2="230" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- main branch cylinder -->
+  <path d="M1065,212 v54 a55,14 0 0 0 110,0 v-54" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <ellipse cx="1120" cy="212" rx="55" ry="14" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
+  <text x="1120" y="300" font-size="16" fill="#111111" text-anchor="middle">main branch</text>
+
+  <!-- fail stubs and return bus -->
+  <line x1="410" y1="292" x2="410" y2="388" stroke="#111111" stroke-width="1.5"/>
+  <line x1="585" y1="292" x2="585" y2="388" stroke="#111111" stroke-width="1.5"/>
+  <line x1="770" y1="292" x2="770" y2="388" stroke="#111111" stroke-width="1.5"/>
+  <path d="M770,388 L110,388 L110,278" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#ah)"/>
+  <text x="240" y="378" font-size="15" fill="#111111" text-anchor="middle">fail</text>
+
+  <!-- cheap gates first bracket -->
+  <path d="M342,310 L342,322 L838,322 L838,310" fill="none" stroke="#999999" stroke-width="1.5"/>
+  <line x1="590" y1="322" x2="590" y2="334" stroke="#999999" stroke-width="1.5"/>
+  <text x="590" y="352" font-size="15" fill="#999999" text-anchor="middle">cheap gates first</text>
+</svg>
