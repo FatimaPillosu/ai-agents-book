@@ -7,16 +7,16 @@
 
 ## 4.1 Where an agent fits the scientific method
 
-The stance developed in this chapter follows directly from the position set out in Chapter 1, that agents are instruments serving the scientist's judgement rather than substitutes for it, and its practical content is a map of where, in the actual work of science, such an instrument may legitimately be placed.
-Described plainly enough to be useful here, the scientific method is a cycle: a question is refined into a hypothesis, the hypothesis into a design, the design into data and analysis, and the analysis back into interpretation, communication and the next question.
-The phases of that cycle are not equal in what they demand of the person carrying them out.
+Agents are instruments serving the scientist's judgement rather than substitutes for it. As such, its practical content is a map of where, in the actual work of science, such an instrument may legitimately be placed. [human: what do you mean with "its practical content is a map of where ... placed."].
+The scientific method is a cycle: a question is refined into a hypothesis, the hypothesis into a design, the design into data and analysis, and the analysis back into interpretation, communication and the next question.
+The phases of that cycle are not equal in what they demand of the person carrying them out. [human: I understand this sentence, but can you write it in a more plain language?].
 Some are transformations of material with a checkable right answer; others are acts of judgement for which the scientist alone can be held to account.
 Reformatting a decade of gauge records into a common schema has a correct outcome that a second procedure can confirm.
-Deciding that a departure from the record is a genuine hydrological signal rather than a sensor fault is an interpretation that carries the scientist's name and standing.
-An instrument belongs in the first kind of phase and not the second, and the boundary between them runs through the middle of the research cycle rather than neatly around its edge.
+Deciding that a departure from the record is a genuine hydrological signal rather than a sensor fault is an interpretation that carries the scientist's name and standing. [human: I would not write " that carries .... standing. Can you change it?].
+An instrument belongs in the first kind of phase and not the second, and the boundary between them runs through the middle of the research cycle rather than neatly around its edge. [human: can you explain to me thissentence, and suggest different way to express it because I woukd not write it like this].
 
-The consequence for how agents are deployed is that they are best understood not as collaborators pursuing the science alongside the scientist, but as extensions of the scientist's reach into the transformational phases (acquisition, quality control, coding, orchestration, drafting), where their output can be checked against something other than confidence in it.
-The limitation of this framing, which this chapter takes seriously rather than sets aside, is that the two kinds of phase are interleaved in practice far more finely than any diagram of the cycle suggests, so an agent's placement is decided task by task and not phase by phase (high confidence in the framing; the granularity is what makes it hard to apply).
+The consequence for how agents are deployed is that they are best understood not as collaborators pursuing the science alongside the scientist, but as extensions of the scientist's reach into the transformational phases (acquisition, quality control, coding, orchestration, drafting), where their output can be checked against something other than confidence in it. 
+The limitation of this framing is that the two kinds of phase are finely interleaved, so an agent's placement is decided task by task and not phase by phase (high confidence in the framing; the granularity is what makes it hard to apply). [ human: can we write this in a more plain language?].
 
 ## 4.2 Augmentation and automation are different commitments
 
