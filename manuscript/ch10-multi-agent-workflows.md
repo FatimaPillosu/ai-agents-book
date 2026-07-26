@@ -1,6 +1,6 @@
 # Chapter 10 — Multi-agent workflows
 
-> **Status:** draft r3 · voice v3.3 (`STYLE.md`) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r4 · voice v4.0-colloquial (`STYLE.md` §0) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > **This chapter** is the Part II capstone: it composes the single-agent patterns of Chapters 5–9 and hands the resulting apparatus to the end-to-end case study of Chapter 15.
 
@@ -8,47 +8,73 @@
 
 ## 10.1 The problem: more agents is not more rigour
 
-The intuition this chapter exists to discipline is a natural one: if one agent improves a workflow, surely several will improve it more.
+If one agent improves a workflow, surely several will improve it more.
+That intuition is natural, and this chapter exists to discipline it.
+
 The five preceding chapters each built a single-agent pattern (synthesis, acquisition and quality control, coding, orchestration, drafting), and each closed the loop between an instruction and a verified result with one agent working inside specified boundaries.
-The obvious next move, and the one commercial framing actively encourages, is to compose those patterns into a standing team of agents that pass work to one another: a planner that decomposes the task, specialists that execute the parts, a critic that reviews the whole, a manager that reconciles the outputs.
+The obvious next move, and the one commercial framing actively encourages, is to compose those patterns into a standing team of agents passing work to one another: a planner that decomposes the task, specialists that execute the parts, a critic that reviews the whole, a manager that reconciles the outputs.
 Such teams are easy to build with current tooling and they demonstrate impressively, because a transcript of several agents conferring reads as diligence.
-The trouble is that the appearance of diligence and the fact of rigour are not the same thing, and multi-agent teams pull them apart more readily than single agents do.
-A workflow in which four agents built on the same model, given the same context, agree with one another has not been checked four times; it has been checked once and echoed three times, at four times the token cost and several times the latency, whilst presenting a surface that looks like independent corroboration.
-The evidence here is not kind to the intuition.
-A 2025 analysis of more than two hundred execution traces across seven popular multi-agent frameworks found that such systems often gain little over a single agent, and, in the finding that most deserves emphasis, that the largest share of their failures traces not to weak models but to poor task specification and to absent or weak verification (Cemri et al., 2025); a separate methodological critique showed that a plain model wrapped in a simple retry loop can match elaborate agent architectures on standard coding benchmarks at a fraction of the cost (Kapoor et al., 2024).
-The central question of this chapter is therefore not how to orchestrate many agents but when a second agent adds anything a single well-specified agent and a verification gate did not already provide.
-The answer, and it will be familiar in its logic to anyone who works with ensembles, is specific: extra agents earn their cost when their errors are genuinely independent of the errors they are meant to catch, and they add only latency, expense and false assurance when their errors are correlated with the ones they are checking.
-The limitation to state at the outset is that independence is far harder to engineer than to assert, and most multi-agent designs that claim it do not have it (high confidence in the principle; the engineering is where practice fails).
+The trouble is that looking diligent and being rigorous are not the same thing, and multi-agent teams pull the two apart more readily than single agents do.
+Four agents built on the same model, given the same context, agreeing with each other, have not checked the work four times.
+They have checked it once and echoed it three times, at four times the token cost and several times the latency, while presenting something that looks like independent corroboration.
+
+The evidence is not kind to the intuition.
+A 2025 analysis of more than two hundred execution traces across seven popular multi-agent frameworks found such systems often gain little over a single agent.
+The finding that deserves most emphasis is where their failures came from: not weak models, but poor task specification and absent or weak verification (Cemri et al., 2025).
+A separate methodological critique showed a plain model wrapped in a simple retry loop can match elaborate agent architectures on standard coding benchmarks at a fraction of the cost (Kapoor et al., 2024).
+So the question here is not how to orchestrate many agents.
+It is when a second agent adds anything a single well-specified agent and a verification gate did not already provide.
+The answer will be familiar to anyone who works with ensembles.
+Extra agents earn their cost when their errors are genuinely independent of the errors they are meant to catch, and they add only latency, expense and false assurance when their errors are correlated with the ones they are checking.
+State the limitation at the outset: independence is far harder to engineer than to assert, and most multi-agent designs that claim it do not have it (high confidence in the principle; the engineering is where practice fails).
 
 ## 10.2 The conventional workflow: distributed cognition in science
 
-Science already distributes cognitive labour across independent parties, and almost all the value that distribution creates comes from the independence, not from the sheer number of people involved.
-A modelling study of any consequence is not the product of one mind: it passes through co-authors with distinct expertise, through internal read-throughs before submission, through two or three referees who never saw one another's reports, and through an editor who reconciles them.
-This structure catches errors not because many people looked, but because the people who looked had different training, different priors, different stakes and no sight of each other's conclusions, so their mistakes do not coincide.
-A hydrologist and a statistician reading the same manuscript miss different things; two hydrologists from the same tradition, reading in sequence with the first's marked-up copy in front of the second, tend to miss the same things and to reinforce each other's confidence in what they missed.
-The discipline has names for the productive arrangement (the four-eyes principle, independent replication, blinded review), and each name encodes the same insight: the checking party must be shielded from the checked party's reasoning if the check is to be worth its cost.
-Less visibly, the conventional workflow also encodes an accountability structure: at each handoff a named person owns the artefact and answers for it, the referee advises but does not decide, and the editor decides but does not author.
-All of this bears directly on agent design, and it is the organising claim of the chapter.
-A roster of agents is an attempt to reproduce, in software and at speed, the distributed-cognition structure science already uses, and it will reproduce the benefit only if it reproduces the property that makes the human structure work, namely genuine independence between the party producing an output and the party checking it, rather than merely the number of parties.
-The qualification to carry forward is that the human structure earns its independence through deep, expensive differences between people, and a set of agents sharing a model and a context does not enjoy those differences automatically; they have to be engineered in (high confidence).
+Science already spreads cognitive labour across independent parties, and almost all the value of doing so comes from the independence rather than from the number of people involved.
+
+A modelling study of any consequence is not the product of one mind.
+It passes through co-authors with distinct expertise, internal read-throughs before submission, two or three referees who never saw each other's reports, and an editor who reconciles them.
+That structure catches errors not because many people looked, but because the people who looked had different training, different priors, different stakes and no sight of each other's conclusions, so their mistakes do not coincide.
+A hydrologist and a statistician reading the same manuscript miss different things.
+Two hydrologists from the same tradition, reading in sequence with the first's marked-up copy in front of the second, tend to miss the same things and to reinforce each other's confidence in what they missed.
+The discipline has names for the arrangement that works, such as the four-eyes principle, independent replication and blinded review, and each name encodes the same insight: the checking party has to be shielded from the checked party's reasoning if the check is to be worth its cost.
+Less visibly, the conventional workflow also encodes accountability: at each handoff a named person owns the artefact and answers for it, the referee advises but does not decide, and the editor decides but does not author.
+
+All of that bears directly on agent design, and it is the organising claim of the chapter.
+A roster of agents is an attempt to reproduce, in software and at speed, the distributed-cognition structure science already uses.
+It will reproduce the benefit only if it reproduces the property that makes the human structure work: genuine independence between the party producing an output and the party checking it, not merely the number of parties.
+Carry the qualification forward, though.
+The human structure earns its independence through deep, expensive differences between people, and a set of agents sharing a model and a context does not get those differences for free.
+They have to be engineered in (high confidence).
 
 > **Definition — Roster.** A small, fixed set of agents with distinct jobs: a producer that performs the work, an independent reviewer that checks it, and a human who decides, arranged so that work passes between them through defined checks. The term borrows from a team sheet: named roles that answer for their part, not an undifferentiated crowd.
 
 ## 10.3 The discriminating question: independence versus correlated opinion
 
-The question that should govern every decision to add an agent is whether the new agent's errors are statistically independent of the errors it is brought in to catch, because the whole benefit of a second opinion depends on that independence and on nothing else.
-The intuition is the same one that underlies ensemble forecasting, familiar to this readership: an ensemble reduces error only to the extent that its members are not making the same mistake at the same time, and an ensemble whose members share an initialisation, a resolution and a parametrisation collapses towards a single trajectory that is confidently wrong in unison.
-Agents built from one underlying model, prompted with overlapping context and asked to reason in the same register, are the software equivalent of a collapsed ensemble: their failure modes are drawn from the same distribution, so where one hallucinates a citation, misreads a unit or swallows a flawed premise, the others are disproportionately likely to do the same, and, worse, to ratify it.
-This is not merely an analogy advanced without evidence.
+One question should govern every decision to add an agent: are the new agent's errors statistically independent of the errors it is brought in to catch?
+The whole benefit of a second opinion depends on that independence and on nothing else.
+
+The intuition is the one behind ensemble forecasting, which will be familiar.
+An ensemble reduces error only to the extent that its members are not making the same mistake at the same time, and an ensemble whose members share an initialisation, a resolution and a parametrisation collapses towards a single trajectory that is confidently wrong in unison.
+Agents built from one underlying model, prompted with overlapping context and asked to reason in the same register, are the software equivalent of that collapsed ensemble.
+Their failure modes come from the same distribution, so where one hallucinates a citation, misreads a unit or accepts a flawed premise, the others are disproportionately likely to do the same and, worse, to ratify it.
+This is not an analogy offered without evidence.
 When independent model instances propose answers and then critique one another, factual accuracy improves and hallucinated content falls, including when the instances come from different model families (Du et al., 2024); but the same work is a warning, because debate converges on *consensus*, and consensus is not correctness.
 Instances of a similar model can agree on a shared error exactly as an under-dispersed ensemble does.
-The practical consequence is that a reviewer agent adds real assurance in proportion to how much it differs from the agent it reviews, and the levers that create difference are concrete rather than rhetorical: a different underlying model where one is available; a deliberately narrowed context so the reviewer does not inherit the drafter's framing; an adversarial instruction that rewards finding faults rather than confirming adequacy; and access to an independent source of truth (a test suite, a schema, a reference dataset) against which the reviewer checks claims rather than re-reasoning them.
+So a reviewer agent adds real assurance in proportion to how much it differs from the agent it reviews, and the things that create difference are concrete rather than rhetorical.
+A different underlying model, where one is available.
+A deliberately narrowed context, so the reviewer does not inherit the drafter's framing.
+An adversarial instruction that rewards finding faults rather than confirming adequacy.
+And access to an independent source of truth, such as a test suite, a schema or a reference dataset, that the reviewer checks claims against rather than re-reasoning them.
 The pull towards the cheapest configuration, drafting and reviewing with the same model family, is precisely the trap: judge models systematically prefer text that is familiar to them, rating outputs from their own family more highly than a human would (Wataoka et al., 2024), so genuine independence needs model diversity, not merely a fresh context window.
 A 2026 evaluation at scale (21 judge models, some 541,000 judgements) sharpens the warning: exact-match agreement overstates chance-corrected agreement by 33 to 41 percentage points, and a judge can be highly self-consistent whilst carrying severe position bias, so a reviewer can be dependably wrong in a fixed direction and its self-consistency is no evidence of soundness (Norman, Rivera and Hughes, 2026; a preprint, on general chat and question-answering benchmarks, not scientific artefacts).
 [ai-reviewer: placement note, for the record. Plan task 10.1 anchored this to "the existing Zheng et al. (2023) sentence" in §10.3, but that chapter's Zheng sentence sits in §10.6; the writer attached the Norman qualification to §10.3's Wataoka self-preference sentence instead. Reviewed and endorsed: §10.3 is the independence argument the qualification serves, and adding it at §10.6 would have breached the T2 canonical-home limits. No change needed; noted so the deviation from the written plan is visible to the author.]
-Where none of these levers is pulled, a second agent supplies correlated opinion, which is to say cost without information.
-The corollary sharpens the design rule to a single test applied to every proposed agent: name the class of error this agent will catch that the existing agents and gates would not, and describe the mechanism that makes its judgement independent of theirs; if neither can be stated, the agent is decoration and should be replaced by a deterministic gate or a human check.
-The limitation is that independence is a matter of degree and cannot be measured directly at design time, so this test is a discipline for reasoning about a roster rather than a proof of its soundness, and the evaluation machinery of Chapter 11 is what turns the design-time argument into a measured claim (moderate-to-high confidence).
+Do none of those things and a second agent supplies correlated opinion, which is cost without information.
+That gives one test to apply to every proposed agent.
+Name the class of error this agent will catch that the existing agents and gates would not, and describe the mechanism that makes its judgement independent of theirs.
+If you cannot state both, the agent is decoration, and it should be replaced by a deterministic gate or a human check.
+The limitation is that independence is a matter of degree and cannot be measured directly at design time, so this is a discipline for reasoning about a roster rather than a proof of its soundness.
+The evaluation methods of Chapter 11 are what turn the design-time argument into a measured claim (moderate-to-high confidence).
 
 > **Definition — Ensemble.** In forecasting, a set of model runs started from slightly different conditions, whose spread is read as the forecast's uncertainty. The spread means something only if the members can genuinely disagree; runs that share too much collapse together and become confidently wrong in unison, the same trap a set of near-identical agents falls into.
 
@@ -88,17 +114,26 @@ FIGURE BRIEF
 
 ## 10.4 The agentic redesign: roles, rosters and gates
 
-The redesign that follows from the independence principle is not a larger crowd of agents but a small roster of clearly distinct roles separated by gates, with a human holding the accountable node.
+What follows from the independence principle is not a bigger crowd of agents but a small roster of clearly distinct roles separated by gates, with a human holding the accountable position.
+
 Three role types recur across scientific rosters, and they are worth naming because their distinctness is what supplies the independence.
-A **producer** role carries the transformational work (drafting a synthesis, writing pipeline code, assembling a manuscript section) and corresponds to the single-agent patterns of Chapters 5 to 9.
-An **independent reviewer** role, developed for code in Chapter 7 and generalised here, is handed a different and adversarial brief, a narrowed context and, wherever possible, a different model, and is judged by the faults it surfaces rather than by its agreement with the producer.
-A **gate** is not an agent at all but a deterministic check (a test suite, a schema validation, a citation resolver, a units audit) placed between roles so the cheap, mechanical verification is mandatory rather than advisory; whenever a proposed check can be written as a rule, a gate is preferable to another agent.
-Above these sits an orchestration function that routes artefacts between roles and enforces the stop conditions, and it should be deliberately thin: an orchestrator that reasons about the science reintroduces exactly the correlated judgement the roster was built to avoid, whereas one that only sequences steps and applies gates adds coordination without adding opinion.
-This roles-and-rosters structure is not new; conversation-structured multi-agent frameworks from around 2023 made it a standard way to build agent applications, and, in a point worth borrowing, they treat a human-in-the-loop role as a first-class member of the roster rather than an afterthought (Wu et al., 2023).
-The human decision point is the load-bearing element, placed wherever accountability, interpretation or authorship is at stake (the boundaries drawn in Chapter 4), because no arrangement of agents, however independent, discharges the answerability Chapter 1 identified as non-transferable.
-The design rule that ties the roster together is that independence must be engineered at every producer–reviewer boundary and that every loop must terminate: reviewers that can send work back to producers create cycles, and a cycle without a bounded iteration count and an escalation path is a cost blow-out and a diffusion-of-responsibility failure waiting to happen (§10.6).
-The provenance of who produced, who reviewed and who decided is recorded at each handoff, feeding the audit trail Chapter 12 specifies; a roster whose internal handoffs are not logged cannot later be shown to have checked what it claims to have checked (high confidence in the structure; the thin-orchestrator claim is moderate confidence and workload-dependent).
-Set beside the conventional arrangement of §10.2, the redesign keeps what made distributed human review work (independence between producer and checker, a named party accountable at each boundary) whilst replacing serial handoffs measured in days with gated handoffs measured in minutes, and Figure 10.3 places the two side by side so the shared grammar and the compressed timescale are legible at once.
+A **producer** carries the transformational work, such as drafting a synthesis, writing pipeline code or assembling a manuscript section, and corresponds to the single-agent patterns of Chapters 5 to 9.
+An **independent reviewer**, developed for code in Chapter 7 and generalised here, gets a different and adversarial brief, a narrowed context and, wherever possible, a different model, and is judged by the faults it surfaces rather than by its agreement with the producer.
+A **gate** is not an agent at all.
+It is a deterministic check, such as a test suite, a schema validation, a citation resolver or a units audit, placed between roles so the cheap mechanical verification is mandatory rather than advisory.
+Whenever a proposed check can be written as a rule, prefer a gate to another agent.
+Above all of this sits an orchestration function that routes artefacts between roles and enforces the stop conditions, and it should be deliberately thin.
+An orchestrator that reasons about the science reintroduces exactly the correlated judgement the roster was built to avoid; one that only sequences steps and applies gates adds coordination without adding opinion.
+None of this structure is new.
+Conversation-structured multi-agent frameworks from around 2023 made it a standard way to build agent applications, and, in a point worth borrowing, they treat a human-in-the-loop role as a full member of the roster rather than an afterthought (Wu et al., 2023).
+The human decision point carries the weight, placed wherever accountability, interpretation or authorship is at stake, meaning the boundaries drawn in Chapter 4, because no arrangement of agents, however independent, discharges the answerability Chapter 1 identified as non-transferable.
+Two design rules tie the roster together.
+Independence has to be engineered at every producer–reviewer boundary, and every loop has to terminate.
+Reviewers that can send work back to producers create cycles, and a cycle without a bounded iteration count and an escalation path is a cost blow-out and a diffusion-of-responsibility failure waiting to happen (§10.6).
+Who produced, who reviewed and who decided gets recorded at each handoff, feeding the audit trail Chapter 12 specifies.
+A roster whose internal handoffs are not logged cannot later be shown to have checked what it claims to have checked (high confidence in the structure; the thin-orchestrator claim is moderate confidence and workload-dependent).
+Set beside the conventional arrangement of §10.2, the redesign keeps what made distributed human review work, meaning independence between producer and checker and a named party accountable at each boundary, while replacing serial handoffs measured in days with gated handoffs measured in minutes.
+Figure 10.3 puts the two side by side so the shared structure and the compressed timescale are both legible at once.
 
 > **Definition — Independent reviewer.** An agent whose only job is to find faults in another agent's work, set up so that its judgement does not simply echo the producer's: a different model where possible, a deliberately narrower view of the task, an instruction that rewards catching problems, and its own source of truth to check against. Independence is the whole point: a reviewer that shares the producer's model and context mostly agrees with it.
 
@@ -176,15 +211,20 @@ FIGURE BRIEF
 
 ## 10.5 Worked example: deriving a roster from a specification
 
-The safest way to arrive at a roster is not to design the team and then find work for it, but to derive the team mechanically from the workflow specification, so that every role and gate traces back to a clause a human wrote and can audit.
-The specification schema of Chapter 3 provides four fields that map onto roster elements with little slack, and reading the derivation in that direction, specification first and roster second, is the discipline that keeps a roster minimal, because a role no clause of the specification demands is a role that should not exist.
+The safest way to arrive at a roster is not to design the team and then find work for it.
+It is to derive the team mechanically from the workflow specification, so every role and gate traces back to a clause a human wrote and can audit.
+
+The specification schema of Chapter 3 gives four fields that map onto roster elements with little slack, and reading the derivation in that direction, specification first and roster second, is what keeps a roster minimal.
+A role no clause of the specification demands is a role that should not exist.
 The **objective** fixes the producer roles: a single, well-bounded objective needs one producer, and a genuinely separable objective (a synthesis stage whose output a distinct modelling stage consumes, say) justifies a second producer only where the two demand different tools or different evidence, not merely because the work is long.
 The **inputs** fix tool and data-store access and, by their sensitivity, where the governance constraints of Chapter 12 attach: inputs that touch credentialled institutional systems or partner data restrict which roles may hold which permissions, so least-privilege access is assigned per role rather than to the roster as a whole (Chapter 12).
 The **acceptance criteria** are the richest source of structure, because each criterion is sorted into either a deterministic gate or an independent-reviewer responsibility by a single question: can a rule check it?
 A criterion such as "all cited references resolve to real documents" or "the units in every derived field are dimensionally consistent" becomes a gate; a criterion such as "the synthesis represents the disagreement in the literature fairly" cannot be reduced to a rule and becomes the brief for an independent reviewer, whose adversarial framing is written straight from the criterion.
 The **stop conditions** fix the orchestrator's loop bounds and the escalation path: the maximum number of producer–reviewer iterations, the token or wall-clock budget beyond which the roster halts, and the point at which unresolved disagreement goes to the human decision node rather than being churned further.
-Worked through on a concrete operational specification, this mapping yields a small, auditable roster in which every element has a provenance in the specification and nothing is present for appearance's sake **[AUTHOR: insert a specification you have actually written — the rainfall-forecast verification specification from Chapter 3 is the natural candidate — and show the exact roster it produced, including the criteria you triaged to gates versus to the reviewer, the iteration bound you set, and any role you initially added and then removed as correlated. The executed version of this derivation is the spine of Chapter 15; this section should foreshadow it, not pre-empt its results.]**
-The limitation worth stating is that the mapping is only as good as the specification: a vague acceptance criterion produces a vague reviewer brief and a roster no more rigorous than the words it came from, which is the mechanism by which specification quality (Chapter 3) governs roster quality, and why the two chapters are read together (high confidence in the mapping; the operational specifics await the author's executed material).
+Worked through on a concrete operational specification, that mapping gives a small, auditable roster in which every element has a provenance in the specification and nothing is there for appearance's sake **[AUTHOR: insert a specification you have actually written — the rainfall-forecast verification specification from Chapter 3 is the natural candidate — and show the exact roster it produced, including the criteria you triaged to gates versus to the reviewer, the iteration bound you set, and any role you initially added and then removed as correlated. The executed version of this derivation is the spine of Chapter 15; this section should foreshadow it, not pre-empt its results.]**
+The mapping is only as good as the specification, and that limitation is worth stating.
+A vague acceptance criterion produces a vague reviewer brief and a roster no more rigorous than the words it came from.
+That is how specification quality (Chapter 3) governs roster quality, and why the two chapters belong together (high confidence in the mapping; the operational specifics await the author's executed material).
 
 **Figure 10.4 — From specification to roster.**
 
@@ -222,28 +262,46 @@ FIGURE BRIEF
 
 ## 10.6 Failure modes
 
-The failure modes of multi-agent workflows are, with one exception, not new failures but the single-agent failures of the preceding chapters amplified by composition, and naming them precisely is what allows a roster to be designed against them.
-The empirical taxonomy of multi-agent failure sorts them into three families: poor task and role specification, inter-agent misalignment such as miscommunication and lost context, and absent, weak or premature verification (Cemri et al., 2025).
+With one exception, multi-agent workflows do not fail in new ways.
+They fail in the single-agent ways of the preceding chapters, amplified by composition, and naming them precisely is what lets a roster be designed against them.
+The empirical taxonomy sorts them into three families: poor task and role specification, inter-agent misalignment such as miscommunication and lost context, and absent, weak or premature verification (Cemri et al., 2025).
 The modes below map onto those families almost one to one.
-**Over-agreeable review** is the most common and the most dangerous, because it defeats the whole purpose of the roster whilst leaving its diligent appearance intact: a reviewer agent built on the same model as the producer, given the producer's full context and a neutral brief, tends to ratify rather than challenge, and its agreement is read as corroboration when it is in fact correlation.
-That the tendency is systematic and not incidental is by now well documented, since judge models carry characterised biases towards self-preference, verbosity and answer position (Zheng et al., 2023), and the anatomy of the failure, with a worked trace, is the business of Chapter 13; here the point is the countermeasure.
-It is the independence engineering of §10.3 (different model, narrowed context, adversarial brief, external source of truth), and the diagnostic is a reviewer that almost never returns a fault, which for real scientific work is evidence of a broken reviewer, not a flawless producer [AUTHOR: your observed base rate of substantive faults from a well-configured reviewer versus a naive one would quantify this; report it if you have it].
-**Diffusion of responsibility** is the organisational failure in which an error passes through several agents, each of which could have caught it, and afterwards no node owns the miss because responsibility was never located at a named human, a hazard the roster avoids only by putting an accountable human decision point at every boundary where interpretation or consequence is at stake, exactly as Chapter 4 requires.
-**Cost blow-out** is the economic failure, and it comes from unbounded producer–reviewer loops, from orchestrators that reason verbosely, and from the token cost of every agent re-reading a growing shared context: a roster that iterates without a hard bound can burn many times a single agent's cost whilst converging on nothing, which is why every loop carries an iteration count, a budget and an escalation path (§10.5), and why the honest accounting of Chapter 16 treats roster cost as a first-order design constraint rather than a footnote.
-**Correlated errors** are the statistical failure beneath the others: agents drawn from the same model share a failure distribution, so a mistake one makes the others are disproportionately likely to repeat and to endorse, and multiplicity then manufactures false confidence, the collapsed-ensemble problem of §10.3 in operational form.
-Two further modes deserve mention for completeness.
-Context contamination occurs when a reviewer inherits the producer's framing through a shared context window and loses the very independence it was added to supply, which is why narrowed context is a lever and not a nicety.
-Emergent miscoordination occurs when thin specifications let agents negotiate scope among themselves, drifting from the objective in ways no single transcript makes obvious; the defence is the specification-first derivation of §10.5, which leaves agents no scope to invent.
+
+**Over-agreeable review** is the most common and the most dangerous, because it defeats the whole purpose of the roster while leaving its diligent appearance intact.
+A reviewer agent built on the same model as the producer, given the producer's full context and a neutral brief, tends to ratify rather than challenge, and its agreement gets read as corroboration when it is really correlation.
+That the tendency is systematic and not incidental is well documented by now: judge models carry characterised biases towards self-preference, verbosity and answer position (Zheng et al., 2023).
+The anatomy of the failure, with a worked trace, is Chapter 13's business.
+What matters here is the countermeasure, which is the independence engineering of §10.3: different model, narrowed context, adversarial brief, external source of truth.
+The diagnostic is a reviewer that almost never returns a fault.
+For real scientific work that is evidence of a broken reviewer, not a flawless producer [AUTHOR: your observed base rate of substantive faults from a well-configured reviewer versus a naive one would quantify this; report it if you have it].
+**Diffusion of responsibility** is the organisational failure: an error passes through several agents, every one of which could have caught it, and afterwards nobody owns the miss because responsibility was never located at a named human.
+The roster avoids it only by putting an accountable human decision point at every boundary where interpretation or consequence is at stake, exactly as Chapter 4 requires.
+
+**Cost blow-out** is the economic failure.
+It comes from unbounded producer–reviewer loops, from orchestrators that reason verbosely, and from the token cost of every agent re-reading a growing shared context.
+A roster that iterates without a hard bound can spend many times a single agent's cost while converging on nothing, which is why every loop carries an iteration count, a budget and an escalation path (§10.5), and why the honest accounting of Chapter 16 treats roster cost as a first-order design constraint rather than a footnote.
+
+**Correlated errors** are the statistical failure underneath the others.
+Agents drawn from the same model share a failure distribution, so a mistake one makes the others are disproportionately likely to repeat and to endorse, and multiplicity then manufactures false confidence.
+That is the collapsed-ensemble problem of §10.3 in operational form.
+
+Two more modes deserve mention.
+Context contamination happens when a reviewer inherits the producer's framing through a shared context window and loses the very independence it was added to supply, which is why narrowed context matters rather than being a nicety.
+Emergent miscoordination happens when thin specifications let agents negotiate scope among themselves, drifting from the objective in ways no single transcript makes obvious.
+The defence is the specification-first derivation of §10.5, which leaves agents nothing to invent.
 
 One caution belongs with these modes: telling which step actually caused a failure is itself hard.
 Post-hoc review tends to blame the step where the failure surfaced rather than the one that caused it, because later steps inherit an earlier corrupted state; a 2026 preprint built a method purpose-designed for this and still reached only 29 to 46% step-level accuracy where the cause was known, which puts the difficulty in the problem, not the reviewer's diligence (Rafi et al., 2026; a preprint).
 The same year's work also names a category the per-agent view misses, namely emergent collective failures no single agent's transcript explains, but shown only in simulated economic and social settings, so it is cited here for the concept, not as domain evidence (Tang et al., 2026).
 
-The limitation common to all these countermeasures is that they are verified by the machinery of Part III rather than guaranteed by the design, so a roster is a hypothesis about independence to be tested, not a proof of it, and the base rates that would reveal how well a given roster actually checks its own work await measurement, which is the task Chapter 11 takes up (high confidence in the taxonomy; the base rates await measurement).
+All these countermeasures share one limitation: they are verified by the methods of Part III rather than guaranteed by the design.
+A roster is a hypothesis about independence to be tested, not a proof of it, and the base rates that would show how well a given roster actually checks its own work still await measurement, which is the task Chapter 11 takes up (high confidence in the taxonomy; the base rates await measurement).
 
 ## 10.7 Verification checklist
 
-This checklist certifies that a roster is worth its cost before it is trusted with work of consequence, and it turns the chapter's single claim, that independence rather than multiplicity is what a roster must supply, into things a colleague can confirm. It is written to be applied by someone who did not build the roster, in keeping with the specification-as-control-surface principle of Chapter 3 and the audit requirements of Chapter 12.
+This checklist certifies that a roster is worth its cost before you trust it with work of consequence.
+It turns the chapter's single claim, that a roster must supply independence rather than multiplicity, into things a colleague can confirm.
+It is written to be applied by someone who did not build the roster, in keeping with the specification-as-control principle of Chapter 3 and the audit requirements of Chapter 12.
 
 - **Every role traces to the specification.** Each producer, gate and reviewer maps to an objective, input, acceptance criterion or stop condition (§10.5); any role without such a provenance is removed. (high confidence)
 - **Every second agent passes the independence test.** For each reviewer, the class of error it catches that the gates and other agents would not is named, and its independence mechanism (different model, narrowed context, adversarial brief or external source of truth) is stated (§10.3, Figure 10.1). (high confidence)
@@ -257,11 +315,15 @@ This checklist certifies that a roster is worth its cost before it is trusted wi
 ## 10.8 Repository pointer
 
 The companion repository holds the runnable and perishable counterparts to this chapter under the layout of outline §8.
-A minimal roster (one producer, one deterministically gated check, one independence-configured reviewer, a thin orchestrator with a bounded loop, and a human-approval step) sits under `/patterns` as an executable skeleton to adapt rather than a finished workflow, with the current model and tool bindings named there because they date quickly and must not enter the print.
+A minimal roster sits under `/patterns` as an executable skeleton to adapt rather than a finished workflow: one producer, one deterministically gated check, one independence-configured reviewer, a thin orchestrator with a bounded loop, and a human-approval step.
+The current model and tool bindings are named there, because they date quickly and must not enter the print.
 The specification-to-roster derivation of §10.5 sits under `/prompts` as a worked template that consumes a Chapter 3 specification and emits a role-and-gate roster with each element annotated by the clause it derives from, alongside the reviewer-brief patterns that turn a judgement acceptance criterion into an adversarial instruction.
 The verification checklist of §10.7 is mirrored under `/checklists` in printable form.
 The sanitised configuration of the executed roster behind Chapter 15 will be deposited under `/case-studies` once that chapter's material is settled **[AUTHOR: confirm which operational roster is released as the Chapter 15 case study and what must be sanitised — model bindings, credentials, partner-data references — before it is deposited]**.
-For a group adopting a roster of its own, the thirty-day on-ramp and cost model of Chapter 16 are where to turn next, because deciding to run a roster rather than a single agent is as much a budgetary and organisational commitment as a technical one, and the chapter's central caution bears one final repetition: a roster earns its cost only where its agents are independent, and where they are not, one well-specified agent behind deterministic gates is cheaper, faster and no less rigorous.
+If your group is adopting a roster of its own, the thirty-day adoption plan and cost model of Chapter 16 are where to go next, because choosing a roster over a single agent is as much a budgetary and organisational commitment as a technical one.
+And the central caution bears one final repetition.
+A roster earns its cost only where its agents are independent.
+Where they are not, one well-specified agent behind deterministic gates is cheaper, faster and no less rigorous.
 
 ---
 
