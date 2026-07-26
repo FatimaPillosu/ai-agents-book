@@ -1,6 +1,8 @@
 # Author writing-style guide
 
-**v3.3 · 25 July 2026** · Binding for all drafted prose unless a specific brief overrides it.
+**v3.4 · 26 July 2026** · Binding for all drafted prose unless a specific brief overrides it.
+
+**Change from v3.3 (major):** three author instructions, taken from the author's own revision of §4.1 of Chapter 4, are added. First, a **sentence-length ceiling** replaces the previous preference for long qualification-bearing sentences: about 25 words is the target and roughly 30 the ceiling, beyond which a sentence is split into two (§11). Second, **metaphor is prohibited outright** in manuscript prose: no figurative substitution for a mechanism that can be stated literally (§12.2). Third, §12.1 records verbatim the constructions the author deleted from the first draft of §4.1, each with the accepted replacement, so the same habits can be removed from every other chapter. §7 and §8 are amended accordingly. The first two are deliberate house deviations from the thesis, whose sentences run longer and which permits occasional figurative language.
 
 **Change from v3.2 (minor):** the **no-em-dash-connector** rule from the v2.1 lineage is reinstated on the author's instruction: em dashes never join clauses or carry appositives and asides in manuscript text (§11); substitute a comma, colon, parentheses, a new sentence, or an introducing phrase. The dash survives only in fixed formats (headings and labels such as "Figure 1.1 — …" and "Definition — Gate"); en-dash ranges are unaffected. This is a deliberate house deviation from the thesis, which uses paired dashes for appositives; quoted thesis examples in this guide retain their original punctuation. §4 and §11 are amended accordingly.
 
@@ -159,7 +161,7 @@ Cite only references known to be real; incomplete bibliographic details are flag
 
 ## 7. Pre-submission checklist
 
-Before a draft is returned: (1) every paragraph opens with a complete topic sentence stating a real claim — no fragments, no throat-clearing; (2) every paragraph carries exactly one claim, summarisable as a single nominal phrase, and the section's paragraph summaries read as its argument (§2); (3) paragraphs are developed (≈200–450 words) and move claim → context → evidence → qualification → implication, closing on consequence or limitation; (4) every "However" is resolved; every announced enumeration is completed with parallel grammar; (5) numbers replace adjectives wherever the evidence allows, and comparisons carry baselines; (6) claims are hedged once, precisely, with certainty flags on substantive claims; anomalies are confronted, not buried; (7) literature and prior art are synthesised, not listed; (8) roadmap, pointer sentences and cross-references are in place and each names what the destination contains; (9) no second person, no exclamation, no hype, no bullet-point argumentation in main prose; (10) British English throughout; no contractions outside verbatim quotations; no em dash used as a connector (fixed formats and en-dash ranges only, §11); every demanding term defined once at first substantive use (info-box where warranted, §9); (11) all unverified material is marked [AUTHOR:]/[verify] and none invented; (12) the draft is sentence-per-line per §10.
+Before a draft is returned: (1) every paragraph opens with a complete topic sentence stating a real claim — no fragments, no throat-clearing; (2) every paragraph carries exactly one claim, summarisable as a single nominal phrase, and the section's paragraph summaries read as its argument (§2); (3) paragraphs are developed (≈200–450 words) and move claim → context → evidence → qualification → implication, closing on consequence or limitation; (4) every "However" is resolved; every announced enumeration is completed with parallel grammar; (5) numbers replace adjectives wherever the evidence allows, and comparisons carry baselines; (6) claims are hedged once, precisely, with certainty flags on substantive claims; anomalies are confronted, not buried; (7) literature and prior art are synthesised, not listed; (8) roadmap, pointer sentences and cross-references are in place and each names what the destination contains; (9) no second person, no exclamation, no hype, no bullet-point argumentation in main prose; (10) British English throughout; no contractions outside verbatim quotations; no em dash used as a connector (fixed formats and en-dash ranges only, §11); every demanding term defined once at first substantive use (info-box where warranted, §9); (11) all unverified material is marked [AUTHOR:]/[verify] and none invented; (12) the draft is sentence-per-line per §10; (13) no sentence exceeds roughly 30 words, and none that exceeds 25 could be split to advantage (§11); (14) no metaphors anywhere, including captions and alt-text (§12.2), and none of the deleted constructions of §12.1 has reappeared.
 
 ## 8. Condensed prompt block
 
@@ -174,7 +176,13 @@ claim — subject-first declarative, concessive ("Despite X, Y persists"), tensi
 ("…creates a fundamental tension between…"), or continuation pivot; never fragments or
 hooks. Paragraphs 200–450 words, claim → context → evidence → qualification →
 implication, closing on "Hence/Consequently/Therefore …"; one claim per paragraph,
-summarisable as a single nominal phrase. Enumerate in prose ("two
+summarisable as a single nominal phrase. Sentences ~25 words, 30 words maximum: split
+anything longer into two sentences without dropping content (§11). NO METAPHORS at all,
+in prose, captions or alt-text: state the mechanism literally; defined technical terms
+(gate, loop, pipeline) and declared analogies under examination are not metaphors (§12.2).
+Never write the text's own posture ("this chapter takes seriously…"), apologetic
+preambles ("described plainly enough to be useful here…"), or unbaselined comparatives
+("far more X than any Y suggests") — see §12.1. Enumerate in prose ("two
 challenges: First… Second…") with parallel grammar; concede and resolve ("However…" is
 always answered); elaborate with colons and parentheses. No em dash as a connector in
 manuscript text: use a comma, colon, parentheses, a new sentence, or "e.g." / "i.e." /
@@ -222,7 +230,13 @@ Sentence-per-line applies to body prose paragraphs only. Headings, info-boxes, f
 
 ## 11. Sentence craft: rhythm, connectives, punctuation, British English
 
-**Rhythm.** Long, qualification-bearing sentences (25–45 words) dominate; a short declarative (4–10 words) is deployed deliberately, roughly once per paragraph, to land a turn: "However, significant challenges persist." "Recent developments confirm this issue." "This precedent suggests a way forward." The short sentence is an instrument of emphasis, not a default — and it is still a sentence, never a fragment.
+**Rhythm and sentence length.** Every sentence must be readable once, without a second pass to recover its structure. About 25 words is the working target and roughly 30 words is the ceiling: a sentence running beyond it is split into two, even where the grammar is sound and the qualification is genuine. Splitting is not compression, and no content is dropped in the process; the second sentence carries what the subordinate clause used to carry, usually introduced by a colon in the first sentence, or by "What remains is…", "The consequence is…", "The limitation is…". Where a genuinely enumerative sentence exceeds the ceiling because it lists parallel items separated by semicolons, it may stand whole; a sentence that exceeds it because it has accumulated relative clauses may not.
+
+> Too long (33 words): "Agents are instruments that serve the scientist's judgement rather than substitutes for it, and the practical question that follows is which parts of the research cycle such an instrument may legitimately be given."
+
+> House form (two sentences): "Agents are instruments that serve the scientist's judgement rather than substitutes for it. What remains is the practical question: which parts of the research cycle may be handed to such an instrument, and which may not."
+
+A short declarative (4–10 words) is still deployed deliberately, roughly once per paragraph, to land a turn: "However, significant challenges persist." "Recent developments confirm this issue." "This precedent suggests a way forward." The short sentence is an instrument of emphasis, not a default, and it is still a sentence, never a fragment. Note that the ceiling is a deliberate deviation from the thesis, whose sentences frequently run to 45 words; where this guide and a quoted thesis example disagree on length, the ceiling wins.
 
 **Connective vocabulary** (the working set, in the frequencies the thesis uses them):
 
@@ -243,4 +257,56 @@ Do not open more than two consecutive paragraphs with the same connective, and n
 
 ## 12. Anti-patterns
 
-Never: punchy fragment openers or one-sentence paragraphs; addressing the reader as "you"; exclamation marks; hype vocabulary ("game-changing", "revolutionary", "the hype suggests"); jokes, irony or self-deprecation; bullet lists carrying the argument of body prose (bullets are for genuinely enumerable reference material only); adjectives where a number exists; bare citation lists in place of synthesis; unresolved "However"s; announced enumerations left incomplete; claims without hedges or hedges without claims (mush like "it could perhaps be argued that X might possibly…"); burying a counterintuitive result; scaffolding that points nowhere ("more on this later") — a pointer always names its destination and what will be found there.
+Never: punchy fragment openers or one-sentence paragraphs; addressing the reader as "you"; exclamation marks; hype vocabulary ("game-changing", "revolutionary", "the hype suggests"); jokes, irony or self-deprecation; bullet lists carrying the argument of body prose (bullets are for genuinely enumerable reference material only); adjectives where a number exists; bare citation lists in place of synthesis; unresolved "However"s; announced enumerations left incomplete; claims without hedges or hedges without claims (mush like "it could perhaps be argued that X might possibly…"); burying a counterintuitive result; metaphor of any kind (§12.2); scaffolding that points nowhere ("more on this later") — a pointer always names its destination and what will be found there.
+
+### 12.1 Constructions the author deletes on sight
+
+The constructions below were cut by the author from the first draft of §4.1 of Chapter 4. They are recorded verbatim, with the accepted replacement, because each names a habit rather than a single slip. Remove every instance from any chapter, in body prose, info-boxes, captions and alt-text alike.
+
+**(a) Posture claims: the text describing its own argumentative conduct.** A chapter argues; it does not narrate that it is arguing, and it never awards itself credit for candour, rigour or balance. An informative cross-reference (§5.6) is a different thing and remains required.
+
+> Cut: "The stance developed in this chapter follows directly from the position set out in Chapter 1, that agents are instruments serving the scientist's judgement rather than substitutes for it, and its practical content is a map of where…"
+> Kept: "Agents are instruments that serve the scientist's judgement rather than substitutes for it."
+
+> Cut: "The limitation of this framing, which this chapter takes seriously rather than sets aside, is that…"
+> Kept: "The limitation is practical rather than conceptual: …"
+
+**(b) Apologetic preambles about the description rather than the subject.** A hedge about the adequacy of the sentence itself carries no information. Also barred: "put simply", "roughly speaking", "for present purposes it suffices to say", and "to a first approximation" where no approximation is being made.
+
+> Cut: "Described plainly enough to be useful here, the scientific method is a cycle: …"
+> Kept: "The scientific method is a cycle: …"
+
+**(c) Ornamental comparatives with an unstated baseline.** A comparison is either quantified against a real baseline (§6.1) or deleted. Also barred: "more X than is commonly appreciated", "far more X than the literature admits".
+
+> Cut: "the two kinds of phase are interleaved in practice far more finely than any diagram of the cycle suggests"
+> Kept: "the two kinds of work are interleaved within every phase"
+
+**(d) Gravitas by abstraction, especially about reputation.** Accountability is stated as a mechanism, naming who answers and for what, never as an aura around the scientist. Chapter 4 §4.4 earns the point by defining accountability, interpretation and authorship outright; a compressed gesture at it earlier in the chapter is spending what has not yet been earned.
+
+> Cut: "…is an interpretation that carries the scientist's name and standing."
+> Kept: "…is a judgement. No second procedure can confirm it, and the scientist is answerable for it."
+
+**(e) Elaboration where a plain statement was available.** Where two candidate rewrites both work, take the shorter and more literal one. The author's test is whether the sentence goes directly to the point; ornament added to a correct claim is a defect, not a flourish.
+
+### 12.2 No metaphors
+
+Manuscript prose contains no metaphors. Where a mechanism can be described literally, it is described literally, and figurative language is never a substitute for saying what actually happens. This is absolute for body prose, info-boxes, captions, alt-text and figure briefs. The rule covers the tired figures as much as the inventive ones: journeys and destinations, roads and paths, boundaries and territory, dials and switches, machinery and levers, reach and grasp, landscapes, arms races, silver bullets, low-hanging fruit.
+
+The commonest offenders in this manuscript, with their literal replacements:
+
+> Cut: "the boundary between them runs through the middle of the research cycle rather than neatly around its edge"
+> Kept: "The two kinds of task are not separated by phase: data preparation contains judgements, and interpretation contains steps that can be checked."
+
+> Cut: "The distinction is better seen as a dial rather than a switch."
+> Kept: "The distinction is graded rather than binary."
+
+> Cut: "extensions of the scientist's reach into the transformational phases"
+> Kept: "instruments applied to the transformational phases"
+
+> Cut: "treat automation as the destination and augmentation as a transitional stage on the way to it"
+> Kept: "treat automation as the goal and augmentation as a temporary stage before it"
+
+> Cut: "the specification and verification machinery the group already possesses"
+> Kept: "the specification and verification practices the group already has"
+
+What the rule does **not** cover, and what must not be flattened in the name of obeying it: (a) the book's defined technical terms, which are literal names for real components and are boxed in §9 (*gate*, *loop*, *pipeline*, *tool call*, *guardrail*, *orchestration*); (b) established scientific and statistical terminology (*ensemble spread*, *return period*, *drift*, *signal*, *noise*, *axis* in its geometric sense); (c) analogies that are explicitly flagged, developed and evidenced as arguments in their own right, of which the book permits a small number, the instrument analogy for agents chief among them, and which are introduced as comparisons ("agents are treated here as instruments, in the same sense as a calibrated sensor is an instrument") rather than smuggled in as ordinary description. A metaphor is figurative language doing the work that a literal statement should be doing; a defined term is not, and a declared analogy under examination is not.

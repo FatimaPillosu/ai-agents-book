@@ -1,52 +1,88 @@
 # Chapter 4 — The scientist's stance
 
-> **Status:** draft r3 · voice v3.3 (`STYLE.md`) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r4 · voice v3.4 (`STYLE.md`) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 
 ---
 
 ## 4.1 Where an agent fits the scientific method
 
-Agents are instruments serving the scientist's judgement rather than substitutes for it. As such, its practical content is a map of where, in the actual work of science, such an instrument may legitimately be placed. [human: what do you mean with "its practical content is a map of where ... placed."].
+Agents are instruments that serve the scientist's judgement rather than substitutes for it.
+What remains is the practical question: which parts of the research cycle may be handed to such an instrument, and which may not.
 The scientific method is a cycle: a question is refined into a hypothesis, the hypothesis into a design, the design into data and analysis, and the analysis back into interpretation, communication and the next question.
-The phases of that cycle are not equal in what they demand of the person carrying them out. [human: I understand this sentence, but can you write it in a more plain language?].
+The phases of the scientific method differ in how much judgement they require of the scientist.
 Some are transformations of material with a checkable right answer; others are acts of judgement for which the scientist alone can be held to account.
 Reformatting a decade of gauge records into a common schema has a correct outcome that a second procedure can confirm.
-Deciding that a departure from the record is a genuine hydrological signal rather than a sensor fault is an interpretation that carries the scientist's name and standing. [human: I would not write " that carries .... standing. Can you change it?].
-An instrument belongs in the first kind of phase and not the second, and the boundary between them runs through the middle of the research cycle rather than neatly around its edge. [human: can you explain to me thissentence, and suggest different way to express it because I woukd not write it like this].
+Deciding that a departure from the record is a genuine hydrological signal rather than a sensor fault is a judgement.
+No second procedure can confirm it, and the scientist is answerable for it.
+An agent belongs on the tasks with a checkable answer and not on the tasks that require judgement.
+The two kinds of task are not separated by phase: data preparation contains judgements, and interpretation contains steps that can be checked.
 
-The consequence for how agents are deployed is that they are best understood not as collaborators pursuing the science alongside the scientist, but as extensions of the scientist's reach into the transformational phases (acquisition, quality control, coding, orchestration, drafting), where their output can be checked against something other than confidence in it. 
-The limitation of this framing is that the two kinds of phase are finely interleaved, so an agent's placement is decided task by task and not phase by phase (high confidence in the framing; the granularity is what makes it hard to apply). [ human: can we write this in a more plain language?].
+The consequence for deployment is that agents are not collaborators pursuing the science alongside the scientist.
+They are instruments applied to the transformational phases: acquisition, quality control, coding, orchestration and drafting.
+In each of those phases the output can be checked against something other than confidence in it.
+The limitation is practical rather than conceptual: because the two kinds of work are interleaved within every phase, the placement of an agent is decided task by task and not phase by phase.
+The framing is sound (high confidence); applying it at that level of detail is the hard part.
 
 ## 4.2 Augmentation and automation are different commitments
 
-The distinction that governs safe practice is between augmenting a scientist and automating a task, and the two words are not loose synonyms for more and less agency: they name genuinely different commitments about where judgement sits.
-Augmentation places the agent inside the scientist's own loop of work: it extends what can be reached in an afternoon (a wider literature, a larger reprocessing job, a faster path from artefact to figure), whilst the scientist inspects, interprets and remains answerable for every output that leaves the workflow.
-Automation removes the scientist from the per-instance loop entirely: the agent runs, and its outputs are consumed downstream without a human forming a judgement about each one, which is precisely what makes automation valuable and precisely what makes it dangerous.
-The distinction is better seen as a dial rather than a switch, and the research literature offers a usable set of graduations: one recent framework describes levels of autonomy by the role the human keeps (operator, collaborator, consultant, approver, observer) and insists that the level is a deliberate design decision, separable from the agent's raw capability (Feng et al., 2025).
-This book cites that framework as a helpful vocabulary rather than a settled standard, a recent proposal not yet a consensus (moderate confidence), but its central move is exactly right: the builder chooses how much of the loop the human occupies, and that choice is one to make deliberately and to defend.
+The distinction that governs safe practice is between augmenting a scientist and automating a task.
+The two words are not loose synonyms for more and less agency: they name different commitments about who exercises judgement.
+Under augmentation the scientist remains part of every instance of the work.
+The agent increases what can be completed in an afternoon: a wider literature, a larger reprocessing job, or a figure produced in fewer steps.
+The scientist inspects and interprets every output that leaves the workflow, and remains answerable for it.
+Automation removes the scientist from each instance: the agent runs, and its outputs are used downstream without a human judging them one by one.
+That removal is precisely what makes automation valuable and precisely what makes it dangerous.
+The distinction is graded rather than binary, and the research literature offers a usable set of graduations.
+One recent framework describes levels of autonomy by the role the human keeps: operator, collaborator, consultant, approver, observer (Feng et al., 2025).
+It insists that the level is a deliberate design decision, separable from the agent's raw capability.
+This book cites that framework as a helpful vocabulary rather than a settled standard, a recent proposal and not yet a consensus (moderate confidence).
+Its central claim is nonetheless correct: the builder chooses which decisions the human retains, and that choice is one to make deliberately and to defend.
 
-The error the field most often makes, in commercial framing and early scientific enthusiasm alike, is to treat automation as the destination and augmentation as a transitional stage on the way to it, when the correct relationship is the reverse.
-Automation is the special case, admissible only where a task has been shown to tolerate the removal of human judgement; augmentation is the default that most scientific work should stay in.
-Whether a task tolerates automation is not a matter of how capable the agent is, because a plausible failure (Chapter 1) survives any amount of capability; it is a matter of whether the failure would be caught and what it would cost if it were not.
-This has a concrete organisational consequence: the question a group should ask of any proposed agent deployment is not "can the agent do this?" but "what happens to an error the agent makes here, and who answers for it?", a question about the workflow surrounding the agent rather than about the agent, and therefore one answerable with the specification (Chapter 3) and verification (Chapter 11) machinery the group already possesses.
-There is even direct evidence for keeping the default simple: when researchers benchmarked elaborate agent architectures against a plain model wrapped in a basic retry loop, the simple baseline matched the complex systems on a standard coding task at a fraction of the cost (Kapoor et al., 2024), which is a useful reminder that added autonomy is a cost to be justified, not a good in itself.
-The qualification worth stating is that the line between the two modes is a design choice and not a fixed property, so the same underlying agent may be augmentation in one workflow and automation in another, depending entirely on whether a human judgement stands between its output and its use (high confidence).
+The error the field most often makes, in commercial framing and early scientific enthusiasm alike, is to treat automation as the goal.
+Augmentation is then cast as a temporary stage before it, when the correct relationship is the reverse.
+Automation is the special case, admissible only where a task has been shown to tolerate the removal of human judgement.
+Augmentation is the default for most scientific work.
+Whether a task tolerates automation is not a matter of how capable the agent is, because a plausible failure (Chapter 1) persists at any level of capability.
+It is a matter of whether the failure would be caught, and of what it would cost if it were not.
+This has a concrete organisational consequence for how a group evaluates a proposed deployment.
+The question is not "can the agent do this?" but "what happens to an error the agent makes here, and who answers for it?".
+That is a question about the workflow surrounding the agent rather than about the agent itself.
+It is therefore answerable with the specification (Chapter 3) and verification (Chapter 11) practices the group already has.
+There is direct evidence for keeping the default simple.
+Researchers benchmarked elaborate agent architectures against a plain model wrapped in a basic retry loop.
+On a standard coding task, the simple baseline matched the complex systems at a fraction of the cost (Kapoor et al., 2024).
+Added autonomy is therefore a cost to be justified, not a good in itself.
+The qualification worth stating is that the distinction between the two modes is a design choice and not a fixed property of the agent.
+The same agent may be augmentation in one workflow and automation in another.
+What decides the difference is whether a human forms a judgement between the agent's output and its use (high confidence).
 
 ## 4.3 A decision procedure: should an agent do this?
 
-A usable rule for placing an agent rests on two properties of the task, verification cost and the reversibility of a wrong output, and their combination is more informative than either the agent's apparent competence or the task's apparent difficulty.
-Verification cost, which Chapter 1 developed as the better selector than perceived difficulty, is the price of establishing that a given output is correct: cheap and mechanical where a test suite, a schema, a checksum or a round trip settles the matter; expensive, subjective or slow where correctness turns on interpretation, on context the system does not hold, or on a judgement at the research frontier.
-Reversibility, the second axis, is the cost of a wrong output that escapes: a mislabelled intermediate file caught before it feeds anything is nearly free to undo, whereas an error propagated into an issued flood warning, a published result or an irretrievably overwritten dataset is not undoable at any price.
-Reading the two axes together yields a procedure rather than a slogan.
-Where verification is cheap and consequences reversible, an agent may run with light supervision, because its errors are caught at low cost and undone at low cost, and this quadrant holds the bulk of the transformational work that motivates the book.
-Where verification is cheap but consequences severe, an agent may still act, but only behind a gate that makes the cheap verification mandatory rather than optional before the output is used.
-Where verification is expensive but consequences reversible, an agent is a source of drafts and candidates for a human to check, never a source of accepted outputs, and the workflow must budget for the checking.
-Where verification is expensive and consequences severe (irreversible, and hard to confirm before it is too late), the task does not belong to an agent at all, and no amount of capability changes that assignment, because the property that disqualifies it is a property of the task and not of the tool.
+A usable rule for placing an agent rests on two properties of the task: verification cost, and the reversibility of a wrong output.
+Their combination is more informative than either the agent's apparent competence or the task's apparent difficulty.
+Verification cost is the price of establishing that a given output is correct, and Chapter 1 developed it as a better selector than perceived difficulty.
+It is cheap and mechanical where a test suite, a schema, a checksum or a round trip settles the matter.
+It is expensive, subjective or slow where correctness depends on interpretation, on context the system does not hold, or on an unresolved research question.
+Reversibility, the second property, is the cost of a wrong output that is not caught.
+A mislabelled intermediate file caught before it feeds anything is nearly free to undo.
+An error propagated into an issued flood warning, a published result or an irretrievably overwritten dataset is not undoable at any price.
+Read together, the two properties yield a procedure rather than a slogan.
+Where verification is cheap and consequences reversible, an agent may run with light supervision, because its errors are caught and undone at low cost.
+Most of the transformational work that motivates this book falls in this case.
+Where verification is cheap but consequences severe, an agent may still act, but only behind a gate that makes the verification mandatory rather than optional before the output is used.
+Where verification is expensive but consequences reversible, an agent produces drafts and candidates for a human to check, never accepted outputs.
+The workflow must budget for that checking.
+Where verification is expensive and consequences severe, meaning irreversible and hard to confirm before it is too late, the task does not belong to an agent at all.
+No amount of capability changes that assignment, because the property that disqualifies the task belongs to the task and not to the tool.
 
-This procedure is really a discipline of reaching for the simplest arrangement that meets the task and adding agentic machinery only where the task visibly demands it, the same governing principle the most useful practitioner guidance in the field recommends (Anthropic, 2024).
-The same test circulates in practitioner guidance under a blunter name, the workflow test: if a fixed sequence of steps with at most a judgement call or two would do the job, build a workflow, not an agent (practitioner commentary; see the references).
-The limitation of the procedure is that both axes are estimates made in advance, and estimating them wrongly (believing verification cheaper than it proves, or an output more reversible than it is) is itself one of the failure modes catalogued in Chapter 13, so the procedure is a discipline for thinking, not a lookup table that removes the need to think (moderate-to-high confidence).
+The procedure is a discipline of choosing the simplest arrangement that meets the task, and of adding agentic components only where the task visibly demands them.
+That is the same governing principle the most useful practitioner guidance in the field recommends (Anthropic, 2024).
+The same test appears in practitioner guidance under a blunter name, the workflow test.
+If a fixed sequence of steps with at most a judgement call or two would do the job, build a workflow and not an agent (practitioner commentary; see the references).
+The limitation of the procedure is that both properties are estimated in advance.
+Estimating them wrongly, by believing verification cheaper than it proves or an output more reversible than it is, is itself one of the failure modes catalogued in Chapter 13.
+The procedure therefore structures the judgement rather than replacing it (moderate-to-high confidence).
 
 **Figure 4.1 — Should an agent do this?**
 
@@ -86,17 +122,29 @@ FIGURE BRIEF
 
 ## 4.4 What does not transfer to an instrument
 
-The first gate of the procedure removes an entire class of tasks before verification cost is even considered, and it does so because these tasks are not hard for an agent but categorically not an agent's to perform.
+The first gate of the procedure removes an entire class of tasks before verification cost is considered.
+These tasks are not removed because they are hard for an agent, but because they are categorically not an agent's to perform.
 Three things in scientific work do not transfer to any instrument, however capable.
-There is accountability, the answerability of a named person for a decision and its consequences; interpretation, the act of deciding what a result means in the light of context the scientist holds and the system does not; and authorship, the standing to claim and defend a contribution as one's own.
-An agent cannot be responsible for a flood warning issued on the strength of its output, cannot decide that an anomaly is a discovery rather than an artefact, and cannot be an author of the paper that follows.
-None of these limits is a gap that a better model closes, because they are not deficits in capability but properties of the relationship between a scientist and the community that holds them to account.
-Treating them as automatable is the most consequential category error the field invites, and it is invited constantly, because an agent's fluent output in an interpretive register is indistinguishable in surface form from the interpretation the scientist would write.
-The discipline that guards against the error is to notice that a task's being easy to phrase as a request to an agent says nothing about whether it is admissible to delegate: "tell me whether this trend is significant" is as easily typed as "reformat these files", and the two sit on opposite sides of the first gate.
+There is accountability, the answerability of a named person for a decision and its consequences.
+There is interpretation, the act of deciding what a result means in the light of context the scientist holds and the system does not.
+And there is authorship, the standing to claim and defend a contribution as one's own.
+An agent cannot be responsible for a flood warning issued on the strength of its output.
+It cannot decide that an anomaly is a discovery rather than an artefact, and it cannot be an author of the paper that follows.
+None of these limits is closed by a better model.
+They are not deficits in capability, but properties of the relationship between a scientist and the community that holds them to account.
+Treating them as automatable is the most consequential category error the field invites, and it is invited constantly.
+An agent's fluent output in an interpretive register is indistinguishable in surface form from the interpretation the scientist would write.
+The discipline that guards against the error is to notice that ease of phrasing says nothing about admissibility.
+"Tell me whether this trend is significant" is as easily typed as "reformat these files".
+The first request fails the first gate, and the second passes it.
 
 Two practical cautions complete the stance.
-The first is that automating a genuinely admissible task can still be the wrong choice where verifying the agent's output costs more than doing the task directly would, a case the procedure captures but that is easy to overlook in the enthusiasm of a working demonstration [AUTHOR: a case from your own practice where checking the agent cost more than doing the work yourself would sharpen this].
-The second is that the safe default, when a task's placement is genuinely unclear, is augmentation under supervision rather than automation, because that choice preserves the human judgement a misjudged delegation would have removed, and preserving it costs only time, whereas removing it wrongly costs the very thing the science was for (high confidence).
+The first is that automating a genuinely admissible task can still be the wrong choice.
+Where verifying the agent's output costs more than doing the task directly would, the procedure rules against delegation.
+The enthusiasm of a working demonstration makes that easy to overlook [AUTHOR: a case from your own practice where checking the agent cost more than doing the work yourself would sharpen this].
+The second is that the safe default, when a task's placement is genuinely unclear, is augmentation under supervision rather than automation.
+That choice preserves the human judgement a misjudged delegation would have removed.
+Preserving it costs time; removing it wrongly costs the correctness of the science (high confidence).
 
 ---
 
