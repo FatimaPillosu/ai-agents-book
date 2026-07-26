@@ -1,8 +1,7 @@
 # Chapter 4 — The scientist's stance
 
-> **Status:** draft r5-colloquial · **experimental voice variant, not house style** · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
-> **Voice note:** this version deliberately departs from `STYLE.md` v3.4 on the author's instruction (26 Jul 2026), for Chapter 4 only. It addresses the reader as "you", uses contractions and shorter sentences, and drops the impersonal register of §1. Everything else in `STYLE.md` still holds: no metaphors (§12.2), no hype, British English, and every citation drawn from the verified reports in `/research`. If this voice is adopted, `STYLE.md` needs amending before it spreads to other chapters; if it is not, `claude/manuscript-feedback-e2xcop` holds the house-style version of this chapter.
-> **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details. Nothing has been invented.
+> **Status:** draft r5 · voice v4.0-colloquial (`STYLE.md` §0) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 
 ---
 
