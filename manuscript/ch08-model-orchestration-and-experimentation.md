@@ -1,6 +1,6 @@
 # Chapter 8 — Model orchestration and experimentation
 
-> **Status:** draft r3 · voice v3.3 (`STYLE.md`) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r4 · voice v4.0-colloquial (`STYLE.md` §0) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > **Chapter note:** the three-track intercomparison of §8.5 is a **worked design**, not an executed case study: it presents an architecture and a protocol and claims no results.
 
@@ -8,47 +8,82 @@
 
 ## 8.1 The problem: campaigns that outgrow their bookkeeping
 
-The characteristic difficulty of modern environmental modelling is not running a model once but running it correctly hundreds or thousands of times while keeping an exact account of what was run.
-A calibration campaign for a distributed hydrological model may sweep a dozen parameters across plausible ranges; an ensemble forecast perturbs initial conditions, physics options and boundary forcings; a structured intercomparison holds a domain and a period fixed while varying the model itself.
-Each of these is combinatorial in a way that defeats manual tracking: a modest sweep of six parameters at five values each is already 15,625 configurations before any ensemble dimension is added, and a realistic campaign layers resolution, forcing dataset and spin-up length on top.
-The scientific content of such work is small in proportion to its bookkeeping.
-The decisions that matter (which parameters to vary, which metric to optimise, which result to believe) occupy a fraction of the effort, while the surrounding labour is the mechanical business of launching runs, naming their outputs, recording their configurations, noticing which ones failed, and reconciling the survivors into a table a scientist can actually reason about.
-The consequence, familiar to anyone who has run a calibration campaign to a deadline, is that provenance is the first casualty of scale.
-Configurations drift between runs because a setting was changed by hand and never written down; outputs pile up under names that meant something to their author for about a week; a promising result cannot be reproduced because the exact forcing version that produced it was overwritten.
-These are not failures of scientific understanding but failures of clerical discipline under load, and they are precisely the failures a well-specified instrument should be able to absorb (high confidence).
-This is no longer a hypothetical pairing of agents and modelling: by 2026 the peer-reviewed hydrology literature had begun testing language-model agents inside calibration workflows themselves (Zhu et al., 2026 [verify]), which makes the governance question in this chapter timely rather than speculative.
+The hard part of modern environmental modelling is not running a model once.
+It is running it correctly hundreds or thousands of times while keeping an exact account of what was run.
+
+A calibration campaign for a distributed hydrological model may sweep a dozen parameters across plausible ranges.
+An ensemble forecast perturbs initial conditions, physics options and boundary forcings.
+A structured intercomparison holds a domain and a period fixed while varying the model itself.
+Every one of these is combinatorial in a way that defeats manual tracking: a modest sweep of six parameters at five values each is already 15,625 configurations before any ensemble dimension is added, and a realistic campaign adds resolution, forcing dataset and spin-up length on top.
+
+The scientific content of that work is small in proportion to its bookkeeping.
+The decisions that matter, meaning which parameters to vary, which metric to optimise and which result to believe, take a fraction of the effort.
+The rest is mechanical: launching runs, naming their outputs, recording their configurations, noticing which ones failed, and reconciling the survivors into a table you can actually reason about.
+Anyone who has run a calibration campaign to a deadline knows what happens next.
+Provenance is the first casualty of scale.
+Configurations drift between runs because a setting was changed by hand and never written down.
+Outputs pile up under names that meant something to their author for about a week.
+A promising result cannot be reproduced because the exact forcing version that produced it was overwritten.
+None of that is a failure of scientific understanding.
+It is a failure of clerical discipline under load, and it is exactly what a well-specified instrument should be able to absorb (high confidence).
+
+Pairing agents with modelling is no longer hypothetical.
+By 2026 the peer-reviewed hydrology literature had begun testing language-model agents inside calibration workflows themselves (Zhu et al., 2026 [verify]), which makes the governance question in this chapter timely rather than speculative.
 The same year, a hydrology preprint defined a six-level framework of autonomy for agents that operate a model directly, and demonstrated a high level of it retrospectively on a real flood event (Yan et al., 2026 [verify]).
-These first-wave domain papers are capability-first: they show what an agent can be made to do, with almost none of the governance apparatus this chapter builds, the gap this book exists to fill.
-The argument this chapter makes is that orchestration and record-keeping, meaning the scheduling, logging and anomaly-flagging that surround a modelling campaign, are delegable to an agent, while the scientific decisions embedded in the campaign are not; the whole design problem is to build a workflow that separates the two cleanly enough that the delegation is safe.
+These first-wave domain papers are capability-first.
+They show what an agent can be made to do, with almost none of the governance apparatus this chapter builds, which is the gap this book exists to fill.
+The argument here is that orchestration and record-keeping, meaning the scheduling, logging and anomaly-flagging around a modelling campaign, can be delegated to an agent, while the scientific decisions inside the campaign cannot.
+The whole design problem is separating the two cleanly enough that the delegation is safe.
 
 > **Definition — Intercomparison.** A controlled comparison in which several models are run on the same problem (the same domain, the same period, the same inputs) so that the only thing allowed to differ is the model itself. It is how a field works out which approach is genuinely better, rather than which happened to be tested on the easier case. Keeping every other condition identical is the whole discipline.
 
 ## 8.2 The conventional workflow
 
-The conventional way to run a modelling campaign is a loosely coupled arrangement of shell scripts, scheduler submissions and a growing spreadsheet, held together by the memory and vigilance of a single scientist.
-A campaign typically begins with a template configuration copied and edited for each run, a submission script that hands the run to a cluster scheduler, and an output directory whose structure is invented on the spot and rarely documented.
-Progress is tracked by whatever comes to hand: a spreadsheet of run identifiers and parameter values kept by hand, a naming convention for output directories, and periodic manual inspection of scheduler queues and log files to see which runs completed and which died.
-The strengths of this arrangement are real and not to be dismissed: it is transparent, it uses tools the scientist already commands, and it imposes no infrastructure beyond what the computing environment already provides.
-Its weaknesses appear only at scale and under time pressure, which is exactly when campaigns are run.
-The manual spreadsheet and the actual runs diverge silently, because nothing enforces their correspondence; a run that fails partway leaves a truncated output that looks like a success until it is opened; the link between a configuration and the exact software version, forcing dataset and random seed that produced its output lives in the scientist's head, or nowhere.
-When the campaign is large the scientist spends a substantial and unmeasured fraction of the effort on this reconciliation rather than on the modelling (moderate confidence; the fraction varies widely by group and tooling).
+The conventional way to run a modelling campaign is a loose arrangement of shell scripts, scheduler submissions and a growing spreadsheet, held together by one scientist's memory and vigilance.
+
+A campaign usually starts with a template configuration copied and edited for each run, a submission script that hands the run to a cluster scheduler, and an output directory whose structure is invented on the spot and rarely documented.
+Progress gets tracked by whatever comes to hand: a spreadsheet of run identifiers and parameter values kept by hand, a naming convention for output directories, and periodic manual inspection of scheduler queues and log files to see which runs completed and which died.
+The strengths of that are real and worth keeping in view.
+It is transparent, it uses tools you already know, and it needs no infrastructure beyond what the computing environment already provides.
+Its weaknesses appear only at scale and under time pressure, which is exactly when campaigns get run.
+The manual spreadsheet and the actual runs diverge silently, because nothing enforces their correspondence.
+A run that fails partway leaves a truncated output that looks like a success until you open it.
+The link between a configuration and the exact software version, forcing dataset and random seed that produced its output lives in your head, or nowhere.
+On a large campaign you spend a substantial, unmeasured share of the effort on reconciliation rather than on the modelling (moderate confidence; the fraction varies widely by group and tooling).
 **[AUTHOR: a concrete figure or vignette from an operational calibration campaign — how many runs, how much of the week went to bookkeeping — would anchor this.]**
-The deeper problem is that the record is reconstructed after the fact rather than captured as the campaign runs, so by the time a result must be defended, whether to a reviewer, a funder or a colleague inheriting the project, the provenance has to be pieced together from directory timestamps and half-remembered decisions, a process Chapter 12 treats properly.
-That is the situation the agentic redesign addresses, and it addresses it not by making the scientific decisions but by capturing the record that manual working loses.
+The deeper problem is that the record gets reconstructed afterwards rather than captured as the campaign runs.
+By the time you have to defend a result to a reviewer, a funder or a colleague inheriting the project, the provenance has to be pieced together from directory timestamps and half-remembered decisions, a process Chapter 12 treats properly.
+That is what the agentic redesign addresses, and it does so not by making the scientific decisions but by capturing the record manual working loses.
 
 ## 8.3 The agentic redesign: monitor and log, do not decide
 
-The governing principle of this chapter is a deliberate and narrow division of labour: the agent orchestrates and records, and the scientist decides.
-An orchestration agent, in the sense used here, is a system built around a language model that is permitted to expand a specified experimental design into concrete run configurations, submit those runs to a scheduler through defined tools, monitor their progress, capture each run's full configuration and environment as a provenance record, and flag anomalies for human attention, and permitted to do nothing else.
-It does not choose which parameters to vary, does not decide which metric defines skill, does not prune the design because early results look unpromising, and does not judge that a run's output is scientifically acceptable.
+The governing principle of this chapter is a deliberate, narrow division of labour: the agent orchestrates and records, and you decide.
+
+An orchestration agent, as used here, is a system built around a language model that may expand a specified experimental design into concrete run configurations, submit those runs to a scheduler through defined tools, monitor their progress, capture each run's full configuration and environment as a provenance record, and flag anomalies for human attention.
+It may do nothing else.
+It does not choose which parameters to vary.
+It does not decide which metric defines skill.
+It does not prune the design because early results look unpromising.
+It does not judge that a run's output is scientifically acceptable.
 Every one of those is a scientific decision reserved to the human, and the workflow is built so the agent has neither the authority nor the tools to make them.
-This restriction is not timidity about model capability but a considered placement of the human control surface, and it rests on the argument of Chapter 1: the tasks the agent is given here (expanding a declared grid, tracking job states, recording configurations, checking outputs against mechanical validity criteria) are ones whose verification is cheap and whose correctness is checkable, while the tasks withheld from it are ones whose verification is expensive and whose failures imitate competence.
-It is worth being clear that this is a more conservative division than some prominent demonstrations have adopted: the flagship 2023 result in which a language-model system planned and ran real chemistry experiments end to end let the agent adjust its own plans in response to instrument feedback (Boiko et al., 2023), and the monitor-and-log role assigned here is deliberately narrower, because chemistry's fast, unambiguous feedback is a luxury environmental field science rarely has.
-There is now a strong in-domain demonstration: a 2026 preprint used an agentic system for the exploratory design work of a seasonal streamflow forecaster (dataset discovery, knowledge synthesis, architecture search) while the forecaster itself stayed a conventional, interpretable statistical model, benchmarked against a government agency's operational forecasts over 2021–25 and cutting quantile error for early-season runoff by up to 29% (Lopez-Gomez et al., 2026).
-It is a single-region result from a preprint, so the figure is dated and place-specific; but the shape is the point: the agent designs, the auditable model forecasts, the division this section argues for.
-Structured action makes the delegation possible, because the agent emits machine-readable calls to a scheduler and a provenance store rather than prose about what it would do; and the same structure makes the delegation auditable, because every action it takes is a logged tool call.
-The payoff is that provenance becomes a by-product of running the campaign rather than a chore performed alongside it: the record is captured the moment each run is launched, from the configuration actually used, with the software version, forcing dataset identifier and random seed attached, so reproduction is a matter of replaying a record rather than reconstructing a memory (high confidence in the pattern; completeness of the record depends on the tools exposed).
-The architecture that supports this division is shown in Figure 8.1, and the boundary it draws, between the orchestration the agent performs and the decisions the human retains, is the single most important design commitment of the chapter.
+
+This is not timidity about model capability.
+It is a considered choice about where the human keeps control, and it rests on the argument of Chapter 1.
+The tasks given to the agent (expanding a declared grid, tracking job states, recording configurations, checking outputs against mechanical validity criteria) are cheap to verify and checkable.
+The tasks withheld from it are expensive to verify and fail by imitating competence.
+Be clear that this is a more conservative division than some prominent demonstrations adopted.
+The flagship 2023 result, in which a language-model system planned and ran real chemistry experiments end to end, let the agent adjust its own plans in response to instrument feedback (Boiko et al., 2023).
+The monitor-and-log role here is deliberately narrower, because chemistry's fast, unambiguous feedback is a luxury environmental field science rarely gets.
+There is now a strong in-domain demonstration too.
+A 2026 preprint used an agentic system for the exploratory design work of a seasonal streamflow forecaster, meaning dataset discovery, knowledge synthesis and architecture search, while the forecaster itself stayed a conventional, interpretable statistical model.
+Benchmarked against a government agency's operational forecasts over 2021–25, it cut quantile error for early-season runoff by up to 29% (Lopez-Gomez et al., 2026).
+That is a single-region result from a preprint, so the figure is dated and place-specific, but the shape is the point: the agent designs, the auditable model forecasts, which is the division this section argues for.
+
+Structured action is what makes the delegation possible, because the agent emits machine-readable calls to a scheduler and a provenance store rather than prose about what it would do.
+The same structure makes the delegation auditable, because every action it takes is a logged tool call.
+The payoff is that provenance becomes a by-product of running the campaign rather than a chore alongside it.
+The record is captured the moment each run launches, from the configuration actually used, with the software version, forcing dataset identifier and random seed attached, so reproducing a result means replaying a record rather than reconstructing a memory (high confidence in the pattern; completeness of the record depends on the tools exposed).
+Figure 8.1 shows the architecture, and the boundary it draws, between the orchestration the agent performs and the decisions you keep, is the most important design commitment in the chapter.
 
 **Figure 8.1 — The orchestration agent and its boundary.**
 
@@ -100,15 +135,24 @@ FIGURE BRIEF
 
 ## 8.4 LLM-assisted hypothesis generation, kept exploratory
 
-A second and more contentious use of language models in experimentation is the generation of hypotheses, which this book admits only under strict conditions and never as evidence.
-A model prompted with a campaign's results, the relevant literature and a domain description will readily propose mechanisms (that a calibrated parameter is compensating for a missing process, that a data-driven model's skill in one regime reflects a spurious correlation, that two error patterns share a common cause), and some of these will be genuinely useful in directing where to look next.
-The legitimate value here is real but narrow: it is the value of a well-read colleague suggesting avenues over coffee, and it is bounded by the same reservation, that a suggestion is a prompt to investigate and never a finding in itself.
-The danger is that a generated hypothesis, expressed in fluent and confident language and arriving alongside real results, acquires an unearned evidential status simply by proximity, so that what began as a conjecture is reported as a conclusion, a failure named and dissected in §8.6 as hypothesis laundering.
-The discipline this chapter imposes is therefore procedural rather than a matter of good intentions.
-Any model-generated hypothesis is recorded as exploratory in the provenance store, tagged with its origin, and separated by construction from the evidential chain, so it cannot enter a result or a manuscript without a human first testing it against data by a pre-specified procedure and taking personal responsibility for the claim.
-This mirrors the interpretive control retained in the literature-synthesis pattern of Chapter 5 and the author-as-sole-authority principle of Chapter 9, and it is enforced here by the same mechanism that carries the provenance: a generated hypothesis lives in a labelled compartment of the record, visibly not among the findings.
-The confidence in this recommendation is high as a matter of research integrity and independent of model quality, because the failure it guards against is not one that better models remove: a more persuasive model makes an untested hypothesis more dangerous, not less, since its fluency more effectively disguises the absence of evidence beneath it.
-The gate that keeps a generated hypothesis out of the evidential chain until a human has tested it is shown in Figure 8.2.
+A second, more contentious use of language models in experimentation is generating hypotheses.
+This book allows it only under strict conditions, and never as evidence.
+
+A model prompted with a campaign's results, the relevant literature and a domain description will readily propose mechanisms: that a calibrated parameter is compensating for a missing process, that a data-driven model's skill in one regime reflects a spurious correlation, that two error patterns share a common cause.
+Some of those will genuinely help in deciding where to look next.
+The value is real but narrow.
+It is the value of a well-read colleague suggesting avenues over coffee, and it comes with the same reservation: a suggestion is a prompt to investigate, never a finding.
+The danger is that a generated hypothesis, expressed fluently and arriving alongside real results, picks up an unearned evidential status simply by sitting next to them, so what started as a conjecture gets reported as a conclusion.
+That failure is named and dissected in §8.6 as hypothesis laundering.
+
+So the discipline here is procedural rather than a matter of good intentions.
+Any model-generated hypothesis is recorded as exploratory in the provenance store, tagged with its origin, and kept separate by construction from the evidential chain.
+It cannot enter a result or a manuscript until a human has tested it against data by a pre-specified procedure and taken personal responsibility for the claim.
+This mirrors the interpretive control kept in the literature-synthesis pattern of Chapter 5 and the author-as-sole-authority principle of Chapter 9, and it is enforced by the same mechanism that carries the provenance: a generated hypothesis lives in a labelled compartment of the record, visibly not among the findings.
+Confidence in this recommendation is high, as a matter of research integrity, and it does not depend on model quality.
+Better models do not remove the failure it guards against.
+A more persuasive model makes an untested hypothesis more dangerous, not less, because its fluency disguises the missing evidence more effectively.
+Figure 8.2 shows the gate that keeps a generated hypothesis out of the evidential chain until a human has tested it.
 
 **Figure 8.2 — The hypothesis provenance gate.**
 
@@ -152,23 +196,30 @@ FIGURE BRIEF
 
 ## 8.5 Worked design: a three-track intercomparison
 
-The worked example of this chapter is a **design**, not an executed study: it specifies how an orchestration agent would run a structured comparison of three modelling approaches on a common problem, and it deliberately reports no results, because none have been produced.
-The scientific question is one of the more consequential in contemporary environmental modelling, namely how a physics-based model, a data-driven model and a hybrid of the two compare on the same task, domain and period, and the design exists to make that comparison fair, reproducible and fully documented rather than to pre-judge its outcome.
-The three tracks are not hypothetical: each now has a peer-reviewed exemplar in the weather and climate literature, from physics-based operational forecasting, through data-driven global models that reached operational-grade skill around 2022–23 (Lam et al., 2023; Bi et al., 2023), to differentiable hybrids that couple a physical core with learned components (Kochkov et al., 2024).
-They are held to a common protocol: a physics-based track running a process model of the target system; a data-driven track training a machine-learning model on the same inputs and target; and a hybrid track in which a data-driven component corrects or augments the physics-based one, all three sharing one training or calibration period, one evaluation period, one set of forcing inputs and one metric suite, so that the only intended difference between them is the modelling approach itself.
+The worked example in this chapter is a **design**, not an executed study.
+It specifies how an orchestration agent would run a structured comparison of three modelling approaches on a common problem, and it deliberately reports no results, because none have been produced.
 
-The three-track structure is, as of 2026, no longer only this book's proposal.
-A World Meteorological Organization-coordinated project, with roughly sixty-five authors across six continents, is now running exactly this machine-learning, physically based and hybrid intercomparison at institutional scale, building a centralised database of forecasts from all three model classes under both institution-specific and standardised initial conditions, for distributed and comparable verification (McTaggart-Cowan et al., 2026).
-This book cites it only for existence and design: still in its data-collection phase, it has published no skill comparison, so there is nothing to report from it yet.
-Its existence does not change the status of this chapter's example, which remains a worked design awaiting execution.
+The scientific question is one of the more consequential in contemporary environmental modelling: how do a physics-based model, a data-driven model and a hybrid of the two compare on the same task, domain and period?
+The design exists to make that comparison fair, reproducible and fully documented, not to pre-judge its outcome.
+The three tracks are not hypothetical.
+Each now has a peer-reviewed exemplar in the weather and climate literature, from physics-based operational forecasting, through data-driven global models that reached operational-grade skill around 2022–23 (Lam et al., 2023; Bi et al., 2023), to differentiable hybrids coupling a physical core with learned components (Kochkov et al., 2024).
+All three are held to a common protocol: a physics-based track running a process model of the target system, a data-driven track training a machine-learning model on the same inputs and target, and a hybrid track where a data-driven component corrects or augments the physics-based one.
+They share one training or calibration period, one evaluation period, one set of forcing inputs and one metric suite, so the only intended difference between them is the modelling approach itself.
+As of 2026 that structure is no longer only this book's proposal: a World Meteorological Organization-coordinated project, with roughly sixty-five authors across six continents, is running exactly this machine-learning, physically based and hybrid intercomparison at institutional scale, building a centralised database of forecasts from all three model classes under both institution-specific and standardised initial conditions, for distributed and comparable verification (McTaggart-Cowan et al., 2026).
+It is cited here only for its existence and its design.
+The project is still collecting data and has published no skill comparison, so there is nothing to report from it yet, and its existence does not change the status of this chapter's example, which remains a worked design awaiting execution.
 
 **[AUTHOR: specify the system, domain, periods, forcing datasets and exact model configurations for each track — these are scientific decisions the author must make; the agent must not invent them.]**
-The agent's role across all three tracks is identical and confined to orchestration: it expands each track's declared configuration into concrete runs, submits them, tracks their state, captures the full provenance of every run, and flags anomalies (a run that failed, an output outside physical bounds, a data-driven training run whose validation loss diverged) for the scientist to adjudicate.
-Two elements of the design carry most of its integrity and are worth stating explicitly.
-The evaluation is separated from the agent entirely: skill is scored by the independent evaluation machinery of Chapter 11 against a held-out period the agent has no hand in choosing, so the system running the experiments has no influence over how they are judged.
-The comparison is also guarded against the specific failure to which data-driven and hybrid tracks are prone, namely apparent skill that is memorisation of the evaluation period rather than genuine generalisation, by a protocol fixed before any run is launched, in which the evaluation period is untouched during training and the metric suite is agreed in advance.
-Figures 8.3 and 8.4 set out the design: the first contrasts the conventional hand-run campaign with the agent-orchestrated one, and the second traces the orchestration of the three tracks as a sequence from design to recorded, independently evaluated result.
-Presented this way, the example is honest about its status, a worked design awaiting execution, of the kind Chapter 15 carries through end to end, and it is included because the design decisions are where the scientific integrity of an intercomparison is won or lost, well before any number is produced.
+The agent's role is identical across all three tracks and confined to orchestration.
+It expands each track's declared configuration into concrete runs, submits them, tracks their state, captures the full provenance of every run, and flags anomalies for you to adjudicate: a run that failed, an output outside physical bounds, a data-driven training run whose validation loss diverged.
+
+Two elements of the design carry most of its integrity, and both are worth stating explicitly.
+The evaluation is separated from the agent entirely: skill is scored by the independent evaluation apparatus of Chapter 11 against a held-out period the agent has no hand in choosing, so the system running the experiments has no influence over how they are judged.
+And the comparison is guarded against the failure data-driven and hybrid tracks are most prone to, which is apparent skill that is really memorisation of the evaluation period.
+The guard is a protocol fixed before any run is launched, in which the evaluation period stays untouched during training and the metric suite is agreed in advance.
+Figures 8.3 and 8.4 set the design out: the first contrasts the conventional hand-run campaign with the agent-orchestrated one, and the second traces the orchestration of the three tracks from design to recorded, independently evaluated result.
+Presented this way, the example is honest about what it is, a worked design awaiting execution of the kind Chapter 15 carries through end to end.
+It is here because the design decisions are where the scientific integrity of an intercomparison is won or lost, well before any number gets produced.
 
 **Figure 8.3 — Conventional campaign versus agent-orchestrated campaign.**
 
@@ -269,22 +320,33 @@ FIGURE BRIEF
 
 ## 8.6 Failure modes
 
-The failure modes of orchestrated experimentation are not failures of the scheduling machinery, which either works or visibly does not, but failures at the boundary where results meet interpretation, and three recur often enough to name.
-The first is **confident extrapolation**: a model asked to predict beyond the range of the data that constrained it does so with the same fluency it brings to an interpolation, and the fluency reveals nothing about whether the answer is right, so the general anatomy of this belongs to the failure gallery (Chapter 13).
-What matters here is the campaign-specific guard.
-A data-driven track trained on a historical period will extrapolate into conditions outside that period, and its skill there is unknown rather than good, however smooth its output looks; even the strongest hybrid climate models in the literature carry their authors' explicit warning that they do not extrapolate reliably to substantially different conditions (Kochkov et al., 2024).
-The protocol therefore reports the range of the training data and scores out-of-range performance separately, so that extrapolation is labelled as such rather than absorbed into a headline metric (high confidence).
-The second is **over-fitting dressed as skill**, in which a model scores well on an evaluation period by having, in effect, already seen it, whether through leakage between training and evaluation data, through a hyperparameter search that tuned against the evaluation set, or through a hybrid configuration that memorised the residuals of the specific period.
+Orchestrated experimentation does not fail at the scheduling, which either works or visibly does not.
+It fails where results meet interpretation, and three failures recur often enough to name.
+
+The first is **confident extrapolation**.
+A model asked to predict beyond the range of the data that constrained it does so with the same fluency it brings to an interpolation, and that fluency tells you nothing about whether the answer is right.
+The general anatomy belongs to the failure gallery (Chapter 13); what matters here is the campaign-specific guard.
+A data-driven track trained on a historical period will extrapolate into conditions outside that period, and its skill there is unknown rather than good, however smooth its output looks.
+Even the strongest hybrid climate models in the literature carry their authors' explicit warning that they do not extrapolate reliably to substantially different conditions (Kochkov et al., 2024).
+So the protocol reports the range of the training data and scores out-of-range performance separately, and extrapolation gets labelled rather than absorbed into a headline metric (high confidence).
+
+The second is **over-fitting dressed as skill**, where a model scores well on an evaluation period because it has, in effect, already seen it: leakage between training and evaluation data, a hyperparameter search tuned against the evaluation set, or a hybrid configuration that memorised that period's residuals.
 The output is genuine skill on the evaluation set and an illusion about generalisation, and because the number is real it is peculiarly persuasive.
-The guard is the protocol of §8.5 (a held-out period fixed before any run, untouched during training, evaluated once), enforced by the separation of the agent from the scoring, and treated fully in Chapter 11.
-The third and most insidious is **hypothesis laundering**, in which a hypothesis generated by a language model, as in §8.4, is reported as a finding because it arrived alongside real results and wore the confidence of one.
-The mechanism is social and procedural rather than technical: a conjecture crosses from the exploratory compartment into the evidential chain without anyone testing it, and the fluency of its expression eases the crossing.
-The guard is the one built into §8.4: generated hypotheses are tagged, compartmented in the provenance record, and cannot enter a result without a human testing them by a pre-specified procedure and owning the claim.
-Each of these failures is plausible rather than obvious, in the sense of Chapter 1: none announces itself, all imitate competence, and all are caught by procedure rather than by inspection, which is why the checklist that follows is a design artefact, not an afterthought.
+The guard is the protocol of §8.5, meaning a held-out period fixed before any run, untouched during training and evaluated once, enforced by keeping the agent away from the scoring and treated fully in Chapter 11.
+
+The third and most insidious is **hypothesis laundering**, where a hypothesis generated by a language model, as in §8.4, gets reported as a finding because it arrived alongside real results and sounded like one.
+The mechanism is social and procedural rather than technical.
+A conjecture crosses from the exploratory compartment into the evidential chain without anyone testing it, and the fluency of its expression makes the crossing easy.
+The guard is the one built into §8.4: generated hypotheses are tagged, kept in their own compartment of the provenance record, and cannot enter a result until a human has tested them by a pre-specified procedure and owned the claim.
+
+All three are plausible rather than obvious, in the sense of Chapter 1.
+None announces itself, all imitate competence, and all are caught by procedure rather than by inspection.
+That is why the checklist below is a design artefact and not an afterthought.
 
 ## 8.7 Verification checklist
 
-This checklist is deliberately procedural, because the failures of §8.6 are caught by fixing the procedure before the runs rather than by scrutinising outputs after them; settled at design time and recorded with the campaign, it lets a colleague who did not run the campaign confirm each item from the record.
+This checklist is deliberately procedural, because the failures of §8.6 are caught by fixing the procedure before the runs rather than by scrutinising outputs afterwards.
+Settle it at design time, record it with the campaign, and a colleague who did not run the campaign can confirm every item from the record.
 
 - **The design is authored and frozen before any run.** The experimental design (parameters, ranges, metric suite and evaluation period) is written by the scientist and recorded before the first run is launched, so the agent expands a fixed design rather than an evolving one.
 - **The evaluation period is held out and independently scored.** It is untouched during any training or calibration, and scoring is performed by machinery independent of the agent that ran the experiments (Chapter 11).
@@ -294,16 +356,19 @@ This checklist is deliberately procedural, because the failures of §8.6 are cau
 - **No run is silently dropped.** Anomalies the agent flags (failed runs, outputs outside physical bounds, diverged training losses) are adjudicated by the scientist and the adjudication recorded.
 - **The boundary holds in practice.** No scientific decision (which design, which metric, which result to believe, which hypothesis to pursue) is delegated to the agent, and a review of the campaign can confirm this from the log of the agent's tool calls (Figure 8.1).
 
-This is a starting point to adapt to a group's models and computing environment, not a universal standard; its printable form lives in the repository alongside the pattern.
+This is a starting point to adapt to your own models and computing environment, not a universal standard.
+Its printable form lives in the repository alongside the pattern.
 
 ## 8.8 Repository pointer
 
 The companion repository holds the runnable and perishable counterparts to this chapter.
-A minimal orchestration example under `/patterns` implements the boundary of Figure 8.1 (an agent that expands a small declared design, submits placeholder runs, records provenance and flags anomalies, with the scientific decisions left explicitly to the user), using current tools named there rather than in this print text, per the vendor-neutral convention.
-The three-track intercomparison of §8.5 is carried as a sanitised design under `/case-studies`, with its [AUTHOR]-marked configuration choices to be supplied and its status as a worked design, not an executed study, stated in place; it is the design Chapter 15 takes through end to end once executed.
+A minimal orchestration example under `/patterns` implements the boundary of Figure 8.1: an agent that expands a small declared design, submits placeholder runs, records provenance and flags anomalies, with the scientific decisions left explicitly to you.
+It names current tools there rather than in this print text, per the vendor-neutral convention.
+The three-track intercomparison of §8.5 is carried as a sanitised design under `/case-studies`, with its [AUTHOR]-marked configuration choices still to be supplied and its status as a worked design, not an executed study, stated in place.
+It is the design Chapter 15 takes through end to end once it has been executed.
 The verification checklist of §8.7 is held in printable form under `/checklists`, and the prompts used to elicit exploratory hypotheses under the safeguards of §8.4, kept separate from the evidential workflow by construction, live under `/prompts`.
 **[AUTHOR: confirm the final repository paths and contents.]**
-The repository serves as the living layer that tracks the tools and figures which date faster than the patterns, exactly as Chapter 17 argues.
+The repository is where the tools and figures that date faster than the patterns are kept current, exactly as Chapter 17 argues.
 
 ---
 
