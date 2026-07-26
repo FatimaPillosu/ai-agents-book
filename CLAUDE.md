@@ -11,7 +11,7 @@ The book is **pattern-based, governance-first and diagram-led**: durable workflo
 ## Current state (25 Jul 2026)
 
 - Outline **v0.5** (`manuscript/OUTLINE.md`) is authoritative: 17 chapters in 5 parts; budgets indicative (≈150 pp / 38,000–42,000 words / 65–75 figures), not fixed targets. Per-chapter allocations in outline §7 are guidance.
-- **Style guide** (`STYLE.md`, v3.2 — the author's academic register extracted from their PhD thesis: impersonal voice with the work as agent, complete topic-sentence openers, 200–450-word single-claim paragraphs closing on consequence, concede-and-resolve, quantified evidence with baselines, calibrated hedging, no contractions, no em-dash connectors; info-boxes; sentence-per-line) and **figure guide** (`FIGURES.md`, v1.0) are in place and binding. **STYLE.md applies retroactively to all chapters.** v3.x supersedes the v2.x lineage (both the v2.0 conversational register and the v2.1 plain-formal recalibration) on the author's instruction (25 Jul 2026); ch01 has been rewritten to v3.3 as the exemplar (`manuscript/CH01-STYLE-PASS.md` is superseded), and ch02–ch17 will need the same pass (to be scheduled).
+- **Style guide** (`STYLE.md`, **v5.0** — the colloquial register: written to one intelligent colleague, reader addressed as "you", contractions used lightly, 80–200-word single-point paragraphs, no sentence announcing what the text is about to do, the concrete case leading, ~30-word sentence ceiling, no metaphors, quantified evidence with baselines, calibrated hedging, no em-dash connectors; info-boxes; sentence-per-line) and **figure guide** (`FIGURES.md`, v1.0) are in place and binding. **STYLE.md applies retroactively to all chapters.** The whole manuscript (ch00–ch17, eighteen files) was converted to this register on the author's instruction (26 Jul 2026), superseding the v3.x academic lineage; the v3.4 academic version of the manuscript is preserved on branch `claude/manuscript-feedback-e2xcop` and in this file's history. `manuscript/CH01-STYLE-PASS.md` is superseded. **Figure captions and alt-text have not yet been converted** and still read in the academic register; `FIGURES.md` needs the same pass.
 - All 17 chapters (`ch01`–`ch17`) are drafted first-pass in `/manuscript` and carry `[AUTHOR: …]` markers for lived/executed material. **Revision pass R1 is complete** (all chapters in v2.0 voice, de-duplicated, citations woven from the first `/research` sweep; `manuscript/REVISION-PLAN.md` is closed). **Research-integration pass R2 is under way**, governed by `manuscript/RESEARCH-INTEGRATION-PLAN.md`: it weaves the two later `/research` reports (2026 literature update; practitioner-video report), updates superseded citations, and refreshes `FURTHER-READING.md` (executed by ai-writer, reviewed by ai-reviewer).
 - Agent roster: ai-editor (plan and admin documents), ai-writer (prose and figure briefs), ai-reviewer (independent review), and **ai-researcher** (web-research sweeps; verified research reports in `/research` at the repo root, with DOIs/URLs per source). Manuscript citations are drawn only from those reports.
 
@@ -41,7 +41,7 @@ The book is **pattern-based, governance-first and diagram-led**: durable workflo
 
 ## Decision log
 
-**Decided:** single ~150 pp volume · audience: environmental/geosciences · self-published, free, LinkedIn-first · unified repository with newsletter as update channel · no formal index · specification (Ch. 3) and manuscripts (Ch. 9) chapters in · exercises live in `/exercises`, not the page budget · cross-domain examples deferred to a second edition · manuscript in plain Markdown · budgets indicative · vendor-neutral naming in print · figures governed by `FIGURES.md` · **STYLE.md voice applies retroactively to all chapters** (24 Jul 2026), register set to the **author's thesis-derived academic voice by STYLE.md v3.x** on the author's instruction (25 Jul 2026; supersedes v2.0 "conversational" and v2.1 "plain-formal"): impersonal voice (no "you"; the work as agent), topic-sentence openers, single-claim paragraphs closing on consequence, no contractions (v3.2), no em-dash connectors in manuscript text (v3.3, reinstating the v2.1 rule on the author's instruction of 25 Jul 2026); info-boxes and sentence-per-line retained · **de-duplication now**: each recurring idea has one canonical home and short cross-references elsewhere (24 Jul 2026) · **references policy**: key claims cited from verified sources in the `/research` reports (ai-researcher, DOI/URL per source); annotated further reading in the back matter; no citation ever from agent memory (24 Jul 2026) · full chapter anatomy binds Part II only, with Ch. 11 and Ch. 12 still owing verification checklists and repository pointers (24 Jul 2026).
+**Decided:** single ~150 pp volume · audience: environmental/geosciences · self-published, free, LinkedIn-first · unified repository with newsletter as update channel · no formal index · specification (Ch. 3) and manuscripts (Ch. 9) chapters in · exercises live in `/exercises`, not the page budget · cross-domain examples deferred to a second edition · manuscript in plain Markdown · budgets indicative · vendor-neutral naming in print · figures governed by `FIGURES.md` · **STYLE.md voice applies retroactively to all chapters** (24 Jul 2026), register set to the **colloquial voice of STYLE.md v5.0** on the author's instruction (26 Jul 2026; supersedes the v3.x thesis-derived academic register, which itself superseded v2.0 "conversational" and v2.1 "plain-formal"): reader addressed as "you", contractions used lightly, 80–200-word single-point paragraphs, no sentence announcing what the text is about to do, the concrete case leading; **no metaphors anywhere** and a **~30-word sentence ceiling** (both v3.4, kept unchanged), no em-dash connectors, info-boxes and sentence-per-line retained; whole manuscript converted 26 Jul 2026 · **de-duplication now**: each recurring idea has one canonical home and short cross-references elsewhere (24 Jul 2026) · **references policy**: key claims cited from verified sources in the `/research` reports (ai-researcher, DOI/URL per source); annotated further reading in the back matter; no citation ever from agent memory (24 Jul 2026) · full chapter anatomy binds Part II only, with Ch. 11 and Ch. 12 still owing verification checklists and repository pointers (24 Jul 2026).
 
 **Deferred (decide later; not gates):** output/layout format and build toolchain · licence · DOI/Zenodo · CI for runnable examples · reflexive-production audit-trail mechanism · positioning re-scan, beta readers and release-channel limit checks · **overall length reduction** — the manuscript stays at its current length for now; a future pass will consider cuts (author decision, 24 Jul 2026; de-duplication is decided and proceeds regardless).
 
@@ -49,30 +49,31 @@ The book is **pattern-based, governance-first and diagram-led**: durable workflo
 
 **Parked (author's direction; on record, not a gate):** permissions/IP for case studies and failure-gallery examples · **companion-repository build-out** (`/patterns`, `/prompts`, `/checklists`, `/case-studies`, `/exercises`) — out of scope for revision pass R1; to be sorted when the book is finalised (author decision, 24 Jul 2026).
 
-## Writing style (condensed from STYLE.md v3.2 — binding)
+## Writing style (condensed from STYLE.md v5.0 — binding)
 
 ```
-Write as an experienced academic author (hydrology/meteorology): authoritative, precise,
-measured; the work is the agent ("this chapter shows…"), sparing "we", never "you".
-British English; no contractions ("has not", never "hasn't"; quotations exempt).
-Open every paragraph with a complete topic sentence carrying a real claim — subject-first
-declarative, concessive ("Despite X, Y persists"), tension-framing, or continuation
-pivot; never fragments or hooks. Paragraphs 200–450 words, one claim each (summarisable
-as a single nominal phrase), moving claim → context → evidence → qualification →
-implication, closing on consequence ("Hence/Consequently/Therefore …"). Enumerate in
-prose ("two challenges: First… Second…") with parallel grammar; every "However" is
-resolved; elaborate with colons and parentheses. No em dash as a connector in manuscript
-text: use a comma, colon, parentheses, a new sentence, or "e.g." / "i.e." / "such as" /
-"that is"; dashes only in fixed labels ("Figure 1.1 — …", "Definition —"); en-dash
-ranges (2023–24) are fine. Numbers over adjectives with baselines
-("a twenty-fold increase"); stakes shown with numbers and named events, never adjectives;
-synthesise literature (set sources against each other), never list. Hedge once, precisely
-(may/suggests/remains untested); certainty flags (high/moderate/low confidence) on
-substantive claims; give rival interpretations comparable weight; confront
-counterintuitive results with candidate mechanisms. Explicit roadmaps and pointer
-sentences that name what the destination contains. No hype, jokes, exclamation or
-bullet-point argument. Explain every demanding term at first substantive use (info-box
-where warranted) and add it to the glossary. Never fabricate: mark lived material
-[AUTHOR: …] and unverified figures [verify]. Vendor-neutral. One sentence per line,
-unnumbered (STYLE.md §10).
+Write to one intelligent colleague from outside your specialism: address them as "you",
+use "I" where the judgement is genuinely the author's own, never at an audience from a
+lectern. British English; contractions allowed, used lightly and by ear. NOT breezy, NOT
+dumbed down: no hype, jokes, slang, exclamation or cliche.
+NEVER ANNOUNCE WHAT THE TEXT IS ABOUT TO DO ("The limitation of the procedure is that..."
+-> "The catch is that..."). LET THE CONCRETE CASE LEAD: example first, abstraction after,
+as the lesson drawn from it.
+Paragraphs 80-200 words, one point each. Open on a real sentence carrying real content
+(topic sentence, short declarative, question, or the concrete case); never a fragment,
+throat-clear or cliffhanger. Sentences ~25 words, 30 maximum: split anything longer into
+two without dropping content.
+NO METAPHORS anywhere, prose, captions and alt-text alike: state the mechanism literally.
+Defined technical terms (gate, loop, pipeline) and declared analogies under examination
+are not metaphors. No apologetic preambles, no unbaselined comparatives, no gravitas by
+abstraction (STYLE.md SS12.1-12.2).
+No em dash as a connector: comma, colon, parentheses, a new sentence, or "e.g." / "i.e."
+/ "such as"; dashes only in fixed labels ("Figure 1.1 - ...", "Definition -"); en-dash
+ranges (2023-24) fine. Enumerate in prose with parallel grammar; every "However" is
+resolved. Numbers over adjectives with baselines; synthesise literature, never list.
+Hedge once, precisely; certainty flags (high/moderate/low confidence) on substantive
+claims. Explain every demanding term at first substantive use (info-box where warranted)
+and add it to the glossary. Never fabricate: mark lived material [AUTHOR: ...] and
+unverified figures [verify]. Vendor-neutral. One sentence per line, unnumbered
+(STYLE.md SS10).
 ```

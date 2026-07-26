@@ -340,4 +340,3 @@ Where they are not, one well-specified agent behind deterministic gates is cheap
 - Wataoka, K., Takahashi, T. and Ri, R. (2024). "Self-Preference Bias in LLM-as-a-Judge." arXiv preprint. https://arxiv.org/abs/2410.21819 **[verify: peer-reviewed venue]**.
 - Wu, Q., Bansal, G., Zhang, J., Wu, Y., et al. (2023). "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation." arXiv preprint. https://arxiv.org/abs/2308.08155 **[verify: peer-reviewed venue — a version appeared at COLM 2024]**.
 - Zheng, L., Chiang, W.-L., Sheng, Y., et al. (2023). "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena." NeurIPS 2023 Datasets and Benchmarks Track. Preprint: https://arxiv.org/abs/2306.05685.
-```

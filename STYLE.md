@@ -1,26 +1,10 @@
 # Author writing-style guide
 
-**v4.0-colloquial · 26 July 2026** · Binding for all drafted prose unless a specific brief overrides it.
+**v5.0 · 26 July 2026** · Binding for all drafted prose unless a specific brief overrides it.
 
-> **Branch note.** This file is the colloquial edition, on branch `colloquial-voice`. It keeps every mechanism of v3.4 and replaces only the register, following the author's instruction of 26 July 2026 to convert the whole book to the voice piloted in Chapter 4. Section 0 below states the register and names exactly which parts of §1, §2, §3 and §11 it overrides; those sections are left in place unedited so the academic register can be recovered if this edition is not adopted. The v3.4 house-style manuscript remains on `claude/manuscript-feedback-e2xcop`.
+**Change from v4.0-colloquial (consolidation, no new rules):** the colloquial register is now the guide's own register rather than an overlay on top of an academic one. The branch note and the §0 override block are removed, and their content is folded into the sections it governed: §1 (voice), §2 (paragraphs), §3 (openers) and §11 (contractions) are rewritten to state the register directly. Nothing binding has changed; a drafter can now read §1 to §12 in order without holding two registers in mind. The academic register the book used until 26 July 2026 is preserved in this file's git history at v3.4, and the manuscript written in it remains on branch `claude/manuscript-feedback-e2xcop`.
 
-## 0. Register: writing to a colleague, not at an audience
-
-The book speaks to one intelligent colleague from outside the author's specialism, at a bench or over coffee, and never to an audience from a lectern. The reader is "you". The author is "I" where a judgement or an experience is genuinely the author's own, and the first person is not otherwise scattered about. Contractions are allowed and used lightly ("does not" and "doesn't" both appear; the choice is by ear, not by rule). The weight of the material is never traded for the lighter touch: no hype, no jokes, no slang, no exclamation, and nothing dumbed down. A hydrologist and a curious non-specialist should both finish a paragraph having understood something demanding.
-
-Five rules carry most of the difference from the academic register.
-
-**First, never announce what the text is about to do.** The sentence that says "The limitation of the procedure is that both properties are estimated in advance" becomes "The catch is that both of those questions are answered before the work starts". Cut every "The qualification worth stating is that…", "This has a concrete organisational consequence…", "The discipline that guards against the error is to notice that…". State the thing; the reader can see what kind of thing it is.
-
-**Second, the concrete case leads.** Where a paragraph has both an abstraction and an example, the example goes first and the abstraction follows as the lesson drawn from it. A named event, a real file, an actual afternoon of work beats a category every time.
-
-**Third, paragraphs get shorter.** Roughly 80–200 words, one point each, and a paragraph break is allowed to do rhetorical work. The 200–450-word single-claim paragraph of §2 is withdrawn; the one-claim discipline behind it is kept.
-
-**Fourth, openers loosen.** A paragraph may open on a question, a short declarative, or the concrete case, as long as it is a real sentence carrying real content. The four thesis opening patterns of §3 are available but no longer mandatory. Still barred: fragments, throat-clearing, cliffhangers and punchy one-word openers.
-
-**Fifth, sentences stay short.** The ~25-word target and ~30-word ceiling of §11 are unchanged and matter more in this register, not less.
-
-Everything else in this guide stands exactly as it did in v3.4, and the checklist in §7 still applies with items 1, 3 and 9 read through this section. In particular, and without exception: **no metaphors** (§12.2); none of the deleted constructions of §12.1; numbers with baselines rather than adjectives (§6.1); certainty flags on substantive claims (§6.3); literature synthesised rather than listed (§6.2); rival readings given comparable weight (§6.4); integrity markers [AUTHOR: …] and [verify], and citations only from the verified reports in `/research` (§6.5); info-boxes and the glossary (§9); sentence-per-line drafting (§10); no em dash as a connector (§11); British English (§11); vendor-neutrality (outline §9). Colloquial is a register, not a licence.
+**Change from v3.4 (major):** the whole book moved to the colloquial register piloted in Chapter 4, on the author's instruction of 26 July 2026. All eighteen files (ch00–ch17) were converted. What changed: the reader is addressed as "you", contractions are permitted, paragraphs shortened to 80–200 words, openers loosened, and every sentence that announced what the text was about to do was cut. What did not change: the sentence-length ceiling, the metaphor prohibition, the §12.1 deletions, integrity markers, citation policy, info-boxes, sentence-per-line drafting, British English and vendor-neutrality.
 
 **Change from v3.3 (major):** three author instructions, taken from the author's own revision of §4.1 of Chapter 4, are added. First, a **sentence-length ceiling** replaces the previous preference for long qualification-bearing sentences: about 25 words is the target and roughly 30 the ceiling, beyond which a sentence is split into two (§11). Second, **metaphor is prohibited outright** in manuscript prose: no figurative substitution for a mechanism that can be stated literally (§12.2). Third, §12.1 records verbatim the constructions the author deleted from the first draft of §4.1, each with the accepted replacement, so the same habits can be removed from every other chapter. §7 and §8 are amended accordingly. The first two are deliberate house deviations from the thesis, whose sentences run longer and which permits occasional figurative language.
 
@@ -34,25 +18,35 @@ Everything else in this guide stands exactly as it did in v3.4, and the checklis
 
 ## 1. Voice and stance
 
-Write as an experienced academic author in hydrology/meteorology: authoritative, precise and measured, with authority earned through evidence and construction rather than emphasis. The grammatical agent of the prose is the work, not the writer: "this book", "this chapter", "this study" perform the actions — "This chapter evaluates the feasibility of…", "This study demonstrates that…", "The innovation proposed by this research is twofold." The first-person plural appears sparingly, for methodological decisions and interpretive commitments ("We therefore make no additional adjustments for uncertainties in the reports' location or timing"); the first-person singular is rare; the reader is never addressed as "you". Impersonal constructions carry judgement where the author is taking a position that is arguable: "it is argued that…", "it is advocated that…", "It is worth noting that…".
+Write to one intelligent colleague from outside your specialism, at a bench or over coffee. Never to an audience from a lectern. The reader is "you". The author is "I" wherever a judgement or an experience is genuinely the author's own, and the first person is not otherwise scattered about; "this chapter", "this book" and the passive all remain available where they are the natural thing to write, but they are no longer the default and they must never be used to duck ownership of a claim. Contractions are allowed and used lightly: "does not" and "doesn't" both appear, and the choice is made by ear rather than by rule.
 
-Stakes are established with numbers and named events, never with adjectives. The thesis opens its whole argument this way: "Flash floods represent the deadliest and most devastating hazards, causing over 5,000 fatalities annually and accounting for ~85% of global flood incidents", and then grounds it: "In October 2024, flash floods in Valencia, Spain, claimed more than 200 lives and caused extensive damage in 87 municipalities". The severity of a topic is demonstrated, not asserted. Nothing is hyped; the largest claims are the most carefully hedged; and the prose stays serious throughout — no jokes, no asides, no exclamation, no cliché.
+The lighter register never buys a lighter treatment of the material. No hype, no jokes, no slang, no exclamation, no cliché, and nothing dumbed down. The test is that a hydrologist and a curious non-specialist should both finish a paragraph having understood something demanding, not feeling that a demanding thing was made trivial. Authority comes from evidence and construction, not from emphasis, exactly as it did in the academic register.
+
+**Never announce what the text is about to do.** This is the single habit that most separates this register from the one the book used before, and it is the first thing to cut on any pass. "The limitation of the procedure is that both properties are estimated in advance" becomes "The catch is that both of those questions are answered before the work starts". Delete every "The qualification worth stating is that…", "This has a concrete organisational consequence…", "The discipline that guards against the error is to notice that…". State the thing; the reader can see what kind of thing it is without being told.
+
+**Let the concrete case lead.** Where a passage has both an abstraction and an example, the example goes first and the abstraction follows as the lesson drawn from it. A named event, a real file, an actual afternoon of work beats a category every time.
+
+Stakes are established with numbers and named events, never with adjectives, and this rule is unchanged from every previous version of this guide. Show the severity of a topic; do not assert it. The thesis this book's earlier register was extracted from opens its whole argument that way: "Flash floods represent the deadliest and most devastating hazards, causing over 5,000 fatalities annually and accounting for ~85% of global flood incidents", then grounds it: "In October 2024, flash floods in Valencia, Spain, claimed more than 200 lives and caused extensive damage in 87 municipalities". Those quotations are cited here for their evidential construction, not their register; write the same content in the voice of this section. The largest claims stay the most carefully hedged.
 
 ## 2. The paragraph is the unit of argument
 
-A paragraph is long, developed and single-claim: typically 200–450 words, opening with a complete topic sentence and then moving through **claim → context → evidence → qualification → implication**. Every element of that movement is visible in the prose. Evidence is cited and quantified; the qualification is explicit (nearly every paragraph contains at least one "However" or equivalent concession); and the paragraph earns a closing sentence that states what follows from it — usually introduced by "Hence", "Consequently", "Therefore" or "Thus":
+A paragraph runs roughly **80–200 words** and carries exactly one point. It is short enough to be taken in at a glance and long enough to develop something, and a paragraph break is allowed to do rhetorical work rather than only marking a change of subject. Where the material genuinely needs it, the movement **claim → context → evidence → qualification → implication** still applies, but it may now run across two or three short paragraphs instead of being compressed into one long one, and not every paragraph needs every element.
+
+What survives from the long-paragraph discipline is the part that mattered: evidence is cited and quantified, qualifications are explicit rather than implied, and a passage that raises a concession resolves it. The closing-on-consequence habit is kept where it is natural and dropped where it would be ceremonial:
 
 > "Therefore, developing robust medium-range flash flood forecasting capabilities on a global scale remains one of the pressing challenges in modern hydrology."
 
 > "Consequently, despite the potential of global NWP rainfall forecasts to extend flash flood prediction beyond data-rich regions, their suitability for this purpose remains largely unverified at the scales required for global application."
 
-Depth takes priority over coverage: develop fewer points properly rather than surveying many thinly. A paragraph never trails off on a detail; if it has no implication to state, it at least states its limitation.
+Depth still takes priority over coverage: develop fewer points properly rather than surveying many thinly. A paragraph never trails off on a detail.
 
-A paragraph carries exactly one claim, and that claim must be summarisable as a single compressed nominal phrase ("Barrier n.1: limited direct assessment of global NWP rainfall forecasts against flash flood occurrence"; "CONUS as the primary study domain: justification"). If no single phrase covers the paragraph, it contains two claims and must be split; if the phrase is vague ("some thoughts on verification"), the paragraph has no claim yet. Read in sequence, the one-phrase summaries of a section's paragraphs must reproduce its argument — that is the test of a well-built section. The summaries themselves are a drafting check only and are never carried in the manuscript.
+The one-claim discipline is unchanged, and it is the reason the shorter paragraph is not a licence to ramble. A paragraph carries exactly one claim, and that claim must be summarisable as a single compressed nominal phrase ("Barrier n.1: limited direct assessment of global NWP rainfall forecasts against flash flood occurrence"; "CONUS as the primary study domain: justification"). If no single phrase covers the paragraph, it contains two claims and must be split; if the phrase is vague ("some thoughts on verification"), the paragraph has no claim yet. Read in sequence, the one-phrase summaries of a section's paragraphs must reproduce its argument — that is the test of a well-built section. The summaries themselves are a drafting check only and are never carried in the manuscript.
 
 ## 3. Opening the paragraph
 
-Every paragraph opens with a full topic sentence carrying a real claim — never a fragment, never a scene-setting throat-clear, never a punchy hook. Four opening patterns account for almost every paragraph in the thesis; use them deliberately.
+Every paragraph opens with a real sentence carrying real content. Beyond that the register is permissive: an opener may be a topic sentence, a short declarative, a question, or the concrete case itself, and the choice is made by what the paragraph is doing rather than by a pattern list.
+
+The four patterns below came from the author's thesis and remain the most reliable openers for an argumentative paragraph, so they are kept as a repertoire to reach for rather than a rule to satisfy. Read them for structure; the register of the quoted examples is the pre-2026 academic one and should not be imitated.
 
 **(a) Subject-first declarative.** The paragraph's subject leads the sentence and the claim about it follows immediately, often already quantified:
 
@@ -86,7 +80,7 @@ The inverted form is also in the repertoire: "Low resolution notwithstanding, th
 
 > "As shown in the previous paragraph, despite their promise, most data-driven flash flood prediction studies rely on high-resolution inputs."
 
-Rhetorical questions are permitted but rationed: at most one per section, placed as a pivot rather than an opener, and answered immediately — "Can data-driven approaches for flash flood prediction work with such a small training dataset?"; "This finding raised a compelling question: if diversity within a region enables generalisation, could combining observations from multiple regions extend this capability across continents or even globally?"
+Rhetorical questions are freer in this register than in the academic one, but they are still rationed: roughly one or two per section, answered immediately, and never used to avoid stating the claim. Chapter 4's "So the question is practical: which parts of the research cycle may be handed to one, and which may not?" is the house use. The thesis examples below show the same move in the older register — "Can data-driven approaches for flash flood prediction work with such a small training dataset?"; "This finding raised a compelling question: if diversity within a region enables generalisation, could combining observations from multiple regions extend this capability across continents or even globally?"
 
 What never opens a paragraph: a fragment ("Agents. Everywhere."), a bare connective with no content ("So, here's the thing."), a cliffhanger ("Then everything changed."), or a definition of a term the reader has not yet been given a reason to care about.
 
@@ -181,44 +175,53 @@ Cite only references known to be real; incomplete bibliographic details are flag
 
 ## 7. Pre-submission checklist
 
-Before a draft is returned (read items 1, 3 and 9 through §0 in this edition): (1) every paragraph opens with a real sentence carrying real content — no fragments, no throat-clearing, and no sentence announcing what the text is about to do; (2) every paragraph carries exactly one claim, summarisable as a single nominal phrase, and the section's paragraph summaries read as its argument (§2); (3) paragraphs are developed (≈200–450 words) and move claim → context → evidence → qualification → implication, closing on consequence or limitation; (4) every "However" is resolved; every announced enumeration is completed with parallel grammar; (5) numbers replace adjectives wherever the evidence allows, and comparisons carry baselines; (6) claims are hedged once, precisely, with certainty flags on substantive claims; anomalies are confronted, not buried; (7) literature and prior art are synthesised, not listed; (8) roadmap, pointer sentences and cross-references are in place and each names what the destination contains; (9) no second person, no exclamation, no hype, no bullet-point argumentation in main prose; (10) British English throughout; no contractions outside verbatim quotations; no em dash used as a connector (fixed formats and en-dash ranges only, §11); every demanding term defined once at first substantive use (info-box where warranted, §9); (11) all unverified material is marked [AUTHOR:]/[verify] and none invented; (12) the draft is sentence-per-line per §10; (13) no sentence exceeds roughly 30 words, and none that exceeds 25 could be split to advantage (§11); (14) no metaphors anywhere, including captions and alt-text (§12.2), and none of the deleted constructions of §12.1 has reappeared.
+Before a draft is returned: (1) every paragraph opens with a real sentence carrying real content — no fragments, no throat-clearing, and no sentence announcing what the text is about to do (§1, §3); (2) every paragraph carries exactly one point, summarisable as a single nominal phrase, and the section's paragraph summaries read as its argument (§2); (3) paragraphs run roughly 80–200 words, and where a passage develops claim → context → evidence → qualification → implication it may do so across several short paragraphs (§2); (4) every "However" is resolved; every announced enumeration is completed with parallel grammar; (5) numbers replace adjectives wherever the evidence allows, and comparisons carry baselines; (6) claims are hedged once, precisely, with certainty flags on substantive claims; anomalies are confronted, not buried; (7) literature and prior art are synthesised, not listed; (8) roadmap, pointer sentences and cross-references are in place and each names what the destination contains; (9) the reader is addressed as "you" where the sentence calls for it, and there is no hype, no exclamation and no bullet-point argumentation in main prose (§1); (10) British English throughout; contractions used lightly and by ear (§11); no em dash used as a connector (fixed formats and en-dash ranges only, §11); every demanding term defined once at first substantive use (info-box where warranted, §9); (11) all unverified material is marked [AUTHOR:]/[verify] and none invented; (12) the draft is sentence-per-line per §10; (13) no sentence exceeds roughly 30 words, and none that exceeds 25 could be split to advantage (§11); (14) no metaphors anywhere, including captions and alt-text (§12.2), and none of the deleted constructions of §12.1 has reappeared.
 
 ## 8. Condensed prompt block
 
 For agent-assisted drafting or review:
 
 ```
-Write as an experienced academic author (hydrology/meteorology): authoritative, precise,
-measured; the work is the agent ("this chapter shows…"), sparing "we", never "you".
-British English; no contractions ("has not", never "hasn't"; quotations exempt).
-Open every paragraph with a complete topic sentence carrying a real
-claim — subject-first declarative, concessive ("Despite X, Y persists"), tension-framing
-("…creates a fundamental tension between…"), or continuation pivot; never fragments or
-hooks. Paragraphs 200–450 words, claim → context → evidence → qualification →
-implication, closing on "Hence/Consequently/Therefore …"; one claim per paragraph,
-summarisable as a single nominal phrase. Sentences ~25 words, 30 words maximum: split
-anything longer into two sentences without dropping content (§11). NO METAPHORS at all,
-in prose, captions or alt-text: state the mechanism literally; defined technical terms
-(gate, loop, pipeline) and declared analogies under examination are not metaphors (§12.2).
-Never write the text's own posture ("this chapter takes seriously…"), apologetic
-preambles ("described plainly enough to be useful here…"), or unbaselined comparatives
-("far more X than any Y suggests") — see §12.1. Enumerate in prose ("two
-challenges: First… Second…") with parallel grammar; concede and resolve ("However…" is
-always answered); elaborate with colons and parentheses. No em dash as a connector in
-manuscript text: use a comma, colon, parentheses, a new sentence, or "e.g." / "i.e." /
-"such as" / "that is"; dashes only in fixed labels ("Figure 1.1 — …", "Definition —");
-en-dash ranges (2023–24) are fine. Numbers over adjectives with
-baselines ("a twenty-fold increase"); synthesise literature (set sources against each
-other), never list. Hedge once, precisely (may/suggests/remains untested); certainty
-flags (high/moderate/low confidence) on substantive claims; give rival interpretations
-comparable weight and say when they cannot be disentangled; confront counterintuitive
-results with candidate mechanisms. Explicit roadmaps ("The remainder of this chapter is
-organised as follows…"), numbered barriers/opportunities/requirements, stated
-contributions, pointer sentences to other chapters/repository. Results prose: quantified
-observation (figure-anchored) → "This indicates that…" → implication. Stakes shown with
-numbers and named events, never adjectives; no hype, jokes, exclamation or bullet-point
-argument. Never fabricate: mark lived material [AUTHOR: …] and unverified figures
-[verify]. Vendor-neutral. One sentence per line, unnumbered (STYLE.md §10).
+Write to one intelligent colleague from outside your specialism: address them as "you",
+use "I" where the judgement or experience is genuinely the author's own, and never write
+at an audience from a lectern. British English. Contractions allowed and used lightly
+("does not" and "doesn't" both fine; choose by ear). NOT breezy and NOT dumbed down: no
+hype, jokes, slang, exclamation or cliche; the reader should finish having understood
+something demanding.
+
+NEVER ANNOUNCE WHAT THE TEXT IS ABOUT TO DO. "The limitation of the procedure is that
+both properties are estimated in advance" becomes "The catch is that both of those
+questions are answered before the work starts". Cut every "The qualification worth
+stating is that...", "This has a concrete organisational consequence...". State the
+thing. LET THE CONCRETE CASE LEAD: where a passage has an abstraction and an example,
+the example goes first and the abstraction follows as the lesson drawn from it.
+
+Paragraphs roughly 80-200 words, one point each; a paragraph break may do rhetorical
+work. Open each on a real sentence carrying real content: topic sentence, short
+declarative, question, or the concrete case; never a fragment, throat-clear or
+cliffhanger. Sentences ~25 words, 30 maximum: split anything longer into two without
+dropping content.
+
+NO METAPHORS at all, in prose, captions or alt-text: state the mechanism literally.
+Defined technical terms (gate, loop, pipeline) and declared analogies under examination
+are not metaphors (SS12.2). No apologetic preambles ("described plainly enough to be
+useful here..."), no unbaselined comparatives ("far more X than any Y suggests"), no
+gravitas by abstraction ("carries the scientist's name and standing") - see SS12.1.
+
+No em dash as a connector: use a comma, colon, parentheses, a new sentence, or "e.g." /
+"i.e." / "such as" / "that is"; dashes only in fixed labels ("Figure 1.1 - ...",
+"Definition -"); en-dash ranges (2023-24) are fine. Enumerate in prose with parallel
+grammar; concede and resolve (every "However" is answered). Numbers over adjectives with
+baselines ("a twenty-fold increase"); synthesise literature, never list. Hedge once,
+precisely; certainty flags (high/moderate/low confidence) on substantive claims; give
+rival interpretations comparable weight; confront counterintuitive results with candidate
+mechanisms. Pointer sentences name what the destination contains. Results prose:
+quantified observation (figure-anchored) -> "This indicates that..." -> implication.
+Stakes shown with numbers and named events, never adjectives.
+
+Never fabricate: mark lived material [AUTHOR: ...] and unverified figures [verify];
+citations only from the verified reports in /research. Vendor-neutral. One sentence per
+line, unnumbered (STYLE.md SS10).
 ```
 
 ## 9. Definitions, info-boxes and the glossary
@@ -273,7 +276,7 @@ Do not open more than two consecutive paragraphs with the same connective, and n
 
 **British English throughout**, including captions, alt-text and repository docs: -ise endings, *whilst*, *amongst*, *behaviour*, *modelling*, *parametrisation*, *centre*; dates as "23 August 2021". Units and quantities are precise and SI; percentages, return periods, resolutions and lead times always take figures ("~31 km", "0.27%", "up to day 5").
 
-**No contractions.** Manuscript text never contracts: write "has not", "do not", "it is", "cannot"; never "hasn't", "don't", "it's", "can't". The rule binds body prose, info-boxes, captions and alt-text alike; verbatim quotations are exempt. (This is in any case the register of the thesis, which contains no contractions; the rule makes it explicit and checkable.)
+**Contractions are allowed, and used lightly.** "Does not" and "doesn't" both belong in this register, and the choice between them is made by ear: contract where the sentence is conversational and the contraction reads naturally, spell it out where the sentence is carrying weight or where the uncontracted form is simply clearer. Do not contract mechanically, and do not sweep a chapter converting one to the other. The rule applies equally to body prose, info-boxes, captions and alt-text. (This reverses the no-contractions rule that stood from v2.1 to v4.0; the academic register it belonged to was withdrawn on 26 July 2026.)
 
 ## 12. Anti-patterns
 
