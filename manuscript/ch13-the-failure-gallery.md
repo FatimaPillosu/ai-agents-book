@@ -1,6 +1,6 @@
 # Chapter 13 — The failure gallery
 
-> **Status:** draft r3 · voice v3.3 (`STYLE.md`) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r4 · voice v4.0-colloquial (`STYLE.md` §0) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > The six failure *types* and the *checks* that catch them are written in full here; the illustrative incidents are the author's real, anonymised cases, marked **[AUTHOR: …]** to be supplied, never invented.
 
@@ -8,23 +8,30 @@
 
 ## 13.1 Why the failures deserve a gallery
 
-This chapter argues that the failures of agentic workflows are few in kind, recurrent in form and catchable by design, and that this constitutes genuinely good news, because it means a research group is better served by a small taxonomy of failure, each mode paired with the check that catches it, than by an ever-growing catalogue of incidents.
-Chapter 1 set out the property that makes these systems unlike the instruments of established practice: they fail plausibly, producing output whose fluency is uncorrelated with its correctness.
-The ordinary human defence, distrusting work that *looks* wrong, barely helps here, because the work rarely looks wrong.
-The failures cannot therefore be managed by vigilance, since vigilance is exactly what fluency defeats; they can be managed only by a check that sits outside the system and returns a verdict that does not depend on the output looking right, which is the principle Chapter 1 introduces and Chapter 11 makes its centre of gravity.
-Each failure is therefore treated here as a matched pair: a durable description of the mode, which changes slowly because it follows from how the systems are built, and the check that catches it, which is the part a research group should actually implement.
-The incidents are illustration; the check is the deliverable.
+Agentic workflows fail in few kinds of ways, the same ways repeatedly, and every one of them can be caught by design.
+That is genuinely good news, because it means you are better served by a small taxonomy of failure, each mode paired with the check that catches it, than by an ever-growing catalogue of incidents.
+
+Chapter 1 set out the property that makes these systems unlike the instruments you are used to: they fail plausibly, producing output whose fluency tells you nothing about its correctness.
+The ordinary human defence, distrusting work that *looks* wrong, barely helps, because the work rarely looks wrong.
+So these failures cannot be managed by vigilance, since vigilance is exactly what fluency defeats.
+They can be managed only by a check sitting outside the system, returning a verdict that does not depend on the output looking right.
+That is the principle Chapter 1 introduces and Chapter 11 builds on.
+So each failure is treated here as a matched pair: a durable description of the mode, which changes slowly because it follows from how the systems are built, and the check that catches it, which is the part you should actually implement.
+The incidents are illustration.
+The check is the deliverable.
 The taxonomy is not a construction of this book alone: the largest empirical study of multi-agent failures to date, which annotated more than two hundred execution traces across seven popular frameworks and reached high inter-annotator agreement, sorts what it found into three broad families that map onto this gallery closely: poor task or role specification, breakdowns in passing information between steps, and absent or weak verification of outcomes (Cemri et al., 2025).
 
-The taxonomy that follows comprises six modes, chosen on two grounds.
-First, each mode recurs across the pattern chapters; second, each is caught by a *different* check, so that between them they exercise most of the verification machinery the book has built: fabricated citations, silent unit errors, specification drift, over-agreeable review, context loss and confident extrapolation.
-Each of the six sections states the mode and why it happens, marks the author's anonymised example of catching it, gives the check in an adoptable form, and places that check on the evidential hierarchy of Chapter 11, the ladder that runs from cheap mechanical confirmation at its base to independent operational corroboration at its top.
-The thread drawn together at the end (§13.8) is that five of the six modes are caught at or near the base of that ladder, by checks that are cheap, mechanical and unglamorous, and that the discipline the gallery really teaches is not sophistication but the refusal to skip the cheap check because the output reads well (high confidence).
+The taxonomy has six modes, chosen on two grounds.
+Each recurs across the pattern chapters, and each is caught by a *different* check, so between them they exercise most of the verification this book has built: fabricated citations, silent unit errors, specification drift, over-agreeable review, context loss and confident extrapolation.
+Each section states the mode and why it happens, marks the author's anonymised example of catching it, gives the check in a form you can adopt, and places that check on the evidential hierarchy of Chapter 11, which runs from cheap mechanical confirmation at the base to independent operational corroboration at the top.
+The thread pulled together at the end (§13.8) is that five of the six are caught at or near the base of that ladder, by checks that are cheap, mechanical and unglamorous.
+What the gallery really teaches is not sophistication but the refusal to skip the cheap check because the output reads well (high confidence).
 
 ## 13.2 Fabricated citations
 
-A fabricated citation is a reference an agent presents as real and specific (authors, title, year, venue, sometimes a plausible identifier) for a work that does not exist, or that exists but does not support the claim it is attached to.
-This is the single most reported failure of language models in scholarly work, and its persistence is not a training oversight but a direct consequence of how the systems produce text.
+A fabricated citation is a reference an agent presents as real and specific, with authors, title, year, venue and sometimes a plausible identifier, for a work that does not exist, or that exists but does not support the claim it is attached to.
+
+This is the most reported failure of language models in scholarly work, and it persists not through a training oversight but as a direct consequence of how these systems produce text.
 A reference is a highly patterned string, and a model that has learned the *shape* of citations in a field can generate new ones that fit the shape perfectly whilst corresponding to nothing, because the machinery that makes the string well-formed is the same whether or not a matching paper exists.
 The danger for science is specific and severe: a fabricated reference is plausible by construction, survives casual reading, and, once it enters a manuscript, a literature review or a funding proposal, lends borrowed authority to a claim that has none.
 Hence a fabricated reference cannot be caught by reading alone, because the property that would betray it, an ill-formed or implausible string, is exactly what the generating mechanism suppresses.
@@ -84,8 +91,9 @@ FIGURE BRIEF
 
 ## 13.3 Silent unit errors
 
-A silent unit error is a numerical result that is wrong by a physical factor (a conversion missed, a scale confused, a per-second quantity summed as though it were per-hour) that passes through the workflow with no signal at all, because the number that emerges is dimensionally unlabelled and superficially reasonable.
-This mode is treacherous in the environmental sciences precisely because the domain is dense with units that convert by unremarkable factors and with quantities whose plausible ranges overlap across scales.
+A silent unit error is a numerical result wrong by a physical factor, such as a conversion missed, a scale confused, or a per-second quantity summed as though it were per-hour, that passes through the workflow with no signal at all, because the number that comes out is dimensionally unlabelled and superficially reasonable.
+
+This one is treacherous in the environmental sciences precisely because the domain is full of units converting by unremarkable factors, and of quantities whose plausible ranges overlap across scales.
 A rainfall rate, a discharge, a flux and an accumulation all live within a few orders of magnitude of one another, so a wrong-by-a-factor result rarely announces itself by being absurd.
 Chapter 1 traced the root cause to the training distribution: a unit conversion buried mid-sentence in prose is sparsely and inconsistently represented, and multi-step quantitative reasoning done in prose rather than delegated to computation fails often enough to warrant a standing rule against it.
 Chapters 6 and 8 build their patterns on the same premise: an agent proposes numerical operations and a tool with explicit units disposes of them.
@@ -138,8 +146,10 @@ FIGURE BRIEF
 
 ## 13.4 Specification drift
 
-Specification drift is the gradual divergence, over a long or multi-turn interaction, between what an agent is actually optimising for and what the original specification asked, such that the workflow ends up solving a task adjacent to the intended one whilst every individual step looks responsive.
-This is a direct expression of the anti-pattern Chapter 3 named as the central hazard of specifying work: conversational drift in place of specification, in which the controlling intent migrates out of a written, auditable artefact and into an accreting chat history that no one re-reads.
+Specification drift is the gradual divergence, over a long or multi-turn interaction, between what an agent is actually working towards and what the original specification asked for.
+The workflow ends up solving a task next to the intended one, while every individual step looks responsive.
+
+This is a direct expression of the anti-pattern Chapter 3 named as the central hazard of specifying work: conversational drift in place of specification, where the controlling intent moves out of a written, auditable artefact and into an accumulating chat history nobody re-reads.
 It happens because each turn conditions on the recent exchange more strongly than on the initial instruction, so a sequence of individually reasonable accommodations (a redefinition here, a relaxed criterion there, a helpful reinterpretation of an ambiguous term) compounds into a destination the specification never authorised.
 Chapter 7 meets the same failure in pipeline work, where an agent asked to fix a failing test can drift into altering the test rather than the code, satisfying the letter of the request whilst inverting its purpose.
 The reason drift is dangerous is that it is invisible at every step: there is no single wrong action to catch, only a slow rotation of the target that is legible only against the original specification, held fixed.
@@ -197,10 +207,14 @@ FIGURE BRIEF
 
 ## 13.5 Over-agreeable review (sycophancy)
 
-Over-agreeable review is the tendency of a language model asked to evaluate, critique or check work to agree with the position it infers its user holds, to soften or withhold objections, and to rate work more favourably than an impartial assessment would, so that a review step returns reassurance rather than scrutiny.
-The behaviour is documented in the research literature under the name sycophancy (Sharma et al., 2023), and its mechanism is now well characterised rather than anecdotal.
+Over-agreeable review is what happens when a language model asked to evaluate, critique or check work agrees with the position it thinks you hold, softens or drops objections, and rates the work more favourably than an impartial assessment would.
+The review step returns reassurance instead of scrutiny.
+
+The research literature documents the behaviour under the name sycophancy (Sharma et al., 2023), and its mechanism is well characterised rather than anecdotal.
 Analysing the human-preference data these models are tuned on, the same study found that a response *matching the user's stated view* is among the strongest predictors of human approval, and that optimising against a preference model can actively increase agreement: human feedback itself, imperfectly, rewards agreeing over telling the truth.
-The mode is especially corrosive in a scientific workflow because review is the load-bearing check in much of this book (Chapter 10 makes an independent reviewer agent a first-class role, and Chapter 7 places one before any human code review), and a reviewer that agrees by disposition provides the *appearance* of an independent check whilst supplying none of its substance.
+This does particular damage in a scientific workflow, because review is the check much of this book rests on.
+Chapter 10 makes an independent reviewer agent a full role, and Chapter 7 puts one before any human code review.
+A reviewer that agrees by disposition provides the *appearance* of an independent check and none of its substance.
 A sycophantic reviewer is worse than no reviewer, because no reviewer leaves the gap visible whereas a sycophantic one fills it with false assurance, which is precisely what a verification step exists to prevent.
 
 > **Definition — Over-agreeable review (sycophancy).** A model asked to check work tends to
@@ -259,8 +273,10 @@ FIGURE BRIEF
 
 ## 13.6 Context loss
 
-Context loss is the failure in which an agent silently drops, truncates or overwrites information it needs (an earlier constraint, an intermediate result, a correction issued turns ago) and then reasons confidently from the incomplete state as though it were complete, producing an output that is wrong not through faulty reasoning but through a missing premise.
-The mode follows directly from the anatomy of Chapter 2: an agent's working context is finite, its memory across steps is a designed and imperfect mechanism rather than a faithful record, and information that falls outside the window or is never written to persistent state is simply gone, with no error raised because the system cannot miss what it no longer represents.
+Context loss is when an agent silently drops, truncates or overwrites something it needs, such as an earlier constraint, an intermediate result or a correction issued several turns ago, and then reasons confidently from the incomplete state as though it were complete.
+The output is wrong not through faulty reasoning but through a missing premise.
+
+This follows directly from the anatomy of Chapter 2: an agent's working context is finite, its memory across steps is a designed and imperfect mechanism rather than a faithful record, and information that falls outside the window or is never written to persistent state is simply gone, with no error raised because the system cannot miss what it no longer represents.
 It is common in exactly the long, valuable workflows this book has been encouraging (a multi-day reprocessing, a synthesis over many documents, a pipeline with many stages), and it is compounded in the multi-agent workflows of Chapter 10, where information has to survive being handed between agents whose contexts do not overlap.
 That handoff is one of the failure families the large multi-agent study isolates: information lost or withheld as it passes between steps, which it finds among the commonest breakdowns in multi-agent runs (Cemri et al., 2025).
 The characteristic signature is an output that contradicts a constraint the workflow certainly established earlier, delivered with no sign that the constraint was ever known.
@@ -328,8 +344,9 @@ FIGURE BRIEF
 
 ## 13.7 Confident extrapolation
 
-Confident extrapolation is the delivery of a claim, prediction or generalisation that reaches beyond what the inputs support (outside the range of the data, past the domain of a fitted relationship, or into a regime the evidence never covered), expressed in the same assured register as a well-supported result, with no signal that the ground has run out.
-This is the sharpest instance of the plausible-failure property of Chapter 1, because the fluency that makes all of these systems' output convincing is at its most dangerous exactly where the output is least warranted: an extrapolation reads no differently from an interpolation, and the register of confidence is uniform whether the claim rests on abundant evidence or none.
+Confident extrapolation is a claim, prediction or generalisation reaching beyond what the inputs support, whether outside the range of the data, past the domain of a fitted relationship, or into a regime the evidence never covered, delivered in exactly the same assured tone as a well-supported result and with no signal that the support has run out.
+
+This is the sharpest case of the plausible-failure property of Chapter 1, because the fluency that makes all of these systems' output convincing is at its most dangerous exactly where the output is least warranted: an extrapolation reads no differently from an interpolation, and the register of confidence is uniform whether the claim rests on abundant evidence or none.
 It is the failure that most threatens the experimentation and hypothesis-generation work of Chapter 8, where an agent asked to interpret a calibration, propose a mechanism or generalise from a result can produce a claim that is coherent, publishable in tone and unsupported by the data in hand, and where the model-assisted hypothesis, as that chapter insists, is admissible only when explicitly flagged as exploratory and routed to independent test.
 Located in the standard taxonomy of hallucination, it is a factuality failure of a particular kind: not an invented fact but an unwarranted reach past the evidence, which the register of confidence hides (Huang et al., 2023).
 Confident extrapolation is where an instrument that cannot judge its own correctness does the most damage, because the scientist's trained scepticism is disarmed by the very fluency that should trigger it.
@@ -387,8 +404,10 @@ FIGURE BRIEF
 
 ## 13.8 Reading the gallery
 
-The single lesson that runs through all six modes is that plausible failure is defeated by external mechanism and by nothing else, so the value of the gallery lies in the checks it standardises rather than in the incidents it recounts.
-Read across the six, a common structure is visible: each failure produces an output that looks right, each defeats the reader's judgement precisely *because* it looks right, and each is caught not by looking harder but by a check whose verdict does not depend on appearance: a resolver, a range assertion, a comparison to a fixed specification, an engineered-independent review, a consistency assertion against externalised state, a comparison of claim-scope to evidence-scope.
+One lesson runs through all six modes: plausible failure is defeated by external mechanism and by nothing else.
+So the value of this gallery is in the checks it standardises, not the incidents it recounts.
+
+Read across the six and a common structure appears: each failure produces an output that looks right, each defeats the reader's judgement precisely *because* it looks right, and each is caught not by looking harder but by a check whose verdict does not depend on appearance: a resolver, a range assertion, a comparison to a fixed specification, an engineered-independent review, a consistency assertion against externalised state, a comparison of claim-scope to evidence-scope.
 Five of the six checks sit at or near the base of Chapter 11's evidential hierarchy: they are cheap, mechanical and unglamorous, and they are the checks most often skipped for exactly that reason, because a fluent output invites the belief that the cheap check is unnecessary this time.
 The discipline the gallery teaches is the refusal of that belief: the standing rule that the check is run because it is cheap and the failure is silent, not because the output looks doubtful, since by construction it will not (high confidence).
 
