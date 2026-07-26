@@ -1,6 +1,6 @@
 # Chapter 14 — Verification under constraint
 
-> **Status:** draft r3 · voice v3.3 (`STYLE.md`) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r4 · voice v4.0-colloquial (`STYLE.md` §0) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > This chapter reports executed operational work; concrete partner details, datasets, metrics, hardware, results and outcomes are the author's lived material and are tagged **[AUTHOR: …]**.
 
@@ -8,9 +8,11 @@
 
 ## 14.1 The setting: verification that cannot see the observations
 
-The case study this chapter takes up is an ordinary problem made difficult by a single constraint that reshapes everything downstream: the observations against which a rainfall forecast must be judged cannot leave the institution that holds them.
-Rainfall verification is, in its mechanics, among the better-understood tasks in operational meteorology: a forecast field is compared against gauge or radar observations, and a set of scores summarises how well the two agree over some period and area.
-The difficulty here is not the arithmetic but the data policy around it, because the partner organisations whose forecasts most need independent verification are frequently the ones least able to release their observational record.
+This case study is an ordinary problem made difficult by one constraint that reshapes everything after it: the observations a rainfall forecast has to be judged against cannot leave the institution that holds them.
+
+Mechanically, rainfall verification is among the better-understood tasks in operational meteorology.
+Compare a forecast field against gauge or radar observations, and a set of scores summarises how well the two agree over some period and area.
+The difficulty is not the arithmetic but the data policy around it, because the partner organisations whose forecasts most need independent verification are often the ones least able to release their observational record.
 This matters more, not less, as forecasting itself moves towards data-driven methods: machine-learning weather models crossed the credibility threshold in 2022–23 and, by early 2025, an operational centre was running one on duty alongside its physics-based system, verified in operational-like conditions before it was trusted (Lam et al., 2023; Bi et al., 2023; Lang et al., 2024).
 National meteorological and hydrological services in many jurisdictions hold rain-gauge data under licences, memoranda or national regulations that prohibit its transfer to an external party, and the reasons are legitimate rather than obstructive: gauge networks are sometimes commercially licensed, sometimes bound by bilateral agreements, and sometimes protected as a matter of national sovereignty over environmental data **[AUTHOR: state the specific data-sovereignty basis for the partner(s) in this case — e.g. national data policy, commercial licensing of the gauge network, a WMO data-exchange category — and the region or programme this work served]**.
 The consequence is a standing asymmetry: the expertise, the reference forecasts and the verification methodology sit on one side, and the observations that would exercise them sit on the other, behind a boundary that cannot be crossed by moving the data.
@@ -20,15 +22,20 @@ The consequence is a standing asymmetry: the expertise, the reference forecasts 
 > who may move it, are governed by that holder's rules rather than by whoever wants to use it.
 > For observational records it often means the numbers may be worked on, but not taken away.
 
-The conventional resolution of this asymmetry is to move the data anyway, under a data-sharing agreement negotiated case by case, and this resolution fails often enough in practice to be worth designing around rather than depending upon.
-Negotiating egress for a research observation set can take months, binds both parties to terms that constrain reuse, and frequently ends without agreement because the holding institution cannot accept the residual risk of releasing a record it is obliged to protect **[AUTHOR: the specific negotiation history or timeline that motivated the constrained approach — how long an egress route was attempted, and why it was set aside]**.
-The design response developed here inverts the usual direction of movement: rather than bringing the observations to the verification tools, it brings the verification tools to the observations, packaged so that they run entirely inside the partner's own environment and emit only what the partner chooses to share, typically aggregate scores, never the underlying records.
-That inversion is the organising decision of the whole toolkit, and the three constraints it must satisfy (no data egress, minimal compute, no recurring budget) are the subject of the next section, because each of them independently pushes the design towards the same three-tier shape.
+The conventional answer is to move the data anyway, under a data-sharing agreement negotiated case by case, and it fails often enough in practice to be worth designing around rather than depending on.
+Negotiating egress for a research observation set can take months, binds both parties to terms that constrain reuse, and frequently ends without agreement, because the holding institution cannot accept the residual risk of releasing a record it is obliged to protect **[AUTHOR: the specific negotiation history or timeline that motivated the constrained approach — how long an egress route was attempted, and why it was set aside]**.
+So the design here reverses the usual direction of movement.
+Instead of bringing the observations to the verification tools, it brings the verification tools to the observations, packaged to run entirely inside the partner's own environment and to emit only what the partner chooses to share, which is typically aggregate scores and never the underlying records.
+That reversal is the organising decision of the whole toolkit.
+The three constraints it has to satisfy, meaning no data egress, minimal compute and no recurring budget, are the next section, because each of them independently pushes the design towards the same three-tier shape.
 
 ## 14.2 Three constraints that determine the architecture
 
-The architecture of the toolkit is not a free design choice but a fairly direct consequence of three constraints, each of which would on its own rule out a large part of the conventional solution space, and which together leave only a narrow set of workable designs.
-The first constraint is that no observational data may leave the partner's environment, which forecloses every approach that relies on a hosted service, a cloud-based model endpoint or any tool that transmits inputs off-site for processing (high confidence; this is a hard requirement, not a preference).
+The architecture is not a free design choice.
+It follows fairly directly from three constraints, each of which on its own rules out a large part of the conventional solution space, and which together leave only a narrow set of workable designs.
+
+The first is that no observational data may leave the partner's environment.
+That rules out every approach relying on a hosted service, a cloud-based model endpoint or any tool that sends inputs off-site for processing (high confidence; this is a hard requirement, not a preference).
 The practical force of this constraint is easily underestimated: it excludes not only the obvious case of uploading gauge records to an external analysis platform, but also the subtler case of sending observation-derived text (an error summary, a flagged station list, a data excerpt) to a model accessed over a network, because such text can carry exactly the information the data policy protects.
 Anything that reasons over the observations must therefore execute locally, within the trust boundary the partner already controls, and this single requirement is what forces the language-model component, where it exists at all, to be an open-weight model running on the partner's own hardware rather than a hosted one (which connects directly to the least-privilege and data-handling arguments of Chapter 12).
 
@@ -41,9 +48,10 @@ The same two conclusions circulate independently in practitioner commentary: tel
 
 The second constraint is minimal compute, because the partner environments in view here are not equipped with the accelerators or the memory that a large hosted model assumes, and a toolkit that demands them would simply not run where it is needed **[AUTHOR: specify the representative hardware the toolkit was required to run on — CPU-only versus a single consumer GPU, approximate memory, whether an internet connection was available at all]**.
 The third constraint is the absence of any recurring budget: the toolkit had to keep working after the project that funded its construction ended, without per-query charges, subscription renewals or licence fees that a partner with no dedicated software budget could not sustain (moderate-to-high confidence that this is decisive for adoption; the cost reasoning is developed in Chapter 16).
-These three constraints converge on a common conclusion.
-A verification result that partners will trust and report must be exact, reproducible and free of any dependence on a fallible or metered external service; anything that merely explains, teaches or guides is valuable but must never be allowed to alter that result, and must degrade gracefully to nothing if the compute to run it is unavailable.
-That separation (an exact core that always runs, and an optional advisory layer that sometimes runs and never decides) is the seam along which the three tiers are cut, and the following three sections take each tier in turn.
+All three constraints point at the same conclusion.
+A verification result partners will trust and report has to be exact, reproducible, and free of any dependence on a fallible or metered external service.
+Anything that merely explains, teaches or guides is valuable, but it must never be allowed to alter that result, and it must degrade gracefully to nothing when the compute to run it is unavailable.
+That separation, an exact core that always runs and an optional advisory layer that sometimes runs and never decides, is where the three tiers divide, and the next three sections take each in turn.
 
 **Figure 14.1 — The three-tier toolkit under constraint.**
 
@@ -86,11 +94,14 @@ FIGURE BRIEF
 
 ## 14.3 The deterministic core: verification that never guesses
 
-The foundation of the toolkit is a deterministic verification core that computes standard rainfall-verification scores by fixed algorithms, producing the same numbers from the same inputs every time it runs, and this determinism is a deliberate design commitment rather than an implementation detail.
+The foundation is a deterministic verification core that computes standard rainfall-verification scores by fixed algorithms, producing the same numbers from the same inputs every time it runs.
+That determinism is a deliberate design commitment, not an implementation detail.
 Rainfall forecasts are verified with a well-established and stable set of measures, and the core implements the subset appropriate to the partner's forecasts and decisions: for categorical forecasts of exceedance above a threshold, the contingency-table scores — probability of detection, false-alarm ratio, frequency bias and a threat or equitable-threat score; for continuous fields, mean error, mean absolute error and root-mean-square error; and, where the forecast is probabilistic or ensemble-based, reliability and a proper score such as the Brier score or the continuous ranked probability score, together with the spatial measures (neighbourhood or fractions-based) that avoid the double-penalty problem of point matching **[AUTHOR: state which scores the toolkit actually computes for this partner, the exceedance thresholds and accumulation periods used, and why those were the operationally relevant choices]** [verify: standard references for these scores, e.g. Jolliffe & Stephenson; Wilks — confirm editions before release].
 None of these measures involves a language model, a learned component or any stochastic element; each is a closed-form calculation over the matched forecast–observation pairs, and this is exactly what allows a partner to report the output as an official figure and to reproduce it independently.
 
-The reason to hold verification deterministic whilst admitting a language model elsewhere in the toolkit is the argument made across Chapter 11, and it is worth restating in this concrete setting: a verification result is a measurement, and a measurement whose value could change because a generative model was in a different mood is not a measurement at all.
+Why hold verification deterministic while allowing a language model elsewhere in the toolkit?
+The argument is Chapter 11's, and it is worth restating concretely.
+A verification result is a measurement, and a measurement whose value could change because a generative model produced something slightly different this time is not a measurement at all.
 The evidential weight a verification score has to carry (informing whether a forecast system is fit for issuing warnings, or whether one configuration outperforms another) depends on the score being a fixed function of the data, auditable line by line and defensible to a regulator or a sceptical colleague who re-runs it (high confidence).
 This is exactly the discipline the meteorological community has applied to the new data-driven models themselves: when an operational centre assessed a machine-learning forecast model, it did so in an operational-like context, initialised from operational analyses, verified against both analyses and station observations with its own standard metrics, and reported the model's genuine strengths alongside documented weaknesses such as smoothing and the underestimation of some extremes (Ben Bouallègue et al., 2024).
 Introducing a model into the scoring path would import precisely the failure mode this book treats as central: plausible, fluent output uncorrelated with correctness, in a place where a wrong number is worse than no number because it looks authoritative.
@@ -99,7 +110,8 @@ The boundary between these two is the toolkit's most important design line, and 
 
 ## 14.4 The tutoring tier: an open-weight model that explains but does not decide
 
-The optional middle tier is a local, open-weight language model whose entire remit is to explain the verification output and guide the user's next action, and its defining constraint is negative: it computes no score, alters no score, and produces nothing that is reported as a result.
+The optional middle tier is a local, open-weight language model whose whole job is to explain the verification output and guide the user's next action.
+Its defining constraint is negative: it computes no score, alters no score, and produces nothing that gets reported as a result.
 The reason to include a language model at all in a verification toolkit is that the users are frequently not verification specialists, and a table of contingency scores is opaque to someone who has not internalised what a false-alarm ratio of 0.4 alongside a probability of detection of 0.9 actually implies for their forecast **[AUTHOR: characterise the intended users — forecasters, hydrologists, technicians — and their prior familiarity with verification scores]**.
 The tutoring tier reads the scores the core has already computed, together with the fixed definitions of those scores, and produces plain-language explanation: what each number means, which scores are in tension, what a plausible next diagnostic step would be, and what the result does not license the user to conclude.
 Running an open-weight model locally is what makes this admissible under the first constraint, because the model never transmits anything off-site; it also makes the tier free to run under the third constraint, since an open-weight model on the partner's own hardware carries no per-query charge (moderate confidence that a model small enough for the target hardware is nonetheless competent at this bounded explanatory task, the kind of claim that must be re-tested per model, and the energy cost of local inference is treated in Chapter 16) **[AUTHOR: name the capability class and approximate parameter scale of the open-weight model used, the year, and the observed quality of its explanations on real cases — including any cases where its explanation was wrong and how that was caught]**.
@@ -150,7 +162,8 @@ FIGURE BRIEF
 
 ## 14.5 The escalation tier: when explanation is not enough
 
-The third tier is a team-side escalation route for the cases that the deterministic core and the local tutoring tier cannot between them resolve, and it is defined as much by what it does not carry across the boundary as by what it provides.
+The third tier is a team-side escalation route for cases the deterministic core and the local tutoring tier cannot resolve between them.
+It is defined as much by what it does not carry across the boundary as by what it provides.
 Some verification results raise questions that a non-specialist user, even a well-tutored one, should not resolve alone: an unexpected score pattern that might indicate a data problem rather than a forecast problem, a methodological choice about which threshold or accumulation period is appropriate, or a result whose operational implications are serious enough to warrant a specialist's judgement **[AUTHOR: give a representative example of a case that was escalated and what the escalation resolved — ideally one where escalation caught something the local tiers would have got wrong]**.
 The escalation tier exists so that these cases reach the team that built and maintains the toolkit, and its critical property is that the escalation carries only what the partner is permitted to share (the aggregate scores and the user's question) and never the observations themselves, which remain inside the trust boundary exactly as they do during ordinary use.
 This is the same egress line drawn in §14.2, now enforced at the one point in the workflow where information deliberately crosses it: a person asks another person a question, mediated by shared aggregate figures, which is a channel the partner's data policy already contemplates because it is how professional collaboration has always worked.
@@ -162,7 +175,8 @@ The escalation tier is therefore not a fallback to be engineered away in a later
 
 ## 14.6 The toolkit as a teaching instrument
 
-A consequence of the three-tier design that was not its original purpose is that the toolkit functions as a teaching instrument, and this dual role turned out to be among its more durable contributions **[AUTHOR: confirm whether the teaching use was anticipated from the outset or emerged in use, and how central it became]**.
+The three-tier design turned out to do something it was not built for: it teaches.
+That second role turned out to be among the toolkit's more durable contributions **[AUTHOR: confirm whether the teaching use was anticipated from the outset or emerged in use, and how central it became]**.
 The mechanism is straightforward once the tiers are in place: a user who runs the deterministic core sees exact, trustworthy scores; the tutoring tier then explains those scores in the user's own context, against their own forecasts, rather than through a generic textbook example; and over repeated use the user internalises the meaning of the measures and needs the tutoring tier less.
 Verification is a skill that has historically been difficult to disseminate to partner organisations precisely because it is learned through worked exposure to real cases, and the observations that make a case real are the ones that cannot be shared, so the conventional routes, a training workshop built on someone else's data or a manual full of generic examples, teach the mechanics without the judgement (moderate confidence; this reflects the recurring difficulty of transferring verification practice, and the specific gap this toolkit addressed) **[AUTHOR: describe the prior state of verification capability at the partner organisation and what changed as the toolkit was used — ideally with a concrete before-and-after]**.
 Because the toolkit brings the teaching to the data instead of the data to the training, each partner learns on the material that matters to them, inside their own boundary, at no marginal cost.
@@ -223,10 +237,12 @@ FIGURE BRIEF
 
 ## 14.7 What the constraints taught
 
-The broadest lesson of this case study is that treating hard constraints as design inputs rather than obstacles produced an architecture that is better on dimensions the constraints were not aimed at, and this must be stated carefully because it is easily mistaken for a claim that constraints are always beneficial, which they are not.
+The broadest lesson here is that treating hard constraints as design inputs rather than obstacles produced an architecture that is better along dimensions the constraints were not aimed at.
+State that carefully, because it is easily mistaken for a claim that constraints are always beneficial, which they are not.
 The requirement of no data egress forced a local, open-weight model and a strict separation between an exact core and an advisory tier; the requirement of minimal compute forced that advisory tier to be small and optional; and the requirement of no recurring budget forced the whole toolkit to be self-sustaining after handover.
 Each of these was a limitation accepted under duress, and yet the design they jointly produced (deterministic where the evidence must be defensible, advisory only where a mistake is recoverable, and human where judgement is irreducible) is close to the design one would argue for on governance grounds alone, which is the argument made throughout Parts II and III of this book **[AUTHOR: state the concrete outcomes actually observed — how many partners adopted the toolkit, over what period, whether verification that was previously not happening began happening, and any measured change in forecast-verification practice; keep the claims to what was measured]**.
-The convergence of a governance-first design and a constraint-first design is the finding this chapter most wants to leave, because it suggests that the discipline the well-resourced can *choose* to adopt, the under-resourced are *forced* into, and the forced version is not obviously worse.
+That a governance-first design and a constraint-first design converge is the finding this chapter most wants to leave you with.
+The discipline the well-resourced can *choose* to adopt, the under-resourced are *forced* into, and the forced version is not obviously worse.
 
 The limitation of this case study, stated plainly, is that it is a single deployment in a specific setting, and its architecture should be treated as a transferable pattern rather than its results as a general proof.
 The three-tier shape (an exact core, an optional local advisory tier that only explains, and a human escalation route that carries no protected data) generalises to any setting where a trustworthy computation must run beside data that cannot move and beside users who need help interpreting the output, which describes a large class of environmental-science collaborations beyond rainfall verification.
@@ -244,6 +260,5 @@ The connection back to the rest of the book is direct: this chapter is Chapter 1
 - Lang, S., Alexe, M., Chantry, M., et al. (2024). AIFS — ECMWF's data-driven forecasting system. *arXiv preprint* **[verify journal version]**. https://arxiv.org/abs/2406.01465
 - Jolliffe, I. T., & Stephenson, D. B. (eds.). *Forecast Verification: A Practitioner's Guide in Atmospheric Science*. Wiley. **[verify: edition and year]**
 - Wilks, D. S. *Statistical Methods in the Atmospheric Sciences*. Academic Press / Elsevier. **[verify: edition and year]**
-- Nate B Jones (2026). "I Cut the Internet and Let AI Read the File I Could Never Upload." Video, @natebjones, 19 July 2026. https://www.youtube.com/watch?v=5slsNizN6MQ (practitioner commentary; concepts cited as corroboration, not evidence)
-[ai-reviewer: two format defects against the other chapters' video entries. First, the creator is given as "Nate B Jones" here (and in FURTHER-READING) but as "Jones, N. B." in ch02 and ch03 — one surname convention must be chosen and applied everywhere, including FURTHER-READING §Practitioner commentary. Second, the R-3 report records the full title as "I Cut the Internet and Let AI Read the File I Could Never Upload. It Caught the Leak." — the truncated title should be completed or the truncation checked against the source.]
+- Jones, N. B. (2026). "I Cut the Internet and Let AI Read the File I Could Never Upload. It Caught the Leak." Video, @natebjones, 19 July 2026. https://www.youtube.com/watch?v=5slsNizN6MQ (practitioner commentary; concepts cited as corroboration, not evidence)
 - **[AUTHOR: add the specific verification-methodology references the toolkit's scores are drawn from — e.g. the primary sources for the fractions skill score and the continuous ranked probability score — and any WMO data-policy document cited for the sovereignty constraint.]**
