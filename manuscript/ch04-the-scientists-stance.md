@@ -47,12 +47,14 @@ Here is the question to ask before any of this goes live.
 Not "can the agent do this?", but "what happens to an error the agent makes here, and who answers for it?".
 The first question is about capability, and capability isn't what decides the matter.
 A plausible failure (Chapter 1) survives however good the agent gets.
-The second question is about whether the failure would be caught, and what it would cost if it weren't, and you can answer it with the specification (Chapter 3) and verification (Chapter 11) practices your group already has.
+The second question is about whether the failure would be caught, and what it would cost if it weren't.
+You can answer that one with the specification (Chapter 3) and verification (Chapter 11) practices your group already has.
 Commercial framing and early scientific enthusiasm both have this the wrong way round.
 They treat automation as the goal and augmentation as a stage on the way there.
-It runs the other way: automation is the special case, allowed only where a task has been shown to tolerate the loss of human judgement, and augmentation is the default for most scientific work.
+It runs the other way.
+Automation is the special case, allowed only where a task has been shown to tolerate the loss of human judgement, and augmentation is the default for most scientific work.
 
-There is also evidence that more machinery is not automatically better.
+There is also evidence that a more elaborate agent is not automatically a better one.
 Researchers benchmarked elaborate agent architectures against a plain model wrapped in a basic retry loop.
 On a standard coding task the simple baseline matched them, at a fraction of the cost (Kapoor et al., 2024).
 Autonomy is a cost you have to justify, not a good in itself.
