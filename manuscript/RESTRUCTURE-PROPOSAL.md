@@ -1,34 +1,78 @@
-# Restructure proposal
+# Restructure plan
 
-**v0.1 · 27 July 2026 · ai-editor · PROPOSAL ONLY, nothing executed.**
+**v1.0 · 27 July 2026 · ai-editor · APPROVED BY THE AUTHOR. Not yet executed.**
 
-This document proposes changes.
-It does not make them.
-No chapter file, no admin document and no DECIDED item has been altered.
-Everything below waits on the author's decision.
+The author approved this plan in full on 27 July 2026, including every item that required changing a DECIDED entry.
+The approval record is §0 below.
+This document is now the plan that ai-writer executes and ai-reviewer reviews against.
 
-Where a proposal would require changing a DECIDED item in `CLAUDE.md` or outline §9, it is marked **[DECIDED ITEM — needs your explicit instruction]**.
+**Nothing has been executed yet.**
+No chapter file, `CLAUDE.md`, `STYLE.md`, `FIGURES.md` or `OUTLINE.md` has been edited.
+Where this document says what an admin document "will say", that wording is decided and awaits Stage 1.
+
+---
+
+## 0. Approval record (27 July 2026)
+
+The author's instruction of 27 July 2026 approved all six decisions, added one, and changed one.
+
+**Approved as proposed.**
+
+1. The Ch. 4 merge into Ch. 1, and the new Ch. 4 on harness and loop engineering.
+2. The harness chapter in Part I, after specification.
+3. The living layer re-scoped to source, research reports, further reading and per-release errata.
+4. Appendix A (verification checklists) and Appendix B (specification schema).
+5. The length budget restated at around 200 to 210 pages.
+6. The figure-brief extraction to `/figure-briefs`.
+
+**Changed from the proposal.**
+
+Ch. 17 is **removed**, not merged.
+The proposal offered merging it into Ch. 16; the author instructed removal.
+§1 below resolves what that means in practice, section by section.
+
+**Added.**
+
+A **Preface**.
+§6 below proposes the types, recommends one, and gives its brief.
+
+### DECIDED items changed by this approval
+
+Each of the four items below was DECIDED and is changed on the author's explicit instruction of 27 July 2026.
+`CLAUDE.md` and outline §9 must record that date and that authority, so a future agent reading only the admin documents can see why a DECIDED item moved.
+
+| DECIDED item, as it stood | What it now says | Authority |
+|---|---|---|
+| "exercises live in `/exercises`, not the page budget" | Exercises are not in this release. The companion-repository build-out stays parked and the manuscript no longer refers to it. | Author, 27 Jul 2026 |
+| "full chapter anatomy binds Part II only, with Ch. 11 and Ch. 12 still owing verification checklists and repository pointers" | The anatomy's seventh section is **"Adapting the pattern"**, not "repository pointer". Ch. 11 and Ch. 12 owe a verification checklist only. The fourth section is "worked example **or worked design**". | Author, 27 Jul 2026 |
+| "unified repository with newsletter as update channel" | Not reversed. The repository's contents are now stated: Markdown source, `/research` reports, further reading, figure briefs, per-release errata. No runnable code, prompts, checklists, case studies or exercises. | Author, 27 Jul 2026 |
+| "single ~150 pp volume" | Restated at **≈200 to 210 pages**, ≈62,000 to 66,000 words of body prose. Budgets remain indicative guidance. | Author, 27 Jul 2026 |
+
+One further DECIDED item is **narrowed, not reversed**: "de-duplication now, one canonical home per recurring idea". It is the basis for cutting Ch. 17 §17.2, which recapitulates five arguments that each have a canonical home elsewhere.
 
 ---
 
 ## Executive summary
 
-Seventeen chapters is roughly the right number, but it is the wrong seventeen.
-One chapter (Ch. 4, the scientist's stance) is section-sized rather than chapter-sized, and it duplicates Ch. 1 §1.4.
-Fold it into Ch. 1.
-That frees the number 4 for the material genuinely missing: a dedicated chapter on harness and loop engineering, placed after specification, as the last chapter of Part I.
-Net count stays at 17, and Chapters 5 to 17 keep their numbers, so no downstream cross-reference or figure identifier moves.
+Sixteen chapters, not seventeen.
+Ch. 4 (the scientist's stance) is section-sized and duplicates Ch. 1 §1.4, so it folds into Ch. 1, freeing the number for a new Ch. 4 on harness and loop engineering.
+Ch. 17 is removed: of its four sections, one is deleted by the repository decision, one recapitulates material that has canonical homes elsewhere, and only §17.3 carries new argument, which moves to Ch. 16.
+Chapters 5 to 16 keep their numbers, so no downstream cross-reference or figure identifier moves.
+Part V does not survive as a part; Ch. 16 becomes a closing chapter after Part IV.
 
 Remove the eight repository-pointer sections and replace each with a short "Adapting the pattern" section.
-Promote the eight verification checklists to a printed appendix, which is the honest version of a promise the parked repository was carrying.
-Move all 51 figure briefs out of the chapters into `/figure-briefs`, leaving the image, the caption and the alt-text in place, because those three are published text and the brief is production material.
+Promote the eight verification checklists to a printed appendix.
+Move all 51 figure briefs out of the chapters into `/figure-briefs`, leaving the image, the caption and the alt-text in place.
 
-One thing you may not have priced.
-The manuscript is 66,100 words of body prose against a 38,000 to 42,000 indicative budget, roughly 1.65 times over, and this restructure is the cheapest moment to decide whether that stands.
+A **Preface** opens the book, absorbing the contribution statement and the disclosure statement from ch00, opening on a concrete moment from operational practice and closing on how the book was made.
+Recommended type is a hybrid: origin, then scope, then reflexive disclosure.
+
+Net effect on length: about eleven pages out, about five in.
 
 ---
 
 ## What I read, and four measurements that shape everything below
+
 
 Read in full: `CLAUDE.md`, `manuscript/OUTLINE.md` v0.5, `FIGURES.md` v2.0, `manuscript/ch02`, the relevant sections of `STYLE.md`, `REVISION-PLAN.md` §2 and `RESEARCH-INTEGRATION-PLAN.md` §§1–2.
 Skimmed: every chapter file ch00 to ch17, by headings, status headers, opening sections, all eight repository-pointer sections, all 51 captions, and the sections named in the analysis below.
@@ -67,7 +111,7 @@ The outline is the document declared authoritative, and it describes a project s
 
 ---
 
-## 1. Are 17 chapters too many?
+## 1. Chapter count and merges
 
 ### The honest answer
 
@@ -135,24 +179,64 @@ The Kapoor citation is kept in Ch. 10 only, with a pointer from Ch. 1.
 
 **Cost.** Ten "Chapter 4" cross-references across ch01, ch03, ch04, ch10, ch11 and ch17. One SVG renamed. One entry moved in `figures-src/f_ch00_01.py`. Ch. 1 §1.5 and ch00's "How to read this book" both rewritten, because both hard-code the chapter map.
 
-### Merge 2 — Ch. 17 into Ch. 16. Defensible, offered as an option, not recommended.
+### Ch. 17 — removed. What survives, and where it goes.
 
-Ch. 17 is 2,043 words and about to get smaller.
-Its §17.4 is titled "The repository as the living layer", and point 3 below removes most of what that section promises.
-After that removal, Ch. 17 is around 1,500 words, which is smaller than the Ch. 4 you would just have merged away for being too small.
-Consistency says treat them the same.
+The author instructed removal rather than the merge the proposal offered.
+That is the right call, and going through Ch. 17 section by section shows why: only one of its four sections carries argument that exists nowhere else.
 
-The counter-argument is real.
-A book needs an ending, and Ch. 17's job is rhetorical as well as informational.
-Merging it into a practical thirty-day plan puts a reflective closing argument inside a chapter about what to do on day nine, and weakens both.
+**§17.1 "Two layers moving at two speeds" (about 700 words, plus Figure 17.1).**
+Cut.
+The whole section argues the print and repository division, and decision 3 re-scopes that division to something much smaller.
+Figure 17.1 is deleted outright by decision 3, along with its brief and its rendered SVG.
+The two-clocks argument survives in one sentence in the rewritten ch00 living-book paragraph, which is where a reader needs it.
 
-**Proposal.**
-Keep Ch. 17 as a separate closing chapter, rewritten around a narrower claim (see point 3), and accept that it is short.
-A five-page closing chapter is a normal thing for a book to have, in a way that a five-page chapter in the middle of Part I is not.
+**§17.2 "The principles that will last" (about 600 words).**
+Cut.
+This is five compressed restatements of arguments whose canonical homes are Ch. 1 (agent as instrument, and what never transfers), Ch. 3 (specification), Ch. 11 (external verification) and the new Ch. 4 material on when not to delegate.
+De-duplication to one canonical home is DECIDED, and a chapter whose function is to say all of it again is exactly what that rule exists to prevent.
+It is also the section most exposed to the length finding: 600 words that teach nothing new.
 
-**If you want a leaner book**, merge it, producing **Ch. 16 — Starting, and staying current**, and reduce Part V to a single chapter.
-That saves about four pages and takes the count to 16.
-I would take this only if you also decide to cut length overall, in which case it is consistent with that decision rather than a change on its own.
+**§17.3 "Staying current by principle, not by release" (about 550 words).**
+**Keep, and move to Ch. 16 as a new closing section.**
+This is the only genuinely new material in the chapter.
+The filter it proposes is practical and has no home anywhere else: translate every announcement into the book's vocabulary before deciding whether it deserves attention, ask which capability class it belongs to, and treat a faster or cheaper model of an existing class as a parameter change rather than a new thing to learn.
+The second half, letting task-grounded evaluation rather than marketing decide what enters a workflow, connects directly to Ch. 11.
+The worked illustration is good and should travel with it: a frontier developer's account of its own agents, treated as a hypothesis for independent measurement, checked against an outside evaluation organisation reaching the same result by a different method.
+
+It belongs in Ch. 16 rather than anywhere else because Ch. 16 §16.1 already argues for capabilities over tools.
+"Staying current by principle, not by release" is the same argument extended forward in time, and Ch. 16 currently ends on the energy and carbon section, which is not an ending.
+
+**§17.4 "The repository as the living layer" (about 450 words).**
+Cut, as decision 3 already required.
+Two fragments are worth rescuing.
+The European Commission living-guidelines citation is a good corroboration for the living-book model and should move to the rewritten ch00 paragraph, where that model is now stated.
+The chapter's final sentence is the best closing line in the book and should become the final line of Ch. 16, lightly adapted.
+
+**Citations.** I checked all five of Ch. 17's references against the rest of the manuscript.
+Every one is cited elsewhere: Anthropic Institute in ch01, METR in ch01 and ch16, European Commission in ch09, ch15 and ch16, the Nature editorial in ch09 and ch15, Zheng et al. in ch10, ch11 and ch13.
+**Removing Ch. 17 loses no citation**, which removes the main risk from a deletion of this size.
+
+**Net.** About 1,750 words cut, about 550 relocated, one figure and one SVG deleted, one chapter file deleted.
+Roughly five pages out of the book.
+
+**Recommendation, stated plainly, as instructed.**
+Cut, do not relocate, beyond §17.3 and the two fragments above.
+The book is 1.65 times its original budget, and a closing chapter that mostly restates what the reader has just read is the least defensible material in it.
+A reader who has worked through sixteen chapters does not need the five principles listed again.
+The one thing Ch. 17 did that nothing else does, telling the reader how to stay current without chasing releases, is preserved in full and sits better in Ch. 16 than it did alone.
+
+### What happens to Part V
+
+Part V held Ch. 16 and Ch. 17.
+With Ch. 17 gone it would hold one chapter, and a part of one chapter is a structural error rather than a structure.
+
+Three options, and I recommend the third.
+
+- **Keep Part V with one chapter.** Consistent with nothing else in the book, where parts hold two to six chapters.
+- **Move Ch. 16 into Part IV.** Part IV is "Case studies". Ch. 16 is an adoption plan. It does not fit, and renaming Part IV to cover both would produce a label that describes nothing.
+- **Drop the Part V label. Ch. 16 becomes a closing chapter standing after Part IV.** Recommended. Four parts and a closing chapter is an ordinary book structure, and at about 4,500 words after absorbing §17.3, Ch. 16 is substantial enough to stand on its own.
+
+Both `ch00` "How to read this book" and Ch. 1 §1.5 currently describe five parts, and both are being rewritten for the merge anyway.
 
 ### Merges I considered and reject
 
@@ -187,18 +271,41 @@ Ch. 12 is 6,423 words across eleven sections covering three subjects.
 I am not proposing it, because you asked about consolidation and because the two halves genuinely do share the claim that behaviour must be bounded, recorded and accountable.
 Recording it here so the option is on file.
 
-### Target chapter count
+### The chapter map, before and after
 
-**Recommended: 17.**
-One merged out (old Ch. 4), one added (harness and loop engineering, new Ch. 4).
-Chapters 5 to 17 keep their numbers, their filenames and their figure identifiers.
+**Decided: 16 chapters, four parts, and a closing chapter.**
+One merged out (old Ch. 4), one deleted (Ch. 17), one added (harness and loop engineering, new Ch. 4).
+**Chapters 5 to 16 keep their numbers, their filenames and their figure identifiers**, which is what keeps the execution cost low.
 
-**Leaner variant: 16.**
-As above, plus Ch. 17 merged into Ch. 16.
-Take this only alongside a decision to cut overall length.
+| Before (17 ch., 5 parts) | After (16 ch., 4 parts + closing ch.) | What happens |
+|---|---|---|
+| **Part I — Foundations** | **Part I — Foundations** | |
+| 1 Why agents, why now | 1 Why agents, why now, and where they don't belong | Absorbs old Ch. 4. Figure 4.1 becomes Figure 1.3. |
+| 2 Anatomy of an agent | 2 Anatomy of an agent | Trimmed: §2.4 and §2.6 shed material to new Ch. 4. |
+| 3 Specifying work for agents | 3 Specifying work for agents | Unchanged. |
+| 4 The scientist's stance | *(merged into Ch. 1)* | §4.4 deleted as duplicating Ch. 1 §1.4. |
+| | **4 The harness: engineering the loop** | **New.** Brief in §2. |
+| **Part II — Core patterns** | **Part II — Core patterns** | |
+| 5 Evidence and literature synthesis | 5 (same) | §5.7 replaced by "Adapting the pattern". |
+| 6 Data acquisition and quality control | 6 (same) | §6.7 replaced. |
+| 7 Coding and pipeline agents | 7 (same) | §7.7 replaced. Pointer added to Ch. 4. |
+| 8 Model orchestration and experimentation | 8 (same) | §8.8 replaced. |
+| 9 From results to manuscript | 9 (same) | §9.8 replaced. §9.4 policy mechanism rewritten. |
+| 10 Multi-agent workflows | 10 (same) | §10.8 replaced. |
+| **Part III — Trust** | **Part III — Trust** | |
+| 11 Verification and evaluation | 11 (same) | §11.9 replaced. |
+| 12 Provenance, governance and security | 12 (same) | §12.11 replaced. §12.8 keeps least privilege, gains a pointer. |
+| 13 The failure gallery | 13 (same) | Unchanged. |
+| **Part IV — Case studies** | **Part IV — Case studies** | |
+| 14 Verification under constraint | 14 (same) | Unchanged apart from §14.7. |
+| 15 Governing a modelling workflow end to end | 15 (same) | Unchanged. |
+| **Part V — Adoption** | *(part label dropped)* | |
+| 16 Starting in your own group | **16 Starting in your own group** *(closing chapter)* | Gains §17.3 as a new closing section and Ch. 17's final line. |
+| 17 What will last | *(removed)* | §17.1, §17.2, §17.4 and Figure 17.1 cut. |
+| **Front matter** | **Preface**, then front matter | Preface absorbs the contribution statement and disclosure statement. §6. |
+| **Back matter** | Back matter + **Appendix A**, **Appendix B** | Checklists and specification schema. §3. |
 
-**Below 16 requires merges I would argue against**, for the reasons given above.
-If you want fewer chapters than 16, the honest route is not merging but cutting, which is the length question in point 5.
+**Page effect.** Ch. 17 out is about five pages. Old Ch. 4 merged and de-duplicated saves about two. The repository sections are roughly neutral. Against that, the new Ch. 4 adds about nine to ten, Appendix A four to six, Appendix B one to two, and the Preface about three. Net is roughly plus eight to twelve pages on a book already at 210 to 220, which sits inside the restated 200 to 210 budget only if the trims in §5.6 are also taken.
 
 ---
 
@@ -361,7 +468,7 @@ It can start immediately and run in parallel with everything else.
 - `OUTLINE.md`: §3 "Runnable examples" bullet; §6 anatomy ending in "repository pointer (runnable example and optional exercises)"; §8 unified repository sketch; §9 DECIDED "exercises to the repository"; §9 DECIDED on the anatomy binding Part II "with Ch. 11 and Ch. 12 still owing … repository pointers"; §9 Parked item.
 - `REVISION-PLAN.md` and `RESEARCH-INTEGRATION-PLAN.md`: both closed. Annotate as historical rather than edit.
 
-**Scale.** Eight sections deleted, about twenty-five further sentences reworked, one whole section rewritten, one figure reworked including its rendered SVG, four admin documents amended.
+**Scale.** Eight sections deleted, about twenty-five further sentences reworked, one whole chapter deleted (Ch. 17, per §1), one figure and its SVG deleted, four admin documents amended.
 
 ### The problem this exposes, which is larger than the deletion
 
@@ -374,17 +481,18 @@ Category C promises something else: that current model names, per-token prices, 
 Nothing in the repository holds any of that today, and the parked build-out was never going to supply it either.
 So category C is an unbacked promise even after the runnable examples are removed.
 
-This matters because Ch. 17 §17.1 calls the print and repository division "this book's central wager about how to write usefully for practitioners".
-If the repository holds no current values, that claim is unsupported, and the book closes on something a reader can check and find untrue.
+This mattered most in Ch. 17 §17.1, which called the print and repository division "this book's central wager about how to write usefully for practitioners".
+The Ch. 17 removal decided in §1 disposes of the most exposed version of the claim.
+What is left is the version in ch00 and the scattered sentences of category C, and those still have to be narrowed rather than left standing.
 
-**Proposal: narrow the living layer to what will actually exist, rather than delete it.**
+**Decided (author, 27 Jul 2026): narrow the living layer to what will actually exist, rather than delete it.**
 At release the repository holds: the full Markdown source; the dated verified research reports in `/research`; the annotated further reading; the figure briefs; and an errata and update note per release.
 That is a genuine living layer with no code in it, and the newsletter remains the announcement channel, which is already DECIDED.
 
 Rewrites that follow:
 
 - **ch00**: promise the source, the dated research sweeps, the further reading and per-release errata. Delete "runnable examples and printable checklists".
-- **ch17 §17.4**: keep the two-layers argument, which is sound. Replace the mechanism. The repository absorbs change by carrying dated sweeps and errata, not by maintaining a price table.
+- **ch17 §17.4**: superseded. The whole chapter goes, per §1. The two-layers argument survives as one or two sentences in the rewritten ch00 paragraph, and the European Commission living-guidelines citation moves there with it, because it is the one external corroboration that a living document is a responsible form for guidance in this area.
 - **ch09 §9.4**: this one changes substantively. Replace "current specifics are held in the repository" with an instruction the reader can act on: check the journal's own current policy page before submission, and here is what the classes tell you to look for. That is more useful than the promise it replaces.
 - **ch02 §2.6, ch16 §16.3 and §16.6**: state that the figures move and why, state the reasoning that survives, and name where a reader looks it up. Do not promise a maintained table.
 - **ch01 §1.4**: "the print holds the position and the reasoning" survives; the clause about the repository tracking the movement narrows.
@@ -433,11 +541,7 @@ Note that this also fixes measurement 2: the current line names `/figures-source
 
 **Vendor-neutral rule.** Currently routes named products and volatile figures to "`/patterns`, `/prompts` and repository docs". Those directories are going. Rewrite to: capability classes and approximate years in print; named products and volatile figures do not appear in the book at all, and where a reader needs a current value the text says where to look it up.
 
-**Decision log.** Three changes, all needing your instruction.
-
-- **[DECIDED ITEM — needs your explicit instruction]** "exercises live in `/exercises`, not the page budget" must move from Decided to a statement that exercises are not in this release at all. This is a reversal, not a clarification.
-- **[DECIDED ITEM — needs your explicit instruction]** "full chapter anatomy binds Part II only, with Ch. 11 and Ch. 12 still owing verification checklists and repository pointers" must lose the repository-pointer half and gain the replacement section.
-- **[DECIDED ITEM — needs your explicit instruction]** "unified repository with newsletter as update channel" is not reversed, but what the repository contains must be stated, because the book currently tells readers it contains things it will not.
+**Decision log.** Four DECIDED items change, all on the author's instruction of 27 July 2026. The wording each now carries is in the table in §0, and `CLAUDE.md` and outline §9 must both record the date and the authority alongside the change, so a future agent can see why a DECIDED item moved.
 
 The Parked item on the companion-repository build-out stays parked and gains one clause: the manuscript no longer refers to it, so unparking it later is additive rather than a correction.
 
@@ -543,27 +647,21 @@ This is a much smaller job than the one you were expecting, and finding that out
 
 Ranked by importance. Nothing here is filler.
 
-### 5.1 The book is 1.65 times its length budget, and this is the cheapest moment to decide
+### 5.1 Length: decided at 200 to 210 pages, and the trims that decision still requires
 
-66,097 words of body prose against 38,000 to 42,000 indicative.
-That is roughly 210 to 220 pages against a 150-page target, once figures and matter are counted.
+66,097 words of body prose against a 38,000 to 42,000 budget was 1.65 times over, or roughly 210 to 220 pages against a 150-page target.
 
-"Overall length reduction" is Deferred, and I am not proposing to change that without instruction.
-But the deferral interacts with every decision in this document, and the interaction runs the wrong way.
-A merge saves almost nothing, because merging removes chapter overheads and duplicated claims, worth perhaps 1,500 words in the Ch. 4 case.
-The new harness chapter adds 3,500 to 4,000.
-Appendix A adds four to six pages.
-The repository work is roughly length-neutral.
-So this restructure, executed in full, makes the book slightly longer.
+**Decided (author, 27 Jul 2026): the budget is restated at ≈200 to 210 pages, ≈62,000 to 66,000 words of body prose.**
+This is the option I recommended, and it is the honest one: it keeps material already paid for, and 200 pages is an ordinary size for a practitioner handbook.
 
-**Recommendation.** Un-defer the length question now and set a target before any of this is executed, because the decision changes what gets written.
-Three positions, and I recommend the second.
+It is not, however, a decision to stop counting.
+The restructure adds more than it removes.
+Ch. 17 out and old Ch. 4 merged save about 3,300 words; the new Ch. 4 adds 3,500 to 4,000, and the Preface and two appendices add roughly another 2,500 in page-equivalent terms.
+So the book lands near the **upper** end of the restated budget before any trimming, with no headroom.
 
-- **Hold at 150 pages.** Requires cutting roughly 25,000 words, which is a larger job than everything else in this document combined. It would mean losing whole sections, not trimming sentences.
-- **Restate the budget at what the book actually is,** around 200 to 210 pages, and cut only where a chapter is genuinely padded. Ch. 11 at 7,761 words and Ch. 12 at 6,423 are the obvious places to look. This is honest, it keeps the material you have already paid for, and 200 pages is not an unreasonable practitioner book.
-- **Split into two releases.** Parts I to III as v1.0, Parts IV and V later. I mention it because it is on the table; I would not take it, because the executed case studies are what supports the positioning claim and a book without them is a different book.
-
-**[DECIDED ITEM — needs your explicit instruction]** if you choose to restate the budget, since "single ~150 pp volume" is Decided.
+**Consequence for the plan.** The trims named in §5.6 stop being optional.
+Ch. 11 at 7,761 words and Ch. 12 at 6,423 are where to look, and a trim of roughly 1,500 to 2,500 words across the two would return the book to the middle of its restated range.
+This is scheduled as Stage 10 and it is the one stage that can be dropped if time runs short, at the cost of a book at the top of its budget rather than the middle.
 
 ### 5.2 The admin documents are stale, and OUTLINE.md is the authoritative one
 
@@ -575,12 +673,12 @@ An ai-reviewer comment already sits in the outline at line 119 saying exactly th
 **Recommendation.** Fix all of it in the same pass as the restructure, and do it first, because everything else is executed by agents reading these documents.
 This is my work, not the author's, and it needs no decision beyond approval to proceed.
 
-### 5.3 Removing the repository promises removes the backing for the book's closing argument
+### 5.3 The repository removal took the book's closing argument with it
 
-Covered at length in point 3.
-Restated here because of its rank: it is the second most consequential thing in this document after length.
-Ch. 17 calls the print and repository division "this book's central wager".
-After the deletion, that wager is backed by nothing unless the living layer is re-scoped to the source, the dated research sweeps, the further reading and per-release errata.
+Covered at length in point 3, and now partly resolved by the Ch. 17 decision.
+Ch. 17 called the print and repository division "this book's central wager", and that chapter is gone, which removes the most exposed statement of a claim the repository could no longer support.
+What remains is the narrowed version, which goes into the rewritten ch00 living-book paragraph and must be written carefully: the repository holds the source, the dated research sweeps, the further reading, the figure briefs and per-release errata, and nothing else.
+The European Commission living-guidelines citation rescued from Ch. 17 §17.4 belongs there, because it is the one piece of external corroboration that a living document is a responsible form for guidance in this area.
 
 ### 5.4 Part IV cannot ship on structure alone
 
@@ -601,9 +699,8 @@ It fits Ch. 5, 6, 7 and 9 cleanly.
 It fits Ch. 8 with a caveat the chapter itself declares: §8.5 is titled "Worked design", not "Worked example", because the three-track intercomparison is designed and not executed. That is correct and honest, and it means the anatomy's fourth section is a different kind of thing in that chapter.
 It fits Ch. 10 least well. Ch. 10 is a capstone that composes the preceding five patterns, and its "conventional workflow" section (§10.2, "distributed cognition in science") is a stretch to fit the template. Its most valuable section, §10.3 on independence against correlated opinion, has no place in the anatomy at all.
 
-**Recommendation.** Rename the fourth section of the anatomy to "worked example or worked design", which regularises what Ch. 8 already does, and record that Ch. 10 follows the anatomy loosely as a capstone.
-Do not force Ch. 10 into the template. It is the right chapter and the wrong template.
-**[DECIDED ITEM — needs your explicit instruction]**, since the anatomy is Decided.
+**Decided (author, 27 Jul 2026).** The fourth section of the anatomy becomes "worked example **or worked design**", which regularises what Ch. 8 already does, and Ch. 10 is recorded as following the anatomy loosely, as a capstone.
+Ch. 10 is not forced into the template. It is the right chapter and the wrong template.
 
 ### 5.6 Part III is over its allocation, and Ch. 11 is twice the average chapter
 
@@ -614,14 +711,16 @@ Ch. 11 may deserve it.
 The book says nobody should skip it, and it carries the evidential hierarchy, evaluation-set construction and gate measurement.
 But it grew by 526 words in R2 against a 430-word cap, on the reviewer's own measurement, and nobody has asked whether it is now doing too much.
 
-**Recommendation.** If you take the length decision in 5.1, Ch. 11 and Ch. 12 are where to look first.
-If you do not, leave them and record the decision explicitly so it stops being an accident.
+**Now required rather than optional**, per §5.1: the restructure leaves no headroom in the restated budget.
+Ch. 11 and Ch. 12 are where to look first, for roughly 1,500 to 2,500 words between them.
+Scheduled as Stage 10.
 
 ### 5.7 Adding a harness chapter shifts the book from governance towards engineering
 
 Part II (patterns) is 27,235 words and Part III (trust) is 20,076.
 The positioning claim is "a practical, governance-first, diagram-led treatment".
-A harness chapter is engineering, and it sits in Part I, which is currently the smallest part.
+A harness chapter is engineering, and it sits in Part I, which is the smallest part.
+Removing Ch. 17 sharpens this slightly, since the deleted §17.2 was the book's most concentrated statement of its governance principles.
 
 I think this is right rather than wrong.
 The book currently tells a reader to govern an apparatus it never tells them how to build, and that is a genuine defect the harness chapter fixes.
@@ -660,19 +759,183 @@ The new sweep for the harness chapter is separate work and is described in point
 
 ---
 
+## 6. The Preface
+
+Added on the author's instruction of 27 July 2026.
+
+### 6.1 The complication: ch00 already carries preface-shaped material
+
+This is not writing from nothing.
+`ch00-front-matter.md` currently holds five sections, and two of them are preface material sitting under the wrong label.
+
+| ch00 section today | What it actually is | Where it goes |
+|---|---|---|
+| How to read this book | Navigation | **Stays** in front matter, after the Preface |
+| What the reader needs | Reference: prerequisites, non-targets | **Stays** in front matter |
+| Icon key (Figure 0.1) | Reference | **Stays** in front matter |
+| Contribution statement and domain framing | Why this book exists, and how far its examples travel | **Moves into the Preface** |
+| Disclosure statement | How the book was made, and who is accountable | **Moves into the Preface** |
+
+The contribution statement is already written as a preface: "This book occupies a narrow niche, and that is its reason for existing."
+That is a first-person statement about why the book exists, which is the definition of preface material, and it is currently buried behind an icon key.
+The disclosure statement is the same: a statement about the book's making, not about its subject.
+
+So roughly 600 of the Preface's words already exist and need re-siting and re-opening, not inventing.
+
+### 6.2 Preface, Introduction and Foreword are three different things
+
+Worth stating plainly, because the three get used interchangeably and only one of them is actually open here.
+
+A **Preface** is by the author, about the book: why it exists, how it came to be, what it promises, who it is for.
+
+An **Introduction** is by the author, about the subject, and is part of the argument.
+**This book already has one, and it is Chapter 1.**
+Ch. 1 §1.1 opens on the state of the field and §1.5 lays out what the rest of the book does, which is exactly an introduction's job.
+Adding a separate Introduction would duplicate Ch. 1, and de-duplication is DECIDED.
+So the Introduction is not an option, and I am not offering it as one.
+
+A **Foreword** is by someone other than the author.
+It is treated separately in §6.5.
+
+### 6.3 The menu of preface types
+
+Seven types, each with what it opens on, length, what it demands from you, what it wins and what it risks.
+`[AUTHOR: …]` in the "demands" column means lived material only you can supply.
+
+**A. The origin and credential preface.**
+*Opens on:* a specific moment in your operational practice that made the book necessary. A morning, a failure, a decision.
+*Length:* 800 to 1,200 words.
+*Demands:* heavy. `[AUTHOR: …]` for the moment itself, with enough specificity to be unmistakably yours.
+*Wins:* establishes authority in the first paragraph, which is precisely the book's stated purpose, since the goal is credibility on agentic-AI work rather than revenue. It is also the one thing no other author could have written, and the section most likely to be excerpted well on LinkedIn.
+*Risks:* drifts into memoir if the moment is not tightly chosen. Fails completely if written generically.
+
+**B. The problem preface.**
+*Opens on:* the state of agentic AI in the environmental sciences, with the book as corrective.
+*Length:* 600 to 900 words.
+*Demands:* little. Most of it exists as the contribution statement.
+*Wins:* sharp positioning, stated before the reader has invested anything.
+*Risks:* **it duplicates Ch. 1 §1.1 directly.** Ch. 1 already opens "Environmental science has a mismatch problem". Running the same argument twenty pages apart is exactly what the de-duplication rule forbids. I would not take this type on its own.
+
+**C. The scope-and-contract preface.**
+*Opens on:* what the book promises, what it refuses, what it assumes, what it deliberately excludes.
+*Length:* 500 to 700 words.
+*Demands:* almost nothing new. "What the reader needs" and the domain framing's deferral note already cover most of it.
+*Wins:* protects both parties. A reader who knows the cross-domain examples are deferred to a later edition cannot be disappointed by their absence, and the book's honesty about its own limits is one of its better qualities.
+*Risks:* reads as terms and conditions. Does nothing for credibility, and gives the reader no reason to care yet.
+
+**D. The reflexive and disclosure preface.**
+*Opens on:* the fact that this book was written with agents, under the governance it describes, so the preface is itself the first worked example.
+*Length:* 700 to 1,000 words.
+*Demands:* moderate to heavy. `[AUTHOR: …]` for the actual division of labour, and it cannot be completed until the manuscript is, because it summarises what the agents did per chapter.
+*Wins:* genuinely distinctive. Almost no book on this subject can open this way, and it demonstrates the thesis instead of asserting it. Reflexive production is already a DECIDED principle, so this is delivering something the project has committed to rather than adding scope.
+*Risks:* can read as self-regarding if it dwells. The existing disclosure statement carries two unresolved `[AUTHOR: …]` markers and is explicitly "a skeleton for now", so this section is the last part of the book that can be finished.
+
+**E. The living-book preface.**
+*Opens on:* the release model, versioning, and what dates fastest.
+*Length:* 400 to 600 words.
+*Demands:* little, but it needs rewriting anyway after the repository removal.
+*Wins:* sets expectations about currency honestly.
+*Risks:* administrative. It answers a question the reader has not yet thought to ask. **This is a section of a preface, not a preface**, and I recommend it be one or two sentences inside another type.
+
+**F. The reader's-map preface.**
+*Opens on:* routes through the book by role, for the practitioner, the research lead, the sceptic.
+*Length:* 400 to 600 words.
+*Demands:* nothing. This is "How to read this book", already written.
+*Wins:* useful, and the existing version is good.
+*Risks:* it is navigation, not a preface. Putting it first delays the reason to care until after the reader has been told how to care.
+
+**G. The instrument preface** *(added; not on the list you were given).*
+*Opens on:* the book's governing stance stated directly. An agent is an instrument, and environmental science already knows how to handle a fallible instrument, so the discipline needed is one the reader already has.
+*Length:* 600 to 800 words.
+*Demands:* light to moderate.
+*Wins:* states the intellectual thesis in one page and travels extremely well as a standalone excerpt. It is also flattering to the reader in a legitimate way, telling them they already own the skill this book asks for.
+*Risks:* abstract. `STYLE.md` requires the concrete case to lead, so it would have to open on a real instrument from your own work, at which point it has converged on type A with a different second paragraph. I raise it because that convergence is informative: it says the concrete opening is not optional.
+
+### 6.4 Recommendation: a hybrid of A, C and D, in that order
+
+**Open with A, compress C into a short middle, close with D.**
+
+The reasoning is the sequence a reader actually needs.
+They need to know who is speaking and why they should listen (A), then what they are being promised and what they are not (C), then what kind of object they are holding and how far to trust it (D).
+Ending on the disclosure is the strongest available move, because it hands the reader the means to judge the book at the exact moment they are deciding whether to read it, and because a book arguing that agentic work must be disclosed and audited should disclose and audit itself before it asks anyone else to.
+
+B is excluded because it duplicates Ch. 1 §1.1.
+E and F are absorbed: E as two sentences inside the C movement, F left where it is as a separate front-matter section immediately after the Preface.
+G is absorbed into A, because A's concrete opening is where the instrument stance is best demonstrated rather than announced.
+
+### 6.5 The Foreword, which is a separate decision
+
+A foreword is written by someone other than the author, and it is worth raising because it is a real option you may not have considered.
+
+**The case for.** The book's stated purpose is author credibility on agentic-AI work.
+A foreword from a recognised name in operational forecasting, environmental modelling or research software engineering transfers credibility in a way nothing you write about yourself can, because it is someone else's judgement rather than your own claim.
+For a self-published free book with no publisher's imprint behind it, that external signal does work that the imprint would otherwise do.
+It also widens the first readership, since a foreword writer usually shares the release.
+
+**The cost, stated honestly.**
+It needs a person, which means an invitation, a near-final manuscript to read, and a reply.
+Realistically four to eight weeks of calendar time, most of it outside your control.
+It cannot sensibly be commissioned until the Part IV `[AUTHOR: …]` markers are resolved, because anyone writing a foreword will read the case studies and those are the chapters that are currently scaffolds.
+There is also a soft cost: asking someone to endorse a book obliges you in a small way, and it is worth being sure you want the association.
+
+**Recommendation.** Decide in principle now, commission after Stage 8, and **do not let it gate release**.
+The living-book model is what makes this safe: v1.0 ships without a foreword, v1.1 adds one, and the versioning already announced makes that an ordinary release rather than a correction.
+That converts a four-to-eight-week dependency into no dependency at all.
+
+`[AUTHOR: decide whether to invite a foreword, and from whom. If yes, the invitation goes out after the restructure is reviewed, and the book does not wait for it.]`
+
+### 6.6 Preface brief (same form as the Ch. 4 brief)
+
+**Position.** Opens `ch00-front-matter.md`, before "How to read this book". Unnumbered, as front matter.
+
+**On file structure.** Keep one front-matter file with the Preface as its first section, rather than splitting `ch00` in two.
+Two `ch00` files would break the `chNN-slug.md` convention, and the front matter is short enough to stay together.
+
+**Objective.** Give the reader, in about three pages, the reason this book exists, who wrote it and on what authority, what it promises and refuses, and how it was made, so they can decide whether to trust it before they invest in it.
+
+**Sections.**
+
+- **P.1 (untitled opening).** The concrete moment from operational practice, per `STYLE.md`'s rule that the case leads. What was at stake, what the work actually consisted of, and what made a governed agentic approach necessary rather than interesting. Closes by naming the book's stance in one sentence, drawn from the moment rather than asserted over it. 250 to 400 words.
+- **P.2 What this book is, and what it is not.** Absorbs the contribution statement and domain framing from ch00, re-opened so it does not start on "This book occupies a narrow niche". The positioning claim with its moderate-confidence hedge intact. The prerequisites in one sentence, pointing forward to "What the reader needs". The deferrals stated as deferrals: cross-domain examples to a later edition, and the living-book release model in two sentences. 300 to 400 words.
+- **P.3 How this book was made.** Absorbs the disclosure statement. Agents used substantively in drafting, research gathering and review, each inside the specification, verification and audit discipline the chapters argue for. The firm limit: agents are never authors, and accountability for every claim rests with the named human author. Closes the Preface. 300 to 400 words.
+
+**Target length.** 900 to 1,100 words, about three pages.
+
+**Figures.** None. The icon key stays where it is, as a front-matter reference section.
+
+**`[AUTHOR: …]` markers it will carry.** Three carried forward, one new. None may be resolved by any agent.
+
+1. New, for P.1: `[AUTHOR: the opening moment. A specific piece of operational work where the volume, the deadline or the checking burden made a governed agentic approach necessary. Name what was at stake and what you actually did. This is the paragraph the whole Preface rests on and only you can write it.]`
+2. Carried from ch00: `[AUTHOR: confirm the per-chapter agent-contribution summary once the restructure completes — which agents did what, drawn from the chapter status records.]`
+3. Carried from ch00: `[AUTHOR: decide the granularity of the disclosure — per chapter or per task — and whether it lives here in full or here in summary.]` The second half of this marker must be rewritten, since "with detail in the repository" is no longer available in the sense it was written.
+4. New, from §6.5: the foreword decision.
+
+**Acceptance criteria (for ai-reviewer).**
+
+1. The Preface opens on a concrete case, not on an abstraction and not on a sentence announcing what the Preface is about to do.
+2. No sentence duplicates Ch. 1 §1.1's framing of the field's problem. The Preface says why the *book* exists; Ch. 1 says why *agents* matter.
+3. The positioning claim keeps its hedge and its July 2026 scan caveat. It is not strengthened by being moved.
+4. The disclosure names the limit on agent involvement explicitly, and states that accountability rests with the named human author.
+5. No promise of runnable examples, prompts, checklists, case studies or exercises. The living-book sentences describe only what the repository will actually hold.
+6. All four `[AUTHOR: …]` markers present and unresolved.
+7. Under 1,200 words.
+
+**Scheduling.** P.1 and P.2 can be drafted at Stage 9. **P.3 cannot be completed until the restructure is finished**, because it summarises what the agents did across a manuscript that is still changing. Draft P.3 as a skeleton with its markers, exactly as the current disclosure statement does, and complete it at the end.
+
+---
+
 ## Order of operations, and what it costs
 
 Sequence matters here, because three of these jobs touch every chapter file and doing them in the wrong order means doing some of them twice.
 
-**Stage 0 — Decisions (author).**
-Nothing proceeds without: the chapter count, the harness chapter, the repository removal and the living-layer re-scope, the figure mechanism, and the length question.
-The four DECIDED items flagged above need explicit instruction.
+**Stage 0 — Decisions (author). COMPLETE, 27 July 2026.**
+All six decisions taken, four DECIDED items changed, Ch. 17 removed, Preface added. Record in §0.
 
 **Stage 1 — Admin documents (ai-editor, no manuscript touched).**
-`CLAUDE.md` current state, repository layout, vendor-neutral rule and decision log.
-`OUTLINE.md` to v0.6: new chapter map, revised anatomy, corrected §8, refreshed §9.
-`FIGURES.md` to v2.1 with the four amendments in point 4.
-A new chapter-level plan document that ai-writer executes and ai-reviewer reviews against.
+`CLAUDE.md`: current state (correcting the four staleness findings in measurement 4), repository layout, vendor-neutral rule, and a decision log recording the four DECIDED changes with the 27 July 2026 authority.
+`OUTLINE.md` to v0.6: the chapter map in §1, four parts plus a closing chapter, revised anatomy, corrected §8, refreshed §9, restated budget, Preface and appendices in the structure.
+`FIGURES.md` to v2.1 with the four amendments in point 4, plus deletion of the Figure 17.1 entry.
+A chapter-level execution plan ai-writer works from and ai-reviewer reviews against.
 *Cost: low. Blocks everything else, so it goes first.*
 
 **Stage 2 — Figure extraction (ai-writer, mechanical).**
@@ -689,10 +952,12 @@ Targeted sweep on harness and loop engineering: termination and budgets, retry a
 Delete the eight pointer sections. Write eight "Adapting the pattern" sections. Rework the twenty-five scattered sentences. Rewrite ch17 §17.4 and rework Figure 17.1 including its SVG. Rewrite ch00's living-layer paragraph and ch09 §9.4's policy mechanism. Assemble Appendix A and write Appendix B.
 *Cost: medium. About 1,500 words out, 1,600 in, one section rewritten, one figure re-rendered, two appendices.*
 
-**Stage 5 — The merge (ai-writer).**
-Fold ch04 into ch01. Figure 4.1 becomes Figure 1.3, with the SVG and the `figures-src` entry moved. Delete ch04 §4.4 as duplicated. Keep Kapoor in Ch. 10 only. Fix ten "Chapter 4" cross-references. Rewrite ch00 "How to read this book" and Ch. 1 §1.5.
-*Cost: medium-low.*
-**Must follow Stage 4**, or the merged chapter carries repository language that then has to be removed again.
+**Stage 5 — The merge, and the Ch. 17 removal (ai-writer).**
+Fold ch04 into ch01. Figure 4.1 becomes Figure 1.3, with the SVG and the `figures-src` entry moved. Delete ch04 §4.4 as duplicated. Keep Kapoor in Ch. 10 only. Fix ten "Chapter 4" cross-references.
+Move ch17 §17.3 into ch16 as a new closing section, carry the four references it needs, and adapt Ch. 17's final sentence as Ch. 16's last line. Move the European Commission citation to the ch00 living-book paragraph. Delete `ch17-what-will-last.md`, `figures/figure-17-1.svg` and its `figures-src` entry. Fix the three "Chapter 17" cross-references in ch08 and ch16.
+Rewrite ch00 "How to read this book" and Ch. 1 §1.5 for four parts and a closing chapter.
+*Cost: medium. About 1,750 words cut and 550 relocated on top of the merge.*
+**Must follow Stage 4**, or both chapters carry repository language that then has to be removed again.
 
 **Stage 6 — The new Ch. 4 (ai-writer).**
 Draft against the brief in point 2, with four figure briefs written at the same time per the alt-text rule, and rendered.
@@ -705,11 +970,23 @@ The displacement edits in the table in point 2: ch02 §2.4 and §2.6, ch07 §7.3
 **Must follow Stage 6**, because you cannot point at a chapter that does not exist yet.
 
 **Stage 8 — Review (ai-reviewer).**
-Full pass against the revised `OUTLINE.md`, `STYLE.md` and `FIGURES.md` v2.1, with particular attention to the new Ch. 4, the eight new closing sections, and cross-reference integrity after the merge.
+Full pass against the revised `OUTLINE.md`, `STYLE.md` and `FIGURES.md` v2.1, with particular attention to the new Ch. 4, the eight new closing sections, and cross-reference integrity after the merge and the Ch. 17 removal.
 
-**Stage 9 — Length pass (only if you take 5.1).**
-*Cost: if you hold at 150 pages, this is larger than Stages 2 to 7 combined.*
-**Must come last.** Cutting before the harness chapter is written means cutting, then adding, then cutting again.
+**Stage 9 — The Preface (ai-writer).**
+Draft P.1 and P.2 in full per the brief in §6.6. Draft P.3 as a skeleton carrying its markers. Re-site the contribution statement and disclosure statement out of their current ch00 positions.
+*Cost: low to medium. 900 to 1,100 words, no figures, but about 600 of them are re-siting rather than new writing.*
+**Must follow Stage 8**, because P.2 describes a book whose shape must be settled first.
+
+**Stage 10 — Length trim (ai-writer).**
+The Ch. 11 and Ch. 12 trims of §5.6, roughly 1,500 to 2,500 words.
+*Cost: medium. This is judgement work, not mechanical.*
+**Must come last.** Trimming before the harness chapter and the Preface exist means trimming, then adding, then trimming again.
+This is the one stage that can be dropped if time runs short, at the cost of a book at the top of its restated budget rather than the middle.
+
+**Stage 11 — Foreword (author, optional, off the critical path).**
+Invitation goes out after Stage 8. Does not gate v1.0. See §6.5.
+
+**Completion of P.3.** The disclosure statement's per-chapter summary can only be written once Stage 10 closes, since it describes work that is still happening until then.
 
 ### What it costs to do nothing
 
@@ -723,15 +1000,19 @@ Worth stating, since "no" is a legitimate answer to any of this.
 
 ---
 
-## Decisions I need from you
+## Status, and what ai-writer needs next
 
-1. **Chapter count.** Seventeen with Ch. 4 merged and a harness chapter added (recommended), or sixteen with Ch. 17 also merged.
-2. **The harness chapter.** Yes or no, and if yes, confirm Part I placement after specification.
-3. **The living layer.** Re-scope to source, research reports, further reading and errata (recommended), or drop the print and repository division entirely and rewrite Ch. 17 around something else.
-4. **Appendices.** A (checklists, recommended), B (specification schema, recommended but weaker), both, or neither.
-5. **Length.** Hold at 150 pages, restate the budget at around 200 to 210 (recommended), or defer again knowingly.
-6. **Four DECIDED items** need your explicit instruction before Stage 1 can proceed: exercises to `/exercises`; the anatomy's repository-pointer section; what the repository contains; and, if you take the length decision, the single ~150 pp volume.
+Every decision in this document is taken.
+Nothing here is waiting on the author except the `[AUTHOR: …]` material named in §6.6, the foreword decision in §6.5, and the Part IV lived material described in §5.4, none of which blocks Stage 1.
 
-Items 1 to 4 are editorial and I have given you my recommendation on each.
-Item 5 is partly positioning and is yours.
-Item 6 is procedural and follows from 1 to 5.
+**Immediate next step: Stage 1.**
+ai-editor updates `CLAUDE.md`, `OUTLINE.md` to v0.6 and `FIGURES.md` to v2.1, and writes the chapter-level execution plan.
+No manuscript file is touched at Stage 1.
+
+**Running in parallel from now: Stage 3**, the ai-researcher sweep on harness and loop engineering, which gates Stage 6 and nothing else.
+
+**What is not in this plan, and stays out.**
+The companion-repository build-out remains parked.
+Permissions and IP for case studies remain parked.
+Output format, licence, DOI and build toolchain remain deferred, and are not gates.
+The working title remains open, and the Preface is written so that it does not depend on the title being settled.
