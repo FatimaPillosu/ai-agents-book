@@ -219,9 +219,9 @@ FIGURE BRIEF
 
 **Figure 10.3 — Conventional review and agentic roster, side by side.**
 
-![A before/after diagram with two stacked left-to-right lanes. The upper lane, conventional, runs author, internal read-through, two independent referees, editor decides, annotated serial over weeks. The lower lane, agentic roster, runs producer agent, gate, independent reviewer, gate, human decision, annotated gated over minutes with the human owning the decision. Dotted vertical lines align the matching roles (producer, independent checker, accountable decider) across the two lanes, with a note that what carries over is independence and accountability, not the number of parties.](../figures/figure-10-3.svg)
+![Two lanes sharing one left-to-right grammar. The top lane shows conventional review: an author, an internal read-through, two independent referees and an editor who decides, marked as serial and taking weeks. The bottom lane shows the agentic roster: a producer agent, a gate, an independent reviewer, a second gate and a human decision, marked as gated and taking minutes, with the human still owning the decision. Dotted vertical lines link the matching roles, author to producer, referees to independent reviewer, editor to human decision. A note reads that what carries over is independence and accountability, not the number of parties.](../figures/figure-10-3.svg)
 
-*Figure 10.3 — The same structure at two timescales. Both lanes separate a producer from an independent checker and vest the decision in an accountable human; the roster changes the timescale and the medium of the checks, not the principle that makes distributed review worth its cost. (Rendered as `figures/figure-10-3.svg` from the brief below, per `FIGURES.md`.)*
+*Figure 10.3 — Science already runs the structure a roster copies. Author, independent referees and a deciding editor line up with producer, independent reviewer and human decision, and the dotted lines mark the correspondence. What changes is the clock, from weeks of serial handoffs to minutes of gated ones. What must not change is on the alignment lines: independence and accountability, not headcount. (Rendered as `figures/figure-10-3.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -229,28 +229,42 @@ FIGURE BRIEF
 - title:         Distributed human review and its agentic roster share one grammar
 - type:          before/after
 - claim:         A roster reproduces the independence structure of conventional distributed review (producer, independent checker, accountable decider) but compresses serial handoffs of days into gated handoffs of minutes.
+- standfirst:    Same structure science already uses; a different clock.
 - canvas:        16:9
-- elements:      an upper "conventional" lane and a lower "agentic roster" lane sharing a common left-to-right grammar. Upper lane (conventional): "author" (blue human) → "internal read-through" (blue human) → "independent referees ×2" (blue humans) → "editor decides" (blue human), annotated "serial, ~weeks". Lower lane (agentic roster): "producer agent" (orange) → "gate" (vermillion) → "independent reviewer" (reddish purple) → "gate" (vermillion) → "human decision" (blue human), annotated "gated, ~minutes; human owns the decision"
-- flow:          two stacked left-to-right lanes read in parallel; vertical dotted alignment lines connect the matching roles — author↔producer, referees↔independent reviewer, editor↔human decision
-- labels:        "conventional", "author", "internal read-through", "independent referees ×2", "editor decides", "serial — weeks", "agentic roster", "producer agent", "gate", "independent reviewer", "human decision", "gated — minutes; human owns the decision"
-- annotations:   three light vertical alignment lines labelled "producer", "independent checker", "accountable decider" linking the two lanes; a note "what carries over: independence and accountability — not the number of parties"
-- caption:       Figure 10.3 — The same structure at two timescales. Both lanes separate a producer from an independent checker and vest the decision in an accountable human; the roster changes the timescale and the medium of the checks, not the principle that makes distributed review worth its cost.
-- alt-text:      A before/after diagram with two stacked left-to-right lanes. The upper lane, conventional, runs author, internal read-through, two independent referees, editor decides, annotated serial over weeks. The lower lane, agentic roster, runs producer agent, gate, independent reviewer, gate, human decision, annotated gated over minutes with the human owning the decision. Dotted vertical lines align the matching roles (producer, independent checker, accountable decider) across the two lanes, with a note that what carries over is independence and accountability, not the number of parties.
-- generator prompt: A flat vector before/after diagram on an off-white background, with two
-                 stacked horizontal lanes sharing a common left-to-right grammar. The upper
-                 lane is labelled "conventional" and contains, left to right, four blue
-                 head-and-shoulders icons labelled "author", "internal read-through",
-                 "independent referees ×2", "editor decides", connected by single-weight
-                 arrows, with a small annotation "serial — weeks". The lower lane is
-                 labelled "agentic roster" and contains, left to right, an orange rounded
-                 rectangle "producer agent", a vermillion diamond "gate", a reddish-purple
-                 reviewer box "independent reviewer", a second vermillion diamond "gate",
-                 and a blue head-and-shoulders icon "human decision", with a small annotation
-                 "gated — minutes; human owns the decision". Three faint vertical dotted
-                 lines connect the aligned roles across the two lanes, labelled "producer",
-                 "independent checker", "accountable decider". A note reads "what carries
-                 over: independence and accountability — not the number of parties". Generous
-                 spacing, minimal text.
+- elements:      an upper "conventional" lane and a lower "agentic roster" lane sharing a
+                 left-to-right grammar. Upper: "author" (blue human) → "internal
+                 read-through" (blue human) → "independent referees ×2" (blue humans) →
+                 "editor decides" (blue human). Lower: "producer agent" (orange) → "gate"
+                 (vermillion) → "independent reviewer" (purple) → "gate" (vermillion) →
+                 "human decision" (blue)
+- flow:          two stacked left-to-right lanes read in parallel; dotted vertical
+                 alignment lines connect author↔producer, referees↔independent reviewer,
+                 editor↔human decision
+- labels:        "conventional", "author", "internal read-through",
+                 "independent referees ×2", "editor decides", "serial — weeks",
+                 "agentic roster", "producer agent", "gate", "independent reviewer",
+                 "human decision", "gated — minutes"
+- annotations:   on the upper lane end, "serial — weeks"; on the lower lane end, "gated —
+                 minutes; the human still owns the decision"; on the three alignment
+                 lines, "producer", "independent checker", "accountable decider"; a
+                 footer, "what carries over is independence and accountability — not the
+                 number of parties"
+- caption:       Figure 10.3 — Science already runs the structure a roster copies. Author, independent referees and a deciding editor line up with producer, independent reviewer and human decision, and the dotted lines mark the correspondence. What changes is the clock, from weeks of serial handoffs to minutes of gated ones. What must not change is on the alignment lines: independence and accountability, not headcount.
+- alt-text:      Two lanes sharing one left-to-right grammar. The top lane shows conventional review: an author, an internal read-through, two independent referees and an editor who decides, marked as serial and taking weeks. The bottom lane shows the agentic roster: a producer agent, a gate, an independent reviewer, a second gate and a human decision, marked as gated and taking minutes, with the human still owning the decision. Dotted vertical lines link the matching roles, author to producer, referees to independent reviewer, editor to human decision. A note reads that what carries over is independence and accountability, not the number of parties.
+- infographic description: A flat vector before-and-after diagram, 16:9, off-white
+                 background. Title top-left: "Distributed human review and its agentic
+                 roster share one grammar". Standfirst: "Same structure science already
+                 uses; a different clock." Two stacked left-to-right lanes with aligned
+                 columns. Upper lane "conventional": blue human icons "author", "internal
+                 read-through", "independent referees ×2", "editor decides", joined by
+                 arrows, ending in the tag "serial — weeks". Lower lane "agentic roster":
+                 an orange rounded square "producer agent", a vermillion diamond "gate", a
+                 purple reviewer icon "independent reviewer", a second vermillion "gate",
+                 a blue human "human decision", ending in the tag "gated — minutes; the
+                 human still owns the decision". Three dotted vertical lines link the
+                 matching columns, labelled "producer", "independent checker",
+                 "accountable decider". Footer: "what carries over is independence and
+                 accountability — not the number of parties". Sentence case throughout.
 ```
 
 ## 10.5 Worked example: deriving a roster from a specification
@@ -272,9 +286,9 @@ That is how specification quality (Chapter 3) governs roster quality, and why th
 
 **Figure 10.4 — From specification to roster.**
 
-![A top-to-bottom sequence with four numbered mappings. On the left, four specification fields as blue tags: objective, inputs, acceptance criteria, stop conditions. Each maps by a numbered arrow to a roster element on the right: objective to producer roles; inputs to tool and data access under least privilege; acceptance criteria to deterministic gates plus an independent reviewer brief, split by whether a rule can check the criterion; stop conditions to the orchestrator loop bound and escalation to a human.](../figures/figure-10-4.svg)
+![Four blue specification fields stacked on the left, objective, inputs, acceptance criteria and stop conditions, each joined by a numbered arrow to the roster element it produces on the right: producer roles; tool and data access under least privilege; gates for the rule-checkable criteria plus a reviewer brief for the judgement ones; and the loop bound with its escalation path. The third mapping carries the sorting question, can a rule check it, gate if yes, reviewer if not. The fourth is annotated as what bounds cost and stops responsibility diffusing. A footer reads that a role no clause demands is a role that should not exist.](../figures/figure-10-4.svg)
 
-*Figure 10.4 — The derivation that keeps a roster minimal and auditable. Objective fixes the producers, inputs fix least-privilege access, acceptance criteria split into deterministic gates and reviewer briefs by whether a rule can check them, and stop conditions bound the loop and set the escalation to the human node. A role no clause demands is a role that should not exist. (Rendered as `figures/figure-10-4.svg` from the brief below, per `FIGURES.md`.)*
+*Figure 10.4 — The roster is derived, not designed. Each field of the Chapter 3 specification produces its own roster element, so every role and gate traces back to a clause a person wrote and can audit. The third mapping does the sorting: anything a rule can check becomes a gate, and only what needs judgement earns a reviewer. A role no clause demands should not exist. (Rendered as `figures/figure-10-4.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -282,26 +296,42 @@ FIGURE BRIEF
 - title:         Deriving a roster from the specification schema
 - type:          sequence
 - claim:         Each field of a Chapter 3 specification maps to a specific roster element, so that every role and gate has an auditable provenance in a clause a human wrote.
+- standfirst:    Every role traces to a clause somebody wrote. No clause, no role.
 - canvas:        16:9
-- elements:      four specification fields on the left as blue tags stacked top to bottom — "objective", "inputs", "acceptance criteria", "stop conditions"; four roster outcomes on the right, each reached by a numbered arrow — "producer role(s)" (orange), "tool & data-store access, per-role least privilege" (green tool + sky data-store), "gates (rule-checkable criteria) + independent reviewer brief (judgement criteria)" (vermillion gate + reddish-purple reviewer), "orchestrator loop bound + escalation to human" (grey orchestrator + blue human)
-- flow:          top-to-bottom, four numbered mappings read in order: 1 objective → producer role(s); 2 inputs → tool & data access; 3 acceptance criteria → gates + reviewer brief; 4 stop conditions → loop bound + escalation
-- labels:        "objective", "inputs", "acceptance criteria", "stop conditions", "producer role(s)", "tool & data access (least privilege)", "gates + reviewer brief", "loop bound + escalation", "1", "2", "3", "4"
-- annotations:   a callout on mapping 3 "can a rule check it? → gate; if not → reviewer"; a callout on mapping 4 "bounds cost and diffusion of responsibility"
-- caption:       Figure 10.4 — The derivation that keeps a roster minimal and auditable. Objective fixes the producers, inputs fix least-privilege access, acceptance criteria split into deterministic gates and reviewer briefs by whether a rule can check them, and stop conditions bound the loop and set the escalation to the human node. A role no clause demands is a role that should not exist.
-- alt-text:      A top-to-bottom sequence with four numbered mappings. On the left, four specification fields as blue tags: objective, inputs, acceptance criteria, stop conditions. Each maps by a numbered arrow to a roster element on the right: objective to producer roles; inputs to tool and data access under least privilege; acceptance criteria to deterministic gates plus an independent reviewer brief, split by whether a rule can check the criterion; stop conditions to the orchestrator loop bound and escalation to a human.
-- generator prompt: A flat vector sequence diagram on an off-white background, read top to
-                 bottom. On the left, four blue tags stacked vertically read "objective",
-                 "inputs", "acceptance criteria", "stop conditions". From each, a numbered
-                 horizontal arrow (1, 2, 3, 4) points right to a roster element: arrow 1 to
-                 an orange rounded rectangle "producer role(s)"; arrow 2 to a green wrench
-                 icon beside a sky-blue cylinder labelled "tool & data access (least
-                 privilege)"; arrow 3 to a pairing of a vermillion diamond and a
-                 reddish-purple reviewer box labelled "gates + reviewer brief", with a small
-                 callout "can a rule check it? gate; if not, reviewer"; arrow 4 to a grey
-                 orchestrator bar beside a blue head-and-shoulders icon labelled "loop bound
-                 + escalation", with a small callout "bounds cost and diffusion of
-                 responsibility". Single-weight connectors, one arrowhead style, generous
-                 spacing, minimal text.
+- elements:      four specification fields on the left as blue tags stacked top to bottom
+                 — "objective", "inputs", "acceptance criteria", "stop conditions"; four
+                 roster outcomes on the right, each reached by a numbered arrow —
+                 "producer role(s)" (orange), "tool & data access (least privilege)"
+                 (green tool + sky data-store), "gates + reviewer brief" (vermillion gate
+                 + purple reviewer), "loop bound + escalation" (grey)
+- flow:          top-to-bottom, four numbered mappings read in order: 1 objective →
+                 producer role(s); 2 inputs → tool & data access; 3 acceptance criteria →
+                 gates + reviewer brief; 4 stop conditions → loop bound + escalation
+- labels:        "objective", "inputs", "acceptance criteria", "stop conditions",
+                 "producer role(s)", "tool & data access (least privilege)",
+                 "gates + reviewer brief", "loop bound + escalation", "1", "2", "3", "4"
+- annotations:   on mapping 1, "one bounded objective, one producer"; on mapping 2,
+                 "access assigned per role, never to the roster as a whole"; on mapping 3,
+                 "can a rule check it? gate if yes; reviewer brief if not"; on mapping 4,
+                 "bounds cost, and stops responsibility diffusing"; a footer, "a role no
+                 clause of the specification demands is a role that should not exist"
+- caption:       Figure 10.4 — The roster is derived, not designed. Each field of the Chapter 3 specification produces its own roster element, so every role and gate traces back to a clause a person wrote and can audit. The third mapping does the sorting: anything a rule can check becomes a gate, and only what needs judgement earns a reviewer. A role no clause demands should not exist.
+- alt-text:      Four blue specification fields stacked on the left, objective, inputs, acceptance criteria and stop conditions, each joined by a numbered arrow to the roster element it produces on the right: producer roles; tool and data access under least privilege; gates for the rule-checkable criteria plus a reviewer brief for the judgement ones; and the loop bound with its escalation path. The third mapping carries the sorting question, can a rule check it, gate if yes, reviewer if not. The fourth is annotated as what bounds cost and stops responsibility diffusing. A footer reads that a role no clause demands is a role that should not exist.
+- infographic description: A flat vector mapping diagram, 16:9, off-white background.
+                 Title top-left: "Deriving a roster from the specification schema".
+                 Standfirst: "Every role traces to a clause somebody wrote. No clause, no
+                 role." Left column: four blue tags stacked with generous spacing —
+                 "objective", "inputs", "acceptance criteria", "stop conditions". Right
+                 column: four outcome blocks aligned with them — an orange rounded square
+                 "producer role(s)"; a green wrench beside a sky-blue cylinder "tool &
+                 data access (least privilege)"; a vermillion diamond beside a purple
+                 reviewer icon "gates + reviewer brief"; a grey rounded rectangle "loop
+                 bound + escalation". Four numbered straight arrows join the pairs, each
+                 with its annotation beneath: "1 · one bounded objective, one producer";
+                 "2 · access assigned per role, never to the roster as a whole"; "3 · can
+                 a rule check it? gate if yes; reviewer brief if not"; "4 · bounds cost,
+                 and stops responsibility diffusing". Footer: "a role no clause of the
+                 specification demands is a role that should not exist". Sentence case.
 ```
 
 ## 10.6 Failure modes
