@@ -1,104 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
-  <title>Figure 5.1 — Where the labour sits: manual synthesis versus a governed agentic redesign</title>
-  <desc>A two-row before/after diagram. The top row shows a person moving through search, triage, reading and drafting to an interpret step. The bottom row shows a specification feeding an agent that retrieves, triages and drafts against a corpus store, then passes through a citation-verification gate before reaching the same human interpret-and-decide step, which is aligned vertically with the top row to show it is unchanged.</desc>
-  <defs>
-    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
-    </marker>
-  </defs>
-
-  <rect width="1280" height="720" fill="#F7F7F5"/>
-
-  <!-- row labels -->
-  <text x="45" y="100" font-size="18" font-weight="bold" fill="#111111">conventional</text>
-  <text x="45" y="378" font-size="18" font-weight="bold" fill="#111111">agentic</text>
-
-  <!-- vertical alignment line: interpret is unchanged across rows -->
-  <line x1="1170" y1="240" x2="1170" y2="450" stroke="#999999" stroke-width="1.5" stroke-dasharray="5 5"/>
-
-  <!-- ============ TOP ROW: conventional ============ -->
-  <!-- human icon (blue) -->
-  <circle cx="120" cy="190" r="15" fill="none" stroke="#0072B2" stroke-width="3"/>
-  <path d="M92,228 a28,28 0 0 1 56,0" fill="none" stroke="#0072B2" stroke-width="3"/>
-
-  <!-- bracket over search / triage / read -->
-  <path d="M255,170 L255,158 L765,158 L765,170" fill="none" stroke="#111111" stroke-width="1.5"/>
-  <text x="510" y="146" font-size="15" fill="#111111" text-anchor="middle">time-dominant, silent gaps</text>
-
-  <!-- stage boxes -->
-  <g fill="#F7F7F5" stroke="#111111" stroke-width="2">
-    <rect x="255" y="182" width="130" height="56" rx="8"/>
-    <rect x="440" y="182" width="130" height="56" rx="8"/>
-    <rect x="595" y="182" width="170" height="56" rx="8"/>
-    <rect x="800" y="182" width="130" height="56" rx="8"/>
-  </g>
-  <rect x="1105" y="182" width="130" height="56" rx="8" fill="#0072B2"/>
-  <g font-size="16" text-anchor="middle">
-    <text x="320" y="216" fill="#111111">search</text>
-    <text x="505" y="216" fill="#111111">triage</text>
-    <text x="680" y="216" fill="#111111">read and note</text>
-    <text x="865" y="216" fill="#111111">draft</text>
-    <text x="1170" y="216" fill="#FFFFFF">interpret</text>
-  </g>
-
-  <!-- top-row arrows -->
-  <g stroke="#111111" stroke-width="2">
-    <line x1="140" y1="210" x2="253" y2="210" marker-end="url(#ah)"/>
-    <line x1="387" y1="210" x2="438" y2="210" marker-end="url(#ah)"/>
-    <line x1="572" y1="210" x2="593" y2="210" marker-end="url(#ah)"/>
-    <line x1="767" y1="210" x2="798" y2="210" marker-end="url(#ah)"/>
-    <line x1="932" y1="210" x2="1103" y2="210" marker-end="url(#ah)"/>
-  </g>
-
-  <!-- ============ BOTTOM ROW: agentic ============ -->
-  <!-- specification tag (blue) -->
-  <rect x="50" y="455" width="140" height="52" rx="8" fill="#0072B2"/>
-  <text x="120" y="488" font-size="16" fill="#FFFFFF" text-anchor="middle">specification</text>
-  <line x1="192" y1="481" x2="248" y2="481" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- agent container -->
-  <rect x="250" y="410" width="680" height="150" rx="14" fill="none" stroke="#E69F00" stroke-width="3"/>
-  <text x="270" y="438" font-size="20" fill="#E69F00">agent</text>
-  <g fill="#F7F7F5" stroke="#E69F00" stroke-width="2">
-    <rect x="265" y="452" width="130" height="52" rx="8"/>
-    <rect x="440" y="452" width="130" height="52" rx="8"/>
-    <rect x="775" y="452" width="130" height="52" rx="8"/>
-  </g>
-  <g font-size="16" text-anchor="middle" fill="#111111">
-    <text x="330" y="484">retrieve</text>
-    <text x="505" y="484">triage</text>
-    <text x="840" y="484">draft</text>
-  </g>
-
-  <!-- corpus cylinder (sky) with bidirectional link -->
-  <path d="M430,590 v48 a70,16 0 0 0 140,0 v-48" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <ellipse cx="500" cy="590" rx="70" ry="16" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <text x="500" y="627" font-size="16" fill="#111111" text-anchor="middle">corpus</text>
-  <line x1="480" y1="562" x2="480" y2="588" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <line x1="520" y1="588" x2="520" y2="562" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- agent to gate -->
-  <line x1="930" y1="481" x2="953" y2="481" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- citation-verification gate diamond (vermillion) -->
-  <polygon points="1020,416 1085,481 1020,546 955,481" fill="#D55E00"/>
-  <path d="M1002,481 l12,12 l22,-26" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="1020" y="572" font-size="15" fill="#111111" text-anchor="middle">citation-verification gate</text>
-
-  <!-- gate callout on yellow highlight -->
-  <rect x="875" y="600" width="290" height="26" rx="4" fill="#F0E442"/>
-  <text x="1020" y="618" font-size="14" fill="#111111" text-anchor="middle">every claim traced to a retrievable source</text>
-
-  <!-- pass to interpret -->
-  <line x1="1085" y1="481" x2="1103" y2="481" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="1095" y="465" font-size="14" fill="#111111" text-anchor="middle">pass</text>
-
-  <!-- interpret and decide (blue) -->
-  <rect x="1105" y="452" width="130" height="58" rx="8" fill="#0072B2"/>
-  <text x="1170" y="478" font-size="15" fill="#FFFFFF" text-anchor="middle">interpret and</text>
-  <text x="1170" y="498" font-size="15" fill="#FFFFFF" text-anchor="middle">decide</text>
-
-  <!-- fail return to agent -->
-  <path d="M1020,546 L1020,660 L590,660 L590,562" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="1035" y="600" font-size="15" fill="#111111">fail</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+<defs><marker id="ah51" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker></defs>
+<rect width="1600" height="900" fill="#F7F7F5"/>
+<text x="56.0" y="72.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" fill="#111111" font-weight="600" text-anchor="start">Where the work moves, and where it does not</text>
+<text x="56.0" y="112.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" fill="#3A3A3A" font-weight="400" text-anchor="start">The agent takes the time-consuming stages; you keep the one that decides what it means.</text>
+<text x="70.0" y="196.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#999999" font-weight="600" text-anchor="start">conventional</text>
+<circle cx="191.66666666666669" cy="254.4" r="9.6" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<path d="M175.66666666666669,279.2 a16,14.4 0 0 1 32,0" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<text x="191.7" y="322.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">scientist</text>
+<rect x="340.0" y="240.0" width="190.0" height="64.0" rx="10" fill="none" stroke="#111111" stroke-width="2.2"/>
+<text x="435.0" y="278.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">search</text>
+<line x1="219.7" y1="272.0" x2="334.0" y2="272.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah51)"/>
+<rect x="583.3" y="240.0" width="190.0" height="64.0" rx="10" fill="none" stroke="#111111" stroke-width="2.2"/>
+<text x="678.3" y="278.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">triage</text>
+<line x1="534.0" y1="272.0" x2="577.3" y2="272.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah51)"/>
+<rect x="826.7" y="240.0" width="190.0" height="64.0" rx="10" fill="none" stroke="#111111" stroke-width="2.2"/>
+<text x="921.7" y="278.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">read and note</text>
+<line x1="777.3" y1="272.0" x2="820.7" y2="272.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah51)"/>
+<rect x="1070.0" y="240.0" width="190.0" height="64.0" rx="10" fill="none" stroke="#111111" stroke-width="2.2"/>
+<text x="1165.0" y="278.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">draft</text>
+<line x1="1020.7" y1="272.0" x2="1064.0" y2="272.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah51)"/>
+<rect x="1313.3" y="240.0" width="190.0" height="64.0" rx="10" fill="none" stroke="#0072B2" stroke-width="2.2"/>
+<text x="1408.3" y="278.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">interpret</text>
+<line x1="1264.0" y1="272.0" x2="1307.3" y2="272.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah51)"/>
+<path d="M340.0,330 v10 M340.0,340 H1016.6666666666667 M1016.6666666666667,340 v-10" fill="none" stroke="#999999" stroke-width="1.8"/>
+<text x="678.3" y="360.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">most of the time goes here - and a body of work you never found leaves no trace</text>
+<text x="70.0" y="470.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#3A3A3A" font-weight="600" text-anchor="start">agentic</text>
+<rect x="96.7" y="510.0" width="190.0" height="58.0" rx="16" fill="none" stroke="#0072B2" stroke-width="2.2"/>
+<text x="191.7" y="545.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">specification</text>
+<rect x="330.0" y="492.0" width="696.7" height="96.0" rx="12" fill="none" stroke="#E69F00" stroke-width="2.3"/>
+<text x="347.0" y="478.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#E69F00" font-weight="400" text-anchor="start">agent</text>
+<rect x="355.0" y="512.0" width="160.0" height="54.0" rx="10" fill="none" stroke="#E69F00" stroke-width="2.2"/>
+<text x="435.0" y="545.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">retrieve</text>
+<rect x="598.3" y="512.0" width="160.0" height="54.0" rx="10" fill="none" stroke="#E69F00" stroke-width="2.2"/>
+<text x="678.3" y="545.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">triage</text>
+<rect x="841.7" y="512.0" width="160.0" height="54.0" rx="10" fill="none" stroke="#E69F00" stroke-width="2.2"/>
+<text x="921.7" y="545.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">draft</text>
+<line x1="290.7" y1="540.0" x2="324.0" y2="540.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah51)"/>
+<path d="M608.3333333333334,650.36 a70.0,10.360000000000001 0 0 1 140,0 v53.28 a70.0,10.360000000000001 0 0 1 -140,0 z" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<path d="M608.3333333333334,650.36 a70.0,10.360000000000001 0 0 0 140,0" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<text x="678.3" y="682.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">corpus</text>
+<line x1="678.3" y1="590.0" x2="678.3" y2="636.0" stroke="#56B4E9" stroke-width="1.8"/>
+<text x="608.3" y="748.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">drafting may draw only on what was actually</text>
+<text x="608.3" y="766.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">retrieved</text>
+<polygon points="1165.0,500.0 1260.0,540 1165.0,580.0 1070.0,540" fill="none" stroke="#D55E00" stroke-width="2.4"/>
+<text x="1165.0" y="534.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">citation</text>
+<text x="1165.0" y="558.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">gate</text>
+<line x1="1030.7" y1="540.0" x2="1064.0" y2="540.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah51)"/>
+<text x="1135.0" y="640.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">every claim traced</text>
+<text x="1135.0" y="658.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">to a source that</text>
+<text x="1135.0" y="677.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">exists and supports</text>
+<text x="1135.0" y="696.3" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">it</text>
+<rect x="1313.3" y="508.0" width="190.0" height="64.0" rx="10" fill="none" stroke="#0072B2" stroke-width="2.2"/>
+<text x="1408.3" y="534.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">interpret and</text>
+<text x="1408.3" y="558.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">decide</text>
+<line x1="1264.0" y1="540.0" x2="1307.3" y2="540.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah51)"/>
+<line x1="1408.3" y1="306.0" x2="1408.3" y2="500.0" stroke="#999999" stroke-width="1.5" stroke-dasharray="6 6"/>
+<text x="56.0" y="860.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#999999" font-weight="400" text-anchor="start">The interpret step sits in the same column in both rows on purpose: it is the one stage this redesign deliberately leaves alone.</text>
 </svg>

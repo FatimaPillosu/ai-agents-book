@@ -1,51 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
-  <title>Figure 5.3 — From retrieved corpus to interpreted synthesis: where documents and claims are lost</title>
-  <desc>A top-to-bottom funnel of five narrowing horizontal bars labelled retrieved, after triage, claims drafted with citations, claims surviving the gate, and interpreted by the scientist. Each transition carries a count placeholder marked as author-supplied. A callout at the gate step notes that removed claims failed the existence, passage-present or claim-supported test.</desc>
-  <defs>
-    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
-    </marker>
-  </defs>
-
-  <rect width="1280" height="720" fill="#F7F7F5"/>
-
-  <!-- funnel bars -->
-  <rect x="180" y="100" width="720" height="60" rx="6" fill="#56B4E9"/>
-  <text x="540" y="137" font-size="16" fill="#111111" text-anchor="middle">retrieved</text>
-
-  <rect x="240" y="210" width="600" height="60" rx="6" fill="#56B4E9"/>
-  <text x="540" y="247" font-size="16" fill="#111111" text-anchor="middle">after triage</text>
-
-  <rect x="305" y="320" width="470" height="60" rx="6" fill="#E69F00"/>
-  <text x="540" y="357" font-size="16" fill="#111111" text-anchor="middle">claims drafted with citations</text>
-
-  <rect x="375" y="430" width="330" height="60" rx="6" fill="none" stroke="#D55E00" stroke-width="3"/>
-  <text x="540" y="467" font-size="16" fill="#111111" text-anchor="middle">claims surviving the gate</text>
-
-  <rect x="420" y="540" width="240" height="60" rx="6" fill="#0072B2"/>
-  <text x="540" y="577" font-size="13" fill="#FFFFFF" text-anchor="middle">interpreted by the scientist</text>
-
-  <!-- transition arrows -->
-  <g stroke="#111111" stroke-width="2">
-    <line x1="540" y1="162" x2="540" y2="206" marker-end="url(#ah)"/>
-    <line x1="540" y1="272" x2="540" y2="316" marker-end="url(#ah)"/>
-    <line x1="540" y1="382" x2="540" y2="426" marker-end="url(#ah)"/>
-    <line x1="540" y1="492" x2="540" y2="536" marker-end="url(#ah)"/>
-  </g>
-
-  <!-- per-transition author-supplied counts -->
-  <g font-size="16" fill="#111111">
-    <text x="940" y="190">n = [AUTHOR]</text>
-    <text x="940" y="300">n = [AUTHOR]</text>
-    <text x="940" y="410">n = [AUTHOR]</text>
-    <text x="940" y="520">n = [AUTHOR]</text>
-  </g>
-
-  <!-- vermillion callout at the gate transition -->
-  <line x1="345" y1="408" x2="373" y2="430" stroke="#D55E00" stroke-width="2"/>
-  <text x="90" y="400" font-size="15" fill="#D55E00">removed: fails exists /</text>
-  <text x="90" y="420" font-size="15" fill="#D55E00">passage / support</text>
-
-  <!-- placeholder note -->
-  <text x="540" y="680" font-size="15" fill="#999999" text-anchor="middle">counts are the author's to supply — placeholders shown</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+<defs><marker id="ah53" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker></defs>
+<rect width="1600" height="900" fill="#F7F7F5"/>
+<text x="56.0" y="72.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" fill="#111111" font-weight="600" text-anchor="start">From retrieved corpus to interpreted synthesis</text>
+<text x="56.0" y="112.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" fill="#3A3A3A" font-weight="400" text-anchor="start">The width lost at the gate is what makes what survives worth trusting.</text>
+<rect x="160.0" y="210.0" width="1000.0" height="74.0" rx="8" fill="#56B4E9" stroke="none"/>
+<text x="660.0" y="254.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">retrieved</text>
+<text x="1184.0" y="240.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#999999" font-weight="400" text-anchor="start">n = [AUTHOR]</text>
+<text x="1184.0" y="282.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">documents that do not bear on the question</text>
+<rect x="280.0" y="320.0" width="760.0" height="74.0" rx="8" fill="#56B4E9" stroke="none"/>
+<text x="660.0" y="364.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">after triage</text>
+<text x="1064.0" y="350.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#999999" font-weight="400" text-anchor="start">n = [AUTHOR]</text>
+<text x="1064.0" y="392.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">every claim now carries a citation into the corpus</text>
+<rect x="380.0" y="430.0" width="560.0" height="74.0" rx="8" fill="#E69F00" stroke="none"/>
+<text x="660.0" y="474.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">claims drafted with citations</text>
+<text x="964.0" y="460.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#999999" font-weight="400" text-anchor="start">n = [AUTHOR]</text>
+<text x="964.0" y="502.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#D55E00" font-weight="400" text-anchor="start">removed: fails exists / passage present / claim supported</text>
+<rect x="470.0" y="540.0" width="380.0" height="74.0" rx="8" fill="none" stroke="#D55E00" stroke-width="2.6"/>
+<text x="660.0" y="584.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">claims surviving the gate</text>
+<text x="874.0" y="570.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#999999" font-weight="400" text-anchor="start">n = [AUTHOR]</text>
+<text x="874.0" y="612.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">a named person decides what the surviving evidence means</text>
+<rect x="510.0" y="650.0" width="300.0" height="74.0" rx="8" fill="#0072B2" stroke="none"/>
+<text x="660.0" y="694.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">interpreted by the scientist</text>
+<text x="834.0" y="680.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#999999" font-weight="400" text-anchor="start">n = [AUTHOR]</text>
+<rect x="1150.0" y="300.0" width="380.0" height="95.0" rx="8" fill="#F0E442" stroke="none"/>
+<text x="1162.0" y="324.6" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="400" text-anchor="start">the width lost at the gate is</text>
+<text x="1162.0" y="343.4" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="400" text-anchor="start">the point - a gate that removes</text>
+<text x="1162.0" y="362.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="400" text-anchor="start">nothing has not been shown to</text>
+<text x="1162.0" y="380.9" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="400" text-anchor="start">work</text>
+<text x="56.0" y="860.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#999999" font-weight="400" text-anchor="start">Counts are the author's to supply - placeholders shown.</text>
 </svg>

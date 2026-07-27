@@ -1,88 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
-  <title>Figure 5.2 — Retrieval-grounded synthesis with a citation-verification gate</title>
-  <desc>An architecture diagram. A specification feeds a retrieval-and-drafting agent containing a language model and a plan–act–observe loop. The agent calls bibliographic-search and web-search tools and writes results into a retrieved-corpus store, then drafts using only that store. Its output passes to a citation-verification gate, annotated with the three checks exists, passage present and claim supported; failing citations return to the agent, passing ones proceed to a human interpret-and-decide step.</desc>
-  <defs>
-    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
-    </marker>
-    <marker id="ahO" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#E69F00"/>
-    </marker>
-  </defs>
-
-  <rect width="1280" height="720" fill="#F7F7F5"/>
-
-  <!-- specification tag (blue) -->
-  <rect x="40" y="304" width="140" height="52" rx="8" fill="#0072B2"/>
-  <text x="110" y="337" font-size="16" fill="#FFFFFF" text-anchor="middle">specification</text>
-  <line x1="182" y1="330" x2="248" y2="330" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- retrieval tools (green wrenches) above the agent -->
-  <text x="350" y="72" font-size="15" fill="#111111" text-anchor="middle">bibliographic search</text>
-  <g stroke="#009E73" stroke-width="9" fill="none" stroke-linecap="round" transform="translate(350,105)">
-    <path d="M12,-12 A18,18 0 1 0 12,12"/>
-    <path d="M-13,13 L-32,32"/>
-  </g>
-  <line x1="350" y1="128" x2="350" y2="178" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <text x="565" y="72" font-size="15" fill="#111111" text-anchor="middle">web search</text>
-  <g stroke="#009E73" stroke-width="9" fill="none" stroke-linecap="round" transform="translate(565,105)">
-    <path d="M12,-12 A18,18 0 1 0 12,12"/>
-    <path d="M-13,13 L-32,32"/>
-  </g>
-  <line x1="565" y1="128" x2="565" y2="178" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- agent container -->
-  <rect x="250" y="180" width="420" height="300" rx="14" fill="none" stroke="#E69F00" stroke-width="3"/>
-  <text x="272" y="214" font-size="18" fill="#E69F00">retrieval and</text>
-  <text x="272" y="236" font-size="18" fill="#E69F00">drafting agent</text>
-
-  <!-- LLM box -->
-  <rect x="300" y="272" width="120" height="60" rx="8" fill="#E69F00"/>
-  <text x="360" y="309" font-size="20" fill="#111111" text-anchor="middle">LLM</text>
-
-  <!-- plan-act-observe loop -->
-  <line x1="422" y1="302" x2="505" y2="302" stroke="#111111" stroke-width="1.5"/>
-  <path d="M558,258 A45,45 0 1 1 512,302" fill="none" stroke="#E69F00" stroke-width="4" marker-end="url(#ahO)"/>
-  <text x="558" y="372" font-size="16" fill="#111111" text-anchor="middle">plan – act – observe</text>
-
-  <!-- retrieved corpus cylinder (sky) -->
-  <path d="M390,545 v48 a70,16 0 0 0 140,0 v-48" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <ellipse cx="460" cy="545" rx="70" ry="16" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <text x="460" y="582" font-size="16" fill="#111111" text-anchor="middle">retrieved corpus</text>
-  <text x="460" y="620" font-size="14" fill="#999999" text-anchor="middle">drafting draws only from here</text>
-  <line x1="440" y1="482" x2="440" y2="543" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <line x1="480" y1="543" x2="480" y2="482" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- agent to gate -->
-  <line x1="670" y1="330" x2="758" y2="330" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- reviewer icon (purple, independence) attached above gate -->
-  <circle cx="830" cy="158" r="13" fill="none" stroke="#CC79A7" stroke-width="3"/>
-  <path d="M807,190 a23,23 0 0 1 46,0" fill="none" stroke="#CC79A7" stroke-width="3"/>
-  <path d="M844,150 l7,7 l13,-15" fill="none" stroke="#CC79A7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="830" y1="196" x2="830" y2="258" stroke="#CC79A7" stroke-width="1.5" stroke-dasharray="5 5"/>
-
-  <!-- citation-verification gate diamond (vermillion) -->
-  <polygon points="830,260 900,330 830,400 760,330" fill="#D55E00"/>
-  <path d="M812,330 l12,12 l22,-26" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="830" y="425" font-size="15" fill="#111111" text-anchor="middle">citation-verification gate</text>
-
-  <!-- gate callout on yellow highlight -->
-  <rect x="675" y="446" width="310" height="26" rx="4" fill="#F0E442"/>
-  <text x="830" y="464" font-size="14" fill="#111111" text-anchor="middle">exists · passage present · claim supported</text>
-
-  <!-- pass to human -->
-  <line x1="900" y1="330" x2="1040" y2="330" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="970" y="314" font-size="15" fill="#111111" text-anchor="middle">pass</text>
-
-  <!-- human interpret and decide (blue) -->
-  <circle cx="1120" cy="300" r="16" fill="none" stroke="#0072B2" stroke-width="3"/>
-  <path d="M1092,364 a28,28 0 0 1 56,0" fill="none" stroke="#0072B2" stroke-width="3"/>
-  <text x="1120" y="400" font-size="16" fill="#111111" text-anchor="middle">interpret and</text>
-  <text x="1120" y="420" font-size="16" fill="#111111" text-anchor="middle">decide</text>
-
-  <!-- fail return to agent -->
-  <path d="M830,400 L830,660 L300,660 L300,482" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="845" y="600" font-size="15" fill="#111111">fail</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+<defs><marker id="ah52" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker></defs>
+<rect width="1600" height="900" fill="#F7F7F5"/>
+<text x="56.0" y="72.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" fill="#111111" font-weight="600" text-anchor="start">Retrieval-grounded synthesis, with the gate that makes it safe</text>
+<text x="56.0" y="112.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" fill="#3A3A3A" font-weight="400" text-anchor="start">The model writes only about documents that were actually fetched, and a separate step checks every one.</text>
+<rect x="70.0" y="300.0" width="180.0" height="66.0" rx="16" fill="none" stroke="#0072B2" stroke-width="2.2"/>
+<text x="160.0" y="339.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">specification</text>
+<rect x="320.0" y="240.0" width="420.0" height="220.0" rx="12" fill="none" stroke="#E69F00" stroke-width="2.4"/>
+<text x="340.0" y="272.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#E69F00" font-weight="400" text-anchor="start">retrieval and drafting agent</text>
+<rect x="348.0" y="292.0" width="150.0" height="60.0" rx="10" fill="none" stroke="#E69F00" stroke-width="2.2"/>
+<text x="423.0" y="328.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">LLM</text>
+<rect x="524.0" y="292.0" width="190.0" height="60.0" rx="30" fill="none" stroke="#E69F00" stroke-width="2.2"/>
+<text x="619.0" y="316.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">plan - act -</text>
+<text x="619.0" y="340.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">observe</text>
+<path d="M381.5,408.5 l14.25,-14.25 M396.5,393.5 a6.0,6.0 0 1 0 7.5,7.5" fill="none" stroke="#009E73" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M441.5,408.5 l14.25,-14.25 M456.5,393.5 a6.0,6.0 0 1 0 7.5,7.5" fill="none" stroke="#009E73" stroke-width="2.5" stroke-linecap="round"/>
+<text x="482.0" y="404.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">bibliographic search · web search</text>
+<line x1="250.0" y1="333.0" x2="314.0" y2="333.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah52)"/>
+<text x="70.0" y="404.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">several</text>
+<text x="70.0" y="422.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">vocabularies on</text>
+<text x="70.0" y="441.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">purpose - the</text>
+<text x="70.0" y="460.3" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">terminology is</text>
+<text x="70.0" y="479.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">unsettled</text>
+<path d="M430,552.04 a100.0,12.040000000000001 0 0 1 200,0 v61.92 a100.0,12.040000000000001 0 0 1 -200,0 z" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<path d="M430,552.04 a100.0,12.040000000000001 0 0 0 200,0" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<text x="530.0" y="589.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">retrieved corpus</text>
+<line x1="480.0" y1="460.0" x2="480.0" y2="536.0" stroke="#56B4E9" stroke-width="1.8"/>
+<line x1="580.0" y1="536.0" x2="580.0" y2="460.0" stroke="#56B4E9" stroke-width="1.8"/>
+<text x="660.0" y="586.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">drafting may draw on this and nothing else</text>
+<polygon points="940,302.0 1050.0,350 940,398.0 830.0,350" fill="none" stroke="#D55E00" stroke-width="2.4"/>
+<text x="940.0" y="344.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">citation-verification</text>
+<text x="940.0" y="368.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">gate</text>
+<line x1="740.0" y1="350.0" x2="824.0" y2="350.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah52)"/>
+<circle cx="940" cy="190.4" r="9.6" fill="none" stroke="#CC79A7" stroke-width="2.3"/>
+<path d="M924,215.2 a16,14.4 0 0 1 32,0" fill="none" stroke="#CC79A7" stroke-width="2.3"/>
+<path d="M949.6,202.4 l5.12,5.76 l10.56,-12.8" fill="none" stroke="#CC79A7" stroke-width="2.5" stroke-linecap="round"/>
+<text x="1000.0" y="208.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">a separate step, not the drafting agent</text>
+<rect x="1090.0" y="300.0" width="404.0" height="76.3" rx="8" fill="#F0E442" stroke="none"/>
+<text x="1102.0" y="324.6" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="400" text-anchor="start">three tests: the work exists · the</text>
+<text x="1102.0" y="343.4" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="400" text-anchor="start">passage is really in it · the</text>
+<text x="1102.0" y="362.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="400" text-anchor="start">passage supports the claim</text>
+<path d="M940.0,402.0 L940.0,470.0 L770.0,470.0" fill="none" stroke="#111111" stroke-width="2.1" marker-end="url(#ah52)"/>
+<text x="870.0" y="490.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">fail: removed or returned</text>
+<line x1="1054.0" y1="350.0" x2="1170.0" y2="350.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah52)"/>
+<text x="1112.0" y="334.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">pass</text>
+<circle cx="1240" cy="326.4" r="9.6" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<path d="M1224,351.2 a16,14.4 0 0 1 32,0" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<text x="1240.0" y="398.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="400" text-anchor="middle">interpret and decide</text>
+<text x="1240.0" y="424.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">decides what the evidence means</text>
+<rect x="1090.0" y="647.4" width="3.4" height="56.3" fill="#D55E00"/>
+<text x="1102.0" y="660.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#D55E00" font-weight="400" text-anchor="start">a run where nothing fails is evidence the</text>
+<text x="1102.0" y="678.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#D55E00" font-weight="400" text-anchor="start">check is broken, not that the corpus was</text>
+<text x="1102.0" y="697.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#D55E00" font-weight="400" text-anchor="start">clean</text>
+<text x="56.0" y="860.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#999999" font-weight="400" text-anchor="start">Retrieval fills the corpus; drafting is confined to it; the gate tests every citation; interpretation stays with you.</text>
 </svg>
