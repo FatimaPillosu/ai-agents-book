@@ -1,57 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
-  <title>Figure 6.4 — One trace, three dispositions: spike accepted, spike rejected, gap flagged</title>
-  <desc>A two-panel time-series figure sharing a time axis. The upper panel plots river stage with three marked events; the lower panel plots co-located rainfall as bars. Event A, a stage spike aligned with a tall rainfall bar, is accepted. Event B, a stage spike with no rainfall beneath it, is rejected by a rule for exceeding the rate limit, marked in vermillion. Event C, a gap in the stage line, is flagged as a telemetry gap and left unfilled.</desc>
-
-  <rect width="1280" height="720" fill="#F7F7F5"/>
-
-  <!-- event C grey band (telemetry gap) -->
-  <rect x="680" y="110" width="80" height="540" fill="#999999" fill-opacity="0.2"/>
-
-  <!-- vertical event guides -->
-  <g stroke="#999999" stroke-width="1.5" stroke-dasharray="5 6">
-    <line x1="340" y1="110" x2="340" y2="650"/>
-    <line x1="720" y1="110" x2="720" y2="650"/>
-    <line x1="980" y1="110" x2="980" y2="650"/>
-  </g>
-
-  <!-- ===== upper panel: river stage ===== -->
-  <text x="130" y="100" font-size="16" fill="#111111">river stage</text>
-  <line x1="120" y1="110" x2="120" y2="340" stroke="#111111" stroke-width="1.5"/>
-  <line x1="120" y1="340" x2="1180" y2="340" stroke="#111111" stroke-width="1.5"/>
-
-  <polyline points="120,300 200,292 260,296 300,285 330,168 362,270 420,296 500,300 580,292 640,297 680,295" fill="none" stroke="#111111" stroke-width="2.5"/>
-  <polyline points="760,296 820,294 900,290 950,284 980,166 1012,268 1060,296 1120,294 1180,297" fill="none" stroke="#111111" stroke-width="2.5"/>
-
-  <!-- event A: accepted (green tick) -->
-  <path d="M333,150 l6,9 l15,-21" fill="none" stroke="#009E73" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="340" y="128" font-size="15" fill="#111111" text-anchor="middle">A — accepted: rainfall-backed spike</text>
-
-  <!-- event B: rejected by rule (vermillion cross) -->
-  <g stroke="#D55E00" stroke-width="4" stroke-linecap="round">
-    <line x1="971" y1="141" x2="989" y2="159"/>
-    <line x1="989" y1="141" x2="971" y2="159"/>
-  </g>
-  <text x="980" y="120" font-size="15" fill="#111111" text-anchor="middle">B — rejected by rule: no rainfall, exceeds rate limit</text>
-  <text x="980" y="250" font-size="14" fill="#111111" text-anchor="middle">fluent proposal, wrong — caught by physical rule</text>
-
-  <!-- event C label -->
-  <text x="720" y="140" font-size="15" fill="#111111" text-anchor="middle">C — gap flagged, not filled</text>
-
-  <!-- ===== lower panel: rainfall ===== -->
-  <text x="130" y="420" font-size="16" fill="#111111">rainfall</text>
-  <line x1="120" y1="430" x2="120" y2="650" stroke="#111111" stroke-width="1.5"/>
-  <line x1="120" y1="650" x2="1180" y2="650" stroke="#111111" stroke-width="1.5"/>
-
-  <g fill="#56B4E9">
-    <rect x="192" y="620" width="16" height="30"/>
-    <rect x="292" y="550" width="16" height="100"/>
-    <rect x="312" y="510" width="16" height="140"/>
-    <rect x="332" y="485" width="16" height="165"/>
-    <rect x="352" y="530" width="16" height="120"/>
-    <rect x="372" y="570" width="16" height="80"/>
-    <rect x="552" y="605" width="16" height="45"/>
-    <rect x="612" y="622" width="16" height="28"/>
-    <rect x="832" y="612" width="16" height="38"/>
-    <rect x="1082" y="620" width="16" height="30"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+<defs><marker id="ah64" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker></defs>
+<rect width="1600" height="900" fill="#F7F7F5"/>
+<text x="56.0" y="72.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" fill="#111111" font-weight="600" text-anchor="start">One trace, three dispositions</text>
+<text x="56.0" y="112.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" fill="#3A3A3A" font-weight="400" text-anchor="start">Event B is the one that matters: a fluent proposal, wrong, caught by a rule.</text>
+<text x="56.0" y="232.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">river stage</text>
+<polyline points="110,430 240,430 320,336 400,430 560,430 640,300 700,430 900,430" fill="none" stroke="#111111" stroke-width="2.4"/>
+<polyline points="1020,430 1100,430" fill="none" stroke="#111111" stroke-width="2.4"/>
+<polyline points="1100,430 1180,352 1280,430 1500,430" fill="none" stroke="#111111" stroke-width="2.4"/>
+<rect x="900.0" y="404.0" width="120.0" height="52.0" rx="4" fill="#E4E4E0" stroke="none"/>
+<text x="960.0" y="478.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#999999" font-weight="700" text-anchor="middle">C</text>
+<text x="56.0" y="600.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">rainfall</text>
+<rect x="300.0" y="622.0" width="16.0" height="54.0" rx="2" fill="#56B4E9" stroke="none"/>
+<rect x="320.0" y="592.0" width="16.0" height="84.0" rx="2" fill="#56B4E9" stroke="none"/>
+<rect x="340.0" y="616.0" width="16.0" height="60.0" rx="2" fill="#56B4E9" stroke="none"/>
+<rect x="620.0" y="666.0" width="16.0" height="10.0" rx="2" fill="#56B4E9" stroke="none"/>
+<rect x="1140.0" y="610.0" width="16.0" height="66.0" rx="2" fill="#56B4E9" stroke="none"/>
+<rect x="1160.0" y="588.0" width="16.0" height="88.0" rx="2" fill="#56B4E9" stroke="none"/>
+<rect x="1180.0" y="624.0" width="16.0" height="52.0" rx="2" fill="#56B4E9" stroke="none"/>
+<line x1="110" y1="676" x2="1500" y2="676" stroke="#999999" stroke-width="1.6"/>
+<text x="320.0" y="204.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#009E73" font-weight="700" text-anchor="middle">A</text>
+<text x="320.0" y="236.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">accepted: rainfall-backed spike</text>
+<text x="640.0" y="204.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#D55E00" font-weight="700" text-anchor="middle">B</text>
+<text x="640.0" y="236.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#D55E00" font-weight="400" text-anchor="middle">rejected by rule: no rainfall, exceeds rate limit</text>
+<line x1="320.0" y1="246.0" x2="320.0" y2="320.0" stroke="#009E73" stroke-width="1.5" stroke-dasharray="4 4"/>
+<line x1="640.0" y1="246.0" x2="640.0" y2="288.0" stroke="#D55E00" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="760.0" y="236.0" width="420.0" height="95.0" rx="8" fill="#F0E442" stroke="none"/>
+<text x="772.0" y="260.6" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="400" text-anchor="start">the agent proposed accepting B too - a</text>
+<text x="772.0" y="279.4" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="400" text-anchor="start">fluent proposal, and simply wrong;</text>
+<text x="772.0" y="298.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="400" text-anchor="start">caught by a physical rate-of-change</text>
+<text x="772.0" y="316.9" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="400" text-anchor="start">rule, not by anyone reading the output</text>
+<text x="960.0" y="516.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">gap flagged, not filled - the agent may classify a gap; it may never write a value into one</text>
+<text x="1180.0" y="478.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#009E73" font-weight="400" text-anchor="middle">A2</text>
+<text x="56.0" y="860.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#999999" font-weight="400" text-anchor="start">Every disposition here, including B's rejection, is written to provenance with its reason. [AUTHOR: replace the schematic events with three real</text>
+<text x="56.0" y="877.4" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#999999" font-weight="400" text-anchor="start">ones.]</text>
 </svg>

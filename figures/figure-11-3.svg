@@ -1,62 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
-  <title>Figure 11.3 — Measuring a gate by seeded defects</title>
-  <desc>A top-to-bottom sequence diagram with three lanes: a human, the gate under test drawn as a vermillion diamond, and a tally record drawn as a cylinder. Numbered steps run: the human seeds known faults of named classes into sound inputs; the inputs run through the gate blind; the gate returns pass or fail for each; the tally records catches and misses by fault class; the record reports a rate with a confidence interval. A trigger event (a model, prompt or data-regime change) loops back to the seeding step. A callout reads a never-firing gate is a broken gate; a note reads small samples mean report an interval, not a clean zero.</desc>
-  <defs>
-    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
-    </marker>
-  </defs>
-
-  <rect width="1280" height="720" fill="#F7F7F5"/>
-
-  <!-- lane headers -->
-  <!-- human -->
-  <circle cx="210" cy="58" r="14" fill="none" stroke="#0072B2" stroke-width="3"/>
-  <path d="M186,104 a24,24 0 0 1 48,0" fill="none" stroke="#0072B2" stroke-width="3"/>
-  <text x="210" y="128" font-size="15" fill="#111111" text-anchor="middle">human — seeds faults</text>
-  <!-- gate -->
-  <polygon points="620,50 648,76 620,102 592,76" fill="#D55E00"/>
-  <text x="620" y="128" font-size="15" fill="#111111" text-anchor="middle">gate under test</text>
-  <!-- tally / record -->
-  <path d="M970,58 v28 a40,10 0 0 0 80,0 v-28" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <ellipse cx="1010" cy="58" rx="40" ry="10" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <text x="1010" y="128" font-size="15" fill="#111111" text-anchor="middle">tally / record</text>
-
-  <!-- lifelines -->
-  <line x1="210" y1="140" x2="210" y2="655" stroke="#999999" stroke-width="1.5"/>
-  <line x1="620" y1="140" x2="620" y2="655" stroke="#999999" stroke-width="1.5"/>
-  <line x1="1010" y1="140" x2="1010" y2="655" stroke="#999999" stroke-width="1.5"/>
-
-  <!-- step 1: human -> gate -->
-  <text x="415" y="176" font-size="15" fill="#111111" text-anchor="middle">1 · seed known faults —</text>
-  <text x="415" y="196" font-size="14" fill="#111111" text-anchor="middle">fabricated citation · unit slip ·</text>
-  <text x="415" y="214" font-size="14" fill="#111111" text-anchor="middle">out-of-range · dropped constraint</text>
-  <line x1="212" y1="232" x2="618" y2="232" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- step 2: gate action -->
-  <circle cx="620" cy="278" r="5" fill="#D55E00"/>
-  <text x="640" y="283" font-size="15" fill="#111111">2 · run gate blind</text>
-
-  <!-- step 3: gate -> tally -->
-  <text x="815" y="326" font-size="15" fill="#111111" text-anchor="middle">3 · pass / fail per input</text>
-  <line x1="622" y1="342" x2="1008" y2="342" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- step 4: tally action -->
-  <circle cx="1010" cy="392" r="5" fill="#56B4E9"/>
-  <text x="988" y="397" font-size="15" fill="#111111" text-anchor="end">4 · tally catches &amp; misses by class</text>
-
-  <!-- step 5: record action -->
-  <circle cx="1010" cy="448" r="5" fill="#56B4E9"/>
-  <text x="988" y="453" font-size="15" fill="#111111" text-anchor="end">5 · report rate + interval</text>
-  <text x="815" y="488" font-size="13" fill="#999999" text-anchor="middle">small samples → report an</text>
-  <text x="815" y="505" font-size="13" fill="#999999" text-anchor="middle">interval, not a clean zero</text>
-
-  <!-- yield callout -->
-  <rect x="890" y="520" width="245" height="56" rx="8" fill="none" stroke="#D55E00" stroke-width="2"/>
-  <text x="1012" y="544" font-size="14" fill="#D55E00" text-anchor="middle">a never-firing gate is</text>
-  <text x="1012" y="563" font-size="14" fill="#D55E00" text-anchor="middle">a broken gate (yield)</text>
-
-  <!-- step 6: loop back to human -->
-  <text x="610" y="628" font-size="14" fill="#111111" text-anchor="middle">6 · trigger: model / prompt / data-regime change → re-measure</text>
-  <path d="M1010,600 L1010,645 L210,645 L210,618" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+<defs><marker id="ah113" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker></defs>
+<rect width="1600" height="900" fill="#F7F7F5"/>
+<text x="56.0" y="72.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" fill="#111111" font-weight="600" text-anchor="start">Seeded-defect measurement of a verification gate</text>
+<text x="56.0" y="112.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" fill="#3A3A3A" font-weight="400" text-anchor="start">The only way to know an alarm works is a controlled fire.</text>
+<circle cx="313.33333333333337" cy="210.4" r="9.6" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<path d="M297.33333333333337,235.2 a16,14.4 0 0 1 32,0" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<text x="313.3" y="273.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">scientist</text>
+<polygon points="800.0,176.0 945.0,230 800.0,284.0 655.0,230" fill="none" stroke="#D55E00" stroke-width="2.4"/>
+<text x="800.0" y="236.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">gate under test</text>
+<path d="M1141.6666666666667,203.36 a145.0,10.360000000000001 0 0 1 290,0 v53.28 a145.0,10.360000000000001 0 0 1 -290,0 z" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<path d="M1141.6666666666667,203.36 a145.0,10.360000000000001 0 0 0 290,0" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<text x="1286.7" y="235.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">tally</text>
+<line x1="261.3" y1="340.0" x2="365.3" y2="340.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah113)"/>
+<text x="313.3" y="324.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="600" text-anchor="middle">1 seed known faults</text>
+<text x="313.3" y="364.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">fabricated citation · unit slip · out-of-range · dropped constraint - stratified by class</text>
+<line x1="347.3" y1="427.5" x2="766.0" y2="427.5" stroke="#111111" stroke-width="2.1" marker-end="url(#ah113)"/>
+<text x="556.7" y="411.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="600" text-anchor="middle">2 run gate blind</text>
+<text x="556.7" y="451.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">the gate is not told where the faults are</text>
+<line x1="834.0" y1="515.0" x2="1252.7" y2="515.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah113)"/>
+<text x="1043.3" y="499.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="600" text-anchor="middle">3 pass / fail per input</text>
+<line x1="1234.7" y1="602.5" x2="1338.7" y2="602.5" stroke="#D55E00" stroke-width="2.1" marker-end="url(#ah113)"/>
+<text x="1286.7" y="586.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="600" text-anchor="middle">4 tally catches &amp; misses by class</text>
+<text x="1286.7" y="626.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">a never-firing gate is a broken gate, not a clean corpus</text>
+<line x1="1252.7" y1="690.0" x2="347.3" y2="690.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah113)"/>
+<text x="800.0" y="674.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="600" text-anchor="middle">5 report rate + interval</text>
+<text x="800.0" y="714.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">zero misses in twenty trials still means the true miss rate could be ~15%</text>
+<text x="56.0" y="860.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#999999" font-weight="400" text-anchor="start">Re-measure on: model change · prompt change · data-regime change · calendar.</text>
 </svg>

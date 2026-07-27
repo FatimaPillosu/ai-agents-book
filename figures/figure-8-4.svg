@@ -1,73 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
-  <title>Figure 8.4 — The three-track intercomparison as an orchestrated sequence</title>
-  <desc>A top-to-bottom sequence diagram with four actor lanes (scientist, orchestration agent, HPC scheduler and provenance store) and a separated vermillion evaluation lane on the right. Numbered steps show the scientist authoring a protocol and three track configurations, the agent expanding physics, data-driven and hybrid configs into runs, submitting them, receiving states, recording provenance and flagging anomalies, then completed outputs passing to independent held-out evaluation whose scores return to the scientist. A bracket marks the agent's steps as orchestration only, with no scoring.</desc>
-  <defs>
-    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
-    </marker>
-  </defs>
-
-  <rect width="1280" height="720" fill="#F7F7F5"/>
-
-  <!-- lane headers -->
-  <circle cx="180" cy="72" r="14" fill="none" stroke="#0072B2" stroke-width="3"/>
-  <path d="M154,102 a26,26 0 0 1 52,0" fill="none" stroke="#0072B2" stroke-width="3"/>
-  <text x="180" y="128" font-size="14" fill="#111111" text-anchor="middle">scientist</text>
-
-  <rect x="395" y="56" width="70" height="46" rx="8" fill="none" stroke="#E69F00" stroke-width="3"/>
-  <text x="430" y="128" font-size="14" fill="#111111" text-anchor="middle">orchestration agent</text>
-
-  <rect x="646" y="58" width="68" height="44" rx="6" fill="none" stroke="#009E73" stroke-width="2.5"/>
-  <text x="680" y="128" font-size="14" fill="#111111" text-anchor="middle">HPC scheduler</text>
-
-  <path d="M860,66 v28 a40,10 0 0 0 80,0 v-28" fill="none" stroke="#56B4E9" stroke-width="2.5"/>
-  <ellipse cx="900" cy="66" rx="40" ry="10" fill="none" stroke="#56B4E9" stroke-width="2.5"/>
-  <text x="900" y="128" font-size="14" fill="#111111" text-anchor="middle">provenance store</text>
-
-  <rect x="1040" y="56" width="196" height="52" rx="8" fill="none" stroke="#D55E00" stroke-width="2.5"/>
-  <text x="1138" y="80" font-size="13" fill="#D55E00" text-anchor="middle">independent evaluation</text>
-  <text x="1138" y="98" font-size="13" fill="#D55E00" text-anchor="middle">(Ch. 11)</text>
-
-  <!-- lifelines -->
-  <line x1="180" y1="150" x2="180" y2="660" stroke="#999999" stroke-width="1.5" stroke-dasharray="5 5"/>
-  <line x1="430" y1="150" x2="430" y2="660" stroke="#999999" stroke-width="1.5" stroke-dasharray="5 5"/>
-  <line x1="680" y1="150" x2="680" y2="660" stroke="#999999" stroke-width="1.5" stroke-dasharray="5 5"/>
-  <line x1="900" y1="150" x2="900" y2="660" stroke="#999999" stroke-width="1.5" stroke-dasharray="5 5"/>
-  <line x1="1138" y1="150" x2="1138" y2="660" stroke="#D55E00" stroke-width="1.5" stroke-dasharray="5 5"/>
-
-  <!-- orchestration bracket -->
-  <path d="M100,235 L88,235 L88,505 L100,505" fill="none" stroke="#999999" stroke-width="1.5"/>
-  <text x="70" y="370" font-size="13" fill="#999999" text-anchor="middle" transform="rotate(-90 70 370)">orchestration only — no scoring here</text>
-
-  <!-- 1 -->
-  <text x="305" y="185" font-size="13" fill="#111111" text-anchor="middle">1 author protocol + 3 track configs</text>
-  <line x1="180" y1="200" x2="430" y2="200" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- 2 self-loop -->
-  <path d="M430,240 h60 v28 h-60" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="500" y="258" font-size="13" fill="#111111" text-anchor="start">2 expand: physics · data-driven · hybrid</text>
-
-  <!-- 3 -->
-  <text x="555" y="308" font-size="13" fill="#111111" text-anchor="middle">3 submit runs</text>
-  <line x1="430" y1="322" x2="680" y2="322" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- 4 -->
-  <text x="555" y="362" font-size="13" fill="#111111" text-anchor="middle">4 run states</text>
-  <line x1="680" y1="376" x2="430" y2="376" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- 5 -->
-  <text x="665" y="422" font-size="13" fill="#111111" text-anchor="middle">5 record provenance</text>
-  <line x1="430" y1="436" x2="900" y2="436" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- 6 -->
-  <text x="305" y="482" font-size="13" fill="#111111" text-anchor="middle">6 flag anomalies</text>
-  <line x1="430" y1="496" x2="180" y2="496" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- 7 -->
-  <text x="785" y="552" font-size="13" fill="#111111" text-anchor="middle">7 held-out evaluation</text>
-  <line x1="430" y1="566" x2="1138" y2="566" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- 8 -->
-  <text x="655" y="612" font-size="13" fill="#111111" text-anchor="middle">8 scores to scientist</text>
-  <line x1="1138" y1="626" x2="180" y2="626" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+<defs><marker id="ah84" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker></defs>
+<rect width="1600" height="900" fill="#F7F7F5"/>
+<text x="56.0" y="72.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" fill="#111111" font-weight="600" text-anchor="start">The three-track intercomparison as an orchestrated sequence</text>
+<text x="56.0" y="112.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" fill="#3A3A3A" font-weight="400" text-anchor="start">The system that runs the experiments does not get to score them.</text>
+<circle cx="216.0" cy="206.4" r="9.6" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<path d="M200.0,231.2 a16,14.4 0 0 1 32,0" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<text x="216.0" y="269.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">scientist</text>
+<rect x="490.0" y="200.0" width="36.0" height="36.0" rx="6" fill="none" stroke="#E69F00" stroke-width="2.3"/>
+<path d="M500.8,219.8 a7.56,7.56 0 1 1 8.64,6.12" fill="none" stroke="#E69F00" stroke-width="2"/>
+<text x="508.0" y="269.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">orchestration agent</text>
+<path d="M789.5,228.5 l14.25,-14.25 M804.5,213.5 a6.0,6.0 0 1 0 7.5,7.5" fill="none" stroke="#009E73" stroke-width="2.5" stroke-linecap="round"/>
+<text x="800.0" y="269.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">HPC scheduler</text>
+<path d="M976.0,199.36 a116.0,10.360000000000001 0 0 1 232.0,0 v53.28 a116.0,10.360000000000001 0 0 1 -232.0,0 z" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<path d="M976.0,199.36 a116.0,10.360000000000001 0 0 0 232.0,0" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<text x="1092.0" y="231.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">provenance store</text>
+<polygon points="1384.0,172.0 1500.0,226 1384.0,280.0 1268.0,226" fill="none" stroke="#D55E00" stroke-width="2.4"/>
+<text x="1384.0" y="220.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">independent</text>
+<text x="1384.0" y="244.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">evaluation</text>
+<line x1="250.0" y1="312.0" x2="474.0" y2="312.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah84)"/>
+<text x="362.0" y="296.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="600" text-anchor="middle">1 protocol + 3 track configs</text>
+<text x="362.0" y="336.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">one training period, one evaluation period, one forcing set, one metric suite</text>
+<line x1="456.0" y1="372.6" x2="560.0" y2="372.6" stroke="#111111" stroke-width="2.1" marker-end="url(#ah84)"/>
+<text x="508.0" y="356.6" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="600" text-anchor="middle">2 expand: physics · data-driven · hybrid</text>
+<text x="508.0" y="396.6" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">the agent expands a fixed design; it does not prune it</text>
+<line x1="542.0" y1="433.1" x2="766.0" y2="433.1" stroke="#111111" stroke-width="2.1" marker-end="url(#ah84)"/>
+<text x="654.0" y="417.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="600" text-anchor="middle">3 submit runs</text>
+<line x1="766.0" y1="493.7" x2="542.0" y2="493.7" stroke="#111111" stroke-width="2.1" marker-end="url(#ah84)"/>
+<text x="654.0" y="477.7" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="600" text-anchor="middle">4 run states</text>
+<line x1="542.0" y1="554.3" x2="1058.0" y2="554.3" stroke="#111111" stroke-width="2.1" marker-end="url(#ah84)"/>
+<text x="800.0" y="538.3" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="600" text-anchor="middle">5 record provenance</text>
+<text x="800.0" y="578.3" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">per run: configuration, software version, forcing dataset, seed</text>
+<line x1="474.0" y1="614.9" x2="250.0" y2="614.9" stroke="#111111" stroke-width="2.1" marker-end="url(#ah84)"/>
+<text x="362.0" y="598.9" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="600" text-anchor="middle">6 flag anomalies</text>
+<text x="362.0" y="638.9" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">failed runs, out-of-bounds outputs, diverged losses - flagged, not judged</text>
+<line x1="1332.0" y1="675.4" x2="1436.0" y2="675.4" stroke="#D55E00" stroke-width="2.1" marker-end="url(#ah84)"/>
+<text x="1384.0" y="659.4" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="600" text-anchor="middle">7 held-out evaluation</text>
+<text x="1384.0" y="699.4" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">a period the agent had no hand in choosing</text>
+<line x1="1350.0" y1="736.0" x2="250.0" y2="736.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah84)"/>
+<text x="800.0" y="720.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="600" text-anchor="middle">8 scores</text>
+<text x="56.0" y="860.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#999999" font-weight="400" text-anchor="start">Steps 2 to 6 are orchestration only - no scoring happens anywhere inside them.</text>
 </svg>

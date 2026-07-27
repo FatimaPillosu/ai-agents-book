@@ -37,56 +37,58 @@ It is the set of points where a named human decision is required before the work
 
 **Figure 15.1 — The governed modelling lifecycle, end to end.**
 
-![A left-to-right architecture diagram of five stage-blocks: specification, agent roster, gates and registries, independent review, and publication run. A single author-decision icon at the top connects down to every gate. Each gate has a pass arrow continuing right and a fail arrow returning to the previous stage. An audit-trail bar runs beneath all five stages.](../figures/figure-15-1.svg)
+![A left-to-right spine of five stages: a specification written to the seven-field schema; an agent roster derived from it; gates and registries, with an assumption registry and an uncertainty registry beside the gate; independent review; and the publication run producing the manuscript, figures and disclosure. Each gate has a pass arrow forward and a fail arrow returning to the previous stage. A single author-decision icon above the spine connects down to every gate, under a bracket reading human authority at every gate, not only at the end. An audit trail runs beneath all five stages, annotated as accumulating from the first stage, so the disclosure at the end is assembled rather than reconstructed.](../figures/figure-15-1.svg)
 
-*Figure 15.1 — The governed modelling lifecycle. A single specification (Chapter 3) yields a roster of agent roles (Chapter 10); every unit of work passes a gate and writes to the assumption and uncertainty registries (Chapter 12); an independent reviewer with no stake in the work checks each stage; and a governed publication run (Chapter 9) draws its disclosure statement from the audit trail. The author decides at every gate, and every gate can return work upstream. (Rendered as `figures/figure-15-1.svg` from the brief below, per `FIGURES.md`.)*
+*Figure 15.1 — The whole book in one workflow. Specification, roster, gates and registries, independent review, publication: each stage's audited output is the next stage's admissible input, and the author connects to every gate rather than appearing once at the end. The audit trail underneath is why the disclosure statement at publication is assembled from a record instead of reconstructed under deadline. (Rendered as `figures/figure-15-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
 - id:            Figure 15.1
-- title:         One workflow, five governed stages — specification to publication
+- title:         One workflow, five governed stages
 - type:          architecture
-- claim:         A governed modelling workflow composes five stages (specification, roster, gates and registries, independent review, publication) with a named human decision at every gate and a failure exit that returns work upstream.
+- claim:         A governed modelling workflow composes five stages (specification, roster, gates and registries, independent review, publication) with a named human decision at every gate.
+- standfirst:    Human authority sits at every gate, not only at the end.
 - canvas:        16:9
-- elements:      a left-to-right spine of five labelled stage-blocks. Stage 1 "specification"
-                 (blue tag, seven small ticks); Stage 2 "agent roster" (three orange agent
-                 glyphs stacked); Stage 3 "gates & registries" (a vermillion diamond "gate"
-                 beside two sky-blue cylinders "assumption registry" and "uncertainty
-                 registry"); Stage 4 "independent review" (a purple reviewer head-and-
-                 shoulders-with-tick icon); Stage 5 "publication run" (a sky-blue artefact
-                 stack "manuscript · figures · disclosure"). A blue human head-and-shoulders
-                 icon labelled "author decision" sits above the spine, with thin blue lines
-                 dropping to each gate. A grey "audit trail" bar runs along the bottom
-                 spanning all five stages.
-- flow:          left-to-right along the spine, stage 1 to stage 5; each gate has a green
-                 "pass" arrow continuing right and a grey "fail — return" arrow curving back
-                 to the previous stage; blue lines connect the single "author decision" icon
-                 down to every gate
+- elements:      a left-to-right spine of five stage blocks — "specification" (blue tag);
+                 "agent roster" (orange agents); "gates & registries" (vermillion "gate"
+                 diamond beside two sky-blue cylinders "assumption registry" and
+                 "uncertainty registry"); "independent review" (purple reviewer icon);
+                 "publication run" ("manuscript · figures · disclosure"); a single blue
+                 "author decision" icon above the spine connected to every gate; an
+                 "audit trail" band beneath all five stages
+- flow:          left-to-right along the spine; each gate has a "pass" arrow forward and a
+                 "fail — return" arrow back to the previous stage; blue lines connect the
+                 author icon down to each gate
 - labels:        "specification", "agent roster", "gates & registries", "gate",
                  "assumption registry", "uncertainty registry", "independent review",
-                 "publication run", "manuscript · figures · disclosure", "author decision",
-                 "pass", "fail — return", "audit trail"
-- annotations:   a light bracket over the whole spine labelled "human authority at every gate,
-                 not only at the end"
-- caption:       Figure 15.1 — The governed modelling lifecycle. A single specification (Chapter 3) yields a roster of agent roles (Chapter 10); every unit of work passes a gate and writes to the assumption and uncertainty registries (Chapter 12); an independent reviewer with no stake in the work checks each stage; and a governed publication run (Chapter 9) draws its disclosure statement from the audit trail. The author decides at every gate, and every gate can return work upstream.
-- alt-text:      A left-to-right architecture diagram of five stage-blocks: specification, agent roster, gates and registries, independent review, and publication run. A single author-decision icon at the top connects down to every gate. Each gate has a pass arrow continuing right and a fail arrow returning to the previous stage. An audit-trail bar runs beneath all five stages.
-- generator prompt: A flat vector architecture diagram on an off-white background. Five
-                 stage-blocks are arranged left to right along a horizontal spine. Block one,
-                 a blue tag, is labelled "specification" with seven small tick marks. Block
-                 two shows three orange rounded-square agent glyphs stacked, labelled "agent
-                 roster". Block three contains a vermillion diamond labelled "gate" beside two
-                 sky-blue cylinders labelled "assumption registry" and "uncertainty
-                 registry", under the heading "gates & registries". Block four is a purple
-                 head-and-shoulders icon with a small tick, labelled "independent review".
-                 Block five is a sky-blue stack of sheets labelled "publication run" and
-                 "manuscript · figures · disclosure". Between blocks, each vermillion gate has
-                 a green arrow labelled "pass" continuing right and a grey arrow labelled
-                 "fail — return" curving back to the previous block. A single blue
-                 head-and-shoulders icon labelled "author decision" sits above the spine, with
-                 thin blue lines dropping to each gate. A grey horizontal bar labelled "audit
-                 trail" runs along the bottom spanning all five blocks. A light bracket over
-                 the spine reads "human authority at every gate, not only at the end". Minimal
-                 text, generous spacing, single-weight lines, one arrowhead style.
+                 "publication run", "manuscript · figures · disclosure",
+                 "author decision", "pass", "fail — return", "audit trail"
+- annotations:   on the specification, "seven fields, written before any agent runs"; on
+                 the roster, "derived from the specification, not chosen"; on the
+                 registries, "the workflow's memory of what it assumed and what it does
+                 not know"; on the review, "no stake in the work it checks"; on the audit
+                 trail, "accumulates from stage one — the disclosure is assembled, not
+                 reconstructed"; a bracket over the spine, "human authority at every
+                 gate, not only at the end"
+- caption:       Figure 15.1 — The whole book in one workflow. Specification, roster, gates and registries, independent review, publication: each stage's audited output is the next stage's admissible input, and the author connects to every gate rather than appearing once at the end. The audit trail underneath is why the disclosure statement at publication is assembled from a record instead of reconstructed under deadline.
+- alt-text:      A left-to-right spine of five stages: a specification written to the seven-field schema; an agent roster derived from it; gates and registries, with an assumption registry and an uncertainty registry beside the gate; independent review; and the publication run producing the manuscript, figures and disclosure. Each gate has a pass arrow forward and a fail arrow returning to the previous stage. A single author-decision icon above the spine connects down to every gate, under a bracket reading human authority at every gate, not only at the end. An audit trail runs beneath all five stages, annotated as accumulating from the first stage, so the disclosure at the end is assembled rather than reconstructed.
+- infographic description: A flat vector architecture diagram, 16:9, off-white
+                 background. Title top-left: "One workflow, five governed stages".
+                 Standfirst: "Human authority sits at every gate, not only at the end."
+                 A left-to-right spine of five stage blocks: a blue tag "specification"
+                 annotated "seven fields, written before any agent runs"; an orange block
+                 "agent roster" annotated "derived from the specification, not chosen"; a
+                 vermillion diamond "gate" beside two sky-blue cylinders "assumption
+                 registry" and "uncertainty registry", the pair annotated "the workflow's
+                 memory of what it assumed and what it does not know"; a purple reviewer
+                 icon "independent review" annotated "no stake in the work it checks";
+                 and a block "publication run" with sub-text "manuscript · figures ·
+                 disclosure". Gates carry "pass" arrows forward and "fail — return"
+                 arrows back. Above the spine, one blue human icon "author decision" with
+                 thin lines down to each gate, under a bracket "human authority at every
+                 gate, not only at the end". Beneath the spine, a full-width band "audit
+                 trail" annotated "accumulates from stage one — the disclosure is
+                 assembled, not reconstructed". Sentence case throughout.
 ```
 
 ## 15.2 The specification the workflow was held to (Chapter 3)
@@ -136,52 +138,55 @@ The point the stage makes concrete is that the human is not reviewing a finished
 
 **Figure 15.2 — A single gated stage, in sequence.**
 
-![A top-to-bottom sequence diagram with five lanes: specification unit, agent, tools and data, gate with reviewer, and author. Numbered steps show the agent reading the unit, calling tools, writing output and provenance, and submitting to the gate. A failure arrow loops back to the agent within a bounded budget; a pass reaches the author, who accepts, overrides or returns the result.](../figures/figure-15-2.svg)
+![A sequence with five lanes: a specification unit, an agent, tools and data, a gate with its reviewer, and the author. Six numbered steps: the unit hands the agent its objective, inputs, criteria and stop conditions; the agent calls tools rather than reasoning in prose; it writes output and provenance and logs any new assumption to the registry rather than leaving it implicit; it submits for the check; a fail returns it within the budget the stop conditions set, and a pass goes forward; the author accepts, overrides or returns, with a vermillion note that the decision happens at the gate, not after the workflow has finished. A footer reads one decision per gate is the price of a workflow whose every step is attributable.](../figures/figure-15-2.svg)
 
-*Figure 15.2 — One representative gated stage. The agent executes a specification unit through tools, writes its output and provenance and logs any new assumption, and submits to the gate; the independent reviewer and mechanical checks decide pass or fail; a failure returns the work within the stop-condition budget, and a pass reaches the author, who accepts, overrides or returns it. Human authority sits at the gate. (Rendered as `figures/figure-15-2.svg` from the brief below, per `FIGURES.md`.)*
+*Figure 15.2 — One stage at full resolution, and nothing about it is exceptional. The agent executes against a written unit, delegates its arithmetic to tools, writes its own provenance, and appends any assumption it was forced to make to the registry. The gate applies before anything advances, and the author's decision happens there, not in a review at the end. The price is one decision per gate; what it buys is a workflow whose every step is attributable. (Rendered as `figures/figure-15-2.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
 - id:            Figure 15.2
-- title:         One gated stage — from specification unit to author decision
+- title:         One gated stage, from specification unit to author decision
 - type:          sequence
-- claim:         Within a stage, an agent executes a specification unit through tools, writes its output and provenance, and a gate applies before a named human authorises the result, with a failure exit that loops back inside the stop-condition budget.
+- claim:         Within a stage, an agent executes a specification unit through tools, writes its output and provenance, and a gate applies before a named human authorises the result.
+- standfirst:    The author decides at the gate, not after the workflow has finished.
 - canvas:        16:9
-- elements:      five vertical actor lanes, left to right: "specification unit" (blue tag at
-                 top of its lane), "agent" (orange), "tools & data" (green tool glyph with a
-                 sky-blue cylinder), "gate + reviewer" (vermillion diamond with a purple
-                 reviewer icon), "author" (blue head-and-shoulders). Numbered horizontal
-                 arrows cross between lanes, read top to bottom.
-- flow:          top-to-bottom, six numbered steps: (1) specification unit → agent "objective,
-                 inputs, criteria, stop"; (2) agent → tools & data "call tools, transform"; (3) agent →
-                 registry "write output + provenance; log assumption"; (4) agent →
-                 gate + reviewer "submit for check"; (5a) gate → agent "fail — return
-                 (within budget)" as a grey arrow curving back up; (5b) gate → author "pass";
-                 (6) author "accept / override / return" as the decision
-- labels:        "specification unit", "agent", "tools & data", "gate + reviewer", "author",
-                 "1 objective, inputs, criteria, stop", "2 call tools, transform",
-                 "3 write output + provenance", "4 submit for check",
-                 "5 fail — return (within budget)", "5 pass", "6 accept / override / return"
-- annotations:   a small vermillion callout on step 5 "author decides at the gate, not after";
-                 a light grey bracket on the fail arrow labelled "loop bounded by stop
-                 conditions"
-- caption:       Figure 15.2 — One representative gated stage. The agent executes a specification unit through tools, writes its output and provenance and logs any new assumption, and submits to the gate; the independent reviewer and mechanical checks decide pass or fail; a failure returns the work within the stop-condition budget, and a pass reaches the author, who accepts, overrides or returns it. Human authority sits at the gate.
-- alt-text:      A top-to-bottom sequence diagram with five lanes: specification unit, agent, tools and data, gate with reviewer, and author. Numbered steps show the agent reading the unit, calling tools, writing output and provenance, and submitting to the gate. A failure arrow loops back to the agent within a bounded budget; a pass reaches the author, who accepts, overrides or returns the result.
-- generator prompt: A flat vector sequence diagram on an off-white background, read top to
-                 bottom, with five vertical lanes. Lane headers left to right: a blue tag
-                 "specification unit", an orange rounded-square "agent", a green wrench glyph
-                 with a small sky-blue cylinder "tools & data", a vermillion diamond with a
-                 small purple head-and-shoulders-with-tick icon "gate + reviewer", and a blue
-                 head-and-shoulders "author". Numbered horizontal arrows between lanes, top to
-                 bottom: "1 objective, inputs, criteria, stop" from specification unit to
-                 agent; "2 call tools, transform" from agent to tools & data; "3 write output
-                 + provenance" from agent to a small cylinder; "4 submit for check" from agent
-                 to gate + reviewer; from the gate two arrows — a grey "5 fail — return
-                 (within budget)" curving back up to the agent, and a green "5 pass" to the
-                 author; "6 accept / override / return" at the author lane. A small vermillion
-                 callout near step 5 reads "author decides at the gate, not after". A light
-                 grey bracket on the fail arrow reads "loop bounded by stop conditions".
-                 Minimal text, generous spacing, single-weight lines, one arrowhead style.
+- elements:      five lanes, left to right: "specification unit" (blue tag), "agent"
+                 (orange), "tools & data" (green tool with sky-blue cylinder), "gate +
+                 reviewer" (vermillion diamond with purple reviewer icon), "author"
+                 (blue); six numbered steps crossing between lanes
+- flow:          top-to-bottom, six numbered steps: (1) unit → agent, objective, inputs,
+                 criteria, stop; (2) agent → tools, call tools, transform; (3) agent
+                 writes output + provenance, logs assumptions; (4) submit for check;
+                 (5) fail returns within budget, pass advances; (6) author accepts,
+                 overrides or returns
+- labels:        "specification unit", "agent", "tools & data", "gate + reviewer",
+                 "author", "1 objective, inputs, criteria, stop",
+                 "2 call tools, transform", "3 write output + provenance",
+                 "4 submit for check", "5 fail — return (within budget)", "5 pass",
+                 "6 accept / override / return"
+- annotations:   on step 2, "calculations go to tools, not prose"; on step 3, "any new
+                 assumption goes to the registry, not left implicit"; on step 5's fail
+                 arrow, "loop bounded by the stop conditions"; on step 6, in vermillion,
+                 "the author decides at the gate, not after"; a footer, "one decision per
+                 gate is the price of a workflow whose every step is attributable"
+- caption:       Figure 15.2 — One stage at full resolution, and nothing about it is exceptional. The agent executes against a written unit, delegates its arithmetic to tools, writes its own provenance, and appends any assumption it was forced to make to the registry. The gate applies before anything advances, and the author's decision happens there, not in a review at the end. The price is one decision per gate; what it buys is a workflow whose every step is attributable.
+- alt-text:      A sequence with five lanes: a specification unit, an agent, tools and data, a gate with its reviewer, and the author. Six numbered steps: the unit hands the agent its objective, inputs, criteria and stop conditions; the agent calls tools rather than reasoning in prose; it writes output and provenance and logs any new assumption to the registry rather than leaving it implicit; it submits for the check; a fail returns it within the budget the stop conditions set, and a pass goes forward; the author accepts, overrides or returns, with a vermillion note that the decision happens at the gate, not after the workflow has finished. A footer reads one decision per gate is the price of a workflow whose every step is attributable.
+- infographic description: A flat vector sequence diagram, 16:9, off-white background,
+                 five lanes top to bottom. Title top-left: "One gated stage, from
+                 specification unit to author decision". Standfirst: "The author decides
+                 at the gate, not after the workflow has finished." Lane headers: blue
+                 tag "specification unit"; orange square "agent"; green wrench with
+                 sky-blue cylinder "tools & data"; vermillion diamond with purple
+                 reviewer icon "gate + reviewer"; blue human "author". Six numbered
+                 arrows: "1 objective, inputs, criteria, stop"; "2 call tools, transform"
+                 annotated "calculations go to tools, not prose"; "3 write output +
+                 provenance" annotated "any new assumption goes to the registry, not left
+                 implicit"; "4 submit for check"; "5 fail — return (within budget)"
+                 curving back to the agent, annotated "loop bounded by the stop
+                 conditions", beside "5 pass" going forward; "6 accept / override /
+                 return" in the author lane, with a vermillion note "the author decides
+                 at the gate, not after". Footer: "one decision per gate is the price of
+                 a workflow whose every step is attributable". Sentence case throughout.
 ```
 
 ## 15.6 Independent review (Chapters 10 and 12)

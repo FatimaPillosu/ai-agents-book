@@ -1,67 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
-  <title>Figure 0.1 — The icon key: six recurring actors</title>
-  <desc>A legend of six labelled icons arranged in a grid. A blue head-and-shoulders outline is labelled human; an orange rounded square with a loop arrow is labelled agent; a green wrench is labelled tool; a sky-blue cylinder is labelled data store; a vermillion diamond is labelled gate; a purple head-and-shoulders outline with a small tick is labelled reviewer. Each icon carries a short plain-language description of its role.</desc>
-  <defs>
-    <marker id="ahO" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#E69F00"/>
-    </marker>
-  </defs>
-
-  <rect width="1280" height="720" fill="#F7F7F5"/>
-
-  <!-- Row 1, col 1: human (blue) -->
-  <circle cx="250" cy="180" r="18" fill="none" stroke="#0072B2" stroke-width="3"/>
-  <path d="M220,238 a30,30 0 0 1 60,0" fill="none" stroke="#0072B2" stroke-width="3"/>
-  <g fill="#111111" text-anchor="middle">
-    <text x="250" y="292" font-size="20" font-weight="bold">human</text>
-    <text x="250" y="320" font-size="15">a person who decides</text>
-    <text x="250" y="342" font-size="15">and is accountable</text>
-  </g>
-
-  <!-- Row 1, col 2: agent (orange) -->
-  <rect x="605" y="165" width="70" height="70" rx="14" fill="none" stroke="#E69F00" stroke-width="3"/>
-  <path d="M652,208 A17,17 0 1 1 640,183" fill="none" stroke="#E69F00" stroke-width="3" marker-end="url(#ahO)"/>
-  <g fill="#111111" text-anchor="middle">
-    <text x="640" y="292" font-size="20" font-weight="bold">agent</text>
-    <text x="640" y="320" font-size="15">an LLM working in a</text>
-    <text x="640" y="342" font-size="15">plan–act–observe loop</text>
-  </g>
-
-  <!-- Row 1, col 3: tool (green wrench) -->
-  <g stroke="#009E73" stroke-width="11" fill="none" stroke-linecap="round" transform="translate(1035,188)">
-    <path d="M12,-12 A18,18 0 1 0 12,12"/>
-    <path d="M-12,12 L-32,32"/>
-  </g>
-  <g fill="#111111" text-anchor="middle">
-    <text x="1030" y="292" font-size="20" font-weight="bold">tool</text>
-    <text x="1030" y="320" font-size="15">a function or program</text>
-    <text x="1030" y="342" font-size="15">the agent calls</text>
-  </g>
-
-  <!-- Row 2, col 1: data store (sky cylinder) -->
-  <path d="M216,442 v40 a34,10 0 0 0 68,0 v-40" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <ellipse cx="250" cy="442" rx="34" ry="10" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <g fill="#111111" text-anchor="middle">
-    <text x="250" y="552" font-size="20" font-weight="bold">data store</text>
-    <text x="250" y="580" font-size="15">a dataset, file</text>
-    <text x="250" y="602" font-size="15">or record</text>
-  </g>
-
-  <!-- Row 2, col 2: gate (vermillion diamond) -->
-  <polygon points="640,420 686,460 640,500 594,460" fill="#D55E00"/>
-  <g fill="#111111" text-anchor="middle">
-    <text x="640" y="552" font-size="20" font-weight="bold">gate</text>
-    <text x="640" y="580" font-size="15">a check the work</text>
-    <text x="640" y="602" font-size="15">must pass</text>
-  </g>
-
-  <!-- Row 2, col 3: reviewer (purple head-and-shoulders with tick) -->
-  <circle cx="1030" cy="440" r="18" fill="none" stroke="#CC79A7" stroke-width="3"/>
-  <path d="M1000,498 a30,30 0 0 1 60,0" fill="none" stroke="#CC79A7" stroke-width="3"/>
-  <path d="M1052,452 l10,10 l18,-22" fill="none" stroke="#CC79A7" stroke-width="3"/>
-  <g fill="#111111" text-anchor="middle">
-    <text x="1030" y="552" font-size="20" font-weight="bold">reviewer</text>
-    <text x="1030" y="580" font-size="15">an independent</text>
-    <text x="1030" y="602" font-size="15">checker</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+<defs><marker id="ah01" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker></defs>
+<rect width="1600" height="900" fill="#F7F7F5"/>
+<text x="56.0" y="72.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" fill="#111111" font-weight="600" text-anchor="start">The six actors, and what each one does</text>
+<text x="56.0" y="112.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" fill="#3A3A3A" font-weight="400" text-anchor="start">Learn these six once; they do not change anywhere in the book.</text>
+<circle cx="313.33333333333337" cy="251.3" r="13.2" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<path d="M291.33333333333337,285.4 a22,19.8 0 0 1 44,0" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<text x="313.3" y="352.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="26" fill="#111111" font-weight="600" text-anchor="middle">human</text>
+<text x="103.3" y="386.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">decides, and is accountable for</text>
+<text x="103.3" y="404.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">the decision</text>
+<rect x="774.0" y="244.0" width="52.0" height="52.0" rx="6" fill="none" stroke="#E69F00" stroke-width="2.3"/>
+<path d="M789.6000000000001,272.6 a10.92,10.92 0 1 1 12.48,8.84" fill="none" stroke="#E69F00" stroke-width="2"/>
+<text x="800.0" y="352.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="26" fill="#111111" font-weight="600" text-anchor="middle">agent</text>
+<text x="590.0" y="386.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">a language model working in a</text>
+<text x="590.0" y="404.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">plan-act-observe loop</text>
+<path d="M1271.2666666666667,285.4 l20.9,-20.9 M1293.2666666666667,263.4 a8.8,8.8 0 1 0 11.0,11.0" fill="none" stroke="#009E73" stroke-width="2.5" stroke-linecap="round"/>
+<text x="1286.7" y="352.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="26" fill="#111111" font-weight="600" text-anchor="middle">tool</text>
+<text x="1076.7" y="386.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">a function or program the agent</text>
+<text x="1076.7" y="404.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">calls</text>
+<path d="M267.33333333333337,546.08 a46.0,10.080000000000002 0 0 1 92,0 v51.839999999999996 a46.0,10.080000000000002 0 0 1 -92,0 z" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<path d="M267.33333333333337,546.08 a46.0,10.080000000000002 0 0 0 92,0" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<text x="313.3" y="652.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="26" fill="#111111" font-weight="600" text-anchor="middle">data store</text>
+<text x="103.3" y="686.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">a dataset, a file, a record</text>
+<polygon points="800.0000000000001,534.0 848.0000000000001,570 800.0000000000001,606.0 752.0000000000001,570" fill="none" stroke="#D55E00" stroke-width="2.4"/>
+<text x="800.0" y="652.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="26" fill="#111111" font-weight="600" text-anchor="middle">gate</text>
+<text x="590.0" y="686.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">a check the work has to pass</text>
+<text x="590.0" y="704.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">before it goes on</text>
+<circle cx="1286.6666666666667" cy="551.3" r="13.2" fill="none" stroke="#CC79A7" stroke-width="2.3"/>
+<path d="M1264.6666666666667,585.4 a22,19.8 0 0 1 44,0" fill="none" stroke="#CC79A7" stroke-width="2.3"/>
+<path d="M1299.8666666666668,567.8 l7.04,7.92 l14.520000000000001,-17.6" fill="none" stroke="#CC79A7" stroke-width="2.5" stroke-linecap="round"/>
+<text x="1286.7" y="652.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="26" fill="#111111" font-weight="600" text-anchor="middle">reviewer</text>
+<text x="1076.7" y="686.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">checks someone else's work,</text>
+<text x="1076.7" y="704.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">independently</text>
+<line x1="70" y1="804" x2="1530" y2="804" stroke="#999999" stroke-width="1.4"/>
+<text x="56.0" y="860.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#999999" font-weight="400" text-anchor="start">These six keep the same icon and colour in every figure in this book.</text>
 </svg>

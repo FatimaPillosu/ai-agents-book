@@ -52,47 +52,58 @@ The start-small stance is now multi-national security guidance too: begin with t
 
 **Figure 16.1 — A capability-based thirty-day plan.**
 
-![A two-band diagram. The upper grey band shows a tool-first start: adopt a product, learn the interface, ending in a question mark labelled trust. The lower band shows four sequential weeks (specify, verify, govern, compose), each in its role colour and each producing a kept artefact named beneath it: a specification, a verification record, an audit trail and a working governed workflow.](../figures/figure-16-1.svg)
+![Two bands. The top band, greyed, shows the tool-first start: adopt a product, learn the interface, then a question mark labelled trust, annotated that what was learned has the lifespan of the product. The bottom band shows four weeks: week one, specify, keeping a real specification a colleague agrees constitutes the task; week two, verify, keeping a verification record and the habit that no output is used before a check external to the agent passes; week three, govern, keeping an audit trail an IT reviewer could inspect; week four, compose, keeping a working governed workflow reviewed against one plain question, did this save net effort once the checking is counted. A bracket underneath reads habits that survive a change of tool.](../figures/figure-16-1.svg)
 
-*Figure 16.1 — A capability-based thirty-day plan. The upper path, adopting a product first, leaves a group with interface familiarity and an unanswered question of trust; the lower path builds specifying, verifying and governing in sequence, each week retaining an artefact that outlasts any particular tool. (Rendered as `figures/figure-16-1.svg` from the brief below, per `FIGURES.md`.)*
+*Figure 16.1 — Two ways to spend a first month. The grey path is the common one: adopt a product, learn its interface, and end up unable to say why the output should be trusted. The four-week path builds one capability at a time, and each week's deliverable is an artefact you keep, not a tutorial you complete. The sequence matters more than the calendar; the artefacts survive every change of tool. (Rendered as `figures/figure-16-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
 - id:            Figure 16.1
 - title:         The thirty-day plan as a sequence of habits, not tools
 - type:          before/after
-- claim:         A durable start builds three capabilities in order (specify, verify, govern, then compose), each producing a kept artefact, in contrast to the tool-first start that produces only familiarity with an interface.
+- claim:         A durable start builds three capabilities in order (specify, verify, govern, then compose), each producing a kept artefact, in contrast to the tool-first start that produces only interface familiarity.
+- standfirst:    Each week ends with an artefact you keep, not a tutorial you completed.
 - canvas:        16:9
-- elements:      top band, de-emphasis grey, labelled "tool-first start": a single box
-                 "adopt a product" leading to a faded box "learn the interface" leading to
-                 a grey question mark "trust?"; bottom band, four sequential boxes across
-                 the canvas — week 1 "specify" (blue, specification tag icon), week 2
-                 "verify" (vermillion, gate diamond icon), week 3 "govern" (near-black,
-                 audit-trail/document icon), week 4 "compose" (orange, agent loop icon);
-                 beneath each of the four a small sky-blue artefact tag naming what is kept
-- flow:          top band left-to-right ending in a grey question mark; bottom band
-                 left-to-right, week 1 → week 2 → week 3 → week 4, each box feeding the next
+- elements:      top band, de-emphasis grey, "tool-first start": "adopt a product" →
+                 "learn the interface" → a grey question mark "trust?"; bottom band, four
+                 sequential boxes — week 1 "specify" (blue, specification tag), week 2
+                 "verify" (vermillion, gate diamond), week 3 "govern" (near-black,
+                 audit-trail document), week 4 "compose" (orange, agent glyph), each with
+                 its kept artefact beneath
+- flow:          top band left-to-right ending in the question mark; bottom band
+                 left-to-right, each week feeding the next
 - labels:        "tool-first start", "adopt a product", "learn the interface", "trust?",
                  "week 1 — specify", "week 2 — verify", "week 3 — govern",
-                 "week 4 — compose", "kept: a specification", "kept: a verification record",
-                 "kept: an audit trail", "kept: a working governed workflow"
-- annotations:   a light bracket under the four bottom boxes labelled "habits that survive a change of tool"
-- caption:       Figure 16.1 — A capability-based thirty-day plan. The upper path, adopting a product first, leaves a group with interface familiarity and an unanswered question of trust; the lower path builds specifying, verifying and governing in sequence, each week retaining an artefact that outlasts any particular tool.
-- alt-text:      A two-band diagram. The upper grey band shows a tool-first start: adopt a product, learn the interface, ending in a question mark labelled trust. The lower band shows four sequential weeks (specify, verify, govern, compose), each in its role colour and each producing a kept artefact named beneath it: a specification, a verification record, an audit trail and a working governed workflow.
-- generator prompt: A flat vector before/after diagram on an off-white background, two
-                 horizontal bands. The upper band is greyed and labelled "tool-first start":
-                 a grey box "adopt a product" with an arrow to a faded box "learn the
-                 interface" with an arrow to a grey diamond containing a question mark
-                 labelled "trust?". The lower band shows four evenly spaced boxes connected
-                 left to right by single arrows: a blue box "week 1 — specify" with a small
-                 specification tag icon, a vermillion box "week 2 — verify" with a diamond
-                 gate icon, a near-black box "week 3 — govern" with a small document icon,
-                 and an orange box "week 4 — compose" with a small loop-arrow icon. Beneath
-                 each lower box is a small sky-blue tag reading, in order, "kept: a
-                 specification", "kept: a verification record", "kept: an audit trail",
-                 "kept: a working governed workflow". A thin bracket spans the four lower
-                 boxes, labelled "habits that survive a change of tool". Minimal text,
-                 generous spacing, single-weight lines.
+                 "week 4 — compose", "kept: a specification",
+                 "kept: a verification record", "kept: an audit trail",
+                 "kept: a working governed workflow"
+- annotations:   on the top band, "what was learned has the lifespan of the product"; on
+                 week 1, "a colleague agrees it constitutes the task"; on week 2, "no
+                 output is used before a check external to the agent passes"; on week 3,
+                 "an audit trail an IT reviewer could inspect"; on week 4, "reviewed
+                 against one question: did this save net effort once the checking is
+                 counted?"; a bracket under the four weeks, "habits that survive a change
+                 of tool"
+- caption:       Figure 16.1 — Two ways to spend a first month. The grey path is the common one: adopt a product, learn its interface, and end up unable to say why the output should be trusted. The four-week path builds one capability at a time, and each week's deliverable is an artefact you keep, not a tutorial you complete. The sequence matters more than the calendar; the artefacts survive every change of tool.
+- alt-text:      Two bands. The top band, greyed, shows the tool-first start: adopt a product, learn the interface, then a question mark labelled trust, annotated that what was learned has the lifespan of the product. The bottom band shows four weeks: week one, specify, keeping a real specification a colleague agrees constitutes the task; week two, verify, keeping a verification record and the habit that no output is used before a check external to the agent passes; week three, govern, keeping an audit trail an IT reviewer could inspect; week four, compose, keeping a working governed workflow reviewed against one plain question, did this save net effort once the checking is counted. A bracket underneath reads habits that survive a change of tool.
+- infographic description: A flat vector before-and-after diagram, 16:9, off-white
+                 background, two bands. Title top-left: "The thirty-day plan as a
+                 sequence of habits, not tools". Standfirst: "Each week ends with an
+                 artefact you keep, not a tutorial you completed." Top band in
+                 de-emphasis grey, labelled "tool-first start": boxes "adopt a product"
+                 and "learn the interface" leading to a grey question mark "trust?",
+                 annotated "what was learned has the lifespan of the product". Bottom
+                 band: four boxes left to right — "week 1 — specify" (blue, with a
+                 specification tag icon) over "kept: a specification", annotated "a
+                 colleague agrees it constitutes the task"; "week 2 — verify" (vermillion
+                 diamond icon) over "kept: a verification record", annotated "no output
+                 is used before a check external to the agent passes"; "week 3 — govern"
+                 (near-black document icon) over "kept: an audit trail", annotated "an
+                 audit trail an IT reviewer could inspect"; "week 4 — compose" (orange
+                 agent glyph) over "kept: a working governed workflow", annotated
+                 "reviewed against one question: did this save net effort once the
+                 checking is counted?". A bracket beneath spans all four: "habits that
+                 survive a change of tool". Sentence case throughout.
 ```
 
 ## 16.3 Where the money and the time actually go
@@ -115,46 +126,53 @@ The honest limitation is that the relative sizes of these four shares vary widel
 
 **Figure 16.2 — Where adoption spend concentrates.**
 
-![A row of five cost blocks of differing sizes. Model inference is the smallest, marked as falling fast. Engineering is larger. Evaluation and verification are the largest, bracketed as where spend concentrates, with verification marked recurring. A fifth block, failure and rework, is dashed and marked as shrinking when the others are funded. A caption strip notes that magnitudes are illustrative and dated figures live in the repository.](../figures/figure-16-2.svg)
+![Five cost blocks in a row, sized to suggest relative magnitude rather than exact figures. A small orange block, model inference, carries a downward arrow labelled falling fast and the note that this is the cost everyone watches. Larger blocks follow: engineering, annotated as recurring human time to specify, wire and maintain; evaluation, annotated as establishing whether the agent is reliable enough to use at all; and the largest, verification, annotated as recurring for as long as the workflow runs, and not falling as model prices fall. A dashed-outlined grey block, failure and rework, is annotated as shrinking exactly to the degree the other three are funded. A bracket over evaluation and verification reads where the spend actually concentrates, and a caption strip reads magnitudes illustrative, dated figures in the repository.](../figures/figure-16-2.svg)
 
-*Figure 16.2 — Where adoption spend concentrates. Block sizes are illustrative, not measured: model inference, the most visible and fastest-falling cost, is the smallest recurring share, while engineering, evaluation and verification dominate. Failure and rework shrink to the degree the other three are funded properly. (Rendered as `figures/figure-16-2.svg` from the brief below, per `FIGURES.md`.)*
+*Figure 16.2 — The cost everyone watches is the smallest block. Inference is falling fast and is the least of it; engineering, evaluation and above all verification are the recurring costs, and verification does not fall as model prices fall because it is external to the model by design. The dashed block is the honest one: failure and rework shrinks exactly to the degree the other three are funded. Budget from this picture, not from a price-per-token page. (Rendered as `figures/figure-16-2.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
 - id:            Figure 16.2
 - title:         The cost model — inference is the smallest share
 - type:          architecture
-- claim:         In a well-run scientific workflow the visible cost of model inference is the smallest of the recurring costs; engineering, evaluation and verification dominate, and verification is a running cost that does not diminish.
+- claim:         In a well-run scientific workflow the visible cost of model inference is the smallest of the recurring costs; engineering, evaluation and verification dominate, and verification is the one to protect.
+- standfirst:    The line item everyone watches is the smallest one on the canvas.
 - canvas:        16:9
-- elements:      five labelled cost blocks arranged left to right in a single row, sized to
-                 suggest relative magnitude (not exact figures): a small orange block
-                 "model inference"; a larger near-black block "engineering"; a larger
-                 vermillion block "evaluation"; the largest vermillion block "verification
-                 (recurring)"; a medium grey block "failure & rework"; a de-emphasis grey
-                 caption strip beneath reading that magnitudes are illustrative and dated
-                 figures live in the repository
-- flow:          no directional flow; a left-to-right ordering from smallest recurring cost
-                 (inference) to the dominant recurring cost (verification), with failure &
-                 rework shown as shrinking when the others are funded
-- labels:        "model inference", "engineering", "evaluation", "verification (recurring)",
-                 "failure & rework", "magnitudes illustrative — dated figures in repository"
-- annotations:   a small orange arrow beneath "model inference" labelled "falling fast";
-                 a vermillion bracket over "evaluation" and "verification" labelled "where
-                 spend concentrates"; a thin dashed outline around "failure & rework"
-                 labelled "shrinks as the others are funded"
-- caption:       Figure 16.2 — Where adoption spend concentrates. Block sizes are illustrative, not measured: model inference, the most visible and fastest-falling cost, is the smallest recurring share, while engineering, evaluation and verification dominate. Failure and rework shrink to the degree the other three are funded properly.
-- alt-text:      A row of five cost blocks of differing sizes. Model inference is the smallest, marked as falling fast. Engineering is larger. Evaluation and verification are the largest, bracketed as where spend concentrates, with verification marked recurring. A fifth block, failure and rework, is dashed and marked as shrinking when the others are funded. A caption strip notes that magnitudes are illustrative and dated figures live in the repository.
-- generator prompt: A flat vector diagram on an off-white background showing five rectangular
-                 blocks in a single horizontal row, each a different width to suggest
-                 relative cost. From left: a small orange block "model inference" with a
-                 short orange arrow beneath labelled "falling fast"; a wider near-black
-                 outlined block "engineering"; a wide vermillion block "evaluation"; the
-                 widest vermillion block "verification (recurring)"; and a medium grey block
-                 with a dashed outline "failure & rework" labelled beneath "shrinks as the
-                 others are funded". A vermillion bracket spans the "evaluation" and
-                 "verification" blocks, labelled "where spend concentrates". A small grey
-                 caption strip runs along the bottom: "magnitudes illustrative — dated
-                 figures in repository". Minimal text, generous spacing, single-weight lines.
+- elements:      five cost blocks left to right, sized to suggest relative magnitude: a
+                 small orange block "model inference"; a larger near-black block
+                 "engineering"; a large vermillion block "evaluation"; the largest
+                 vermillion block "verification (recurring)"; a medium grey
+                 dashed-outline block "failure & rework"; a caption strip beneath
+- flow:          no directional flow; left-to-right ordering from the smallest recurring
+                 cost to the dominant one
+- labels:        "model inference", "engineering", "evaluation",
+                 "verification (recurring)", "failure & rework",
+                 "magnitudes illustrative — dated figures in repository"
+- annotations:   under "model inference", an arrow "falling fast" and the note "the cost
+                 everyone watches"; on "engineering", "recurring human time — specify,
+                 wire, maintain"; on "evaluation", "is the agent reliable enough to use
+                 at all?"; on "verification", "recurs for as long as the workflow runs —
+                 and does not fall as model prices fall"; on "failure & rework", "shrinks
+                 exactly to the degree the other three are funded"; a bracket over
+                 evaluation and verification, "where the spend actually concentrates"
+- caption:       Figure 16.2 — The cost everyone watches is the smallest block. Inference is falling fast and is the least of it; engineering, evaluation and above all verification are the recurring costs, and verification does not fall as model prices fall because it is external to the model by design. The dashed block is the honest one: failure and rework shrinks exactly to the degree the other three are funded. Budget from this picture, not from a price-per-token page.
+- alt-text:      Five cost blocks in a row, sized to suggest relative magnitude rather than exact figures. A small orange block, model inference, carries a downward arrow labelled falling fast and the note that this is the cost everyone watches. Larger blocks follow: engineering, annotated as recurring human time to specify, wire and maintain; evaluation, annotated as establishing whether the agent is reliable enough to use at all; and the largest, verification, annotated as recurring for as long as the workflow runs, and not falling as model prices fall. A dashed-outlined grey block, failure and rework, is annotated as shrinking exactly to the degree the other three are funded. A bracket over evaluation and verification reads where the spend actually concentrates, and a caption strip reads magnitudes illustrative, dated figures in the repository.
+- infographic description: A flat vector block diagram, 16:9, off-white background.
+                 Title top-left: "The cost model — inference is the smallest share".
+                 Standfirst: "The line item everyone watches is the smallest one on the
+                 canvas." Five blocks in a row, heights suggesting relative magnitude: a
+                 small orange block "model inference" with a small downward arrow
+                 "falling fast" and the note "the cost everyone watches"; a taller
+                 near-black block "engineering" annotated "recurring human time —
+                 specify, wire, maintain"; a taller vermillion block "evaluation"
+                 annotated "is the agent reliable enough to use at all?"; the tallest
+                 vermillion block "verification (recurring)" annotated "recurs for as
+                 long as the workflow runs — and does not fall as model prices fall"; and
+                 a medium grey dashed-outline block "failure & rework" annotated
+                 "shrinks exactly to the degree the other three are funded". A bracket
+                 spans evaluation and verification: "where the spend actually
+                 concentrates". A caption strip beneath: "magnitudes illustrative — dated
+                 figures in repository". Sentence case throughout.
 ```
 
 ## 16.4 The skills and roles a group needs

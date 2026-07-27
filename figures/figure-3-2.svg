@@ -1,116 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
-  <title>Figure 3.2 — Weak versus strong specification</title>
-  <desc>A two-panel before-and-after diagram. In the upper weak panel a person says verify this rainfall forecast to an agent, which emits four question tags (which metric, which reference, which period, when to stop) and a fluent output flagged plausible but unauditable. In the lower strong panel the same request passes through a specification block of four filled fields (objective, inputs, acceptance criteria, stop conditions) and a check to an auditable output.</desc>
-  <defs>
-    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
-    </marker>
-    <marker id="ahG" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#999999"/>
-    </marker>
-    <marker id="ahO" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#E69F00"/>
-    </marker>
-  </defs>
-
-  <rect width="1280" height="720" fill="#F7F7F5"/>
-
-  <!-- ===== upper panel: weak ===== -->
-  <text x="60" y="66" font-size="18" fill="#111111" font-weight="bold">weak (conversational)</text>
-
-  <!-- human -->
-  <circle cx="120" cy="165" r="18" fill="none" stroke="#0072B2" stroke-width="3"/>
-  <path d="M92,219 a28,28 0 0 1 56,0" fill="none" stroke="#0072B2" stroke-width="3"/>
-
-  <!-- speech bubble -->
-  <rect x="170" y="118" width="272" height="54" rx="12" fill="none" stroke="#0072B2" stroke-width="2"/>
-  <text x="306" y="151" font-size="15" fill="#0072B2" text-anchor="middle">verify this rainfall forecast</text>
-
-  <!-- human to agent -->
-  <line x1="150" y1="185" x2="432" y2="192" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- agent glyph -->
-  <rect x="435" y="165" width="70" height="70" rx="14" fill="none" stroke="#E69F00" stroke-width="3"/>
-  <path d="M472,208 A12,12 0 1 1 464,190" fill="none" stroke="#E69F00" stroke-width="2.5" marker-end="url(#ahO)"/>
-  <text x="470" y="258" font-size="14" fill="#111111" text-anchor="middle">agent</text>
-
-  <!-- four grey question tags -->
-  <rect x="690" y="95" width="170" height="40" rx="8" fill="none" stroke="#999999" stroke-width="2"/>
-  <text x="775" y="120" font-size="15" fill="#111111" text-anchor="middle">which metric?</text>
-  <rect x="690" y="143" width="170" height="40" rx="8" fill="none" stroke="#999999" stroke-width="2"/>
-  <text x="775" y="168" font-size="15" fill="#111111" text-anchor="middle">which reference?</text>
-  <rect x="690" y="217" width="170" height="40" rx="8" fill="none" stroke="#999999" stroke-width="2"/>
-  <text x="775" y="242" font-size="15" fill="#111111" text-anchor="middle">which period?</text>
-  <rect x="690" y="265" width="170" height="40" rx="8" fill="none" stroke="#999999" stroke-width="2"/>
-  <text x="775" y="290" font-size="15" fill="#111111" text-anchor="middle">when to stop?</text>
-
-  <!-- connectors agent to tags -->
-  <line x1="505" y1="190" x2="686" y2="120" stroke="#999999" stroke-width="1.5" marker-end="url(#ahG)"/>
-  <line x1="505" y1="196" x2="686" y2="163" stroke="#999999" stroke-width="1.5" marker-end="url(#ahG)"/>
-  <line x1="505" y1="204" x2="686" y2="237" stroke="#999999" stroke-width="1.5" marker-end="url(#ahG)"/>
-  <line x1="505" y1="210" x2="686" y2="285" stroke="#999999" stroke-width="1.5" marker-end="url(#ahG)"/>
-
-  <!-- main arrow to output -->
-  <line x1="862" y1="200" x2="951" y2="200" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- output box (weak) -->
-  <rect x="955" y="164" width="185" height="72" rx="8" fill="none" stroke="#D55E00" stroke-width="2"/>
-  <path d="M985,214 L1002,182 L1019,214 Z" fill="none" stroke="#D55E00" stroke-width="2"/>
-  <text x="1002" y="208" font-size="14" fill="#D55E00" text-anchor="middle">!</text>
-  <text x="1078" y="195" font-size="14" fill="#111111" text-anchor="middle">plausible,</text>
-  <text x="1078" y="215" font-size="14" fill="#111111" text-anchor="middle">unauditable</text>
-
-  <!-- callout: four silent choices -->
-  <text x="775" y="332" font-size="15" fill="#D55E00" text-anchor="middle">four silent choices</text>
-
-  <!-- divider -->
-  <line x1="40" y1="368" x2="1240" y2="368" stroke="#999999" stroke-width="1.5"/>
-
-  <!-- ===== lower panel: strong ===== -->
-  <text x="60" y="410" font-size="18" fill="#111111" font-weight="bold">strong (specified)</text>
-
-  <!-- human -->
-  <circle cx="120" cy="525" r="18" fill="none" stroke="#0072B2" stroke-width="3"/>
-  <path d="M92,579 a28,28 0 0 1 56,0" fill="none" stroke="#0072B2" stroke-width="3"/>
-
-  <!-- human to spec -->
-  <line x1="150" y1="545" x2="252" y2="545" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- specification block -->
-  <rect x="258" y="450" width="210" height="190" rx="10" fill="none" stroke="#999999" stroke-width="2"/>
-  <text x="363" y="476" font-size="14" fill="#111111" text-anchor="middle">specification</text>
-  <rect x="278" y="486" width="170" height="30" rx="6" fill="#0072B2"/>
-  <text x="363" y="507" font-size="13" fill="#FFFFFF" text-anchor="middle">objective</text>
-  <rect x="278" y="521" width="170" height="30" rx="6" fill="#0072B2"/>
-  <text x="363" y="542" font-size="13" fill="#FFFFFF" text-anchor="middle">inputs</text>
-  <rect x="278" y="556" width="170" height="30" rx="6" fill="#0072B2"/>
-  <text x="363" y="577" font-size="13" fill="#FFFFFF" text-anchor="middle">acceptance criteria</text>
-  <rect x="278" y="591" width="170" height="30" rx="6" fill="#0072B2"/>
-  <text x="363" y="612" font-size="13" fill="#FFFFFF" text-anchor="middle">stop conditions</text>
-
-  <!-- callout: four written fields -->
-  <text x="363" y="440" font-size="15" fill="#0072B2" text-anchor="middle">four written fields</text>
-
-  <!-- spec to agent -->
-  <line x1="468" y1="545" x2="540" y2="545" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- agent glyph -->
-  <rect x="543" y="510" width="70" height="70" rx="14" fill="none" stroke="#E69F00" stroke-width="3"/>
-  <path d="M580,553 A12,12 0 1 1 572,535" fill="none" stroke="#E69F00" stroke-width="2.5" marker-end="url(#ahO)"/>
-  <text x="578" y="602" font-size="13" fill="#111111" text-anchor="middle">agent</text>
-
-  <!-- agent to check -->
-  <line x1="613" y1="545" x2="698" y2="545" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- check diamond -->
-  <polygon points="742,510 780,545 742,580 704,545" fill="#D55E00"/>
-  <text x="742" y="550" font-size="13" fill="#FFFFFF" text-anchor="middle">check</text>
-
-  <!-- check to output -->
-  <line x1="780" y1="545" x2="872" y2="545" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- output box (strong) -->
-  <rect x="876" y="512" width="185" height="66" rx="8" fill="none" stroke="#0072B2" stroke-width="2"/>
-  <path d="M902,545 l10,10 l18,-22" fill="none" stroke="#111111" stroke-width="3"/>
-  <text x="990" y="551" font-size="15" fill="#111111" text-anchor="middle">auditable</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+<defs><marker id="ah32" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker></defs>
+<rect width="1600" height="900" fill="#F7F7F5"/>
+<text x="56.0" y="72.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" fill="#111111" font-weight="600" text-anchor="start">"Verify this rainfall forecast" - weak and strong</text>
+<text x="56.0" y="112.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" fill="#3A3A3A" font-weight="400" text-anchor="start">Four choices get made either way - the only question is by whom.</text>
+<text x="70.0" y="200.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#999999" font-weight="600" text-anchor="start">weak (conversational)</text>
+<circle cx="120" cy="286.4" r="9.6" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<path d="M104,311.2 a16,14.4 0 0 1 32,0" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<text x="120.0" y="354.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">scientist</text>
+<rect x="230.0" y="264.0" width="270.0" height="72.0" rx="16" fill="none" stroke="#111111" stroke-width="2.2"/>
+<text x="365.0" y="294.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">"verify this</text>
+<text x="365.0" y="318.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">rainfall forecast"</text>
+<line x1="150.0" y1="300.0" x2="224.0" y2="300.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah32)"/>
+<line x1="500.0" y1="300.0" x2="560.0" y2="300.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah32)"/>
+<rect x="582.0" y="274.0" width="36.0" height="36.0" rx="6" fill="none" stroke="#E69F00" stroke-width="2.3"/>
+<path d="M592.8,293.8 a7.56,7.56 0 1 1 8.64,6.12" fill="none" stroke="#E69F00" stroke-width="2"/>
+<text x="600.0" y="354.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">agent</text>
+<rect x="720.0" y="206.0" width="190.0" height="48.0" rx="10" fill="none" stroke="#999999" stroke-width="2.2"/>
+<text x="815.0" y="236.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">which metric?</text>
+<rect x="720.0" y="268.0" width="190.0" height="48.0" rx="10" fill="none" stroke="#999999" stroke-width="2.2"/>
+<text x="815.0" y="298.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">which reference?</text>
+<rect x="720.0" y="330.0" width="190.0" height="48.0" rx="10" fill="none" stroke="#999999" stroke-width="2.2"/>
+<text x="815.0" y="360.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">which period?</text>
+<rect x="720.0" y="392.0" width="190.0" height="48.0" rx="10" fill="none" stroke="#999999" stroke-width="2.2"/>
+<text x="815.0" y="422.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">when to stop?</text>
+<line x1="640.0" y1="300.0" x2="714.0" y2="300.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah32)"/>
+<text x="930.0" y="236.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">the agent answers</text>
+<text x="930.0" y="254.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">all four itself,</text>
+<text x="930.0" y="273.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">silently</text>
+<rect x="1160.0" y="264.0" width="220.0" height="72.0" rx="10" fill="none" stroke="#999999" stroke-width="2.2"/>
+<text x="1270.0" y="306.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">fluent output</text>
+<line x1="916.0" y1="300.0" x2="1154.0" y2="300.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah32)"/>
+<rect x="1160.0" y="363.4" width="3.4" height="18.8" fill="#D55E00"/>
+<text x="1172.0" y="376.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#D55E00" font-weight="400" text-anchor="start">plausible, unauditable</text>
+<text x="1160.0" y="410.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">a wrong verification that</text>
+<text x="1160.0" y="428.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">looks right is worse than an</text>
+<text x="1160.0" y="447.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">obvious error</text>
+<text x="70.0" y="520.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#3A3A3A" font-weight="600" text-anchor="start">strong (specified)</text>
+<circle cx="120" cy="596.4" r="9.6" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<path d="M104,621.2 a16,14.4 0 0 1 32,0" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<text x="120.0" y="664.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">scientist</text>
+<rect x="220.0" y="548.0" width="560.0" height="140.0" rx="12" fill="none" stroke="#0072B2" stroke-width="2.2"/>
+<rect x="240.0" y="570.0" width="124.0" height="52.0" rx="10" fill="none" stroke="#0072B2" stroke-width="2.2"/>
+<text x="302.0" y="602.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">objective</text>
+<rect x="376.0" y="570.0" width="124.0" height="52.0" rx="10" fill="none" stroke="#0072B2" stroke-width="2.2"/>
+<text x="438.0" y="602.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">inputs</text>
+<rect x="512.0" y="570.0" width="124.0" height="52.0" rx="10" fill="none" stroke="#0072B2" stroke-width="2.2"/>
+<text x="574.0" y="590.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">acceptance</text>
+<text x="574.0" y="614.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">criteria</text>
+<rect x="648.0" y="570.0" width="124.0" height="52.0" rx="10" fill="none" stroke="#0072B2" stroke-width="2.2"/>
+<text x="710.0" y="590.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">stop</text>
+<text x="710.0" y="614.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">conditions</text>
+<text x="240.0" y="712.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">the scientist answers the same four, in writing, before the run</text>
+<line x1="150.0" y1="618.0" x2="214.0" y2="618.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah32)"/>
+<line x1="780.0" y1="618.0" x2="846.0" y2="618.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah32)"/>
+<rect x="868.0" y="592.0" width="36.0" height="36.0" rx="6" fill="none" stroke="#E69F00" stroke-width="2.3"/>
+<path d="M878.8,611.8 a7.56,7.56 0 1 1 8.64,6.12" fill="none" stroke="#E69F00" stroke-width="2"/>
+<text x="886.0" y="668.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">agent</text>
+<line x1="926.0" y1="618.0" x2="1000.0" y2="618.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah32)"/>
+<polygon points="1070,581.0 1140.0,618 1070,655.0 1000.0,618" fill="none" stroke="#D55E00" stroke-width="2.4"/>
+<text x="1070.0" y="624.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">check</text>
+<text x="972.0" y="700.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">somebody other than</text>
+<text x="972.0" y="718.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">the agent can test it</text>
+<line x1="1140.0" y1="618.0" x2="1210.0" y2="618.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah32)"/>
+<rect x="1220.0" y="582.0" width="220.0" height="72.0" rx="10" fill="none" stroke="#009E73" stroke-width="2.2"/>
+<text x="1330.0" y="624.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">auditable output</text>
+<text x="1226.0" y="690.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">not made correct -</text>
+<text x="1226.0" y="708.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">made detectable when</text>
+<text x="1226.0" y="727.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">wrong</text>
+<text x="56.0" y="860.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#999999" font-weight="400" text-anchor="start">The specification does not make the verification correct; it makes a wrong verification detectable.</text>
 </svg>

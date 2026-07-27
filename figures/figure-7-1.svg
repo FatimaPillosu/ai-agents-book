@@ -1,84 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
-  <title>Figure 7.1 — Four gates between an agent's code and the main branch</title>
-  <desc>An architecture diagram reading left to right. An orange author agent emits a proposed-change document that passes through three vermillion diamond gates in turn (automated tests, pre-commit hooks, and an independent reviewer agent shown with a purple reviewer icon) before reaching a blue human owner who merges to the main-branch cylinder. Each gate has a fail arrow curving back to the author agent. A bracket under the gates reads cheap gates first; a note by the reviewer reads read-only, advisory.</desc>
-  <defs>
-    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
-    </marker>
-    <marker id="ahO" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#E69F00"/>
-    </marker>
-  </defs>
-
-  <rect width="1280" height="720" fill="#F7F7F5"/>
-
-  <!-- author agent -->
-  <text x="110" y="170" font-size="17" fill="#111111" text-anchor="middle">author agent</text>
-  <rect x="55" y="185" width="110" height="90" rx="12" fill="none" stroke="#E69F00" stroke-width="3"/>
-  <path d="M110,214 A18,18 0 1 1 94,222" fill="none" stroke="#E69F00" stroke-width="4" marker-end="url(#ahO)"/>
-
-  <!-- author -> proposed change -->
-  <line x1="167" y1="230" x2="220" y2="230" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- proposed change document glyph -->
-  <path d="M225,196 L275,196 L291,212 L291,266 L225,266 Z" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <path d="M275,196 L275,212 L291,212" fill="none" stroke="#111111" stroke-width="1.5"/>
-  <text x="258" y="300" font-size="16" fill="#111111" text-anchor="middle">proposed change</text>
-
-  <!-- proposed change -> tests -->
-  <line x1="291" y1="230" x2="340" y2="230" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- tests gate -->
-  <polygon points="410,168 478,230 410,292 342,230" fill="#D55E00"/>
-  <text x="410" y="226" font-size="15" fill="#FFFFFF" text-anchor="middle">automated</text>
-  <text x="410" y="246" font-size="15" fill="#FFFFFF" text-anchor="middle">tests</text>
-
-  <line x1="478" y1="230" x2="515" y2="230" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- hooks gate -->
-  <polygon points="585,168 653,230 585,292 517,230" fill="#D55E00"/>
-  <text x="585" y="226" font-size="15" fill="#FFFFFF" text-anchor="middle">pre-commit</text>
-  <text x="585" y="246" font-size="15" fill="#FFFFFF" text-anchor="middle">hooks</text>
-
-  <line x1="653" y1="230" x2="700" y2="230" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- reviewer gate -->
-  <polygon points="770,168 838,230 770,292 702,230" fill="#D55E00"/>
-  <text x="770" y="220" font-size="14" fill="#FFFFFF" text-anchor="middle">independent</text>
-  <text x="770" y="238" font-size="14" fill="#FFFFFF" text-anchor="middle">reviewer</text>
-  <text x="770" y="256" font-size="14" fill="#FFFFFF" text-anchor="middle">agent</text>
-
-  <!-- reviewer icon + note -->
-  <circle cx="770" cy="135" r="9" fill="none" stroke="#CC79A7" stroke-width="3"/>
-  <path d="M754,150 a16,16 0 0 1 32,0" fill="none" stroke="#CC79A7" stroke-width="3"/>
-  <path d="M776,133 l4,5 l8,-11" fill="none" stroke="#CC79A7" stroke-width="3"/>
-  <text x="770" y="108" font-size="14" fill="#999999" text-anchor="middle">read-only, advisory</text>
-
-  <!-- reviewer -> human -->
-  <line x1="838" y1="230" x2="905" y2="230" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- human owner -->
-  <circle cx="950" cy="205" r="15" fill="none" stroke="#0072B2" stroke-width="3"/>
-  <path d="M922,269 a28,28 0 0 1 56,0" fill="none" stroke="#0072B2" stroke-width="3"/>
-  <text x="950" y="300" font-size="16" fill="#111111" text-anchor="middle">human owner</text>
-
-  <!-- human -> main branch -->
-  <line x1="982" y1="230" x2="1058" y2="230" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- main branch cylinder -->
-  <path d="M1065,212 v54 a55,14 0 0 0 110,0 v-54" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <ellipse cx="1120" cy="212" rx="55" ry="14" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <text x="1120" y="300" font-size="16" fill="#111111" text-anchor="middle">main branch</text>
-
-  <!-- fail stubs and return bus -->
-  <line x1="410" y1="292" x2="410" y2="388" stroke="#111111" stroke-width="1.5"/>
-  <line x1="585" y1="292" x2="585" y2="388" stroke="#111111" stroke-width="1.5"/>
-  <line x1="770" y1="292" x2="770" y2="388" stroke="#111111" stroke-width="1.5"/>
-  <path d="M770,388 L110,388 L110,278" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#ah)"/>
-  <text x="240" y="378" font-size="15" fill="#111111" text-anchor="middle">fail</text>
-
-  <!-- cheap gates first bracket -->
-  <path d="M342,310 L342,322 L838,322 L838,310" fill="none" stroke="#999999" stroke-width="1.5"/>
-  <line x1="590" y1="322" x2="590" y2="334" stroke="#999999" stroke-width="1.5"/>
-  <text x="590" y="352" font-size="15" fill="#999999" text-anchor="middle">cheap gates first</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+<defs><marker id="ah71" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker></defs>
+<rect width="1600" height="900" fill="#F7F7F5"/>
+<text x="56.0" y="72.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" fill="#111111" font-weight="600" text-anchor="start">Four gates between an agent's code and the main branch</text>
+<text x="56.0" y="112.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" fill="#3A3A3A" font-weight="400" text-anchor="start">Cheap checks first, so your attention is spent only on what survives them.</text>
+<rect x="157.0" y="304.0" width="36.0" height="36.0" rx="6" fill="none" stroke="#E69F00" stroke-width="2.3"/>
+<path d="M167.8,323.8 a7.56,7.56 0 1 1 8.64,6.12" fill="none" stroke="#E69F00" stroke-width="2"/>
+<text x="175.0" y="384.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">author agent</text>
+<rect x="308.0" y="282.0" width="154.0" height="96.0" rx="10" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<text x="385.0" y="324.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">proposed</text>
+<text x="385.0" y="348.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">change</text>
+<polygon points="595.0,265.0 672.0,330 595.0,395.0 518.0,330" fill="none" stroke="#D55E00" stroke-width="2.4"/>
+<text x="595.0" y="336.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">automated tests</text>
+<text x="525.0" y="442.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">the assertions</text>
+<text x="525.0" y="460.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">must encode</text>
+<text x="525.0" y="479.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">intended</text>
+<text x="525.0" y="498.3" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">behaviour, not</text>
+<text x="525.0" y="517.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">whatever the code</text>
+<text x="525.0" y="535.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">happens to do</text>
+<polygon points="805.0,265.0 882.0,330 805.0,395.0 728.0,330" fill="none" stroke="#D55E00" stroke-width="2.4"/>
+<text x="805.0" y="336.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">pre-commit hooks</text>
+<text x="735.0" y="442.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">formatting,</text>
+<text x="735.0" y="460.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">linting, type</text>
+<text x="735.0" y="479.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">checks, secrets</text>
+<text x="735.0" y="498.3" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">scan, full suite -</text>
+<text x="735.0" y="517.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">run automatically</text>
+<polygon points="1015.0,265.0 1092.0,330 1015.0,395.0 938.0,330" fill="none" stroke="#D55E00" stroke-width="2.4"/>
+<text x="1015.0" y="324.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">independent</text>
+<text x="1015.0" y="348.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">reviewer agent</text>
+<text x="945.0" y="442.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">a different</text>
+<text x="945.0" y="460.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">instance, its own</text>
+<text x="945.0" y="479.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">context,</text>
+<text x="945.0" y="498.3" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">read-only, no</text>
+<text x="945.0" y="517.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">power to approve</text>
+<text x="945.0" y="535.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">or merge</text>
+<circle cx="1225.0" cy="310.4" r="9.6" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<path d="M1209.0,335.2 a16,14.4 0 0 1 32,0" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<text x="1225.0" y="384.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">human owner</text>
+<text x="1155.0" y="442.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">reads the report</text>
+<text x="1155.0" y="460.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">and the change,</text>
+<text x="1155.0" y="479.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">and owns the merge</text>
+<rect x="1358.0" y="282.0" width="154.0" height="96.0" rx="10" fill="none" stroke="#111111" stroke-width="2.2"/>
+<text x="1435.0" y="336.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">main branch</text>
+<line x1="258.0" y1="330.0" x2="302.0" y2="330.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah71)"/>
+<line x1="468.0" y1="330.0" x2="512.0" y2="330.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah71)"/>
+<line x1="678.0" y1="330.0" x2="722.0" y2="330.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah71)"/>
+<line x1="888.0" y1="330.0" x2="932.0" y2="330.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah71)"/>
+<line x1="1098.0" y1="330.0" x2="1142.0" y2="330.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah71)"/>
+<line x1="1308.0" y1="330.0" x2="1352.0" y2="330.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah71)"/>
+<path d="M595.0,399.0 L595.0,424.0 L175.0,424.0 L175.0,400.0" fill="none" stroke="#111111" stroke-width="2.1" marker-end="url(#ah71)"/>
+<text x="209.0" y="446.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#3A3A3A" font-weight="400" text-anchor="start">fail - back to the author, with the reason</text>
+<path d="M520.0,614 v10 M520.0,624 H1090.0 M1090.0,624 v-10" fill="none" stroke="#999999" stroke-width="1.8"/>
+<text x="805.0" y="644.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">cheap mechanical gates first - the expensive one last</text>
+<text x="56.0" y="860.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#999999" font-weight="400" text-anchor="start">Each gate is cheaper than the review it protects, and each catches a different class of error.</text>
 </svg>

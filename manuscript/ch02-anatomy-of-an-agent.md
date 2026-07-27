@@ -58,16 +58,17 @@ The original description of this pattern flagged exactly this hazard: reasoning 
 
 **Figure 2.1 — The plan–act–observe loop.**
 
-![A circular diagram of three nodes (plan, act and observe) read clockwise. A goal enters at plan; observe writes to a state-and-memory cylinder beneath the ring and returns to plan. A branch from plan reaches a stop-condition diamond whose done exit produces a result artefact and whose continue exit re-enters the ring. A callout on the observe step notes that the returned result is external, not the model's self-assessment.](../figures/figure-2-1.svg)
+![A circular diagram of three nodes read clockwise: plan, act and observe. A goal enters at plan, annotated as written before the loop starts. Plan is annotated "the model proposes one action". Act is annotated "machinery outside the model carries it out", observe "the result comes back, whether it is an answer or an error". Observe writes down to a state and memory cylinder, annotated "what the next step gets to see", and returns to plan. A branch from plan reaches a stop-condition diamond whose done exit produces a result and whose continue exit re-enters the ring. A vermillion callout on the observe step warns that the loop can only correct errors this step can actually see, and that a silent wrong answer is invisible to it.](../figures/figure-2-1.svg)
 
-*Figure 2.1 — The plan–act–observe loop. The model proposes an action, external machinery executes it, and the observed result is written to state and fed back for the next decision; the loop corrects only the errors its observe step can actually see. (Rendered as `figures/figure-2-1.svg` from the brief below, per `FIGURES.md`.)*
+*Figure 2.1 — The cycle that makes an agent an agent. The model proposes one action, something outside the model carries it out, and the result comes back to inform the next decision. Everything depends on the observe step: a loop corrects only the errors it can see, so a tool that fails silently defeats the whole mechanism. (Rendered as `figures/figure-2-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
 - id:            Figure 2.1
-- title:         The plan–act–observe control cycle
+- title:         The plan-act-observe loop
 - type:          architecture
 - claim:         An agent's defining feature is a control cycle in which the model proposes an action, external machinery executes it, and the observed result feeds the next decision; the cycle, not any single response, is the engine.
+- standfirst:    The loop corrects only the errors its observe step can actually see.
 - canvas:        16:9
 - elements:      a central ring of three nodes read clockwise — "plan" (agent orange,
                  rounded square with loop glyph), "act" (tool green, wrench glyph),
@@ -82,23 +83,34 @@ FIGURE BRIEF
                  to "result" and whose "continue" exit re-enters the ring
 - labels:        "specification / goal", "plan", "act", "observe", "state / memory",
                  "stop condition", "continue", "done", "result"
-- annotations:   a light callout on the observe→state arrow reading "external result,
-                 not self-assessment"
-- caption:       Figure 2.1 — The plan–act–observe loop. The model proposes an action, external machinery executes it, and the observed result is written to state and fed back for the next decision; the loop corrects only the errors its observe step can actually see.
-- alt-text:      A circular diagram of three nodes (plan, act and observe) read clockwise. A goal enters at plan; observe writes to a state-and-memory cylinder beneath the ring and returns to plan. A branch from plan reaches a stop-condition diamond whose done exit produces a result artefact and whose continue exit re-enters the ring. A callout on the observe step notes that the returned result is external, not the model's self-assessment.
-- generator prompt: A flat vector architecture diagram on an off-white background. Three
-                 rounded nodes form a ring, arranged clockwise and joined by single-weight
-                 arrows: an orange node labelled "plan" at top, a green node with a small
-                 wrench glyph labelled "act" at lower right, and a near-black node labelled
-                 "observe" at lower left. A blue tag labelled "specification / goal" at the
-                 far left connects into the "plan" node. Beneath the ring sits a sky-blue
-                 cylinder labelled "state / memory"; an arrow runs from "observe" down into
-                 the cylinder and another from the cylinder up into "plan". From "plan" a
-                 branch reaches a vermillion diamond labelled "stop condition" at the right,
-                 with two exits: "done" leading to a sky-blue document icon labelled
-                 "result", and "continue" curving back into the ring. A small callout on the
-                 observe-to-cylinder arrow reads "external result, not self-assessment".
-                 Minimal text, generous spacing, single-weight lines.
+- annotations:   on the goal tag, "written before the loop starts"; on plan, "the model
+                 proposes one action"; on act, "machinery outside the model carries it
+                 out"; on observe, "the result comes back, whether it is an answer or an
+                 error"; on the observe-to-state arrow, "what the next step gets to see";
+                 on the stop condition, "succeed and halt, or fail and hand back"; a
+                 vermillion callout beside observe, "a loop corrects only what this step
+                 can see — a silent wrong answer is invisible here"
+- caption:       Figure 2.1 — The cycle that makes an agent an agent. The model proposes one action, something outside the model carries it out, and the result comes back to inform the next decision. Everything depends on the observe step: a loop corrects only the errors it can see, so a tool that fails silently defeats the whole mechanism.
+- alt-text:      A circular diagram of three nodes read clockwise: plan, act and observe. A goal enters at plan, annotated as written before the loop starts. Plan is annotated "the model proposes one action". Act is annotated "machinery outside the model carries it out", observe "the result comes back, whether it is an answer or an error". Observe writes down to a state and memory cylinder, annotated "what the next step gets to see", and returns to plan. A branch from plan reaches a stop-condition diamond whose done exit produces a result and whose continue exit re-enters the ring. A vermillion callout on the observe step warns that the loop can only correct errors this step can actually see, and that a silent wrong answer is invisible to it.
+- infographic description: A flat vector architecture diagram on an off-white background,
+                 16:9. Title top-left in the largest size: "The plan-act-observe loop".
+                 Beneath it a standfirst: "The loop corrects only the errors its observe
+                 step can actually see." Three rounded nodes form a ring in the centre,
+                 arranged clockwise and joined by single-weight arrows: an orange node
+                 "plan" at the top, annotated "the model proposes one action"; a green node
+                 with a small wrench glyph "act" at lower right, annotated "machinery
+                 outside the model carries it out"; a near-black node "observe" at lower
+                 left, annotated "the result comes back, whether it is an answer or an
+                 error". A blue tag "specification / goal" at the far left connects into
+                 "plan", annotated "written before the loop starts". Beneath the ring a
+                 sky-blue cylinder "state / memory"; an arrow runs from "observe" down into
+                 it, labelled "what the next step gets to see", and another from the
+                 cylinder up into "plan". From "plan" a branch reaches a vermillion diamond
+                 "stop condition" at the right, annotated "succeed and halt, or fail and
+                 hand back", with two exits: "done" to a sky-blue document icon "result",
+                 and "continue" curving back into the ring. A callout in a pale yellow fill
+                 beside "observe" reads "a loop corrects only what this step can see — a
+                 silent wrong answer is invisible here". Generous margins, sentence case.
 ```
 
 ## 2.3 Tools as delegated weakness
@@ -128,9 +140,9 @@ They do not abolish it, and what remains is exactly what verification has to tar
 
 **Figure 2.2 — Anatomy of a tool call.**
 
-![A two-lane sequence diagram with an agent lane and a tool lane, read top to bottom. Step one: the agent reads a tool declaration. Step two: the agent sends an invocation to the tool. Step three: the tool executes. Step four: the tool returns a result to the agent, which is also written to a state-and-memory cylinder. A callout by step four warns that a silent wrong answer defeats the loop's ability to correct.](../figures/figure-2-2.svg)
+![A two-lane sequence diagram, agent on the left and tool on the right, read top to bottom through four numbered steps. Step one, the declaration, is annotated as bounding what the model may even attempt. Step two, the invocation, is annotated as the model choosing the operation and its arguments, and marked as the step where a correct tool can still be pointed at the wrong quantity. Step three, execution, happens inside the tool lane and is annotated as the part the model does not control. Step four returns the result to the agent and writes it to a state and memory cylinder, annotated as becoming the loop's observation. A vermillion callout by step four warns that a tool returning a plausible wrong answer instead of an error is more dangerous than one that is missing.](../figures/figure-2-2.svg)
 
-*Figure 2.2 — The four parts of a tool call. The declaration bounds what the model may attempt; the invocation is the model's choice of operation and arguments; execution happens outside the model; the returned result becomes the loop's observation, which is why a silent wrong answer is more dangerous than an error. (Rendered as `figures/figure-2-2.svg` from the brief below, per `FIGURES.md`.)*
+*Figure 2.2 — One tool call, in four parts, each of which is a place you can exercise control. The declaration bounds what the agent may attempt, the invocation is its choice of operation and arguments, execution happens outside the model, and the returned result becomes what the loop sees. That last part is why a silent wrong answer is worse than an error. (Rendered as `figures/figure-2-2.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -138,6 +150,7 @@ FIGURE BRIEF
 - title:         One tool call, four parts
 - type:          sequence
 - claim:         A tool call has a fixed four-part anatomy (declaration, invocation, execution, returned result), and each part is a distinct control point.
+- standfirst:    Each of the four parts is a place you can bound what the agent does.
 - canvas:        16:9
 - elements:      two vertical actor lanes read top-to-bottom — "agent (model)" (orange)
                  and "tool / interpreter" (green); four numbered steps crossing between
@@ -149,21 +162,34 @@ FIGURE BRIEF
                  result from tool back to agent and written to "state / memory"
 - labels:        "agent (model)", "tool / interpreter", "1 declaration",
                  "2 invocation", "3 execution", "4 returned result", "state / memory"
-- annotations:   a vermillion callout beside step 4 reading "silent wrong answer defeats
-                 the loop" pointing at the returned-result arrow
-- caption:       Figure 2.2 — The four parts of a tool call. The declaration bounds what the model may attempt; the invocation is the model's choice of operation and arguments; execution happens outside the model; the returned result becomes the loop's observation, which is why a silent wrong answer is more dangerous than an error.
-- alt-text:      A two-lane sequence diagram with an agent lane and a tool lane, read top to bottom. Step one: the agent reads a tool declaration. Step two: the agent sends an invocation to the tool. Step three: the tool executes. Step four: the tool returns a result to the agent, which is also written to a state-and-memory cylinder. A callout by step four warns that a silent wrong answer defeats the loop's ability to correct.
-- generator prompt: A flat vector sequence diagram on an off-white background with two
-                 vertical lanes, read top to bottom. The left lane header is an orange
-                 rounded square labelled "agent (model)"; the right lane header is a green
-                 wrench glyph labelled "tool / interpreter". Four numbered horizontal
-                 arrows cross between the lanes: "1 declaration" as a dashed arrow into the
-                 agent lane from a small tag labelled "tool declaration"; "2 invocation" from
-                 agent to tool; "3 execution" shown as a short self-loop within the tool
-                 lane; "4 returned result" from tool back to agent. From step 4 a further
-                 arrow drops to a sky-blue cylinder labelled "state / memory" at the bottom.
-                 A vermillion callout beside step 4 reads "silent wrong answer defeats the
-                 loop". Minimal text, single-weight lines, generous spacing.
+- annotations:   on step 1, "bounds what the model may even attempt — this is where
+                 least privilege lives"; on step 2, "the model chooses the operation and
+                 its arguments — a correct tool can still be pointed at the wrong
+                 quantity"; on step 3, "outside the model, and not under its control";
+                 on step 4, "this becomes the loop's observation"; a vermillion callout
+                 beside step 4, "a plausible wrong answer here is worse than an error —
+                 it defeats the loop's only means of correction"
+- caption:       Figure 2.2 — One tool call, in four parts, each of which is a place you can exercise control. The declaration bounds what the agent may attempt, the invocation is its choice of operation and arguments, execution happens outside the model, and the returned result becomes what the loop sees. That last part is why a silent wrong answer is worse than an error.
+- alt-text:      A two-lane sequence diagram, agent on the left and tool on the right, read top to bottom through four numbered steps. Step one, the declaration, is annotated as bounding what the model may even attempt. Step two, the invocation, is annotated as the model choosing the operation and its arguments, and marked as the step where a correct tool can still be pointed at the wrong quantity. Step three, execution, happens inside the tool lane and is annotated as the part the model does not control. Step four returns the result to the agent and writes it to a state and memory cylinder, annotated as becoming the loop's observation. A vermillion callout by step four warns that a tool returning a plausible wrong answer instead of an error is more dangerous than one that is missing.
+- infographic description: A flat vector sequence diagram on an off-white background, 16:9,
+                 with two vertical lanes read top to bottom. Title top-left: "One tool
+                 call, four parts". Standfirst beneath: "Each of the four parts is a place
+                 you can bound what the agent does." The left lane header is an orange
+                 rounded square "agent (model)"; the right lane header is a green wrench
+                 glyph "tool / interpreter". Four numbered horizontal arrows cross between
+                 the lanes, each with an annotation in smaller type beside it. "1
+                 declaration", a dashed arrow into the agent lane from a small tag "tool
+                 declaration", annotated "bounds what the model may even attempt — this is
+                 where least privilege lives". "2 invocation", agent to tool, annotated
+                 "the model chooses the operation and its arguments — a correct tool can
+                 still be pointed at the wrong quantity". "3 execution", a short self-loop
+                 within the tool lane, annotated "outside the model, and not under its
+                 control". "4 returned result", tool back to agent, annotated "this becomes
+                 the loop's observation". From step 4 a further arrow drops to a sky-blue
+                 cylinder "state / memory" at the bottom. A callout in a pale yellow fill
+                 beside step 4 reads "a plausible wrong answer here is worse than an error
+                 — it defeats the loop's only means of correction". Single-weight lines,
+                 generous spacing, sentence case.
 ```
 
 ## 2.4 Context and memory as a finite store
@@ -194,16 +220,17 @@ An agent handed a large context and no discipline about what goes into it will d
 
 **Figure 2.3 — Context and memory.**
 
-![On the left, a bounded rectangle labelled context window with a marked capacity limit contains stacked bands (specification, retrieved material, tool results and running transcript) with the top and bottom bands highlighted and the middle greyed and marked "attended to less reliably". On the right, separated by a gap, a cylinder labelled durable memory holds files, records and version control, marked "where provenance lives". A two-way arrow labelled externalise and retrieve connects the two; the left is within a run, the right across runs.](../figures/figure-2-3.svg)
+![Two panels side by side. On the left, a bounded rectangle labelled context window, its right edge marked as a hard capacity limit. Inside it four stacked bands: specification, retrieved material, tool results and running transcript. The top and bottom bands are highlighted and annotated as attended to most reliably; the middle bands are greyed and annotated as attended to less reliably, so fitting information in does not guarantee it is used. A note beneath reads that this holds within a single run only, and that anything falling out of the window is a constraint the agent no longer honours. On the right, across a clear gap, a cylinder labelled durable memory holding files, records and version control, annotated as where provenance lives and as persisting across runs. A two-way arrow between them is labelled externalise and retrieve.](../figures/figure-2-3.svg)
 
-*Figure 2.3 — The working store and the durable store. The context window is finite and volatile, its middle attended to less reliably than its edges; anything that must survive the run or serve as later evidence has to be externalised to a durable memory, which is where provenance lives. (Rendered as `figures/figure-2-3.svg` from the brief below, per `FIGURES.md`.)*
+*Figure 2.3 — Two stores, one of which forgets. The context window is finite and volatile, and its middle is attended to less reliably than its edges, so getting something into it is not the same as having it used. Anything that has to survive the run, or serve as evidence afterwards, has to be written out to durable memory, which is where provenance actually lives. (Rendered as `figures/figure-2-3.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
 - id:            Figure 2.3
-- title:         The finite working store and the durable store
+- title:         The working store and the durable store
 - type:          architecture
 - claim:         An agent holds a finite, volatile context window within a run and a durable external memory across runs; the two are distinct, and provenance depends on the second.
+- standfirst:    One of these two stores forgets everything the moment the run ends.
 - canvas:        16:9
 - elements:      a large bounded rectangle "context window" (sky blue border) with a
                  fixed edge marked "capacity limit" (grey); inside it, stacked bands
@@ -219,22 +246,34 @@ FIGURE BRIEF
                  "retrieved material", "tool results", "running transcript",
                  "durable memory", "files · records · version control",
                  "externalise / retrieve", "within a run", "across runs"
-- annotations:   a callout on the greyed middle bands reading "attended to less
-                 reliably"; a callout on the cylinder reading "where provenance lives"
-- caption:       Figure 2.3 — The working store and the durable store. The context window is finite and volatile, its middle attended to less reliably than its edges; anything that must survive the run or serve as later evidence has to be externalised to a durable memory, which is where provenance lives.
-- alt-text:      On the left, a bounded rectangle labelled context window with a marked capacity limit contains stacked bands (specification, retrieved material, tool results and running transcript) with the top and bottom bands highlighted and the middle greyed and marked "attended to less reliably". On the right, separated by a gap, a cylinder labelled durable memory holds files, records and version control, marked "where provenance lives". A two-way arrow labelled externalise and retrieve connects the two; the left is within a run, the right across runs.
-- generator prompt: A flat vector architecture diagram on an off-white background. On the
-                 left, a large sky-blue-bordered rectangle labelled "context window" has a
-                 thick grey right edge labelled "capacity limit". Inside, four horizontal
-                 bands stack top to bottom, labelled "specification", "retrieved material",
-                 "tool results", "running transcript"; the top and bottom bands have a pale
-                 yellow fill, the two middle bands are greyed with a small callout reading
-                 "attended to less reliably". Below the rectangle a small label reads
-                 "within a run". To the right, across a clear gap, a sky-blue cylinder is
-                 labelled "durable memory" with sub-text "files · records · version control"
-                 and a callout "where provenance lives"; below it a label reads "across
-                 runs". A two-way single-weight arrow between the rectangle and the cylinder
-                 is labelled "externalise / retrieve". Minimal text, generous spacing.
+- annotations:   on the highlighted top and bottom bands, "attended to most reliably";
+                 on the greyed middle bands, "attended to less reliably — fitting it in
+                 is not the same as having it used"; on the capacity limit edge, "every
+                 tool result the loop appends uses some of this up"; under the window,
+                 "a constraint that falls out of here is a constraint the agent no longer
+                 honours"; on the cylinder, "where provenance lives"; on the two-way arrow,
+                 "write out what has to survive; read back only what this step needs"
+- caption:       Figure 2.3 — Two stores, one of which forgets. The context window is finite and volatile, and its middle is attended to less reliably than its edges, so getting something into it is not the same as having it used. Anything that has to survive the run, or serve as evidence afterwards, has to be written out to durable memory, which is where provenance actually lives.
+- alt-text:      Two panels side by side. On the left, a bounded rectangle labelled context window, its right edge marked as a hard capacity limit. Inside it four stacked bands: specification, retrieved material, tool results and running transcript. The top and bottom bands are highlighted and annotated as attended to most reliably; the middle bands are greyed and annotated as attended to less reliably, so fitting information in does not guarantee it is used. A note beneath reads that this holds within a single run only, and that anything falling out of the window is a constraint the agent no longer honours. On the right, across a clear gap, a cylinder labelled durable memory holding files, records and version control, annotated as where provenance lives and as persisting across runs. A two-way arrow between them is labelled externalise and retrieve.
+- infographic description: A flat vector architecture diagram on an off-white background,
+                 16:9. Title top-left: "The working store and the durable store".
+                 Standfirst beneath: "One of these two stores forgets everything the moment
+                 the run ends." On the left, a large sky-blue-bordered rectangle "context
+                 window" with a thick grey right edge labelled "capacity limit", annotated
+                 "every tool result the loop appends uses some of this up". Inside, four
+                 horizontal bands stack top to bottom: "specification", "retrieved
+                 material", "tool results", "running transcript". The top and bottom bands
+                 have a pale yellow fill and a shared annotation "attended to most
+                 reliably"; the two middle bands are greyed with the annotation "attended
+                 to less reliably — fitting it in is not the same as having it used".
+                 Beneath the rectangle, a label "within a run" and a line reading "a
+                 constraint that falls out of here is a constraint the agent no longer
+                 honours". To the right, across a clear gap, a sky-blue cylinder "durable
+                 memory" with sub-text "files · records · version control" and a callout
+                 "where provenance lives"; beneath it the label "across runs". A two-way
+                 single-weight arrow between rectangle and cylinder is labelled
+                 "externalise / retrieve" and annotated "write out what has to survive;
+                 read back only what this step needs". Generous margins, sentence case.
 ```
 
 ## 2.5 Orchestration as composition
