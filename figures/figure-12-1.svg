@@ -1,81 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
-  <title>Figure 12.1 — The governance layer: registries and audit trail beside the workflow</title>
-  <desc>An architecture diagram. On the left, a workflow runs top to bottom: a specification feeds an AI agent, which makes a tool call and reaches a human decision. On the right, a grey box labelled governance layer contains four stacked cylinders: assumption registry, uncertainty registry, audit trail, and reviewer-coverage record. Thin arrows lead from each workflow element rightward into the governance layer, all pointing one way. An independent reviewer icon writes into the reviewer-coverage cylinder. A bracket down the right edge reads institutional memory, survives turnover.</desc>
-  <defs>
-    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
-    </marker>
-    <marker id="ahP" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#CC79A7"/>
-    </marker>
-  </defs>
-
-  <rect width="1280" height="720" fill="#F7F7F5"/>
-
-  <!-- workflow column heading -->
-  <text x="240" y="70" font-size="18" fill="#111111" text-anchor="middle">workflow</text>
-
-  <!-- specification tag -->
-  <rect x="180" y="115" width="120" height="48" rx="8" fill="#0072B2"/>
-  <text x="240" y="145" font-size="16" fill="#FFFFFF" text-anchor="middle">specification</text>
-  <line x1="240" y1="163" x2="240" y2="243" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- AI agent -->
-  <rect x="165" y="245" width="150" height="62" rx="12" fill="none" stroke="#E69F00" stroke-width="3"/>
-  <text x="240" y="283" font-size="18" fill="#E69F00" text-anchor="middle">AI agent</text>
-  <line x1="240" y1="307" x2="240" y2="385" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- tool call (wrench) -->
-  <g stroke="#009E73" stroke-width="11" fill="none" stroke-linecap="round" transform="translate(232,405)">
-    <path d="M15,-15 A22,22 0 1 0 15,15"/>
-    <path d="M-16,16 L-42,42"/>
-  </g>
-  <text x="240" y="478" font-size="16" fill="#111111" text-anchor="middle">tool call</text>
-  <line x1="240" y1="490" x2="240" y2="520" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- human decision -->
-  <circle cx="240" cy="548" r="15" fill="none" stroke="#0072B2" stroke-width="3"/>
-  <path d="M215,596 a25,25 0 0 1 50,0" fill="none" stroke="#0072B2" stroke-width="3"/>
-  <text x="240" y="628" font-size="16" fill="#111111" text-anchor="middle">human decision</text>
-
-  <!-- rightward arrows into governance layer -->
-  <line x1="300" y1="140" x2="578" y2="200" stroke="#111111" stroke-width="1.5" marker-end="url(#ah)"/>
-  <line x1="315" y1="276" x2="578" y2="320" stroke="#111111" stroke-width="1.5" marker-end="url(#ah)"/>
-  <line x1="285" y1="425" x2="578" y2="440" stroke="#111111" stroke-width="1.5" marker-end="url(#ah)"/>
-  <line x1="285" y1="560" x2="578" y2="555" stroke="#111111" stroke-width="1.5" marker-end="url(#ah)"/>
-
-  <!-- governance layer container -->
-  <rect x="580" y="90" width="510" height="560" rx="14" fill="none" stroke="#999999" stroke-width="3"/>
-  <text x="610" y="123" font-size="20" fill="#111111">governance layer</text>
-
-  <!-- assumption registry cylinder -->
-  <path d="M640,190 v52 a120,16 0 0 0 240,0 v-52" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <ellipse cx="760" cy="190" rx="120" ry="16" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <text x="760" y="222" font-size="16" fill="#111111" text-anchor="middle">assumption registry</text>
-
-  <!-- uncertainty registry cylinder -->
-  <path d="M640,310 v52 a120,16 0 0 0 240,0 v-52" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <ellipse cx="760" cy="310" rx="120" ry="16" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <text x="760" y="342" font-size="16" fill="#111111" text-anchor="middle">uncertainty registry</text>
-
-  <!-- audit trail cylinder -->
-  <path d="M640,430 v52 a120,16 0 0 0 240,0 v-52" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <ellipse cx="760" cy="430" rx="120" ry="16" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <text x="760" y="462" font-size="16" fill="#111111" text-anchor="middle">audit trail</text>
-
-  <!-- reviewer-coverage record cylinder -->
-  <path d="M640,550 v52 a120,16 0 0 0 240,0 v-52" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <ellipse cx="760" cy="550" rx="120" ry="16" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <text x="760" y="582" font-size="16" fill="#111111" text-anchor="middle">reviewer-coverage record</text>
-
-  <!-- independent reviewer icon -->
-  <circle cx="1200" cy="548" r="13" fill="none" stroke="#CC79A7" stroke-width="3"/>
-  <path d="M1178,592 a22,22 0 0 1 44,0" fill="none" stroke="#CC79A7" stroke-width="3"/>
-  <path d="M1210,556 l5,6 l10,-12" fill="none" stroke="#CC79A7" stroke-width="2.5"/>
-  <text x="1200" y="628" font-size="14" fill="#111111" text-anchor="middle">independent reviewer</text>
-  <line x1="1175" y1="575" x2="884" y2="575" stroke="#CC79A7" stroke-width="1.5" marker-end="url(#ahP)"/>
-
-  <!-- institutional memory bracket -->
-  <path d="M1100,120 L1112,120 L1112,620 L1100,620" fill="none" stroke="#111111" stroke-width="1.5"/>
-  <text x="1138" y="370" font-size="14" fill="#111111" text-anchor="middle" transform="rotate(-90 1138 370)">institutional memory — survives turnover</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+<defs><marker id="ah121" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker></defs>
+<rect width="1600" height="900" fill="#F7F7F5"/>
+<text x="56.0" y="72.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" fill="#111111" font-weight="600" text-anchor="start">A governance layer that records without steering</text>
+<text x="56.0" y="112.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" fill="#3A3A3A" font-weight="400" text-anchor="start">The workflow writes to the layer. The layer never steers the workflow.</text>
+<rect x="90.0" y="218.0" width="240.0" height="64.0" rx="18" fill="none" stroke="#0072B2" stroke-width="2.2"/>
+<text x="210.0" y="256.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">specification</text>
+<rect x="90.0" y="346.0" width="240.0" height="64.0" rx="10" fill="none" stroke="#E69F00" stroke-width="2.2"/>
+<text x="210.0" y="384.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">AI agent</text>
+<line x1="210.0" y1="282.0" x2="210.0" y2="342.0" stroke="#111111" stroke-width="1.8" marker-end="url(#ah121)"/>
+<path d="M199.5,508.5 l14.25,-14.25 M214.5,493.5 a6.0,6.0 0 1 0 7.5,7.5" fill="none" stroke="#009E73" stroke-width="2.5" stroke-linecap="round"/>
+<text x="210.0" y="544.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">tool call</text>
+<line x1="210.0" y1="410.0" x2="210.0" y2="460.0" stroke="#111111" stroke-width="1.8" marker-end="url(#ah121)"/>
+<circle cx="210" cy="614.4" r="9.6" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<path d="M194,639.2 a16,14.4 0 0 1 32,0" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<text x="210.0" y="672.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">human decision</text>
+<line x1="210.0" y1="552.0" x2="210.0" y2="588.0" stroke="#111111" stroke-width="1.8" marker-end="url(#ah121)"/>
+<rect x="560.0" y="206.0" width="970.0" height="560.0" rx="14" fill="none" stroke="#999999" stroke-width="2"/>
+<text x="584.0" y="240.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#999999" font-weight="600" text-anchor="start">governance layer</text>
+<path d="M610,278.36 a135.0,10.360000000000001 0 0 1 270,0 v53.28 a135.0,10.360000000000001 0 0 1 -270,0 z" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<path d="M610,278.36 a135.0,10.360000000000001 0 0 0 270,0" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<text x="745.0" y="310.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">assumption registry</text>
+<text x="910.0" y="302.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">what did the analysis take as given, and who</text>
+<text x="910.0" y="320.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">agreed?</text>
+<path d="M610,396.36 a135.0,10.360000000000001 0 0 1 270,0 v53.28 a135.0,10.360000000000001 0 0 1 -270,0 z" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<path d="M610,396.36 a135.0,10.360000000000001 0 0 0 270,0" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<text x="745.0" y="428.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">uncertainty registry</text>
+<text x="910.0" y="420.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">what does the workflow not know, and how</text>
+<text x="910.0" y="438.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">much?</text>
+<path d="M610,514.36 a135.0,10.360000000000001 0 0 1 270,0 v53.28 a135.0,10.360000000000001 0 0 1 -270,0 z" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<path d="M610,514.36 a135.0,10.360000000000001 0 0 0 270,0" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<text x="745.0" y="546.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">audit trail</text>
+<text x="910.0" y="538.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">what happened, in what order, invoked by</text>
+<text x="910.0" y="556.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">whom?</text>
+<path d="M610,632.36 a135.0,10.360000000000001 0 0 1 270,0 v53.28 a135.0,10.360000000000001 0 0 1 -270,0 z" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<path d="M610,632.36 a135.0,10.360000000000001 0 0 0 270,0" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<text x="745.0" y="664.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">reviewer-coverage record</text>
+<text x="910.0" y="656.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">what was actually reviewed - and what was</text>
+<text x="910.0" y="674.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">not?</text>
+<line x1="334.0" y1="250.0" x2="604.0" y2="250.0" stroke="#999999" stroke-width="1.6" stroke-dasharray="4 6" marker-end="url(#ah121)"/>
+<line x1="334.0" y1="378.0" x2="604.0" y2="378.0" stroke="#999999" stroke-width="1.6" stroke-dasharray="4 6" marker-end="url(#ah121)"/>
+<line x1="334.0" y1="506.0" x2="604.0" y2="506.0" stroke="#999999" stroke-width="1.6" stroke-dasharray="4 6" marker-end="url(#ah121)"/>
+<line x1="334.0" y1="634.0" x2="604.0" y2="634.0" stroke="#999999" stroke-width="1.6" stroke-dasharray="4 6" marker-end="url(#ah121)"/>
+<text x="430.0" y="196.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#3A3A3A" font-weight="400" text-anchor="start">fed by events the workflow already emits - no extra effort</text>
+<text x="56.0" y="860.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#999999" font-weight="400" text-anchor="start">Institutional memory that survives staff turnover: the record is a by-product of doing the work, not a chore beside it.</text>
 </svg>

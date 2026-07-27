@@ -1,88 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
-  <title>Figure 11.2 — Building a task-grounded evaluation set</title>
-  <desc>An architecture diagram reading left to right. Four sky-blue cylinders on the left (settled past runs, manual-workflow outputs, failure log, and known-correct hold-back) feed into a curate step labelled input, reference, metric, provenance, then a stratify step, producing a stratified evaluation set cylinder with a smaller held-out slice beside it. A curved arrow loops the set back to a version and refresh step. The versioned set passes through a vermillion gate into a de-emphasised live-workflow block on the right. A note reads guard against contamination; a callout on the gate reads measured here.</desc>
-  <defs>
-    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
-    </marker>
-  </defs>
-
-  <rect width="1280" height="720" fill="#F7F7F5"/>
-
-  <!-- four source cylinders -->
-  <!-- source 1 -->
-  <path d="M95,108 v44 a55,10 0 0 0 110,0 v-44" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <ellipse cx="150" cy="108" rx="55" ry="10" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <text x="150" y="185" font-size="15" fill="#111111" text-anchor="middle">settled past runs</text>
-  <!-- source 2 -->
-  <path d="M95,258 v44 a55,10 0 0 0 110,0 v-44" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <ellipse cx="150" cy="258" rx="55" ry="10" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <text x="150" y="335" font-size="15" fill="#111111" text-anchor="middle">manual-workflow outputs</text>
-  <!-- source 3 -->
-  <path d="M95,408 v44 a55,10 0 0 0 110,0 v-44" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <ellipse cx="150" cy="408" rx="55" ry="10" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <text x="150" y="485" font-size="15" fill="#111111" text-anchor="middle">failure log (Ch.13)</text>
-  <!-- source 4 -->
-  <path d="M95,558 v44 a55,10 0 0 0 110,0 v-44" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <ellipse cx="150" cy="558" rx="55" ry="10" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <text x="150" y="635" font-size="15" fill="#111111" text-anchor="middle">known-correct hold-back</text>
-
-  <!-- converging arrows into curate -->
-  <line x1="205" y1="130" x2="330" y2="320" stroke="#111111" stroke-width="1.5" marker-end="url(#ah)"/>
-  <line x1="205" y1="280" x2="330" y2="335" stroke="#111111" stroke-width="1.5" marker-end="url(#ah)"/>
-  <line x1="205" y1="430" x2="330" y2="360" stroke="#111111" stroke-width="1.5" marker-end="url(#ah)"/>
-  <line x1="205" y1="580" x2="330" y2="375" stroke="#111111" stroke-width="1.5" marker-end="url(#ah)"/>
-
-  <!-- curate step -->
-  <rect x="335" y="285" width="180" height="120" rx="12" fill="none" stroke="#999999" stroke-width="2.5"/>
-  <text x="425" y="322" font-size="17" fill="#111111" text-anchor="middle" font-weight="bold">curate</text>
-  <text x="425" y="350" font-size="14" fill="#111111" text-anchor="middle">input · reference</text>
-  <text x="425" y="372" font-size="14" fill="#111111" text-anchor="middle">· metric · provenance</text>
-
-  <!-- curate to stratify -->
-  <line x1="515" y1="345" x2="565" y2="345" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- stratify step -->
-  <rect x="570" y="305" width="170" height="80" rx="12" fill="none" stroke="#999999" stroke-width="2.5"/>
-  <text x="655" y="338" font-size="17" fill="#111111" text-anchor="middle" font-weight="bold">stratify</text>
-  <text x="655" y="362" font-size="14" fill="#111111" text-anchor="middle">by task and regime</text>
-
-  <!-- stratify to set -->
-  <line x1="740" y1="345" x2="792" y2="345" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- version + refresh loop tag -->
-  <rect x="800" y="128" width="150" height="44" rx="10" fill="none" stroke="#999999" stroke-width="2"/>
-  <text x="875" y="155" font-size="15" fill="#111111" text-anchor="middle">version + refresh</text>
-  <!-- loop arrows between set and tag -->
-  <path d="M835,290 C815,240 815,200 855,174" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#ah)"/>
-  <path d="M905,172 C935,205 930,250 908,290" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#ah)"/>
-
-  <!-- stratified evaluation set cylinder -->
-  <path d="M808,300 v64 a62,13 0 0 0 124,0 v-64" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <ellipse cx="870" cy="300" rx="62" ry="13" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <text x="870" y="410" font-size="15" fill="#111111" text-anchor="middle">stratified evaluation set</text>
-
-  <!-- set to held-out slice -->
-  <line x1="870" y1="378" x2="870" y2="430" stroke="#111111" stroke-width="1.5" marker-end="url(#ah)"/>
-
-  <!-- held-out slice cylinder -->
-  <path d="M832,448 v36 a38,9 0 0 0 76,0 v-36" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <ellipse cx="870" cy="448" rx="38" ry="9" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <text x="870" y="510" font-size="15" fill="#111111" text-anchor="middle">held-out slice</text>
-  <text x="870" y="535" font-size="13" fill="#999999" text-anchor="middle">guard against contamination (§11.3)</text>
-
-  <!-- set to gate -->
-  <line x1="932" y1="300" x2="978" y2="300" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- gate diamond -->
-  <polygon points="1010,270 1042,300 1010,330 978,300" fill="#D55E00"/>
-  <text x="1010" y="305" font-size="15" fill="#FFFFFF" text-anchor="middle">gate</text>
-  <text x="1010" y="248" font-size="13" fill="#D55E00" text-anchor="middle">measured here (§11.5)</text>
-
-  <!-- gate to live workflow -->
-  <line x1="1042" y1="300" x2="1088" y2="300" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- live workflow block (de-emphasised) -->
-  <rect x="1090" y="270" width="150" height="60" rx="10" fill="none" stroke="#999999" stroke-width="2.5"/>
-  <text x="1165" y="305" font-size="16" fill="#999999" text-anchor="middle">live workflow</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+<defs><marker id="ah112" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker></defs>
+<rect width="1600" height="900" fill="#F7F7F5"/>
+<text x="56.0" y="72.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" fill="#111111" font-weight="600" text-anchor="start">An evaluation set built from the workflow's own history</text>
+<text x="56.0" y="112.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" fill="#3A3A3A" font-weight="400" text-anchor="start">The raw material is already in your history. The work is gathering and disciplining it.</text>
+<path d="M80,216.08 a110.0,10.080000000000002 0 0 1 220,0 v51.839999999999996 a110.0,10.080000000000002 0 0 1 -220,0 z" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<path d="M80,216.08 a110.0,10.080000000000002 0 0 0 220,0" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<text x="190.0" y="247.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">settled past runs</text>
+<path d="M80,336.08 a110.0,10.080000000000002 0 0 1 220,0 v51.839999999999996 a110.0,10.080000000000002 0 0 1 -220,0 z" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<path d="M80,336.08 a110.0,10.080000000000002 0 0 0 220,0" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<text x="190.0" y="355.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">manual-workflow</text>
+<text x="190.0" y="379.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">outputs</text>
+<path d="M80,456.08 a110.0,10.080000000000002 0 0 1 220,0 v51.839999999999996 a110.0,10.080000000000002 0 0 1 -220,0 z" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<path d="M80,456.08 a110.0,10.080000000000002 0 0 0 220,0" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<text x="190.0" y="487.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">failure log (Ch.13)</text>
+<path d="M80,576.08 a110.0,10.080000000000002 0 0 1 220,0 v51.839999999999996 a110.0,10.080000000000002 0 0 1 -220,0 z" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<path d="M80,576.08 a110.0,10.080000000000002 0 0 0 220,0" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<text x="190.0" y="595.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">known-correct</text>
+<text x="190.0" y="619.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">hold-back</text>
+<rect x="420.0" y="380.0" width="190.0" height="76.0" rx="10" fill="none" stroke="#111111" stroke-width="2.2"/>
+<text x="515.0" y="424.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">curate</text>
+<path d="M302.0,242.0 L360.0,242.0 L360.0,418.0 L414.0,418.0" fill="none" stroke="#111111" stroke-width="2.1" marker-end="url(#ah112)"/>
+<path d="M302.0,602.0 L360.0,602.0 L360.0,418.0 L414.0,418.0" fill="none" stroke="#111111" stroke-width="2.1" marker-end="url(#ah112)"/>
+<path d="M302.0,242.0 L360.0,242.0 L360.0,418.0 L414.0,418.0" fill="none" stroke="#111111" stroke-width="2.1" marker-end="url(#ah112)"/>
+<path d="M302.0,482.0 L360.0,482.0 L360.0,418.0 L414.0,418.0" fill="none" stroke="#111111" stroke-width="2.1" marker-end="url(#ah112)"/>
+<path d="M302.0,602.0 L360.0,602.0 L360.0,418.0 L414.0,418.0" fill="none" stroke="#111111" stroke-width="2.1" marker-end="url(#ah112)"/>
+<text x="420.0" y="500.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">each case: input ·</text>
+<text x="420.0" y="518.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">reference · metric</text>
+<text x="420.0" y="537.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">fixed in advance ·</text>
+<text x="420.0" y="556.3" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">provenance of the</text>
+<text x="420.0" y="575.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">reference</text>
+<rect x="680.0" y="380.0" width="210.0" height="76.0" rx="10" fill="none" stroke="#111111" stroke-width="2.2"/>
+<text x="785.0" y="412.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">stratify by task</text>
+<text x="785.0" y="436.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">and regime</text>
+<line x1="610.0" y1="418.0" x2="674.0" y2="418.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah112)"/>
+<text x="680.0" y="500.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">spans the regimes the</text>
+<text x="680.0" y="518.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">workflow will actually</text>
+<text x="680.0" y="537.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">meet - easy cases</text>
+<text x="680.0" y="556.3" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">cannot certify it</text>
+<path d="M950,384.88 a115.0,12.88 0 0 1 230,0 v66.24 a115.0,12.88 0 0 1 -230,0 z" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<path d="M950,384.88 a115.0,12.88 0 0 0 230,0" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<text x="1065.0" y="412.4" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">stratified evaluation</text>
+<text x="1065.0" y="436.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">set</text>
+<line x1="890.0" y1="418.0" x2="944.0" y2="418.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah112)"/>
+<rect x="972.0" y="440.0" width="186.0" height="16.0" rx="3" fill="#F0E442" stroke="none"/>
+<text x="970.0" y="492.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="400" text-anchor="start">held-out slice</text>
+<rect x="950.0" y="509.4" width="3.4" height="56.3" fill="#D55E00"/>
+<text x="962.0" y="522.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#D55E00" font-weight="400" text-anchor="start">withheld means absent from</text>
+<text x="962.0" y="540.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#D55E00" font-weight="400" text-anchor="start">anything the model could</text>
+<text x="962.0" y="559.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#D55E00" font-weight="400" text-anchor="start">have seen</text>
+<path d="M1065.0,368.0 L1065.0,300.0 L940.0,300.0" fill="none" stroke="#111111" stroke-width="2.1" marker-end="url(#ah112)"/>
+<text x="1000.0" y="284.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">version + refresh</text>
+<text x="660.0" y="284.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#3A3A3A" font-weight="400" text-anchor="middle">refresh on model, prompt or data-regime change</text>
+<polygon points="1300,385.0 1365.0,418 1300,451.0 1235.0,418" fill="none" stroke="#D55E00" stroke-width="2.4"/>
+<text x="1300.0" y="424.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">gate</text>
+<line x1="1182.0" y1="418.0" x2="1229.0" y2="418.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah112)"/>
+<text x="1372.0" y="486.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">the gate §11.5 measures</text>
+<rect x="1380.0" y="560.0" width="150.0" height="60.0" rx="10" fill="none" stroke="#111111" stroke-width="2.2"/>
+<text x="1455.0" y="584.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">live</text>
+<text x="1455.0" y="608.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">workflow</text>
+<path d="M1300.0,453.0 L1300.0,590.0 L1374.0,590.0" fill="none" stroke="#111111" stroke-width="2.1" marker-end="url(#ah112)"/>
+<text x="56.0" y="860.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#999999" font-weight="400" text-anchor="start">Harvest, curate, stratify, hold out, version - then the set feeds the tiered checks of this chapter.</text>
 </svg>

@@ -1,78 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="900" viewBox="0 0 720 900" font-family="Helvetica, Arial, sans-serif">
-  <title>Figure 9.3 — Deciding what to disclose, and whether a use is permitted at all</title>
-  <desc>A top-to-bottom decision flowchart beginning from an agent being used to prepare an output. The first vermillion gate asks whether the venue bars the task; yes leads to a red stop box advising a permitted alternative. The second gate asks whether a confidential manuscript under review is involved; yes leads to a stop box advising it be kept off external systems. The third gate asks whether disclosure is required or best practice; yes leads to a blue box generating the disclosure from provenance records, no to recording it internally regardless. A blue author-confirms icon sits at the foot, with a note reading when in doubt, disclose.</desc>
-  <defs>
-    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
-    </marker>
-  </defs>
-
-  <rect width="720" height="900" fill="#F7F7F5"/>
-
-  <!-- start box (orange) -->
-  <rect x="120" y="40" width="280" height="60" rx="12" fill="none" stroke="#E69F00" stroke-width="3"/>
-  <text x="260" y="66" font-size="16" fill="#111111" text-anchor="middle">agent used in preparing</text>
-  <text x="260" y="88" font-size="16" fill="#111111" text-anchor="middle">this output</text>
-
-  <!-- gate 1 -->
-  <line x1="260" y1="100" x2="260" y2="138" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <polygon points="260,140 348,196 260,252 172,196" fill="#D55E00"/>
-  <text x="260" y="190" font-size="15" fill="#FFFFFF" text-anchor="middle">does the venue</text>
-  <text x="260" y="210" font-size="15" fill="#FFFFFF" text-anchor="middle">bar this task?</text>
-
-  <!-- gate1 yes -> stop 1 -->
-  <line x1="348" y1="196" x2="466" y2="196" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="406" y="184" font-size="15" fill="#111111" text-anchor="middle">yes</text>
-  <rect x="468" y="160" width="230" height="72" rx="10" fill="none" stroke="#D55E00" stroke-width="3"/>
-  <text x="583" y="192" font-size="15" fill="#D55E00" text-anchor="middle">do not use; find a</text>
-  <text x="583" y="213" font-size="15" fill="#D55E00" text-anchor="middle">permitted alternative</text>
-
-  <!-- gate1 no -> gate 2 -->
-  <line x1="260" y1="252" x2="260" y2="306" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="277" y="284" font-size="15" fill="#111111" text-anchor="start">no</text>
-  <polygon points="260,308 348,368 260,428 172,368" fill="#D55E00"/>
-  <text x="260" y="356" font-size="14" fill="#FFFFFF" text-anchor="middle">confidential</text>
-  <text x="260" y="374" font-size="14" fill="#FFFFFF" text-anchor="middle">manuscript</text>
-  <text x="260" y="392" font-size="14" fill="#FFFFFF" text-anchor="middle">under review?</text>
-
-  <!-- gate2 yes -> stop 2 -->
-  <line x1="348" y1="368" x2="466" y2="368" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="406" y="356" font-size="15" fill="#111111" text-anchor="middle">yes</text>
-  <rect x="468" y="334" width="230" height="70" rx="10" fill="none" stroke="#D55E00" stroke-width="3"/>
-  <text x="583" y="366" font-size="15" fill="#D55E00" text-anchor="middle">keep off external</text>
-  <text x="583" y="387" font-size="15" fill="#D55E00" text-anchor="middle">systems</text>
-
-  <!-- gate2 no -> gate 3 -->
-  <line x1="260" y1="428" x2="260" y2="482" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="277" y="460" font-size="15" fill="#111111" text-anchor="start">no</text>
-  <polygon points="260,484 356,544 260,604 164,544" fill="#D55E00"/>
-  <text x="260" y="538" font-size="14" fill="#FFFFFF" text-anchor="middle">disclosure required</text>
-  <text x="260" y="558" font-size="14" fill="#FFFFFF" text-anchor="middle">or best practice?</text>
-
-  <!-- note beside gate 3 -->
-  <text x="470" y="540" font-size="14" fill="#D55E00" text-anchor="start">when in doubt,</text>
-  <text x="470" y="560" font-size="14" fill="#D55E00" text-anchor="start">disclose</text>
-
-  <!-- gate3 yes -> blue box -->
-  <path d="M212,580 L160,626 L160,662" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="150" y="626" font-size="15" fill="#111111" text-anchor="end">yes</text>
-  <rect x="40" y="664" width="248" height="72" rx="10" fill="#0072B2"/>
-  <text x="164" y="696" font-size="15" fill="#FFFFFF" text-anchor="middle">generate disclosure from</text>
-  <text x="164" y="717" font-size="15" fill="#FFFFFF" text-anchor="middle">provenance records</text>
-
-  <!-- gate3 no -> grey box -->
-  <path d="M308,580 L470,626 L470,662" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="430" y="620" font-size="15" fill="#111111" text-anchor="start">no</text>
-  <rect x="380" y="664" width="220" height="64" rx="10" fill="none" stroke="#999999" stroke-width="3"/>
-  <text x="490" y="692" font-size="15" fill="#999999" text-anchor="middle">record internally</text>
-  <text x="490" y="713" font-size="15" fill="#999999" text-anchor="middle">regardless</text>
-
-  <!-- converge to author confirms -->
-  <path d="M164,736 L164,790 L326,790" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <path d="M490,728 L490,790 L364,790" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- author confirms (blue human) -->
-  <circle cx="345" cy="800" r="16" fill="none" stroke="#0072B2" stroke-width="3"/>
-  <path d="M319,852 a26,26 0 0 1 52,0" fill="none" stroke="#0072B2" stroke-width="3"/>
-  <text x="345" y="884" font-size="16" fill="#0072B2" text-anchor="middle">author confirms</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+<defs><marker id="ah93" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker></defs>
+<rect width="1600" height="900" fill="#F7F7F5"/>
+<text x="56.0" y="72.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" fill="#111111" font-weight="600" text-anchor="start">Deciding what to disclose, and whether a use is permitted at all</text>
+<text x="56.0" y="112.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" fill="#3A3A3A" font-weight="400" text-anchor="start">Answer these from your record, not from memory.</text>
+<rect x="280.0" y="182.0" width="380.0" height="58.0" rx="10" fill="none" stroke="#E69F00" stroke-width="2.2"/>
+<text x="470.0" y="205.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">agent used in preparing this</text>
+<text x="470.0" y="229.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">output</text>
+<line x1="470.0" y1="240.0" x2="470.0" y2="272.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah93)"/>
+<polygon points="470,292.0 635.0,338 470,384.0 305.0,338" fill="none" stroke="#D55E00" stroke-width="2.4"/>
+<text x="470.0" y="332.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">does the venue bar</text>
+<text x="470.0" y="356.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">this task?</text>
+<text x="56.0" y="300.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">some venues forbid</text>
+<text x="56.0" y="318.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">agent-generated</text>
+<text x="56.0" y="337.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">figures, data or</text>
+<text x="56.0" y="356.3" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">citations outright</text>
+<line x1="639.0" y1="338.0" x2="1010.0" y2="338.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah93)"/>
+<text x="820.0" y="322.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">yes</text>
+<rect x="1020.0" y="304.0" width="300.0" height="68.0" rx="10" fill="none" stroke="#D55E00" stroke-width="2.2"/>
+<text x="1170.0" y="332.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">do not use; find a</text>
+<text x="1170.0" y="356.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">permitted alternative</text>
+<line x1="470.0" y1="386.0" x2="470.0" y2="428.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah93)"/>
+<text x="444.0" y="414.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="end">no</text>
+<polygon points="470,452.0 635.0,498 470,544.0 305.0,498" fill="none" stroke="#D55E00" stroke-width="2.4"/>
+<text x="470.0" y="480.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">confidential</text>
+<text x="470.0" y="504.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">manuscript under</text>
+<text x="470.0" y="528.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">review?</text>
+<rect x="56.0" y="457.4" width="3.4" height="56.3" fill="#D55E00"/>
+<text x="68.0" y="470.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#D55E00" font-weight="400" text-anchor="start">once material is sent,</text>
+<text x="68.0" y="488.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#D55E00" font-weight="400" text-anchor="start">its onward path is</text>
+<text x="68.0" y="507.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#D55E00" font-weight="400" text-anchor="start">beyond your control</text>
+<line x1="639.0" y1="498.0" x2="1010.0" y2="498.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah93)"/>
+<text x="820.0" y="482.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">yes</text>
+<rect x="1020.0" y="464.0" width="300.0" height="68.0" rx="10" fill="none" stroke="#D55E00" stroke-width="2.2"/>
+<text x="1170.0" y="492.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">keep off external</text>
+<text x="1170.0" y="516.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">systems</text>
+<line x1="470.0" y1="546.0" x2="470.0" y2="588.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah93)"/>
+<text x="444.0" y="574.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="end">no</text>
+<polygon points="470,610.0 635.0,656 470,702.0 305.0,656" fill="none" stroke="#D55E00" stroke-width="2.4"/>
+<text x="470.0" y="650.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">disclosure required or</text>
+<text x="470.0" y="674.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">best practice?</text>
+<text x="56.0" y="650.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="600" text-anchor="start">when in doubt, disclose</text>
+<line x1="639.0" y1="656.0" x2="860.0" y2="656.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah93)"/>
+<rect x="870.0" y="600.0" width="330.0" height="64.0" rx="10" fill="none" stroke="#009E73" stroke-width="2.2"/>
+<text x="1035.0" y="626.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">generate disclosure from</text>
+<text x="1035.0" y="650.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">provenance records</text>
+<text x="870.0" y="692.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">assembled to whatever granularity the</text>
+<text x="870.0" y="710.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">venue asks for, because the record</text>
+<text x="870.0" y="729.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">already exists</text>
+<line x1="1200.0" y1="632.0" x2="1270.0" y2="632.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah93)"/>
+<circle cx="1330" cy="608.4" r="9.6" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<path d="M1314,633.2 a16,14.4 0 0 1 32,0" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<text x="1330.0" y="678.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="400" text-anchor="middle">author confirms</text>
+<text x="56.0" y="860.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#999999" font-weight="400" text-anchor="start">No agent is ever listed or implied as an author - that class of rule is stable where the others move.</text>
 </svg>
