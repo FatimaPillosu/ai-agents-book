@@ -1,57 +1,60 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
-  <title>Figure 1.1 — From text generation to structured action</title>
-  <desc>A horizontal timeline from 2017 to 2026 showing seven milestones progressing from the transformer architecture, through in-context learning and public conversational systems, to tool calling, long context, coding agents with standardised tool protocols, and finally governed agentic workflows in scientific practice.</desc>
-  <defs>
-    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
-    </marker>
-  </defs>
-
-  <rect width="1280" height="720" fill="#F7F7F5"/>
-
-  <!-- timeline axis -->
-  <line x1="70" y1="320" x2="1222" y2="320" stroke="#111111" stroke-width="2.5" marker-end="url(#ah)"/>
-
-  <!-- milestone nodes (in-context learning and tool calling emphasised in agent orange) -->
-  <circle cx="100"  cy="320" r="12" fill="#F7F7F5" stroke="#111111" stroke-width="3"/>
-  <circle cx="280"  cy="320" r="13" fill="#E69F00"/>
-  <circle cx="460"  cy="320" r="12" fill="#F7F7F5" stroke="#111111" stroke-width="3"/>
-  <circle cx="640"  cy="320" r="13" fill="#E69F00"/>
-  <circle cx="820"  cy="320" r="12" fill="#F7F7F5" stroke="#111111" stroke-width="3"/>
-  <circle cx="1000" cy="320" r="12" fill="#F7F7F5" stroke="#111111" stroke-width="3"/>
-  <circle cx="1180" cy="320" r="12" fill="#F7F7F5" stroke="#111111" stroke-width="3"/>
-
-  <!-- node labels -->
-  <g fill="#111111" text-anchor="middle">
-    <text x="100" y="372" font-size="20" font-weight="bold">2017</text>
-    <text x="100" y="398" font-size="16">transformer</text>
-    <text x="100" y="418" font-size="16">architecture</text>
-
-    <text x="280" y="372" font-size="20" font-weight="bold">2020</text>
-    <text x="280" y="398" font-size="16">in-context</text>
-    <text x="280" y="418" font-size="16">learning</text>
-
-    <text x="460" y="372" font-size="20" font-weight="bold">2022</text>
-    <text x="460" y="398" font-size="16">public conversational</text>
-    <text x="460" y="418" font-size="16">systems</text>
-
-    <text x="640" y="372" font-size="20" font-weight="bold">2023</text>
-    <text x="640" y="398" font-size="16">tool calling</text>
-
-    <text x="820" y="372" font-size="20" font-weight="bold">2023–24</text>
-    <text x="820" y="398" font-size="16">long context</text>
-
-    <text x="1000" y="372" font-size="20" font-weight="bold">2024–25</text>
-    <text x="1000" y="398" font-size="16">coding agents ·</text>
-    <text x="1000" y="418" font-size="16">tool protocols</text>
-
-    <text x="1180" y="372" font-size="20" font-weight="bold">2026</text>
-    <text x="1180" y="398" font-size="16">governed agentic</text>
-    <text x="1180" y="418" font-size="16">workflows</text>
-  </g>
-
-  <!-- bracket: structured action closes the loop -->
-  <path d="M640,452 L640,466 L1180,466 L1180,452" fill="none" stroke="#111111" stroke-width="1.5"/>
-  <line x1="910" y1="466" x2="910" y2="480" stroke="#111111" stroke-width="1.5"/>
-  <text x="910" y="506" font-size="17" fill="#111111" text-anchor="middle">structured action closes the loop</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+<defs><marker id="ah11" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker></defs>
+<rect width="1600" height="900" fill="#F7F7F5"/>
+<text x="56.0" y="72.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" fill="#111111" font-weight="600" text-anchor="start">From text generation to structured action</text>
+<text x="56.0" y="112.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" fill="#3A3A3A" font-weight="400" text-anchor="start">Seven datable changes, of which two were about the interface rather than the capability.</text>
+<line x1="80.0" y1="430.0" x2="1545.0" y2="430.0" stroke="#111111" stroke-width="2.4" marker-end="url(#ah11)"/>
+<circle cx="220.0" cy="430" r="11" fill="#F7F7F5" stroke="#111111" stroke-width="2.6"/>
+<text x="128.0" y="314.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" fill="#111111" font-weight="600" text-anchor="start">transformer</text>
+<text x="128.0" y="334.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" fill="#111111" font-weight="600" text-anchor="start">architecture</text>
+<text x="128.0" y="290.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" fill="#111111" font-weight="700" text-anchor="start">2017</text>
+<line x1="220.0" y1="378.0" x2="220.0" y2="417.0" stroke="#999999" stroke-width="1.4"/>
+<text x="128.0" y="476.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">made training on very</text>
+<text x="128.0" y="494.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">large text practical</text>
+<circle cx="420.0" cy="430" r="11" fill="#E69F00" stroke="#E69F00" stroke-width="2.6"/>
+<text x="328.0" y="486.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" fill="#E69F00" font-weight="700" text-anchor="start">2020</text>
+<text x="328.0" y="512.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" fill="#111111" font-weight="600" text-anchor="start">in-context learning</text>
+<line x1="420.0" y1="443.0" x2="420.0" y2="464.0" stroke="#999999" stroke-width="1.4"/>
+<text x="328.0" y="334.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">a task could now be</text>
+<text x="328.0" y="352.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">described, not</text>
+<text x="328.0" y="371.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">programmed</text>
+<circle cx="620.0" cy="430" r="11" fill="#F7F7F5" stroke="#111111" stroke-width="2.6"/>
+<text x="528.0" y="314.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" fill="#111111" font-weight="600" text-anchor="start">public conversational</text>
+<text x="528.0" y="334.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" fill="#111111" font-weight="600" text-anchor="start">systems</text>
+<text x="528.0" y="290.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" fill="#111111" font-weight="700" text-anchor="start">2022</text>
+<line x1="620.0" y1="378.0" x2="620.0" y2="417.0" stroke="#999999" stroke-width="1.4"/>
+<text x="528.0" y="476.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">the shift became visible</text>
+<text x="528.0" y="494.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">outside research</text>
+<circle cx="820.0" cy="430" r="11" fill="#E69F00" stroke="#E69F00" stroke-width="2.6"/>
+<text x="728.0" y="486.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" fill="#E69F00" font-weight="700" text-anchor="start">2023</text>
+<text x="728.0" y="512.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" fill="#111111" font-weight="600" text-anchor="start">tool calling</text>
+<line x1="820.0" y1="443.0" x2="820.0" y2="464.0" stroke="#999999" stroke-width="1.4"/>
+<text x="728.0" y="334.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">the model could act, not</text>
+<text x="728.0" y="352.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">just describe</text>
+<circle cx="1020.0" cy="430" r="11" fill="#F7F7F5" stroke="#111111" stroke-width="2.6"/>
+<text x="928.0" y="314.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" fill="#111111" font-weight="600" text-anchor="start">long context</text>
+<text x="928.0" y="290.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" fill="#111111" font-weight="700" text-anchor="start">2023-24</text>
+<line x1="1020.0" y1="378.0" x2="1020.0" y2="417.0" stroke="#999999" stroke-width="1.4"/>
+<text x="928.0" y="476.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">a whole codebase could</text>
+<text x="928.0" y="494.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">be held at once</text>
+<circle cx="1220.0" cy="430" r="11" fill="#F7F7F5" stroke="#111111" stroke-width="2.6"/>
+<text x="1128.0" y="486.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" fill="#111111" font-weight="700" text-anchor="start">2024-25</text>
+<text x="1128.0" y="512.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" fill="#111111" font-weight="600" text-anchor="start">coding agents · tool</text>
+<text x="1128.0" y="532.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" fill="#111111" font-weight="600" text-anchor="start">protocols</text>
+<line x1="1220.0" y1="443.0" x2="1220.0" y2="464.0" stroke="#999999" stroke-width="1.4"/>
+<text x="1128.0" y="334.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">the work became</text>
+<text x="1128.0" y="352.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">checkable against tests</text>
+<circle cx="1420.0" cy="430" r="11" fill="#F7F7F5" stroke="#111111" stroke-width="2.6"/>
+<text x="1328.0" y="314.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" fill="#111111" font-weight="600" text-anchor="start">governed agentic</text>
+<text x="1328.0" y="334.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" fill="#111111" font-weight="600" text-anchor="start">workflows</text>
+<text x="1328.0" y="290.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" fill="#111111" font-weight="700" text-anchor="start">2026</text>
+<line x1="1420.0" y1="378.0" x2="1420.0" y2="417.0" stroke="#999999" stroke-width="1.4"/>
+<text x="1328.0" y="476.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">the subject of this book</text>
+<path d="M728.0,700 v10 M728.0,710 H1545 M1545,710 v-10" fill="none" stroke="#999999" stroke-width="1.8"/>
+<text x="1136.5" y="730.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">from here a system can act on what it says</text>
+<rect x="56" y="813" width="14" height="14" rx="3" fill="#E69F00"/>
+<text x="77.0" y="825.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#3A3A3A" font-weight="400" text-anchor="start">the two interface changes</text>
+<rect x="275.125" y="813" width="14" height="14" rx="3" fill="#111111"/>
+<text x="296.1" y="825.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#3A3A3A" font-weight="400" text-anchor="start">capability milestones</text>
+<text x="56.0" y="860.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#999999" font-weight="400" text-anchor="start">Deliberately coarse and vendor-neutral: product-level detail lives in the repository, where it can be kept current.</text>
 </svg>

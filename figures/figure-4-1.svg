@@ -1,104 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
-  <title>Figure 4.1 — Should an agent do this? A placement decision procedure</title>
-  <desc>A top-to-bottom decision flowchart. A task first meets the question of whether it is a matter of accountability, interpretation or authorship; if yes, it is routed to a human-only terminal marked do not delegate. If no, a second question asks whether verification is cheap, and a third whether a wrong output is reversible. The four combinations route to agent runs with light supervision, agent acts behind a mandatory gate, agent drafts only with human verification, or, for expensive-to-verify and irreversible tasks, back to the human-only terminal.</desc>
-  <defs>
-    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
-    </marker>
-  </defs>
-
-  <rect width="1280" height="720" fill="#F7F7F5"/>
-
-  <!-- task -->
-  <rect x="500" y="45" width="120" height="50" rx="10" fill="none" stroke="#999999" stroke-width="2.5"/>
-  <text x="560" y="76" font-size="17" fill="#111111" text-anchor="middle">task</text>
-  <line x1="560" y1="95" x2="560" y2="108" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- gate 1 -->
-  <polygon points="560,110 710,180 560,250 410,180" fill="#D55E00"/>
-  <g fill="#FFFFFF" text-anchor="middle" font-size="15">
-    <text x="560" y="167">accountability,</text>
-    <text x="560" y="187">interpretation</text>
-    <text x="560" y="207">or authorship?</text>
-  </g>
-
-  <!-- gate 1 yes -> human only -->
-  <line x1="710" y1="180" x2="976" y2="180" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="835" y="168" font-size="15" fill="#111111" text-anchor="middle">yes</text>
-
-  <!-- human-only terminal -->
-  <rect x="980" y="148" width="210" height="66" rx="10" fill="none" stroke="#0072B2" stroke-width="2.5"/>
-  <circle cx="1012" cy="172" r="10" fill="none" stroke="#0072B2" stroke-width="2.5"/>
-  <path d="M998,198 a14,14 0 0 1 28,0" fill="none" stroke="#0072B2" stroke-width="2.5"/>
-  <text x="1105" y="176" font-size="14" fill="#111111" text-anchor="middle">human only —</text>
-  <text x="1105" y="196" font-size="14" fill="#111111" text-anchor="middle">do not delegate</text>
-  <text x="1085" y="238" font-size="13" fill="#111111" text-anchor="middle">not an instrument's to do</text>
-
-  <!-- gate 1 no -> gate 2 -->
-  <line x1="560" y1="250" x2="560" y2="283" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="578" y="272" font-size="15" fill="#111111" text-anchor="middle">no</text>
-
-  <!-- gate 2 -->
-  <polygon points="560,285 680,340 560,395 440,340" fill="#D55E00"/>
-  <g fill="#FFFFFF" text-anchor="middle" font-size="15">
-    <text x="560" y="336">verification</text>
-    <text x="560" y="356">cheap?</text>
-  </g>
-
-  <!-- gate 2 yes -> gate 3a -->
-  <path d="M440,340 L330,340 L330,413" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="393" y="330" font-size="15" fill="#111111" text-anchor="middle">yes</text>
-
-  <!-- gate 2 no -> gate 3b -->
-  <path d="M680,340 L830,340 L830,413" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="720" y="330" font-size="15" fill="#111111" text-anchor="middle">no</text>
-
-  <!-- gate 3a -->
-  <polygon points="330,415 450,470 330,525 210,470" fill="#D55E00"/>
-  <g fill="#FFFFFF" text-anchor="middle" font-size="14">
-    <text x="330" y="466">reversible /</text>
-    <text x="330" y="484">low-consequence?</text>
-  </g>
-
-  <!-- gate 3a yes -> terminal 1 -->
-  <path d="M290,505 L160,598" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="196" y="558" font-size="15" fill="#111111" text-anchor="middle">yes</text>
-
-  <!-- gate 3a no -> terminal 2 -->
-  <path d="M360,510 L410,598" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="405" y="558" font-size="15" fill="#111111" text-anchor="middle">no</text>
-
-  <!-- gate 3b -->
-  <polygon points="830,415 950,470 830,525 710,470" fill="#D55E00"/>
-  <g fill="#FFFFFF" text-anchor="middle" font-size="14">
-    <text x="830" y="466">reversible /</text>
-    <text x="830" y="484">low-consequence?</text>
-  </g>
-
-  <!-- gate 3b yes -> terminal 3 -->
-  <path d="M800,510 L860,598" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="795" y="558" font-size="15" fill="#111111" text-anchor="middle">yes</text>
-
-  <!-- gate 3b no -> human only terminal -->
-  <path d="M950,470 L1085,470 L1085,216" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="1020" y="460" font-size="15" fill="#111111" text-anchor="middle">no</text>
-
-  <!-- terminal 1 -->
-  <rect x="60" y="600" width="200" height="56" rx="10" fill="none" stroke="#E69F00" stroke-width="2.5"/>
-  <text x="160" y="625" font-size="14" fill="#111111" text-anchor="middle">agent runs,</text>
-  <text x="160" y="645" font-size="14" fill="#111111" text-anchor="middle">light supervision</text>
-
-  <!-- terminal 2 -->
-  <rect x="300" y="600" width="230" height="56" rx="10" fill="none" stroke="#E69F00" stroke-width="2.5"/>
-  <text x="415" y="625" font-size="14" fill="#111111" text-anchor="middle">agent acts behind</text>
-  <text x="415" y="645" font-size="14" fill="#111111" text-anchor="middle">a mandatory gate</text>
-
-  <!-- terminal 3 -->
-  <rect x="740" y="600" width="240" height="56" rx="10" fill="none" stroke="#E69F00" stroke-width="2.5"/>
-  <text x="860" y="625" font-size="14" fill="#111111" text-anchor="middle">agent drafts only,</text>
-  <text x="860" y="645" font-size="14" fill="#111111" text-anchor="middle">human verifies</text>
-
-  <!-- augmentation bracket -->
-  <path d="M60,678 L60,688 L980,688 L980,678" fill="none" stroke="#999999" stroke-width="1.5"/>
-  <text x="520" y="708" font-size="15" fill="#111111" text-anchor="middle">augmentation</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+<defs><marker id="ah41" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker></defs>
+<rect width="1600" height="900" fill="#F7F7F5"/>
+<text x="56.0" y="72.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" fill="#111111" font-weight="600" text-anchor="start">Should an agent do this?</text>
+<text x="56.0" y="112.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" fill="#3A3A3A" font-weight="400" text-anchor="start">Neither question is about how good the agent is.</text>
+<rect x="360.0" y="176.0" width="140.0" height="54.0" rx="10" fill="none" stroke="#999999" stroke-width="2.2"/>
+<text x="430.0" y="209.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">task</text>
+<line x1="430.0" y1="230.0" x2="430.0" y2="266.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah41)"/>
+<polygon points="430,297.0 610.0,340 430,383.0 250.0,340" fill="none" stroke="#D55E00" stroke-width="2.4"/>
+<text x="430.0" y="322.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">accountability,</text>
+<text x="430.0" y="346.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">interpretation or</text>
+<text x="430.0" y="370.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">authorship?</text>
+<text x="60.0" y="300.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">no improvement in</text>
+<text x="60.0" y="318.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">capability changes this</text>
+<text x="60.0" y="337.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">answer</text>
+<line x1="614.0" y1="340.0" x2="1180.0" y2="340.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah41)"/>
+<text x="820.0" y="324.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">yes</text>
+<circle cx="1250" cy="316.4" r="9.6" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<path d="M1234,341.2 a16,14.4 0 0 1 32,0" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<text x="1250.0" y="388.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="400" text-anchor="middle">human only - do not delegate</text>
+<text x="1250.0" y="414.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">not an instrument's to do</text>
+<line x1="430.0" y1="417.0" x2="430.0" y2="462.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah41)"/>
+<text x="406.0" y="442.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="end">no</text>
+<polygon points="430,490.0 580.0,530 430,570.0 280.0,530" fill="none" stroke="#D55E00" stroke-width="2.4"/>
+<text x="430.0" y="524.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">verification</text>
+<text x="430.0" y="548.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">cheap?</text>
+<text x="60.0" y="500.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">cheap: a test suite, a</text>
+<text x="60.0" y="518.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">schema, a checksum. Not</text>
+<text x="60.0" y="537.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">cheap: interpretation,</text>
+<text x="60.0" y="556.3" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">or an unresolved</text>
+<text x="60.0" y="575.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">research question</text>
+<line x1="584.0" y1="530.0" x2="660.0" y2="530.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah41)"/>
+<text x="560.0" y="514.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">yes</text>
+<polygon points="810,490.0 950.0,530 810,570.0 670.0,530" fill="none" stroke="#D55E00" stroke-width="2.4"/>
+<text x="810.0" y="524.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">wrong output</text>
+<text x="810.0" y="548.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">reversible?</text>
+<line x1="430.0" y1="604.0" x2="430.0" y2="668.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah41)"/>
+<text x="406.0" y="650.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="end">no</text>
+<polygon points="430,684.0 570.0,724 430,764.0 290.0,724" fill="none" stroke="#D55E00" stroke-width="2.4"/>
+<text x="430.0" y="718.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">wrong output</text>
+<text x="430.0" y="742.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">reversible?</text>
+<text x="945.0" y="232.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">reversible: a mislabelled intermediate</text>
+<text x="945.0" y="250.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">file. Not reversible: an issued flood</text>
+<text x="945.0" y="269.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">warning, a published result</text>
+<line x1="954.0" y1="530.0" x2="1010.0" y2="530.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah41)"/>
+<text x="972.0" y="514.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">yes</text>
+<rect x="1010.0" y="470.0" width="250.0" height="64.0" rx="10" fill="none" stroke="#E69F00" stroke-width="2.2"/>
+<text x="1135.0" y="496.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">agent runs, light</text>
+<text x="1135.0" y="520.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">supervision</text>
+<path d="M810.0,604.0 L810.0,624.0 L1010.0,624.0" fill="none" stroke="#111111" stroke-width="2.1" marker-end="url(#ah41)"/>
+<text x="852.0" y="610.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">no</text>
+<rect x="1010.0" y="592.0" width="250.0" height="64.0" rx="10" fill="none" stroke="#E69F00" stroke-width="2.2"/>
+<text x="1135.0" y="618.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">agent acts behind a</text>
+<text x="1135.0" y="642.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">mandatory gate</text>
+<line x1="574.0" y1="724.0" x2="1010.0" y2="724.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah41)"/>
+<text x="770.0" y="708.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">yes</text>
+<rect x="1010.0" y="692.0" width="250.0" height="64.0" rx="10" fill="none" stroke="#E69F00" stroke-width="2.2"/>
+<text x="1135.0" y="718.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">agent drafts only,</text>
+<text x="1135.0" y="742.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">human verifies</text>
+<path d="M284.0,724.0 L160.0,724.0" fill="none" stroke="#111111" stroke-width="2.1" marker-end="url(#ah41)"/>
+<text x="226.0" y="706.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">no</text>
+<rect x="60.0" y="692.0" width="96.0" height="64.0" rx="10" fill="none" stroke="#0072B2" stroke-width="2.2"/>
+<text x="108.0" y="718.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">human</text>
+<text x="108.0" y="742.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">only</text>
+<text x="60.0" y="788.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">expensive to verify and irreversible: do not delegate</text>
+<rect x="1290.0" y="692.0" width="190.0" height="64.0" rx="10" fill="none" stroke="#0072B2" stroke-width="2.2"/>
+<text x="1385.0" y="730.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">human only</text>
+<path d="M1010,776 v10 M1010,786 H1400 M1400,786 v-10" fill="none" stroke="#999999" stroke-width="1.8"/>
+<text x="1205.0" y="806.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">augmentation - a human stands between output and use</text>
+<text x="56.0" y="860.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#999999" font-weight="400" text-anchor="start">The first gate removes what was never an instrument's to do; the rest is verification cost against reversibility.</text>
 </svg>
