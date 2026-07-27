@@ -1,58 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Helvetica, Arial, sans-serif">
-  <title>Figure 13.2 — A silent unit error, made loud by a range assertion</title>
-  <desc>A top-to-bottom trace. An agent computes a quantity, emitting a bare number with no units. The number reaches a vermillion gate that asserts units and a physical range; an out-of-range exit halts the flow and returns to the agent. A downstream-use box below is shown crossed out in vermillion, unreached. A callout marks the bare number as wrong by a physical factor yet reasonable-looking.</desc>
-  <defs>
-    <marker id="ah" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#111111"/>
-    </marker>
-    <marker id="ahR" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#D55E00"/>
-    </marker>
-    <marker id="ahG" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#999999"/>
-    </marker>
-    <marker id="ahO" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
-      <path d="M0,0 L12,5 L0,10 Z" fill="#E69F00"/>
-    </marker>
-  </defs>
-
-  <rect width="1280" height="720" fill="#F7F7F5"/>
-
-  <!-- agent computes quantity -->
-  <rect x="310" y="90" width="240" height="85" rx="12" fill="none" stroke="#E69F00" stroke-width="3"/>
-  <path d="M520,104 a11,11 0 1 1 -7,-4" fill="none" stroke="#E69F00" stroke-width="2.5" marker-end="url(#ahO)"/>
-  <text x="430" y="127" font-size="16" fill="#111111" text-anchor="middle">agent computes</text>
-  <text x="430" y="149" font-size="16" fill="#111111" text-anchor="middle">quantity</text>
-  <line x1="430" y1="175" x2="430" y2="217" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- number (no units) card -->
-  <rect x="310" y="220" width="240" height="82" rx="8" fill="#56B4E9" stroke="#111111" stroke-width="1.5"/>
-  <text x="430" y="252" font-size="16" fill="#111111" text-anchor="middle">number (no units)</text>
-  <text x="430" y="286" font-size="22" fill="#111111" text-anchor="middle" font-weight="bold">42</text>
-  <line x1="430" y1="302" x2="430" y2="345" stroke="#111111" stroke-width="2" marker-end="url(#ah)"/>
-
-  <!-- units + range assertion diamond -->
-  <polygon points="430,347 522,415 430,483 338,415" fill="#D55E00"/>
-  <text x="430" y="410" font-size="15" fill="#FFFFFF" text-anchor="middle">units + range</text>
-  <text x="430" y="430" font-size="15" fill="#FFFFFF" text-anchor="middle">assertion</text>
-
-  <!-- out of range halt exit (left routing) -->
-  <path d="M338,415 L240,415 L240,132 L308,132" fill="none" stroke="#D55E00" stroke-width="2.5" marker-end="url(#ahR)"/>
-  <text x="150" y="210" font-size="15" fill="#D55E00" text-anchor="start">out of range — halt</text>
-
-  <!-- blocked path to downstream -->
-  <line x1="430" y1="483" x2="430" y2="548" stroke="#999999" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#ahG)"/>
-
-  <!-- downstream use (unreached) -->
-  <rect x="310" y="562" width="240" height="82" rx="8" fill="none" stroke="#999999" stroke-width="2.5"/>
-  <text x="430" y="610" font-size="16" fill="#999999" text-anchor="middle">downstream use</text>
-  <!-- vermillion bar across it -->
-  <rect x="300" y="551" width="260" height="13" fill="#D55E00"/>
-  <text x="590" y="608" font-size="16" fill="#D55E00" text-anchor="start">error stopped before it propagates</text>
-
-  <!-- failure-point callout -->
-  <rect x="610" y="222" width="580" height="74" rx="8" fill="#D55E00"/>
-  <text x="900" y="254" font-size="17" fill="#FFFFFF" text-anchor="middle">failure point: wrong by a physical</text>
-  <text x="900" y="278" font-size="17" fill="#FFFFFF" text-anchor="middle">factor, looks reasonable</text>
-  <line x1="608" y1="261" x2="552" y2="261" stroke="#D55E00" stroke-width="2.5" marker-end="url(#ahR)"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+<defs><marker id="ah132" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker></defs>
+<rect width="1600" height="900" fill="#F7F7F5"/>
+<text x="56.0" y="72.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" fill="#111111" font-weight="600" text-anchor="start">A silent unit error, made loud by a range assertion</text>
+<text x="56.0" y="112.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" fill="#3A3A3A" font-weight="400" text-anchor="start">Nothing about the number looks wrong. That is the problem.</text>
+<rect x="282.0" y="232.0" width="36.0" height="36.0" rx="6" fill="none" stroke="#E69F00" stroke-width="2.3"/>
+<path d="M292.8,251.8 a7.56,7.56 0 1 1 8.64,6.12" fill="none" stroke="#E69F00" stroke-width="2"/>
+<text x="300.0" y="306.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="400" text-anchor="middle">agent computes quantity</text>
+<rect x="180.0" y="360.0" width="240.0" height="72.0" rx="10" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<text x="300.0" y="390.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">number: 42 (no</text>
+<text x="300.0" y="414.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">units)</text>
+<line x1="300.0" y1="318.0" x2="300.0" y2="354.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah132)"/>
+<rect x="460.0" y="367.4" width="3.4" height="56.3" fill="#D55E00"/>
+<text x="472.0" y="380.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#D55E00" font-weight="400" text-anchor="start">wrong by a physical factor - and</text>
+<text x="472.0" y="398.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#D55E00" font-weight="400" text-anchor="start">still a perfectly</text>
+<text x="472.0" y="417.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#D55E00" font-weight="400" text-anchor="start">reasonable-looking value</text>
+<polygon points="300,492.0 450.0,540 300,588.0 150.0,540" fill="none" stroke="#D55E00" stroke-width="2.4"/>
+<text x="300.0" y="534.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">units + range</text>
+<text x="300.0" y="558.2" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">assertion</text>
+<line x1="300.0" y1="432.0" x2="300.0" y2="488.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah132)"/>
+<text x="480.0" y="530.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">does not reason about the science:</text>
+<text x="480.0" y="548.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">refuses unlabelled units and</text>
+<text x="480.0" y="567.5" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">impossible values</text>
+<path d="M150.0,540.0 L90.0,540.0 L90.0,250.0 L266.0,250.0" fill="none" stroke="#111111" stroke-width="2.1" marker-end="url(#ah132)"/>
+<text x="100.0" y="340.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#D55E00" font-weight="400" text-anchor="start">out of range - halt</text>
+<rect x="180.0" y="660.0" width="240.0" height="66.0" rx="10" fill="none" stroke="#999999" stroke-width="2.2"/>
+<text x="300.0" y="699.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">downstream use</text>
+<line x1="300.0" y1="592.0" x2="300.0" y2="654.0" stroke="#999999" stroke-width="2" stroke-dasharray="6 6"/>
+<line x1="168" y1="693" x2="432" y2="693" stroke="#D55E00" stroke-width="5"/>
+<text x="470.0" y="698.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">error stopped here - the calibration and the verification never see it</text>
+<text x="56.0" y="860.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#999999" font-weight="400" text-anchor="start">The whole trick is turning a silent failure into a loud one: loud gets caught, silent gets shipped.</text>
 </svg>
