@@ -3,6 +3,8 @@
 > **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 
+> **[ai-reviewer: A1 review — 4 comments in this file.** New §2.6 meets task 2.1 in full and in the right order: concrete case first, the principle in one carryable sentence, three disposers with what each is for, what it buys, what it does not buy, and five cross-references with no re-derivation. 562 words against a 550 budget. No new citation. The most serious finding is the roadmap sentence, whose announced count of four now heads a six-item series. Second finding: the propose–dispose separation gets a glossary entry and an italicised first use but no info-box, where the two lesser terms this pass introduces both got one. Nothing escalated to the author.**]**
+
 ---
 
 ## 2.1 The instrument and its parts
@@ -28,6 +30,7 @@ An agent is no different in kind, only newer and far less characterised.
 So the account that follows describes each part the way you would describe a part of an instrument: what it is for, what it can be relied on to do, and the specific way it misleads you.
 Hold that account and you can place every later pattern, and every failure in the Chapter 13 gallery, against a shared picture of the mechanism.
 The four parts come in the order they engage during a single step of work: the loop that governs the step (§2.2), the tools it may call (§2.3), the store it reads and writes (§2.4), then how many such steps compose into an orchestrated process (§2.5), where the authority to act sits inside that composition (§2.6), and what all of this costs (§2.7).
+[ai-reviewer: two problems, both introduced by the task 2.3 rewrite. First, the announced count breaks. The sentence promises "the four parts" and then runs six items into one coordinate series joined by "and", so a reader counting gets six. The pre-A1 version kept the count honest by setting the cost model outside the series ("before the chapter closes on what all of this costs"); the new §2.6 clause was added inside the series instead, and the old escape hatch went with it. `STYLE.md` §4: announced counts are commitments. Either the count changes or §2.6 and §2.7 sit outside the four again. Second, the sentence is now 63 words. `STYLE.md` §11 exempts an enumerative sentence that exceeds the ceiling only where the parallel items are separated by semicolons; these are separated by commas, so the exemption does not reach it, and the rewrite made an already-long sentence 16 words longer against a ~25-word budget for the task. Both are ai-writer's to resolve; they resolve together if the sentence splits at "then".]
 
 ## 2.2 The loop as control cycle
 
@@ -318,6 +321,7 @@ The second leaves you a dataset that looks cleaner than the one you had, with no
 The difference is not accuracy.
 It is who was allowed to write.
 
+[ai-reviewer: the term is italicised at first use per `STYLE.md` §9 and collected in `GLOSSARY.md`, but it gets no info-box, and it is the only one of the pass's three new terms that does not. Calibration validity (Ch. 11 §11.5) and Auditability (Ch. 12 §12.4) both got boxes under the same rule in the same pass. The asymmetry looks backwards: this is the term the plan calls the book's unifying architecture, it is cross-referenced from nine places, and §9's own direction runs box first, glossary second. Two readings are possible and ai-editor should pick one. Either the box is missing here, or the pass has read §9 as licensing a glossary entry without a box, in which case §9 should say so, because the next drafter will face the same question. Not a defect in the prose, which defines the term perfectly well in running text; a defect in the consistency of how the book flags its own vocabulary.]
 That is the *propose–dispose separation*, and it generalises well past quality control.
 The agent proposes; something the agent does not control disposes.
 Three kinds of thing can do the disposing, and which one you reach for depends on what the criterion is.
@@ -341,6 +345,7 @@ That failure is systematic rather than occasional, which makes it harder to noti
 So the separation does not remove the problem; it changes what you have to get right.
 You now have to be right about the disposer, which is a smaller thing to inspect than a model's whole output distribution.
 
+[ai-reviewer: the brief is complete against `FIGURES.md` §6, every field is filled, the caption runs to the title plus three sentences and the alt-text carries the annotations rather than paraphrasing the caption, which is the test that it was written with the brief. The "must not duplicate Figure 6.1" constraint is met: this reads as the general form and 6.1 as the instance. One book-wide note, recorded here once rather than in three files: `figures/figure-2-4.svg`, `figure-17-1.svg` and `figure-17-2.svg` do not exist, so three image links in the manuscript are currently dead. That is expected, since plan §10 defers re-rendering to a separate mechanical pass after batch 6, but the author reading the Markdown will see three broken images and should know why. The renamed `figure-18-1.svg` is present and correct.]
 **Figure 2.4 — The agent proposes, something else disposes.**
 
 ![An architecture diagram reading left to right. An orange agent box sends a single arrow labelled proposal, not an action, annotated in vermillion that nothing has been written yet. The arrow fans into three disposer paths. A vermillion diamond, deterministic rule, is annotated for use where the criterion can be written as code. A blue head-and-shoulders icon, human decision, is annotated for use where the criterion is judgement. A green tool glyph with a sky-blue cylinder, external source of truth, is annotated for use where the criterion is a fact the agent cannot manufacture. The examples given are a test suite and a reference dataset. Each path has an accept exit to one shared sky-blue cylinder, the protected artefact, annotated that only a disposer may write there. Each also has a reject exit to a grey rejection log, annotated that a rejected proposal is kept with its reason. A footer reads: what this does not buy is a well-designed disposer, and a rule set that admits the wrong thing admits it every time.](../figures/figure-2-4.svg)

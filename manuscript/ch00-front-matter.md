@@ -3,6 +3,8 @@
 > **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 
+> **[ai-reviewer: A1 review — 3 comments in this file.** Tasks 0.1, 0.2 and 0.3 all landed and the two AUTHOR markers are intact. Two substantive findings: the scope statement's claim that every worked example is routine or semi-routine work needs testing against Chapters 8, 14 and 15 before the author signs it off; and its sentence "Nothing in these pages governs that work" contradicts Chapter 3 §3.7, drafted in the same batch, which says two things do govern it. Escalated to the author: the scope framing itself, which is already marked **[AUTHOR SIGN-OFF]**.**]**
+
 ---
 
 ## How to read this book
@@ -122,11 +124,13 @@ That gap is what this book sets out to fill.
 The claim rests on a limited scan made in July 2026, which will be repeated systematically before release.
 If a close equivalent already exists, the claim softens, and I would rather revise it than overstate it (moderate confidence).
 
+[ai-reviewer: this is the pass's most consequential single sentence and it is asserted rather than tested. Three worked examples look like counter-examples worth reconciling before the author signs it off. Chapter 8's three-track intercomparison is an experimental design, and the chapter's own title is "Model orchestration and experimentation". Chapter 15 is titled "Governing a modelling workflow end to end" and takes a modelling problem through to a publication run. Chapter 14's toolkit produces figures a partner reports as official. If those count as "the work surrounding science" then the category is doing a great deal of load-bearing work and the reader is entitled to see where its edge is; if they do not, the sentence overstates and the list that follows it is not in fact exhaustive. Note also that the review's F7 asked for "an explicit, unapologetic statement of scope", not necessarily for the strong universal quantifier "every". The weaker and more defensible form is available without losing the finding's force. This is the author's call, which is why the [AUTHOR SIGN-OFF] below is right; flagging it so the decision is taken on the evidence rather than on the drafting.]
 Every worked example in this book is routine or semi-routine work: quality-control passes on gauge records, verification scores, calibration bookkeeping, manuscript assembly, responses to reviewers.
 So this is a governance treatment for the work surrounding science, not a treatment of doing science with agents.
 That is a real boundary, and I would rather state it than leave you to find it.
 A great deal of the best environmental science is abductive and opportunistic: something odd in a record, followed up because it was odd.
 Nothing in these pages governs that work until a specification becomes possible, and Chapter 3 §3.7 says what stands in for governance in the meantime.
+[ai-reviewer: this sentence and its own destination disagree on the word "govern". Chapter 3 §3.7 asks "So what governs exploration, if acceptance criteria cannot?" and answers "Two things", naming a bounded budget and a contemporaneous record. Read together, the front matter tells the reader nothing governs exploratory work and §3.7 tells them two things do. Both were drafted in the same batch, which is how the disagreement survived. The fix is a decision about what "govern" means in this book, not a wording tweak: either the front matter concedes that exploration has weaker governance rather than none, or §3.7 stops calling its two practices governance. Whichever way it goes, the same word has to mean the same thing in both places, and the choice affects how strong the scope claim above reads.]
 Chapter 4 §4.4 says why the boundary sits where it does, which is that what a task costs to check decides what can safely be delegated.
 
 **[AUTHOR SIGN-OFF]** **[AUTHOR: confirm this scope framing — it changes how the book presents its own reach, and the wording is yours to settle. If you would rather claim more or less than this, say so and the downstream cross-references in Chapters 3 and 4 follow.]**

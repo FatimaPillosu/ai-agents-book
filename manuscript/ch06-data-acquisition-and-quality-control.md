@@ -4,6 +4,8 @@
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > **Chapter note:** no datasets, figures or results have been invented; worked-example specifics are marked for the author to supply.
 
+> **[ai-reviewer: A1 review — 2 comments in this file.** Tasks 6.1 and 6.2 both landed. The F6 cut is real: the 65-word general restatement is deleted, not paraphrased in place, and the replacement is a single clause naming Ch. 2 §2.6. Figure 6.1 and the paragraph's opening two sentences are untouched as instructed, so the section still stands on its own. One comment below on a residue of the general form that the cut left behind. Nothing escalated to the author.**]**
+
 ---
 
 ## 6.1 The problem: observations arrive messy, and the mess is where errors hide
@@ -60,6 +62,7 @@ What disposes of the proposal is a deterministic rule set: physical bounds for t
 A proposal that survives the rules is applied as a *flag*, never as a substituted value.
 A proposal the rules reject is logged, with its rejection reason, and the point is left as observed.
 That is the propose–dispose separation of Chapter 2 §2.6, with a deterministic rule as the disposer.
+[ai-reviewer: the cut is clean and I am not asking for it to be reopened. Worth noticing for the record, though, that the paragraph still opens "The organising principle is a strict separation of authority", which is the general form stated locally, and now also carries a cross-reference to where the general form lives. The plan protected that opening deliberately, because Figure 6.1 depends on it, so this is not a breach of G5. It does mean §6.3 states the principle and then points at the principle, and a reader may wonder why. One clause tying the two together, or letting the opening sentence name the QC-specific form rather than the general one, would close the seam. Low priority, and ai-writer's call whether it is worth the disturbance.]
 The tools the agent calls to do this are the ordinary function-call apparatus of Chapter 2: a format reader, a unit resolver, a neighbouring-station query, each with a narrow, declared interface, so the agent's actions are auditable calls rather than opaque cognition (high confidence in the pattern; the specific tool set depends on the data you hold).
 
 **Figure 6.1 — Propose–dispose architecture.**

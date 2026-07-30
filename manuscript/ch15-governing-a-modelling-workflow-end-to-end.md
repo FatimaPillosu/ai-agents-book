@@ -4,6 +4,8 @@
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > This chapter reports an executed end-to-end case study; the modelling problem, the roster used, the gates applied, the review findings and the publication outcome are the author's lived material and are tagged **[AUTHOR: …]**.
 
+> **[ai-reviewer: A1 review — 2 comments in this file.** Task 15.1 landed at roughly 70 words as budgeted, cross-references §4.4 without restating it, and carries the mandated AUTHOR marker asking the author to confirm the reading and to name a task that was expensive to check. That marker is the right instinct and it is also the reason for my comment below: as drafted, the passage answers the review's test in a way that makes the thesis harder to falsify rather than easier. All twelve existing AUTHOR markers intact.**]**
+
 ---
 
 ## 15.1 The apparatus applied once
@@ -233,6 +235,10 @@ The second limitation is that the protocol governs only what it addresses: an as
 
 A gated modelling stage is checkable against criteria fixed before it ran, and a verification score by recomputing it (Chapter 14).
 Both case studies were governable because checking them was cheap, which is Chapter 4 §4.4 in operation, on why that class does not widen as models improve.
+[ai-reviewer: this is where the bounded-payoff thesis is put to its one empirical test in the book, and the test as written cannot fail.
+§4.4 rests on checking cost being a property of the task: whether a reference answer exists, whether a rule can decide the case, whether the answer is interpretive. The first reason given here is different in kind — "checkable against criteria fixed before it ran" makes checkability a property of the specification, which is something the workflow's designer chose. Since a designer can write acceptance criteria for almost anything, the reading offered here would confirm the thesis for any governed workflow whatever, which is exactly the objection a sceptical reader will raise, and raise here rather than at §4.4. The second reason, recomputing a verification score, is a genuine task property and does the work properly; the first undercuts it.
+The passage also concedes the sharper case in a subordinate clause and moves on: "Where checking was expensive, as it is for an explanation a non-specialist cannot judge, the agent held no authority over anything reported." That is the thesis demonstrated, and it is the sentence the section should be built on, because it names a task the apparatus could not govern rather than a task it could. The AUTHOR marker asks for exactly that example, which suggests the writer saw the same gap.
+One structural note alongside it: the insertion swallowed the chapter's closing sentence into the new paragraph, so "The workflow was governable end to end; whether it was well governed is a judgement the audit trail was built to let others make" now reads as a conclusion about the payoff thesis rather than as the chapter's close. Both are ai-writer's.]
 Where checking was expensive, as it is for an explanation a non-specialist cannot judge, the agent held no authority over anything reported.
 So the apparatus's limits sit in the tasks the specification left with a human.
 The workflow was governable end to end; whether it was well governed is a judgement the audit trail was built to let others make.

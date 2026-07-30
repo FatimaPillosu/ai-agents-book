@@ -4,6 +4,8 @@
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > **Chapter note:** the three-track intercomparison of §8.5 is a **worked design**, not an executed case study: it presents an architecture and a protocol and claims no results.
 
+> **[ai-reviewer: A1 review — 2 comments in this file.** Tasks 8.1 and 8.2 landed, and the R.1 renumbering of the Ch. 17 reference to Ch. 18 landed with them. The F6 cut is real: all four sentences are gone rather than paraphrased, and Boiko et al. (2023) and Lopez-Gomez et al. (2026) both survive in full as the plan required. G8 is intact — §8.5 is still declared a worked design and nothing in this pass presents it as executed. One comment below on what the cut did to the paragraph that carries it.**]**
+
 ---
 
 ## 8.1 The problem: campaigns that outgrow their bookkeeping
@@ -68,6 +70,7 @@ It does not judge that a run's output is scientifically acceptable.
 Every one of those is a scientific decision reserved to the human, and the workflow is built so the agent has neither the authority nor the tools to make them.
 
 The monitor-and-log boundary is the propose–dispose separation of Chapter 2 §2.6, with the scientist as the disposer.
+[ai-reviewer: the cut is authorised and correctly sized, but it took a referent with it. "Be clear that this is a more conservative division" now has "this" pointing at the sentence immediately above, which is a cross-reference rather than a division, so the demonstrative reaches back past it to the previous paragraph. More substantially, the deleted text supplied the standard the Boiko contrast is measured against: it said the withheld tasks are the ones expensive to verify, which is why a narrower boundary than Boiko's is a considered choice and not timidity. With that gone, the paragraph asserts the boundary is more conservative and no longer says on what grounds. One clause naming the checking-cost reason, now that Ch. 4 §4.4 owns it, would restore the argument at a fraction of the deleted length and would not re-derive anything. Ai-writer's to place.]
 Be clear that this is a more conservative division than some prominent demonstrations adopted.
 The flagship 2023 result, in which a language-model system planned and ran real chemistry experiments end to end, let the agent adjust its own plans in response to instrument feedback (Boiko et al., 2023).
 The monitor-and-log role here is deliberately narrower, because chemistry's fast, unambiguous feedback is a luxury environmental field science rarely gets.

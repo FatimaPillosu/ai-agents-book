@@ -3,6 +3,8 @@
 > **Status:** draft r6 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 
+> **[ai-reviewer: A1 review — 2 comments in this file.** The R.1 renumbering is complete and clean: chapter heading, all four section numbers, every internal `§18.N` reference, Figure 18.1 in the in-text marker, the image path, the caption, the brief `id` and the brief `caption`, plus the SVG rename and the renderer file. I grepped the whole repository afterwards: no `figure-17-1` outside the new Chapter 17, no `§17.` outside it, and the three inbound "Chapter 17" references in `ch08`, `ch16` and this file all now point where they should. Tasks 18.1 and 18.2 both landed and both are genuine compressions. One comment below on a confidence flag that the compression left behind.**]**
+
 ---
 
 ## 18.1 Two layers moving at two speeds
@@ -91,6 +93,8 @@ What bounds delegation is the cost of checking, and that cost belongs to the tas
 So the class does not widen as models improve (Chapter 4 §4.4, on the frontier that does not move).
 
 All five hold at high confidence, because each rests on a property of the situation rather than on any feature of a particular model: the fallibility of instruments, the primacy of clear specification, the plausibility of fluent error, the non-transferability of responsibility, and the economics of verification.
+[ai-reviewer: this sentence is unchanged and the fifth principle above it is not, so the two no longer agree. The compressed fifth principle now states the bounded-payoff conclusion outright — "So the class does not widen as models improve" — and points at §4.4. §4.4 argues that conclusion and flags the step it turns on at moderate-to-high confidence, conceding that better models do widen the class at the margin. This sentence then collects all five at high confidence.
+Before A1 the mismatch did not exist, because the old fifth principle claimed only that checking-cost asymmetry decides where delegation is safe, which is a high-confidence claim and still is. The compression promoted a hedged claim into an unhedged list without the list noticing. Two ways out, both ai-writer's: qualify the fifth entry where the list names it, or pull the compressed principle back to the claim §4.4 supports at high confidence and leave the bounded-class conclusion to the cross-reference. The second is closer to what task 18.1 asked for, which was that this principle "states the conclusion in one sentence and cross-references". Worth settling alongside the §4.4 flag comment, since the same underlying claim is unflagged in both places.]
 
 The research frontier is drifting the same way: a 2026 proposal for an agentic scientific operating system independently centres staged objectives, verification checkpoints and bounded delegation, not validated technology, but a sign this governance-first framing sits inside a wider convergence rather than against it (Zheng et al., 2026, a weeks-old preprint).
 The limitation worth stating is that principles stated this generally are easy to agree with and hard to practise.

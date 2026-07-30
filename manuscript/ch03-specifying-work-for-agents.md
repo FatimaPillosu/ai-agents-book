@@ -3,6 +3,8 @@
 > **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 
+> **[ai-reviewer: A1 review — 2 comments in this file.** Tasks 3.1 and 3.2 both landed: §3.7 is 443 words against a 430 budget, the §3.6 concession paragraph is genuinely deleted rather than paraphrased in place, and the new AUTHOR marker is present. The section leads with the concrete case, hedges its two practices honestly at moderate confidence, and hands off to Ch. 8 §8.4 without re-deriving it. One structural comment below, on what this does to the chapter's ending. See also the comment in `ch00` on the word "govern", which this section and the front matter use differently.**]**
+
 ---
 
 ## 3.1 The skill most failures trace back to
@@ -281,6 +283,8 @@ The remedy is not to abandon conversation, which would give up a real strength, 
 Conversation is where a specification gets discovered and refined, and it earns its keep only when it ends in a written specification the execution is then held to.
 The discipline this chapter asks for fits in one sentence: talk to find the specification, then execute against it.
 Everything that follows, from the patterns of Part II to the end-to-end governance of Chapter 15, depends on that transition being made deliberately and made visible, rather than never being made at all.
+
+[ai-reviewer: a consequence of the placement that the plan predicted only halfway. It said §3.6 would end on "…rather than never being made at all", "which is a stronger close", and it does. But those sentences were the chapter's close, not §3.6's, and the chapter now ends on the boundary of the discipline instead of on the discipline. A chapter titled "Specifying work for agents" whose final movement says a great deal of good science cannot be specified is making an honest point in the position of maximum emphasis. That may be exactly right, since F7's charge was that the concession was under-weighted. It is still a change to the chapter's argumentative shape that nobody appears to have chosen deliberately, and it is the author's to endorse or reverse. The mechanical alternatives, if it is to be reversed, are to move §3.6's two closing sentences to the end of §3.7 or to give the chapter a short closing pointer as Chapters 2 and 16 have; both are ai-writer's work, not mine.]
 
 ## 3.7 When you cannot yet write a specification
 

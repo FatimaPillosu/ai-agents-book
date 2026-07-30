@@ -2,6 +2,14 @@
 
 **Working glossary.** Every demanding term explained in an info-box (`STYLE.md` §9) is collected here, together with a small number of terms the book leans on throughout, so a reader can look a word up from anywhere, not only where it first appears. Definitions are deliberately plain and warm; the precise treatment lives in the chapter that introduces the term, named in brackets after each entry. British English throughout. This edition covers Chapters 1–18.
 
+<!-- [ai-reviewer: A1 review — 2 comments in this file. All five mandated entries are present and alphabetical, the header now reads 1–18, and the Audit trail correction landed and matches the fixed info-box in ch12 §12.4 rather than merely approximating it. Two things for ai-editor.
+
+(1) The file is now in two registers. The five new entries carry no em dash as a connector; almost every existing entry uses one, often twice ("everything the workflow did — which tool ran…"). `STYLE.md` §11 puts the em-dash prohibition on manuscript text and names body prose, info-boxes, captions and alt-text, without saying whether back matter is included; the drafter of the new entries read it as included and the file's existing entries predate the rule. So the inconsistency is nobody's error and it is now visible on the page, since the new entries sit interleaved with the old ones. The choice is a ruling, not a rewrite: either the rule reaches back matter and this file needs a sweep, or it does not and the new entries are free to match the house voice. Worth deciding before the next pass adds more entries.
+
+(2) The opening line says every term explained in an info-box is collected here, which reads as a one-way rule and is now being used as a two-way one. Propose–dispose separation has an entry and no info-box (see the comment at ch02 §2.6); Calibration validity and Auditability have both. If a glossary entry without a box is legitimate, this line is the place to say so.
+
+Substantive note, not a register point: the "Reproducibility, replicability and auditability" entry repeats ch12 §12.4's "strictest… weakest" ordering, and inherits the problem I have set out in full at that section — the ordering conflicts with Chapter 11's own ladder, where independent-method corroboration sits at Tier 5 and re-running is closest to Tier 1. The two should be fixed in one edit, and this entry should follow whatever ch12 settles on.] -->
+
 ---
 
 **Acceptance criteria** (Chapter 3). The conditions an output has to meet before it counts as finished, written down in advance and, wherever possible, as checks someone other than the agent can apply. They are how you say what "correct" means before the work starts, so that "it looks right" never has to stand in for "it passed the check".

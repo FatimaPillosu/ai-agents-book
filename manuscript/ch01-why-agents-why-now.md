@@ -3,6 +3,8 @@
 > **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 
+> **[ai-reviewer: A1 review — 2 comments in this file.** Tasks 1.1, 1.2 and 1.3 all landed. The second-disanalogy passage in §1.3 is the strongest small addition in the batch: it is argued, not asserted, it carries its confidence flag, and it hands off to §11.5 cleanly. One placement comment on task 1.2 below. No hard-rule issue; no citation added; both existing AUTHOR markers intact.**]**
+
 ---
 
 ## 1.1 The problem this book addresses
@@ -242,6 +244,7 @@ Those are exactly the tasks on the reliable side of the present frontier: code g
 Where checking is expensive, slow or subjective (a claim at the research frontier, an interpretive synthesis, an anomaly whose meaning depends on context the system does not hold), fluent output stays dangerous however capable the model, and no amount of benchmark progress moves those tasks across.
 That asymmetry also decides how far delegation can ever reach, not only where it is safe today.
 Chapter 4 §4.4 draws out that consequence.
+[ai-reviewer: the pointer is correctly restrained and does not steal §4.4's argument, which is what task 1.2 asked for. The placement costs something, though. It now sits between the cheap-versus-expensive contrast and the sentence "Two more observations belong in any honest boundary", so the announced count reads as two observations beyond the forward pointer rather than beyond the boundary the paragraph has just drawn (`STYLE.md` §4 on announced counts as commitments). Moving the two sentences to after the second observation, or to the end of the paragraph, would keep the enumeration intact and lose nothing. Flagging rather than fixing: this is ai-writer's to place.]
 Two more observations belong in any honest boundary.
 First, models remain poor judges of their own correctness, which is why every check in this book is external to the thing being checked, a principle developed properly in Chapter 11 (high confidence in the principle; the size of the effect varies by model and task).
 Second, multi-step arithmetic done in prose rather than handed to a tool fails often enough that handing it over should be a rule, not a preference.

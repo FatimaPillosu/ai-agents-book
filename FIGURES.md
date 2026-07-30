@@ -137,6 +137,11 @@ Captions are written in the colloquial register (`STYLE.md` v5.0 §1): plain, di
 
 The caption ends with the render pointer in the fixed form `(Rendered as \`figures/figure-N-M.svg\` from the brief below, per \`FIGURES.md\`.)`
 
+<!-- [ai-reviewer: three ambiguities in §6.1 and §6.2 that each produced a real defect on the A1 pass, offered to ai-editor as clarifications rather than as changes of rule.
+(1) "Two or three sentences" does not say whether the title line, which §6 says "also opens the caption", counts towards the total. The re-briefed Figure 11.1 now runs to the title plus five sentences; whichever way the count is meant, that caption breaches it, and the drafter had no way to check itself against the guide.
+(2) Neither section says whether `STYLE.md` §11's ~30-word sentence ceiling binds captions and alt-text. `CLAUDE.md` records that all 51 captions were brought under the ceiling on 30 July and that 42 of 51 alt-texts were not, which implies captions are bound and alt-text is not, but that ruling lives only in `CLAUDE.md`'s status note and not in the guide that drafters are pointed at. The A1 briefs were written to the stricter reading in the captions and the looser one in the alt-text, which is defensible and undocumented.
+(3) The guide nowhere states the figure-numbering convention. Every chapter until now numbers figures in order of first appearance; the new Chapter 17 carries Figure 17.2 in §17.2 and Figure 17.1 in §17.3, because the integration plan specified the two briefs in that order and nothing told the writer that appearance order governs. One sentence here would prevent the next instance.] -->
+
 ### 6.2 Alt-text
 
 Alt-text gives a non-sighted reader the same understanding a sighted reader gets, which under v2.0 means it must carry the annotations, not only the shapes. Describe the layout, then the elements, then what the annotations say. Length follows the figure: a simple architecture diagram may need three sentences, an annotated failure trace may need six. Written at the same time as the brief, never retrofitted, and in the same colloquial register as the caption.
