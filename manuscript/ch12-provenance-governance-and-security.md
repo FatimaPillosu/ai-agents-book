@@ -89,7 +89,7 @@ The limitation, stated plainly, is that a coverage record documents that review 
 
 ![On the left, a workflow running top to bottom: a specification, an AI agent, a tool call and a human decision. On the right, a governance layer holding four record stores: an assumption registry, an uncertainty registry, an audit trail and a reviewer-coverage record, each with a one-line note of the question it answers. One-directional arrows run from every workflow element into the layer, annotated that the workflow writes to the layer and the layer never steers the workflow, and that the records are fed by events the workflow already emits, at no extra effort. A bracket down the layer reads institutional memory, survives staff turnover.](../figures/figure-12-1.svg)
 
-*Figure 12.1 — The record is a by-product, not a chore. Every element of the workflow already emits events, and the governance layer captures them into four standing records, each answering a different question: what was assumed, what is uncertain, what happened, and what was actually reviewed. The arrows only point one way. The layer records; it never steers. (Rendered as `figures/figure-12-1.svg` from the brief below, per `FIGURES.md`.)*
+*Figure 12.1 — The record is a by-product, not a chore. Every element of the workflow already emits events, and the governance layer captures them into four standing records. Each answers a different question: what was assumed, what is uncertain, what happened, and what was actually reviewed. The arrows only point one way. The layer records; it never steers. (Rendered as `figures/figure-12-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -116,7 +116,7 @@ FIGURE BRIEF
                  and what was not?"; on the arrows, "fed by events the workflow already
                  emits — no extra effort"; a bracket down the layer, "institutional memory
                  — survives staff turnover"
-- caption:       Figure 12.1 — The record is a by-product, not a chore. Every element of the workflow already emits events, and the governance layer captures them into four standing records, each answering a different question: what was assumed, what is uncertain, what happened, and what was actually reviewed. The arrows only point one way. The layer records; it never steers.
+- caption:       Figure 12.1 — The record is a by-product, not a chore. Every element of the workflow already emits events, and the governance layer captures them into four standing records. Each answers a different question: what was assumed, what is uncertain, what happened, and what was actually reviewed. The arrows only point one way. The layer records; it never steers.
 - alt-text:      On the left, a workflow running top to bottom: a specification, an AI agent, a tool call and a human decision. On the right, a governance layer holding four record stores: an assumption registry, an uncertainty registry, an audit trail and a reviewer-coverage record, each with a one-line note of the question it answers. One-directional arrows run from every workflow element into the layer, annotated that the workflow writes to the layer and the layer never steers the workflow, and that the records are fed by events the workflow already emits, at no extra effort. A bracket down the layer reads institutional memory, survives staff turnover.
 - infographic description: A flat vector architecture diagram, 16:9, off-white
                  background. Title top-left: "A governance layer that records without
