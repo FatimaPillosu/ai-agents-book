@@ -1,6 +1,6 @@
 # Chapter 18 — What will last
 
-> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r6 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 
 ---
@@ -86,7 +86,9 @@ The third is that verification is external, and everything rests on it: because 
 The fourth is that some things never transfer to the instrument: accountability for a decision, the scientific judgement that an anomaly is meaningful rather than instrumental, and authorship of the work that results remain with the person, and they do not soften as models improve, because responsibility is not a capability (Chapters 1 and 4).
 This one is not merely a stance of this book but the settled position of the scientific record: the journals ruled early that an AI tool cannot be an author, precisely because authorship carries an accountability a tool cannot bear (Nature editorial, 2023), and no improvement in capability changes what kind of thing an instrument is.
 
-The fifth is that the right question is often whether to use an agent at all: what decides where delegation is safe is the asymmetry between cheap-to-verify and expensive-to-verify outputs, not how difficult a task looks, and the honest answer is sometimes no (Chapter 4).
+The fifth is that the right question is often whether to use an agent at all, and the answer is sometimes no.
+What bounds delegation is the cost of checking, and that cost belongs to the task.
+So the class does not widen as models improve (Chapter 4 §4.4, on the frontier that does not move).
 
 All five hold at high confidence, because each rests on a property of the situation rather than on any feature of a particular model: the fallibility of instruments, the primacy of clear specification, the plausibility of fluent error, the non-transferability of responsibility, and the economics of verification.
 
@@ -100,7 +102,9 @@ Keeping up with a field that ships faster than anyone can read is a genuine prob
 
 The failure to warn against is release-chasing: treating every new model, protocol or product as a thing to learn in its own right.
 That is both exhausting and unnecessary, because the great majority of releases are new instances of capability classes you already understand.
-A more sustainable practice is to translate every announcement into the vocabulary of this book before deciding whether it warrants attention: asking what capability class it belongs to, whether it changes the cost or reliability of a task already in the workflow, and whether it moves the verification burden rather than merely the generation cost (moderate-to-high confidence that this filter removes most of the noise).
+A more sustainable practice is to translate every announcement into this book's vocabulary before deciding whether it warrants attention: what capability class it belongs to, whether it changes the cost or reliability of a task already in the workflow, and whether it moves the verification burden rather than merely the generation cost (moderate-to-high confidence that this filter removes most of the noise).
+An announcement that moves only the generation cost does not widen the class of work worth delegating, which is why so few announcements matter.
+Chapter 4 §4.4 gives the reason that boundary barely moves.
 Under that filter, a faster or cheaper model of an existing class is a parameter change, not a new thing to learn; a genuinely new capability class (the arrival of reliable tool calling around 2023 was the last clear example, Chapter 1) is rare, and rare enough to deserve real study when it comes.
 The second half of the practice is to let evaluation, not marketing, decide what enters a workflow: a new model earns its place by passing the same task-grounded tests as the one it replaces (Chapter 11), run on the actual task with the actual data, so that adoption is a measured substitution rather than an act of faith in a benchmark score.
 

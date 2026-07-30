@@ -1,6 +1,6 @@
 # Chapter 14 — Verification under constraint
 
-> **Status:** draft r4 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > This chapter reports executed operational work; concrete partner details, datasets, metrics, hardware, results and outcomes are the author's lived material and are tagged **[AUTHOR: …]**.
 
@@ -121,13 +121,18 @@ Rainfall forecasts are verified with a well-established and stable set of measur
 None of these measures involves a language model, a learned component or any stochastic element; each is a closed-form calculation over the matched forecast–observation pairs, and this is exactly what allows a partner to report the output as an official figure and to reproduce it independently.
 
 Why hold verification deterministic while allowing a language model elsewhere in the toolkit?
-The argument is Chapter 11's, and it is worth restating concretely.
 A verification result is a measurement, and a measurement whose value could change because a generative model produced something slightly different this time is not a measurement at all.
 The evidential weight a verification score has to carry (informing whether a forecast system is fit for issuing warnings, or whether one configuration outperforms another) depends on the score being a fixed function of the data, auditable line by line and defensible to a regulator or a sceptical colleague who re-runs it (high confidence).
 This is exactly the discipline the meteorological community has applied to the new data-driven models themselves: when an operational centre assessed a machine-learning forecast model, it did so in an operational-like context, initialised from operational analyses, verified against both analyses and station observations with its own standard metrics, and reported the model's genuine strengths alongside documented weaknesses such as smoothing and the underestimation of some extremes (Ben Bouallègue et al., 2024).
-Introducing a model into the scoring path would import precisely the failure mode this book treats as central: plausible, fluent output uncorrelated with correctness, in a place where a wrong number is worse than no number because it looks authoritative.
-The core therefore does the one thing a language model cannot be trusted to do, namely arrive at the same defensible number twice, and the toolkit spends its language-model budget only on the things the core cannot do, which are explaining what the numbers mean and helping a non-specialist user act on them correctly.
-The boundary between these two is the toolkit's most important design line, and it is drawn so that no output of the tutoring tier can reach a reported score without passing back through the deterministic core.
+Checking one determination against two reference sources whose errors arise differently is independent-method corroboration, Tier 5 of Chapter 11 §11.2.
+It is the strongest evidential move this chapter reaches for.
+
+Holding the model out of the scoring path is the propose–dispose separation of Chapter 2 §2.6, with a deterministic rule disposing.
+It is also Chapter 11 §11.3's rule that a check sits outside what it checks.
+The deterministic core is the reproducible part of this toolkit, in the strict sense of Chapter 12 §12.4, which separates reproducing a result from auditing one.
+The tutoring tier is not.
+So the toolkit spends its language-model budget only on what the core cannot do: explaining what the numbers mean, and helping a non-specialist act on them correctly.
+That boundary is the toolkit's most important design line: no output of the tutoring tier reaches a reported score without passing back through the deterministic core.
 
 ## 14.4 The tutoring tier: an open-weight model that explains but does not decide
 
@@ -139,7 +144,8 @@ Running an open-weight model locally is what makes this admissible under the fir
 
 The safeguard that keeps the tutoring tier from quietly becoming a decision-maker is architectural rather than merely cautionary, and it matters because an advisory component that users come to trust will be treated as authoritative whatever its label says.
 The tier is given read-only access to the core's outputs and the score definitions, and no path by which its text can be written back into the record of results; a user who follows its suggestion to compute an additional score does so by invoking the deterministic core again, not by accepting a number the model has produced.
-This is the least-privilege principle of Chapter 12 applied to an internal component: the model is granted exactly the access its explanatory job requires and no more, so that even a badly wrong explanation cannot corrupt a reported figure, only mislead a user who, by the design of the escalation tier, retains the authority and the means to check it.
+That is the propose–dispose separation of Chapter 2 §2.6 again, with least privilege at the tools as Chapter 12 §12.8 draws the trust boundary.
+
 The residual risk is that a fluent but mistaken explanation misleads a non-specialist into a poor interpretation, and this risk is real and cannot be designed away entirely; it is mitigated by keeping the tier's outputs explanatory rather than prescriptive, by having it cite the fixed score definitions it reasons from, and by the escalation route that exists precisely for the cases where explanation is not enough.
 The interaction between a user, the deterministic core and the tutoring tier, with decision authority remaining with the human throughout, is the subject of the sequence in Figure 14.2.
 

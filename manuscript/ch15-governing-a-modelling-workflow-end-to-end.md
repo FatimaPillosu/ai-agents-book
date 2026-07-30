@@ -1,6 +1,6 @@
 # Chapter 15 — Governing a modelling workflow end to end
 
-> **Status:** draft r4 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > This chapter reports an executed end-to-end case study; the modelling problem, the roster used, the gates applied, the review findings and the publication outcome are the author's lived material and are tagged **[AUTHOR: …]**.
 
@@ -230,7 +230,14 @@ The composition demonstrated here is what the earlier chapters could only assert
 Two limitations bound the claim honestly.
 The first limitation is that the cost of this governance is real and falls mainly on the human (a decision per gate, a specification written and reviewed before execution, registries maintained and a reviewer commissioned), and this workflow shows that the cost is payable, not that it is small **[AUTHOR: report the governance overhead you observed relative to an ungoverned run of comparable work, even approximately]**.
 The second limitation is that the protocol governs only what it addresses: an assumption never registered, a unit never independently reviewed, a discretion the specification left open remains ungoverned however complete the rest, so the apparatus is a discipline to be practised rather than a guarantee to be installed (high confidence).
+
+A gated modelling stage is checkable against criteria fixed before it ran, and a verification score by recomputing it (Chapter 14).
+Both case studies were governable because checking them was cheap, which is Chapter 4 §4.4 in operation, on why that class does not widen as models improve.
+Where checking was expensive, as it is for an explanation a non-specialist cannot judge, the agent held no authority over anything reported.
+So the apparatus's limits sit in the tasks the specification left with a human.
 The workflow was governable end to end; whether it was well governed is a judgement the audit trail was built to let others make.
+
+[AUTHOR: confirm that this reading is right for your two cases, and name one task in this workflow that was expensive to check and therefore never delegated — that example is worth more than the general claim.]
 
 ---
 

@@ -1,6 +1,6 @@
 # Chapter 16 — Starting in your own group
 
-> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r6 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > Volatile figures (energy-per-inference, per-token prices, hardware costs) are kept out of print and marked for the companion repository.
 
@@ -122,6 +122,10 @@ The second is evaluation: the work of establishing, for each class of task, whet
 The third is verification, the running cost of checking every consequential output for as long as the workflow operates, which does not diminish with familiarity because it is the mechanism by which the work stays trustworthy rather than a training-wheels phase to be outgrown.
 The fourth is the cost of failure and rework (silent errors caught late, tasks redone, the occasional workflow abandoned), which is real, hard to estimate in advance, and smaller precisely to the degree the first three are funded properly.
 The implication for a group's budget is that inference is the line item to worry about least and verification the line item to protect most, which inverts the intuition that cheaper models make agentic work cheap.
+That inversion is not a temporary state of the technology, and the difference matters over a five-year budget.
+What a check costs is set by the task rather than by the model, so it does not fall as models improve.
+Chapter 4 §4.4 makes that argument, on why the class of work worth delegating does not widen.
+A budget written on the assumption that verification is a transitional expense will be wrong in the same direction every year.
 The honest limitation is that the relative sizes of these four shares vary widely by task, group and domain, and no single split can be quoted as typical; the direction carries high confidence, and any specific proportions belong in the repository against a dated, worked example rather than in print **[verify: illustrative cost-share breakdown for one operational workflow (repository)]**.
 
 **Figure 16.2 — Where adoption spend concentrates.**
@@ -191,6 +195,15 @@ An independent reviewer, human or a separate reviewer agent, provides a check th
 The skills these roles require are largely those a good empirical scientist already has: precise specification, comfort with the command line and version control, a disposition to distrust fluent output, and the record-keeping habits of reproducible research.
 What is genuinely new is narrower than it first appears: an understanding of how these systems fail plausibly rather than obviously (Chapter 13), and the judgement to keep a human accountable for every decision an agent informs.
 
+Those skills were acquired by doing work an agent now does in an afternoon.
+Saying they are skills a good scientist already has therefore assumes a continuing supply of people who learned them that way.
+A group leader is the person who decides whether that supply continues.
+Deciding what a doctoral researcher spends three years on is deciding the group's future capacity to verify, not only this year's throughput.
+Chapter 13 §13.9 makes that argument, on deskilling and the supply of judgement.
+The planning consequence is narrow enough to act on.
+Name the judgements the group intends to keep in-house, and protect the work that builds them even where an agent would be faster.
+This is an argument from the book's own premises rather than a measured effect, and no source here supports it (moderate confidence).
+
 One planning assumption is worth making explicit: agentic literacy is unevenly distributed within a group, and the norms around it are still contested rather than settled.
 A large researcher survey found practice running ahead of disclosure and attitudes splitting by career stage, region and language background, with early-career and non-native-English researchers among the heaviest legitimate users (Naddaf, 2025).
 A group should therefore assume its members start from different places and hold different views on what is acceptable, and build the roles above as a way of making responsibilities explicit rather than assuming a shared baseline.
@@ -209,6 +222,8 @@ This is the same logic that forces sensitive observations onto local, open-weigh
 The ethical considerations extend beyond data handling to the integrity of the scientific record: disclosure of how agents were used (Chapter 9), honesty about what was verified and what was taken on trust, and the firm line that an agent is never an author and never accountable for a scientific decision.
 Institutional considerations are more mundane but no less binding: procurement and security review, acceptable-use policies, and the questions institutional IT will ask about credential handling and least-privilege access (Chapter 12).
 A group that has built its governance habits in the third week of the plan will find these conversations short, because it can already answer them.
+Much of what this section assumes a group can decide is decided elsewhere when the system arrives from an institution or a vendor.
+Chapter 17 takes that case, on judging agentic work you did not produce.
 
 European funder guidance now packages much of this together, and usefully so: its living guidelines make researchers responsible for verifying AI-generated results, ask for transparent disclosure of substantial AI use, require privacy and confidentiality to be protected when material is fed to AI systems, and warn against AI in evaluative processes such as proposal review (European Commission, 2024).
 The implication is that sovereignty, ethics and institutional policy are best treated as inputs to the specification of a workflow rather than as compliance applied to a finished one, since a workflow designed around a data-handling constraint is sound where one retrofitted to it is fragile.
@@ -225,13 +240,31 @@ That this belongs in a governance chapter at all is not an activist add-on: a na
 
 The reasoning a scientist needs is comparative rather than absolute.
 A single inference is small; a workflow that issues many inferences in a loop, run repeatedly across a research programme, is not, and the relevant quantity is the aggregate over the workflow's life rather than the cost of one call.
-Three considerations follow, all directional and all robust to the churn in the underlying figures.
+Four considerations follow, all directional and all robust to the churn in the underlying figures.
 First, the efficiency of models per unit of capability has been improving, so the energy cost of achieving a given result falls over time even as the cost of the largest models rises, which means the honest comparison is always to a specific task at a specific date, not to a headline figure about the largest system available.
 Second, the carbon intensity of the same computation varies substantially with where and when it runs, so a workflow run on a low-carbon grid, or scheduled when renewable supply is high, carries a materially different footprint from the identical workflow run elsewhere, a lever a group actually controls.
 Third, the counterfactual matters: an agentic workflow that replaces a computation a scientist would otherwise have run (a manual reprocessing, a repeated model execution, a literature search across many sessions) has a net footprint that may be lower or higher than the alternative, and the comparison is only meaningful when the displaced activity is counted rather than assumed to be free.
 This last point has a striking domain example: an operational forecasting centre reported that generating a forecast with its data-driven model used on the order of a thousand times less energy than its physics-based system, a saving that is real but sits at inference and does not include the one-off training cost (Lang et al., 2024), a reminder that the honest ledger counts both the displaced computation and the training amortised across a model's use.
 
-The honest position, held with high confidence in its reasoning and deliberately without a headline number, is that inference energy is a real cost an environmental scientist should account for, that it is neither negligible nor catastrophic per call, that its aggregate over a workflow is the quantity that matters, and that a group can reduce it through model choice, grid choice, scheduling, and the discipline of not running loops that produce nothing.
+Fourth, that counterfactual counts the computation an agentic workflow displaced and not the computation it created.
+A parameter sweep gets run because running it now costs machine time instead of somebody's attention.
+A reprocessing gets repeated because repeating it is easy.
+A loop gets left running because nobody is watching what it produces.
+None of those displaced anything, because none of them would have been run at all.
+So the aggregate footprint of a research programme can rise while every individual workflow in it displaced something more expensive, and both statements stay true.
+The accounting question is therefore not only what this replaced but whether it would have been run at all.
+That is a specification question before it is an energy question (Chapter 3, on stating what a run is for before it starts).
+
+How large the effect is, I cannot tell you.
+Nothing in the evidence behind this book measures it.
+I will not offer a number for something nobody here has measured (high confidence in the mechanism, low confidence in any magnitude).
+The mechanism is named because a climate-literate reader will otherwise notice it missing, not because the book can size it.
+What a group can do about it is narrow: run nothing it cannot state the purpose of.
+A sweep gets a stated question, a rerun gets a stated reason, and a loop that produces nothing gets stopped.
+
+**[AUTHOR: whether you have watched induced demand happen in your own group — a sweep or a rerun that existed only because it became cheap — and roughly what it cost.]**
+
+The honest position, held with high confidence in its reasoning and deliberately without a headline number, is that inference energy is a real cost an environmental scientist should account for, that it is neither negligible nor catastrophic per call, that its aggregate over a workflow is the quantity that matters, and that a group can reduce it through model choice, grid choice and scheduling.
 The specific figures (energy per inference at a given capability tier, grid carbon intensities, the footprint of a worked example workflow) are exactly the volatile quantities this book keeps out of print, and they live, dated and sourced, in the companion repository **[verify: energy-per-inference and grid-intensity figures with sources and dates (repository)]**.
 The limitation is that measuring the footprint of a hosted model's inference precisely is difficult from outside the provider, and the field's disclosure on this is incomplete; a group that wants a defensible number for its own workflow will get closer with a locally run open-weight model whose consumption it can meter directly than with a hosted service it can only estimate **[AUTHOR: if you have metered a local workflow's consumption, even roughly, that measured anchor would strengthen this section — mark it clearly as one setting's figure].**
 
