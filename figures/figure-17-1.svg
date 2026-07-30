@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+<defs><marker id="ah171" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker></defs>
+<rect width="1600" height="900" fill="#F7F7F5"/>
+<text x="56.0" y="72.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" fill="#111111" font-weight="600" text-anchor="start">What a reviewer may ask for, and what they may not</text>
+<text x="56.0" y="112.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" fill="#3A3A3A" font-weight="400" text-anchor="start">Each request buys a different piece of evidence and costs the authors a different amount.</text>
+<circle cx="400" cy="172.4" r="9.6" fill="none" stroke="#CC79A7" stroke-width="2.3"/>
+<path d="M384,197.2 a16,14.4 0 0 1 32,0" fill="none" stroke="#CC79A7" stroke-width="2.3"/>
+<path d="M409.6,184.4 l5.12,5.76 l10.56,-12.8" fill="none" stroke="#CC79A7" stroke-width="2.5" stroke-linecap="round"/>
+<text x="400.0" y="236.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">reviewer</text>
+<circle cx="830" cy="172.4" r="9.6" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<path d="M814,197.2 a16,14.4 0 0 1 32,0" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<text x="830.0" y="236.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">authors</text>
+<rect x="150.0" y="250.0" width="900.0" height="66.0" rx="8" fill="none" stroke="#999999" stroke-width="1.8"/>
+<text x="174.0" y="280.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#3A3A3A" font-weight="600" text-anchor="start">read first, not asked for - the disclosure statement</text>
+<text x="174.0" y="306.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">already written, so it costs nothing - and it usually answers only whether a tool was used</text>
+<text x="615.0" y="336.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="600" text-anchor="middle">1 · the specification the agentic step ran under</text>
+<line x1="425.0" y1="350.0" x2="805.0" y2="350.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah171)"/>
+<line x1="805.0" y1="366.0" x2="425.0" y2="366.0" stroke="#999999" stroke-width="1.4" marker-end="url(#ah171)"/>
+<text x="615.0" y="390.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">establishes what the workflow was asked to do; a governed group already has the document</text>
+<text x="615.0" y="420.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="600" text-anchor="middle">2 · the gates it passed, and what each checks</text>
+<line x1="425.0" y1="434.0" x2="805.0" y2="434.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah171)"/>
+<line x1="805.0" y1="450.0" x2="425.0" y2="450.0" stroke="#999999" stroke-width="1.4" marker-end="url(#ah171)"/>
+<text x="615.0" y="474.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">establishes which failure classes were designed against; costs a paragraph</text>
+<text x="615.0" y="504.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="600" text-anchor="middle">3 · has any gate's false-negative rate been measured?</text>
+<line x1="425.0" y1="518.0" x2="805.0" y2="518.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah171)"/>
+<line x1="805.0" y1="534.0" x2="425.0" y2="534.0" stroke="#999999" stroke-width="1.4" marker-end="url(#ah171)"/>
+<text x="615.0" y="558.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">establishes whether the checks were ever calibrated; an honest 'no' is informative</text>
+<text x="615.0" y="588.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="600" text-anchor="middle">4 · the tier claimed, and the check said to establish it</text>
+<line x1="425.0" y1="602.0" x2="805.0" y2="602.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah171)"/>
+<line x1="805.0" y1="618.0" x2="425.0" y2="618.0" stroke="#999999" stroke-width="1.4" marker-end="url(#ah171)"/>
+<text x="615.0" y="642.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">establishes how strong the evidence is; asked alongside step 3</text>
+<text x="615.0" y="672.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#111111" font-weight="600" text-anchor="middle">5 · reviewer coverage</text>
+<line x1="425.0" y1="686.0" x2="805.0" y2="686.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah171)"/>
+<line x1="805.0" y1="702.0" x2="425.0" y2="702.0" stroke="#999999" stroke-width="1.4" marker-end="url(#ah171)"/>
+<text x="615.0" y="726.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="middle">establishes what was independently checked and what rests on author inspection; cannot be reconstructed afterwards</text>
+<polygon points="166,344 174,344 192,706 148,706" fill="#DDDDD9"/>
+<text x="148.0" y="754.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">escalating cost to the authors</text>
+<rect x="1090.0" y="250.0" width="454.0" height="414.0" rx="10" fill="none" stroke="#D55E00" stroke-width="2.2"/>
+<text x="1114.0" y="286.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#D55E00" font-weight="600" text-anchor="start">not a reviewer's to demand</text>
+<text x="1114.0" y="368.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="start">the transcript</text>
+<text x="1114.0" y="396.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">records what was said, not what happened</text>
+<text x="1114.0" y="476.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="start">the prompts</text>
+<text x="1114.0" y="504.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">the group's working method</text>
+<text x="1114.0" y="584.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="start">a re-run</text>
+<text x="1114.0" y="612.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">the model behind it may be gone</text>
+<text x="56.0" y="860.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#999999" font-weight="400" text-anchor="start">Depth of scrutiny matches what rests on the claim.</text>
+</svg>

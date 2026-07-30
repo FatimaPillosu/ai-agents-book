@@ -75,6 +75,51 @@ f.block(1180,706,"write out what has to survive; read back only what this step n
 f.footer("Fitting something into the window is not the same as having it used - and the window empties when the run ends.")
 print("2.3",f.save("figures/figure-2-3.svg"))
 
+# ---------------- 2.4 propose and dispose ----------------
+f=Fig("24","The agent proposes, something else disposes",
+      "Only three kinds of thing may write to the record: a rule, a person, or a fact.")
+f.box(70,372,180,88,"agent",AGENT)
+f.hline(250,318,416)
+f.box(324,382,268,68,"proposal, not an action",INK,rx=18)
+f.vnote(324,492,"nothing has been written yet",GATE,width=30)
+f.hline(592,650,416,arrow=False)
+f.vline(650,240,592,arrow=False)
+# disposer 1 - deterministic rule
+f.block(690,166,"use where the criterion can be written as code",width=34)
+f.diamond(830,240,280,96,"deterministic rule",GATE,lw=20)
+f.hline(650,686,240)
+# disposer 2 - human decision
+f.block(690,352,"use where the criterion is judgement",width=40)
+f.human(800,410); f.text(838,422,"human decision",T_LABEL,"start")
+f.hline(650,776,410)
+# disposer 3 - external source of truth
+f.block(690,500,"use where the criterion is a fact the agent cannot manufacture: "
+        "a test suite, a reference dataset",width=50)
+f.wrench(720,586); f.cylinder(760,556,110,66,"")
+f.text(700,676,"external source of truth",T_LABEL,"start")
+f.hline(650,700,586)
+# accept exits -> protected artefact
+f.cylinder(1300,300,240,170,"protected artefact")
+f.elbow([(970,240),(1120,240),(1120,340),(1296,340)])
+f.text(1040,226,"accept",T_KEY,"middle",SOFT)
+f.hline(990,1296,410)
+f.text(1140,396,"accept",T_KEY,"middle",SOFT)
+f.elbow([(880,592),(1160,592),(1160,430),(1296,430)])
+f.text(1010,578,"accept",T_KEY,"middle",SOFT)
+f.block(1300,502,"only a disposer may write here",width=34)
+# reject exits -> rejection log
+f.vline(830,288,318,arrow=False); f.hline(830,1090,318,arrow=False)
+f.text(870,306,"reject",T_KEY,"start",SOFT)
+f.vline(800,432,470,arrow=False); f.hline(800,1090,470,arrow=False)
+f.text(830,458,"reject",T_KEY,"start",SOFT)
+f.vline(815,624,636,arrow=False); f.hline(815,1090,636,arrow=False)
+f.text(900,620,"reject",T_KEY,"start",SOFT)
+f.vline(1090,318,710,arrow=False); f.hline(1090,1296,710)
+f.cylinder(1300,660,240,100,"rejection log",GREY)
+f.block(1300,632,"a rejected proposal is kept, with the reason",width=34)
+f.footer("What this does not buy: a rule set that admits the wrong thing admits it every time.")
+print("2.4",f.save("figures/figure-2-4.svg"))
+
 # ---------------- 3.1 specification anatomy ----------------
 f=Fig("31","The seven fields of a specification",
       "Four fields let an agent do the work; three more let a human check it.")

@@ -300,6 +300,79 @@ bracket(f,110+2*(286),110+4*286-36,196,"where the spend actually concentrates",b
 f.footer("Magnitudes illustrative - dated figures in the repository.")
 print("16.2",f.save("figures/figure-16-2.svg"))
 
+# ---------------- 17.1 what a reviewer may ask for ----------------
+f=Fig("171","What a reviewer may ask for, and what they may not",
+      "Each request buys a different piece of evidence and costs the authors a different amount.")
+f.human(400,186,REVIEWER,tick=True); f.text(400,236,"reviewer",T_LABEL,"middle")
+f.human(830,186); f.text(830,236,"authors",T_LABEL,"middle")
+f.rect(150,250,900,66,GREY,"none",8,1.8)
+f.text(174,280,"read first, not asked for - the disclosure statement",T_LABEL,"start",SOFT,weight="600")
+f.text(174,306,"already written, so it costs nothing - and it usually answers only "
+       "whether a tool was used",T_ANNOT,"start",SOFT)
+steps=[("1 · the specification the agentic step ran under",
+        "establishes what the workflow was asked to do; a governed group already has the document"),
+       ("2 · the gates it passed, and what each checks",
+        "establishes which failure classes were designed against; costs a paragraph"),
+       ("3 · has any gate's false-negative rate been measured?",
+        "establishes whether the checks were ever calibrated; an honest 'no' is informative"),
+       ("4 · the tier claimed, and the check said to establish it",
+        "establishes how strong the evidence is; asked alongside step 3"),
+       ("5 · reviewer coverage",
+        "establishes what was independently checked and what rests on author "
+        "inspection; cannot be reconstructed afterwards")]
+for i,(lab,ann) in enumerate(steps):
+    yy=350+i*84
+    f.text(615,yy-14,lab,T_ANNOT,"middle",INK,weight="600")
+    f.hline(425,805,yy)
+    f.hline(805,425,yy+16,GREY,1.4)
+    f.text(615,yy+40,ann,T_ANNOT,"middle",SOFT)
+f.o.append(f'<polygon points="166,344 174,344 192,706 148,706" fill="#DDDDD9"/>')
+f._border(148,344,44,362)
+f.text(148,754,"escalating cost to the authors",T_ANNOT,"start",SOFT)
+f.rect(1090,250,454,414,GATE,"none",10,2.2)
+f.text(1114,286,"not a reviewer's to demand",T_LABEL,"start",GATE,weight="600")
+for i,(lab,why) in enumerate([("the transcript","records what was said, not what happened"),
+                              ("the prompts","the group's working method"),
+                              ("a re-run","the model behind it may be gone")]):
+    yy=368+i*108
+    f.text(1114,yy,lab,T_LABEL,"start")
+    f.text(1114,yy+28,why,T_ANNOT,"start",SOFT)
+f.footer("Depth of scrutiny matches what rests on the claim.")
+print("17.1",f.save("figures/figure-17-1.svg"))
+
+# ---------------- 17.2 detectable from outside ----------------
+f=Fig("172","What a reviewer can catch, and what needs the record",
+      "Two of the six can be caught from the manuscript alone.")
+bands=[(190,"catchable by a check the reviewer can run",
+        [("fabricated citations","resolve every DOI - the reviewer's cheapest action"),
+         ("confident extrapolation","compare the scope of the claim to the scope of the evidence")]),
+       (370,"catchable only from the record",
+        [("specification drift","the check is the original specification, held fixed and re-read"),
+         ("context loss","the check is an assertion against state the reviewer cannot see")]),
+       (550,"beyond reach, with or without the record",
+        [("silent unit errors","only if an invariant is checkable from the reported numbers"),
+         ("over-agreeable review","leaves no external trace at all")])]
+for b,(top,head,rows) in enumerate(bands):
+    if b: f.hline(56,1544,top-10,INK,1.4,arrow=False)
+    cy=top+85
+    if b==0:   f.wrench(226,cy)
+    elif b==1: f.cylinder(204,cy-17,46,34,"")
+    else:      f.panel(208,cy-3,36,5,GREY,2)
+    lines=wrap(head,22)
+    for k,ln in enumerate(lines):
+        f.text(270,cy-(len(lines)-1)*12+k*24,ln,T_LABEL,"start",SOFT,weight="600")
+    for r,(mode,ann) in enumerate(rows):
+        ry=top+15+r*78
+        f.box(560,ry,320,54,mode,INK)
+        f.text(920,ry+33,ann,T_ANNOT,"start",SOFT)
+f.o.append(f'<path d="M166,366 h-16 v168 h16" fill="none" stroke="{GATE}" stroke-width="1.8"/>')
+f.segs.append((150,366,166,534))
+f.block(60,440,"two of six need the record",T_ANNOT,width=13,fill=GATE)
+f.text(270,745,"two more are beyond reach either way - say so in the assessment",
+       T_ANNOT,"start",GREY)
+f.callout(56,800,1488,"what would have caught it if this step had been wrong?")
+print("17.2",f.save("figures/figure-17-2.svg"))
+
 # ---------------- 18.1 two layers ----------------
 f=Fig("181","Two layers, two clocks",
       "What turns over in months goes to the repository; what holds goes to print.")

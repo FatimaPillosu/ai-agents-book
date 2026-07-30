@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+<defs><marker id="ah24" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker></defs>
+<rect width="1600" height="900" fill="#F7F7F5"/>
+<text x="56.0" y="72.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" fill="#111111" font-weight="600" text-anchor="start">The agent proposes, something else disposes</text>
+<text x="56.0" y="112.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" fill="#3A3A3A" font-weight="400" text-anchor="start">Only three kinds of thing may write to the record: a rule, a person, or a fact.</text>
+<rect x="70.0" y="372.0" width="180.0" height="88.0" rx="10" fill="none" stroke="#E69F00" stroke-width="2.2"/>
+<text x="160.0" y="422.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">agent</text>
+<line x1="250.0" y1="416.0" x2="318.0" y2="416.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah24)"/>
+<rect x="324.0" y="382.0" width="268.0" height="68.0" rx="18" fill="none" stroke="#111111" stroke-width="2.2"/>
+<text x="458.0" y="422.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">proposal, not an action</text>
+<rect x="324.0" y="479.4" width="3.4" height="18.8" fill="#D55E00"/>
+<text x="336.0" y="492.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#D55E00" font-weight="400" text-anchor="start">nothing has been written yet</text>
+<line x1="592.0" y1="416.0" x2="650.0" y2="416.0" stroke="#111111" stroke-width="2.1"/>
+<line x1="650.0" y1="240.0" x2="650.0" y2="592.0" stroke="#111111" stroke-width="2.1"/>
+<text x="690.0" y="166.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">use where the criterion can be</text>
+<text x="690.0" y="184.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">written as code</text>
+<polygon points="830,192.0 970.0,240 830,288.0 690.0,240" fill="none" stroke="#D55E00" stroke-width="2.4"/>
+<text x="830.0" y="246.1" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">deterministic rule</text>
+<line x1="650.0" y1="240.0" x2="686.0" y2="240.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah24)"/>
+<text x="690.0" y="352.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">use where the criterion is judgement</text>
+<circle cx="800" cy="396.4" r="9.6" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<path d="M784,421.2 a16,14.4 0 0 1 32,0" fill="none" stroke="#0072B2" stroke-width="2.3"/>
+<text x="838.0" y="422.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="start">human decision</text>
+<line x1="650.0" y1="410.0" x2="776.0" y2="410.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah24)"/>
+<text x="690.0" y="500.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">use where the criterion is a fact the agent cannot</text>
+<text x="690.0" y="518.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">manufacture: a test suite, a reference dataset</text>
+<path d="M709.5,596.5 l14.25,-14.25 M724.5,581.5 a6.0,6.0 0 1 0 7.5,7.5" fill="none" stroke="#009E73" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M760,565.24 a55.0,9.24 0 0 1 110,0 v47.519999999999996 a55.0,9.24 0 0 1 -110,0 z" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<path d="M760,565.24 a55.0,9.24 0 0 0 110,0" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<text x="700.0" y="676.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="start">external source of truth</text>
+<line x1="650.0" y1="586.0" x2="700.0" y2="586.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah24)"/>
+<path d="M1300,323.8 a120.0,23.8 0 0 1 240,0 v122.4 a120.0,23.8 0 0 1 -240,0 z" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<path d="M1300,323.8 a120.0,23.8 0 0 0 240,0" fill="none" stroke="#56B4E9" stroke-width="2.2"/>
+<text x="1420.0" y="396.9" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">protected artefact</text>
+<path d="M970.0,240.0 L1120.0,240.0 L1120.0,340.0 L1296.0,340.0" fill="none" stroke="#111111" stroke-width="2.1" marker-end="url(#ah24)"/>
+<text x="1040.0" y="226.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#3A3A3A" font-weight="400" text-anchor="middle">accept</text>
+<line x1="990.0" y1="410.0" x2="1296.0" y2="410.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah24)"/>
+<text x="1140.0" y="396.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#3A3A3A" font-weight="400" text-anchor="middle">accept</text>
+<path d="M880.0,592.0 L1160.0,592.0 L1160.0,430.0 L1296.0,430.0" fill="none" stroke="#111111" stroke-width="2.1" marker-end="url(#ah24)"/>
+<text x="1010.0" y="578.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#3A3A3A" font-weight="400" text-anchor="middle">accept</text>
+<text x="1300.0" y="502.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">only a disposer may write here</text>
+<line x1="830.0" y1="288.0" x2="830.0" y2="318.0" stroke="#111111" stroke-width="2.1"/>
+<line x1="830.0" y1="318.0" x2="1090.0" y2="318.0" stroke="#111111" stroke-width="2.1"/>
+<text x="870.0" y="306.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#3A3A3A" font-weight="400" text-anchor="start">reject</text>
+<line x1="800.0" y1="432.0" x2="800.0" y2="470.0" stroke="#111111" stroke-width="2.1"/>
+<line x1="800.0" y1="470.0" x2="1090.0" y2="470.0" stroke="#111111" stroke-width="2.1"/>
+<text x="830.0" y="458.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#3A3A3A" font-weight="400" text-anchor="start">reject</text>
+<line x1="815.0" y1="624.0" x2="815.0" y2="636.0" stroke="#111111" stroke-width="2.1"/>
+<line x1="815.0" y1="636.0" x2="1090.0" y2="636.0" stroke="#111111" stroke-width="2.1"/>
+<text x="900.0" y="620.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#3A3A3A" font-weight="400" text-anchor="start">reject</text>
+<line x1="1090.0" y1="318.0" x2="1090.0" y2="710.0" stroke="#111111" stroke-width="2.1"/>
+<line x1="1090.0" y1="710.0" x2="1296.0" y2="710.0" stroke="#111111" stroke-width="2.1" marker-end="url(#ah24)"/>
+<path d="M1300,674.0 a120.0,14.000000000000002 0 0 1 240,0 v72.0 a120.0,14.000000000000002 0 0 1 -240,0 z" fill="none" stroke="#999999" stroke-width="2.2"/>
+<path d="M1300,674.0 a120.0,14.000000000000002 0 0 0 240,0" fill="none" stroke="#999999" stroke-width="2.2"/>
+<text x="1420.0" y="717.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#111111" font-weight="400" text-anchor="middle">rejection log</text>
+<text x="1300.0" y="632.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">a rejected proposal is kept, with</text>
+<text x="1300.0" y="650.8" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" fill="#3A3A3A" font-weight="400" text-anchor="start">the reason</text>
+<text x="56.0" y="860.0" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#999999" font-weight="400" text-anchor="start">What this does not buy: a rule set that admits the wrong thing admits it every time.</text>
+</svg>

@@ -184,28 +184,39 @@ f.footer("A role no clause of the specification demands is a role that should no
 print("10.4",f.save("figures/figure-10-4.svg"))
 
 # ---------------- 11.1 tiers ladder ----------------
-f=Fig("111","Five tiers of evidence for a workflow claim",
+f=Fig("111","Six tiers of evidence for a workflow claim",
       "A claim holds the highest tier it actually passed - not the one you hoped for.")
-tiers=[("1 · execution - runs, output well-formed",None),
-       ("2 · internal consistency - invariants hold",None),
-       ("3 · reproduces held-out truth - split-sample test","the first tier where the word correct is earned"),
-       ("4 · out-of-sample generalisation - differential test",None),
-       ("5 · independent adversarial scrutiny - reviewer tries to break it","cannot be automated - judgement does the certifying")]
-for i,(lab,ann) in enumerate(tiers):
-    yy=700-i*112
-    col=REVIEWER if i==4 else INK
-    f.rect(240,yy,760,76,col,"none",8,2.6 if i==4 else 2)
-    f.text(268,yy+46,lab,T_LABEL,inside=True)
-    f.diamond(1000,yy+38,54,40,"",GATE)
-    if ann: f.block(1060,yy+30,ann,width=28)
-f.human(210,700+38-448-40,REVIEWER,tick=True) if False else None
-f.elbow([(160,742),(160,286)])
-f.text(120,516,"stronger",T_ANNOT,"end",SOFT)
-f.o.append(f'<path d="M1420,616 h16 v160 h-16 M1420,258 h16 v238 h-16" fill="none" stroke="{GREY}" stroke-width="1.6"/>')
-f.segs.append((1420,616,1436,776)); f.segs.append((1420,258,1436,496))
-f.block(1452,676,"necessary - and almost worthless alone",width=11)
-f.block(1452,340,"correctness earned here",width=11)
-f.footer("The tiers are cumulative: a tier-4 claim has passed 1 to 4.")
+tiers=[("1 · execution - runs, output well-formed",None,228,60),
+       ("2 · internal consistency - invariants hold",None,228,60),
+       ("3 · reproduces held-out truth - split-sample test",
+        "the first tier where the word correct is earned",228,60),
+       ("4 · out-of-sample generalisation - differential test",None,228,60),
+       ("5 · independent-method corroboration - a second method with a "
+        "different error structure agrees",
+        "changes the measurement chain, not just the regime",326,50),
+       ("6 · adversarial scrutiny - a competent party tries to break it and fails",
+        "cannot be automated - judgement does the certifying",300,52)]
+for i,(lab,ann,lx,lw) in enumerate(tiers):
+    yy=676-i*96
+    col=REVIEWER if i==5 else INK
+    f.rect(200,yy,620,72,col,"none",8,2.6 if i==5 else 2)
+    lines=wrap(lab,lw)
+    y0=yy+36-(len(lines)-1)*T_LABEL*0.67
+    for k,ln in enumerate(lines):
+        f.text(lx,y0+k*T_LABEL*1.34+T_LABEL*0.34,ln,T_LABEL,"start",INK,inside=True)
+    f.diamond(820,yy+36,54,40,"",GATE)
+    if ann: f.block(880,yy+22,ann,width=30)
+f.wrench(230,328); f.cylinder(256,306,56,44,"")          # tier 5: a second method
+f.human(250,232,REVIEWER,tick=True)                      # tier 6: the reviewer
+f.callout(1150,186,300,"the only tier named for the checker, not the check - "
+          "its strength is a measured quantity (§11.5)")
+f.vline(160,750,190)
+f.block(56,440,"increasing evidential strength",width=12)
+f.o.append(f'<path d="M1470,580 h16 v168 h-16 M1470,196 h16 v360 h-16" fill="none" stroke="{GREY}" stroke-width="1.6"/>')
+f.segs.append((1470,580,1486,748)); f.segs.append((1470,196,1486,556))
+f.text(1450,664,"necessary - and almost worthless alone",T_ANNOT,"end",SOFT)
+f.text(1450,376,"correctness earned here",T_ANNOT,"end",SOFT)
+f.footer("The tiers are cumulative: a tier-5 claim has passed 1 to 5.")
 print("11.1",f.save("figures/figure-11-1.svg"))
 
 # ---------------- 11.2 evaluation set ----------------
