@@ -1,6 +1,6 @@
 # Chapter 9 — From results to manuscript
 
-> **Status:** draft r4 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > **This chapter:** journal and funder AI-use policy is a volatile landscape, surveyed here by policy class; current specifics are held in the repository, not fixed in print.
 
@@ -109,18 +109,25 @@ The redesign swaps manual transcription for regeneration from one source of trut
 
 The organising principle is simple: every number and every figure in the manuscript should trace to a pipeline artefact and be regenerable from it, so a late change upstream propagates on its own instead of requiring you to remember every place the old value appeared.
 In practice that means figures come from a plotting step reading the same result files the analysis wrote, tables get generated from those files rather than typed, and the numbers quoted in the running text are, wherever the format allows, drawn from the same artefacts by templating rather than copied by hand.
-An assembly agent sits over that arrangement as an operator, not an author.
-It can regenerate the figure set when a file changes, assemble a table to the journal's column specification, check that a value quoted in the abstract matches the table it comes from, and flag mismatches for you to resolve.
-The interpretive acts, meaning what the result means, which claim it supports and how strongly to state it, stay entirely with you, and the agent's outputs are proposals you accept, edit or reject at an explicit gate (high confidence in the pattern; how much automation is safe varies with the manuscript).
+An assembly agent operates that arrangement rather than authoring it: regenerating the figure set when a file changes, assembling tables to the journal's column specification, checking quoted values against the tables they came from, and flagging mismatches for you to resolve.
+Its outputs stop at an explicit author gate, which is the propose–dispose separation of Chapter 2 §2.6 with the author as the disposer.
+How much to automate varies with the manuscript (high confidence in the pattern).
 
 The same principle governs prose drafting, with a sharper boundary, because prose is where accountability is most easily laundered.
 An agent can usefully draft a methods section from a specification and a pipeline configuration, a data-availability statement from provenance records, or documentation of a workflow from its own logs.
 Those are descriptive tasks whose correctness can be checked against artefacts that already exist.
 It can also do mechanical language work, such as enforcing a consistent term, tightening an over-long sentence or aligning citations to a required style, as long as every change gets read.
 What it must not do is originate the claims of the paper, decide what the results establish, or produce text whose fluency hides the fact that nobody has personally verified the substance underneath.
-The discipline that prevents that is simple: you remain the source of every claim and read every sentence carrying your name, treating agent-drafted prose as a first draft to interrogate rather than a finished product to accept.
+So read every sentence carrying your name, and treat agent-drafted prose as a first draft rather than a finished one.
 The provenance records of Chapter 12 do double duty here.
 They are what the methods and data statements get generated from, and they are also the raw material of the disclosure statement recording how agents were used, so a workflow that keeps good provenance for verification gets its disclosure almost for free (moderate confidence).
+
+A methods section reading "quality-controlled under specification X by an agentic workflow" tells a reader what was done and does not let them do it again.
+The model behind it may no longer exist, and the same specification may not return the same work.
+So write the claim at the strength it can carry.
+Name the specification, the checks that gated the output and the evidential tier reached.
+Then say plainly that the agentic step is auditable rather than reproducible.
+Identify the deterministic components separately, because those are reproducible in the strict sense (Chapter 12 §12.4, on the difference between reproducible, replicable and auditable).
 
 > **Definition — Disclosure statement.** A short note attached to a paper or proposal that records how AI tools were used in producing it: which tool performed which task, on what, and under whose oversight. It exists so that an editor or reader can see the human accountability behind the work. It is written from the author's own records rather than reconstructed from memory.
 
@@ -193,6 +200,7 @@ Three broad classes cover most of what you will meet, and they are worth separat
 The first is **disclosure-required**: using AI tools to prepare the manuscript is permitted but must be declared, usually in a designated statement, with varying granularity as to which tools and which tasks must be named.
 The second is **use-restricted**: some tasks are permitted and others are not.
 A common pattern allows language editing and drafting help whilst forbidding the generation of figures, data or citations, and some rules restrict use in peer review itself, where a funder may prohibit any generative-AI use in reviewing proposals outright because a confidential manuscript cannot be entered into an external system whose onward data handling the reviewer does not control (NIH, 2023).
+This chapter treats the author's side of that asymmetry, and Chapter 17 treats the reviewer's, meaning what to ask for when a manuscript was produced with agents.
 The third is **authorship-barred**, which is close to universal and on which this book takes an unqualified position: an AI system cannot be listed as an author, because authorship entails accountability for the work and an instrument cannot be accountable.
 This is the line the major journals drew within weeks of these tools reaching the mainstream, on exactly that accountability rationale (Nature editorial, 2023) (high confidence; this class is stable where the others are volatile).
 

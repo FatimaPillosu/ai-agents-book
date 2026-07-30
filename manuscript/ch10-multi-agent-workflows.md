@@ -1,6 +1,6 @@
 # Chapter 10 — Multi-agent workflows
 
-> **Status:** draft r4 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > **This chapter** is the Part II capstone: it composes the single-agent patterns of Chapters 5–9 and hands the resulting apparatus to the end-to-end case study of Chapter 15.
 
@@ -75,6 +75,9 @@ Name the class of error this agent will catch that the existing agents and gates
 If you cannot state both, the agent is decoration, and it should be replaced by a deterministic gate or a human check.
 The limitation is that independence is a matter of degree and cannot be measured directly at design time, so this is a discipline for reasoning about a roster rather than a proof of its soundness.
 The evaluation methods of Chapter 11 are what turn the design-time argument into a measured claim (moderate-to-high confidence).
+The same argument scales past one workflow, and at field scale it is a larger problem.
+If most groups run their reviewer agents on one of a small number of base models, the field's verification errors correlate.
+Chapter 13 §13.9 develops what that does to independent replication, which is science's actual error-correction mechanism.
 
 > **Definition — Ensemble.** In forecasting, a set of model runs started from slightly different conditions, whose spread is read as the forecast's uncertainty. The spread means something only if the members can genuinely disagree; runs that share too much collapse together and become confidently wrong in unison, the same trap a set of near-identical agents falls into.
 

@@ -1,6 +1,6 @@
 # Chapter 8 — Model orchestration and experimentation
 
-> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r6 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > **Chapter note:** the three-track intercomparison of §8.5 is a **worked design**, not an executed case study: it presents an architecture and a protocol and claims no results.
 
@@ -67,10 +67,7 @@ It does not prune the design because early results look unpromising.
 It does not judge that a run's output is scientifically acceptable.
 Every one of those is a scientific decision reserved to the human, and the workflow is built so the agent has neither the authority nor the tools to make them.
 
-This is not timidity about model capability.
-It is a considered choice about where the human keeps control, and it rests on the argument of Chapter 1.
-The tasks given to the agent (expanding a declared grid, tracking job states, recording configurations, checking outputs against mechanical validity criteria) are cheap to verify and checkable.
-The tasks withheld from it are expensive to verify and fail by imitating competence.
+The monitor-and-log boundary is the propose–dispose separation of Chapter 2 §2.6, with the scientist as the disposer.
 Be clear that this is a more conservative division than some prominent demonstrations adopted.
 The flagship 2023 result, in which a language-model system planned and ran real chemistry experiments end to end, let the agent adjust its own plans in response to instrument feedback (Boiko et al., 2023).
 The monitor-and-log role here is deliberately narrower, because chemistry's fast, unambiguous feedback is a luxury environmental field science rarely gets.
@@ -159,6 +156,7 @@ So the discipline here is procedural rather than a matter of good intentions.
 Any model-generated hypothesis is recorded as exploratory in the provenance store, tagged with its origin, and kept separate by construction from the evidential chain.
 It cannot enter a result or a manuscript until a human has tested it against data by a pre-specified procedure and taken personal responsibility for the claim.
 This mirrors the interpretive control kept in the literature-synthesis pattern of Chapter 5 and the author-as-sole-authority principle of Chapter 9, and it is enforced by the same mechanism that carries the provenance: a generated hypothesis lives in a labelled compartment of the record, visibly not among the findings.
+That compartment is also the mechanism Chapter 3 §3.7 relies on, where work is genuinely exploratory and no specification can yet be written.
 Confidence in this recommendation is high, as a matter of research integrity, and it does not depend on model quality.
 Better models do not remove the failure it guards against.
 A more persuasive model makes an untested hypothesis more dangerous, not less, because its fluency disguises the missing evidence more effectively.

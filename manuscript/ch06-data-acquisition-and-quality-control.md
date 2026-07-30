@@ -1,6 +1,6 @@
 # Chapter 6 — Data acquisition and quality control
 
-> **Status:** draft r4 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > **Chapter note:** no datasets, figures or results have been invented; worked-example specifics are marked for the author to supply.
 
@@ -59,7 +59,7 @@ What the agent may do is read the heterogeneous inputs, normalise their formats 
 What disposes of the proposal is a deterministic rule set: physical bounds for the variable, inter-station consistency checks, rate-of-change limits, and the network's own documented quality conventions, all of it code a human wrote, reviewed and can rerun identically.
 A proposal that survives the rules is applied as a *flag*, never as a substituted value.
 A proposal the rules reject is logged, with its rejection reason, and the point is left as observed.
-So the agent's contribution is confined to the two things it does well, wrangling formats and articulating a justified hypothesis about each anomaly, while the two things that must not be delegated, the decision to alter the record and the authority over what counts as physically admissible, stay with deterministic code and, above it, with the accountable scientist.
+That is the propose–dispose separation of Chapter 2 §2.6, with a deterministic rule as the disposer.
 The tools the agent calls to do this are the ordinary function-call apparatus of Chapter 2: a format reader, a unit resolver, a neighbouring-station query, each with a narrow, declared interface, so the agent's actions are auditable calls rather than opaque cognition (high confidence in the pattern; the specific tool set depends on the data you hold).
 
 **Figure 6.1 — Propose–dispose architecture.**
@@ -350,7 +350,7 @@ It is written to be applied by a colleague who did not build the workflow, meani
 - **Rejections are logged, not discarded.** A proposal the rules reject is recorded with its rejection reason; the observation stands as measured.
 - **Gaps are flagged, never silently filled.** No interpolated or inferred value is written into a gap during QC; filling is a downstream, reversible, declared step.
 - **Provenance is complete and keyed.** Every proposal, disposition and rejection is recorded against the input files and the rule-set version, so the record's state is fully reconstructable (see Chapter 12).
-- **Reproducible rerun.** Re-running the pipeline on the same inputs with the same rule-set version reproduces the same flags and the same provenance.
+- **Reproducible rerun.** Re-running the pipeline on the same inputs with the same rule-set version reproduces the same flags and the same provenance. The rule-set version is what makes that true; the agent's contribution is not part of the guarantee (Chapter 12 §12.4, on reproducible versus auditable).
 
 ## 6.7 Repository pointer
 

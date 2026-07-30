@@ -1,6 +1,6 @@
 # Chapter 12 — Provenance, governance and security
 
-> **Status:** draft r4 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented. Institution-specific thresholds are left as **[AUTHOR]** because local policy sets them.
 
 ---
@@ -73,17 +73,52 @@ An audit trail is the ordered, tamper-evident record of what the workflow actual
 Where a registry answers "what did the analysis assume", the audit trail answers "what happened, in what order, to what data, invoked by whom".
 The two are complementary halves of a defensible record.
 
-> **Definition — Audit trail.** A time-ordered, tamper-resistant log of everything the workflow did: which tool ran, on which inputs, producing which outputs, under which version, passed by which human. Registries record what was decided; the audit trail records what actually happened, so a result is not just re-runnable but explicable.
+> **Definition — Audit trail.** A time-ordered, tamper-resistant log of everything the workflow did: which tool ran, on which inputs, producing which outputs, under which version, passed by which human. Registries record what was decided; the audit trail records what actually happened, so a result can be reconstructed and defended afterwards even where it cannot be run again.
 
 The elements a scientific audit trail must capture are modest in number and stable across workflows: the specification version each run executed under, the identity and version of every tool called, the inputs consumed and outputs produced with content hashes sufficient to detect later alteration, the model and configuration in force, and the human decision points passed with the identity of whoever passed them.
-Captured together, these make a result reproducible in the strong sense, not merely re-runnable but explicable, and they convert the vague reassurance that a workflow was "carefully done" into a record a reviewer, an auditor or a successor can interrogate.
+A sixth element belongs with those five and is usually the missing one: the calibration state of every gate the artefact went through.
+That means the gate's measured miss rate, the date of that measurement, and its validity window (Chapter 11 §11.5, on why a calibration expires rather than merely ageing).
+Without it the record can say a gate passed the work and cannot say whether the gate was known to be working at the time.
+Captured together, these convert the vague reassurance that a workflow was "carefully done" into a record a reviewer, an auditor or a successor can interrogate.
+Those same records are what a reader on the outside should be asking to see, and Chapter 17 turns them into questions a reviewer can actually put.
 The architecture that carries this record is the subject of the first figure of this chapter, which shows the audit trail and the two registries as a governance layer sitting beside the workflow rather than inside it, fed by the same events the workflow generates for its own operation.
+
+What that record does not do is let anyone run the work again and get the same answer.
+Calling an explicable result reproducible gets the ordering backwards.
+Explicable is the weaker of the two properties, and it is the one an agentic workflow delivers.
+**Reproducibility** is the strictest of the three properties in play: the same workflow on the same inputs returns the same answer.
+**Replicability** is the one science actually runs on: an independent group asks the same question by its own route and gets a compatible answer.
+**Auditability** is the weakest: what was done can be reconstructed and defended afterwards, without necessarily being repeatable.
+
+An agentic workflow delivers the third, and it fails the first for two structural reasons.
+The first is run-to-run variation.
+The same specification and the same inputs can return different work on a second run.
+So a check the workflow passed established something about that run rather than about the workflow (Chapter 11 §11.2, on why a tier claim rests on repeated runs).
+The second is that the model behind a result can be withdrawn.
+Once it is, the workflow cannot be re-run at all, and no amount of record-keeping restores that.
+
+**[AUTHOR: if you have had a workflow become un-rerunnable because the model behind it was withdrawn, one sentence of that would anchor this better than the general statement.]**
+
+> **Definition — Auditability.** The property of being reconstructable and defensible after the fact: what ran, on what, under which specification, passed by whom. It is what a provenance record delivers, and it is weaker than reproducibility, because it does not let anyone repeat the work. It is worth having anyway, since without it a result cannot even be explained.
+
+The constructive half of this sits in the architecture rather than in the record.
+Deterministic components are reproducible in the strict sense, and the propose–dispose separation puts them in charge (Chapter 2 §2.6, on the three kinds of thing that may dispose).
+Chapter 6's quality-control rules dispose of every agent proposal, and re-running them on the same inputs under the same rule-set version returns the same flags.
+Chapter 14 §14.3 holds the verification core deterministic for the same reason, keeping the language model out of the measurement itself.
+In both, the reproducible element is the one holding the authority, and the agent's contribution is auditable and nothing more.
+So the honest claim is granular rather than global: name the components that are reproducible, and say plainly that the agentic step is auditable.
+
+Saying that plainly is a credibility gain.
+This readership has lived through the reproducibility crisis and has vocabulary for exactly this problem.
+A claim of reproducibility for work that cannot be re-run will not survive its first sceptical reader.
+A claim that separates the three properties and names the one the workflow delivers is smaller, and it holds (high confidence).
 
 Reviewer-coverage records are the part of the audit trail that documents scrutiny rather than execution, and they answer a question that turns acute the moment agents generate more output than humans can exhaustively check: what was reviewed, by whom, and what was not.
 A reviewer-coverage record pairs each reviewable artefact (a block of generated code, a synthesised claim, a QC decision) with the reviewer who examined it, the depth of that examination, and its outcome, distinguishing an independent-agent review (Chapters 7 and 10) from a human review and recording both.
 Its purpose is to make coverage explicit and therefore contestable, because the dangerous state in an agentic workflow is not the unreviewed artefact everyone knows is unreviewed but the one assumed to have been checked and was not.
 A coverage record also supports honest disclosure, since a manuscript produced under Chapter 9's discipline can state truthfully which components passed independent review and which rest on author inspection alone, and it supports the evaluation of Chapter 11 by making the denominator of review coverage a measured quantity rather than an impression.
 The limitation, stated plainly, is that a coverage record documents that review occurred, not that it was competent: a rubber-stamp review leaves the same record as a searching one, and no registry can substitute for a reviewing culture that takes the task seriously.
+Chapter 11 §11.5 gives the measurement, seeded defects in a human reviewer's queue, and Chapter 13 §13.9 argues this is the commonest failure of the lot.
 
 **Figure 12.1 — The governance layer: registries and audit trail beside the workflow.**
 
@@ -216,11 +251,14 @@ Applying the principle in practice means enumerating, before a workflow runs, ex
 This enumeration is itself a governance artefact, belonging in the specification (Chapter 3) and recorded in the audit trail (§12.4), and it has the useful side effect of forcing the workflow's designer to articulate what the agent actually needs, a question that often reveals a broad permission was requested out of convenience rather than necessity, the "excessive agency" the security profession warns against (OWASP, 2025).
 The institutional vocabulary has kept pace with the move to agents: alongside the top-ten risks for LLM applications already cited, a companion top-ten now exists for agentic applications specifically, effectively expanding that single "excessive agency" category into a full agent-specific risk list once a system takes autonomous, credentialed, multi-step action (OWASP, 2026).
 The default posture is deny-by-default: the agent starts with no access and is granted each capability deliberately, rather than starting broad and being pared back, because the failures of omission in the first posture are safe and the failures of omission in the second are exposures (high confidence; this is standard security practice applied unchanged to agents).
-Practitioner guidance has arrived independently at the same posture, framed as consequence-tiered permissions: an action is fully autonomous only where it is low-stakes and reversible, propose-then-approve in the middle band, and never autonomous at the top, with the tiers drawn around the consequence of the action rather than any model's current capability, because models change and the permission gradient should not (practitioner commentary; see the references).
+Practitioner guidance has arrived independently at the same posture, drawing its permission tiers around the consequence of an action rather than around any model's current capability (practitioner commentary; see the references).
+Models change; the permission gradient should not.
 
 The trust boundary is the line this enumeration draws, and making it explicit is the purpose of the chapter's second figure.
-On the trusted side sit the agent, the specification directing it and the tools it is permitted to call; on the untrusted side sit the external documents, web content and third-party data it reads, together with the consequential actions (writing to shared systems, sending communications, running irreversible commands) that it may propose but not perform without a human passing the gate.
+On the trusted side sit the agent, its specification and the tools it may call.
+On the untrusted side sit the external documents and data it reads, together with any action whose consequences reach outside the boundary.
 Drawing the boundary explicitly clarifies where each defence belongs: input validation and the instruction–data separation live where untrusted content crosses inward, least privilege lives at the tools the agent may call, and the human gate lives where a proposed action would cross outward into consequence.
+That outward gate is the propose–dispose separation of Chapter 2 §2.6, with a person as the disposer.
 The boundary is also what institutional IT will ask to see, because it is the artefact that answers their questions directly, and the closing section turns to those questions.
 The limitation of least privilege is operational rather than conceptual.
 Permissions that are too narrow make a workflow fail in ways that tempt you to grant broad access just to make the failure go away.
@@ -307,11 +345,64 @@ The constructive posture towards institutional IT is to arrive with these answer
 A short, honest description of a workflow's data flows, credentials, permissions and audit record, prepared before approval is sought, does more to accelerate adoption than any assurance of the technology's capability, because it speaks to the team's actual responsibility, which is risk rather than novelty.
 Where an institution has no policy for agentic systems yet, a common situation at the time of writing, the group proposing the first such workflow has both an opportunity and an obligation to help shape a sensible one, by mapping the new operator onto the controls the institution already applies to human users and shared services rather than requesting a special regime for it.
 The specifics of any given institution's requirements, that is, its approval thresholds, its mandatory reviews, its data-classification scheme and its retention rules, are set locally and are marked **[AUTHOR]** here, because a book cannot supply them and should not pretend to.
-The durable point, and the one this chapter closes on, is that governance and security are not the price of using agents in science.
+The durable point is that governance and security are not the price of using agents in science.
 They are the condition under which using them is scientific at all.
 An instrument whose behaviour is unbounded, unrecorded and unaccountable is not one you should trust, and the discipline that makes an agent trustworthy is the same discipline, applied to a new tool, that has always separated measurement from guesswork.
 
-## 12.10 Verification checklist
+## 12.10 When a gate is found to have been wrong
+
+You re-calibrate a citation gate that has run untouched for eight months, and this time it misses two of the twenty seeded faults.
+Last time it caught all twenty.
+Nothing about the gate looks different, and nothing in the record flagged a change.
+Every artefact that passed through that gate since the last calibration is now of unknown status.
+§12.9 records the question institutional IT asks and this chapter has left open: how is a mistake detected, contained and reversed?
+For a book grounded in operational forecasting, the hour after a discovery like that is where governance is tested rather than described.
+
+Four things tend to bring it to light.
+A scheduled re-calibration finds it, as above.
+A yield collapse shows it, where a gate that used to reject things has stopped rejecting anything.
+A corroborating method disagrees, which is Tier 5 of Chapter 11 §11.2 doing the job the ladder puts it there for.
+Or a downstream user complains, which is the uncomfortable one: most of the time you find out because somebody else noticed.
+
+Stop the workflow before diagnosing it.
+Diagnosing first is the expensive instinct, because every run made while you diagnose adds to the set of artefacts you will have to assess.
+Quarantine the outputs rather than deleting them.
+The wrong outputs are the evidence: they tell you which fault classes got through, and when the behaviour changed.
+
+Scope is where this chapter's apparatus either pays for itself or turns out not to exist.
+The audit trail answers which artefacts passed through the affected gate and when (§12.4).
+The reviewer-coverage record answers which of those had a second, independent check that might have caught the fault anyway.
+The tier record answers which claims were resting on that gate at all, since a claim that never invoked it is unaffected.
+Together the three bound the damage to a list you can work through.
+A group without them cannot bound anything, and its only defensible position is that everything since the last known-good calibration is suspect.
+That is almost always far more work than the incident deserved.
+
+Who gets told follows from who relied on the work.
+Collaborators whose results sit downstream come first, because they may still be able to stop something.
+Partners who supplied data under conditions come next, where those conditions bear on the handling.
+An operational customer comes in wherever a decision was informed by an affected output.
+The thresholds are institutional rather than scientific, and this book does not set them **[AUTHOR]**.
+
+Metrology has recall, meaning a manufacturer can call back every affected unit and say publicly why.
+Science has errata, a corrected dataset version, or a note attached to the record, and all three are slower and weaker than that.
+An erratum reaches a fraction of the original's readers, and a corrected dataset does nothing for anyone still on the old one.
+A published result gated by a check now known to be miscalibrated is the hardest case here, and no clean answer exists.
+The decision to correct the record is the author's, not the workflow's, and it turns on what the result now rests on.
+
+Every incident is a case for the evaluation set.
+The fault class the gate missed becomes a seeded case in the standing set (Chapter 11 §11.4, on building an evaluation set from the group's own work).
+So the same miss is caught next time rather than discovered.
+It also becomes an entry in the failure log.
+And a gate that has failed once carries a shorter validity window, because its measured record now includes a failure.
+
+No established procedure exists for retracting or correcting an agentic result, and saying otherwise would be inventing a consensus.
+So this is a response I think is right rather than one a community has settled (moderate confidence).
+The precondition is settled, though: national cyber-security guidance already asks that a specific human be named as accountable before an agentic system is deployed (Five Eyes joint advisory, 2026).
+Naming that person after an incident is too late, and every step above assumes somebody whose job it is to take them.
+
+**[AUTHOR: a gate of yours that turned out to have been miscalibrated, or the nearest thing to it — what you found, how far back it reached, and what you had to tell whom. This section is the one in the chapter most obviously missing lived material.]**
+
+## 12.11 Verification checklist
 
 This checklist certifies that an agentic workflow is governed and secured well enough to be trusted and approved.
 A colleague who did not build it, or an institutional reviewer, should be able to apply it from the record alone.
@@ -322,10 +413,10 @@ A colleague who did not build it, or an institutional reviewer, should be able t
 - **Least privilege confirmed at the interface, not in prose.** The agent's tool permissions are verified by inspecting what the tools actually allow (paths, network, credentials, gated actions), not by trusting the agent's or the specification's description of them (§12.8); deny-by-default is the starting posture.
 - **Prompt-injection surface reviewed for every input channel.** Every channel that feeds untrusted content into agent context (retrieved papers, partner data, web pages, collaborator files) has been identified and constrained by architecture (least privilege, instruction–data separation, human gates), not by hoping to detect malicious text (§12.6).
 - **Credentials and partner data handled per institutional policy.** Credentials reach the agent only through the environment or a secrets manager, are task-scoped and short-lived where supported, and no data leaves institutional systems for an external model against a data-sharing agreement (§12.7); institution-specific rules are recorded **[AUTHOR]**.
-- **Accountability and recovery are named.** A specific human is accountable for the workflow's actions, and the record shows how a mistake is detected, contained and reversed (§12.4, §12.9).
+- **Accountability and recovery are named.** A specific human is accountable for the workflow's actions, and the record shows how a mistake is detected, contained and reversed (§12.4, §12.9). The group also has a stated response to a gate found to have been wrong, including how the affected artefacts would be identified from the audit trail and who would be told (§12.10).
 - **Documentation survives staff turnover.** A newcomer who was not present can operate the workflow and defend its results from the record alone, the true test of whether the governance layer is real or decorative (§12.2).
 
-## 12.11 Repository pointer
+## 12.12 Repository pointer
 
 The companion repository holds the runnable and perishable counterparts to this chapter under `/patterns/ch12-provenance-governance-and-security`, with the printable checklist under `/checklists`.
 The material is a set of templates rather than a single program: an assumption-registry and uncertainty-registry schema, an audit-trail record format with the fields of §12.4, a reviewer-coverage template, and a least-privilege tool-permission manifest that a workflow's specification (Chapter 3) can instantiate.
