@@ -1,6 +1,6 @@
 # Chapter 13 — The failure gallery
 
-> **Status:** draft r4 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > The six failure *types* and the *checks* that catch them are written in full here; the illustrative incidents are the author's real, anonymised cases, marked **[AUTHOR: …]** to be supplied, never invented.
 
@@ -23,7 +23,7 @@ The taxonomy is not a construction of this book alone: the largest empirical stu
 
 The taxonomy has six modes, chosen on two grounds.
 Each recurs across the pattern chapters, and each is caught by a *different* check, so between them they exercise most of the verification this book has built: fabricated citations, silent unit errors, specification drift, over-agreeable review, context loss and confident extrapolation.
-Each section states the mode and why it happens, marks the author's anonymised example of catching it, gives the check in a form you can adopt, and places that check on the evidential hierarchy of Chapter 11, which runs from cheap mechanical confirmation at the base to independent operational corroboration at the top.
+Each section states the mode and why it happens, marks the author's anonymised example of catching it, gives the check in a form you can adopt, and places that check on the evidential hierarchy of Chapter 11, which runs from cheap mechanical confirmation at the base, through corroboration by a method with a different error structure, to adversarial scrutiny at the top.
 The thread pulled together at the end (§13.8) is that five of the six are caught at or near the base of that ladder, by checks that are cheap, mechanical and unglamorous.
 What the gallery really teaches is not sophistication but the refusal to skip the cheap check because the output reads well (high confidence).
 
@@ -485,6 +485,104 @@ The gallery is deliberately a taxonomy and not a census, and two limitations of 
 First, it is not exhaustive: the six modes are the recurrent ones across the patterns of this book, but new failure modes will appear as capabilities and uses change, and the durable skill is the habit of pairing each observed failure with the external check that would have caught it, not the memorisation of this particular six.
 Second, the checks are necessary rather than sufficient: each catches its mode reliably, but a workflow is only as safe as the union of checks actually implemented and actually run, which is why verification is a whole part of this book (Chapters 11 and 12) rather than a section of this one, and why the case studies of Part IV are organised around the checks as much as around the science.
 The gallery's proper use is as a checklist of failures to design against from the start, folded into the specification (Chapter 3) and the reviewer roster (Chapter 10) before a workflow runs, rather than as a set of lessons to be relearned one incident at a time (high confidence).
+
+The six also share a shape: one workflow, one wrong artefact, one local check that catches it.
+That shape is the gallery's boundary.
+A different kind of failure appears only once a whole field adopts these patterns, and §13.9 takes it up.
+
+## 13.9 Beyond the single workflow
+
+None of the four failures below comes with a check.
+Every mode above pairs a failure with something a group can run to catch it, and that pairing is the design of this chapter.
+These four do not work that way.
+They appear when a field adopts these patterns at scale, they are produced by many groups each behaving reasonably, and no gate inside any one workflow detects them.
+What a single group can do about each is smaller and less satisfying than a check, and saying so is better than offering a gate that would not work.
+
+A multi-model ensemble whose members share a convection scheme is not the ensemble it looks like.
+The spread across members understates the real uncertainty, because the members can be wrong in the same direction at the same time.
+The forecast then looks better constrained than the evidence supports, and the error that matters is the one every member makes.
+Readers of this book know that failure as correlated model error, and know how much work goes into avoiding it.
+
+Chapter 10 §10.3 makes the same argument inside one workflow.
+A reviewer agent built on the same model as the drafter supplies correlated opinion rather than an independent check, so genuine independence needs model diversity.
+Run that argument across a whole field.
+If most groups run their independent-reviewer agent on one of a small number of base models, the field's verification errors correlate.
+Independent replication is science's actual error-correction mechanism, and it corrects nothing when the replications share a failure mode.
+A hundred groups checking their work with the same instrument is not a hundred checks.
+
+Two things are available to a group, both modest.
+Choose reviewer models against what the rest of the field is using rather than against what is convenient, which sometimes means the second-best model on purpose.
+And record which model family reviewed what, alongside the reviewer-coverage record of Chapter 12 §12.4, so the correlation is visible to anyone reading the record later.
+Neither fixes the problem, but together they turn an invisible dependency into a recorded one, which is what has to happen before anyone notices it.
+Confidence is high in the mechanism, since it is the one Chapter 10 §10.3 documents inside a single workflow.
+It is moderate in the scale, because nobody has measured how concentrated the field's model use actually is.
+
+Chapter 8 §8.4 keeps a model-generated hypothesis out of the evidential chain until a human has tested it by a pre-specified procedure.
+That gate works inside one workflow.
+It says nothing about what happens to a field's range of questions when a generation of researchers brainstorms against the same few models trained on the same corpus.
+A model proposes what is well represented in its training material.
+Ask it for candidate mechanisms behind an odd signal and it returns the mechanisms the literature already discusses.
+That is useful, and it is also the distribution the field is already searching.
+
+Divergence of ideas is a resource, and whether this technology consumes it is an open question.
+This is a conjecture and should be read as one.
+Nothing in the evidence behind this book measures the diversity of research questions before and after agentic tools arrived.
+I am not aware of a study that would settle it cleanly (low-to-moderate confidence).
+It is stated here because you should be thinking about it, not because the book knows the answer.
+
+What a group can do is small and worth doing anyway.
+Notice when every hypothesis in a discussion arrived by the same route.
+Keep at least one route that does not go through a model: a reading group, a field visit, a conversation with somebody whose data you have never used.
+None of that is a check on the field, and none of it scales past the people who do it.
+It does keep one group's questions from coming entirely from one distribution.
+
+[AUTHOR: whether you have seen this in practice, or think it is overstated — this is the movement in the section most in need of your judgement.]
+
+Consider what a doctoral researcher learns by hand-reconciling a gauge network for a month.
+They learn what a stuck sensor looks like in a time series, how a station move shows up as a step change, and which odd values are worth chasing.
+None of that is in the specification.
+It is what lets somebody tell a real signal from a sensor fault.
+That is exactly the judgement the propose–dispose separation reserves for a person (Chapter 2 §2.6, on the criteria only a human decision can settle).
+It was acquired by doing work an agent now does in an afternoon.
+
+The verification-first stance of this whole book depends on that judgement and has nowhere said where it comes from.
+Chapter 16 §16.4 says the skills these roles need are largely those a good empirical scientist already has, which is true.
+It also assumes a continuing supply of scientists who acquired them the slow way.
+So a group leader deciding what a doctoral researcher spends three years on is deciding the group's future capacity to verify, not only this year's throughput.
+The consequence of that decision arrives years later, and it gets made by default when it is not made deliberately.
+
+What a group can do is name the judgements it intends to keep in-house, and protect the work that builds them even where an agent would be faster.
+A month of hand-reconciliation, kept deliberately on the grounds that it is training rather than production, is a defensible use of a doctoral student's time.
+This is the book's argument rather than a measured effect.
+Nothing in the evidence behind it measures skill acquisition under agentic assistance, and no source is offered here (moderate confidence).
+
+It is the fourth agent-drafted quality-control report of the afternoon.
+The first three were fine.
+This one looks like the first three, and the reviewer approves it.
+The approval was not a judgement about this report.
+It was a judgement about the first three.
+Nothing in that sequence is negligence, and the same sequence will run again next week.
+The book's model of the human throughout has been a tireless sceptical verifier, and real people under deadline approve work that looks right.
+
+The gallery has a mode for the agent being over-agreeable (§13.5) and none for the person being over-agreeable, and the second is the commoner failure.
+It also defeats every other check in the book, because every gate here passes through a person at some point.
+A human disposes wherever the criterion is judgement, and a human decides whether a seeded-defect result warrants changing anything.
+And it leaves no trace: a rubber-stamp review produces the same record as a searching one (Chapter 12 §12.4, on what a coverage record cannot establish).
+
+So measure it, exactly as any other gate is measured (Chapter 11 §11.5, on seeded defects in a human reviewer's queue and yield watched on human approvals).
+Then design against it.
+A gate that asks the reviewer to state in one line what they checked costs seconds and makes a cheap approval visibly cheap.
+A gate offering an approve button records nothing about whether anybody looked.
+Neither measure is a solution, and both are cheaper than the failure.
+Confidence is high that the mechanism is real, since it is the ordinary behaviour of people doing repetitive checking work under time pressure.
+It is moderate that these countermeasures work, since nothing in the evidence behind this book measures either.
+
+What the four have in common is where the check would have to sit.
+It has to sit outside the group, not merely outside the workflow, which is all every mode above asks for.
+Correlated verification error is invisible from inside one group by construction.
+So is a narrowing of the questions, a slow loss of judgement, or a reviewer who has stopped reading.
+The institution that has historically played that outside role is peer review.
+Chapter 17 takes up what it can and cannot do when the work under review was produced with agents.
 
 ---
 

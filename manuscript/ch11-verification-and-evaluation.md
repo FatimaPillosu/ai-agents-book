@@ -1,6 +1,6 @@
 # Chapter 11 — Verification and evaluation
 
-> **Status:** draft r4 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > **Integrity note:** the four model-evaluation references (Klemeš; Refsgaard & Henriksen; Jakeman et al.; Oberkampf & Trucano) are real and named by the author; the `/research` sweep did not cover them, so their bibliographic details keep `[verify]` until confirmed. Report-sourced citations carry a DOI or URL in the references list. No quotations, results or anecdotes have been invented.
 
@@ -40,12 +40,12 @@ Hydrological modelling in particular had to face the fact that a model can repro
 The discipline's answer was to formalise what counts as evidence that a model is fit for a stated purpose (Klemeš [verify]; Refsgaard & Henriksen [verify]).
 The computational-science literature developed a complementary vocabulary, separating whether the code solves the equations correctly from whether the equations describe reality (Oberkampf & Trucano [verify]), and systematic accounts of the modelling process set out the iterative steps by which a model earns confidence (Jakeman et al. [verify]).
 None of these was written with language models in mind, and each has to be adapted rather than transplanted, because an agent's failures, being plausible, fluent, and uncorrelated with correctness (Chapter 1), are not the failures of a numerical scheme.
-The adaptation this chapter proposes is a five-tier hierarchy of evidential strength, in which each tier is defined by the check that establishes it and higher tiers subsume lower ones.
+The adaptation this chapter proposes is a six-tier hierarchy of evidential strength, in which each tier is defined by the check that establishes it and higher tiers subsume lower ones.
 Confidence that the hierarchy is useful is high; confidence that any single tier boundary sits in exactly the right place is moderate, and this chapter flags where the reader's own judgement should settle the definitions.
 
-## 11.2 Five tiers of evidence
+## 11.2 Six tiers of evidence
 
-The five tiers form a ladder.
+The six tiers form a ladder.
 Each step answers a stronger question than the one below it, and the evidential strength of a claim is the highest tier it has actually passed, not the highest it could in principle reach.
 
 > **Definition — Evidential tier.** A named level of how well a claim has been checked, defined by the specific test it survived rather than by how much effort went into it. Naming an output "Tier 3" is a factual statement about evidence gathered, like citing a measurement's accuracy class, not a promise that the work was done diligently.
@@ -72,12 +72,35 @@ The fourth tier, **out-of-sample generalisation**, asks the harder question of w
 The check is the differential test taken straight from Klemeš's hierarchical testing scheme [verify]: run the workflow on a regime it was not tuned for, such as a different catchment, a different season, a wetter or drier period or a different instrument, and see whether performance degrades gracefully or collapses.
 A workflow that reproduces held-out truth inside its development regime but fails under transfer is fit for interpolation and unfit for extrapolation, and Tier 4 is what tells the two apart.
 
-The fifth and highest tier, **independent adversarial scrutiny**, asks whether the claim survives a competent party actively trying to break it.
+The fifth tier, **independent-method corroboration**, asks whether a second determination of the same quantity agrees with the first.
+The check is that a method with a different error structure returns a compatible answer, within the uncertainty each of them states.
+It sits above Tier 4 because of what it changes.
+Out-of-sample generalisation moves the regime and keeps the measurement chain; corroboration changes the chain itself.
+The environmental sciences have relied on it for decades: a satellite retrieval against a gauge, two retrievals whose errors come from different physics, a physical model against an empirical one.
+Where two such methods agree, the agreement carries weight precisely because the ways each could be wrong are unrelated.
+
+For an agentic workflow the tier means re-establishing a claim by a route that shares neither the model nor the pipeline.
+A deterministic recomputation of the same quantity counts, as does a different data source, as does a manual redo of a sample large enough to be informative.
+The honest limit is that two methods sharing a hidden dependency corroborate nothing.
+Two retrievals calibrated against the same ground network, or two workflows drawing on one preprocessed archive, agree for reasons that have nothing to do with the claim being right.
+So the independence of the error structures is a thing to argue for rather than assume, and the argument belongs in the record.
+This book has already used the tier twice without naming it.
+§11.3 re-verifies a data-driven weather model against both operational analyses and independent station observations.
+Chapter 1 §1.2 describes two independent measurement methods converging on the same doubling trend, and calls it the corroboration between measurements this book argues for throughout.
+
+The sixth and highest tier, **adversarial scrutiny**, asks whether the claim survives a competent party actively trying to break it.
 An independent reviewer, a human or a separate agent set up for the purpose as in Chapters 10 and 12, tries to falsify the result, probes its edge cases and alternative explanations, and fails to overturn it.
 This tier is expensive and cannot be automated away, because it is where judgement rather than computation certifies the result, and it is the only tier offering real protection against errors no pre-specified check anticipated.
 
+Five of the six tiers are named for the check that establishes them: a schema, an invariant, a held-out reference, a transfer regime, a second method.
+Tier 6 is named for what the checker does, which makes it the odd one on the ladder.
+The strength of a Tier 6 claim therefore rests on a property of the checker, namely independence, and independence is a measured quantity rather than a declared one (§11.5).
+So the least reproducible check in this chapter sits at the top of a hierarchy of evidential strength.
+That is a real tension and this chapter does not resolve it (high confidence that the tension is real).
+Tier 6 stays at the top anyway, for the reason its own paragraph gives: nothing else catches an error that no pre-specified check anticipated (moderate confidence).
+
 The tiers are cumulative.
-A Tier 4 claim has passed Tiers 1 through 4, and naming a tier is a statement about evidence actually gathered.
+A Tier 5 claim has passed Tiers 1 through 5, and naming a tier is a statement about evidence actually gathered.
 
 The ladder does not capture reliability on its own, and reliability matters most for anything you intend to run repeatedly.
 A workflow that passes a tier once may not pass it every time, because agent behaviour varies run to run, and a single successful trial systematically overstates dependability.
@@ -86,55 +109,76 @@ In one reported customer-service setting it fell below a quarter at k of eight, 
 For an operational workflow that runs monthly, single-trial success rates are close to meaningless.
 A duty cycle is a repeated trial, and reliability is what fails first.
 
-**Figure 11.1 — The five-tier evidential hierarchy.**
+Run-to-run variation is an evidential problem as well as a reliability one.
+A tier is established by a check the workflow passed.
+If the workflow behaves differently next time, that check established something about the run rather than about the workflow.
+A pipeline that passes Tier 3 on Monday and fails it on Friday has not reached Tier 3.
+It has sampled Tier 3, and reporting the run that passed is not the same as reaching the tier.
+So the rule for anything you intend to run more than once is simple: a tier claim rests on repeated runs or it rests on nothing.
+Set k by how often the workflow will actually run.
+Chapter 12 §12.4 takes up what that does to reproducibility, and why an agentic result is defensible after the fact rather than repeatable.
 
-![Five horizontal bars stacked as a ladder, read bottom to top, each naming a tier and the check that establishes it. Tier one, execution: it runs and the output is well-formed. Tier two, internal consistency: the invariants hold. Tier three, reproduces held-out truth by a split-sample test, marked as the first tier where the word correct is earned. Tier four, out-of-sample generalisation by a differential test. Tier five, independent adversarial scrutiny, where a reviewer tries to break the claim and fails, carried in reviewer purple. A bracket spans tiers one and two, labelled necessary but almost worthless alone; another spans three to five, labelled correctness earned here. An arrow up the side reads increasing evidential strength, and a footer reads that a claim holds the highest tier it actually passed, not the highest it could reach.](../figures/figure-11-1.svg)
+**Figure 11.1 — The six-tier evidential hierarchy.**
 
-*Figure 11.1 — The ladder every claim in this book is measured against. The two bottom tiers are cheap and catch the crude failures, but an output can pass both and still be wrong. Correct is a word that gets earned at tier three, against data the workflow never saw, and the top tier cannot be automated because it is judgement doing the certifying. A claim holds the tier it passed, not the tier you intended. (Rendered as `figures/figure-11-1.svg` from the brief below, per `FIGURES.md`.)*
+![Six horizontal bars stacked as a ladder, read bottom to top, each naming a tier and the check that establishes it. Tier one, execution: it runs and the output is well-formed. Tier two, internal consistency: the invariants hold. Tier three, reproduces held-out truth by a split-sample test, marked as the first tier where the word correct is earned. Tier four, out-of-sample generalisation by a differential test. Tier five, independent-method corroboration, where a second method with a different error structure agrees, annotated that this changes the measurement chain and not just the regime, and carrying a green tool glyph beside a sky-blue cylinder for the second method and its data. Tier six, adversarial scrutiny, where a competent party tries to break the claim and fails, carried in reviewer purple with the reviewer icon, annotated both that it cannot be automated because judgement does the certifying and that it is the only tier named for the checker rather than the check, its strength being a measured quantity treated in section 11.5. A bracket spans tiers one and two, labelled necessary but almost worthless alone; another spans three to six, labelled correctness earned here. An arrow up the side reads increasing evidential strength, and a footer reads that the tiers are cumulative, so a tier-five claim has passed one to five.](../figures/figure-11-1.svg)
+
+*Figure 11.1 — The ladder every claim in this book is measured against. The two bottom tiers are cheap, catch the crude failures, and can both be passed by an output that is wrong. Correct is a word that gets earned at tier three, against data the workflow never saw. Tier five is what this discipline has relied on for decades: a second method whose errors are unrelated to the first one's. Tier six is the odd one, named for the checker rather than the check, and it cannot be automated because judgement does the certifying. A claim holds the tier it passed, not the tier you intended. (Rendered as `figures/figure-11-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
 - id:            Figure 11.1
-- title:         Five tiers of evidence for a workflow claim
+- title:         Six tiers of evidence for a workflow claim
 - type:          architecture (ascending ladder)
-- claim:         Evidential strength ascends through five operationally defined tiers, each established by a specific check, from merely running to surviving independent adversarial scrutiny.
+- claim:         Evidential strength ascends through six operationally defined tiers, from merely running to surviving adversarial scrutiny, and only the top tier is named for its checker rather than for its check.
 - standfirst:    A claim holds the highest tier it actually passed — not the one you hoped for.
 - canvas:        16:9
-- elements:      five stacked horizontal bars forming a ladder, lowest at the bottom, each
-                 labelled with a tier name and its establishing check; the topmost bar
-                 bordered in reviewer purple and carrying the reviewer icon; each tier
-                 carrying a small vermillion gate diamond at its right edge; an upward
-                 arrow beside the ladder
-- flow:          bottom-to-top — tier 1 at the base rising to tier 5 at the top
+- elements:      six stacked horizontal bars forming a ladder, lowest at the bottom, each
+                 labelled with a tier name and its establishing check; the fifth bar
+                 carrying a green tool glyph beside a small sky-blue cylinder for the
+                 second method and its data; the topmost bar bordered in reviewer purple
+                 and carrying the reviewer icon; each tier carrying a small vermillion
+                 gate diamond at its right edge; an upward arrow beside the ladder
+- flow:          bottom-to-top — tier 1 at the base rising to tier 6 at the top
 - labels:        "1 · execution — runs, output well-formed",
                  "2 · internal consistency — invariants hold",
                  "3 · reproduces held-out truth — split-sample test",
                  "4 · out-of-sample generalisation — differential test",
-                 "5 · independent adversarial scrutiny — reviewer tries to break it",
+                 "5 · independent-method corroboration — a second method with a different
+                 error structure agrees",
+                 "6 · adversarial scrutiny — a competent party tries to break it and fails",
                  "increasing evidential strength"
 - annotations:   bracket spanning tiers 1–2, "necessary — and almost worthless alone"; on
                  tier 3, "the first tier where the word correct is earned"; bracket
-                 spanning tiers 3–5, "correctness earned here"; on tier 5, "cannot be
-                 automated — judgement does the certifying"; a footer, "the tiers are
-                 cumulative: a tier-4 claim has passed 1 to 4"
-- caption:       Figure 11.1 — The ladder every claim in this book is measured against. The two bottom tiers are cheap and catch the crude failures, but an output can pass both and still be wrong. Correct is a word that gets earned at tier three, against data the workflow never saw, and the top tier cannot be automated because it is judgement doing the certifying. A claim holds the tier it passed, not the tier you intended.
-- alt-text:      Five horizontal bars stacked as a ladder, read bottom to top, each naming a tier and the check that establishes it. Tier one, execution: it runs and the output is well-formed. Tier two, internal consistency: the invariants hold. Tier three, reproduces held-out truth by a split-sample test, marked as the first tier where the word correct is earned. Tier four, out-of-sample generalisation by a differential test. Tier five, independent adversarial scrutiny, where a reviewer tries to break the claim and fails, carried in reviewer purple. A bracket spans tiers one and two, labelled necessary but almost worthless alone; another spans three to five, labelled correctness earned here. An arrow up the side reads increasing evidential strength, and a footer reads that a claim holds the highest tier it actually passed, not the highest it could reach.
+                 spanning tiers 3–6, "correctness earned here"; on tier 5, "changes the
+                 measurement chain, not just the regime"; on tier 6, "cannot be automated
+                 — judgement does the certifying"; a second callout on tier 6, "the only
+                 tier named for the checker, not the check — its strength is a measured
+                 quantity (§11.5)"; a footer, "the tiers are cumulative: a tier-5 claim
+                 has passed 1 to 5"
+- caption:       Figure 11.1 — The ladder every claim in this book is measured against. The two bottom tiers are cheap, catch the crude failures, and can both be passed by an output that is wrong. Correct is a word that gets earned at tier three, against data the workflow never saw. Tier five is what this discipline has relied on for decades: a second method whose errors are unrelated to the first one's. Tier six is the odd one, named for the checker rather than the check, and it cannot be automated because judgement does the certifying. A claim holds the tier it passed, not the tier you intended.
+- alt-text:      Six horizontal bars stacked as a ladder, read bottom to top, each naming a tier and the check that establishes it. Tier one, execution: it runs and the output is well-formed. Tier two, internal consistency: the invariants hold. Tier three, reproduces held-out truth by a split-sample test, marked as the first tier where the word correct is earned. Tier four, out-of-sample generalisation by a differential test. Tier five, independent-method corroboration, where a second method with a different error structure agrees, annotated that this changes the measurement chain and not just the regime, and carrying a green tool glyph beside a sky-blue cylinder for the second method and its data. Tier six, adversarial scrutiny, where a competent party tries to break the claim and fails, carried in reviewer purple with the reviewer icon, annotated both that it cannot be automated because judgement does the certifying and that it is the only tier named for the checker rather than the check, its strength being a measured quantity treated in section 11.5. A bracket spans tiers one and two, labelled necessary but almost worthless alone; another spans three to six, labelled correctness earned here. An arrow up the side reads increasing evidential strength, and a footer reads that the tiers are cumulative, so a tier-five claim has passed one to five.
 - infographic description: A flat vector ladder diagram, 16:9, off-white background.
-                 Title top-left: "Five tiers of evidence for a workflow claim".
+                 Title top-left: "Six tiers of evidence for a workflow claim".
                  Standfirst: "A claim holds the highest tier it actually passed — not the
-                 one you hoped for." Five horizontal bars stacked bottom to top, equal
+                 one you hoped for." Six horizontal bars stacked bottom to top, equal
                  width, each with a small vermillion diamond at its right edge. From the
                  bottom: "1 · execution — runs, output well-formed"; "2 · internal
                  consistency — invariants hold"; "3 · reproduces held-out truth —
                  split-sample test", annotated "the first tier where the word correct is
                  earned"; "4 · out-of-sample generalisation — differential test"; "5 ·
-                 independent adversarial scrutiny — reviewer tries to break it", bordered
-                 purple with a reviewer icon and annotated "cannot be automated —
-                 judgement does the certifying". A vertical arrow to the left of the
-                 ladder labelled "increasing evidential strength". A bracket to the right
-                 spans tiers 1–2, "necessary — and almost worthless alone"; another spans
-                 tiers 3–5, "correctness earned here". Footer: "the tiers are cumulative:
-                 a tier-4 claim has passed 1 to 4". Sentence case throughout.
+                 independent-method corroboration — a second method with a different error
+                 structure agrees", carrying a small green wrench glyph beside a small
+                 sky-blue cylinder at its left edge and annotated "changes the measurement
+                 chain, not just the regime"; "6 · adversarial scrutiny — a competent party
+                 tries to break it and fails", bordered purple with a reviewer icon,
+                 annotated "cannot be automated — judgement does the certifying" and
+                 carrying a second callout in a pale yellow fill reading "the only tier
+                 named for the checker, not the check — its strength is a measured
+                 quantity (§11.5)". A vertical arrow to the left of the ladder labelled
+                 "increasing evidential strength". A bracket to the right spans tiers 1–2,
+                 "necessary — and almost worthless alone"; another spans tiers 3–6,
+                 "correctness earned here". Footer: "the tiers are cumulative: a tier-5
+                 claim has passed 1 to 5". Sentence case throughout.
 ```
 
 ## 11.3 Verification must be external to the system verified
@@ -145,7 +189,8 @@ Chapter 1 introduced it, and it matters enough to restate as this chapter's gove
 A model asked whether its own output is right will answer fluently, with a confidence uncorrelated with whether the answer is true (Chapter 1).
 The operational consequence is unforgiving.
 No tier of the hierarchy may be established by the agent that produced the output, nor by an identical agent, nor by the same model prompted to check itself, because all three share the exact failure verification is meant to catch.
-Each check has to draw its authority from a source the generating agent does not control: the schema at Tier 1 is fixed by the workflow's designer, not proposed by the agent at run time; the invariants at Tier 2 are physical or definitional facts external to the model; the held-out reference at Tier 3 is data the agent never saw; the transfer regime at Tier 4 is chosen by the evaluator to be unlike the development regime; and the reviewer at Tier 5 is independent by construction.
+Each check has to draw its authority from a source the generating agent does not control: the schema at Tier 1 is fixed by the workflow's designer, not proposed by the agent at run time; the invariants at Tier 2 are physical or definitional facts external to the model; the held-out reference at Tier 3 is data the agent never saw; the transfer regime at Tier 4 is chosen by the evaluator to be unlike the development regime; the corroborating method at Tier 5 is chosen for an error structure unlike the first one's, not merely for a different run; and the reviewer at Tier 6 is independent by construction.
+At Tier 5 the independence to argue for is between the error structures, not between the people operating them.
 Where a check is implemented in code (a test suite, a schema validator, a mass-balance assertion), that code is itself an external artefact, written and reviewed under the governance of Chapters 7 and 12, and never generated and graded by the same agent in one unexamined step.
 
 The best illustration of the principle in action comes from operational meteorology, and it is worth holding up as a template.
@@ -156,6 +201,7 @@ That is exactly what you have to do for an agentic workflow: re-verify the claim
 The parallel is exact, and it is why the environmental sciences are well placed to govern agents.
 The verification culture already exists.
 It only has to be extended to a new kind of instrument.
+It is also what a reviewer of someone else's agentic result is entitled to ask whether the authors did, and Chapter 17 turns that entitlement into questions a reviewer can actually put.
 
 Externality is easier to state than to secure, and the subtlest threat to it is contamination of the held-out reference.
 A split-sample test establishes nothing if the withheld data reached the model by another route.
@@ -193,7 +239,7 @@ Two disciplines keep the set honest.
 First, report the set's **size** candidly.
 A few dozen carefully curated cases beat zero by an enormous margin, but small samples carry wide uncertainty, so report a result with an interval rather than a bare percentage.
 "Forty-four of fifty, which is an 88% pass rate with a 95% interval of roughly 76 to 95%" says far more than "88%".
-The design principles of verifiable-answer benchmarks are a useful guide to what makes a good case: an unambiguous, pre-registered, automatically checkable reference, and difficulty graded by the number of steps and tools a case demands (Mialon et al., 2023), so that "does the agent retrieve the correct discharge value from this archive?" has a checkable answer in exactly that sense, whereas "is this synthesis insightful?" does not, and belongs to Tier 5.
+The design principles of verifiable-answer benchmarks are a useful guide to what makes a good case: an unambiguous, pre-registered, automatically checkable reference, and difficulty graded by the number of steps and tools a case demands (Mialon et al., 2023), so that "does the agent retrieve the correct discharge value from this archive?" has a checkable answer in exactly that sense, whereas "is this synthesis insightful?" does not, and belongs to Tier 6.
 Second, the set is **versioned and refreshed** and guarded against contamination per §11.3: what entered context on each run is recorded, references generated after the model's training cut-off are preferred, and the set is re-examined when the workflow's inputs change, because an evaluation set that never changes slowly stops resembling the work.
 
 **Figure 11.2 — Building a task-grounded evaluation set.**
@@ -314,6 +360,39 @@ If a citation gate stops rejecting anything, either the drafting genuinely impro
 So re-measurement is not optional, and it needs a trigger list: after any model change, after any prompt change, after a change in the data regime the workflow runs on, and on a calendar besides.
 Models drift, prompts go stale, and the work moves.
 
+That trigger list has a hole in it.
+"After any model change" assumes you know a model changed, and often you will not.
+That is the second limit Chapter 1 §1.3 puts on the comparison with a sensor: a hosted model can be revised without notice, and the error distribution moves with it.
+Every real instrument certificate carries what these tiers so far lack: a validity period.
+
+So record a gate calibration with the date it was made and a validity window the group has set.
+Past that window the calibration is expired rather than merely old.
+A tier claim resting on it drops to the highest tier still supported by a check that has not expired.
+That is a demotion in the record, not a verdict that the work was wrong.
+
+> **Definition — Calibration validity.** A gate's measured miss rate is a reading taken on a date, not a standing property of the gate. It carries a window, chosen by the group, past which it is not evidence. A claim gated by an expired calibration is a claim whose evidence has quietly lapsed.
+
+Choosing the window is awkward precisely because the triggering events are invisible.
+The practical answer is to shorten it and add a cheap standing detector alongside.
+Keep a small fixed set of seeded cases, ten or twenty, and re-run it against the gate on a schedule.
+Nothing about the set changes, so a change in what the gate does to it is itself the signal that something upstream moved.
+
+The detector cannot say what moved.
+A change in seeded-case results is consistent with a model revision, a data-regime shift or a prompt edit, and a group cannot separate those without holding one fixed.
+So treat it as an alarm rather than a diagnosis.
+Record the window in provenance alongside the calibration (Chapter 12 §12.4, on what a scientific audit trail has to capture).
+Chapter 12 §12.10 takes the harder case, where an expired calibration turns out to have been wrong all along.
+
+Every method in this section has been aimed at gates an agent runs, and the gate most likely to be failing is the one staffed by a person.
+Seeded defects work on people.
+A reviewer whose queue occasionally contains a planted fault, by prior agreement, is a reviewer whose catch rate is a measured number rather than an assumption.
+Yield works on people too: a human approver who has returned nothing in three months is the same signal as a citation gate that has stopped rejecting.
+Both matter because a rubber-stamp review leaves the same record as a searching one (Chapter 12 §12.4, on what a coverage record cannot establish).
+The record by itself cannot tell you which of the two you have.
+Chapter 13 §13.9 argues that this is the commonest failure of the lot.
+The difficulty is institutional rather than technical: seeding a colleague's queue is agreed in advance, not sprung.
+**[AUTHOR: whether you have ever seeded a human reviewer's queue, agreed in advance, and what it showed.]**
+
 How much of this effort a given output deserves is not a separate question.
 It is the tier-and-stakes matching of §11.7, and the chapter closes that loop there.
 For now the principle is this: a tier claim is only ever as strong as the measured check that establishes it.
@@ -404,7 +483,9 @@ Climbing costs, and the cost structure is the one Chapter 4 set out.
 Tiers 1 and 2 are cheap and largely automatable and should be applied to essentially everything, because a schema check and an invariant assertion cost little and catch the crudest and some of the most dangerous failures.
 Tier 3 costs whatever it costs to hold out and curate reference data, and is warranted wherever a quantitative result will be reported or acted on.
 Tier 4 costs the design of a genuine transfer test, and is warranted wherever the workflow will be applied outside the regime it was built in, which, for operational environmental work, is the common case rather than the exception.
-Tier 5 costs scarce expert attention and is reserved for claims whose failure would be consequential: a result headed for publication, a warning informing a decision, a configuration about to enter routine operation.
+Tier 5 costs whatever a second, structurally different determination of the same quantity costs.
+In the environmental sciences that is often an existing dataset rather than new work, which makes it cheaper than it sounds and the best value on the ladder.
+Tier 6 costs scarce expert attention and is reserved for claims whose failure would be consequential: a result headed for publication, a warning informing a decision, a configuration about to enter routine operation.
 A workflow that stops at Tier 2 for an exploratory triage is properly governed.
 The same workflow stopping at Tier 2 for a published result is not.
 The cost-awareness literature reinforces this from the evaluation side: report accuracy and cost together rather than accuracy alone, because agent costs vary by orders of magnitude at similar accuracy (Kapoor et al., 2024).
@@ -434,10 +515,10 @@ A colleague who did not build the workflow should be able to apply it from the r
 - **Checks external to the producer.** No tier was established by the agent that produced the output, an identical agent, or the same model checking itself; each check draws authority from a schema, an invariant, held-out data or an independent reviewer (§11.3; Chapters 7, 10).
 - **Contamination routes controlled and recorded.** For every Tier 3 claim, what entered the agent's context is recorded, the held-out reference is shown to be genuinely withheld, and any residual contamination risk is stated as a confidence level rather than ignored (§11.3; Chapter 12).
 - **Evaluation set versioned, stratified and refreshed.** The task-grounded evaluation set exists, spans the task types and regimes the workflow meets, carries a version and provenance for each reference, and is refreshed on a stated trigger (§11.4).
-- **Every gate's false-negative rate measured.** Each gate and reviewer has been calibrated by seeded defects, stratified by fault class, with results reported as intervals rather than clean zeros (§11.5); a colleague can see the seeding design and the measured rates, and high judge self-consistency is never read as low bias, because consistency is not correctness.
+- **Every gate's false-negative rate measured.** Each gate and reviewer has been calibrated by seeded defects, stratified by fault class, with results reported as intervals rather than clean zeros (§11.5); a colleague can see the seeding design and the measured rates, and high judge self-consistency is never read as low bias, because consistency is not correctness. Each calibration carries the date it was made and the validity window it was given, and no reported claim rests on a calibration that has expired (§11.5).
 - **Re-measurement triggers defined and honoured.** The gate's calibration is repeated after any model change, prompt change or data-regime change, and on a calendar; the record shows when it was last re-measured (§11.5).
 - **Yield monitored.** The rate at which each gate rejects real, unseeded work is watched, and a gate that has stopped firing has been investigated rather than trusted (§11.5; Chapters 5, 10).
-- **Tier matched to stakes.** The verification effort spent is proportionate to the consequence of the output's failure, with the cheap tiers applied to everything and the expensive tiers reserved for consequential claims (§11.7; Chapter 4).
+- **Tier matched to stakes.** The verification effort spent is proportionate to the consequence of the output's failure, with the cheap tiers applied to everything and the expensive tiers reserved for consequential claims (§11.7; Chapter 4). Where a published quantitative result is at stake and a second determination by a different method is available, Tier 5 is the tier to reach for (§11.2).
 - **Verification effort recorded in provenance.** The checks applied, the tier reached and the gate calibrations relied on are all captured in the audit trail, so the strength of every claim is reconstructable after the fact (§11.7; Chapter 12).
 
 ## 11.9 Repository pointer
