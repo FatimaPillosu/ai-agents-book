@@ -1,6 +1,6 @@
 # Chapter 2 — Anatomy of an agent
 
-> **Status:** draft r4 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 
 ---
@@ -27,7 +27,7 @@ An oscilloscope is a display, a timebase, an input stage and a trigger, and you 
 An agent is no different in kind, only newer and far less characterised.
 So the account that follows describes each part the way you would describe a part of an instrument: what it is for, what it can be relied on to do, and the specific way it misleads you.
 Hold that account and you can place every later pattern, and every failure in the Chapter 13 gallery, against a shared picture of the mechanism.
-The four parts come in the order they engage during a single step of work: the loop that governs the step (§2.2), the tools it may call (§2.3), the store it reads and writes (§2.4), then how many such steps compose into an orchestrated process (§2.5), before the chapter closes on what all of this costs (§2.6).
+The four parts come in the order they engage during a single step of work: the loop that governs the step (§2.2), the tools it may call (§2.3), the store it reads and writes (§2.4), then how many such steps compose into an orchestrated process (§2.5), where the authority to act sits inside that composition (§2.6), and what all of this costs (§2.7).
 
 ## 2.2 The loop as control cycle
 
@@ -308,7 +308,107 @@ It is built out of the same four parts described above, arranged so the observe 
 The limitation is that orchestration cannot rescue an unspecified task.
 Compose steps around a goal that was never written down clearly (Chapter 3) and you distribute the ambiguity rather than resolving it, and a well-orchestrated workflow executing a vague specification fails more expensively than a single agent ever could.
 
-## 2.6 A plain cost model
+## 2.6 Propose and dispose: where authority sits
+
+Ask an agent to clean a decade of gauge records and there are two things it might do with a value that looks wrong.
+It can flag the value, writing a note that says this reading is suspect, here is why, and leaving the number where it was.
+Or it can correct the value, replacing what the instrument recorded with what the model thinks it should have been.
+The first leaves you a record you can audit and a judgement you can overturn.
+The second leaves you a dataset that looks cleaner than the one you had, with no way of telling which numbers are measurements and which are guesses.
+The difference is not accuracy.
+It is who was allowed to write.
+
+That is the *propose–dispose separation*, and it generalises well past quality control.
+The agent proposes; something the agent does not control disposes.
+Three kinds of thing can do the disposing, and which one you reach for depends on what the criterion is.
+A deterministic rule disposes where the criterion can be written as code: a physical bound, a schema, a unit check.
+A human decision disposes where the criterion is judgement: whether an anomaly is meaningful, whether a caveat is fairly stated.
+An external source of truth disposes where the criterion is a fact the agent cannot manufacture: a test suite, or a reference dataset the answer has to match.
+The three are not ranked.
+A rule is cheap and admits no exceptions, a person is expensive and reads context, and an external source of truth settles only the questions it happens to cover.
+
+What the separation buys is protection against the failure this book is built around.
+An agent's output is fluent whether or not it is correct, so nothing about how an answer reads tells you whether to keep it (Chapter 1).
+Put the agent behind a disposer and that property no longer decides what enters the record, because the model was never given the authority to write to it.
+A wrong proposal is still a wrong proposal.
+It arrives as a proposal, though, and it meets a check that does not share its reasoning.
+So it fails somewhere a person can see it fail (high confidence in the principle).
+
+What the separation does not buy is a disposer that was designed well.
+A rule set that admits the wrong thing admits it every time.
+A human gate staffed by someone with no time to look is a gate in name only.
+That failure is systematic rather than occasional, which makes it harder to notice rather than easier.
+So the separation does not remove the problem; it changes what you have to get right.
+You now have to be right about the disposer, which is a smaller thing to inspect than a model's whole output distribution.
+
+**Figure 2.4 — The agent proposes, something else disposes.**
+
+![An architecture diagram reading left to right. An orange agent box sends a single arrow labelled proposal, not an action, annotated in vermillion that nothing has been written yet. The arrow fans into three disposer paths. A vermillion diamond, deterministic rule, is annotated for use where the criterion can be written as code. A blue head-and-shoulders icon, human decision, is annotated for use where the criterion is judgement. A green tool glyph with a sky-blue cylinder, external source of truth, is annotated for use where the criterion is a fact the agent cannot manufacture. The examples given are a test suite and a reference dataset. Each path has an accept exit to one shared sky-blue cylinder, the protected artefact, annotated that only a disposer may write there. Each also has a reject exit to a grey rejection log, annotated that a rejected proposal is kept with its reason. A footer reads: what this does not buy is a well-designed disposer, and a rule set that admits the wrong thing admits it every time.](../figures/figure-2-4.svg)
+
+*Figure 2.4 — Who is allowed to write, and who is only allowed to ask. The agent's output is a proposal, so work that is fluent and wrong reaches the record only if a disposer lets it through. There are three kinds of disposer: a rule, a person, or a fact the agent cannot manufacture. What the arrangement does not buy is a good disposer, and a rule set that admits the wrong thing admits it every time. (Rendered as `figures/figure-2-4.svg` from the brief below, per `FIGURES.md`.)*
+
+```
+FIGURE BRIEF
+- id:            Figure 2.4
+- title:         The agent proposes, something else disposes
+- type:          architecture
+- claim:         In a governed workflow the agent proposes and something the agent does not control disposes, and there are exactly three kinds of disposer.
+- standfirst:    Only three kinds of thing may write to the record: a rule, a person, or a fact.
+- canvas:        16:9
+- elements:      left, an orange rounded rectangle "agent"; a single labelled arrow
+                 carrying a "proposal, not an action" tag; three disposer paths fanning
+                 out from it — a vermillion diamond "deterministic rule", a blue
+                 head-and-shoulders icon "human decision", and a green tool glyph paired
+                 with a small sky-blue cylinder "external source of truth"; right, one
+                 shared sky-blue cylinder "protected artefact" that all three accept
+                 exits reach; below it a grey cylinder "rejection log" that all three
+                 reject exits reach; a footer strip across the foot
+- flow:          left-to-right — agent → proposal → three disposers → protected artefact.
+                 Each disposer carries two labelled exits, "accept" continuing right to
+                 the protected artefact and "reject" dropping to the rejection log
+- labels:        "agent", "proposal, not an action", "deterministic rule",
+                 "human decision", "external source of truth", "accept", "reject",
+                 "protected artefact", "rejection log"
+- annotations:   on the proposal arrow, in vermillion, "nothing has been written yet";
+                 on the deterministic rule, "use where the criterion can be written as
+                 code"; on the human decision, "use where the criterion is judgement";
+                 on the external source of truth, "use where the criterion is a fact the
+                 agent cannot manufacture: a test suite, a reference dataset"; on the
+                 protected artefact, "only a disposer may write here"; on the rejection
+                 log, "a rejected proposal is kept, with the reason"; a footer, "what
+                 this does not buy: a rule set that admits the wrong thing admits it
+                 every time"
+- caption:       Figure 2.4 — Who is allowed to write, and who is only allowed to ask. The agent's output is a proposal, so work that is fluent and wrong reaches the record only if a disposer lets it through. There are three kinds of disposer: a rule, a person, or a fact the agent cannot manufacture. What the arrangement does not buy is a good disposer, and a rule set that admits the wrong thing admits it every time.
+- alt-text:      An architecture diagram reading left to right. An orange agent box sends a single arrow labelled proposal, not an action, annotated in vermillion that nothing has been written yet. The arrow fans into three disposer paths. A vermillion diamond, deterministic rule, is annotated for use where the criterion can be written as code. A blue head-and-shoulders icon, human decision, is annotated for use where the criterion is judgement. A green tool glyph with a sky-blue cylinder, external source of truth, is annotated for use where the criterion is a fact the agent cannot manufacture. The examples given are a test suite and a reference dataset. Each path has an accept exit to one shared sky-blue cylinder, the protected artefact, annotated that only a disposer may write there. Each also has a reject exit to a grey rejection log, annotated that a rejected proposal is kept with its reason. A footer reads: what this does not buy is a well-designed disposer, and a rule set that admits the wrong thing admits it every time.
+- infographic description: A flat vector architecture diagram on an off-white background,
+                 16:9, flowing left to right. Title top-left: "The agent proposes,
+                 something else disposes". Standfirst beneath: "Only three kinds of thing
+                 may write to the record: a rule, a person, or a fact." At the left, an
+                 orange-bordered rounded rectangle "agent". From its right edge a single
+                 arrow carries a tag "proposal, not an action", with a vermillion callout
+                 on the arrow reading "nothing has been written yet". The arrow meets a
+                 small junction and fans into three parallel paths stacked vertically.
+                 The upper path reaches a vermillion diamond "deterministic rule",
+                 annotated "use where the criterion can be written as code". The middle
+                 path reaches a blue head-and-shoulders icon "human decision", annotated
+                 "use where the criterion is judgement". The lower path reaches a green
+                 wrench glyph beside a small sky-blue cylinder, together labelled
+                 "external source of truth" and annotated "use where the criterion is a
+                 fact the agent cannot manufacture: a test suite, a reference dataset".
+                 Each of the three carries two labelled exits. The "accept" exits
+                 converge rightward on one large sky-blue cylinder "protected artefact",
+                 annotated "only a disposer may write here". The "reject" exits drop to a
+                 grey cylinder "rejection log" set below it, annotated "a rejected
+                 proposal is kept, with the reason". A footer strip runs across the foot
+                 reading "what this does not buy: a rule set that admits the wrong thing
+                 admits it every time". Single-weight connectors, one arrowhead style,
+                 right-angle corners, generous margins, sentence case throughout.
+```
+
+The same separation appears in five later chapters, each time in the vocabulary of the task at hand: deterministic quality-control rules disposing of an agent's flag proposals (Chapter 6 §6.3); the monitor-and-log boundary in experiment orchestration (Chapter 8 §8.3); assembly under author control in manuscript preparation (Chapter 9 §9.3); the trust boundary where a consequential action waits on a human (Chapter 12 §12.8); and a deterministic verification core with an advisory tier above it (Chapter 14 §14.3).
+Each is one of the three disposers, and none of them is a new principle.
+
+## 2.7 A plain cost model
 
 Every agent action costs something, and reasoning about those costs plainly, rather than assuming that falling model prices make the question moot, is part of operating the instrument responsibly.
 The costs fall into three kinds, and they behave quite differently.
@@ -322,6 +422,7 @@ A loop that appends every tool result to a growing context pays for that context
 The second is tool-and-compute cost: the executions the agent triggers, such as a query against a large archive, a regridding job, or a model run invoked as a tool.
 These carry their own expense in machine time and, for an environmental readership, in energy and the carbon that comes with it.
 That cost is easy to overlook because it never appears on the model bill, and Chapter 16 treats it directly rather than as a footnote.
+The aggregate a workflow spends also includes work that would not have been done at all had it been expensive, which Chapter 16 §16.6 counts.
 The third is latency: the wall-clock time a loop takes, which is a real cost in operational settings where a forecast bulletin has a deadline.
 An agent that reaches a correct answer after the window in which it was useful has failed operationally, whatever its accuracy.
 
@@ -342,7 +443,7 @@ The concrete figures that would fill in this model are volatile, belong in the c
 
 ---
 
-*This chapter has taken the agent apart into a loop, tools, a finite store and their composition, and priced the result.*
+*This chapter has taken the agent apart into a loop, tools, a finite store and their composition, settled where the authority to write sits, and priced the result.*
 *The next chapter turns to the human side of the same mechanism: how to specify a task so this apparatus can execute it and a scientist can audit it afterwards, the skill most failures trace back to.*
 
 ---

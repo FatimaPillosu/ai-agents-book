@@ -1,6 +1,6 @@
 # Chapter 4 — The scientist's stance
 
-> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r6 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 
 ---
@@ -24,6 +24,7 @@ It doesn't work like that, because both kinds of work turn up inside every stage
 Data preparation is full of judgement calls.
 Interpretation is full of steps that can be checked.
 So you end up deciding this one task at a time, not one phase at a time.
+Where a task is not yet statable at all, this procedure has nothing to work on, and Chapter 3 §3.7 says what governs the work until it is.
 
 ## 4.2 Augmentation and automation are different commitments
 
@@ -77,6 +78,7 @@ Cheap to check, reversible if wrong: let the agent run with little or no supervi
 Cheap to check, severe if wrong: the agent can act, but only behind a gate that makes the check mandatory.
 Expensive to check, reversible if wrong: the agent drafts, you check, and the workflow has to budget for the checking.
 Expensive to check and severe if wrong: this one is not the agent's, however capable it is, because what rules it out belongs to the task and not to the tool.
+The two middle cases are the same arrangement twice: the propose–dispose separation of Chapter 2 §2.6, with a rule disposing in one and a person in the other.
 
 The underlying discipline is to build the simplest thing that meets the task, and to add agentic components only where the task visibly demands them (Anthropic, 2024).
 Practitioners put it more bluntly: if a fixed sequence of steps with at most a judgement call or two would do the job, build a workflow and not an agent (AI Founders, 2026).
@@ -151,7 +153,51 @@ FIGURE BRIEF
                  case.
 ```
 
-## 4.4 What does not transfer to an instrument
+## 4.4 The frontier that does not move
+
+Both of §4.3's questions are answered by facts about the task, not facts about the model.
+What it costs to check an output is set by whether a reference answer exists, whether a rule can decide the case, and whether the answer is interpretive.
+What a wrong output costs is set by what the output is used for, and by how far it travels before anyone would notice.
+Those are the same properties whether the work is done by an agent, a doctoral student or a shell script.
+That is worth holding on to, because almost everything else in this field is quoted as a property of the model.
+
+Capability progress is real and it is measured.
+An independent evaluation organisation finds the duration of tasks an agent can complete unaided doubling roughly every four months since 2023 (METR, 2026).
+A frontier-model developer reports much the same rate from its own telemetry, which is self-reported evidence from a party with an interest in the answer (Anthropic Institute, 2026).
+What that curve describes is the generation side of the asymmetry.
+A better model produces more output, faster, at higher quality, across more kinds of task.
+Every one of those gains applies to the production side, which was already the cheap one.
+
+What the curve does not touch is the checking side.
+Whether a reference answer exists for a task is a fact about the task.
+Whether a rule can decide the case is a fact about the case.
+Whether the answer is interpretive is a fact about the question being asked.
+A model that is twice as capable does not make a reference dataset exist where there was none.
+It does not make an open research question decidable by rule, and it does not make an interpretation checkable by anything except another interpretation.
+The structure that sets checking cost sits in the task, so improving the model does not move it.
+
+The conclusion follows from those two facts.
+The class of scientific tasks where an agent pays off is bounded by what it costs to check the work, and checking cost is a property of the task.
+So that class does not grow as models improve, and the frontier of safe delegation moves far less than the capability curve suggests.
+This is not a prediction about the technology.
+It is a statement about which of the two costs the technology acts on.
+
+Better models do make some previously expensive checks cheap, and they do it by changing the form the output arrives in.
+An answer that arrives as structured data can be validated against a schema; an answer that arrives with executable tests can be run; an answer that arrives with resolvable references can be resolved.
+None of those checks was available when the same answer arrived as prose.
+So the class does widen at the margin, and the argument above overstates itself if it is read as saying the boundary is fixed.
+The claim is narrower than that.
+The widening is second-order against the capability curve, because it depends on the task admitting a checkable form at all, and most expensive-to-check tasks do not (moderate-to-high confidence).
+
+What this changes is the posture, not the enthusiasm.
+"Adopt this, carefully" is advice that needs rewriting with every release, because it treats the limit as temporary.
+What follows from the argument here is different: adopt this where checking is cheap, for reasons you can state.
+Then expect that set of places to look much the same in five years.
+The tasks on the cheap-to-check side are largely the routine and semi-routine work surrounding science rather than the science itself.
+That is the scope the front matter claims for this book.
+If that sounds like a smaller promise than the field usually makes, it is, and it is the one I can defend.
+
+## 4.5 What does not transfer to an instrument
 
 Three things in scientific work never transfer to a tool, however good the tool gets.
 
@@ -181,5 +227,7 @@ Keeping it costs you time. Losing it costs the correctness of the science.
 
 - AI Founders (2026). "Don't build an AI agent until you can answer these 8 questions." Video, @aifoundershq, 17 May 2026. https://www.youtube.com/watch?v=jMHawg6qpps
 - Anthropic (2024). Building effective agents. *Anthropic engineering blog.* https://www.anthropic.com/engineering/building-effective-agents
+- Anthropic Institute (Favaro, M. and Clark, J.) (2026). When AI builds itself. *The Anthropic Institute.* https://www.anthropic.com/institute/recursive-self-improvement
 - Feng, K. J. K., McDonald, D. W. and Zhang, A. X. (2025). Levels of autonomy for AI agents. *arXiv preprint.* https://arxiv.org/abs/2506.12469
 - Kapoor, S., Stroebl, B., Siegel, Z. S., Nadgir, N. and Narayanan, A. (2024). AI agents that matter. *arXiv preprint.* https://arxiv.org/abs/2407.01502
+- METR (2026). Time Horizon 1.1. *METR research blog*, 29 January 2026. https://metr.org/blog/2026-1-29-time-horizon-1-1/

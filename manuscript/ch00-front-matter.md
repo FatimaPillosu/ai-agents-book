@@ -1,6 +1,6 @@
 # Front matter
 
-> **Status:** draft r4 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 
 ---
@@ -15,6 +15,7 @@ Part II is the core, developing five workflow patterns across the research lifec
 Part III matters most: verification, provenance, governance and security, ending with an unvarnished gallery of failures and the checks that catch them.
 Part IV puts the whole apparatus to work in two end-to-end case studies.
 Part V is about adoption in a real research group, including the costs (financial, institutional and energetic) that a responsible adoption has to price in.
+It also covers the reverse position, where the workflow is someone else's and all you can decide is how much to believe it.
 
 The five parts do not all deserve the same attention from the same reader.
 If you want to start doing the work, begin at Chapter 3, where specification is developed.
@@ -23,6 +24,11 @@ Chapters 1 and 2 will still be there as reference when you need them.
 If you are a manager or a research lead and you want the argument rather than the mechanics, read Part V and the failure gallery in Chapter 13, and you will have the essentials.
 Nobody should skip Chapter 11.
 Verification is the discipline the whole book turns on, and taking the patterns without it means taking the dangerous half.
+You may also be on the receiving end of agentic work rather than building it.
+Reviewing a manuscript someone else produced with agents is that position, and so is inheriting a pipeline you did not specify.
+So is being handed a system by your institution.
+Chapter 17 is written for that reader, and it can be read on its own.
+**[AUTHOR: this pass assumes the eighteen-chapter structure proposed in the integration plan, with a new Chapter 17 and "What will last" as Chapter 18. Confirm or reject it; the routing sentences above and in Chapter 1 §1.5 follow whichever you choose.]**
 
 Two conventions run throughout, and both exist to keep the book honest about its own vocabulary.
 The first time a demanding term does real work in a chapter, it gets an info-box: a short, plain-language definition set off from the main text.
@@ -115,6 +121,15 @@ What I have not found is a practical, governance-first, diagram-led treatment wr
 That gap is what this book sets out to fill.
 The claim rests on a limited scan made in July 2026, which will be repeated systematically before release.
 If a close equivalent already exists, the claim softens, and I would rather revise it than overstate it (moderate confidence).
+
+Every worked example in this book is routine or semi-routine work: quality-control passes on gauge records, verification scores, calibration bookkeeping, manuscript assembly, responses to reviewers.
+So this is a governance treatment for the work surrounding science, not a treatment of doing science with agents.
+That is a real boundary, and I would rather state it than leave you to find it.
+A great deal of the best environmental science is abductive and opportunistic: something odd in a record, followed up because it was odd.
+Nothing in these pages governs that work until a specification becomes possible, and Chapter 3 §3.7 says what stands in for governance in the meantime.
+Chapter 4 §4.4 says why the boundary sits where it does, which is that what a task costs to check decides what can safely be delegated.
+
+**[AUTHOR SIGN-OFF]** **[AUTHOR: confirm this scope framing — it changes how the book presents its own reach, and the wording is yours to settle. If you would rather claim more or less than this, say so and the downstream cross-references in Chapters 3 and 4 follow.]**
 
 The worked examples come from operational hydrology and meteorology, and where they come from governs how far you should trust them to travel.
 This is the ground I actually work on.

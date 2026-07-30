@@ -1,6 +1,6 @@
 # Chapter 3 — Specifying work for agents
 
-> **Status:** draft r4 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 
 ---
@@ -282,9 +282,37 @@ Conversation is where a specification gets discovered and refined, and it earns 
 The discipline this chapter asks for fits in one sentence: talk to find the specification, then execute against it.
 Everything that follows, from the patterns of Part II to the end-to-end governance of Chapter 15, depends on that transition being made deliberately and made visible, rather than never being made at all.
 
-One concession is worth making.
-For genuinely exploratory work, where the objective is not yet knowable, insisting on a specification prematurely is its own error.
-Judging when exploration has yielded enough to specify is a real skill, developed further in Chapter 4, and it is not resolved by pretending every task is ready to be pinned down at first contact.
+## 3.7 When you cannot yet write a specification
+
+A gauge in your network has been reading high against two of its five neighbours since the spring.
+There is no objective to write down yet.
+You do not know whether this is a sensor fault, a change in the catchment, a change in the neighbours, or a bookkeeping error in the ingest.
+What you have is something odd in a record and a reason to look at it.
+A lot of good environmental science starts exactly there, and nothing in this chapter applies to it yet.
+
+That is a boundary of the discipline rather than a failure of it.
+The anti-pattern of §3.6 is having no specification at all and drifting through a conversation until nobody could say what was agreed.
+Writing one too early is the opposite error.
+A specification written before you understand the problem fixes the wrong target, and fixes it precisely, which is worse than leaving it open.
+Acceptance criteria for a question you have not formed yet are only your first guess, given the authority of a written rule.
+
+So what governs exploration, if acceptance criteria cannot?
+Two things, and neither of them is a check on the output.
+The first is a bounded budget: how many attempts, how much of your time, how much compute, decided before you start and written where the objective would have gone.
+An exploration that has spent its budget stops and reports what it found, which may be nothing.
+The second is a record kept as the work happens rather than reconstructed afterwards: what you tried, what it showed, what you ruled out, and what you would try next.
+Reconstructed records are the ones that quietly leave out the attempts that failed, which is exactly the information that stops the next person repeating them.
+Both of those are practices I recommend rather than practices anybody has measured (moderate confidence).
+
+One rule governs both.
+Nothing found in exploration enters the evidential chain until it has been re-derived under a specification, which is the hypothesis-provenance gate of Chapter 8 §8.4 in its general form.
+An exploratory run may generate a hypothesis; it may not supply the evidence for it.
+Knowing when exploration has yielded enough to specify is a judgement, and it is one this book can name but cannot supply.
+It is the same judgement as knowing when a pilot study is finished, and it is learned the same way, by doing it and being wrong about it.
+The book governs the half of the work that can be specified.
+This section is what stands in for governance in the other half, which is the boundary the front matter's scope statement draws.
+
+**[AUTHOR: an exploratory episode of your own that could not have been specified in advance, and what you kept a record of while it was running — this section is asserting a practice, and one lived instance would make it a description instead.]**
 
 ---
 

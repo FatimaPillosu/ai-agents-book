@@ -1,6 +1,6 @@
 # Chapter 1 — Why agents, why now
 
-> **Status:** draft r4 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 
 ---
@@ -147,7 +147,7 @@ It is the ordinary discipline you would already apply to any new instrument.
 No hydrologist "trusts" a sensor in the everyday sense of the word.
 The sensor is calibrated before deployment, its drift is characterised, its readings are quality-controlled inside a network built for the purpose, and a person stays accountable for what those readings are taken to mean.
 Every part of that discipline has a counterpart in the chapters ahead: specification is the deployment design (Chapter 3), gates and independent review are the quality control (Chapters 10 and 12), and evaluation is the calibration (Chapter 11).
-The comparison has one limit, though, and that limit is why a full third of this book exists.
+The comparison has two limits, though, and the first of them is why a full third of this book exists.
 A physical sensor fails in ways you can largely anticipate.
 A language system fails by imitating competence, returning an answer whose fluency tells you nothing about whether it is correct.
 This property, called *plausible failure* here, is why verification gets its own part of the book rather than a paragraph, and why Chapter 13 is a gallery of failures rather than a footnote to the successes.
@@ -155,6 +155,15 @@ This property, called *plausible failure* here, is why verification gets its own
 > **Definition — Verification gate (gate).** A checkpoint in a workflow where the agent's work has to pass a defined check before anything downstream may use it. Work that passes proceeds; work that fails goes back for revision. Nothing proceeds just because it looks right.
 
 > **Definition — Plausible failure.** The characteristic failure of these systems: not an obvious error, but an answer that is fluent, confident and wrong. Fluency and correctness are independent properties here, which is why so much of this book is about checking.
+
+The second limit is about time.
+A gauge's error is stationary: characterise it once and the characterisation holds until something physical changes, which is what makes a calibration certificate worth issuing.
+An agent's error distribution does not hold still.
+You also cannot see it change.
+A hosted model can be revised without notice, and the same specification can return different work on two runs a week apart.
+So a calibration of an agent is a statement about a moment, not a standing property of the instrument (high confidence).
+That is a reason to measure more often rather than to stop measuring.
+Chapter 11 §11.5 sets out how to measure a gate, and what to do when the measurement is out of date.
 
 **Figure 1.2 — The taxonomy as nesting.**
 
@@ -231,6 +240,8 @@ A better guide than apparent difficulty is the gap between what it costs to prod
 Where checking is cheap and mechanical (code judged by a test suite, an extraction validated against a schema, a format conversion confirmed by a checksum and a round trip), an imperfect generator is operationally safe: its mistakes are caught cheaply and its successes arrive in bulk.
 Those are exactly the tasks on the reliable side of the present frontier: code generation and repair, format translation, structured extraction, first-pass literature triage, and draft documentation.
 Where checking is expensive, slow or subjective (a claim at the research frontier, an interpretive synthesis, an anomaly whose meaning depends on context the system does not hold), fluent output stays dangerous however capable the model, and no amount of benchmark progress moves those tasks across.
+That asymmetry also decides how far delegation can ever reach, not only where it is safe today.
+Chapter 4 §4.4 draws out that consequence.
 Two more observations belong in any honest boundary.
 First, models remain poor judges of their own correctness, which is why every check in this book is external to the thing being checked, a principle developed properly in Chapter 11 (high confidence in the principle; the size of the effect varies by model and task).
 Second, multi-step arithmetic done in prose rather than handed to a tool fails often enough that handing it over should be a rule, not a preference.
@@ -251,6 +262,7 @@ Part II develops five core patterns across the research lifecycle, from literatu
 Part III is the part that matters most, covering verification, provenance, governance and security, and it closes with an unvarnished gallery of failures (Chapter 13).
 Part IV puts the apparatus to work in two end-to-end case studies.
 Part V is about adoption in a real research group, including the costs (financial, institutional and energetic) a responsible adoption has to price in.
+It also covers the reverse position, where the workflow is someone else's and all you can decide is how much to believe it (Chapter 17).
 The examples throughout come from one corner of the environmental sciences.
 The patterns were chosen, and written, to travel beyond it.
 
