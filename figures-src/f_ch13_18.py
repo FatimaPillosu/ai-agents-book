@@ -300,8 +300,8 @@ bracket(f,110+2*(286),110+4*286-36,196,"where the spend actually concentrates",b
 f.footer("Magnitudes illustrative - dated figures in the repository.")
 print("16.2",f.save("figures/figure-16-2.svg"))
 
-# ---------------- 17.1 two layers ----------------
-f=Fig("171","Two layers, two clocks",
+# ---------------- 18.1 two layers ----------------
+f=Fig("181","Two layers, two clocks",
       "What turns over in months goes to the repository; what holds goes to print.")
 f.panel(90,210,1180,220,"#ECECE8",12); f.borders.append((90,210,1180,220))
 f.text(114,246,"volatile - tooling",T_LABEL,fill=GREY,weight="600",inside=True)
@@ -318,4 +318,4 @@ f.text(114,680,"derives from how science treats any instrument - it predates the
 f.box(1320,540,200,60,"print",INK,lw=8)
 f.block(1320,632,"the position and the reasoning",width=18)
 f.footer("Read the reasoning in print, fetch the current detail from the repository - neither is complete alone.")
-print("17.1",f.save("figures/figure-17-1.svg"))
+print("18.1",f.save("figures/figure-18-1.svg"))

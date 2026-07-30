@@ -1,6 +1,6 @@
 # Chapter 8 — Model orchestration and experimentation
 
-> **Status:** draft r4 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > **Chapter note:** the three-track intercomparison of §8.5 is a **worked design**, not an executed case study: it presents an architecture and a protocol and claims no results.
 
@@ -412,7 +412,7 @@ The three-track intercomparison of §8.5 is carried as a sanitised design under 
 It is the design Chapter 15 takes through end to end once it has been executed.
 The verification checklist of §8.7 is held in printable form under `/checklists`, and the prompts used to elicit exploratory hypotheses under the safeguards of §8.4, kept separate from the evidential workflow by construction, live under `/prompts`.
 **[AUTHOR: confirm the final repository paths and contents.]**
-The repository is where the tools and figures that date faster than the patterns are kept current, exactly as Chapter 17 argues.
+The repository is where the tools and figures that date faster than the patterns are kept current, exactly as Chapter 18 argues.
 
 ---
 

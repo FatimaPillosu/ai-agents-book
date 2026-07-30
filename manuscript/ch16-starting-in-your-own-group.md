@@ -1,6 +1,6 @@
 # Chapter 16 — Starting in your own group
 
-> **Status:** draft r4 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > Volatile figures (energy-per-inference, per-token prices, hardware costs) are kept out of print and marked for the companion repository.
 
@@ -253,4 +253,4 @@ Report-sourced references carry a DOI or URL and are drawn from the verified swe
 
 ---
 
-*Chapter 17 turns from starting to lasting: the durable principles that survive the churn in tooling, how to stay current without chasing releases, and the repository that keeps a printed book current.*
+*Chapter 18 turns from starting to lasting: the durable principles that survive the churn in tooling, how to stay current without chasing releases, and the repository that keeps a printed book current.*

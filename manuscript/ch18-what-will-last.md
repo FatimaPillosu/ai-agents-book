@@ -1,11 +1,11 @@
-# Chapter 17 — What will last
+# Chapter 18 — What will last
 
-> **Status:** draft r4 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 
 ---
 
-## 17.1 Two layers moving at two speeds
+## 18.1 Two layers moving at two speeds
 
 A book about a fast-moving technology owes you, at its close, a statement of which of its contents it expects to survive and which it expects to date.
 You are entitled to know where to place your trust.
@@ -21,15 +21,15 @@ It is this book's central wager about how to write usefully for practitioners in
 The limitation is that the boundary between the two layers is not always obvious in advance, and a claim that reads as durable may turn out to have rested on a passing feature of one model generation.
 Where that risk is live, the text flags it, and the repository is where such misjudgements get corrected between releases rather than left to mislead until the next edition.
 
-**Figure 17.1 — Durable principles versus volatile tooling.**
+**Figure 18.1 — Durable principles versus volatile tooling.**
 
-![Two stacked bands split by a horizontal divider. The upper band, volatile tooling, holds four grey tags, model versions, prices, protocols and benchmarks, beside a fast clock, annotated turns over in months, and assigned to the repository, which is versioned and dated. The lower band, durable principles, holds four near-black tags, the instrument stance, specification, verification and accountability, beside a slow clock, annotated derives from how science treats any instrument, and assigned to print. A footer reads read the reasoning in print, fetch the current detail from the repository, and expect neither to be complete alone.](../figures/figure-17-1.svg)
+![Two stacked bands split by a horizontal divider. The upper band, volatile tooling, holds four grey tags, model versions, prices, protocols and benchmarks, beside a fast clock, annotated turns over in months, and assigned to the repository, which is versioned and dated. The lower band, durable principles, holds four near-black tags, the instrument stance, specification, verification and accountability, beside a slow clock, annotated derives from how science treats any instrument, and assigned to print. A footer reads read the reasoning in print, fetch the current detail from the repository, and expect neither to be complete alone.](../figures/figure-18-1.svg)
 
-*Figure 17.1 — Two layers, two clocks, two media. The tooling layer turns over in months, so it lives in the repository, where an entry can carry a date and be corrected between releases. The principles layer derives from how science treats any instrument, so it lives in print. The book only works if you read it as one instrument with two clocks: the reasoning here, the current detail there. (Rendered as `figures/figure-17-1.svg` from the brief below, per `FIGURES.md`.)*
+*Figure 18.1 — Two layers, two clocks, two media. The tooling layer turns over in months, so it lives in the repository, where an entry can carry a date and be corrected between releases. The principles layer derives from how science treats any instrument, so it lives in print. The book only works if you read it as one instrument with two clocks: the reasoning here, the current detail there. (Rendered as `figures/figure-18-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
-- id:            Figure 17.1
+- id:            Figure 18.1
 - title:         Two layers, two clocks
 - type:          architecture
 - claim:         The book separates a slow-moving layer of principles from a fast-moving layer of tooling, and assigns each to the medium that suits its clock: print for principles, repository for tooling.
@@ -53,7 +53,7 @@ FIGURE BRIEF
                  outlast them"; beside the lower band's marker, "print: the position and
                  the reasoning"; a footer, "read the reasoning in print, fetch the
                  current detail from the repository — neither is complete alone"
-- caption:       Figure 17.1 — Two layers, two clocks, two media. The tooling layer turns over in months, so it lives in the repository, where an entry can carry a date and be corrected between releases. The principles layer derives from how science treats any instrument, so it lives in print. The book only works if you read it as one instrument with two clocks: the reasoning here, the current detail there.
+- caption:       Figure 18.1 — Two layers, two clocks, two media. The tooling layer turns over in months, so it lives in the repository, where an entry can carry a date and be corrected between releases. The principles layer derives from how science treats any instrument, so it lives in print. The book only works if you read it as one instrument with two clocks: the reasoning here, the current detail there.
 - alt-text:      Two stacked bands split by a horizontal divider. The upper band, volatile tooling, holds four grey tags, model versions, prices, protocols and benchmarks, beside a fast clock, annotated turns over in months, and assigned to the repository, which is versioned and dated. The lower band, durable principles, holds four near-black tags, the instrument stance, specification, verification and accountability, beside a slow clock, annotated derives from how science treats any instrument, and assigned to print. A footer reads read the reasoning in print, fetch the current detail from the repository, and expect neither to be complete alone.
 - infographic description: A flat vector two-band diagram, 16:9, off-white background.
                  Title top-left: "Two layers, two clocks". Standfirst: "What turns over
@@ -73,7 +73,7 @@ FIGURE BRIEF
                  repository — neither is complete alone". Sentence case throughout.
 ```
 
-## 17.2 The principles that will last
+## 18.2 The principles that will last
 
 The argument of this book compresses to a small set of principles that carry into any future toolchain without amendment.
 
@@ -94,7 +94,7 @@ The research frontier is drifting the same way: a 2026 proposal for an agentic s
 The limitation worth stating is that principles stated this generally are easy to agree with and hard to practise.
 Their value only appears in the concrete disciplines of the preceding chapters, and taking the principles without the practice is taking the smaller half.
 
-## 17.3 Staying current by principle, not by release
+## 18.3 Staying current by principle, not by release
 
 Keeping up with a field that ships faster than anyone can read is a genuine problem, and the durable answer is to track it by principle rather than by release.
 
@@ -108,7 +108,7 @@ The year's loudest capability claim illustrates the filter: the most consequenti
 The book's stance treats that as a hypothesis for independent measurement, and the one independent check that exists, an outside evaluation organisation finding the same doubling by a different method (METR, 2026), is what verifying a vendor's claim looks like.
 The limitation of this stance is that it is deliberately conservative and will occasionally be slow to adopt something genuinely better, trading a few months of lag for freedom from churn; for a scientist whose credibility rests on the correctness of results rather than on early adoption, that is close to always the right trade, and it is the trade this book recommends.
 
-## 17.4 The repository as the living layer
+## 18.4 The repository as the living layer
 
 The companion repository is what makes a printed book about a volatile technology honest, and it is where you will find everything this chapter has deliberately kept off the page.
 The repository holds the perishable layer in full (current model and price references, protocol specifics, the runnable minimal examples for each pattern, the printable checklists, the sanitised case-study configurations, and the current wording of the journal and funder policies that Chapter 9 treats as a moving landscape) and it is versioned so that each release is a coherent rebuild rather than a drift of unmarked edits **[verify: confirm the repository layout and release-tagging scheme described in outline §8 before citing specifics]**.
