@@ -1,10 +1,8 @@
 # Chapter 13 — The failure gallery
 
-> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r6 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > The six failure *types* and the *checks* that catch them are written in full here; the illustrative incidents are the author's real, anonymised cases, marked **[AUTHOR: …]** to be supplied, never invented.
-
-> **[ai-reviewer: A1 review — 5 comments in this file.** All three tasks landed. §13.9 is 1,323 words against a 1,150 budget, which is +15% and inside G7's tolerance, so the overrun the writers flagged is not a finding. All four movements are present, each carries an explicit "what a group can do", none promises a check that catches a field-level failure, the homogenisation movement is named as a conjecture as §4 required, no automation-bias or deskilling citation appears anywhere, and the six modes are unchanged. The correlated-error movement is the strongest new argument in the pass: the multi-model-ensemble comparison is domain-native, structural rather than decorative, and earns its place under `STYLE.md` §12.2(c). My comments are about how the section is built, not what it says: two mis-anchored confidence flags, two paragraph openers, and the absence of any visible structure across 1,300 words and four distinct arguments. One AUTHOR marker added, as mandated.**]**
 
 ---
 
@@ -494,14 +492,13 @@ A different kind of failure appears only once a whole field adopts these pattern
 
 ## 13.9 Beyond the single workflow
 
-[ai-reviewer: a structural comment on the whole section, placed at its head. It runs 1,323 words and carries four distinct arguments, and nothing on the page marks where one ends and the next begins. §13.1 to §13.8 give one failure mode per numbered section with a heading, which is the reader's trained expectation by the time they arrive here; §13.9 then delivers four more failures as undifferentiated prose. The opening sentence announces four, and a reader who wants to find the deskilling argument later, or to check that the fourth is the one about people rather than agents, has nothing to navigate by. `STYLE.md` §5.2 explicitly endorses labelling the moves when the material is dense, and cites the thesis numbering its own barriers and opportunities. The plan called these four "sub-movements" and gave each its own word budget, so the structure exists in the drafting and was dropped in the rendering. Sub-headings, an announced enumeration carried through the movement openers, or the numbered-requirement pattern of `STYLE.md` §5.3 would each solve it. Which one is a house-consistency question for ai-editor, since it is the first section in the book that would need any of them.]
-
 None of the four failures below comes with a check.
 Every mode above pairs a failure with something a group can run to catch it, and that pairing is the design of this chapter.
 These four do not work that way.
 They appear when a field adopts these patterns at scale, they are produced by many groups each behaving reasonably, and no gate inside any one workflow detects them.
 What a single group can do about each is smaller and less satisfying than a check, and saying so is better than offering a gate that would not work.
 
+**The first — correlated error across groups.**
 A multi-model ensemble whose members share a convection scheme is not the ensemble it looks like.
 The spread across members understates the real uncertainty, because the members can be wrong in the same direction at the same time.
 The forecast then looks better constrained than the evidence supports, and the error that matters is the one every member makes.
@@ -521,6 +518,7 @@ Neither fixes the problem, but together they turn an invisible dependency into a
 Confidence is high in the mechanism, since it is the one Chapter 10 §10.3 documents inside a single workflow.
 It is moderate in the scale, because nobody has measured how concentrated the field's model use actually is.
 
+**The second — homogenisation of the questions.**
 Chapter 8 §8.4 keeps a model-generated hypothesis out of the evidential chain until a human has tested it by a pre-specified procedure.
 That gate works inside one workflow.
 It says nothing about what happens to a field's range of questions when a generation of researchers brainstorms against the same few models trained on the same corpus.
@@ -528,12 +526,9 @@ A model proposes what is well represented in its training material.
 Ask it for candidate mechanisms behind an odd signal and it returns the mechanisms the literature already discusses.
 That is useful, and it is also the distribution the field is already searching.
 
-Divergence of ideas is a resource, and whether this technology consumes it is an open question.
-This is a conjecture and should be read as one.
+Divergence of ideas is a resource, and this technology may be consuming it (low-to-moderate confidence, and a conjecture rather than a finding).
 Nothing in the evidence behind this book measures the diversity of research questions before and after agentic tools arrived.
-I am not aware of a study that would settle it cleanly (low-to-moderate confidence).
-[ai-reviewer: the flag is attached to the wrong sentence, and the same slip occurs twice more in this section. Here it qualifies "I am not aware of a study", which is a statement about the author's reading and is not the thing needing calibration. The claim that needs a flag is the conjecture two sentences above: whether agentic tools consume the divergence of research questions. As it stands the text expresses low-to-moderate confidence in its own literature search whilst the conjecture itself runs unflagged, which is the reverse of what `STYLE.md` §6.3 asks for ("hedge the claim once, at the right strength, in the right clause").
-The same pattern is in the deskilling movement — "Nothing in the evidence behind it measures skill acquisition under agentic assistance, and no source is offered here (moderate confidence)" — where the flag again lands on an absence-of-evidence sentence rather than on the claim that the supply of expert judgement is at risk. In the automation-bias movement it is done correctly ("Confidence is high that the mechanism is real… It is moderate that these countermeasures work"), which is the model the other two should follow. Worth fixing all three together, since a reader who notices the pattern will read the flags as ritual rather than as calibration, and this section relies on them more than any other in the book.]
+I am not aware of a study that would settle it cleanly either way.
 It is stated here because you should be thinking about it, not because the book knows the answer.
 
 What a group can do is small and worth doing anyway.
@@ -544,8 +539,8 @@ It does keep one group's questions from coming entirely from one distribution.
 
 [AUTHOR: whether you have seen this in practice, or think it is overstated — this is the movement in the section most in need of your judgement.]
 
-[ai-reviewer: the opener instructs the reader to consider a case rather than putting the case in front of them, which is the habit `STYLE.md` §1 tells the drafter to cut first ("never announce what the text is about to do... let the concrete case lead: example first, abstraction after"). Every other movement in this section gets it right — the ensemble opener, the hypothesis opener, the fourth-report-of-the-afternoon opener — so this is the one that slipped. The material immediately after it is the concrete case, stated well, so nothing is missing; the sentence is a run-up to it. Ai-writer's, and it is a deletion rather than a rewrite.]
-Consider what a doctoral researcher learns by hand-reconciling a gauge network for a month.
+**The third — deskilling and the supply of judgement.**
+A month of hand-reconciling a gauge network teaches a doctoral researcher three things.
 They learn what a stuck sensor looks like in a time series, how a station move shows up as a step change, and which odd values are worth chasing.
 None of that is in the specification.
 It is what lets somebody tell a real signal from a sensor fault.
@@ -556,15 +551,15 @@ The verification-first stance of this whole book depends on that judgement and h
 Chapter 16 §16.4 says the skills these roles need are largely those a good empirical scientist already has, which is true.
 It also assumes a continuing supply of scientists who acquired them the slow way.
 So a group leader deciding what a doctoral researcher spends three years on is deciding the group's future capacity to verify, not only this year's throughput.
+That is the book's argument rather than a measured effect (moderate confidence).
 The consequence of that decision arrives years later, and it gets made by default when it is not made deliberately.
 
 What a group can do is name the judgements it intends to keep in-house, and protect the work that builds them even where an agent would be faster.
 A month of hand-reconciliation, kept deliberately on the grounds that it is training rather than production, is a defensible use of a doctoral student's time.
-This is the book's argument rather than a measured effect.
-Nothing in the evidence behind it measures skill acquisition under agentic assistance, and no source is offered here (moderate confidence).
+Nothing in the evidence behind this book measures skill acquisition under agentic assistance, and no source is offered here.
 
-[ai-reviewer: this is the best-written movement in the section and it opens on a pronoun with no antecedent. "It is the fourth agent-drafted quality-control report of the afternoon" asks the reader to hold an unresolved subject for a sentence, which is the in-medias-res device, and `STYLE.md` §3 rules that out: an opener is a real sentence carrying real content, never a cliffhanger. The paragraph does not need the device. Everything it wants is already in the sentence and would survive naming the subject. Worth being precise about why this matters here rather than treating it as a quibble: the paragraph's argument is that an approval was a judgement about the previous three reports and not about this one, and an opener that withholds what "it" refers to makes the reader do exactly the work of reconstruction the paragraph is about. Ai-writer's.]
-It is the fourth agent-drafted quality-control report of the afternoon.
+**The fourth — automation bias in the human.**
+The report on the screen is the fourth agent-drafted quality-control report of the afternoon.
 The first three were fine.
 This one looks like the first three, and the reviewer approves it.
 The approval was not a judgement about this report.

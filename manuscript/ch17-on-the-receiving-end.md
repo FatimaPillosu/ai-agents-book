@@ -2,12 +2,9 @@
 
 **[AUTHOR: confirm the chapter title. The alternative on record, not chosen by the integration plan, is "Reviewing work you did not produce".]**
 
-> **Status:** draft r1 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r2 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > The questions and checklists here are proposals for practice, not a report of established practice; no claim is made that any community currently asks these questions.
-
-> **[ai-reviewer: A1 review — 7 comments in this file.** All nine tasks landed. The chapter is 3,422 prose words against a 3,500 target, every section is inside G7's tolerance including the two the writers self-flagged, and every citation in it appears in an earlier chapter's reference list and traces to `/research`: I checked Ansari, Ben Bouallègue, Elsevier, Five Eyes and NIH individually against the reports and against their existing uses, and all five are accurately stated with their caveats carried. §17.2 contains both things the acceptance criteria single out: the "what would have caught it if this step had been wrong?" formulation and the list of what a reviewer may not demand. The integrity line in the header is exactly right and the three mandated AUTHOR markers are present. This is the strongest new writing in the pass.
-> **Two findings need resolving before the author reads it as finished.** The five escalating requests are enumerated one way in the prose and a different way in Figure 17.2, and one in-text cross-reference already points at the wrong item. And the chapter carries nine sentences over the 30-word ceiling, more than any other file in the pass, none of them covered by §11's enumeration exemption. Also here: a figure-numbering inversion, an over-claim in the "four of six" bracket, a fragment, a duplicated worked example, and a misplaced header marker. Nothing escalated beyond the chapter title and repository paths, both already marked.**]**
 
 ---
 
@@ -53,44 +50,42 @@ That sentence satisfies most venues and tells a reviewer nothing.
 Chapter 9 defines what a disclosure statement is for: which tool did which task, on what, and under whose oversight.
 Most of what you will read falls short of that, and usually not through evasion.
 Authors write to the threshold their venue sets, and those thresholds are drawn for integrity rather than for review.
-One major publisher's 2026 policy asks that any substantive change to a text's structure or content be declared, naming the tool and its purpose, whilst exempting routine grammar checking (Elsevier, 2026; a policy page, specifics volatile per the repository rule).
+One major publisher's 2026 policy asks that any substantive change to a text's structure or content be declared, naming the tool and its purpose.
+Routine grammar checking is exempt (Elsevier, 2026; a policy page, with specifics volatile per the repository rule).
 That threshold answers whether a tool was used.
 It does not answer whether the work the tool did was checked.
 
 So the disclosure is where a review of agentic work starts, not where it finishes.
-[ai-reviewer: the chapter's most serious defect, and it is a live inconsistency rather than a matter of taste. The prose and Figure 17.2 both enumerate "five requests" and they are not the same five.
-The prose counts from the specification: first the specification, second the gates, third whether any gate's false-negative rate has been measured, fourth the tier claimed, fifth reviewer coverage. Disclosure sits outside the count, as the thing the sequence starts from.
-Figure 17.2 counts from the disclosure: 1 disclosure statement, 2 the specification, 3 the gates, 4 gate calibration and the tier claimed, 5 reviewer coverage. It also merges the prose's third and fourth into one step.
-So items one to four mean different things in the two places, and the mismatch is already doing damage in the text: "Ask this alongside the third request" points at the false-negative rate under the prose numbering and at the gates under the figure's. §17.7 and the §17.6 checklist both refer to "the five requests of §17.2" without saying which five, and the repository is specified to hold them as pasteable text, so the ambiguity propagates out of the book.
-Either numbering is defensible. The figure's has the merit that a reviewer really does start by reading the disclosure; the prose's has the merit that the disclosure is not something you ask for. What is not defensible is both. Whichever way it goes, the fix has to touch the prose, the figure's labels, annotations and infographic description, the caption, the alt-text, the "third request" cross-reference, §17.6 and §17.7. Ai-writer's, and it is the one change in this file I would not let go to the author unresolved.]
-Five things are worth asking for, and they escalate in what they cost the authors to supply.
+You read it; you do not have to ask for it.
+Five things are worth asking for after it, and they escalate in what they cost the authors to supply.
 First, the specification the agentic step ran under.
 It establishes what the workflow was asked to do, which is the only thing against which "it worked" carries meaning.
 A group practising the discipline of Chapter 3 already has the document written.
 Second, the gates the output passed and what each one checks.
 That establishes which failure classes were designed against, and it costs the authors a paragraph they should be able to write from memory.
 Third, whether any gate's false-negative rate has been measured.
-This is the first genuinely demanding request, because most groups have never measured one, and an honest "no" is itself informative (Chapter 11 §11.5, on seeded defects and how little a clean sweep on twenty of them licenses).
+This is the first genuinely demanding request, because most groups have never measured one, and an honest "no" is itself informative.
+Chapter 11 §11.5 gives the method, and says how little a clean sweep on twenty seeded defects licenses.
 
 The last two requests are the ones that decide what a result is worth.
 Fourth, the evidential tier claimed, and the specific check said to establish it.
 Naming a tier is a factual statement about evidence gathered, so a tier with no named check behind it is an assertion rather than a claim (Chapter 11 §11.2).
-Ask this alongside the third request, because a tier is only ever as strong as the measured check that establishes it (Chapter 11 §11.7).
+Ask this alongside the third request, the measured false-negative rate, because a tier is only as strong as the check establishing it (Chapter 11 §11.7).
 Fifth, reviewer coverage, meaning which parts had an independent check and which rest on author inspection alone.
 That is the most demanding of the five, since a group without a coverage record cannot reconstruct one afterwards (Chapter 12 §12.4).
 The order matters as much as the list.
 A reviewer who opens with the fifth request gets a defensive author and no information.
 
 One question sits underneath all five, and it is the one I would ask if I could ask only one.
-Not "did you use AI?" but "what would have caught it if this step had been wrong?"
-[ai-reviewer: the second line is a fragment, with no main verb. `STYLE.md` §11 is explicit that the short sentence "is still a sentence, never a fragment", and §12 bars fragments outright. The contrastive "not X but Y" construction is natural and reads well, which is presumably why it survived the self-check; it still needs a verb. Worth being clear that this is the only fragment I found in 1,051 added lines, so it is an isolated slip rather than a register drift. The formulation itself is the best sentence in the chapter and the acceptance criteria require it to be here, so nothing about the content is in question. Ai-writer's.]
+It is not "did you use AI?" but "what would have caught it if this step had been wrong?"
 The first question sorts papers into two groups and tells you nothing about either, because the answer is now yes almost everywhere.
 The second asks for the mechanism, and each of the five requests above is a way of making it answerable.
 An author who can answer it has a governed workflow, whatever they built it with.
 An author who cannot has an ungoverned one, and the answer would have been just as damning in 1995 about a hand-written script.
 
 Your own reading of the manuscript is a weaker check than it feels.
-An audit of one elite machine-learning venue found 100 fabricated citations across 53 papers accepted there in 2025, each of which had passed three to five expert reviewers (Ansari, 2026; a single-venue, single-year figure, and itself an unreviewed preprint).
+An audit of one elite machine-learning venue found 100 fabricated citations across 53 papers accepted there in 2025.
+Each of those papers had passed three to five expert reviewers (Ansari, 2026; a single-venue, single-year figure, and itself an unreviewed preprint).
 Those reviewers were competent, and they were reading for plausibility, which is exactly the property a fabricated citation has.
 A plausibility read is defeated by construction (Chapter 1, on fluency uncorrelated with correctness).
 So what a reviewer adds against agentic failure is mechanical checking and provenance questions, not a closer read (high confidence).
@@ -98,10 +93,12 @@ So what a reviewer adds against agentic failure is mechanical checking and prove
 Three requests sit outside a reviewer's entitlement, and the reasons matter more than the rule.
 The transcript is the first.
 A conversation log records what was said rather than what happened.
-An agent asked to account for its own reasoning produces a plausible narrative that need not match the run (Chapter 12 §12.2, on why a self-summary is an input to review and never a substitute for it).
+An agent asked to account for its own reasoning produces a plausible narrative that need not match the run.
+Chapter 12 §12.2 sets out why a self-summary is an input to review and never a substitute for it.
 The prompts are the second, and they are frequently a group's accumulated working method rather than a disclosure item.
 A re-run is the third, and it is the one most often asked in good faith and still wrong.
-The same specification and inputs can return different work on a second run, and the model behind a published result may since have been withdrawn (Chapter 12 §12.4, on why agentic work is auditable rather than reproducible).
+The same specification and inputs can return different work on a second run, and the model behind a published result may since have been withdrawn.
+Chapter 12 §12.4 explains why that leaves agentic work auditable rather than reproducible.
 So a re-run asks for a property this kind of work does not have.
 Auditability is the property it does have, and the five requests are how you establish it.
 
@@ -118,53 +115,54 @@ Where an agent tidied the reference formatting, the disclosure statement is the 
 
 **[AUTHOR: what you have actually asked for, or wished you could ask for, as a reviewer of a manuscript with agentic components, and whether any editor would have backed you.]**
 
-[ai-reviewer: the figures are numbered against the order they were specified in the plan rather than the order they appear in the chapter, so Figure 17.2 sits here in §17.2 and Figure 17.1 appears later in §17.3. Every other chapter in the book numbers figures by first appearance — Ch. 11 runs 11.1 in §11.2, 11.2 in §11.4, 11.3 after that; Ch. 13 runs six in order — so this is the only inversion in eighteen chapters, and a reader who meets 17.2 first will assume they missed something. The plan caused it, by specifying §6.3 as Figure 17.1 for §17.3 and §6.4 as Figure 17.2 for §17.2, and the writer executed it faithfully; `FIGURES.md` nowhere states the convention, which I have flagged there. Fixing it means swapping the two ids, captions, alt-text references, brief `id` fields, image paths and renderer entries, which is cheap now and expensive after the SVGs are rendered. Worth doing in this pass rather than the next.
+**Figure 17.1 — What a reviewer may ask for, and what they may not.**
 
-Separately, on the brief itself: it is complete against `FIGURES.md` §6, the alt-text carries every annotation rather than paraphrasing the caption, and the vermillion side-panel that connects to nothing is a good solution to putting a prohibition inside a sequence diagram. The caption runs to the title plus three sentences, which is within §6.1. Note that the numbering fix above changes this figure's content as well as its id, since its five steps are the ones the enumeration comment addresses.]
-**Figure 17.2 — What a reviewer may ask for, and what they may not.**
+![A sequence diagram with two lanes read top to bottom. The left lane is a purple reviewer, the right lane the blue authors. At the top, outside the numbered sequence, a grey band reads: read the disclosure statement first, it is not something you ask for, and it usually answers only whether a tool was used. Five numbered requests then cross from reviewer to authors, each with a return arrow saying what it establishes. Request one, the specification the agentic step ran under, is annotated that it establishes what the workflow was asked to do and that a governed group already has the document. Request two, the gates it passed and what each checks, is annotated that it establishes which failure classes were designed against and costs the authors a paragraph. Request three, whether any gate's false-negative rate has been measured, is annotated that it establishes whether the checks were ever calibrated and that an honest no is informative. Request four, the evidential tier claimed and the check said to establish it, is annotated that it establishes how strong the evidence is and that it is asked alongside request three. Request five, reviewer coverage, is annotated that it establishes what was independently checked and what rests on author inspection, and that it cannot be reconstructed after the fact. A vermillion side-panel headed not a reviewer's to demand lists three items with a reason each: the transcript, because it records what was said rather than what happened; the prompts, because they are the group's working method; and a re-run, because the model behind the result may be gone. A footer reads that the depth of scrutiny matches what rests on the claim.](../figures/figure-17-1.svg)
 
-![A sequence diagram with two lanes read top to bottom. The left lane is a purple reviewer, the right lane the blue authors. Five numbered requests cross from reviewer to authors, each with a return arrow saying what it establishes. Request one, the disclosure statement, is annotated that it is already written so it costs nothing, and that it usually answers only whether a tool was used. Request two, the specification the agentic step ran under, is annotated that it establishes what the workflow was asked to do and that a governed group already has the document. Request three, the gates it passed and what each checks, is annotated that it establishes which failure classes were designed against and costs the authors a paragraph. Request four, gate calibration and the tier claimed, is annotated that it establishes whether the checks behind the tier were ever measured, and that an honest no is informative. Request five, reviewer coverage, is annotated that it establishes what was independently checked and what rests on author inspection, and that it cannot be reconstructed after the fact. A vermillion side-panel headed not a reviewer's to demand lists three items with a reason each: the transcript, because it records what was said rather than what happened; the prompts, because they are the group's working method; and a re-run, because the model behind the result may be gone. A footer reads that the depth of scrutiny matches what rests on the claim.](../figures/figure-17-2.svg)
-
-*Figure 17.2 — Five requests, in the order that gets them answered. Each one buys a different piece of evidence and costs the authors a different amount, so opening with the most expensive is how a review turns into a standoff. The vermillion panel is the half reviewers get wrong: a transcript is not evidence of what happened, and a re-run asks for a property agentic work does not have. (Rendered as `figures/figure-17-2.svg` from the brief below, per `FIGURES.md`.)*
+*Figure 17.1 — Five requests, in the order that gets them answered, with the disclosure above the count because you read it rather than ask for it. Each request buys a different piece of evidence and costs the authors a different amount, so opening with the most expensive is how a review turns into a standoff. The vermillion panel is the half reviewers get wrong: a transcript is not evidence of what happened, and a re-run asks for a property agentic work does not have. (Rendered as `figures/figure-17-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
-- id:            Figure 17.2
+- id:            Figure 17.1
 - title:         What a reviewer may ask for, and what they may not
 - type:          sequence
-- claim:         A reviewer's requests escalate, and each one establishes something specific at a specific cost to the authors.
+- claim:         A reviewer's five requests escalate, and each one establishes something specific at a specific cost to the authors, with the disclosure read first rather than asked for.
 - standfirst:    Each request buys a different piece of evidence and costs the authors a different amount.
 - canvas:        16:9
 - elements:      two lanes running top to bottom — left, a reddish-purple
                  head-and-shoulders-with-tick icon "reviewer"; right, a blue
-                 head-and-shoulders icon "authors"; five numbered request arrows crossing
-                 left to right, each paired with a return arrow carrying what it
-                 establishes; a vermillion-bordered side-panel down the right margin
-                 headed "not a reviewer's to demand", holding three entries each with a
-                 one-line reason; a footer strip across the foot
-- flow:          top-to-bottom in five numbered steps; each step is an arrow from the
-                 reviewer lane to the authors lane carrying the request, answered by a
-                 return arrow carrying what it establishes; the cost to the authors is
-                 annotated beside each step; the side-panel sits outside the two lanes and
-                 connects to nothing
-- labels:        "reviewer", "authors", "1 · disclosure statement", "2 · the specification
-                 the agentic step ran under", "3 · the gates it passed, and what each
-                 checks", "4 · gate calibration, and the tier claimed", "5 · reviewer
-                 coverage", "not a reviewer's to demand", "the transcript", "the prompts",
-                 "a re-run"
-- annotations:   on step 1, "already written, so it costs nothing — and it usually answers
-                 only whether a tool was used"; on step 2, "establishes what the workflow
-                 was asked to do; a governed group already has the document"; on step 3,
-                 "establishes which failure classes were designed against; costs a
-                 paragraph"; on step 4, "establishes whether the checks behind the tier
-                 were ever measured; an honest 'no' is informative"; on step 5,
-                 "establishes what was independently checked and what rests on author
+                 head-and-shoulders icon "authors"; above the numbered sequence, a grey
+                 unnumbered band across both lanes headed "read first, not asked for";
+                 five numbered request arrows crossing left to right, each paired with a
+                 return arrow carrying what it establishes; a vermillion-bordered
+                 side-panel down the right margin headed "not a reviewer's to demand",
+                 holding three entries each with a one-line reason; a footer strip across
+                 the foot
+- flow:          top-to-bottom, opening on the unnumbered disclosure band, then five
+                 numbered steps; each step is an arrow from the reviewer lane to the
+                 authors lane carrying the request, answered by a return arrow carrying
+                 what it establishes; the cost to the authors is annotated beside each
+                 step; the side-panel sits outside the two lanes and connects to nothing
+- labels:        "reviewer", "authors", "read first, not asked for — the disclosure
+                 statement", "1 · the specification the agentic step ran under", "2 · the
+                 gates it passed, and what each checks", "3 · has any gate's false-negative
+                 rate been measured?", "4 · the tier claimed, and the check said to
+                 establish it", "5 · reviewer coverage", "not a reviewer's to demand",
+                 "the transcript", "the prompts", "a re-run"
+- annotations:   on the disclosure band, "already written, so it costs nothing — and it
+                 usually answers only whether a tool was used"; on step 1, "establishes
+                 what the workflow was asked to do; a governed group already has the
+                 document"; on step 2, "establishes which failure classes were designed
+                 against; costs a paragraph"; on step 3, "establishes whether the checks
+                 were ever calibrated; an honest 'no' is informative"; on step 4,
+                 "establishes how strong the evidence is; asked alongside step 3"; on step
+                 5, "establishes what was independently checked and what rests on author
                  inspection; cannot be reconstructed afterwards"; inside the side-panel,
                  one line against each entry, "records what was said, not what happened",
                  "the group's working method", "the model behind it may be gone"; footer,
                  "depth of scrutiny matches what rests on the claim"
-- caption:       Figure 17.2 — Five requests, in the order that gets them answered. Each one buys a different piece of evidence and costs the authors a different amount, so opening with the most expensive is how a review turns into a standoff. The vermillion panel is the half reviewers get wrong: a transcript is not evidence of what happened, and a re-run asks for a property agentic work does not have.
-- alt-text:      A sequence diagram with two lanes read top to bottom. The left lane is a purple reviewer, the right lane the blue authors. Five numbered requests cross from reviewer to authors, each with a return arrow saying what it establishes. Request one, the disclosure statement, is annotated that it is already written so it costs nothing, and that it usually answers only whether a tool was used. Request two, the specification the agentic step ran under, is annotated that it establishes what the workflow was asked to do and that a governed group already has the document. Request three, the gates it passed and what each checks, is annotated that it establishes which failure classes were designed against and costs the authors a paragraph. Request four, gate calibration and the tier claimed, is annotated that it establishes whether the checks behind the tier were ever measured, and that an honest no is informative. Request five, reviewer coverage, is annotated that it establishes what was independently checked and what rests on author inspection, and that it cannot be reconstructed after the fact. A vermillion side-panel headed not a reviewer's to demand lists three items with a reason each: the transcript, because it records what was said rather than what happened; the prompts, because they are the group's working method; and a re-run, because the model behind the result may be gone. A footer reads that the depth of scrutiny matches what rests on the claim.
+- caption:       Figure 17.1 — Five requests, in the order that gets them answered, with the disclosure above the count because you read it rather than ask for it. Each request buys a different piece of evidence and costs the authors a different amount, so opening with the most expensive is how a review turns into a standoff. The vermillion panel is the half reviewers get wrong: a transcript is not evidence of what happened, and a re-run asks for a property agentic work does not have.
+- alt-text:      A sequence diagram with two lanes read top to bottom. The left lane is a purple reviewer, the right lane the blue authors. At the top, outside the numbered sequence, a grey band reads: read the disclosure statement first, it is not something you ask for, and it usually answers only whether a tool was used. Five numbered requests then cross from reviewer to authors, each with a return arrow saying what it establishes. Request one, the specification the agentic step ran under, is annotated that it establishes what the workflow was asked to do and that a governed group already has the document. Request two, the gates it passed and what each checks, is annotated that it establishes which failure classes were designed against and costs the authors a paragraph. Request three, whether any gate's false-negative rate has been measured, is annotated that it establishes whether the checks were ever calibrated and that an honest no is informative. Request four, the evidential tier claimed and the check said to establish it, is annotated that it establishes how strong the evidence is and that it is asked alongside request three. Request five, reviewer coverage, is annotated that it establishes what was independently checked and what rests on author inspection, and that it cannot be reconstructed after the fact. A vermillion side-panel headed not a reviewer's to demand lists three items with a reason each: the transcript, because it records what was said rather than what happened; the prompts, because they are the group's working method; and a re-run, because the model behind the result may be gone. A footer reads that the depth of scrutiny matches what rests on the claim.
 - infographic description: A flat vector sequence diagram, 16:9, off-white background.
                  Title top-left in the largest size: "What a reviewer may ask for, and what
                  they may not". Standfirst beneath: "Each request buys a different piece of
@@ -172,18 +170,23 @@ FIGURE BRIEF
                  occupy the left two-thirds of the canvas. Left lane header: a reddish-purple
                  (#CC79A7) head-and-shoulders icon with a small tick, labelled "reviewer".
                  Right lane header: a blue (#0072B2) head-and-shoulders icon, labelled
-                 "authors". Five numbered horizontal arrows run from the reviewer lane to the
-                 authors lane, evenly spaced top to bottom, each labelled in sentence case:
-                 "1 · disclosure statement", "2 · the specification the agentic step ran
-                 under", "3 · the gates it passed, and what each checks", "4 · gate
-                 calibration, and the tier claimed", "5 · reviewer coverage". Each is paired
+                 "authors". Above the numbered sequence, a grey (#999999) band spans both
+                 lanes, headed "read first, not asked for — the disclosure statement" and
+                 annotated beneath in small type "already written, so it costs nothing — and
+                 it usually answers only whether a tool was used"; the band carries no
+                 number and no arrow. Five numbered horizontal arrows then run from the
+                 reviewer lane to the authors lane, evenly spaced top to bottom, each
+                 labelled in sentence case: "1 · the specification the agentic step ran
+                 under", "2 · the gates it passed, and what each checks", "3 · has any
+                 gate's false-negative rate been measured?", "4 · the tier claimed, and the
+                 check said to establish it", "5 · reviewer coverage". Each is paired
                  with a thinner return arrow beneath it, running right to left, unlabelled
                  except by the annotation set in small type immediately below the pair, in
-                 order: "already written, so it costs nothing — and it usually answers only
-                 whether a tool was used"; "establishes what the workflow was asked to do; a
+                 order: "establishes what the workflow was asked to do; a
                  governed group already has the document"; "establishes which failure classes
                  were designed against; costs a paragraph"; "establishes whether the checks
-                 behind the tier were ever measured; an honest 'no' is informative";
+                 were ever calibrated; an honest 'no' is informative";
+                 "establishes how strong the evidence is; asked alongside step 3";
                  "establishes what was independently checked and what rests on author
                  inspection; cannot be reconstructed afterwards". A thin vertical wedge along
                  the left edge of the reviewer lane widens downwards, labelled at its foot
@@ -226,13 +229,12 @@ Often no such invariant is reported, and a number wrong by a physical factor sit
 Over-agreeable review leaves no external trace whatsoever.
 A rubber-stamp review produces the same record as a searching one (Chapter 12 §12.4), and from outside the group there is not even a record to compare.
 
-Four of the six need the record, and two of those four are not settled by it either.
-[ai-reviewer: the sentence, the figure's bracket label and the caption all say four of six "need the record", and for the bottom two that is not what the section has just established. Over-agreeable review, three lines above, "leaves no external trace whatsoever", and the text adds that "from outside the group there is not even a record to compare". Something the record cannot bear on at all does not need the record; it is simply outside a reviewer's reach. Silent unit errors are the genuinely intermediate case, catchable when a reported invariant happens to expose them.
-The caption tries to hold the line with "the record is necessary without being enough", which is the right idea for the middle band and is false for the bottom one. As it stands the strongest single number in the chapter, four of six, is doing more than the sort underneath it supports, and a reader who checks it will find the section's own words against it two paragraphs up.
-The honest version is available and is not weaker: two of six are within an unaided reviewer's reach, two more need the record, and two are beyond reach either way. That still delivers the conclusion the chapter needs, which is that a review's coverage is set by what the authors kept. Fixing it touches the prose, the bracket label in Figure 17.1's `labels`, `annotations` and infographic description, the alt-text and the caption. Ai-writer's.]
+So the six sort three ways: two are within an unaided reviewer's reach, two more need the record, and two are beyond reach either way.
 That is the argument for §17.2's requests, and it is why they are the substance of a review rather than its paperwork.
 A reviewer working from the manuscript alone is covering a third of the gallery.
-Everything else depends on what the authors can show, which means a review's reach is set by what the authors kept (high confidence; the sort is a reading of Chapter 13's own checks rather than a measured detection rate).
+Another third comes into reach only if the authors kept the record and will show it.
+The last third stays outside a review altogether, which is worth naming in an assessment rather than leaving to be assumed away.
+So a review's reach is set by what the authors kept (high confidence; the sort is a reading of Chapter 13's own checks rather than a measured detection rate).
 
 One consequence is uncomfortable and worth stating.
 The reviewer is the mechanism the community relies on to catch what a group's own gates missed.
@@ -240,33 +242,34 @@ Reviewers can reach for the same instruments the authors did, checking an agenti
 The two errors then correlate, and the second check adds nothing.
 That is the field-scale failure of Chapter 13 §13.9, arriving at the point where it does the most damage.
 
-**Figure 17.1 — What a reviewer can catch, and what needs the record.**
+**Figure 17.2 — What a reviewer can catch, and what needs the record.**
 
-![A sort of six failure modes into three horizontal bands, strongest detectability at the top. The top band, catchable by a check the reviewer can run, is marked with a green tool glyph and holds two rows. Fabricated citations is annotated: resolve every DOI, the reviewer's cheapest action. Confident extrapolation is annotated: compare the scope of the claim to the scope of the evidence. The middle band, catchable only from the record, is marked with a sky-blue cylinder and holds two rows. Specification drift is annotated: the check is the original specification, held fixed and re-read. Context loss is annotated: the check is an assertion against state the reviewer cannot see. The bottom band, not catchable from outside, is marked in grey and holds two rows. Silent unit errors is annotated: only if an invariant is checkable from the reported numbers. Over-agreeable review is annotated: leaves no external trace at all. A vermillion bracket runs down the left of the middle and bottom bands, labelled four of six need the record, with a note that the bottom two are not settled by it either. A footer carries the question: what would have caught it if this step had been wrong?](../figures/figure-17-1.svg)
+![A sort of six failure modes into three horizontal bands, strongest detectability at the top. The top band, catchable by a check the reviewer can run, is marked with a green tool glyph and holds two rows. Fabricated citations is annotated: resolve every DOI, the reviewer's cheapest action. Confident extrapolation is annotated: compare the scope of the claim to the scope of the evidence. The middle band, catchable only from the record, is marked with a sky-blue cylinder and holds two rows. Specification drift is annotated: the check is the original specification, held fixed and re-read. Context loss is annotated: the check is an assertion against state the reviewer cannot see. The bottom band, beyond reach with or without the record, is marked in grey and holds two rows. Silent unit errors is annotated: only if an invariant is checkable from the reported numbers. Over-agreeable review is annotated: leaves no external trace at all. A vermillion bracket runs down the left of the middle band alone, labelled two of six need the record, with a note beneath the bottom band that two more are beyond reach either way. A footer carries the question: what would have caught it if this step had been wrong?](../figures/figure-17-2.svg)
 
-*Figure 17.1 — Six failure modes, sorted by what it takes to catch them from outside. Only the top two are within reach of a reviewer holding nothing but the manuscript, which puts a third of the gallery inside an unaided review and the rest beyond it. The bracket is the whole argument for asking about provenance: without the record most of this is invisible, and for the bottom two the record is necessary without being enough. (Rendered as `figures/figure-17-1.svg` from the brief below, per `FIGURES.md`.)*
+*Figure 17.2 — Six failure modes, sorted by what it takes to catch them from outside. Two are within reach of a reviewer holding nothing but the manuscript, two more come into reach only if the authors kept the record, and two stay outside a review either way. That sort is the whole argument for asking about provenance, and the honest half of it is that the bottom band is not fixed by asking. (Rendered as `figures/figure-17-2.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
-- id:            Figure 17.1
+- id:            Figure 17.2
 - title:         What a reviewer can catch, and what needs the record
 - type:          architecture
-- claim:         Most of Chapter 13's six failure modes cannot be detected from outside without the workflow's record, which is why a reviewer's provenance questions are the substance of a review rather than its paperwork.
+- claim:         Chapter 13's six failure modes sort three ways from outside: two a reviewer can check unaided, two need the workflow's record, and two are beyond reach either way.
 - standfirst:    Two of the six can be caught from the manuscript alone.
 - canvas:        16:9
 - elements:      three stacked horizontal bands, each with a heading and a marker — top
                  band "catchable by a check the reviewer can run" with a green tool glyph;
                  middle band "catchable only from the record" with a sky-blue cylinder;
-                 bottom band "not catchable from outside" with a grey dash; two labelled
-                 rows inside each band, six rows in all, each carrying one annotation; a
-                 vermillion bracket down the left edge of the middle and bottom bands; a
-                 footer strip across the foot
+                 bottom band "beyond reach, with or without the record" with a grey dash;
+                 two labelled rows inside each band, six rows in all, each carrying one
+                 annotation; a vermillion bracket down the left edge of the middle band
+                 only; a footer strip across the foot
 - flow:          no flow; a static sort in three bands read top to bottom, with
                  detectability decreasing downwards. No arrows anywhere on the canvas
 - labels:        "catchable by a check the reviewer can run", "catchable only from the
-                 record", "not catchable from outside", "fabricated citations", "confident
-                 extrapolation", "specification drift", "context loss", "silent unit
-                 errors", "over-agreeable review", "four of six need the record"
+                 record", "beyond reach, with or without the record", "fabricated
+                 citations", "confident extrapolation", "specification drift", "context
+                 loss", "silent unit errors", "over-agreeable review", "two of six need the
+                 record"
 - annotations:   on "fabricated citations", "resolve every DOI — the reviewer's cheapest
                  action"; on "confident extrapolation", "compare the scope of the claim to
                  the scope of the evidence"; on "specification drift", "the check is the
@@ -274,9 +277,10 @@ FIGURE BRIEF
                  check is an assertion against state the reviewer cannot see"; on "silent
                  unit errors", "only if an invariant is checkable from the reported
                  numbers"; on "over-agreeable review", "leaves no external trace at all";
-                 under the bracket label, "and the bottom two are not settled by it either"
-- caption:       Figure 17.1 — Six failure modes, sorted by what it takes to catch them from outside. Only the top two are within reach of a reviewer holding nothing but the manuscript, which puts a third of the gallery inside an unaided review and the rest beyond it. The bracket is the whole argument for asking about provenance: without the record most of this is invisible, and for the bottom two the record is necessary without being enough.
-- alt-text:      A sort of six failure modes into three horizontal bands, strongest detectability at the top. The top band, catchable by a check the reviewer can run, is marked with a green tool glyph and holds two rows. Fabricated citations is annotated: resolve every DOI, the reviewer's cheapest action. Confident extrapolation is annotated: compare the scope of the claim to the scope of the evidence. The middle band, catchable only from the record, is marked with a sky-blue cylinder and holds two rows. Specification drift is annotated: the check is the original specification, held fixed and re-read. Context loss is annotated: the check is an assertion against state the reviewer cannot see. The bottom band, not catchable from outside, is marked in grey and holds two rows. Silent unit errors is annotated: only if an invariant is checkable from the reported numbers. Over-agreeable review is annotated: leaves no external trace at all. A vermillion bracket runs down the left of the middle and bottom bands, labelled four of six need the record, with a note that the bottom two are not settled by it either. A footer carries the question: what would have caught it if this step had been wrong?
+                 beneath the bottom band, "two more are beyond reach either way — say so in
+                 the assessment"
+- caption:       Figure 17.2 — Six failure modes, sorted by what it takes to catch them from outside. Two are within reach of a reviewer holding nothing but the manuscript, two more come into reach only if the authors kept the record, and two stay outside a review either way. That sort is the whole argument for asking about provenance, and the honest half of it is that the bottom band is not fixed by asking.
+- alt-text:      A sort of six failure modes into three horizontal bands, strongest detectability at the top. The top band, catchable by a check the reviewer can run, is marked with a green tool glyph and holds two rows. Fabricated citations is annotated: resolve every DOI, the reviewer's cheapest action. Confident extrapolation is annotated: compare the scope of the claim to the scope of the evidence. The middle band, catchable only from the record, is marked with a sky-blue cylinder and holds two rows. Specification drift is annotated: the check is the original specification, held fixed and re-read. Context loss is annotated: the check is an assertion against state the reviewer cannot see. The bottom band, beyond reach with or without the record, is marked in grey and holds two rows. Silent unit errors is annotated: only if an invariant is checkable from the reported numbers. Over-agreeable review is annotated: leaves no external trace at all. A vermillion bracket runs down the left of the middle band alone, labelled two of six need the record, and a note beneath the bottom band reads that two more are beyond reach either way and should be said so in the assessment. A footer carries the question: what would have caught it if this step had been wrong?
 - infographic description: A flat vector two-column sort, 16:9, off-white background, no
                  arrows. Title top-left in the largest size: "What a reviewer can catch, and
                  what needs the record". Standfirst beneath: "Two of the six can be caught
@@ -286,8 +290,8 @@ FIGURE BRIEF
                  preceded by a small marker: band one, a green (#009E73) wrench glyph and the
                  heading "catchable by a check the reviewer can run"; band two, a sky-blue
                  (#56B4E9) cylinder glyph and the heading "catchable only from the record";
-                 band three, a grey (#999999) short horizontal dash and the heading "not
-                 catchable from outside". Inside each band, to the right of the heading, sit
+                 band three, a grey (#999999) short horizontal dash and the heading "beyond
+                 reach, with or without the record". Inside each band, to the right of the heading, sit
                  two rows one above the other. Each row is a plain near-black-bordered
                  rectangle carrying a failure-mode name, with its annotation set in the
                  smaller annotation size immediately to the right of the box. Band one:
@@ -299,9 +303,9 @@ FIGURE BRIEF
                  unit errors" / "only if an invariant is checkable from the reported
                  numbers"; "over-agreeable review" / "leaves no external trace at all". A
                  vermillion (#D55E00) square bracket runs down the far-left margin, spanning
-                 bands two and three, labelled beside it in vermillion "four of six need the
-                 record", with a smaller grey line beneath it "and the bottom two are not
-                 settled by it either". A footer strip across the foot of the canvas, set in
+                 band two only, labelled beside it in vermillion "two of six need the
+                 record", with a smaller grey line set beneath band three reading "two more
+                 are beyond reach either way — say so in the assessment". A footer strip across the foot of the canvas, set in
                  the annotation size on a pale yellow (#F0E442) fill, reads: "what would have
                  caught it if this step had been wrong?" Generous margins, aligned to an
                  implied grid, all text in sentence case, legible in greyscale because every
@@ -324,13 +328,15 @@ Third, establish the calibration state of every gate.
 A gate whose false-negative rate has never been measured is unmeasured rather than working.
 Treating those two as the same thing is the error Chapter 11 §11.5 exists to prevent.
 Fourth, check the dates on any calibration you do find.
-One made two years ago and never repeated has expired rather than merely aged, and a tier claim resting on it has already lapsed (Chapter 11 §11.5, on calibration validity and why a window is set at all).
+One made two years ago and never repeated has expired rather than merely aged, and a tier claim resting on it has already lapsed.
+Chapter 11 §11.5 sets out calibration validity and why a window is chosen at all.
 
 Then the harder judgement, which is whether to run it before you understand it.
 The rule I would hold to is that an inherited workflow runs first on cases whose answers you already know.
 That is Chapter 11 §11.4's evaluation set built backwards.
 Instead of curating cases to test something you are building, you assemble cases the workflow was already trusted on and check what it returns now.
-Twenty such cases will teach you more in an afternoon than a week spent reading the code (moderate confidence; a practice I would defend rather than one anybody has measured).
+Twenty such cases will teach you more in an afternoon than a week spent reading the code.
+That is a practice I would defend rather than one anybody has measured (moderate confidence).
 Three outcomes are possible: it reproduces what the group expected, it does not, or the group turns out never to have recorded what it expected.
 The third is the one to watch for.
 
@@ -362,12 +368,7 @@ That is the trust boundary of Chapter 12 §12.8, and your institutional IT will 
 The supplier's own numbers are the book's stance turned outward.
 A self-reported capability figure is a hypothesis.
 The measurement that tests it is task-grounded evaluation on your own data, under your own conditions, against your own definition of a right answer (Chapter 11 §11.1).
-Operational meteorology has already shown what that looks like at scale.
-A data-driven weather model arrived with impressive self-reported scores, and an operational centre re-verified it rather than taking them.
-The re-verification initialised from operational analyses, scored against both analyses and independent station observations with the centre's own metrics, and examined extreme cases (Ben Bouallègue et al., 2024).
-They found it genuinely competitive and documented where it was weak.
-[ai-reviewer: this is now the third full telling of one example, and the second at close to full length. Ch. 11 §11.3 tells it in five sentences as the illustration of externality; Ch. 14 §14.3 tells it again around the Tier 5 claim; this is five more sentences with the same four elements in the same order. G5 gives each idea one canonical home and one clause everywhere else, and the plan's own instruction for task 17.5 was to reuse Ben Bouallègue "once" for the vendor-claim rule. A reader arriving here from Part III will have met this centre twice already.
-The chapter's argument does not need the retelling. What it needs is the transferable point, which the next sentence makes very well and unaided: "None of that procedure requires seeing inside the system, which is exactly why it works on a product you cannot audit." That observation is genuinely new, belongs here and nowhere else, and would land harder against a one-clause reminder than against a summary the reader has read twice. Compressing to a pointer would also recover roughly forty words, which the ceiling comment below could use. Ai-writer's.]
+Operational meteorology has already shown what that looks like at scale, in the re-verification of a data-driven weather model described in Chapter 11 §11.3 (Ben Bouallègue et al., 2024).
 None of that procedure requires seeing inside the system, which is exactly why it works on a product you cannot audit.
 
 Sometimes you will get no answers at all, and the position to hold then is narrow.
@@ -380,10 +381,6 @@ So ask who that named person is.
 Where the answer is nobody, you have learned the most useful thing on the list.
 
 ## 17.6 Verification checklist
-
-[ai-reviewer: two comments on the chapter's craft, placed here because the checklist is the last prose the reader meets.
-First, the sentence ceiling. Nine sentences in this file exceed `STYLE.md` §11's ~30-word ceiling, at 40, 39, 39, 38, 38, 37, 37, 37 and 52 words, which is more than any other file in the pass and more than the rest of the pass put together once the pre-existing long sentences are set aside. None of them qualifies for §11's exemption, which covers a sentence that runs long because it lists parallel items separated by semicolons; these run long because each carries a parenthetical cross-reference of the form "(Chapter 11 §11.5, on seeded defects and how little a clean sweep on twenty of them licenses)". The habit is a good one — §5.6 asks that a reference name what is at its destination — and it is what is pushing sentence after sentence over. Worth treating as one systematic fix rather than nine separate ones, because the cause is uniform: the cross-reference gloss usually reads better as its own short sentence. The 52-word one is in §17.7 and is a comma-separated list of three, so it has no exemption either. Ai-writer's.
-Second, the checklist itself is well judged and I want that on the record, because most of my comments on this file are corrections. Eight items, inside the plan's cap; every item names what the receiver can establish and what they cannot, which is the thing that makes it a receiver's checklist rather than a producer's turned around; and three items ("An absent specification is a finding about the work rather than a gap in the review", "An unanswered question left unrecorded becomes an implicit acceptance", the naming of the undetectable modes) are doing work no other checklist in the book does. It reads as usable by someone with no access to the workflow, which was the test.]
 
 This checklist is written for the receiver rather than the producer, and each item names what you can establish and what you cannot.
 A reviewer, a successor, or a group weighing a supplied system should be able to work through it without any access to the workflow itself.
@@ -400,8 +397,13 @@ A reviewer, a successor, or a group weighing a supplied system should be able to
 ## 17.7 Repository pointer
 
 The companion repository holds the runnable and perishable counterparts to this chapter under `/patterns/ch17-on-the-receiving-end`, with the printable receiver's checklist under `/checklists`.
-The material here is a reviewer's question set rather than a program: the five requests of §17.2 written as text a reviewer can paste into a report, the detectability sort of §17.3 as a working aid, and a short intake form for an inherited workflow covering the four reconstruction steps of §17.4.
-The volatile material stays out of print for the usual reason: current journal and funder disclosure requirements, the current policy classes of Chapter 9 §9.4, and any supplier-specific evaluation notes all date faster than a printed page.
+The material here is a reviewer's question set rather than a program, and it holds three things.
+The first is §17.2's five requests, numbered as they are numbered there and written as text a reviewer can paste into a report.
+The disclosure statement sits above them, as the thing you read rather than ask for.
+The second is §17.3's detectability sort as a working aid.
+The third is a short intake form for an inherited workflow, covering the four reconstruction steps of §17.4.
+The volatile material stays out of print for the usual reason.
+Current journal and funder disclosure requirements, the current policy classes of Chapter 9 §9.4, and any supplier-specific evaluation notes all date faster than a printed page.
 So the repository holds those dated and sourced, whilst the chapter states the questions and the reasoning **[AUTHOR: confirm the repository paths and contents once the reviewer question set is finalised]**.
 
 ---

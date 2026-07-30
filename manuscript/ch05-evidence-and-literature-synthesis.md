@@ -1,6 +1,6 @@
 # Chapter 5 — Evidence and literature synthesis
 
-> **Status:** draft r4 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > **Chapter note:** no literature has been invented for the worked example — the actual corpus and every named work are left as **[AUTHOR: …]** or **[verify]** for the author to supply and check.
 
@@ -116,6 +116,8 @@ The gate is a barrier, not an advisory.
 How much risk survives it depends on how it is built, and 2026 work now measures that.
 A preprint that year, testing machine-drafted citations across four scientific domains, found only 50.9% of entries fully correct even where 83.6% of individual fields were right; a two-stage design, drafting a citation and then resolving it deterministically against bibliographic services, lifted fully correct entries to 78.3% and cut tool-introduced errors to 0.8%, down from 4.8% for a one-stage integration (Rao and Callison-Burch, 2026).
 The lesson for the gate's design is direct: resolve citations against an external service rather than asking the model to check its own.
+This same gate is what a reviewer on the outside should ask whether the authors ran.
+Chapter 17 sets out what else a reviewer is entitled to ask for.
 
 > **Definition — Citation-verification gate.** A checkpoint every citation has to pass before the draft is allowed forward. A separate step, not the agent that wrote the draft, confirms that each cited work exists, that the quoted passage is really in it, and that the passage actually supports the claim made on it. Citations that fail are removed or returned; nothing proceeds just because it reads well.
 

@@ -4,8 +4,6 @@
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > **This chapter** is the Part II capstone: it composes the single-agent patterns of Chapters 5–9 and hands the resulting apparatus to the end-to-end case study of Chapter 15.
 
-> **[ai-reviewer: A1 review — 1 comment in this file.** Task 10.1 landed and stayed inside its brief: three sentences, roughly 55 words, no citation added, no development of the field-scale argument that belongs to Ch. 13 §13.9. §10.4 to §10.6 are untouched and the ai-reviewer placement note at line 71 is intact as instructed. Checked and found sound: the forward reference names its destination and what is at it, per `STYLE.md` §5.6, and the mechanism it asserts is the one Wataoka et al. (2024) already supports two sentences above, so nothing is claimed here that the chapter's own evidence does not carry. No comment beyond this header.**]**
-
 ---
 
 ## 10.1 The problem: more agents is not more rigour

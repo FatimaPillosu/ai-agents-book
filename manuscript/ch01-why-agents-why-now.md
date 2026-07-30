@@ -1,9 +1,7 @@
 # Chapter 1 — Why agents, why now
 
-> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r6 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
-
-> **[ai-reviewer: A1 review — 2 comments in this file.** Tasks 1.1, 1.2 and 1.3 all landed. The second-disanalogy passage in §1.3 is the strongest small addition in the batch: it is argued, not asserted, it carries its confidence flag, and it hands off to §11.5 cleanly. One placement comment on task 1.2 below. No hard-rule issue; no citation added; both existing AUTHOR markers intact.**]**
 
 ---
 
@@ -58,7 +56,9 @@ On a widely used software-engineering benchmark, the share of real-world coding 
 A second measure gets to the same place by a different route.
 An independent evaluation organisation tracks not benchmark scores but the duration of tasks an agent can complete autonomously at a 50% success rate, and finds it doubling roughly every four months since 2023 (about 129 days, on a 90% confidence interval of 105 to 157) and roughly every three months since 2024, against a slower doubling of about seven months across 2019 to 2025 (METR, 2026).
 Both parties have an interest in demonstrating progress, so neither number is disinterested.
-Two independent methods converging on the same doubling trend is, however, exactly the corroboration between measurements this book argues for throughout.
+Two different measurement approaches still converge on the same doubling trend, which is worth more than either figure alone.
+It falls short of the clean corroboration Chapter 11 §11.2 puts at Tier 5.
+The shared incentive and the software-engineering slant of both task suites are dependencies the agreement does not escape.
 By 2026 there was a striking marker: a paper generated end to end by an agentic system passed peer review at a workshop venue, a result now itself in the peer-reviewed literature, though the authors say plainly that their system cannot yet meet the standards of top-tier publication (Lu et al., 2026).
 Benchmark skill and real-workflow skill are not the same thing, and Chapter 11 develops that distinction and the evaluation practice that follows from it.
 
@@ -242,12 +242,11 @@ A better guide than apparent difficulty is the gap between what it costs to prod
 Where checking is cheap and mechanical (code judged by a test suite, an extraction validated against a schema, a format conversion confirmed by a checksum and a round trip), an imperfect generator is operationally safe: its mistakes are caught cheaply and its successes arrive in bulk.
 Those are exactly the tasks on the reliable side of the present frontier: code generation and repair, format translation, structured extraction, first-pass literature triage, and draft documentation.
 Where checking is expensive, slow or subjective (a claim at the research frontier, an interpretive synthesis, an anomaly whose meaning depends on context the system does not hold), fluent output stays dangerous however capable the model, and no amount of benchmark progress moves those tasks across.
-That asymmetry also decides how far delegation can ever reach, not only where it is safe today.
-Chapter 4 §4.4 draws out that consequence.
-[ai-reviewer: the pointer is correctly restrained and does not steal §4.4's argument, which is what task 1.2 asked for. The placement costs something, though. It now sits between the cheap-versus-expensive contrast and the sentence "Two more observations belong in any honest boundary", so the announced count reads as two observations beyond the forward pointer rather than beyond the boundary the paragraph has just drawn (`STYLE.md` §4 on announced counts as commitments). Moving the two sentences to after the second observation, or to the end of the paragraph, would keep the enumeration intact and lose nothing. Flagging rather than fixing: this is ai-writer's to place.]
 Two more observations belong in any honest boundary.
 First, models remain poor judges of their own correctness, which is why every check in this book is external to the thing being checked, a principle developed properly in Chapter 11 (high confidence in the principle; the size of the effect varies by model and task).
 Second, multi-step arithmetic done in prose rather than handed to a tool fails often enough that handing it over should be a rule, not a preference.
+That asymmetry between producing and checking also decides how far delegation can ever reach, not only where it is safe today.
+Chapter 4 §4.4 draws out that consequence, and sets the limit it puts on how far delegation can ever be taken.
 [AUTHOR: a short account of a plausible-but-wrong failure you personally caught — silent, fluent, and completely mistaken — would anchor this section better than any general claim.]
 
 Past the merely unreliable is a third category that has nothing to do with capability, and it is the one thing this book holds fixed while everything else moves: accountability, scientific judgement, and authorship.

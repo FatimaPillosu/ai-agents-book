@@ -1,10 +1,8 @@
 # Chapter 16 — Starting in your own group
 
-> **Status:** draft r7 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r8 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > Volatile figures (energy-per-inference, per-token prices, hardware costs) are kept out of print and marked for the companion repository.
-
-> **[ai-reviewer: A1 review — 2 comments in this file.** All five tasks landed. §16.6 now carries four considerations, not three, and the "loops that produce nothing" clause appears once, in the new fourth consideration, and has been removed from the closing paragraph — that acceptance criterion is met exactly. The induced-demand passage names no economic effect, quantifies nothing, and says so explicitly ("high confidence in the mechanism, low confidence in any magnitude"), which is what §4 of the plan required. §16.1's budget argument cross-references §4.4 without re-deriving it. One comment below on the placement of the deskilling paragraph relative to Naddaf (2025), which §4 singles out as the citation most at risk of being laundered.**]**
 
 ---
 
@@ -197,21 +195,20 @@ An independent reviewer, human or a separate reviewer agent, provides a check th
 The skills these roles require are largely those a good empirical scientist already has: precise specification, comfort with the command line and version control, a disposition to distrust fluent output, and the record-keeping habits of reproducible research.
 What is genuinely new is narrower than it first appears: an understanding of how these systems fail plausibly rather than obviously (Chapter 13), and the judgement to keep a human accountable for every decision an agent informs.
 
-Those skills were acquired by doing work an agent now does in an afternoon.
-Saying they are skills a good scientist already has therefore assumes a continuing supply of people who learned them that way.
-A group leader is the person who decides whether that supply continues.
-Deciding what a doctoral researcher spends three years on is deciding the group's future capacity to verify, not only this year's throughput.
-Chapter 13 §13.9 makes that argument, on deskilling and the supply of judgement.
-The planning consequence is narrow enough to act on.
-Name the judgements the group intends to keep in-house, and protect the work that builds them even where an agent would be faster.
-This is an argument from the book's own premises rather than a measured effect, and no source here supports it (moderate confidence).
-[ai-reviewer: the disclaimer is present and correctly worded, and no citation is attached, so the letter of §4's prohibition is met. The placement still deserves a second look. This paragraph now sits immediately before the one that opens "One planning assumption is worth making explicit" and cites Naddaf (2025) on adoption running ahead of disclosure and attitudes splitting by career stage. Two consecutive paragraphs, both framed as planning assumptions about people, the first unsourced and the second sourced, invite a reader to carry the citation backwards — which is precisely the laundering §4 names Naddaf as the risk for. The disclaimer sits at the end of the first paragraph, where a reader arrives at it after forming the connection rather than before.
-Nothing here needs deleting. A paragraph between them, or moving the deskilling material after the Naddaf paragraph so the sourced claim comes first, would remove the adjacency at no cost to either argument. Worth doing because this is the one place in the pass where the plan predicted the specific failure by name, and the text is one reading away from it. Ai-writer's to place; flagging so the near-miss is on the record rather than left to be discovered by a reviewer of the finished book.]
-
 One planning assumption is worth making explicit: agentic literacy is unevenly distributed within a group, and the norms around it are still contested rather than settled.
 A large researcher survey found practice running ahead of disclosure and attitudes splitting by career stage, region and language background, with early-career and non-native-English researchers among the heaviest legitimate users (Naddaf, 2025).
 A group should therefore assume its members start from different places and hold different views on what is acceptable, and build the roles above as a way of making responsibilities explicit rather than assuming a shared baseline.
 The limitation worth stating is that this role map is a template, not a prescription: a two-person group will collapse the roles into shared vigilance, a larger group may formalise them, and this book offers the mapping with moderate confidence as a way to make responsibilities explicit rather than as an organisational chart to be copied.
+
+A second planning assumption sits underneath the first, and no evidence in this book's sources bears on it either way.
+The skills listed at the head of this section were acquired by doing work an agent now does in an afternoon.
+Saying they are skills a good scientist already has therefore assumes a continuing supply of people who learned them that way.
+A group leader is the person who decides whether that supply continues.
+Deciding what a doctoral researcher spends three years on is deciding the group's future capacity to verify, not only this year's throughput (moderate confidence).
+That is the book's own argument, and the survey above says nothing about it.
+Chapter 13 §13.9 develops it, on deskilling and the supply of judgement.
+The planning consequence is narrow enough to act on.
+Name the judgements the group intends to keep in-house, and protect the work that builds them even where an agent would be faster.
 
 ## 16.5 Institutional, ethical and data-sovereignty considerations
 

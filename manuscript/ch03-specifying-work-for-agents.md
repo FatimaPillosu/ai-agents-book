@@ -1,9 +1,7 @@
 # Chapter 3 — Specifying work for agents
 
-> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r6 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
-
-> **[ai-reviewer: A1 review — 2 comments in this file.** Tasks 3.1 and 3.2 both landed: §3.7 is 443 words against a 430 budget, the §3.6 concession paragraph is genuinely deleted rather than paraphrased in place, and the new AUTHOR marker is present. The section leads with the concrete case, hedges its two practices honestly at moderate confidence, and hands off to Ch. 8 §8.4 without re-deriving it. One structural comment below, on what this does to the chapter's ending. See also the comment in `ch00` on the word "govern", which this section and the front matter use differently.**]**
 
 ---
 
@@ -285,6 +283,7 @@ The discipline this chapter asks for fits in one sentence: talk to find the spec
 Everything that follows, from the patterns of Part II to the end-to-end governance of Chapter 15, depends on that transition being made deliberately and made visible, rather than never being made at all.
 
 [ai-reviewer: a consequence of the placement that the plan predicted only halfway. It said §3.6 would end on "…rather than never being made at all", "which is a stronger close", and it does. But those sentences were the chapter's close, not §3.6's, and the chapter now ends on the boundary of the discipline instead of on the discipline. A chapter titled "Specifying work for agents" whose final movement says a great deal of good science cannot be specified is making an honest point in the position of maximum emphasis. That may be exactly right, since F7's charge was that the concession was under-weighted. It is still a change to the chapter's argumentative shape that nobody appears to have chosen deliberately, and it is the author's to endorse or reverse. The mechanical alternatives, if it is to be reversed, are to move §3.6's two closing sentences to the end of §3.7 or to give the chapter a short closing pointer as Chapters 2 and 16 have; both are ai-writer's work, not mine.]
+[ai-writer: the second alternative is now in place. The chapter closes with the house two-line pointer that Chapter 2 uses, which restates what the chapter did and hands on to Chapter 4, so the last thing a reader meets is the discipline rather than its boundary. I have not moved §3.6's closing sentences, because §3.7's own argument depends on arriving after the anti-pattern rather than before it. The comment is left standing because the question underneath it is the author's and the pointer does not settle it: §3.7 is still the final section, and if the author wants the concession weighted lower than F7 asked, the fix is a decision about emphasis rather than another rearrangement.]
 
 ## 3.7 When you cannot yet write a specification
 
@@ -300,7 +299,7 @@ Writing one too early is the opposite error.
 A specification written before you understand the problem fixes the wrong target, and fixes it precisely, which is worse than leaving it open.
 Acceptance criteria for a question you have not formed yet are only your first guess, given the authority of a written rule.
 
-So what governs exploration, if acceptance criteria cannot?
+So what holds exploration to account, if acceptance criteria cannot?
 Two things, and neither of them is a check on the output.
 The first is a bounded budget: how many attempts, how much of your time, how much compute, decided before you start and written where the objective would have gone.
 An exploration that has spent its budget stops and reports what it found, which may be nothing.
@@ -313,10 +312,15 @@ Nothing found in exploration enters the evidential chain until it has been re-de
 An exploratory run may generate a hypothesis; it may not supply the evidence for it.
 Knowing when exploration has yielded enough to specify is a judgement, and it is one this book can name but cannot supply.
 It is the same judgement as knowing when a pilot study is finished, and it is learned the same way, by doing it and being wrong about it.
-The book governs the half of the work that can be specified.
-This section is what stands in for governance in the other half, which is the boundary the front matter's scope statement draws.
+The kind of governance this book teaches, a check the output has to pass, reaches only the half of the work that can be specified.
+The other half gets these two weaker disciplines instead, and that is the boundary the front matter's scope statement draws.
 
 **[AUTHOR: an exploratory episode of your own that could not have been specified in advance, and what you kept a record of while it was running — this section is asserting a practice, and one lived instance would make it a description instead.]**
+
+---
+
+*This chapter has turned a vague request into a written specification with an objective, inputs, acceptance criteria and stop conditions, shown where control actually sits, and marked the boundary past which the discipline has nothing to bite on.*
+*The next chapter asks the question that comes before any of it: which parts of the research cycle should be handed to an agent at all, and which should not.*
 
 ---
 

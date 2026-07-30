@@ -1,9 +1,7 @@
 # Chapter 4 — The scientist's stance
 
-> **Status:** draft r6 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r7 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
-
-> **[ai-reviewer: A1 review — 3 comments in this file.** §4.4 is the best-written new section in the pass: 639 words against 600, all seven required movements present and in order, both reused citations checked against `/research` and accurately stated, both interested-party caveats carried. It is also the section with the most at stake, and two of my three comments say the argument is not yet finished. The serious one is that movement (v) handles the weaker of the two available objections and never meets the stronger: models can be applied to the checking side, which is what Chapters 10 and 11 build apparatus out of. The second is that the thesis conclusion carries no certainty flag and is framed as analytic rather than predictive, which the next paragraph then contradicts. Nothing escalated to the author, but the author should read §4.4 before anything else in this pass.**]**
 
 ---
 
@@ -180,21 +178,39 @@ The structure that sets checking cost sits in the task, so improving the model d
 
 The conclusion follows from those two facts.
 The class of scientific tasks where an agent pays off is bounded by what it costs to check the work, and checking cost is a property of the task.
-So that class does not grow as models improve, and the frontier of safe delegation moves far less than the capability curve suggests.
-This is not a prediction about the technology.
-It is a statement about which of the two costs the technology acts on.
-[ai-reviewer: three problems in this four-sentence paragraph, which is the load-bearing one.
-(1) No certainty flag, on the book's strongest and most contrarian claim. `STYLE.md` §6.3 requires them on substantive claims and the plan's G2 requires one wherever the book is reasoning from its own premises rather than reporting evidence, which is exactly what this is. The moderate-to-high flag six lines below attaches to the objection-handling, not to the thesis, so as the text stands the hedged sentence is the concession and the unhedged one is the claim. That is the wrong way round and it is the pattern `STYLE.md` §12 calls a claim without a hedge.
-(2) "This is not a prediction about the technology" does not survive the next paragraph. If the claim were analytic, "better models do make some previously expensive checks cheap" could not qualify it, and yet it does. The claim is a forward-looking empirical one about how much the delegable class will widen, and declaring it a statement about cost structure reads as insulating it from the challenge it will actually attract. The argument is strong enough not to need the move.
-(3) "moves far less than the capability curve suggests" is an unbaselined comparative of the kind `STYLE.md` §12.1(c) has the author deleting on sight, and it is comparing an unquantified frontier shift against a quantified doubling time, which invites the reader to do arithmetic the sentence has not licensed. All three are ai-writer's to resolve.]
+Capability progress acts on the generation side of that bound, not on the side that sets it.
+So the class widens only where something changes the checking cost, and across a large part of scientific work nothing does (moderate-to-high confidence).
+That is a claim about the future and it can be shown wrong: a decade in which the expensive-to-check tasks became routinely delegable would do it.
+Two objections press on it hardest.
 
-Better models do make some previously expensive checks cheap, and they do it by changing the form the output arrives in.
+The first is that models can be pointed at the checking side too, and this book points them there itself.
+Chapter 10 §10.3 builds an independent reviewer agent.
+Chapter 11 §11.2 lets the top tier be established by a separate agent set up for the purpose.
+Chapter 11 §11.4 uses agents to help build and run an evaluation set.
+If better models make those reviewers more reliable, checking gets cheaper, and checking cost stops being a property of the task alone.
+Part of that objection lands.
+
+Where it lands is on the checks that have something external to compare against.
+A reviewer agent can resolve a citation, run a test suite, re-derive a total, or catch a unit that fails to carry through.
+Those checks were already on the cheap side, and a better model makes them cheaper and faster still.
+Where it does not land is on the checks with no external reference to draw authority from.
+Chapter 11 §11.3 sets the rule that verification must sit outside the system it verifies.
+Chapter 1 §1.4 gives the reason: a model asked whether its own output is right answers fluently, and the fluency is uncorrelated with being right.
+External does not mean "not a model", so a differently configured model is a legitimate checker.
+What it still needs is a verdict drawn from something outside both systems.
+Where no reference exists and the answer is interpretive, there is nothing outside for it to draw on.
+Two models agreeing that an interpretation is sound have generated twice rather than checked once.
+
+So agent-assisted checking lowers the cost of checks that were already the cheap ones, and moves a little work into the delegable class at the edge.
+It cannot reach the class where the reference does not exist, because the absence that makes the check expensive is the same absence the reviewer agent faces.
+The concession is real and the bound survives it (moderate-to-high confidence).
+
+The second objection is that better models do make some previously expensive checks cheap, and they do it by changing the form the output arrives in.
 An answer that arrives as structured data can be validated against a schema; an answer that arrives with executable tests can be run; an answer that arrives with resolvable references can be resolved.
 None of those checks was available when the same answer arrived as prose.
 So the class does widen at the margin, and the argument above overstates itself if it is read as saying the boundary is fixed.
 The claim is narrower than that.
-The widening is second-order against the capability curve, because it depends on the task admitting a checkable form at all, and most expensive-to-check tasks do not (moderate-to-high confidence).
-[ai-reviewer: the most serious substantive gap in the pass. Movement (v) meets the objection that better models change the *form* the output arrives in, and meets it well. It never meets the objection a reader will reach for first: that a better model can be applied to the *checking* side, not only the generating side. That is not a hypothetical objection to this book, it is this book's own architecture. Chapter 10 §10.3 builds an independent reviewer agent. Chapter 11 §11.2 allows the top tier to be established by "a separate agent set up for the purpose". Chapter 11 §11.4 uses agents to build and run evaluation sets. If capability progress makes reviewer agents more reliable, checking cost falls, and the claim that it is a property of the task alone is directly weakened. The book has a real answer available and §4.4 does not deploy it: §11.3's rule that verification must be external to the system verified, plus §1.4's finding that models are poor judges of their own correctness. But "external" does not mean "not a model", and the honest version of the answer concedes that agent-assisted checking lowers the cost for some checks whilst arguing that it cannot lower it for the class where the reference does not exist or the answer is interpretive. Until that is written, an informed reader will close the section thinking the strongest counter-argument was avoided rather than answered, which costs the thesis more than the concession would. Not a small edit and not mine to draft: this is a required new movement, and §4.4's budget can carry it.]
+The widening depends on the task admitting a checkable form at all, and most expensive-to-check tasks do not (moderate-to-high confidence).
 
 What this changes is the posture, not the enthusiasm.
 "Adopt this, carefully" is advice that needs rewriting with every release, because it treats the limit as temporary.

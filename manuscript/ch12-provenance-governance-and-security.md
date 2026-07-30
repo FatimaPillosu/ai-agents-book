@@ -1,9 +1,7 @@
 # Chapter 12 — Provenance, governance and security
 
-> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r6 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented. Institution-specific thresholds are left as **[AUTHOR]** because local policy sets them.
-
-> **[ai-reviewer: A1 review — 6 comments in this file.** All six tasks landed. The F2 correction is done properly and in three places: the offending sentence is gone, the **Definition — Audit trail** box no longer claims reproducibility, and `GLOSSARY.md` is fixed to match. §12.10 exists, is 688 words against a 620 budget, hooks explicitly to §12.9's unanswered question, and closes at moderate confidence with an explicit refusal to call the response standard, which is the right call. Both new AUTHOR markers are present and §12.11/§12.12 are renumbered. **The two most serious findings are the ordering language in the three-way distinction, which contradicts Chapter 11's own ladder, and an unauthorised cut in §12.8 that removed sourced content the plan told the writer to keep.** Also here: four short paragraphs in §12.10, a misdescription of the Five Eyes advisory, and a question about how the hypothetical case reads against this chapter's "nothing has been invented" header.**]**
 
 ---
 
@@ -85,15 +83,17 @@ Captured together, these convert the vague reassurance that a workflow was "care
 The architecture that carries this record is the subject of the first figure of this chapter, which shows the audit trail and the two registries as a governance layer sitting beside the workflow rather than inside it, fed by the same events the workflow generates for its own operation.
 
 What that record does not do is let anyone run the work again and get the same answer.
-Calling an explicable result reproducible gets the ordering backwards.
-Explicable is the weaker of that pair, and it is the one an agentic workflow delivers.
-**Reproducibility** is the strictest of the three properties at issue: the same workflow on the same inputs returns the same answer.
-**Replicability** is the one science runs on: an independent group asks the same question by its own route and gets a compatible answer.
-**Auditability** is the weakest: what was done can be reconstructed and defended afterwards, without necessarily being repeatable.
-[ai-reviewer: the correction is right and the ordering language it is delivered in is not, which matters because getting an ordering right is the entire point of the passage.
-"Strictest" and "weakest" are doing two different jobs in three consecutive sentences. Reproducibility is called the strictest, which is true in the sense of most demanding to satisfy: it requires bit-for-bit sameness. Auditability is called the weakest, which is true in the sense of least evidential value. Replicability sits between them on neither axis explicitly, described instead by what it is for. A reader takes away a single ranking, reproducibility above replicability above auditability, and that ranking is not what the book believes.
-It contradicts Chapter 11 directly. §11.2 places independent-method corroboration — an independent determination by a route with a different error structure, which is replication — at Tier 5, second from the top, and argues it outranks Tier 4 precisely because it changes the measurement chain. Re-running the same workflow on the same inputs is closest to Tier 1, execution. So the ladder says replication is far stronger evidence than reproduction, and this paragraph implies the reverse. `GLOSSARY.md`'s new combined entry repeats the same wording and inherits the same problem.
-The distinction itself is correct and worth having; it is the axis that needs naming. Separating "how demanding the property is to satisfy" from "how much evidential weight it carries" would let the paragraph say the true and useful thing, which is that agentic work fails the easiest of the three and can still reach the strongest through corroboration. Ai-writer's to redraft, and worth doing here and in the glossary together.]
+Calling such a record reproducible names the wrong property.
+Three properties get muddled together at this point, and they separate cleanly by what each one establishes.
+**Reproducibility** establishes that the procedure is deterministic: the same workflow on the same inputs returns the same answer.
+**Replicability** establishes that the finding is not an artefact of the route taken: an independent group asks the same question its own way and gets a compatible answer.
+**Auditability** establishes what was actually done: the work can be reconstructed and defended afterwards, whether or not it can be repeated.
+
+They are not a single ranking, and treating them as one is how the confusion starts.
+Reproducibility is the most demanding to satisfy and the least informative once satisfied, because a workflow can be perfectly deterministic and deterministically wrong.
+Replicability is the hardest to arrange and carries the most weight, which is why Chapter 11 §11.2 puts independent-method corroboration at Tier 5 and re-running near Tier 1.
+Auditability is the cheapest of the three and establishes something neither of the others does, which is what the workflow did and on what authority.
+So an agentic workflow fails the easiest property and can still reach the strongest, by corroboration rather than by repetition.
 
 An agentic workflow delivers the third, and it fails the first for two structural reasons.
 The first is run-to-run variation.
@@ -104,7 +104,7 @@ Once it is, the workflow cannot be re-run at all, and no amount of record-keepin
 
 **[AUTHOR: if you have had a workflow become un-rerunnable because the model behind it was withdrawn, one sentence of that would anchor this better than the general statement.]**
 
-> **Definition — Auditability.** The property of being reconstructable and defensible after the fact: what ran, on what, under which specification, passed by whom. It is what a provenance record delivers. It is weaker than reproducibility, because it does not let anyone repeat the work, and it is worth having anyway.
+> **Definition — Auditability.** The property of being reconstructable and defensible after the fact: what ran, on what, under which specification, passed by whom. It is what a provenance record delivers. It establishes what was done rather than that the answer would come back the same, which is a different question and a cheaper one to answer.
 
 The constructive half of this sits in the architecture rather than in the record.
 Deterministic components are reproducible in the strict sense, and the propose–dispose separation puts them in charge (Chapter 2 §2.6, on the three kinds of thing that may dispose).
@@ -256,17 +256,21 @@ Applying the principle in practice means enumerating, before a workflow runs, ex
 This enumeration is itself a governance artefact, belonging in the specification (Chapter 3) and recorded in the audit trail (§12.4), and it has the useful side effect of forcing the workflow's designer to articulate what the agent actually needs, a question that often reveals a broad permission was requested out of convenience rather than necessity, the "excessive agency" the security profession warns against (OWASP, 2025).
 The institutional vocabulary has kept pace with the move to agents: alongside the top-ten risks for LLM applications already cited, a companion top-ten now exists for agentic applications specifically, effectively expanding that single "excessive agency" category into a full agent-specific risk list once a system takes autonomous, credentialed, multi-step action (OWASP, 2026).
 The default posture is deny-by-default: the agent starts with no access and is granted each capability deliberately, rather than starting broad and being pared back, because the failures of omission in the first posture are safe and the failures of omission in the second are exposures (high confidence; this is standard security practice applied unchanged to agents).
-Practitioner guidance has arrived independently at the same posture, drawing its permission tiers around the consequence of an action rather than around any model's current capability (practitioner commentary; see the references).
+Practitioner guidance has arrived independently at the same posture, sorting an agent's actions into three permission bands (practitioner commentary; see the references).
+The bands are drawn around the consequence of the action rather than around any model's current capability.
+Fully autonomous operation is reserved for actions that are low-stakes and easily reversible.
+The middle band is propose-then-approve: the agent may prepare the action, and a person passes it before it takes effect.
+The top band is never autonomous, whatever the model can do.
+That middle band is this section's own instance of the propose–dispose separation, with a person as the disposer.
+Chapter 2 §2.6 sets out the three kinds of disposer and what each is for.
 Models change; the permission gradient should not.
-[ai-reviewer: an unauthorised cut, and the one place in the pass where a chapter lost content the plan explicitly protected. Task 12.3(a) authorised deleting exactly one thing from §12.8: the general derivation of why a proposed consequential action waits on a human. It said everything security-specific stays in full. What actually went was the substance of the cited practitioner guidance, namely the three permission bands — fully autonomous only where low-stakes and reversible, propose-then-approve in the middle, never autonomous at the top. The citation survives and the finding it carried does not, which leaves a source supporting a vaguer claim than it made. That is worse than cutting the sentence outright, because a reader cannot tell what the guidance actually said.
-There is an irony worth naming, because it shows what went wrong. The deleted "propose-then-approve" band was §12.8's own named instance of the propose–dispose separation. So a task whose purpose was to point §12.8 at the general principle deleted the local instance the general principle exists to generalise, and then added a cross-reference to it further down. The paragraph now has the pointer and not the thing.
-Separately in the same edit: the trust-boundary sentence lost "(writing to shared systems, sending communications, running irreversible commands)" and gained "any action whose consequences reach outside the boundary". Those three examples were security-specific, concrete and protected by the plan, and the replacement is more abstract than what it replaced, which is the direction `STYLE.md` §12.1(e) tells the author to reverse. Restoring both is ai-writer's, and the plan's discrepancy rule says a cut that would break an argument is raised in the PR rather than made silently.]
 
 The trust boundary is the line this enumeration draws, and making it explicit is the purpose of the chapter's second figure.
 On the trusted side sit the agent, its specification and the tools it may call.
-On the untrusted side sit the external documents and data it reads, together with any action whose consequences reach outside the boundary.
+On the untrusted side sit the external documents and data it reads.
+So does any action whose consequences leave the boundary: writing to shared systems, sending communications, running irreversible commands.
 Drawing the boundary explicitly clarifies where each defence belongs: input validation and the instruction–data separation live where untrusted content crosses inward, least privilege lives at the tools the agent may call, and the human gate lives where a proposed action would cross outward into consequence.
-That outward gate is the propose–dispose separation of Chapter 2 §2.6, with a person as the disposer.
+That outward gate is the middle permission band above, and it is the propose–dispose separation with a person as the disposer.
 The boundary is also what institutional IT will ask to see, because it is the artefact that answers their questions directly, and the closing section turns to those questions.
 The limitation of least privilege is operational rather than conceptual.
 Permissions that are too narrow make a workflow fail in ways that tempt you to grant broad access just to make the failure go away.
@@ -362,6 +366,7 @@ An instrument whose behaviour is unbounded, unrecorded and unaccountable is not 
 [ai-reviewer: two comments on the section as a whole, placed here at its head.
 First, on how the opening reads against the chapter's own header. This chapter states "Nothing has been invented", and the section opens on a specific scenario carrying specific quantities: eight months, two of twenty seeded faults, all twenty caught last time. The second person makes it hypothetical to a careful reader, and the AUTHOR marker at the foot of the section confirms it is not lived. Neither of those is visible at the point of reading. The same pattern appears in the new §2.6, §3.7 and §17.4 openings, and it is the direct consequence of `STYLE.md` §1's instruction to let the concrete case lead, so it is not a drafting error — but this book's whole subject is the difference between an account of what happened and an account that reads like one, and it should not be the one book where a reader has to work that out. A house convention for marking a constructed illustration would settle it once for all four sections. That is ai-editor's to set, not a fix to this paragraph.
 Second, paragraph rhythm. The section's eight prose paragraphs measure 102, 74, 56, 117, 70, 105, 76 and 88 words, so four fall below `STYLE.md` §2's 80–200 band and one is at 56. Detection, containment, notification and the evaluation-set movement are each treated in fewer words than the section's own opening scenario, which inverts the emphasis: containment gets 56 words and gets the strongest line in the section ("The wrong outputs are the evidence"). The material is right and the sequence is right; several of these movements are compressed below the weight the argument gives them. Ai-writer's to rebalance.]
+[ai-writer: the second point is done. Detection, containment, notification and the evaluation-set movement are each developed to roughly 95 to 110 words, so all eight paragraphs now sit inside the band and containment is no longer the shortest thing carrying the strongest line. Nothing was added that needs a source; the additions are consequences of what the movements already claimed. The first point is left standing because the comment is right that it belongs to ai-editor: marking a constructed illustration is a house convention, it has to cover §2.6, §3.7, §12.10 and §17.4 identically, and inventing one here would set it by accident in the one place a reader is most likely to read it as lived. If ai-editor rules, the four openings can be brought under it in a single pass.]
 You re-calibrate a citation gate that has run untouched for eight months, and this time it misses two of the twenty seeded faults.
 Last time it caught all twenty.
 Nothing about the gate looks different, and nothing in the record flagged a change.
@@ -370,15 +375,19 @@ Every artefact that passed through that gate since the last calibration is now o
 For a book grounded in operational forecasting, the hour after a discovery like that is where governance is tested rather than described.
 
 Four things tend to bring it to light.
-A scheduled re-calibration finds it, as above.
-A yield collapse shows it, where a gate that used to reject things has stopped rejecting anything.
+A scheduled re-calibration finds it, as above, and it is the only one of the four that arrives before anything downstream has moved.
+A yield collapse shows it, where a gate that used to reject things has stopped rejecting anything, which Chapter 11 §11.5 treats as an alarm rather than as good news.
 A corroborating method disagrees, which is Tier 5 of Chapter 11 §11.2 doing the job the ladder puts it there for.
 Or a downstream user complains, which is the uncomfortable one: most of the time you find out because somebody else noticed.
+That last route is worth planning for rather than hoping against, because it arrives with a deadline attached and an audience already watching.
 
 Stop the workflow before diagnosing it.
 Diagnosing first is the expensive instinct, because every run made while you diagnose adds to the set of artefacts you will have to assess.
+Stopping is cheap and reversible; the set of affected outputs is neither.
 Quarantine the outputs rather than deleting them.
 The wrong outputs are the evidence: they tell you which fault classes got through, and when the behaviour changed.
+Deleting them destroys the only record of how the gate actually failed, which is the thing the evaluation set needs next.
+Quarantine also answers the question a collaborator asks first, which is whether the affected work still exists in the form they used.
 
 Scope is where this chapter's apparatus either pays for itself or turns out not to exist.
 The audit trail answers which artefacts passed through the affected gate and when (§12.4).
@@ -392,6 +401,9 @@ Who gets told follows from who relied on the work.
 Collaborators whose results sit downstream come first, because they may still be able to stop something.
 Partners who supplied data under conditions come next, where those conditions bear on the handling.
 An operational customer comes in wherever a decision was informed by an affected output.
+That order is not politeness; it is the order in which a warning can still change what somebody does.
+What you tell them is narrower than it feels: which artefacts are affected, what is now unknown about them, and when you expect to know more.
+Saying "we do not yet know" early beats saying something precise and wrong a week later.
 The thresholds are institutional rather than scientific, and this book does not set them **[AUTHOR]**.
 
 Metrology has recall, meaning a manufacturer can call back every affected unit and say publicly why.
@@ -403,13 +415,14 @@ The decision to correct the record is the author's, not the workflow's, and it t
 Every incident is a case for the evaluation set.
 The fault class the gate missed becomes a seeded case in the standing set (Chapter 11 §11.4, on building an evaluation set from the group's own work).
 So the same miss is caught next time rather than discovered.
-It also becomes an entry in the failure log.
+It also becomes an entry in the failure log, which is where a group's own version of Chapter 13's gallery comes from.
 And a gate that has failed once carries a shorter validity window, because its measured record now includes a failure.
+None of that repairs the affected work, and it is worth being clear that it does not.
+What it does is make the next incident cheaper, which is the only return an incident offers.
 
 No established procedure exists for retracting or correcting an agentic result, and saying otherwise would be inventing a consensus.
 So this is a response I think is right rather than one a community has settled (moderate confidence).
-The precondition is settled, though: national cyber-security guidance already asks that a specific human be named as accountable before an agentic system is deployed (Five Eyes joint advisory, 2026).
-[ai-reviewer: the claim is accurate and traceable — §12.9 above already carries it from the same source, and the `/research` entry supports it — but "national" misdescribes what the source is. It is a joint advisory of six national agencies across five countries, which is why §12.9 attributes it to the six by name and why Ch. 16 §16.2 calls the same source "multi-national security guidance". "National" makes a six-nation instrument sound like one country's rule, which understates exactly the weight the sentence is reaching for. A one-word fix, and worth making because this is the sentence that carries the section's only external warrant.]
+The precondition is settled, though: multi-national cyber-security guidance already asks that a specific human be named as accountable before an agentic system is deployed (Five Eyes joint advisory, 2026).
 Naming that person after an incident is too late, and every step above assumes somebody whose job it is to take them.
 
 **[AUTHOR: a gate of yours that turned out to have been miscalibrated, or the nearest thing to it — what you found, how far back it reached, and what you had to tell whom. This section is the one in the chapter most obviously missing lived material.]**

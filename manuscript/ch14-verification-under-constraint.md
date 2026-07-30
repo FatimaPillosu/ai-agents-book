@@ -1,10 +1,8 @@
 # Chapter 14 — Verification under constraint
 
-> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r6 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > This chapter reports executed operational work; concrete partner details, datasets, metrics, hardware, results and outcomes are the author's lived material and are tagged **[AUTHOR: …]**.
-
-> **[ai-reviewer: A1 review — 2 comments in this file.** All four tasks landed. Both F6 cuts are real and correctly bounded: the general re-derivations are gone, the measurement-specific argument in §14.3 and the architectural specifics in §14.4 are kept in full, and the Ben Bouallègue et al. (2024) passage is untouched as instructed. All fifteen AUTHOR markers are intact, which matters more here than anywhere else in the book, since this chapter reports executed work. One substantive comment below, on the Tier 5 claim, which is the same finding as the one at Ch. 11 §11.2 and lands harder here because this chapter calls it the strongest evidential move it makes.**]**
 
 ---
 
@@ -126,10 +124,14 @@ Why hold verification deterministic while allowing a language model elsewhere in
 A verification result is a measurement, and a measurement whose value could change because a generative model produced something slightly different this time is not a measurement at all.
 The evidential weight a verification score has to carry (informing whether a forecast system is fit for issuing warnings, or whether one configuration outperforms another) depends on the score being a fixed function of the data, auditable line by line and defensible to a regulator or a sceptical colleague who re-runs it (high confidence).
 This is exactly the discipline the meteorological community has applied to the new data-driven models themselves: when an operational centre assessed a machine-learning forecast model, it did so in an operational-like context, initialised from operational analyses, verified against both analyses and station observations with its own standard metrics, and reported the model's genuine strengths alongside documented weaknesses such as smoothing and the underestimation of some extremes (Ben Bouallègue et al., 2024).
-Checking one determination against two reference sources whose errors arise differently is independent-method corroboration, Tier 5 of Chapter 11 §11.2.
-It is the strongest evidential move this chapter reaches for.
-[ai-reviewer: "whose errors arise differently" is the assertion Ch. 11 §11.2 tells the reader never to make without argument, and it is made here about the one pairing where the dependency is easiest to name. The two reference sources are operational analyses and station observations, and an operational analysis is produced by assimilating station observations. The error structures do differ, substantially and usefully, which is why verifying against both is good practice. They are not unrelated, and §11.2's honest-limit paragraph names a structurally identical case ("two retrievals calibrated against the same ground network") as an example of what does not corroborate.
-Because this sentence also calls it the chapter's strongest evidential move, it is doing more work than the §11.2 mention: a reader who accepts it here will read the tier as satisfied by any two reference datasets that are not literally identical, which is the misreading §11.2 was written to prevent. The fix is not to withdraw the claim. It is either to argue what the assimilation does and does not propagate into the analysis, in one or two sentences the chapter can easily carry, or to present the pairing as a partial corroboration and use it to show the reader what arguing for independence actually looks like. The second would make this chapter the worked example of §11.2's rule rather than a counter-example to it. Ai-writer's; the two sites should be settled together.]
+Checking one determination against two reference sources is a reach for Tier 5 of Chapter 11 §11.2, independent-method corroboration, and it is the strongest evidential move this chapter makes.
+It is also a partial one, and the reason is worth stating rather than skipping past.
+An operational analysis is produced by assimilating station observations, so the two references are not unrelated.
+What differs is what each one carries.
+An analysis is a physically constrained field with the assimilating model's structure inside it, and a station report is a point measurement with no model at all.
+An error the assimilating model shares with the forecast can hide in the analysis and still show against the stations.
+So this is a corroboration weakened by a named dependency rather than a clean one (moderate confidence; argued here from how assimilation works rather than from a measurement).
+Naming the dependency is what Chapter 11 §11.2 asks of every Tier 5 claim, and this is what doing it looks like.
 
 Holding the model out of the scoring path is the propose–dispose separation of Chapter 2 §2.6, with a deterministic rule disposing.
 It is also Chapter 11 §11.3's rule that a check sits outside what it checks.

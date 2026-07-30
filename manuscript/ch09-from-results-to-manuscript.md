@@ -1,10 +1,8 @@
 # Chapter 9 — From results to manuscript
 
-> **Status:** draft r5 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
+> **Status:** draft r6 · voice v5.0 (`STYLE.md` §1) · sentence-per-line per `STYLE.md` §10 · figures as briefs per `FIGURES.md`.
 > **Conventions:** vendor-neutral (outline §9) · **[AUTHOR: …]** marks lived material only the author can supply · **[verify]** marks real but unconfirmed details · citations drawn only from verified reports in `/research`. Nothing has been invented.
 > **This chapter:** journal and funder AI-use policy is a volatile landscape, surveyed here by policy class; current specifics are held in the repository, not fixed in print.
-
-> **[ai-reviewer: A1 review — 2 comments in this file.** Tasks 9.1, 9.2 and 9.3 all landed. The F6 cut is real and the manuscript-specific content the plan told the writer to keep is all present: what the agent may draft, what it must not do, and the read-every-sentence rule. Task 9.2's new passage on what a methods section can honestly claim is well judged, defers the definition to Ch. 12 §12.4 as instructed, and adds no citation. One comment below on a confidence flag that lost its claim in the rewrite.**]**
 
 ---
 
@@ -111,10 +109,10 @@ The redesign swaps manual transcription for regeneration from one source of trut
 
 The organising principle is simple: every number and every figure in the manuscript should trace to a pipeline artefact and be regenerable from it, so a late change upstream propagates on its own instead of requiring you to remember every place the old value appeared.
 In practice that means figures come from a plotting step reading the same result files the analysis wrote, tables get generated from those files rather than typed, and the numbers quoted in the running text are, wherever the format allows, drawn from the same artefacts by templating rather than copied by hand.
-An assembly agent operates that arrangement rather than authoring it: regenerating the figure set when a file changes, assembling tables to the journal's column specification, checking quoted values against the tables they came from, and flagging mismatches for you to resolve.
-Its outputs stop at an explicit author gate, which is the propose–dispose separation of Chapter 2 §2.6 with the author as the disposer.
-How much to automate varies with the manuscript (high confidence in the pattern).
-[ai-reviewer: the flag has come loose from its claim. Before the cut it read "…the agent's outputs are proposals you accept, edit or reject at an explicit gate (high confidence in the pattern; how much automation is safe varies with the manuscript)" — the flag qualified the pattern and the variation was the caveat inside it. The rewrite promoted the caveat to the sentence and left the flag attached to it, so the text now says it is highly confident that something varies. `STYLE.md` §6.3: hedge the claim once, at the right strength, in the right clause. The pattern claim is the sentence above and that is where the flag belongs. Also worth checking the preceding 41-word sentence against the ~30-word ceiling: its four parallel items are separated by commas, so the §11 enumeration exemption, which is written for semicolons, does not reach it.]
+An assembly agent operates that arrangement rather than authoring it.
+It regenerates the figure set when a file changes; it assembles tables to the journal's column specification; it checks quoted values against the tables they came from; and it flags mismatches for you to resolve.
+Its outputs stop at an explicit author gate, which is the propose–dispose separation of Chapter 2 §2.6 with the author as the disposer (high confidence in the pattern).
+How much of the assembly to automate varies with the manuscript, and that judgement stays yours.
 
 The same principle governs prose drafting, with a sharper boundary, because prose is where accountability is most easily laundered.
 An agent can usefully draft a methods section from a specification and a pipeline configuration, a data-availability statement from provenance records, or documentation of a workflow from its own logs.
