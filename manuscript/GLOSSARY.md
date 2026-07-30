@@ -1,6 +1,6 @@
 # Glossary — plain-language terms
 
-**Working glossary.** Every demanding term explained in an info-box (`STYLE.md` §9) is collected here, together with a small number of terms the book leans on throughout, so a reader can look a word up from anywhere, not only where it first appears. Definitions are deliberately plain and warm; the precise treatment lives in the chapter that introduces the term, named in brackets after each entry. British English throughout. This edition covers Chapters 1–17.
+**Working glossary.** Every demanding term explained in an info-box (`STYLE.md` §9) is collected here, together with a small number of terms the book leans on throughout, so a reader can look a word up from anywhere, not only where it first appears. Definitions are deliberately plain and warm; the precise treatment lives in the chapter that introduces the term, named in brackets after each entry. British English throughout. This edition covers Chapters 1–18.
 
 ---
 
@@ -12,9 +12,13 @@
 
 **Assumption registry** (Chapter 12). A running list of every "we're taking this as given" that a workflow leans on — each with why it was assumed, how confident you are, and who approved it. It turns assumptions that normally hide in someone's head and a few code comments into a record you can challenge before it does damage and consult after a result is questioned.
 
-**Audit trail** (Chapter 12). A time-ordered, hard-to-tamper-with log of everything the workflow did — which tool ran, on which inputs, producing which outputs, under which version, passed by which human. Registries record what you decided; the audit trail records what actually happened, so a result is not just re-runnable but explicable.
+**Audit trail** (Chapter 12). A time-ordered, hard-to-tamper-with log of everything the workflow did — which tool ran, on which inputs, producing which outputs, under which version, passed by which human. Registries record what you decided; the audit trail records what actually happened, so a result can be reconstructed and defended afterwards even where it cannot be run again. That property is auditability, and it is weaker than reproducibility rather than stronger (Chapter 12 §12.4).
+
+**Auditability** (Chapter 12). Being able to reconstruct and defend what was done afterwards: what ran, on what, under which specification, and who passed it. It is what a provenance record actually delivers, and it is weaker than reproducibility, because it does not let anyone repeat the work and get the same answer back. Agentic work delivers this one, and saying so plainly is a credibility gain rather than a loss.
 
 **Calibration** (Chapter 1, and throughout). Setting an instrument against a known reference so you can trust its readings, and characterising where it drifts or fails before you rely on it. This book treats an agent the same way a scientist already treats a sensor or a numerical model: calibrated before deployment, its failure modes mapped, not trusted on first acquaintance.
+
+**Calibration validity** (Chapter 11). A gate's measured miss rate is a reading taken on a date, not a standing property of the gate. So it carries a window, chosen by your group, past which it stops counting as evidence. A claim gated by an expired calibration is a claim whose evidence has quietly lapsed, which is a demotion in the record rather than a verdict that the work was wrong.
 
 **Citation-verification gate** (Chapter 5). A checkpoint every citation must pass before the draft is allowed forward. A separate step — not the agent that wrote the draft — confirms that each cited work exists, that the quoted passage is really in it, and that the passage actually supports the claim made on it. Citations that fail are removed or sent back; nothing proceeds just because it reads well.
 
@@ -37,6 +41,8 @@
 **False-negative rate** (Chapter 11). For a gate whose job is to catch bad work, the false-negative rate is how often it waves bad work through — says "pass" when it should have said "fail". It is the number that matters most and the one nobody measures by default, because a gate that never complains looks like a gate that works, right up until you find out it was asleep.
 
 **In-context learning** (Chapter 1). The knack, which appeared as models grew larger, of picking up a new task from nothing more than an instruction and a couple of examples written into the conversation — no retraining, no reprogramming. It is why you can steer these systems in ordinary written language.
+
+**Independent-method corroboration** (Chapter 11). A second determination of the same quantity by a method whose errors arise differently, agreeing with the first within the uncertainty each of them states. It is Tier 5 of the evidential hierarchy, and the environmental sciences' habitual strongest move: a satellite retrieval against a gauge, a physical model against an empirical one. The catch is that two methods sharing a hidden dependency corroborate nothing, so the independence of the error structures is something to argue for rather than assume.
 
 **Independent reviewer** (Chapter 10). An agent whose only job is to find faults in another agent's work, set up so that its judgement does not simply echo the producer's: a different model where possible, a deliberately narrower view of the task, an instruction that rewards catching problems, and its own source of truth to check against. Independence is the whole point — a reviewer that shares the producer's model and context mostly agrees with it.
 
@@ -62,6 +68,8 @@
 
 **Prompt injection** (Chapter 12). When text an agent reads as part of its work — a web page, a downloaded file, a colleague's document — contains instructions, and the agent obeys them as if they came from you. The agent cannot reliably tell "content to analyse" from "orders to follow", so, in effect, the data can order your agent around.
 
+**Propose–dispose separation** (Chapter 2). The agent proposes; something the agent does not control disposes. Three kinds of thing can do the disposing: a deterministic rule, where the criterion can be written as code; a human decision, where the criterion is judgement; and an external source of truth, where the criterion is a fact the agent cannot manufacture, such as a test suite or a reference dataset. What it buys is that fluent, wrong work cannot reach the record, because the model was never given the authority to write there. What it does not buy is a well-designed disposer.
+
 **Provenance** (Chapter 12). The traceable record of where a result came from: which inputs fed it, which version of the workflow ran, what the agent did at each step, and who signed off. Provenance is what lets someone reconstruct and defend a result months later, instead of taking your word that it was "done carefully".
 
 **Pull request (merge request)** (Chapter 7). A proposal to fold a set of changes into the shared main line of work, which the version-control platform presents as a line-by-line difference for review. Comments attach to the exact lines they concern, the author answers or revises, and nothing lands until the accountable owner accepts the result. In this book's workflows it is the surface on which a scientist reads, questions and finally signs off an agent's work.
@@ -69,6 +77,8 @@
 **Quality-control flag** (Chapter 6). A marker attached alongside an observation that records a judgement about it — suspect, missing, corrected — without changing the measured value itself. The number you recorded stays exactly as it was; the flag simply travels with it, so anyone downstream can see what was doubted and why. Flagging is deliberately not the same as editing the data.
 
 **Regression test** (Chapter 7). A test that pins down behaviour you have already confirmed is correct, by recording the output for a fixed input and asserting it again on every future run. Its whole job is to catch the day something quietly changes — a library update, a refactor — that would otherwise slip through unnoticed. It does not ask whether the answer is right in the abstract, only whether it still matches what you signed off before.
+
+**Reproducibility, replicability and auditability** (Chapter 12). Three different properties, routinely run together and worth keeping apart. Reproducibility is the strictest: the same workflow on the same inputs returns the same answer. Replicability is the one science actually runs on: an independent group asks the same question by its own route and gets a compatible answer. Auditability is the weakest of the three and has its own entry above. An agentic workflow delivers the third and fails the first, because the same specification can return different work on a second run and the model behind a result can be withdrawn (Chapter 12 §12.4).
 
 **Retrieval grounding** (Chapter 5). Rather than let the model answer from its own trained-in memory of the literature, you first fetch real documents and then require every sentence it writes to rest only on those fetched documents. The model still does the writing, but it is writing about texts placed in front of it rather than half-remembered ones. That is what later lets a check trace each claim back to a source that genuinely exists.
 
