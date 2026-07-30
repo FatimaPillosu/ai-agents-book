@@ -54,7 +54,7 @@ The book is not for machine-learning researchers after novel methods, nor for ma
 
 ![An icon key laid out as two rows of three. Each entry pairs a coloured line icon with its name and a short description of its role. A blue head-and-shoulders outline is the human, the person who decides and is accountable. An orange rounded square with a loop arrow is the agent, a language model working in a plan-act-observe loop. A green wrench is the tool, a function or program the agent calls. A sky-blue cylinder is the data store, a dataset, file or record. A vermillion diamond is the gate, a check the work has to pass. A purple head-and-shoulders outline with a tick is the reviewer, an independent checker. A footer line notes that these six never change.](../figures/figure-0-1.svg)
 
-*Figure 0.1 — The six actors every figure in this book is built from. Each one keeps the same icon and the same colour from here to the last page, so once you have learned them you can read any later figure without a legend. Colour never carries meaning on its own: every icon is labelled, so the figures work in greyscale too. (Rendered as `figures/figure-0-1.svg` from the brief below, per `FIGURES.md`.)*
+*Figure 0.1 — The six actors every figure in this book is built from. Each one keeps the same icon and the same colour from here to the last page. Learn them once and you can read any later figure without a legend. Colour never carries meaning on its own: every icon is labelled, so the figures work in greyscale too. (Rendered as `figures/figure-0-1.svg` from the brief below, per `FIGURES.md`.)*
 
 ```
 FIGURE BRIEF
@@ -81,7 +81,7 @@ FIGURE BRIEF
                  before it goes on"; under "reviewer", "checks someone else's work,
                  independently"; footer strip, "these six keep the same icon and colour in
                  every figure in this book"
-- caption:       Figure 0.1 — The six actors every figure in this book is built from. Each one keeps the same icon and the same colour from here to the last page, so once you have learned them you can read any later figure without a legend. Colour never carries meaning on its own: every icon is labelled, so the figures work in greyscale too.
+- caption:       Figure 0.1 — The six actors every figure in this book is built from. Each one keeps the same icon and the same colour from here to the last page. Learn them once and you can read any later figure without a legend. Colour never carries meaning on its own: every icon is labelled, so the figures work in greyscale too.
 - alt-text:      An icon key laid out as two rows of three. Each entry pairs a coloured line icon with its name and a short description of its role. A blue head-and-shoulders outline is the human, the person who decides and is accountable. An orange rounded square with a loop arrow is the agent, a language model working in a plan-act-observe loop. A green wrench is the tool, a function or program the agent calls. A sky-blue cylinder is the data store, a dataset, file or record. A vermillion diamond is the gate, a check the work has to pass. A purple head-and-shoulders outline with a tick is the reviewer, an independent checker. A footer line notes that these six never change.
 - infographic description: A flat vector legend on an off-white background, 16:9. Title
                  top-left in the largest size: "The six actors, and what each one does".
