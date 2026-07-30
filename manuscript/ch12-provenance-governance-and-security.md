@@ -80,14 +80,13 @@ A sixth element belongs with those five and is usually the missing one: the cali
 That means the gate's measured miss rate, the date of that measurement, and its validity window (Chapter 11 §11.5, on why a calibration expires rather than merely ageing).
 Without it the record can say a gate passed the work and cannot say whether the gate was known to be working at the time.
 Captured together, these convert the vague reassurance that a workflow was "carefully done" into a record a reviewer, an auditor or a successor can interrogate.
-Those same records are what a reader on the outside should be asking to see, and Chapter 17 turns them into questions a reviewer can actually put.
 The architecture that carries this record is the subject of the first figure of this chapter, which shows the audit trail and the two registries as a governance layer sitting beside the workflow rather than inside it, fed by the same events the workflow generates for its own operation.
 
 What that record does not do is let anyone run the work again and get the same answer.
 Calling an explicable result reproducible gets the ordering backwards.
-Explicable is the weaker of the two properties, and it is the one an agentic workflow delivers.
-**Reproducibility** is the strictest of the three properties in play: the same workflow on the same inputs returns the same answer.
-**Replicability** is the one science actually runs on: an independent group asks the same question by its own route and gets a compatible answer.
+Explicable is the weaker of that pair, and it is the one an agentic workflow delivers.
+**Reproducibility** is the strictest of the three properties at issue: the same workflow on the same inputs returns the same answer.
+**Replicability** is the one science runs on: an independent group asks the same question by its own route and gets a compatible answer.
 **Auditability** is the weakest: what was done can be reconstructed and defended afterwards, without necessarily being repeatable.
 
 An agentic workflow delivers the third, and it fails the first for two structural reasons.
@@ -99,19 +98,18 @@ Once it is, the workflow cannot be re-run at all, and no amount of record-keepin
 
 **[AUTHOR: if you have had a workflow become un-rerunnable because the model behind it was withdrawn, one sentence of that would anchor this better than the general statement.]**
 
-> **Definition — Auditability.** The property of being reconstructable and defensible after the fact: what ran, on what, under which specification, passed by whom. It is what a provenance record delivers, and it is weaker than reproducibility, because it does not let anyone repeat the work. It is worth having anyway, since without it a result cannot even be explained.
+> **Definition — Auditability.** The property of being reconstructable and defensible after the fact: what ran, on what, under which specification, passed by whom. It is what a provenance record delivers. It is weaker than reproducibility, because it does not let anyone repeat the work, and it is worth having anyway.
 
 The constructive half of this sits in the architecture rather than in the record.
 Deterministic components are reproducible in the strict sense, and the propose–dispose separation puts them in charge (Chapter 2 §2.6, on the three kinds of thing that may dispose).
-Chapter 6's quality-control rules dispose of every agent proposal, and re-running them on the same inputs under the same rule-set version returns the same flags.
-Chapter 14 §14.3 holds the verification core deterministic for the same reason, keeping the language model out of the measurement itself.
+Chapter 6's quality-control rules dispose of every agent proposal, and re-running them under the same rule-set version returns the same flags.
+Chapter 14 §14.3 holds the verification core deterministic, keeping the model out of the measurement.
 In both, the reproducible element is the one holding the authority, and the agent's contribution is auditable and nothing more.
-So the honest claim is granular rather than global: name the components that are reproducible, and say plainly that the agentic step is auditable.
+So the honest claim is granular: name the reproducible components, and say plainly that the agentic step is auditable.
 
 Saying that plainly is a credibility gain.
-This readership has lived through the reproducibility crisis and has vocabulary for exactly this problem.
-A claim of reproducibility for work that cannot be re-run will not survive its first sceptical reader.
-A claim that separates the three properties and names the one the workflow delivers is smaller, and it holds (high confidence).
+This readership has lived through the reproducibility crisis and knows the vocabulary for it.
+A claim of reproducibility for work that cannot be re-run will not survive its first sceptical reader, and the smaller claim is the one that holds (high confidence).
 
 Reviewer-coverage records are the part of the audit trail that documents scrutiny rather than execution, and they answer a question that turns acute the moment agents generate more output than humans can exhaustively check: what was reviewed, by whom, and what was not.
 A reviewer-coverage record pairs each reviewable artefact (a block of generated code, a synthesised claim, a QC decision) with the reviewer who examined it, the depth of that examination, and its outcome, distinguishing an independent-agent review (Chapters 7 and 10) from a human review and recording both.
@@ -119,6 +117,7 @@ Its purpose is to make coverage explicit and therefore contestable, because the 
 A coverage record also supports honest disclosure, since a manuscript produced under Chapter 9's discipline can state truthfully which components passed independent review and which rest on author inspection alone, and it supports the evaluation of Chapter 11 by making the denominator of review coverage a measured quantity rather than an impression.
 The limitation, stated plainly, is that a coverage record documents that review occurred, not that it was competent: a rubber-stamp review leaves the same record as a searching one, and no registry can substitute for a reviewing culture that takes the task seriously.
 Chapter 11 §11.5 gives the measurement, seeded defects in a human reviewer's queue, and Chapter 13 §13.9 argues this is the commonest failure of the lot.
+The two registries and these two records are also what a reader on the outside should be asking to see, and Chapter 17 turns them into questions a reviewer can actually put.
 
 **Figure 12.1 — The governance layer: registries and audit trail beside the workflow.**
 
