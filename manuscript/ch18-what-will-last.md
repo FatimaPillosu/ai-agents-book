@@ -8,18 +8,13 @@
 ## 18.1 Two layers moving at two speeds
 
 A book about a fast-moving technology owes you, at its close, a statement of which of its contents it expects to survive and which it expects to date.
-You are entitled to know where to place your trust.
 
-The material here sits in two layers moving at very different speeds, and the whole design of the project rests on keeping them apart.
-The lower layer is the durable one: the stance that an agent is an instrument requiring specification, calibration, verification and audit (Chapter 1); the craft of writing a specification a human can audit (Chapter 3); the discipline of asking whether an agent should touch a task at all (Chapter 4); and the evidential hierarchy by which a workflow's claims are weighed (Chapter 11).
-None of that reasoning depends on which model was current when it was written, because it derives from the ordinary discipline of instrumentation, which predates language models by a century and will outlast any particular one.
-
-The upper layer is the volatile one: model names and versions, per-token prices, context-window sizes, benchmark leaderboards, the exact syntax of a tool protocol, the current wording of a journal's disclosure policy.
-That layer turns over on a timescale of months, faster than a publishing cycle, and a printed page is the wrong place to record it.
-The division used throughout, print stating the position and the reasoning while the companion repository tracks the movement, is not an editorial convenience.
-It is this book's central wager about how to write usefully for practitioners in a field where the tooling turns over faster than the understanding.
+The material here sits in two layers moving at very different speeds.
+The first layer is the durable one: the stance that an agent is an instrument requiring specification, calibration, verification and audit (Chapter 1); the craft of writing a specification a human can audit (Chapter 3); the discipline of asking whether an agent should touch a task at all (Chapter 4); and the evidential hierarchy by which a workflow's claims are weighed (Chapter 11).
+None of that reasoning depends on which model was current when it was written.
+The second layer is the volatile one: model names and versions, per-token prices, context-window sizes, benchmark leaderboards, the exact syntax of a tool protocol, the current wording of a journal's disclosure policy.
+That layer turns over on a timescale of months.
 The limitation is that the boundary between the two layers is not always obvious in advance, and a claim that reads as durable may turn out to have rested on a passing feature of one model generation.
-Where that risk is live, the text flags it, and the repository is where such misjudgements get corrected between releases rather than left to mislead until the next edition.
 
 **Figure 18.1 — Durable principles versus volatile tooling.**
 
@@ -75,27 +70,21 @@ FIGURE BRIEF
 
 ## 18.2 The principles that will last
 
-The argument of this book compresses to a small set of principles that carry into any future toolchain without amendment.
+The argument of this book compresses to a small set of principles that carry into any future toolchain.
 
 The first is that an agent is an instrument, not a colleague: it is specified, calibrated, verified and audited exactly as a sensor or a numerical model is, and the vocabulary of trust a scientist already commands (calibration before deployment, characterisation of drift, quality control within a designed network) transfers to it directly (Chapter 1).
 
 The second is that the specification is where you actually keep control: most failures trace not to a model's limitations but to an underspecified task, and writing an objective, inputs, acceptance criteria and stop conditions a human can audit is the single most transferable skill in the book (Chapter 3).
 
-The third is that verification is external, and everything rests on it: because language systems fail in ways that imitate competence, every check has to sit outside the system being checked, and the effort a workflow saves in generation is properly spent again on confirmation (Chapter 11).
+The third is that verification is external: because language systems fail in ways that imitate competence, every check has to sit outside the system being checked, and the effort a workflow saves in generation is properly spent again on confirmation (Chapter 11).
 
 The fourth is that some things never transfer to the instrument: accountability for a decision, the scientific judgement that an anomaly is meaningful rather than instrumental, and authorship of the work that results remain with the person, and they do not soften as models improve, because responsibility is not a capability (Chapters 1 and 4).
 This one is not merely a stance of this book but the settled position of the scientific record: the journals ruled early that an AI tool cannot be an author, precisely because authorship carries an accountability a tool cannot bear (Nature editorial, 2023), and no improvement in capability changes what kind of thing an instrument is.
 
 The fifth is that the right question is often whether to use an agent at all, and the answer is sometimes no.
 What bounds delegation is the cost of checking, and that cost belongs to the task rather than to the model.
-Chapter 4 §4.4 takes that premise forward in time and argues the delegable class therefore widens very little as models improve.
 
-All five hold at high confidence, because each rests on a property of the situation rather than on any feature of a particular model: the fallibility of instruments, the primacy of clear specification, the plausibility of fluent error, the non-transferability of responsibility, and the economics of verification.
-The forward conclusion §4.4 draws from the fifth is a step beyond the principle itself, and it is held at moderate-to-high confidence there rather than here.
-
-The research frontier is drifting the same way: a 2026 proposal for an agentic scientific operating system independently centres staged objectives, verification checkpoints and bounded delegation, not validated technology, but a sign this governance-first framing sits inside a wider convergence rather than against it (Zheng et al., 2026, a weeks-old preprint).
-The limitation worth stating is that principles stated this generally are easy to agree with and hard to practise.
-Their value only appears in the concrete disciplines of the preceding chapters, and taking the principles without the practice is taking the smaller half.
+All five hold at high confidence, because each rests on a property of the situation rather than on any feature of a particular model: the fallibility of instruments, the primacy of clear specification, the plausibility of fluent error, the non-transferability of responsibility. 
 
 ## 18.3 Staying current by principle, not by release
 
@@ -103,10 +92,10 @@ Keeping up with a field that ships faster than anyone can read is a genuine prob
 
 The failure to warn against is release-chasing: treating every new model, protocol or product as a thing to learn in its own right.
 That is both exhausting and unnecessary, because the great majority of releases are new instances of capability classes you already understand.
-A more sustainable practice is to translate every announcement into this book's vocabulary before deciding whether it warrants attention: what capability class it belongs to, whether it changes the cost or reliability of a task already in the workflow, and whether it moves the verification burden rather than merely the generation cost (moderate-to-high confidence that this filter removes most of the noise).
+A more sustainable practice is to translate every announcement into this book's vocabulary before deciding whether it warrants attention: what capability class it belongs to, whether it changes the cost or reliability of a task already in the workflow, and whether it moves the verification burden rather than merely the generation cost. 
 An announcement that moves only the generation cost does not widen the class of work worth delegating, which is why so few announcements matter.
-Chapter 4 §4.4 gives the reason that boundary barely moves.
-Under that filter, a faster or cheaper model of an existing class is a parameter change, not a new thing to learn; a genuinely new capability class (the arrival of reliable tool calling around 2023 was the last clear example, Chapter 1) is rare, and rare enough to deserve real study when it comes.
+
+Under that filter, a faster or cheaper model of an existing class is a parameter change, not a new thing to learn; a genuinely new capability class is rare, and rare enough to deserve real study when it comes.
 The second half of the practice is to let evaluation, not marketing, decide what enters a workflow: a new model earns its place by passing the same task-grounded tests as the one it replaces (Chapter 11), run on the actual task with the actual data, so that adoption is a measured substitution rather than an act of faith in a benchmark score.
 
 The year's loudest capability claim illustrates the filter: the most consequential 2026 account of what these systems can do came from a frontier-model developer describing its own agents (most of its production code now machine-written, task horizons doubling every few months), a party with every reason to make the case look strong (Anthropic Institute, 2026).
