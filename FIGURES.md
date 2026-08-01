@@ -1,14 +1,16 @@
 # Figure and infographic style guide
 
-**v2.0 · 26 July 2026** · Binding for every figure in the book. Read alongside `STYLE.md` v5.0. British English throughout, including labels, captions and alt-text.
+**v2.1 · 1 August 2026** · Binding for every figure in the book. Read alongside `STYLE.md` v5.0. British English throughout, including labels, captions and alt-text.
+
+**Change from v2.0 (minor):** the briefs moved out of the chapters into `fig-brief/`, one file per chapter, on the author's instruction of 1 August 2026, and §6 now says where each artefact belongs. The caption's render pointer changes with it, from "from the brief below" to "from its brief in `fig-brief/chNN-slug.md`" (§6.1). Three ambiguities that produced real defects on the A1 pass are also settled in §6: figures are numbered by order of first appearance; the caption's two-or-three-sentence limit is counted after the title line; and `STYLE.md` §11's ~30-word sentence ceiling binds captions and alt-text alike, with §11's semicolon-enumeration exception. That last ruling leaves 45 of the 54 alt-texts non-compliant, which is recorded as scheduled rework rather than treated as a new rule for new figures only. Nothing about the house style itself changes.
 
 **Change from v1.0 (major):** the house style moves from minimal diagram to **explanatory infographic**, on the author's instruction of 26 July 2026. Figures now carry enough on-canvas text to be understood on their own, without the reader holding the surrounding prose in mind. Three things change: §2 replaces the restraint principle with explanatory density; §3.3 defines a five-level text hierarchy in place of "minimal on-canvas text"; and the brief's `generator prompt` field is replaced by an **`infographic description`** (§6) that specifies every piece of text on the canvas, so the description can be handed to a designer or an image tool and produce a finished infographic rather than a skeleton. Captions and alt-text move to the colloquial register of `STYLE.md` v5.0. What does not change: the Okabe–Ito role palette, the fixed iconography, flatness, colour-vision safety, and the rule that meaning is never carried by colour alone.
 
-> **Render status.** All 51 SVGs under `figures/` are rendered from the v2.0 briefs through the shared house renderer (`figures-src/`): orthogonal connectors only, a five-level type hierarchy, and an automated collision check that verifies no text crosses a line, a shape border or another text. Regenerate any figure by editing its entry in `figures-src/f_*.py` and re-running the script; the renderer fails loudly on any new overlap. **[AUTHOR: the renders are consistent technical infographics; if a designed look is wanted for release, the briefs' infographic descriptions are the hand-off specification.]**
+> **Render status.** All 54 SVGs under `figures/` are rendered from the v2.0 briefs through the shared house renderer (`figures-src/`): orthogonal connectors only, a five-level type hierarchy, and an automated collision check that verifies no text crosses a line, a shape border or another text. Regenerate any figure by editing its entry in `figures-src/f_*.py` and re-running the script; the renderer fails loudly on any new overlap. **[AUTHOR: the renders are consistent technical infographics; if a designed look is wanted for release, the briefs' infographic descriptions are the hand-off specification.]**
 
 ## 1. What this document is for
 
-This guide fixes one house style for every figure in the book and defines a single **figure brief** format in which each figure is described. A completed brief is a self-contained specification: hand its `infographic description` to a designer, an illustration tool or an image generator and you should get back a finished, readable infographic without needing the chapter beside it. Every figure in the manuscript is written as a brief following §6. No figure is drawn ad hoc.
+This guide fixes one house style for every figure in the book and defines a single **figure brief** format in which each figure is described. A completed brief is a self-contained specification: hand its `infographic description` to a designer, an illustration tool or an image generator and you should get back a finished, readable infographic without needing the chapter beside it. Every figure in the manuscript is written as a brief following §6, and the briefs live in `fig-brief/` rather than in the chapters (§6). No figure is drawn ad hoc.
 
 The design brief in one line: **explanatory, professional, flat, legible and consistent** — an editorial-technical infographic closer to a well-made textbook diagram or a good newspaper explainer than to either a bare flowchart or marketing material. A figure earns its place by teaching something on its own, and the text it needs to do that belongs on the canvas.
 
@@ -105,6 +107,12 @@ A figure that fits none of the five is a sign the idea is not yet clear enough t
 
 ## 6. The figure brief
 
+**Where each piece lives.** The brief lives in `fig-brief/`, one file per chapter, named for the chapter it serves (`fig-brief/chNN-slug.md`). Every brief sits under its own `## Figure N.M — …` heading in that file. The chapter file keeps three things and only those three: the bold figure marker, the image with its alt-text, and the caption beneath it. The brief's `caption` and `alt-text` fields carry the same words as the chapter, so a change to either one is a change to both, made in the same edit. Everything else in the brief stays in `fig-brief/` and never appears in the manuscript. (The author moved the briefs out of the chapters on 1 August 2026, so that the prose reads clean.)
+
+**Numbering.** Figures are numbered by order of first appearance in the chapter, so Figure N.1 is the first one a reader meets. The order in which the briefs were written does not govern, and neither does the order a plan lists them in.
+
+**The sentence ceiling applies here.** `STYLE.md` §11's ceiling of roughly 30 words binds captions and alt-text as it binds body prose. §11's one exception holds too: a sentence that runs over because it lists parallel items separated by semicolons may stand whole, whilst a sentence that runs over because clauses have accumulated is split. Alt-text is bound for the same reason as prose, and more strongly. A screen reader delivers a sentence in one pass, and a listener cannot scan back over it.
+
 Every figure is specified by a brief with the fields below. The early fields orient the human reader and the editor; the final `infographic description` field, once the §4 block is prepended, is the complete specification handed to whoever renders it.
 
 ```
@@ -133,14 +141,9 @@ FIGURE BRIEF
 
 ### 6.1 Captions
 
-Captions are written in the colloquial register (`STYLE.md` v5.0 §1): plain, direct, addressing the reader where the sentence calls for it, and never announcing what the figure is about to do. Two or three sentences. Say what the figure shows, then what to take from it. A caption never simply restates the title, and it never carries information the figure itself should have carried.
+Captions are written in the colloquial register (`STYLE.md` v5.0 §1): plain, direct, addressing the reader where the sentence calls for it, and never announcing what the figure is about to do. Two or three sentences, counted after the title line that opens the caption. Say what the figure shows, then what to take from it. A caption never simply restates the title, and it never carries information the figure itself should have carried.
 
-The caption ends with the render pointer in the fixed form `(Rendered as \`figures/figure-N-M.svg\` from the brief below, per \`FIGURES.md\`.)`
-
-<!-- [ai-reviewer: three ambiguities in §6.1 and §6.2 that each produced a real defect on the A1 pass, offered to ai-editor as clarifications rather than as changes of rule.
-(1) "Two or three sentences" does not say whether the title line, which §6 says "also opens the caption", counts towards the total. The re-briefed Figure 11.1 now runs to the title plus five sentences; whichever way the count is meant, that caption breaches it, and the drafter had no way to check itself against the guide.
-(2) Neither section says whether `STYLE.md` §11's ~30-word sentence ceiling binds captions and alt-text. `CLAUDE.md` records that all 51 captions were brought under the ceiling on 30 July and that 42 of 51 alt-texts were not, which implies captions are bound and alt-text is not, but that ruling lives only in `CLAUDE.md`'s status note and not in the guide that drafters are pointed at. The A1 briefs were written to the stricter reading in the captions and the looser one in the alt-text, which is defensible and undocumented.
-(3) The guide nowhere states the figure-numbering convention. Every chapter until now numbers figures in order of first appearance; the new Chapter 17 carries Figure 17.2 in §17.2 and Figure 17.1 in §17.3, because the integration plan specified the two briefs in that order and nothing told the writer that appearance order governs. One sentence here would prevent the next instance.] -->
+The caption ends with the render pointer in the fixed form `(Rendered as \`figures/figure-N-M.svg\` from its brief in \`fig-brief/chNN-slug.md\`, per \`FIGURES.md\`.)`, naming the brief file for the chapter the figure sits in.
 
 ### 6.2 Alt-text
 
@@ -162,7 +165,7 @@ Where a figure's correctness depends on precise, numerous labels, that is a reas
 
 ## 9. Worked example
 
-The book's taxonomy figure, in the v2.0 format. Compare it with the v1.0 version in this file's git history to see what the change asks for.
+The book's taxonomy figure, in the v2.0 format, reproduced as it stands under its `## Figure 1.2 — …` heading in `fig-brief/ch01-why-agents-why-now.md`. Compare it with the v1.0 version in this file's git history to see what the change asks for.
 
 ```
 FIGURE BRIEF
@@ -191,7 +194,7 @@ FIGURE BRIEF
                  "what survives between steps"; on the specification tag, "written before
                  the agent starts"; on the gate, "nothing passes because it looks right";
                  on the human icon, "accountable, and cannot delegate that"
-- caption:       Figure 1.2 — A model inside an agent inside a workflow. The model only predicts text; wrap it in a loop with tools and memory and you have an agent that can act; wrap that in a specification, a gate and a human decision and you have a workflow you can defend. Each layer supplies what the one inside it lacks, which is why the outer layers are where the governing happens. (Rendered as `figures/figure-1-2.svg` from the brief below, per `FIGURES.md`.)
+- caption:       Figure 1.2 — A model inside an agent inside a workflow. The model only predicts text; wrap it in a loop with tools and memory and you have an agent that can act; wrap that in a specification, a gate and a human decision and you have a workflow you can defend. Each layer supplies what the one inside it lacks, which is why the outer layers are where the governing happens. (Rendered as `figures/figure-1-2.svg` from its brief in `fig-brief/ch01-why-agents-why-now.md`, per `FIGURES.md`.)
 - alt-text:      A nested diagram in three layers. The outer box, agentic workflow, contains a specification tag noted as written before the agent starts, feeding an inner box labelled AI agent. Inside the agent sit an LLM box noted as predicting text but unable to act, a plan-act-observe loop noted as acting, seeing the result and deciding again, a tools glyph noted as doing what the model does badly, and a state and memory cylinder noted as what survives between steps. The agent's output passes to a vermillion verification gate annotated "nothing passes because it looks right", whose pass exit reaches a human decision point annotated as accountable and unable to delegate that, and whose fail exit returns to the agent.
 - infographic description: A flat vector architecture diagram, 16:9. Title top-left in the
                  largest size: "A model inside an agent inside a workflow". Beneath it a

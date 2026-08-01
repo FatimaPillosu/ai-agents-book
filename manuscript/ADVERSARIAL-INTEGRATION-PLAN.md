@@ -1,6 +1,8 @@
 # Adversarial-review integration plan — pass A1
 
-**v1.0 · 30 July 2026** · Maintained by **ai-editor**. Executed by **ai-writer**; reviewed against by **ai-reviewer**.
+**v1.1 · 1 August 2026** · Maintained by **ai-editor**. Executed by **ai-writer**; reviewed against by **ai-reviewer**.
+
+**Change from v1.0:** §1–§10 are the record of pass A1 and stand as written. A new **§11** records what the review left for an editorial decision: five rulings, two escalations to the author, one process finding about this plan's own structure, and the small mechanical pass (**A2**) those rulings schedule. §11.1 amends G6 by one info-box and nothing else.
 
 This plan converts the eight substantive findings and one secondary finding of `manuscript/ADVERSARIAL-REVIEW.md` (F1–F9) into per-chapter instructions. The review is the author's brief; this document is the executable form of it. Where the review named a change but left the structural question open, **this plan decides it** and records the reasoning in §2, so ai-writer makes no structural decision of its own.
 
@@ -597,6 +599,89 @@ Six batches. Batches 1 and 2 must complete and be reviewed before anything else 
 | **6** | **The new chapter and the back matter** | new `ch17`, `GLOSSARY.md`, `FURTHER-READING.md` | 17.1–17.9, 7.2, 7.3 | 1, 2, 3, 4 | The new chapter reuses material from every one of the earlier batches and cites nothing they have not settled; writing it earlier would guarantee rework. The glossary's five entries cannot be written until their canonical homes are final. Includes Figures 17.1 and 17.2. |
 
 **Then, as a separate mechanical pass after batch 6 merges:** regenerate the SVG set. Three new figures and one re-brief in `figures-src/f_ch02_04.py`, `f_ch09_12.py` and `f_ch13_18.py`, plus the `figure-17-1` → `figure-18-1` rename from batch 1, re-run through the house renderer, with the automated collision check passing on the full set of 54.
+
+---
+
+## 11. Post-review rulings, and the pass they schedule (ai-editor, 1 Aug 2026)
+
+A1 executed, ai-reviewer's independent pass ran, and its corrections were applied. What that review left behind is a set of items that needed an editorial decision rather than a fix, each recorded as an `[ai-reviewer: …]` comment addressed to ai-editor. Five are settled below, two go to the author, and one is a process finding about this plan's own structure. Everything scheduled here is **pass A2**: mechanical, no new argument, no new source, and it reopens nothing in §5. The global rules G1–G12 apply to it unchanged except where 11.1 amends G6.
+
+### 11.1 — Settled: the propose–dispose separation gets an info-box (`ch02` §2.6, `GLOSSARY.md`)
+
+**Ruling.** The box is added. The term is the architecture this plan calls the book's unifying one, it is cross-referenced from nine places, and `STYLE.md` §9 runs box first and glossary second. Calibration validity and Auditability both got boxes in the same pass under the same rule. Flagging the book's most-used new term more weakly than its two least-used is the wrong way round, and ai-writer was right that only G6 stood in the way.
+
+**G6 is amended** to enumerate one further info-box, this one. Nothing else is opened; the "No others" clause otherwise stands.
+
+**Instruction (ai-writer).** In `ch02` §2.6, add a `**Definition — Propose–dispose separation.**` info-box in the chapter's existing box format. **≈60 words.** Place it at the first substantive use, which is the sentence "That is the *propose–dispose separation*, and it generalises well past quality control." It states the separation (the agent proposes; something the agent does not control disposes) and names the three kinds of disposer (a deterministic rule, a human decision, an external source of truth). No new citation. Advance the status header. Clear the `[ai-reviewer: …]` and `[ai-writer: …]` comments at that section once done.
+
+**GLOSSARY.md's opening line stands as written.** It already provides for entries without boxes, in the clause "together with a small number of terms the book leans on throughout". It is a one-way rule and reads correctly as one, and the instance that raised the question disappears when the box is added. Clear comment (2) in that file.
+
+**Acceptance.** `ch02` §2.6 carries exactly one info-box, in the house format; the box and the glossary entry say the same thing in the same terms; no other new info-box appears anywhere in the manuscript.
+
+### 11.2 — Settled: a constructed illustration is labelled, at two sites rather than four (`ch03` §3.7, `ch12` §12.10)
+
+**Ruling.** A house convention is set, and it is now a hard rule in `CLAUDE.md`. The reviewer named four openings; the four are not equally at risk, and labelling all of them would make the label uninformative where it matters. `ch02` §2.6 opens "Ask an agent to clean a decade of gauge records", and `ch17` §17.4 opens "A colleague leaves and you take over their quality-control pipeline". Both are generic second-person scenarios with no quantities and no claim that anything occurred. `ch03` §3.7 and `ch12` §12.10 are different. Both carry specific quantities: two of five neighbours since the spring, and eight months with two of twenty seeded faults missed. A reader meeting either one cold can reasonably take it for a record.
+
+**The test, for the next drafter.** Label a constructed scenario where it carries specific quantities, dates or outcomes that a reader could take as a record of something that happened. Do not label a generic scenario that carries none. An `[AUTHOR: …]` marker at the foot of a section is a note to the author and does not discharge this.
+
+**Instruction (ai-writer).** Put the fixed label `*Constructed illustration.*` on its own line immediately before the opening sentence of `ch03` §3.7 ("A gauge in your network has been reading high…") and of `ch12` §12.10 ("You re-calibrate a citation gate…"). In those two chapters only, extend the `> **Conventions:**` header line, immediately after the `**[verify]**` clause, with `· *Constructed illustration* marks a scenario assembled to show the mechanics, not a record of something that happened`. Change no other word of either section. Advance both status headers. Clear the `[ai-reviewer: …]` and `[ai-writer: …]` comments at `ch12` §12.10.
+
+**Acceptance.** The manuscript contains exactly two `*Constructed illustration.*` labels; both sit in chapters whose conventions line defines the label; `ch02` §2.6 and `ch17` §17.4 carry none; no `[AUTHOR: …]` marker has moved.
+
+### 11.3 — Settled: the em-dash prohibition reaches the glossary and not the reference list (`GLOSSARY.md`, `FURTHER-READING.md`)
+
+**Ruling.** `STYLE.md` §11 bars the em dash as a connector in "manuscript text (body prose, info-boxes, captions and alt-text alike)" and exempts "headings and labels, status headers, figure-brief fields and reference lists". A glossary definition is prose that the reader reads as prose, so it is bound. An annotated further-reading entry is a reference list, which §11 exempts by name, and the dash introducing each annotation is part of that fixed format. So the file that needs a sweep is the glossary, and `FURTHER-READING.md` is left alone. The five new entries drafted in A1 already sit on the stricter reading, so the sweep closes a split that is visible on the page rather than opening one.
+
+**Instruction (ai-writer).** Sweep `GLOSSARY.md`: 46 em dashes on 32 lines as of 1 Aug 2026. Replace each connector with whichever is plainest of a comma, a colon, parentheses or a new sentence, per `STYLE.md` §11. No definition loses content, and no entry is rewritten beyond the punctuation and the few words needed to carry it. Do not touch `FURTHER-READING.md`. Clear comment (1) in `GLOSSARY.md`.
+
+**Acceptance.** No em dash in `GLOSSARY.md` joins clauses, appends an afterthought or carries an aside; any that remain are in a heading, a label or a numeric range. Every entry means what it meant before. `FURTHER-READING.md` is unchanged.
+
+### 11.4 — Settled: the ~30-word ceiling binds captions and alt-text, and the alt-text backlog is scheduled
+
+**Ruling.** `FIGURES.md` v2.1 §6 now states it: `STYLE.md` §11's ceiling binds captions and alt-text as it binds body prose, with §11's semicolon-enumeration exception. `STYLE.md` §7's checklist puts no exemption on item 13 and explicitly extends item 14 to captions and alt-text, so this is the guide's reading rather than a new rule. The accessibility argument runs the same way: a screen reader delivers a sentence in one pass, and a listener cannot scan back over a 95-word one. The cost is real and is stated rather than hidden: 45 of the 54 alt-texts are non-compliant.
+
+**Instruction (ai-writer), pass A2.** Split the over-length sentences in the 45 alt-texts. Splitting only, per `STYLE.md` §11: no content is dropped, no annotation is lost, and the alt-text still carries what the figure's annotations say. Each alt-text exists twice, in the chapter's `![…](…)` image and in the `alt-text` field of its brief in `fig-brief/chNN-slug.md`, and the two are changed in the same edit. Also split the two over-length sentences in the caption of Figure 11.1, which are accumulations of clauses rather than enumerations. Leave the caption of Figure 17.2, whose 32-word sentence is a genuine parallel enumeration. Leave the four captions accepted on 30 Jul 2026 under the same exception: Figures 1.2, 6.4, 14.1 and 14.2.
+
+**Acceptance.** No alt-text in the manuscript carries a sentence over roughly 30 words. Each chapter's alt-text matches its brief's `alt-text` field word for word. Figure 11.1's caption is within the ceiling; the other five over-length captions are unchanged and each is a parallel enumeration.
+
+### 11.5 — Settled: "rebound" and "induced demand" stay in the further-reading gaps
+
+**Ruling.** They stay. §4 of this plan bars a named economic effect from *manuscript prose*, and `ch16` §16.6 obeys it by describing the mechanism and stopping. Naming a research gap is a different act from making a claim. The gaps section frames each item as a gap for a future sweep, and those two terms are what such a sweep would search on. Removing them would cost a reader the search terms and buy nothing but a consistency that §4 never asked for.
+
+**Off-ramp for the author, in one edit.** If you would rather the label went, ai-writer has drafted the subject-only form: "whether cheap inference increases total computation rather than displacing it". Say the word and it is a single-line change. Leave the `[ai-reviewer: …]` and `[ai-writer: …]` comments in `FURTHER-READING.md` standing until then.
+
+### 11.6 — Escalated to the author: what Chapter 3 now closes on
+
+**The finding.** §3.7 put the boundary of the specification discipline last. So a chapter titled "Specifying work for agents" now ends its argument on the claim that a great deal of good science cannot be specified. That is a change to the chapter's argumentative shape, and this plan's D5 chose the placement without weighing the emphasis it creates.
+
+**What has already happened.** ai-writer applied the reviewer's second mechanical alternative in the corrections commit: `ch03` now carries a closing summary and a forward pointer, and the summary names both what the chapter achieved and the boundary it marked. The remedy the review asked for is in place.
+
+**Why it still goes to the author.** The remaining question is emphasis, and emphasis here is positioning. The close reads directly against the front matter's scope statement, which is item 3 of §7.4 and is marked `[AUTHOR SIGN-OFF]`. If the scope statement changes, this close changes with it, so the two are decided together or not at all.
+
+**Recommendation: keep it.** F7's charge was that the concession was under-weighted, ending on an honest boundary is what the book does elsewhere, and the closing summary already stops the chapter deflating. If the author reverses it, the mechanical fix is to move §3.6's two closing sentences ("…rather than never being made at all") to the end of §3.7, which is ai-writer's work and about 40 words. Leave the `[ai-reviewer: …]` comment in `ch03` standing until the author rules.
+
+### 11.7 — Escalated to the author: `STYLE.md` §12 contradicts §1
+
+**The finding.** §12's anti-pattern list bans "addressing the reader as 'you'", which §1 requires, §7's checklist item 9 requires, and the §8 prompt block requires. Two agents found it independently. It is a survival from the pre-26-July academic register that the v5.0 consolidation did not sweep.
+
+**Why it is not settled here.** `STYLE.md` is the author's own voice guide, and the clause sits in the list of things the author says never to do. Deleting a line from that list is the author's call, not an editor's tidy-up, even where the line is plainly dead. No manuscript prose breaches it, because every chapter follows §1, so nothing is blocked meanwhile.
+
+**Standing instruction until the author rules.** Nothing in the manuscript is revised against §12's "you" clause. The `[ai-reviewer: …]` comment at `STYLE.md` §12 stays exactly where it is. Two lesser items in the same list want a ruling at the same time, and both are the author's for the same reason: whether "one-sentence paragraphs" is still barred given §2's licence for a paragraph break to do rhetorical work, and whether the §12 list binds captions, alt-text and figure-brief fields as §12.1 and §12.2 explicitly do.
+
+### 11.8 — Process finding: §5 assigned a task that §10 never batched
+
+Chapter 5's task 5.1 was specified in §5 and appeared in none of the six batches in §10, so no writer was ever given it. ai-reviewer caught it after execution and ai-writer has since executed it, and `ch05` is at draft r5 with the cross-reference in §5.3. The defect is structural rather than incidental: §5 and §10 are two lists of the same work with no check that one covers the other. **For the next plan of this shape:** §10's batch table names every chapter that §5 assigns a task to. The plan is not final until that comparison has been run explicitly. `OUTLINE.md` §7 now records Ch. 5's task, which it did not before.
+
+### 11.9 — Comments to clear, and comments to leave standing
+
+**Clear when the item is executed** (ai-writer, pass A2): `ch02` §2.6 both comments, per 11.1 · `ch12` §12.10 both comments, per 11.2 · `GLOSSARY.md` comments (1) and (2), per 11.1 and 11.3 · `ch02`'s second comment, on three missing SVGs, which is now stale because `figure-2-4.svg`, `figure-17-1.svg` and `figure-17-2.svg` were all rendered on 30 July and are present · `ch10` §10.3's placement note and `FURTHER-READING.md` line 62's placement note, both of which record an endorsed deviation and need no action.
+
+**Leave standing:** `STYLE.md` §12, per 11.7 · `ch03`'s close, per 11.6 · `FURTHER-READING.md`'s naming comment, per 11.5 · `ch00`'s front-matter comment, whose two findings are the author's under `[AUTHOR SIGN-OFF]` and whose second point (that the scope statement's "Nothing in these pages governs that work" contradicts `ch03` §3.7, which names two things that do) is a real contradiction that only the author's wording can settle.
+
+### 11.10 — Found in the same sweep, not fixed, and why
+
+- **The closing summary is used in two chapters of nineteen.** `ch02` and `ch03` carry a `*This chapter has …*` summary before the forward pointer; the other seventeen carry a forward pointer alone or nothing. `ch03` acquired one in A1's corrections, which is how the asymmetry arose. Either every chapter gets one or the two lose theirs, and that is a book-wide consistency decision worth a pass of its own rather than a correction folded into A2.
+- **`.claude/agents/ai-writer.md` still scopes the writer to `ch01`–`ch17`.** Left alone deliberately: agent definitions are configuration rather than manuscript or guideline documents, and they are not ai-editor's to edit. Flagged for the author.
 
 ---
 
